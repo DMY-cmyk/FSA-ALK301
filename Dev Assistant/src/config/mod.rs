@@ -54,6 +54,11 @@ impl CourseMap {
     pub fn load(path: &std::path::Path) -> anyhow::Result<Self> {
         let content = std::fs::read_to_string(path)?;
         let map: CourseMap = serde_json::from_str(&content)?;
+        for week in &map.weeks {
+            if week.week == 0 || week.week > 14 {
+                anyhow::bail!("Invalid week number: {}", week.week);
+            }
+        }
         Ok(map)
     }
 }

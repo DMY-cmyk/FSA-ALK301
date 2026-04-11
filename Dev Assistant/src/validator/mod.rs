@@ -51,6 +51,6 @@ pub fn run(project_root: &Path) -> anyhow::Result<()> {
         for m in &missing {
             eprintln!("  - {}", m);
         }
-        std::process::exit(1);
+        anyhow::bail!("{} fragments found, {} missing", found, missing.len());
     }
 }

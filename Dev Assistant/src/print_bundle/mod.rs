@@ -6,8 +6,7 @@ pub fn run(project_root: &Path) -> anyhow::Result<()> {
     let output_root = crate::utils::outputs_dir(project_root);
     let templates_dir = crate::utils::templates_dir(project_root);
 
-    let print_css = std::fs::read_to_string(templates_dir.join("print.css"))
-        .unwrap_or_default();
+    let print_css = std::fs::read_to_string(templates_dir.join("print.css"))?;
 
     let mut all_content = String::new();
 
@@ -40,7 +39,11 @@ pub fn run(project_root: &Path) -> anyhow::Result<()> {
             if assembled.exists() {
                 let html = std::fs::read_to_string(&assembled)?;
                 if let (Some(start), Some(end)) = (html.find("<main>"), html.find("</main>")) {
-                    let body = &html[start + 6..end];
+                    let content_start = start + "<main>".len();
+                    if content_start > end || end > html.len() {
+                        continue;
+                    }
+                    let body = &html[content_start..end];
                     all_content.push_str(&format!(
                         "<div class=\"content-section {}\">\n<h2>{}</h2>\n{}\n</div>\n",
                         ct.slug(), ct.display_name(), body
