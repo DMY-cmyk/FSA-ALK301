@@ -1,0 +1,197 @@
+<!-- Week 07 Indonesian Company Examples — Various IDX Cases -->
+<!-- Focus: Earnings Management Red Flags, Jones Model Application, Industry Ratio Convergence, OJK Enforcement -->
+
+<h2>Contoh Perusahaan Indonesia: Berbagai Kasus IDX — Sintesis Pra-UTS</h2>
+<p><em>Indonesian Company Examples for Week 07: Earnings Management Red Flags, Jones Model, Industry Ratio Convergence</em></p>
+
+<!-- ============================================================ -->
+<!-- 1. Earnings Management Red Flags in IDX Companies                -->
+<!-- ============================================================ -->
+
+<h3>1. Red Flags Manajemen Laba pada Emiten IDX</h3>
+<p><em>Earnings Management Red Flags in Indonesian Listed Companies</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Kasus Historis: PT Garuda Indonesia Tbk (GIAA) — Restatement 2018</div>
+<p>Salah satu kasus earnings management paling terkenal di Indonesia melibatkan <strong>PT Garuda Indonesia (Persero) Tbk</strong>. Pada April 2019, dua komisaris menolak menandatangani laporan keuangan 2018 karena meragukan pengakuan pendapatan dari perjanjian dengan PT Mahata Aero Teknologi senilai USD 239,94 juta. Garuda mengakui seluruh nilai kontrak 15 tahun sebagai pendapatan pada tahun 2018, padahal layanan belum diberikan dan pembayaran belum diterima. Kasus ini memunculkan beberapa red flags klasik yang konsisten dengan kerangka Ch.2 Subramanyam:</p>
+<table>
+<thead><tr><th style="width:30%">Red Flag</th><th style="width:35%">Manifestasi pada GIAA</th><th style="width:35%">Koneksi Teori</th></tr></thead>
+<tbody>
+<tr><td>Pengakuan pendapatan prematur</td><td>Seluruh nilai kontrak multi-tahun diakui di tahun 1</td><td>Ch.6: revenue recognition — pelanggaran "over time" recognition (PSAK 72)</td></tr>
+<tr><td>Laba bersih vs arus kas operasi divergen</td><td>Laba 2018 berubah dari rugi ke laba karena pengakuan ini; CFO tidak mendukung</td><td>Ch.2: accrual quality red flag — net income diverges from CFO</td></tr>
+<tr><td>Keberatan auditor/komisaris</td><td>2 dari 5 komisaris menolak menandatangani; auditor memberi catatan</td><td>Ch.2: governance red flag — dissenting opinion</td></tr>
+<tr><td>Transaksi pihak berelasi</td><td>Mahata memiliki hubungan bisnis kompleks</td><td>Ch.2: related party transactions as red flag</td></tr>
+</tbody>
+</table>
+<p><strong>Sanksi OJK:</strong> OJK mengenakan sanksi administratif berupa denda kepada Garuda Indonesia, auditor (KAP Tanubrata, Sutanto, Fahmi, Bambang &amp; Rekan — anggota BDO International), dan beberapa direksi. Laporan keuangan 2018 harus disajikan kembali (<em>restated</em>). Kasus ini menjadi titik balik peningkatan pengawasan OJK terhadap kualitas pelaporan keuangan emiten.</p>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Pola Umum Red Flags pada Emiten IDX</div>
+<p>Berdasarkan pengamatan terhadap laporan keuangan emiten IDX, beberapa pola red flags yang konsisten dengan kerangka Ch.2 dan relevan untuk analisis Jones Model:</p>
+<table>
+<thead><tr><th style="width:8%">No</th><th style="width:27%">Red Flag Pattern</th><th style="width:30%">Contoh/Konteks IDX</th><th style="width:35%">Analisis</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Piutang tumbuh jauh lebih cepat dari pendapatan</td><td>Beberapa emiten properti mencatat "penjualan" dengan pembayaran yang tertunda sangat lama</td><td>Ch.2 + Jones: Kenaikan piutang tanpa kenaikan pendapatan proporsional = akrual diskresioner positif tinggi</td></tr>
+<tr><td>2</td><td>Persediaan tumbuh jauh lebih cepat dari COGS</td><td>Emiten manufaktur yang mengkapitalisasi biaya overhead berlebihan ke persediaan</td><td>Ch.4/6 + Jones: Persediaan yang "menumpuk" meningkatkan total assets dan menunda pengakuan beban</td></tr>
+<tr><td>3</td><td>Restructuring charges "berulang"</td><td>Beberapa emiten melaporkan "biaya restrukturisasi" hampir setiap tahun</td><td>Ch.6: item yang diklaim non-recurring tetapi muncul setiap tahun = bukan transitori, melainkan biaya operasional normal</td></tr>
+<tr><td>4</td><td>Perubahan estimasi akuntansi signifikan</td><td>Perpanjangan umur manfaat aset tetap → penurunan beban depresiasi → kenaikan laba</td><td>Ch.4 + Jones: PPE tidak berubah tetapi depresiasi turun = akrual diskresioner positif (bukan karena ekonomi)</td></tr>
+<tr><td>5</td><td>Perbedaan besar laba akuntansi vs laba fiskal</td><td>DTA besar tanpa penjelasan memadai</td><td>Ch.6: deferred tax anomaly = indikasi kebijakan akuntansi agresif</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. Conceptual Jones Model Application to IDX                     -->
+<!-- ============================================================ -->
+
+<h3>2. Penerapan Konseptual Jones Model pada Emiten IDX</h3>
+<p><em>Conceptual Application of the Jones Model to Indonesian Listed Companies</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Ilustrasi: Dekomposisi Akrual pada Sektor Manufaktur IDX</div>
+<p>Untuk mengilustrasikan bagaimana Jones Model secara konseptual diterapkan pada emiten IDX, perhatikan kerangka berikut menggunakan data hipotetis berbasis pola industri manufaktur Indonesia:</p>
+
+<div class="fbox nb">
+<p><strong>Jones Model yang Diterapkan:</strong></p>
+<p>TA<sub>it</sub>/A<sub>it-1</sub> = α(1/A<sub>it-1</sub>) + β₁(ΔREV<sub>it</sub>/A<sub>it-1</sub>) + β₂(PPE<sub>it</sub>/A<sub>it-1</sub>) + ε<sub>it</sub></p>
+<p>Dimana TA = (ΔAset Lancar − ΔKas) − ΔLiabilitas Jangka Pendek − Depresiasi</p>
+</div>
+
+<table>
+<thead><tr><th style="width:20%">Komponen</th><th style="width:40%">Sumber Data dari Laporan Keuangan IDX</th><th style="width:40%">Catatan Implementasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Total Accruals</strong></td><td>ΔPiutang + ΔPersediaan + ΔBiaya Dibayar Dimuka − ΔUtang Usaha − ΔUtang Pajak − ΔBeban Akrual − Depresiasi &amp; Amortisasi</td><td>Gunakan catatan atas LK untuk detail perubahan modal kerja; atau: TA = Laba Bersih − CFO</td></tr>
+<tr><td><strong>ΔREV</strong></td><td>Perubahan Pendapatan Usaha dari Laporan Laba Rugi</td><td>PSAK menggunakan "Pendapatan Neto" — pastikan konsisten (eksklusikan pajak penjualan)</td></tr>
+<tr><td><strong>PPE</strong></td><td>Aset Tetap Bruto (sebelum akumulasi depresiasi) dari Neraca/Catatan</td><td>Gunakan PPE bruto, bukan neto — konsisten dengan Jones (1991)</td></tr>
+<tr><td><strong>A<sub>it-1</sub></strong></td><td>Total Aset tahun sebelumnya</td><td>Scaler untuk seluruh variabel; mengurangi heteroskedastisitas</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Studi Kasus Konseptual: Emiten Manufaktur Sektor Consumer Goods</div>
+<p>Bayangkan skenario berikut untuk emiten consumer goods besar di IDX — data bersifat <strong>ilustratif</strong> untuk menunjukkan mekanisme Jones Model:</p>
+<table>
+<thead><tr><th style="width:40%">Item (dalam miliar Rp)</th><th style="width:15%">Year t−1</th><th style="width:15%">Year t</th><th style="width:15%">Δ</th><th style="width:15%">Scaled (/A<sub>t-1</sub>)</th></tr></thead>
+<tbody>
+<tr><td>Total Aset</td><td>20.000</td><td>22.000</td><td>—</td><td>—</td></tr>
+<tr><td>Pendapatan</td><td>18.000</td><td>19.500</td><td>+1.500</td><td>+0,075</td></tr>
+<tr><td>Piutang Usaha</td><td>3.000</td><td>4.200</td><td>+1.200</td><td>—</td></tr>
+<tr><td>Persediaan</td><td>2.500</td><td>3.300</td><td>+800</td><td>—</td></tr>
+<tr><td>Kas</td><td>1.500</td><td>1.600</td><td>+100</td><td>—</td></tr>
+<tr><td>Utang Usaha</td><td>2.000</td><td>2.200</td><td>+200</td><td>—</td></tr>
+<tr><td>Depresiasi &amp; Amortisasi</td><td>—</td><td>1.200</td><td>—</td><td>—</td></tr>
+<tr><td>PPE Bruto</td><td>—</td><td>12.000</td><td>—</td><td>0,600</td></tr>
+</tbody>
+</table>
+<p><strong>Langkah 1 — Hitung Total Accruals:</strong></p>
+<p>TA = (ΔCA − ΔCash) − ΔCL − Dep = [(4.200−3.000 + 3.300−2.500 + 100−0) − (1.600−1.500)] − (2.200−2.000) − 1.200</p>
+<p>= [1.200 + 800 − 100] − 200 − 1.200 = 1.900 − 200 − 1.200 = <strong>500</strong></p>
+<p>TA/A<sub>t-1</sub> = 500/20.000 = <strong>0,025</strong></p>
+<p><strong>Langkah 2 — Estimasi NDA (menggunakan koefisien hipotetis):</strong></p>
+<p>Misalkan dari regresi estimasi: α = 500, β₁ = 0,06, β₂ = −0,035</p>
+<p>NDA/A<sub>t-1</sub> = 500×(1/20.000) + 0,06×(0,075) + (−0,035)×(0,600) = 0,025 + 0,0045 + (−0,021) = <strong>0,0085</strong></p>
+<p><strong>Langkah 3 — Hitung Discretionary Accruals:</strong></p>
+<p>DA = TA/A<sub>t-1</sub> − NDA/A<sub>t-1</sub> = 0,025 − 0,0085 = <strong>+0,0165</strong> (positif)</p>
+<p><strong>Interpretasi:</strong> DA positif mengindikasikan laba mungkin dinaikkan melalui akrual diskresioner. Piutang naik Rp 1.200 M sementara pendapatan hanya naik Rp 1.500 M (rasio kenaikan piutang/kenaikan pendapatan = 80%) — ini adalah red flag: mengapa piutang naik hampir sebesar kenaikan pendapatan? Kemungkinan: (a) penjualan kredit agresif di akhir tahun, (b) pengakuan pendapatan prematur, (c) pelanggan membayar lebih lambat.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. Industry Ratio Convergence in IDX Context                     -->
+<!-- ============================================================ -->
+
+<h3>3. Konvergensi Rasio Industri dalam Konteks IDX</h3>
+<p><em>Industry Ratio Convergence in the IDX Context — JASICA Sector Comparison</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perbandingan Rasio Lintas Sektor JASICA</div>
+<p>Bursa Efek Indonesia mengklasifikasikan emiten menggunakan <strong>Jakarta Stock Industrial Classification (JASICA)</strong> — kini dengan sub-klasifikasi IDX-IC. Perbandingan rasio lintas sektor mengilustrasikan prinsip yang diuji Acaravci tentang konvergensi industri. Data berikut merupakan <strong>kisaran tipikal</strong> berdasarkan observasi umum laporan keuangan emiten besar di masing-masing sektor:</p>
+
+<table>
+<thead><tr><th style="width:20%">Sektor JASICA</th><th style="width:16%">Current Ratio</th><th style="width:16%">Quick Ratio</th><th style="width:16%">D/E Ratio</th><th style="width:16%">Asset Turnover</th><th style="width:16%">Inv. Turnover</th></tr></thead>
+<tbody>
+<tr><td>Consumer Goods (UNVR, ICBP)</td><td>0,7–1,5</td><td>0,4–1,0</td><td>0,4–2,5</td><td>1,0–2,0</td><td>5–12</td></tr>
+<tr><td>Banking (BBCA, BMRI, BBRI)</td><td>N/A (bank)</td><td>N/A</td><td>5,0–7,0 (CAR-based)</td><td>0,05–0,10</td><td>N/A</td></tr>
+<tr><td>Mining (ADRO, PTBA, ITMG)</td><td>1,5–3,0</td><td>1,2–2,5</td><td>0,3–1,0</td><td>0,5–1,2</td><td>8–20</td></tr>
+<tr><td>Basic Industry (SMGR, INTP)</td><td>1,0–2,5</td><td>0,8–2,0</td><td>0,3–0,8</td><td>0,4–0,8</td><td>6–15</td></tr>
+<tr><td>Telco (TLKM, EXCL)</td><td>0,5–1,2</td><td>0,4–1,0</td><td>0,5–1,5</td><td>0,3–0,6</td><td>N/A (jasa)</td></tr>
+<tr><td>Property (BSDE, CTRA)</td><td>1,5–4,0</td><td>0,8–2,5</td><td>0,5–1,5</td><td>0,1–0,3</td><td>N/A (properti)</td></tr>
+</tbody>
+</table>
+<p><strong>Insight Acaravci dalam konteks IDX:</strong></p>
+<ul>
+<li><strong>Variasi antar-sektor sangat besar</strong>: Current ratio bank tidak dapat dibandingkan dengan manufaktur — mendukung pentingnya <em>industry-specific benchmarking</em></li>
+<li><strong>Konvergensi dalam sektor</strong>: Perusahaan dalam sektor yang sama cenderung memiliki rasio yang lebih mirip (misalnya: emiten semen SMGR dan INTP memiliki profil rasio serupa)</li>
+<li><strong>Kecepatan penyesuaian mungkin lebih lambat di Indonesia</strong>: Seperti temuan Acaravci untuk Turki, pasar berkembang dengan konsentrasi kepemilikan tinggi, dominasi BUMN/konglomerat, dan likuiditas pasar yang lebih rendah mungkin menunjukkan konvergensi yang lebih lambat</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. OJK Enforcement and Restatements                              -->
+<!-- ============================================================ -->
+
+<h3>4. Kasus Enforcement OJK dan Restatement</h3>
+<p><em>OJK Enforcement Actions and Financial Restatements</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Rangkuman Tindakan Regulasi Terkait Kualitas Pelaporan</div>
+<p>Otoritas Jasa Keuangan (OJK) sebagai regulator pasar modal Indonesia memiliki wewenang untuk mengenakan sanksi terhadap pelanggaran kualitas pelaporan keuangan. Beberapa kasus yang relevan untuk pemahaman earnings management di Indonesia:</p>
+
+<table>
+<thead><tr><th style="width:15%">Emiten/Kasus</th><th style="width:12%">Tahun</th><th style="width:35%">Isu</th><th style="width:38%">Tindakan/Koneksi Teori</th></tr></thead>
+<tbody>
+<tr><td><strong>GIAA</strong></td><td>2018–2019</td><td>Pengakuan pendapatan prematur (kontrak Mahata USD 239,94 juta diakui penuh di tahun pertama kontrak 15 tahun)</td><td>OJK mengenakan denda. Restatement diperlukan. Koneksi Ch.6: pelanggaran PSAK 72 (revenue recognition over time). Jones Model: akrual diskresioner positif sangat besar dari piutang fiktif.</td></tr>
+<tr><td><strong>AISA</strong></td><td>2017–2019</td><td>PT Tiga Pilar Sejahtera Food Tbk — dugaan penggelembungan aset dan pendapatan melalui transaksi pihak berelasi; persediaan dan piutang yang dipertanyakan</td><td>Delisting dari IDX (2021). Koneksi Ch.2: related party transactions; Ch.4: asset overstatement. Jones Model: total accruals mencerminkan kenaikan piutang dan persediaan yang tidak didukung arus kas.</td></tr>
+<tr><td><strong>IATA</strong></td><td>2018</td><td>PT Indonesia Transport &amp; Infrastructure Tbk — masalah pelaporan keuangan yang menyebabkan suspensi perdagangan berkepanjangan</td><td>Suspensi dan investigasi. Koneksi Ch.2: quality of financial disclosure. Kasus menunjukkan pentingnya accounting analysis sebelum financial analysis.</td></tr>
+<tr><td><strong>ENRG</strong></td><td>2015–2018</td><td>PT Energi Mega Persada Tbk — pertanyaan mengenai valuasi aset dan impairment yang ditunda</td><td>Koneksi Ch.4/5: impairment testing subjectivity. Jones Model: penundaan impairment = akrual diskresioner positif (aset terlalu tinggi)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Kerangka Regulasi Kualitas Pelaporan di Indonesia</div>
+<p>Infrastruktur regulasi yang menjaga kualitas pelaporan keuangan di Indonesia:</p>
+<ul>
+<li><strong>OJK (Otoritas Jasa Keuangan)</strong>: Regulator pasar modal — menerbitkan POJK tentang pelaporan keuangan emiten, mengenakan sanksi, melakukan pemeriksaan</li>
+<li><strong>IAI (Ikatan Akuntan Indonesia)</strong>: Menetapkan Standar Akuntansi Keuangan (SAK/PSAK) yang mengadopsi IFRS</li>
+<li><strong>IAPI (Institut Akuntan Publik Indonesia)</strong>: Mengatur standar audit (SA yang mengadopsi ISA) dan etika profesi akuntan publik</li>
+<li><strong>BEI (Bursa Efek Indonesia)</strong>: Menetapkan peraturan pencatatan, termasuk kewajiban pelaporan berkala dan keterbukaan informasi</li>
+<li><strong>PPAJP (Pusat Pembinaan Profesi Keuangan) — kini bagian dari Kemenkeu/OJK</strong>: Pengawasan kualitas audit</li>
+</ul>
+<p><strong>Relevansi untuk analisis:</strong> Meskipun infrastruktur regulasi ada, enforcement di Indonesia masih berkembang dibandingkan pasar maju. Ini berarti: (a) earnings management mungkin lebih prevalent karena biaya tertangkap lebih rendah; (b) Jones Model dan alat deteksi lainnya lebih bernilai bagi investor/analis yang melakukan due diligence independen; (c) deviasi rasio dari rata-rata industri (Acaravci) mungkin sebagian mencerminkan pelaporan yang tidak konsisten, bukan hanya perbedaan ekonomi riil.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Integrated Synthesis — Applying Ch.1-6 to IDX                 -->
+<!-- ============================================================ -->
+
+<h3>5. Sintesis Terintegrasi: Menerapkan Ch.1–6 pada Kasus IDX</h3>
+<p><em>Integrated Synthesis: Applying Chapters 1–6 to IDX Companies</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Contoh Alur Analitis Terintegrasi — Emiten Manufaktur IDX</div>
+<p>Berikut adalah ilustrasi bagaimana seluruh kerangka Ch.1–6 diterapkan secara berurutan pada analisis emiten manufaktur di IDX, menggunakan kerangka BAF:</p>
+
+<table>
+<thead><tr><th style="width:15%">Tahap BAF</th><th style="width:15%">Chapter</th><th style="width:35%">Langkah Analitis</th><th style="width:35%">Alat/Kerangka</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Strategy</strong></td><td>Ch.1</td><td>Evaluasi posisi kompetitif dalam industri manufaktur Indonesia; identifikasi siklus industri, kebijakan pemerintah, ancaman impor</td><td>Porter's Five Forces; analisis rantai nilai; identifikasi competitive advantage (cost leadership vs differentiation)</td></tr>
+<tr><td><strong>2. Accounting</strong></td><td>Ch.2</td><td>Evaluasi kebijakan akuntansi: metode persediaan (weighted average vs FIFO), kebijakan depresiasi, pengakuan pendapatan. Identifikasi red flags.</td><td>Red flags checklist; Jones Model (estimasi discretionary accruals); analisis perubahan kebijakan akuntansi</td></tr>
+<tr><td><strong>3a. Financing</strong></td><td>Ch.3</td><td>Analisis struktur modal: D/E ratio, interest coverage, komposisi utang (jangka pendek vs panjang), lease (PSAK 73), imbalan pasca-kerja</td><td>Acaravci: bandingkan leverage dengan rata-rata industri; evaluasi apakah konvergen atau divergen</td></tr>
+<tr><td><strong>3b. Investing</strong></td><td>Ch.4</td><td>Analisis aset tetap: umur manfaat, metode depresiasi, capex ratio, impairment. Evaluasi intangible assets.</td><td>PPE turnover; D&amp;A-to-revenue; bandingkan dengan peers. Jones: PPE sebagai kontrol NDA</td></tr>
+<tr><td><strong>3c. Intercorporate</strong></td><td>Ch.5</td><td>Identifikasi investasi di entitas lain: equity method vs konsolidasi. Evaluasi goodwill, NCI, eliminasi intra-grup.</td><td>Dampak konsolidasi pada rasio; evaluasi goodwill impairment history</td></tr>
+<tr><td><strong>3d. Operating</strong></td><td>Ch.6</td><td>Analisis pendapatan (PSAK 72), COGS, SG&amp;A, item non-berulang. Evaluasi earnings persistence. Hitung total accruals.</td><td>Jones Model: TA → DA; Earnings persistence classification; Effective tax rate analysis</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan Refleksi / Reflection Questions</div>
+<ol>
+<li>Jika Anda menerapkan Jones Model pada data GIAA sebelum kasus Mahata terungkap, apakah discretionary accruals yang tinggi akan terdeteksi? Mengapa atau mengapa tidak?</li>
+<li>Bagaimana temuan Acaravci tentang kecepatan penyesuaian yang lambat di pasar berkembang mempengaruhi cara Anda menggunakan rata-rata industri JASICA sebagai benchmark?</li>
+<li>Mengapa BUMN Indonesia (GIAA, TLKM, BMRI) mungkin menunjukkan perilaku rasio yang berbeda dari perusahaan swasta — dan bagaimana ini mempengaruhi validitas partial adjustment model?</li>
+<li>Hubungkan kasus AISA (dugaan penggelembungan aset) dengan komponen total accruals dalam Jones Model — komponen mana yang akan menunjukkan anomali?</li>
+</ol>
+</div>
