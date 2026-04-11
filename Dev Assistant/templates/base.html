@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_title }}</title>
+<style>
+{% include "print.css" %}
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week {{ week_nn }}: {{ week_topic_en }}</h1>
+  <div class="meta">
+    <span>📚 {{ week_topic }}</span>
+    {% if subramanyam_chapters | length > 0 %}
+    <span>📖 Subramanyam Ch. {{ subramanyam_chapters | join(sep=", ") }}</span>
+    {% endif %}
+    {% if palepu_chapters | length > 0 %}
+    <span>📗 Palepu Ch. {{ palepu_chapters | join(sep=", ") }}</span>
+    {% endif %}
+    {% if articles | length > 0 %}
+    <span>📄 {{ articles | length }} article(s)</span>
+    {% endif %}
+    <span>🏢 {{ id_company_ticker }} — {{ id_company_name }}</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 {{ learning_focus }}</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+{{ body_content | safe }}
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  {% if prev_week %}
+  <a href="../week-{{ prev_week_nn }}/{{ content_type }}.html">← Week {{ prev_week_nn }}</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  {% if next_week %}
+  <a href="../week-{{ next_week_nn }}/{{ content_type }}.html">Week {{ next_week_nn }} →</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

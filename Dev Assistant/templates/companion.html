@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALK301 Visual Companion — Course Learning Map</title>
+<style>
+:root{--navy:#1B3A6B;--gold:#C9A84C;--gray:#F5F5F5;--lblue:#E8EEF7}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#222;background:#fff}
+.header{background:var(--navy);color:#fff;padding:20px 30px;text-align:center}
+.header h1{font-size:20pt;margin-bottom:4px}
+.header p{opacity:.8;font-size:11pt}
+.tabs{display:flex;border-bottom:3px solid var(--navy);background:var(--gray)}
+.tab{padding:10px 20px;cursor:pointer;font-weight:bold;color:var(--navy);border:none;background:none;font-size:10.5pt}
+.tab.active{background:var(--navy);color:#fff;border-radius:5px 5px 0 0}
+.tab:hover:not(.active){background:var(--lblue)}
+.view{display:none;padding:20px 30px;max-width:1100px;margin:0 auto}
+.view.active{display:block}
+
+/* Roadmap */
+.timeline{display:flex;flex-direction:column;gap:8px}
+.week-card{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-radius:6px;border-left:5px solid;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.week-num{font-weight:bold;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:10pt;flex-shrink:0}
+.week-info{flex:1}
+.week-info h3{font-size:11pt;color:var(--navy);margin-bottom:2px}
+.week-info .details{font-size:9.5pt;color:#555}
+.week-info .details span{margin-right:10px}
+.midterm-bar,.final-bar{background:var(--gold);color:#fff;text-align:center;padding:8px;font-weight:bold;border-radius:4px;font-size:11pt}
+
+/* Chapter Map */
+.ch-grid{display:grid;grid-template-columns:80px 1fr 1fr;gap:2px;font-size:9.5pt}
+.ch-header{background:var(--navy);color:#fff;padding:6px 8px;font-weight:bold}
+.ch-cell{padding:5px 8px;border-bottom:1px solid #eee}
+.ch-week{background:var(--gray);font-weight:bold;color:var(--navy)}
+
+/* Article Network */
+.article-card{background:#fff;border:1px solid #ddd;border-left:4px solid var(--gold);padding:10px 14px;margin:8px 0;border-radius:0 6px 6px 0}
+.article-card h4{color:var(--navy);margin-bottom:3px;font-size:10.5pt}
+.article-card .meta{font-size:9pt;color:#777}
+.article-card .connection{font-size:9.5pt;color:#444;margin-top:4px}
+.degraded-badge{background:#FFF3CD;color:#795548;padding:2px 8px;border-radius:10px;font-size:8pt;font-weight:bold}
+
+/* Indonesian Examples */
+.id-card{background:#FFF5F0;border:1px solid #E8A0A0;border-left:4px solid #C41E3A;padding:10px 14px;margin:8px 0;border-radius:0 6px 6px 0}
+.id-card h4{color:#8B1A2B;margin-bottom:3px;font-size:10.5pt}
+.id-card .ticker{font-weight:bold;color:#C41E3A}
+
+/* Collapsible */
+.collapsible{cursor:pointer;user-select:none}
+.collapsible::after{content:" ▸";font-size:10pt}
+.collapsible.open::after{content:" ▾"}
+.collapse-content{display:none;padding-left:12px;margin-top:4px}
+.collapse-content.show{display:block}
+
+@media print{
+  .tabs{display:none}
+  .view{display:block!important;page-break-before:always}
+  .header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 ALK301 — Visual Companion</h1>
+  <p>{{ course.name }} · {{ course.semester }}</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showView('roadmap', event)">Course Roadmap</button>
+  <button class="tab" onclick="showView('chapters', event)">Chapter Map</button>
+  <button class="tab" onclick="showView('articles', event)">Article Network</button>
+  <button class="tab" onclick="showView('indonesian', event)">Indonesian Examples</button>
+</div>
+
+<!-- VIEW 1: Course Roadmap -->
+<div id="roadmap" class="view active">
+  <h2 style="color:var(--navy);margin-bottom:12px">Course Roadmap — 14 Weeks</h2>
+  <div class="timeline">
+    {% for week in weeks %}
+    {% if week.week == 8 %}
+    <div class="midterm-bar">📝 Ujian Tengah Semester (Midterm Exam)</div>
+    {% endif %}
+    <div class="week-card" style="border-left-color:{{ week.cluster_color }}">
+      <div class="week-num" style="background:{{ week.cluster_color }}">{{ week.week }}</div>
+      <div class="week-info">
+        <h3>{{ week.topic_en }}</h3>
+        <div class="details">
+          <span>📚 {{ week.topic }}</span>
+          {% if week.subramanyam_chapters | length > 0 %}<span>📖 Sub. Ch. {{ week.subramanyam_chapters | join(sep=", ") }}</span>{% endif %}
+          {% if week.palepu_chapters | length > 0 %}<span>📗 Palepu Ch. {{ week.palepu_chapters | join(sep=", ") }}</span>{% endif %}
+          {% if week.articles | length > 0 %}<span>📄 {{ week.articles | length }} article(s)</span>{% endif %}
+          <span>🏢 {{ week.id_company.primary }}</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 {{ week.learning_focus }}</span></div>
+      </div>
+    </div>
+    {% endfor %}
+    <div class="final-bar">📝 Ujian Akhir Semester (Final Exam)</div>
+  </div>
+</div>
+
+<!-- VIEW 2: Chapter Map -->
+<div id="chapters" class="view">
+  <h2 style="color:var(--navy);margin-bottom:12px">Chapter-to-Week Mapping</h2>
+  <div class="ch-grid">
+    <div class="ch-header">Week</div>
+    <div class="ch-header">Subramanyam</div>
+    <div class="ch-header">Palepu-Healy-Peek</div>
+    {% for week in weeks %}
+    <div class="ch-cell ch-week">{{ week.week }}</div>
+    <div class="ch-cell">{% if week.subramanyam_chapters | length > 0 %}Ch. {{ week.subramanyam_chapters | join(sep=", ") }}{% else %}—{% endif %}</div>
+    <div class="ch-cell">{% if week.palepu_chapters | length > 0 %}Ch. {{ week.palepu_chapters | join(sep=", ") }}{% else %}—{% endif %}</div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- VIEW 3: Article Network -->
+<div id="articles" class="view">
+  <h2 style="color:var(--navy);margin-bottom:12px">Article Assignments</h2>
+  {% for week in weeks %}
+  {% if week.articles | length > 0 %}
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week {{ week.week }}: {{ week.topic_en }}</h3>
+  {% for article in week.articles %}
+  <div class="article-card">
+    <h4>{{ article.title }} {% if article.degraded %}<span class="degraded-badge">⚠ Limited Access</span>{% endif %}</h4>
+    <div class="meta">{{ article.author }} ({{ article.year }})</div>
+    <div class="connection">
+      🔗 Connected to: {{ week.topic_en }}
+      {% if week.subramanyam_chapters | length > 0 %} · Subramanyam Ch. {{ week.subramanyam_chapters | join(sep=", ") }}{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+</div>
+
+<!-- VIEW 4: Indonesian Examples -->
+<div id="indonesian" class="view">
+  <h2 style="color:var(--navy);margin-bottom:12px">Indonesian Company Examples</h2>
+  {% for week in weeks %}
+  <div class="id-card">
+    <h4>Week {{ week.week }}: {{ week.topic_en }}</h4>
+    <div><span class="ticker">{{ week.id_company.primary }}</span> — {{ week.id_company.name }}</div>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+function showView(id, e) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (e && e.target) e.target.classList.add('active');
+}
+document.querySelectorAll('.collapsible').forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('show');
+  });
+});
+</script>
+</body>
+</html>

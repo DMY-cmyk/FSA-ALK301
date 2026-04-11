@@ -1,0 +1,9 @@
+<ul class="nav-list">
+{% for item in nav_items %}
+  <li class="{% if item.active %}active{% endif %}">
+    <a href="../week-{{ item.week_nn }}/{{ content_type }}.html">
+      Week {{ item.week_nn }}: {{ item.topic }}
+    </a>
+  </li>
+{% endfor %}
+</ul>
