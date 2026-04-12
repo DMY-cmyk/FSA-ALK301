@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 06 — Indonesian Company Examples</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 06: Operating Activities Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis aktivitas operasi</span>
+    
+    <span>📖 Subramanyam Ch. 6</span>
+    
+    
+    <span>📗 Palepu Ch. 4</span>
+    
+    
+    <span>🏢 TLKM — Telkom Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Revenue recognition; operating expenses; income measurement; non-recurring items; earnings persistence</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 06 Indonesian Company Examples — TLKM (Telkom Indonesia) -->
+<!-- Focus: Operating Activities, Revenue Recognition, Operating Expenses, Earnings Persistence, PSAK 72 -->
+
+<h2>Contoh Perusahaan Indonesia: TLKM — Aktivitas Operasi</h2>
+<p><em>Indonesian Company Example for Week 06: Operating Activities — Revenue &amp; Expense Analysis</em></p>
+
+<!-- ============================================================ -->
+<!-- 1. Company Profile & Financial Overview                         -->
+<!-- ============================================================ -->
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Profil TLKM / TLKM Company Overview</div>
+<p><strong>PT Telkom Indonesia (Persero) Tbk (TLKM)</strong> adalah perusahaan telekomunikasi terbesar di Indonesia dan salah satu BUMN paling bernilai di Bursa Efek Indonesia. TLKM mengoperasikan jaringan telekomunikasi terintegrasi yang mencakup layanan <em>mobile</em> (melalui anak perusahaan Telkomsel), <em>fixed broadband</em> (IndiHome, yang diintegrasikan ke Telkomsel pada 2023), <em>enterprise solutions</em>, dan bisnis digital. Sebagai perusahaan <em>capital-intensive</em> dengan struktur pendapatan multi-segmen dan beban depresiasi yang dominan, TLKM merupakan contoh ideal untuk menganalisis aktivitas operasi dan penerapan PSAK 72 (IFRS 15).</p>
+<table>
+<thead><tr><th style="width:35%">Indikator Konsolidasi</th><th style="width:18%">2023</th><th style="width:18%">2022</th><th style="width:18%">2021</th><th style="width:11%">Sumber</th></tr></thead>
+<tbody>
+<tr><td>Total Pendapatan</td><td>Rp 149,2 T</td><td>Rp 147,3 T</td><td>Rp 143,2 T</td><td>LK Audit</td></tr>
+<tr><td>Beban Pokok Pendapatan</td><td>Rp 83,8 T</td><td>—</td><td>—</td><td>LK Audit 2023</td></tr>
+<tr><td>Laba Kotor</td><td>Rp 65,5 T</td><td>—</td><td>—</td><td>LK Audit 2023</td></tr>
+<tr><td>Beban Operasional</td><td>Rp 34,1 T</td><td>—</td><td>—</td><td>LK Audit 2023</td></tr>
+<tr><td>Depresiasi &amp; Amortisasi</td><td>Rp 27,4 T</td><td>—</td><td>—</td><td>LK Audit 2023</td></tr>
+<tr><td>Laba Operasional</td><td>Rp 44,4 T</td><td>Rp 39,6 T</td><td>Rp 47,6 T</td><td>LK Audit</td></tr>
+<tr><td>Laba Bersih (Pemilik Induk)</td><td>Rp 24,6 T</td><td>Rp 20,8 T</td><td>Rp 24,8 T</td><td>LK Audit</td></tr>
+<tr><td>EBITDA</td><td>Rp 77,6 T</td><td>—</td><td>—</td><td>Annual Report 2023</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. Revenue Recognition: PSAK 72 Application                     -->
+<!-- ============================================================ -->
+
+<h3>1. Pengakuan Pendapatan: Penerapan PSAK 72 (IFRS 15) di TLKM</h3>
+<p><em>Revenue Recognition: PSAK 72 / IFRS 15 Application at Telkom Indonesia</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Model Lima Langkah dalam Konteks TLKM</div>
+<p>TLKM menerapkan <strong>PSAK 72</strong> — adopsi Indonesia atas IFRS 15 — yang mensyaratkan model lima langkah untuk seluruh pengakuan pendapatan. Kompleksitas penerapan di TLKM berasal dari: beragamnya jenis layanan (mobile, broadband, enterprise, digital), kontrak bundel dengan <em>multiple performance obligations</em>, elemen <em>variable consideration</em> (diskon promo, loyalty programs), dan keputusan <em>principal vs agent</em> untuk konten digital.</p>
+<table>
+<thead><tr><th style="width:20%">Langkah PSAK 72</th><th style="width:40%">Penerapan di TLKM</th><th style="width:40%">Tantangan Analitis</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Identifikasi Kontrak</strong></td><td>Kontrak pasca-bayar (postpaid) Telkomsel; kontrak langganan IndiHome; kontrak enterprise multi-tahun</td><td>Kontrak prabayar (prepaid) — apakah setiap isi ulang pulsa merupakan "kontrak" terpisah?</td></tr>
+<tr><td><strong>2. Identifikasi Kewajiban Kinerja</strong></td><td>Layanan data, voice, SMS, broadband access, device/CPE, instalasi, value-added services</td><td>Apakah instalasi IndiHome distinct dari layanan broadband bulanan?</td></tr>
+<tr><td><strong>3. Tentukan Harga Transaksi</strong></td><td>Biaya bulanan, biaya aktivasi, usage-based charges; diskon promo, bundling discounts</td><td>Variable consideration dari promo dan loyalty — estimasi mana yang digunakan?</td></tr>
+<tr><td><strong>4. Alokasi Harga</strong></td><td>Alokasi relative standalone selling price antara device dan layanan dalam paket bundel</td><td>Standalone selling price untuk komponen yang tidak dijual terpisah memerlukan estimasi</td></tr>
+<tr><td><strong>5. Pengakuan Pendapatan</strong></td><td>Layanan: over time (bulanan); perangkat: point in time (saat penyerahan)</td><td>Biaya aktivasi — diakui sekaligus atau diamortisasi sepanjang kontrak?</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. Revenue Decomposition by Segment                             -->
+<!-- ============================================================ -->
+
+<h3>2. Dekomposisi Pendapatan per Segmen</h3>
+<p><em>Revenue Decomposition by Segment &amp; Type</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Struktur Pendapatan TLKM 2023 / Revenue Structure</div>
+<table>
+<thead><tr><th style="width:30%">Kategori Pendapatan</th><th style="width:18%">2023 (Rp T)</th><th style="width:15%">% Total</th><th style="width:37%">Catatan</th></tr></thead>
+<tbody>
+<tr><td><strong>Data, Internet &amp; IT Services</strong></td><td>87,4</td><td>58,6%</td><td>Mobile data (Telkomsel), IT solutions, digital services — mesin pertumbuhan utama (+6,5% YoY)</td></tr>
+<tr><td><strong>IndiHome (Fixed Broadband)</strong></td><td>28,8</td><td>19,3%</td><td>Langganan broadband residensial/SOHO — pertumbuhan moderat (+2,7% YoY); diintegrasikan ke Telkomsel</td></tr>
+<tr><td><strong>Legacy (Voice &amp; SMS)</strong></td><td>12,5</td><td>8,4%</td><td>Fixed voice + cellular voice + SMS — penurunan signifikan (−30,3% YoY) akibat migrasi ke OTT</td></tr>
+<tr><td><strong>Interconnection</strong></td><td>9,1</td><td>6,1%</td><td>Pendapatan interkoneksi antar-operator (+7,0% YoY)</td></tr>
+<tr><td><strong>Others</strong></td><td>11,5</td><td>7,7%</td><td>Tower rental, network services, wholesale (+5,9% YoY)</td></tr>
+<tr><td><strong>Total Pendapatan</strong></td><td><strong>149,2</strong></td><td><strong>100%</strong></td><td>Pertumbuhan keseluruhan: +1,3% YoY</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Analisis Pendapatan: Implikasi Persistensi</div>
+<p>Dari perspektif <em>earnings persistence</em>, pendapatan TLKM dapat diklasifikasikan:</p>
+<ul>
+<li><strong>Highly Persistent (Recurring)</strong>: Data &amp; internet services (58,6%) — berlangganan bulanan, pertumbuhan stabil, switching cost tinggi. IndiHome broadband (19,3%) — recurring subscription. <em>Kedua komponen ini = ~78% pendapatan dan sangat persisten.</em></li>
+<li><strong>Declining but Predictable</strong>: Legacy voice/SMS (8,4%) — penurunan struktural yang dapat diprediksi dan dimodelkan; tren −30% YoY memberikan basis peramalan.</li>
+<li><strong>Moderately Persistent</strong>: Interconnection (6,1%) dan Others (7,7%) — tergantung regulasi dan volume trafik; relatif stabil tetapi sensitif terhadap perubahan regulasi interkoneksi.</li>
+</ul>
+<p>Kesimpulan: <strong>~78% pendapatan TLKM bersifat sangat persisten</strong> — ini menunjukkan kualitas pendapatan yang tinggi dari perspektif valuasi, meskipun pertumbuhan agregat lambat (+1,3%).</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. Operating Expense Structure                                   -->
+<!-- ============================================================ -->
+
+<h3>3. Struktur Beban Operasional</h3>
+<p><em>Operating Expense Structure Analysis</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Dekomposisi Beban Operasional TLKM 2023</div>
+<table>
+<thead><tr><th style="width:35%">Komponen Beban</th><th style="width:18%">Estimasi (Rp T)</th><th style="width:15%">% Revenue</th><th style="width:32%">Catatan Analitis</th></tr></thead>
+<tbody>
+<tr><td><strong>Beban Pokok Pendapatan (COGS)</strong></td><td>83,8</td><td>56,1%</td><td>Network costs, interconnection, content, direct costs</td></tr>
+<tr><td>— Biaya jaringan &amp; transmisi</td><td>—</td><td>—</td><td>Komponen terbesar: biaya sewa/tower, serat optik, bandwidth</td></tr>
+<tr><td>— Interkoneksi ke operator lain</td><td>—</td><td>—</td><td>Biaya trafik ke jaringan pihak ketiga</td></tr>
+<tr><td>— Biaya konten &amp; layanan digital</td><td>—</td><td>—</td><td>Biaya lisensi konten, royalti, platform digital</td></tr>
+<tr><td><strong>Depresiasi &amp; Amortisasi</strong></td><td>27,4</td><td>18,4%</td><td>Sangat signifikan untuk telco capital-intensive; tower, kabel, spektrum</td></tr>
+<tr><td><strong>Beban Karyawan</strong></td><td>—</td><td>—</td><td>Gaji, tunjangan, pensiun; ~24.000+ karyawan grup</td></tr>
+<tr><td><strong>Beban Pemasaran</strong></td><td>—</td><td>—</td><td>Branding, promo, subsidi perangkat, customer acquisition</td></tr>
+<tr><td><strong>Beban Umum &amp; Administrasi</strong></td><td>—</td><td>—</td><td>Sewa kantor, utilitas, profesional, IT internal</td></tr>
+<tr><td><strong>Total Beban Operasional (ex-COGS)</strong></td><td>34,1</td><td>22,9%</td><td>Mencakup SG&amp;A dan beban operasional non-produksi</td></tr>
+</tbody>
+</table>
+<p><strong>Catatan:</strong> Rincian detail per sub-komponen beban operasional tidak selalu diungkapkan secara granular dalam laporan laba rugi publik TLKM. Data di atas menggunakan angka agregat dari laporan keuangan audit 2023, dengan estimasi sub-komponen berdasarkan catatan atas laporan keuangan dan Annual Report.</p>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Depresiasi &amp; Amortisasi: Karakteristik Kunci Telco</div>
+<p>Beban D&amp;A sebesar <strong>Rp 27,4 triliun (18,4% dari pendapatan)</strong> adalah karakteristik khas perusahaan telekomunikasi yang <em>capital-intensive</em>. Implikasi analitis:</p>
+<ul>
+<li><strong>EBITDA vs Operating Income</strong>: EBITDA TLKM (Rp 77,6 T, margin ~52%) jauh lebih tinggi dari laba operasional (Rp 44,4 T, margin ~29,7%) karena D&amp;A yang besar. Untuk telco, EBITDA sering dianggap metrik yang lebih relevan karena capex bersifat lumpy sementara depresiasi merata.</li>
+<li><strong>Umur Manfaat Aset</strong>: Perubahan estimasi umur manfaat infrastruktur jaringan (menara, kabel serat optik, peralatan switching) memiliki dampak material pada beban D&amp;A dan laba — ini area diskresi manajemen yang signifikan.</li>
+<li><strong>Capex vs D&amp;A</strong>: Jika capex konsisten melebihi D&amp;A, perusahaan masih dalam fase investasi/pertumbuhan; jika D&amp;A melebihi capex, aset menua tanpa replacement memadai.</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Operating Margin Trends                                       -->
+<!-- ============================================================ -->
+
+<h3>4. Tren Margin Operasional 2021–2023</h3>
+<p><em>Operating Margin Trends 2021–2023</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Tren Profitabilitas Operasional TLKM</div>
+<table>
+<thead><tr><th style="width:30%">Metrik</th><th style="width:18%">2021</th><th style="width:18%">2022</th><th style="width:18%">2023</th><th style="width:16%">Tren</th></tr></thead>
+<tbody>
+<tr><td>Pendapatan (Rp T)</td><td>143,2</td><td>147,3</td><td>149,2</td><td>↑ Stabil</td></tr>
+<tr><td>Laba Operasional (Rp T)</td><td>47,6</td><td>39,6</td><td>44,4</td><td>↓↑ Volatile</td></tr>
+<tr><td><strong>Operating Profit Margin</strong></td><td><strong>33,2%</strong></td><td><strong>26,9%</strong></td><td><strong>29,7%</strong></td><td>↓↑ V-shape</td></tr>
+<tr><td>Laba Bersih (Rp T)</td><td>24,8</td><td>20,8</td><td>24,6</td><td>↓↑ V-shape</td></tr>
+<tr><td>Net Profit Margin</td><td>17,3%</td><td>14,1%</td><td>16,5%</td><td>↓↑ Recover</td></tr>
+<tr><td>EBITDA Margin (est. 2023)</td><td>—</td><td>—</td><td>~52,0%</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Analisis Fluktuasi Margin: Apa yang Terjadi di 2022?</div>
+<p>Penurunan OPM dari 33,2% (2021) ke 26,9% (2022) memerlukan investigasi:</p>
+<ul>
+<li><strong>Hipotesis 1: Beban Integrasi</strong> — Proses integrasi IndiHome ke dalam Telkomsel pada 2022–2023 kemungkinan menimbulkan biaya transisi, restrukturisasi, dan duplikasi infrastruktur sementara.</li>
+<li><strong>Hipotesis 2: Tekanan Kompetisi</strong> — Persaingan harga data mobile yang intens (operator lain menawarkan paket lebih murah) menekan <em>average revenue per user</em> (ARPU).</li>
+<li><strong>Hipotesis 3: Peningkatan D&amp;A</strong> — Investasi besar-besaran dalam jaringan 4G/5G dan fiber optic di tahun-tahun sebelumnya mulai terdepresiasi, meningkatkan beban D&amp;A.</li>
+<li><strong>Hipotesis 4: Non-Recurring Items</strong> — Potensi <em>impairment</em> atau <em>write-off</em> terkait aset legacy (teknologi 3G, peralatan usang) menekan laba 2022.</li>
+</ul>
+<p><strong>Pemulihan 2023</strong> (29,7%) mengindikasikan bahwa sebagian tekanan 2022 bersifat transitori — namun OPM belum kembali ke level 2021 (33,2%), menyarankan ada elemen struktural (misalnya, basis D&amp;A yang lebih tinggi secara permanen) yang perlu diperhitungkan dalam proyeksi.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. Earnings Persistence Analysis                                 -->
+<!-- ============================================================ -->
+
+<h3>5. Analisis Persistensi Laba TLKM</h3>
+<p><em>Earnings Persistence Analysis Using TLKM Data</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Klasifikasi Komponen Laba TLKM</div>
+<table>
+<thead><tr><th style="width:30%">Komponen</th><th style="width:18%">Klasifikasi</th><th style="width:52%">Justifikasi</th></tr></thead>
+<tbody>
+<tr><td>Pendapatan data &amp; internet</td><td><strong>Permanent</strong></td><td>Subscription-based, pertumbuhan konsisten, switching cost tinggi; 58,6% revenue</td></tr>
+<tr><td>Pendapatan IndiHome</td><td><strong>Permanent</strong></td><td>Broadband subscription, recurring monthly; captive market di area Telkom</td></tr>
+<tr><td>Pendapatan legacy (voice/SMS)</td><td><strong>Permanent (declining)</strong></td><td>Recurring tetapi secara struktural menurun ~30%/tahun; model harus meng-capture tren penurunan</td></tr>
+<tr><td>Interkoneksi &amp; lainnya</td><td><strong>Semi-permanent</strong></td><td>Tergantung volume trafik dan regulasi; relatif stabil tetapi sensitif terhadap perubahan kebijakan</td></tr>
+<tr><td>Beban jaringan &amp; operasional</td><td><strong>Permanent</strong></td><td>Biaya operasional inti yang berulang; relatif proporsional terhadap revenue</td></tr>
+<tr><td>Depresiasi &amp; amortisasi</td><td><strong>Permanent</strong></td><td>Recurring selama perusahaan terus berinvestasi; level saat ini (~Rp 27 T) likely sustainable</td></tr>
+<tr><td>Biaya integrasi IndiHome-Telkomsel</td><td><strong>Transitory</strong></td><td>One-time integration costs 2022–2023; tidak akan berulang setelah integrasi selesai</td></tr>
+<tr><td>Impairment aset legacy (jika ada)</td><td><strong>Transitory</strong></td><td>Write-off satu kali untuk peralatan usang; nilai bersifat non-recurring</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="exb nb"><div class="exn">💡 Estimasi Normalized Earnings TLKM</div>
+<p>Untuk keperluan valuasi, analis perlu menormalisasi laba TLKM:</p>
+<ul>
+<li><strong>Reported Net Income 2023</strong>: Rp 24,6 triliun</li>
+<li><strong>Adjustment 1</strong>: Tambahkan kembali estimasi biaya integrasi IndiHome (jika teridentifikasi di catatan keuangan) — bersifat transitori</li>
+<li><strong>Adjustment 2</strong>: Pertimbangkan bahwa penurunan legacy revenue (~30% per tahun) akan terus berlanjut — kurangi proyeksi future earnings untuk komponen ini</li>
+<li><strong>Adjustment 3</strong>: Evaluasi apakah OPM 2023 (29,7%) atau rata-rata 3 tahun (~29,9%) lebih representatif sebagai <em>normalized margin</em></li>
+<li><strong>Normalized Earnings Estimate</strong>: Berkisar Rp 24–25 triliun, dengan tren stabil-ke-sedikit-meningkat jika pertumbuhan data/internet mengkompensasi penurunan legacy</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. PSAK 72 Specific Considerations                              -->
+<!-- ============================================================ -->
+
+<h3>6. Pertimbangan Khusus PSAK 72 untuk Sektor Telekomunikasi</h3>
+<p><em>PSAK 72 (IFRS 15) Specific Considerations for Telecommunications</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Isu Unik PSAK 72 untuk TLKM</div>
+<ul>
+<li><strong>Kontrak Bundel (Handset + Layanan)</strong>: PSAK 72 mensyaratkan alokasi harga transaksi ke setiap <em>performance obligation</em> berdasarkan <em>relative standalone selling price</em>. Untuk paket handset + layanan data 24 bulan, pendapatan handset diakui saat penyerahan (point in time), layanan diakui sepanjang kontrak (over time). Ini menggeser pengakuan pendapatan dibanding metode lama yang mengakui seluruhnya saat aktivasi.</li>
+<li><strong>Biaya Aktivasi &amp; Instalasi</strong>: Biaya aktivasi yang bersifat <em>non-refundable upfront fee</em> tanpa transfer barang/jasa distinct harus diamortisasi sepanjang kontrak — bukan diakui sekaligus. Ini mengurangi pendapatan di awal kontrak tetapi meningkatkan di bulan-bulan berikutnya.</li>
+<li><strong>Contract Costs (PSAK 72.91–104)</strong>: Biaya untuk memperoleh kontrak (<em>incremental costs of obtaining a contract</em>) — misalnya komisi penjualan — dapat dikapitalisasi jika diharapkan dipulihkan. TLKM harus mengevaluasi apakah biaya akuisisi pelanggan (SAC) memenuhi kriteria kapitalisasi.</li>
+<li><strong>Principal vs Agent</strong>: Untuk penjualan konten digital pihak ketiga (streaming, gaming), TLKM harus mengevaluasi apakah bertindak sebagai <em>principal</em> (revenue bruto) atau <em>agent</em> (revenue neto/komisi). Jika TLKM tidak mengendalikan konten sebelum transfer ke pelanggan, pendapatan diakui neto — ini mengurangi revenue line tetapi tidak mempengaruhi laba.</li>
+<li><strong>Variable Consideration</strong>: Program loyalitas (Telkomsel POIN), diskon volume enterprise, dan promo seasonal memerlukan estimasi <em>variable consideration</em> yang mengurangi harga transaksi. Perubahan estimasi dapat mempengaruhi pendapatan periode berjalan.</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 8. Key Takeaways                                                 -->
+<!-- ============================================================ -->
+
+<h3>7. Ringkasan Temuan Kunci / Key Takeaways</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Pelajaran dari Analisis Operasional TLKM</div>
+<ol>
+<li><strong>Revenue Quality Tinggi</strong>: ~78% pendapatan TLKM berasal dari layanan berlangganan yang persisten (data/internet + broadband), memberikan basis pendapatan yang stabil untuk valuasi.</li>
+<li><strong>Structural Decline in Legacy</strong>: Pendapatan voice/SMS menurun ~30% per tahun — ini adalah tren struktural yang harus dimodelkan secara eksplisit, bukan diabaikan.</li>
+<li><strong>D&amp;A Dominan</strong>: Beban depresiasi ~18% dari revenue menjadikan perbedaan EBITDA vs operating income sangat signifikan. Analis harus memilih metrik yang tepat dan konsisten saat membandingkan.</li>
+<li><strong>Margin V-Shape 2021–2023</strong>: Penurunan OPM 2022 kemungkinan mencampur faktor transitori (integrasi) dan struktural (D&amp;A lebih tinggi). Normalisasi diperlukan sebelum valuasi.</li>
+<li><strong>PSAK 72 Complexity</strong>: Sebagai telco dengan kontrak bundel, multiple performance obligations, dan variable consideration, TLKM adalah contoh nyata kompleksitas penerapan PSAK 72 — dan pentingnya memahami dampaknya pada timing revenue recognition.</li>
+<li><strong>Capital Intensity Creates Analytical Challenges</strong>: Evaluasi kebijakan depresiasi (metode, umur manfaat) TLKM kritis karena perubahan kecil memiliki dampak material pada laba yang dilaporkan.</li>
+</ol>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-05/id-examples.html">← Week 05</a>
+  
+  
+  <a href="../week-07/id-examples.html">Week 07 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

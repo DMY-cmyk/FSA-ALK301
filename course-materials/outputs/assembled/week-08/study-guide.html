@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 08 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 08: Cash Flow Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis aliran kas</span>
+    
+    <span>📖 Subramanyam Ch. 7</span>
+    
+    
+    
+    <span>🏢 ICBP — Indofood CBP Sukses Makmur Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Statement of cash flows; direct vs indirect method; free cash flow; cash flow quality analysis</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 08 Study Guide — Cash Flow Analysis -->
+<!-- Subramanyam Ch.7 | No article this week | ICBP (Indonesian Example) -->
+
+<h2>Panduan Belajar Minggu 08: Analisis Arus Kas</h2>
+<p><em>Week 08 Study Guide: Cash Flow Analysis — Subramanyam Chapter 7</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu ini adalah <strong>minggu pertama setelah UTS</strong> — dan menandai transisi penting dalam kursus. Paruh pertama (Minggu 01–06, Ch.1–6) berfokus pada <strong>memahami laporan keuangan</strong>: dari kerangka analisis bisnis, kualitas pelaporan, aktivitas pembiayaan, investasi, investasi antarkorporat, hingga aktivitas operasi. Mulai minggu ini, kita memasuki fase <strong>menganalisis untuk pengambilan keputusan</strong> (<em>analyzing for decisions</em>). Chapter 7 membahas <em>Cash Flow Analysis</em> — analisis mendalam terhadap laporan arus kas (<em>statement of cash flows</em>), yang merupakan jembatan kritis antara laba akrual dan realitas kas perusahaan. Anda akan belajar menganalisis arus kas operasi (CFO), arus kas investasi (CFI), dan arus kas pendanaan (CFF), menghitung <em>free cash flow</em>, mengevaluasi kualitas arus kas, serta memahami bagaimana arus kas menjadi fondasi untuk analisis profitabilitas (Minggu 09) dan analisis prospektif (Minggu 10).</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">📖 Langkah 1: Baca Subramanyam Chapter 7 — Cash Flow Analysis (Bacaan Utama / Primary Reading)</div>
+<div class="did">
+<p>Ini adalah satu-satunya bacaan wajib minggu ini — tidak ada artikel pendukung. Chapter 7 adalah bacaan yang padat dan teknis. Fokuskan perhatian pada: <strong>struktur laporan arus kas</strong> — tiga bagian (operasi, investasi, pendanaan) dan bagaimana masing-masing menggambarkan aktivitas yang berbeda; <strong>metode tidak langsung</strong> (<em>indirect method</em>) — mengapa dan bagaimana laba bersih disesuaikan untuk mendapatkan arus kas operasi (penyesuaian depresiasi, perubahan modal kerja, keuntungan/kerugian); <strong>metode langsung</strong> (<em>direct method</em>) — penerimaan dan pembayaran kas aktual; <strong>free cash flow</strong> — FCFF dan FCFE, perhitungan dan signifikansinya; <strong>rasio arus kas</strong> — <em>cash flow adequacy</em>, <em>cash flow to income</em>, <em>reinvestment ratio</em>; dan <strong>kualitas arus kas</strong> — hubungan antara laba dan CFO sebagai indikator <em>earnings quality</em>. Baca keseluruhan chapter terlebih dahulu untuk gambaran besar, lalu baca ulang bagian metode tidak langsung dan free cash flow secara detail.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 2: Review Konsep Terkait dari Paruh Pertama Kursus</div>
+<div class="did">
+<p>Analisis arus kas tidak berdiri sendiri — ia memanfaatkan seluruh pemahaman dari paruh pertama. Pastikan mengingat: <strong>Ch.2 (Accounting Analysis)</strong> — akuntansi akrual vs kas, mengapa laba tidak sama dengan arus kas; <strong>Ch.3 (Financing)</strong> — pembayaran bunga, dividen, penerbitan/pelunasan utang dan ekuitas muncul di CFF; <strong>Ch.4 (Investing)</strong> — capex, penjualan aset, dan impairment mempengaruhi CFI; <strong>Ch.5 (Intercorporate)</strong> — akuisisi dan divestasi mempengaruhi CFI secara material; <strong>Ch.6 (Operating Activities)</strong> — depresiasi, perubahan modal kerja, dan item non-kas di CFO berasal dari pemahaman aktivitas operasi. Minggu ini menyatukan seluruh elemen tersebut dalam satu laporan: <em>statement of cash flows</em>.</p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">⚡ Transisi Kursus: Dari Memahami ke Menganalisis</div>
+<p>Minggu ini menandai <strong>titik infleksi penting</strong> dalam kursus. Selama paruh pertama (Minggu 01–07), Anda belajar <em>memahami</em> bagaimana tiga laporan keuangan utama (neraca, laba rugi, arus kas) disusun — dari prinsip akrual, pengakuan pendapatan, depresiasi, hingga konsolidasi. Mulai Minggu 08, fokus bergeser ke <em>menggunakan</em> pemahaman tersebut untuk tujuan analitis dan pengambilan keputusan investasi. Urutan paruh kedua: Arus Kas (Ch.7) → Profitabilitas (Ch.8–9) → Peramalan (Ch.10) → Valuasi (Ch.11–12). Setiap langkah membangun di atas langkah sebelumnya — dan arus kas adalah langkah pertama karena memberikan perspektif paling "nyata" (berbasis kas) terhadap kinerja perusahaan.</p>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📐 Hierarki Konsep Minggu Ini / This Week's Concept Hierarchy</div>
+<ol>
+<li><strong>Laporan Arus Kas (<em>Statement of Cash Flows</em>)</strong> — tujuan, struktur, dan informasi yang disediakan. Tiga seksi utama: <em>operating</em> (CFO), <em>investing</em> (CFI), <em>financing</em> (CFF). Perbedaan dari laporan laba rugi (akrual vs kas). Hubungan dengan neraca dan laba rugi.</li>
+<li><strong>Arus Kas Operasi — Metode Tidak Langsung (<em>Indirect Method</em>)</strong> — dimulai dari laba bersih, disesuaikan untuk: (a) item non-kas (depresiasi, amortisasi, <em>impairment</em>, kompensasi berbasis saham); (b) perubahan modal kerja operasi (piutang, persediaan, utang usaha, beban akrual); (c) keuntungan/kerugian dari penjualan aset dan investasi; (d) pajak tangguhan. Ini adalah metode yang paling umum digunakan dan paling penting untuk analisis.</li>
+<li><strong>Arus Kas Operasi — Metode Langsung (<em>Direct Method</em>)</strong> — melaporkan penerimaan kas dari pelanggan, pembayaran kepada pemasok, pembayaran gaji, pembayaran pajak, dll. secara langsung. Lebih informatif tetapi jarang digunakan dalam praktik.</li>
+<li><strong>Klasifikasi Arus Kas (<em>Cash Flow Classification</em>)</strong> — isu-isu klasifikasi: bunga dibayar (operasi vs pendanaan — beda IFRS/US GAAP), dividen diterima, pajak (umumnya operasi), akuisisi (investasi). Pentingnya konsistensi untuk komparabilitas.</li>
+<li><strong>Free Cash Flow (FCF)</strong> — FCFF (<em>Free Cash Flow to Firm</em>) = CFO − capex; FCFE (<em>Free Cash Flow to Equity</em>) = FCFF − pembayaran bunga neto + pinjaman neto. Mengukur kas yang tersedia setelah kebutuhan reinvestasi — metrik sentral untuk valuasi DCF.</li>
+<li><strong>Rasio dan Kualitas Arus Kas (<em>Cash Flow Ratios &amp; Quality</em>)</strong> — rasio kecukupan arus kas, rasio arus kas terhadap laba (CFO/NI), rasio reinvestasi, cash flow coverage. Evaluasi kualitas: apakah CFO konsisten mendukung laba yang dilaporkan, atau apakah ada divergensi yang mengindikasikan masalah kualitas laba.</li>
+<li><strong>Fondasi Valuasi Berbasis Arus Kas (<em>DCF Foundations</em>)</strong> — arus kas sebagai input utama model <em>discounted cash flow</em>. Hubungan antara analisis arus kas historis dan peramalan arus kas masa depan.</li>
+</ol>
+</div>
+
+<h3>3. Kaitan dengan Minggu Sebelumnya dan Sesudahnya / Course Connections</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Transisi Paruh Pertama ke Paruh Kedua / First Half to Second Half Transition</div>
+<p>Paruh pertama kursus (Ch.1–6) membangun pemahaman tentang <strong>apa yang dilaporkan</strong> dan <strong>bagaimana</strong>. Paruh kedua (Ch.7–12) menggunakan pemahaman tersebut untuk <strong>menganalisis dan menilai</strong>. Minggu 08 (Ch.7) adalah titik masuk ke paruh kedua:</p>
+<ul>
+<li><strong>Minggu 01–06</strong> (Understanding the Statements) — fondasi yang telah dibangun: kerangka BAF, kualitas pelaporan, pembiayaan, investasi, investasi antarkorporat, aktivitas operasi → semuanya menghasilkan angka-angka yang kini kita analisis melalui lensa arus kas.</li>
+<li><strong>Minggu 08</strong> (Cash Flow Analysis — MINGGU INI) — analisis mendalam laporan arus kas; konversi laba akrual ke kas; free cash flow; kualitas arus kas.</li>
+<li><strong>Minggu 09</strong> (Profitability Analysis / ROIC) — analisis marjin, ROA, ROE, dekomposisi DuPont — memerlukan pemahaman arus kas untuk mengevaluasi kualitas profitabilitas.</li>
+<li><strong>Minggu 10</strong> (Prospective Analysis) — peramalan laporan keuangan termasuk arus kas masa depan — langsung bergantung pada pemahaman pola arus kas historis dari Ch.7.</li>
+<li><strong>Minggu 12</strong> (Equity Valuation) — model DCF menggunakan arus kas yang diproyeksikan sebagai input utama; FCFF dan FCFE yang dipelajari minggu ini adalah fondasi valuasi.</li>
+</ul>
+</div>
+
+<table>
+<thead>
+<tr><th>Konsep Minggu 08</th><th>Terhubung ke</th><th>Penjelasan Koneksi</th></tr>
+</thead>
+<tbody>
+<tr><td>CFO — Metode Tidak Langsung</td><td>Week 06 — Operating Activities</td><td>Penyesuaian non-kas (depresiasi, perubahan modal kerja) berasal dari pemahaman komponen laba operasional</td></tr>
+<tr><td>CFI — Capex &amp; Akuisisi</td><td>Week 04–05 — Investing &amp; Intercorporate</td><td>Capex, penjualan aset tetap, akuisisi, dan divestasi yang dipelajari sebelumnya kini dilihat dari sisi arus kas</td></tr>
+<tr><td>CFF — Utang &amp; Ekuitas</td><td>Week 03 — Financing Activities</td><td>Penerbitan/pelunasan utang dan ekuitas, pembayaran dividen dari Ch.3 kini dianalisis sebagai arus kas pendanaan</td></tr>
+<tr><td>Cash Flow Quality (CFO/NI)</td><td>Week 06 — Earnings Quality</td><td>Divergensi antara laba dan CFO adalah <em>red flag</em> kualitas laba — memperdalam konsep Ch.2 dan Ch.6</td></tr>
+<tr><td>Free Cash Flow (FCF)</td><td>Week 12 — Equity Valuation</td><td>FCFF/FCFE adalah input langsung untuk model DCF yang akan dipelajari di valuasi ekuitas</td></tr>
+<tr><td>Cash Flow Forecasting</td><td>Week 10 — Prospective Analysis</td><td>Pemahaman pola arus kas historis menjadi basis untuk proyeksi arus kas masa depan</td></tr>
+</tbody>
+</table>
+
+<h3>4. Konsep Kunci yang Harus Dikuasai / Key Concepts to Master</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Formula dan Kerangka Kritis Minggu Ini</div>
+<table>
+<thead><tr><th style="width:30%">Konsep</th><th style="width:40%">Formula / Kerangka</th><th style="width:30%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>CFO (Indirect)</td><td>NI + D&amp;A + non-cash items ± gains/losses ± ΔWC</td><td>Metode utama; pahami setiap penyesuaian</td></tr>
+<tr><td>FCFF</td><td>CFO − Capex (jika bunga di CFF) <em>atau</em> CFO + Int×(1−T) − Capex (jika bunga di CFO)</td><td>Untuk valuasi enterprise via WACC</td></tr>
+<tr><td>FCFE</td><td>FCFF − Int×(1−T) + Net Borrowing</td><td>Untuk valuasi ekuitas langsung</td></tr>
+<tr><td>CFO/NI</td><td>Cash Flow from Operations / Net Income</td><td>≥ 1,0 = laba didukung kas</td></tr>
+<tr><td>Cash Flow Adequacy</td><td>CFO / (Capex + Debt Repay + Dividends)</td><td>≥ 1,0 = mandiri tanpa pendanaan baru</td></tr>
+<tr><td>Reinvestment Ratio</td><td>Capex / Depresiasi</td><td>&gt; 1,0 = growth; &lt; 1,0 = underinvestment?</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5. Cara Mendekati Ringkasan Utama / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Ringkasan / Summary Reading Guidance</div>
+<p>Ringkasan utama minggu ini mengikuti alur Chapter 7 Subramanyam: dimulai dari tujuan dan struktur laporan arus kas, metode tidak langsung (paling penting), metode langsung, isu klasifikasi, free cash flow, rasio arus kas, kualitas arus kas, dan fondasi valuasi berbasis DCF. Saat membaca, selalu tanyakan: <strong>"Apakah arus kas operasi perusahaan secara konsisten mendukung laba yang dilaporkan — dan jika tidak, mengapa?"</strong> Divergensi antara laba dan CFO adalah salah satu sinyal paling penting dalam analisis keuangan. Pahami mekanisme konversi dari akrual ke kas terlebih dahulu (metode tidak langsung), kemudian evaluasi implikasi analitis dari pola arus kas yang Anda temukan.</p>
+</div>
+
+<h3>6. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Dipikir Sebelum dan Sesudah Membaca / Questions to Consider</div>
+<ol>
+<li>Mengapa laporan arus kas diperlukan meskipun perusahaan sudah menyajikan laporan laba rugi — dan informasi apa yang diberikan oleh arus kas yang tidak dapat diperoleh dari laba akrual? (<em>Why is the statement of cash flows necessary alongside the income statement — and what unique information does it provide?</em>)</li>
+<li>Dalam metode tidak langsung, mengapa depresiasi "ditambahkan kembali" ke laba bersih — apakah ini berarti depresiasi adalah sumber kas? Jelaskan mekanisme yang sebenarnya. (<em>In the indirect method, why is depreciation "added back" — is it a source of cash? Explain the actual mechanism.</em>)</li>
+<li>Bagaimana perubahan modal kerja (piutang, persediaan, utang usaha) mempengaruhi rekonsiliasi dari laba bersih ke CFO — dan apa yang ditandai oleh kenaikan piutang yang besar relatif terhadap pendapatan? (<em>How do working capital changes affect the NI-to-CFO reconciliation — and what does a large receivables increase signal?</em>)</li>
+<li>Apa perbedaan antara FCFF (<em>Free Cash Flow to Firm</em>) dan FCFE (<em>Free Cash Flow to Equity</em>) — dan kapan masing-masing lebih tepat digunakan dalam valuasi? (<em>What is the difference between FCFF and FCFE — and when is each more appropriate for valuation?</em>)</li>
+<li>Perusahaan melaporkan laba bersih positif selama tiga tahun berturut-turut tetapi CFO negatif. Apa kemungkinan penyebabnya — dan apa implikasinya bagi analis? (<em>A company reports positive net income for three consecutive years but negative CFO. What are possible causes and implications?</em>)</li>
+<li>Mengapa klasifikasi bunga dibayar berbeda antara US GAAP (selalu operasi) dan IFRS (pilihan operasi atau pendanaan) — dan bagaimana perbedaan ini mempengaruhi komparabilitas lintas perusahaan? (<em>Why does the classification of interest paid differ between US GAAP and IFRS — and how does this affect cross-company comparability?</em>)</li>
+<li>Bagaimana pola arus kas (kombinasi +/− dari CFO, CFI, CFF) dapat digunakan untuk mengidentifikasi tahap siklus hidup perusahaan — dan apa pola yang diharapkan untuk perusahaan mature seperti ICBP? (<em>How do cash flow patterns identify a company's life cycle stage — and what pattern do you expect for a mature firm like ICBP?</em>)</li>
+<li>Dalam konteks valuasi DCF, mengapa analis lebih mempercayai arus kas daripada laba akrual sebagai dasar penilaian — dan apa keterbatasan analisis arus kas yang perlu diwaspadai? (<em>In DCF valuation, why do analysts prefer cash flows over accrual earnings — and what are the limitations of cash flow analysis?</em>)</li>
+<li>Bagaimana akuisisi besar (seperti akuisisi Pinehill oleh ICBP) mempengaruhi laporan arus kas — dan mengapa penting untuk memisahkan arus kas organik dari arus kas terkait akuisisi? (<em>How do major acquisitions affect the cash flow statement — and why must analysts separate organic from acquisition-related cash flows?</em>)</li>
+</ol>
+</div>
+
+<h3>7. Kesalahan Umum yang Harus Dihindari / Common Mistakes to Avoid</h3>
+
+<div class="exb nb">
+<div class="exn">🚩 Kesalahan Konseptual dan Analitis Umum</div>
+<ul>
+<li><strong>Menganggap depresiasi sebagai "sumber kas"</strong> — depresiasi hanya ditambahkan kembali untuk mengeliminasi efek beban non-kas; sumber kas yang sebenarnya adalah penerimaan dari pelanggan.</li>
+<li><strong>Mengabaikan perbedaan klasifikasi IFRS vs US GAAP</strong> — membandingkan CFO perusahaan Indonesia (PSAK/IFRS) langsung dengan perusahaan AS tanpa penyesuaian bunga akan menyesatkan.</li>
+<li><strong>Menyamakan FCFF dengan CFO − Capex tanpa memeriksa klasifikasi bunga</strong> — rumus sederhana ini hanya valid jika bunga diklasifikasikan di CFF; jika bunga di CFO (US GAAP), bunga harus ditambahkan kembali.</li>
+<li><strong>Mengabaikan item non-kas yang signifikan</strong> — aktivitas investasi/pendanaan non-kas (konversi utang, lease PSAK 73) tidak muncul di laporan arus kas tetapi memiliki implikasi ekonomi penting.</li>
+<li><strong>Menilai kualitas arus kas dari satu tahun</strong> — analisis tren multi-tahun jauh lebih informatif daripada snapshot satu periode; volatilitas tahunan bisa menyesatkan.</li>
+</ul>
+</div>
+
+<h3>8. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Apa yang Membedakan S1 dan S2 / Undergraduate vs Graduate Distinction</div>
+<p><strong>Level S1</strong>: Mahasiswa S1 cukup memahami bahwa laporan arus kas memiliki tiga bagian, depresiasi ditambahkan kembali dalam metode tidak langsung, dan free cash flow = CFO − capex. Mereka dapat menyiapkan laporan arus kas sederhana.</p>
+<p><strong>Level S2 (yang diharapkan dari Anda)</strong>: Anda harus mampu (1) <strong>menginterpretasikan secara analitis</strong> — tidak sekadar menghitung CFO tetapi mengevaluasi <em>mengapa</em> CFO berbeda dari laba bersih, komponen mana yang mendorong perbedaan, dan apakah perbedaan tersebut persisten atau temporer; (2) <strong>mengevaluasi kualitas arus kas</strong> — menilai apakah CFO berkelanjutan (<em>sustainable</em>), mengidentifikasi manajemen arus kas (<em>cash flow management</em>) melalui penundaan pembayaran atau percepatan penerimaan di akhir kuartal; (3) <strong>menghubungkan dengan valuasi</strong> — memahami bahwa FCFF/FCFE yang Anda hitung adalah input langsung untuk model DCF, dan bahwa kualitas proyeksi arus kas masa depan bergantung pada pemahaman mendalam terhadap pola arus kas historis; (4) <strong>mengkritisi klasifikasi</strong> — memahami bahwa perusahaan memiliki diskresi dalam mengklasifikasikan arus kas (terutama di bawah IFRS) dan bahwa klasifikasi mempengaruhi metrik kunci seperti CFO dan FCF; dan (5) <strong>menganalisis dalam konteks industri</strong> — membandingkan pola arus kas perusahaan manufaktur (<em>capital-intensive</em>, capex tinggi) dengan perusahaan jasa atau teknologi, dan memahami implikasi untuk valuasi.</p>
+</div>
+
+<h3>9. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perusahaan Minggu Ini: ICBP (Indofood CBP Sukses Makmur)</div>
+<p>Minggu ini kita menggunakan <strong>ICBP (PT Indofood CBP Sukses Makmur Tbk)</strong> untuk mengilustrasikan konsep analisis arus kas. Sebagai salah satu perusahaan <em>consumer goods</em> terbesar di Indonesia dan anak usaha dari Indofood (INDF), ICBP menawarkan kasus yang kaya untuk analisis arus kas:</p>
+<ul>
+<li><strong>Pola CFO Kuat</strong>: Sebagai perusahaan <em>consumer staples</em> yang mature, ICBP konsisten menghasilkan CFO positif yang signifikan — tipikal perusahaan dengan brand kuat dan siklus kas pendek dalam industri makanan.</li>
+<li><strong>Dampak Akuisisi Pinehill</strong>: Akuisisi Pinehill Company pada 2020 (~USD 2,99 miliar) menciptakan dampak besar pada CFI dan CFF di tahun-tahun berikutnya — menambah kompleksitas analisis arus kas dengan membedakan cash flow organik vs terkait akuisisi.</li>
+<li><strong>Multi-Segmen</strong>: ICBP beroperasi di berbagai segmen (mie instan, dairy, makanan ringan, minuman, nutrisi &amp; makanan khusus) yang masing-masing memiliki karakteristik arus kas berbeda — memberikan contoh analisis arus kas pada tingkat segmen.</li>
+<li><strong>Free Cash Flow dan Kebijakan Dividen</strong>: Pola FCFF dan kebijakan dividen ICBP menggambarkan trade-off antara reinvestasi untuk pertumbuhan dan pengembalian kepada pemegang saham — relevan untuk valuasi DCF.</li>
+</ul>
+<p>📁 Lihat file <em>Indonesian Company Examples</em> untuk analisis detail menggunakan data aktual ICBP 2021–2023.</p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-07/study-guide.html">← Week 07</a>
+  
+  
+  <a href="../week-09/study-guide.html">Week 09 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 01 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 01: Syllabus and Introduction to FSA</h1>
+  <div class="meta">
+    <span>📚 Silabus dan pengenalan ALK</span>
+    
+    <span>📖 Subramanyam Ch. 1</span>
+    
+    
+    <span>📗 Palepu Ch. 1</span>
+    
+    
+    <span>🏢 UNVR — Unilever Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Framework for financial statement analysis; role of accounting information in capital markets</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 01 Study Guide — Introduction to Financial Statement Analysis -->
+<!-- Subramanyam Ch.1 (Primary) | Palepu Ch.1 (Supplementary) | No articles this week -->
+
+<h2>Panduan Belajar Minggu 01: Pengenalan Analisis Laporan Keuangan</h2>
+<p><em>Week 01 Study Guide: Introduction to Financial Statement Analysis</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Membangun kerangka konseptual (<em>conceptual framework</em>) yang menjadi fondasi seluruh mata kuliah. Minggu ini bukan sekadar "bab pembuka" — ini adalah <strong>peta jalan intelektual</strong> yang menentukan bagaimana setiap topik di minggu-minggu berikutnya harus dipahami, dihubungkan, dan dianalisis secara kritis.</p>
+<p><em>Build the conceptual framework that serves as the foundation for the entire course. This is not just an "introductory chapter" — it is the intellectual roadmap that determines how every subsequent weekly topic should be understood, connected, and critically analyzed.</em></p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def">
+<div class="den">Langkah 1: Baca Subramanyam Chapter 1 (Bacaan Utama)</div>
+<div class="did">
+<p>Ini adalah teks utama. Baca secara menyeluruh dengan fokus pada:</p>
+<ul>
+<li><strong>Business Analysis Framework</strong> (Exhibit 1.4) — empat komponen analisis bisnis: lingkungan &amp; strategi bisnis, analisis akuntansi, analisis keuangan, dan analisis prospektif</li>
+<li><strong>Empat aktivitas bisnis</strong>: Planning → Financing → Investing → Operating — dan bagaimana masing-masing tercermin dalam laporan keuangan</li>
+<li><strong>Empat laporan keuangan utama</strong>: Balance Sheet, Income Statement, Statement of Shareholders' Equity, Cash Flow Statement — serta keterkaitan (articulation) di antara keempatnya</li>
+<li><strong>Teknik analisis dasar</strong>: Comparative analysis, common-size analysis, ratio analysis — fondasi yang akan digunakan di semua minggu berikutnya</li>
+<li><strong>Model valuasi pengantar</strong>: DDM, DCF, Residual Income — preview untuk Minggu 12</li>
+<li><strong>Efficient Market Hypothesis (EMH)</strong> — mengapa FSA tetap relevan meskipun pasar "efisien"</li>
+</ul>
+</div>
+</div>
+
+<div class="def">
+<div class="den">Langkah 2: Baca Palepu Chapter 1 (Bacaan Pelengkap)</div>
+<div class="did">
+<p>Palepu memberikan perspektif yang sedikit berbeda — lebih menekankan pada <strong>business strategy analysis</strong> dan <strong>framework analisis berbasis IFRS</strong>. Gunakan Palepu untuk:</p>
+<ul>
+<li>Memperkuat pemahaman tentang hubungan antara strategi bisnis dan kinerja keuangan</li>
+<li>Memahami bagaimana "competitive advantage" tercermin dalam angka keuangan</li>
+<li>Melihat perspektif internasional (non-US GAAP) yang lebih relevan bagi konteks Indonesia (PSAK berbasis IFRS)</li>
+</ul>
+<p><em>Tidak perlu menghafal detail Palepu — gunakan sebagai pengaya wawasan dan pembanding perspektif.</em></p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">Hierarki Konsep Minggu 01</div>
+<p>Pahami konsep-konsep ini secara bertingkat — yang di atas adalah fondasi bagi yang di bawah:</p>
+<ol>
+<li><strong>Business Analysis</strong> — kerangka besar: evaluasi prospek dan risiko perusahaan untuk keputusan bisnis</li>
+<li><strong>Financial Statement Analysis</strong> — sub-set dari business analysis yang menggunakan laporan keuangan sebagai data utama</li>
+<li><strong>Four Business Activities</strong> — Planning, Financing, Investing, Operating — struktur logis yang menghubungkan aktivitas perusahaan dengan laporan keuangan</li>
+<li><strong>Four Financial Statements</strong> — neraca, laba rugi, perubahan ekuitas, arus kas — "bahasa" yang digunakan perusahaan untuk berkomunikasi</li>
+<li><strong>Analysis Techniques</strong> — comparative, common-size, ratio — alat operasional untuk mengekstrak informasi dari laporan keuangan</li>
+<li><strong>Valuation</strong> — tujuan akhir seluruh proses: mengestimasi nilai intrinsik perusahaan</li>
+</ol>
+</div>
+
+<h3>3. Koneksi dengan Minggu-Minggu Berikutnya / Course Connections</h3>
+
+<table class="nb">
+<thead><tr><th style="width:15%">Konsep Minggu 01</th><th style="width:25%">Dikembangkan di Minggu</th><th style="width:60%">Penjelasan Koneksi</th></tr></thead>
+<tbody>
+<tr><td><strong>Financing Activities</strong></td><td>Minggu 3 (Ch.3)</td><td>Analisis mendalam pendanaan: struktur modal, utang vs ekuitas, off-balance-sheet items. Altman Z-score sebagai aplikasi rasio keuangan untuk prediksi kebangkrutan.</td></tr>
+<tr><td><strong>Investing Activities</strong></td><td>Minggu 4-5 (Ch.4-5)</td><td>PP&amp;E, intangible assets, intercorporate investments. Bagaimana keputusan investasi membentuk neraca.</td></tr>
+<tr><td><strong>Operating Activities</strong></td><td>Minggu 6 (Ch.6)</td><td>Revenue recognition, operating expenses, earnings persistence. Inti dari income statement analysis.</td></tr>
+<tr><td><strong>Ratio Analysis</strong></td><td>Minggu 9 (Ch.8)</td><td>DuPont decomposition, ROE, ROIC — rasio-rasio yang diperkenalkan di Ch.1 akan dianalisis secara mendalam.</td></tr>
+<tr><td><strong>Valuation Models</strong></td><td>Minggu 12 (Ch.11)</td><td>DDM, DCF, Residual Income yang diperkenalkan di Ch.1 akan diterapkan secara penuh untuk equity valuation.</td></tr>
+<tr><td><strong>EMH</strong></td><td>Minggu 12-13</td><td>Relevansi FSA dalam konteks pasar efisien — market anomalies, information asymmetry, behavioral finance implications.</td></tr>
+</tbody>
+</table>
+
+<h3>4. Bagaimana Mendekati Main Summary / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Main Summary untuk Seluruh Mata Kuliah</div>
+<p>Main Summary untuk setiap minggu <strong>bukan ringkasan biasa</strong> — ini adalah <em>distilasi analitis</em> dari bab-bab ebook yang relevan, dirancang untuk tingkat magister. Berikut cara memanfaatkannya secara optimal:</p>
+<ol>
+<li><strong>Baca Study Guide terlebih dahulu</strong> — pahami konteks, tujuan, dan fokus minggu tersebut</li>
+<li><strong>Gunakan Main Summary sebagai referensi struktural</strong> — bukan pengganti membaca bab asli, melainkan pemandu untuk memahami apa yang penting dan mengapa</li>
+<li><strong>Perhatikan definition boxes (<code>.def</code>)</strong> — ini adalah konsep inti yang harus dikuasai</li>
+<li><strong>Pelajari formula boxes (<code>.fbox</code>)</strong> — tidak cukup menghafal rumus; pahami apa yang diukur dan mengapa</li>
+<li><strong>Analisis Colgate-Palmolive illustrations (<code>.cg</code>)</strong> — contoh aplikasi nyata dari konsep</li>
+<li><strong>Bandingkan dengan Indonesian examples (<code>.id-box</code>)</strong> — kontekstualisasi ke pasar modal Indonesia</li>
+<li><strong>Kerjakan practice questions (<code>.qb</code>)</strong> — untuk menguji pemahaman, bukan sekadar menghafal</li>
+</ol>
+</div>
+
+<h3>5. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<p class="qn">Pertanyaan Konseptual yang Harus Bisa Dijawab Setelah Minggu Ini:</p>
+<ol>
+<li>Mengapa analisis laporan keuangan dianggap sebagai <em>subset</em> dari business analysis, bukan kegiatan yang berdiri sendiri? Apa implikasinya bagi analis?</li>
+<li>Bagaimana empat aktivitas bisnis (planning, financing, investing, operating) terartikulasi dalam empat laporan keuangan utama? Jelaskan dengan contoh konkret.</li>
+<li>Apa perbedaan fundamental antara credit analysis dan equity analysis dalam hal orientasi risiko, time horizon, dan metrik kunci?</li>
+<li>Mengapa akuntansi akrual (<em>accrual accounting</em>) lebih informatif daripada akuntansi berbasis kas untuk FSA, meskipun juga mengandung risiko estimasi?</li>
+<li>Jelaskan empat komponen business analysis (Exhibit 1.4). Mengapa <em>urutan</em> komponen tersebut penting?</li>
+<li>Dalam konteks EMH, mengapa fundamental analysis masih dianggap bernilai? Gunakan setidaknya dua argumen.</li>
+<li>Bandingkan kerangka regulasi pelaporan keuangan di AS (SEC, FASB, US GAAP) dengan Indonesia (OJK, DSAK-IAI, PSAK). Apa implikasinya bagi comparability?</li>
+</ol>
+</div>
+
+<h3>6. Catatan untuk Tingkat Magister / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">⚠️ Apa yang Membedakan Pemahaman S1 vs S2</div>
+<ul>
+<li><strong>S1:</strong> Menghafal definisi, mengidentifikasi komponen, menghitung rasio secara mekanis</li>
+<li><strong>S2:</strong> Memahami <em>mengapa</em> kerangka disusun dengan cara tertentu, mengkritik keterbatasan model, menghubungkan teori dengan bukti empiris, dan mengaplikasikan pada kasus nyata dengan judgment analitis</li>
+</ul>
+<p>Contoh: Di S1 cukup tahu bahwa ROE = Net Income / Equity. Di S2, Anda harus memahami <em>mengapa ROE Colgate mendekati 100%</em> (karena equity base kecil akibat massive share buybacks), <em>apakah itu mencerminkan kinerja sesungguhnya</em> (tidak sepenuhnya — leverage effect), dan <em>bagaimana menganalisis hal serupa di perusahaan Indonesia</em> (misal: UNVR dengan payout ratio sangat tinggi).</p>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Konteks Indonesia Minggu Ini</div>
+<p><strong>Perusahaan fokus: UNVR (Unilever Indonesia Tbk)</strong></p>
+<p>UNVR dipilih sebagai <em>parallel case</em> untuk Colgate-Palmolive karena keduanya adalah perusahaan consumer goods global dengan model bisnis serupa. Gunakan UNVR untuk:</p>
+<ul>
+<li>Memahami bagaimana business analysis framework berlaku di konteks IDX</li>
+<li>Membandingkan struktur laporan keuangan PSAK vs US GAAP</li>
+<li>Melihat bagaimana teknik analisis dasar (common-size, ratio) memberikan insight berbeda di pasar berkembang</li>
+</ul>
+<p><em>Lihat file Indonesian Company Examples untuk analisis data UNVR yang lebih mendalam.</em></p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <span></span>
+  
+  
+  <a href="../week-02/study-guide.html">Week 02 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

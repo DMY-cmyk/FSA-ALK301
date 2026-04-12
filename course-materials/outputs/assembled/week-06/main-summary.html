@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 06 — Main Summary</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 06: Operating Activities Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis aktivitas operasi</span>
+    
+    <span>📖 Subramanyam Ch. 6</span>
+    
+    
+    <span>📗 Palepu Ch. 4</span>
+    
+    
+    <span>🏢 TLKM — Telkom Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Revenue recognition; operating expenses; income measurement; non-recurring items; earnings persistence</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<div id="s1" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Pendahuluan: Mengapa Aktivitas Operasi Penting / Why Operating Activities Matter</h2>
+
+<p>Chapter 6 Subramanyam membahas inti dari kinerja perusahaan: <strong>aktivitas operasi</strong> (<em>operating activities</em>) — yaitu seluruh transaksi dan peristiwa yang berkaitan dengan menghasilkan pendapatan dan menjalankan bisnis inti perusahaan. Jika chapter-chapter sebelumnya berfokus pada <em>apa yang dimiliki</em> perusahaan (aset, investasi) dan <em>bagaimana membiayainya</em> (utang, ekuitas), chapter ini menjawab pertanyaan fundamental: <strong>seberapa baik perusahaan menggunakan sumber daya tersebut untuk menghasilkan laba?</strong></p>
+
+<div class="ibox nb"><div class="ibt">📌 Posisi Chapter 6 dalam Kerangka Kursus</div>
+<p>Chapter 6 adalah titik transisi dari analisis neraca ke analisis kinerja. Seluruh elemen neraca yang telah dipelajari — utang yang menimbulkan bunga (Ch.3), aset tetap yang menimbulkan depresiasi (Ch.4), goodwill dari akuisisi (Ch.5) — kini muncul sebagai <strong>beban</strong> dalam laporan laba rugi. Pemahaman yang mendalam tentang aktivitas operasi adalah prasyarat untuk seluruh analisis selanjutnya: arus kas (Ch.7/8), profitabilitas (Ch.9), peramalan (Ch.10), dan valuasi (Ch.11-12).</p>
+<p><strong>Ch.1 (Framework) → Ch.2 (Reporting Quality) → Ch.3 (Financing) → Ch.4 (Investing) → Ch.5 (Intercorporate) → <u>Ch.6 (Operating Activities — MINGGU INI)</u> → Ch.7–12 (Analysis &amp; Valuation)</strong></p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<ul>
+<li>Memahami prinsip pengakuan pendapatan di bawah ASC 606/IFRS 15 — model lima langkah dan implikasi analitisnya</li>
+<li>Menganalisis beban pokok penjualan (COGS) dan dampak metode persediaan terhadap pengukuran laba</li>
+<li>Mengevaluasi komponen beban operasional: SG&amp;A, R&amp;D, depresiasi, dan alokasi biaya</li>
+<li>Mengidentifikasi dan mengevaluasi item non-berulang: <em>discontinued operations</em>, <em>restructuring charges</em>, <em>impairments</em></li>
+<li>Memahami konsep persistensi laba dan kualitas laba — implikasinya untuk valuasi</li>
+<li>Menganalisis akuntansi pajak penghasilan: <em>deferred tax assets/liabilities</em>, tarif pajak efektif</li>
+<li>Mengevaluasi dampak kompensasi karyawan berbasis saham terhadap laba</li>
+<li>Memahami perbedaan <em>net income</em> vs <em>comprehensive income</em></li>
+<li>Menerapkan kerangka <em>accounting analysis</em> Palepu untuk mengevaluasi kualitas pelaporan operasional</li>
+</ul>
+</div>
+
+<table class="nb">
+<thead><tr><th style="width:25%">Topik Utama</th><th style="width:40%">Cakupan</th><th style="width:35%">Relevansi untuk Analis</th></tr></thead>
+<tbody>
+<tr><td><strong>Revenue Recognition</strong></td><td>ASC 606/IFRS 15 five-step model; timing; variable consideration; contract modifications</td><td>Baris teratas laba rugi; kualitas pendapatan menentukan kualitas seluruh earnings</td></tr>
+<tr><td><strong>COGS &amp; Gross Profit</strong></td><td>Manufacturing costs; inventory methods (FIFO, LIFO, avg); cost flow assumptions</td><td>Gross margin sebagai indikator pertama profitabilitas dan pricing power</td></tr>
+<tr><td><strong>Operating Expenses</strong></td><td>SG&amp;A, R&amp;D, advertising, depreciation allocation</td><td>Efisiensi operasional; trade-off antara investasi pertumbuhan vs profitabilitas jangka pendek</td></tr>
+<tr><td><strong>Non-Recurring Items</strong></td><td>Discontinued ops, restructuring, impairments, unusual items</td><td>Harus diidentifikasi dan diisolasi untuk memperoleh core earnings</td></tr>
+<tr><td><strong>Earnings Persistence</strong></td><td>Permanent vs transitory earnings; earnings quality assessment</td><td>Langsung menentukan P/E multiple dan valuasi</td></tr>
+<tr><td><strong>Income Tax</strong></td><td>DTA, DTL, effective tax rate, valuation allowance</td><td>Tarif pajak efektif mempengaruhi laba bersih; DTA/DTL mengindikasikan future tax flows</td></tr>
+<tr><td><strong>Compensation &amp; Other</strong></td><td>Stock options, RSUs, pensions; interest income; FX effects</td><td>Beban non-kas yang material; dampak pada EPS dilutif</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Pengakuan Pendapatan / Revenue Recognition</h2>
+
+<p>Pengakuan pendapatan (<em>revenue recognition</em>) adalah salah satu area paling penting dan paling rentan terhadap manipulasi dalam pelaporan keuangan. Pendapatan adalah baris teratas laporan laba rugi — <strong>kualitas seluruh angka di bawahnya bergantung pada keandalan pengakuan pendapatan</strong>. Sejak penerapan ASC 606 (US GAAP) dan IFRS 15 (yang diadopsi Indonesia sebagai PSAK 72), kerangka pengakuan pendapatan telah terstandarisasi menjadi model lima langkah yang berlaku lintas industri.</p>
+
+<h3>2.1 Model Lima Langkah / Five-Step Model (ASC 606 / IFRS 15 / PSAK 72)</h3>
+
+<div class="def"><div class="den">Step 1: Identifikasi Kontrak dengan Pelanggan / Identify the Contract with a Customer</div><div class="did">Kontrak adalah perjanjian antara dua pihak atau lebih yang menciptakan hak dan kewajiban yang dapat dipaksakan. Untuk diakui di bawah ASC 606/IFRS 15, kontrak harus memenuhi kriteria: (a) disetujui para pihak dan komitmen untuk melaksanakan kewajiban masing-masing, (b) hak atas barang/jasa dan syarat pembayaran dapat diidentifikasi, (c) kontrak memiliki substansi komersial, dan (d) kolektibilitas atas imbalan yang menjadi hak entitas bersifat <em>probable</em>. Kontrak dapat tertulis, lisan, atau tersirat oleh praktik bisnis.</div></div>
+
+<div class="def"><div class="den">Step 2: Identifikasi Kewajiban Kinerja / Identify Performance Obligations</div><div class="did"><em>Performance obligation</em> adalah janji dalam kontrak untuk menyerahkan barang atau jasa yang bersifat <strong>distinct</strong> (dapat dibedakan) kepada pelanggan. Barang/jasa bersifat distinct jika: (a) pelanggan dapat memperoleh manfaat darinya secara mandiri atau bersama sumber daya lain yang tersedia, dan (b) janji tersebut dapat diidentifikasi secara terpisah dari janji lain dalam kontrak. Contoh: dalam kontrak telekomunikasi bundel (handset + layanan data 24 bulan), handset dan layanan data merupakan dua <em>performance obligations</em> terpisah karena masing-masing distinct.</div></div>
+
+<div class="def"><div class="den">Step 3: Tentukan Harga Transaksi / Determine the Transaction Price</div><div class="did">Harga transaksi adalah jumlah imbalan (<em>consideration</em>) yang diharapkan diterima entitas sebagai ganti penyerahan barang/jasa. Kompleksitas muncul dari: <strong>variable consideration</strong> (diskon, rabat, penalti, bonus kinerja — diestimasi menggunakan <em>expected value</em> atau <em>most likely amount</em>), <strong>komponen pembiayaan signifikan</strong> (jika timing pembayaran berbeda signifikan dari timing transfer), <strong>non-cash consideration</strong>, dan <strong>consideration payable to customer</strong> (yang mengurangi harga transaksi).</div></div>
+
+<div class="def"><div class="den">Step 4: Alokasikan Harga Transaksi / Allocate the Transaction Price</div><div class="did">Jika kontrak memiliki lebih dari satu <em>performance obligation</em>, harga transaksi dialokasikan ke masing-masing kewajiban kinerja berdasarkan <strong>relative standalone selling prices</strong> (harga jual berdiri sendiri relatif). Jika harga standalone tidak dapat diamati secara langsung, entitas harus mengestimasinya menggunakan <em>adjusted market assessment</em>, <em>expected cost plus margin</em>, atau <em>residual approach</em> (dalam situasi terbatas). Alokasi ini kritis karena menentukan berapa banyak pendapatan yang diakui untuk setiap komponen.</div></div>
+
+<div class="def"><div class="den">Step 5: Akui Pendapatan Saat Kewajiban Terpenuhi / Recognize Revenue When Obligation is Satisfied</div><div class="did">Pendapatan diakui saat (atau selama) <em>performance obligation</em> terpenuhi, yaitu saat <strong>kendali</strong> (<em>control</em>) atas barang/jasa berpindah ke pelanggan. Pengendalian berpindah pada <strong>titik waktu</strong> (<em>point in time</em>) — misalnya penyerahan barang — atau <strong>sepanjang waktu</strong> (<em>over time</em>) — jika pelanggan secara simultan menerima dan mengkonsumsi manfaat, atau jika aset yang dibangun tidak memiliki penggunaan alternatif bagi entitas dan entitas memiliki hak atas pembayaran untuk kinerja yang telah diselesaikan.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Contoh Aplikasi: Telekomunikasi (TLKM)</div>
+<p>TLKM menjual paket bundel: SIM card + layanan data 12 bulan + akses IndiHome. Di bawah PSAK 72:</p>
+<ul>
+<li><strong>Step 1</strong>: Kontrak langganan teridentifikasi</li>
+<li><strong>Step 2</strong>: Dua+ performance obligations — (a) SIM/perangkat (distinct), (b) layanan data bulanan (serangkaian layanan distinct yang serupa), (c) IndiHome broadband</li>
+<li><strong>Step 3</strong>: Harga transaksi termasuk biaya aktivasi, biaya bulanan, dan potensi diskon promo (variable consideration)</li>
+<li><strong>Step 4</strong>: Alokasi berdasarkan relative standalone selling prices — SIM card/perangkat mungkin hanya Rp 50.000, layanan data Rp 100.000/bulan</li>
+<li><strong>Step 5</strong>: Pendapatan SIM/perangkat diakui saat penyerahan (point in time); layanan data diakui over time setiap bulan</li>
+</ul>
+</div>
+
+<h3>2.2 Isu-Isu Kritis dalam Pengakuan Pendapatan</h3>
+
+<div class="def"><div class="den">Variable Consideration / Imbalan Variabel</div><div class="did">Ketika harga transaksi mencakup elemen variabel (diskon volume, rabat, pengembalian produk, bonus kinerja), entitas harus mengestimasi jumlah imbalan variabel menggunakan salah satu dari dua metode: <strong>expected value</strong> (probabilitas tertimbang dari berbagai skenario — cocok untuk portofolio kontrak besar) atau <strong>most likely amount</strong> (skenario paling mungkin — cocok untuk kontrak dengan dua kemungkinan outcome). Estimasi ini dibatasi oleh <em>constraint</em>: imbalan variabel hanya dimasukkan sejauh "highly probable" bahwa pembalikan signifikan tidak akan terjadi.</div></div>
+
+<div class="def"><div class="den">Contract Modifications / Modifikasi Kontrak</div><div class="did">Modifikasi kontrak — perubahan dalam ruang lingkup, harga, atau keduanya — diperlakukan sebagai: (a) <strong>kontrak terpisah</strong> jika scope bertambah dengan barang/jasa yang distinct dan harga mencerminkan standalone selling price; atau (b) <strong>modifikasi kontrak yang ada</strong> — melalui pendekatan kumulatif (<em>cumulative catch-up</em>) atau prospektif, tergantung apakah barang/jasa yang tersisa distinct dari yang sudah ditransfer. Modifikasi yang sering terjadi di industri telekomunikasi (upgrade paket, perpanjangan kontrak) memerlukan evaluasi cermat.</div></div>
+
+<div class="def"><div class="den">Principal vs Agent Consideration / Pertimbangan Prinsipal vs Agen</div><div class="did">Entitas harus menentukan apakah ia bertindak sebagai <strong>prinsipal</strong> (mengendalikan barang/jasa sebelum transfer ke pelanggan — mengakui pendapatan bruto) atau <strong>agen</strong> (memfasilitasi transaksi — mengakui pendapatan neto/komisi saja). Indikator kontrol meliputi: tanggung jawab utama atas pemenuhan, risiko persediaan, dan diskresi penetapan harga. Klasifikasi ini secara material mempengaruhi revenue line tanpa mempengaruhi laba. Contoh: TLKM sebagai distributor konten digital — apakah pendapatan diakui bruto atau neto?</div></div>
+
+<div class="ibox nb"><div class="ibt">⚠️ Revenue Recognition Red Flags / Tanda Bahaya</div>
+<ul>
+<li><strong>Pertumbuhan pendapatan yang tidak selaras dengan arus kas operasi</strong> — pendapatan naik tetapi piutang naik lebih cepat, mengindikasikan potensi <em>front-loading</em></li>
+<li><strong>Perubahan kebijakan pengakuan pendapatan</strong> — terutama yang meningkatkan pendapatan tanpa perubahan bisnis substansial</li>
+<li><strong><em>Channel stuffing</em></strong> — memaksakan penjualan ke distributor di akhir kuartal untuk mencapai target</li>
+<li><strong>Bill-and-hold transactions</strong> — mengakui pendapatan sebelum barang dikirim</li>
+<li><strong>Percentage-of-completion yang agresif</strong> — overestimasi tingkat penyelesaian kontrak jangka panjang</li>
+<li><strong>Related-party revenue</strong> — pendapatan dari pihak berelasi yang mungkin tidak mencerminkan arm's-length transaction</li>
+<li><strong>Gross vs net revenue reclassification</strong> — mengklasifikasikan diri sebagai prinsipal (pendapatan bruto) padahal substansi ekonomi sebagai agen</li>
+</ul>
+</div>
+
+<h3>2.3 Pengakuan Pendapatan untuk Kontrak Khusus / Revenue Recognition for Special Contracts</h3>
+
+<div class="def"><div class="den">Kontrak Konstruksi Jangka Panjang / Long-Term Construction Contracts</div><div class="did">Untuk kontrak di mana transfer kendali terjadi sepanjang waktu (<em>over time</em>), entitas mengakui pendapatan berdasarkan tingkat penyelesaian (<em>progress toward satisfaction of performance obligation</em>). Dua metode pengukuran progress: <strong>output methods</strong> — berdasarkan nilai yang ditransfer ke pelanggan (survey penyelesaian, milestone, unit yang diproduksi); <strong>input methods</strong> — berdasarkan usaha yang telah dikeluarkan relatif terhadap total usaha yang diperkirakan (biaya yang telah dikeluarkan / total estimasi biaya — sebelumnya dikenal sebagai <em>percentage-of-completion</em>). Estimasi total biaya dan total pendapatan memerlukan judgment signifikan — perubahan estimasi diperlakukan secara prospektif (<em>cumulative catch-up</em> di periode berjalan).</div></div>
+
+<div class="def"><div class="den">Pendapatan Lisensi / License Revenue</div><div class="did">IFRS 15/ASC 606 membedakan dua jenis lisensi: (a) <strong>right to access</strong> — lisensi yang memberikan hak atas kekayaan intelektual yang berubah secara substansial sepanjang periode lisensi (revenue diakui over time); dan (b) <strong>right to use</strong> — lisensi yang memberikan hak atas kekayaan intelektual sebagaimana adanya pada titik waktu tertentu (revenue diakui point in time). Pembedaan ini material untuk industri software, media, dan farmasi.</div></div>
+
+<div class="def"><div class="den">Returns, Refunds, dan Warranties / Pengembalian, Penggantian, dan Garansi</div><div class="did">Entitas yang memberikan hak pengembalian harus: (a) mengakui pendapatan pada jumlah yang diharapkan (setelah mengurangi estimasi pengembalian), (b) membentuk <em>refund liability</em>, dan (c) mengakui <em>asset for right of return</em> (biaya persediaan yang akan diterima kembali, dikurangi biaya pemulihan). Untuk garansi: <strong>assurance-type warranty</strong> (menjamin produk sesuai spesifikasi) bukan performance obligation terpisah — diakuntansikan sebagai provisi (IAS 37/ASC 460); <strong>service-type warranty</strong> (layanan tambahan di luar assurance standar) merupakan performance obligation terpisah — pendapatan dialokasikan dan diakui over time.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Pendapatan Ditangguhkan (Contract Liabilities / Deferred Revenue)</div>
+<p><em>Contract liability</em> (sebelumnya disebut <em>deferred revenue</em> atau <em>unearned revenue</em>) muncul ketika perusahaan menerima pembayaran sebelum memenuhi kewajiban kinerja. Contoh: langganan tahunan TLKM yang dibayar di muka — kas masuk Rp 1,2 juta, tetapi pendapatan diakui Rp 100.000/bulan selama 12 bulan. Dari perspektif analitis, peningkatan <em>deferred revenue</em> adalah sinyal <strong>positif</strong> — artinya perusahaan menerima kas dari pelanggan yang akan diakui sebagai pendapatan di masa depan. Sebaliknya, penurunan <em>deferred revenue</em> tanpa peningkatan revenue yang sepadan bisa mengindikasikan pemercepatan pengakuan pendapatan.</p>
+</div>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Beban Pokok Penjualan / Cost of Goods Sold (COGS)</h2>
+
+<p>Beban pokok penjualan (<em>COGS</em>) merepresentasikan biaya langsung yang terkait dengan produksi barang atau penyediaan jasa yang dijual. Bagi perusahaan manufaktur, COGS mencakup bahan baku, tenaga kerja langsung, dan overhead manufaktur. Bagi perusahaan jasa seperti TLKM, "cost of revenue" mencakup biaya jaringan, interkoneksi, dan biaya langsung penyediaan layanan.</p>
+
+<h3>3.1 Komponen Biaya Manufaktur</h3>
+
+<div class="def"><div class="den">Biaya Manufaktur / Manufacturing Costs</div><div class="did">COGS untuk perusahaan manufaktur terdiri dari tiga komponen utama: (1) <strong>bahan baku</strong> (<em>raw materials</em>) — biaya material yang secara fisik menjadi bagian dari produk jadi; (2) <strong>tenaga kerja langsung</strong> (<em>direct labor</em>) — upah pekerja yang terlibat langsung dalam proses produksi; dan (3) <strong>overhead manufaktur</strong> (<em>manufacturing overhead</em>) — biaya produksi tidak langsung seperti depresiasi mesin, utilitas pabrik, supervisi, dan pemeliharaan. COGS dihitung sebagai: Persediaan Awal + Pembelian/Biaya Produksi − Persediaan Akhir.</div></div>
+
+<h3>3.2 Metode Persediaan dan Dampaknya / Inventory Methods and Impact</h3>
+
+<div class="def"><div class="den">Asumsi Arus Biaya / Cost Flow Assumptions</div><div class="did">Pilihan metode persediaan menentukan unit mana yang "dianggap" terjual dan mana yang tetap di persediaan: <strong>FIFO</strong> (<em>First-In, First-Out</em>) — unit paling awal dianggap terjual lebih dulu; COGS mencerminkan biaya lama, persediaan mencerminkan biaya terkini. <strong>LIFO</strong> (<em>Last-In, First-Out</em>) — unit terbaru dianggap terjual; COGS mencerminkan biaya terkini, persediaan mencerminkan biaya lama. <em>LIFO tidak diizinkan di bawah IFRS/PSAK</em>. <strong>Weighted Average</strong> — biaya rata-rata tertimbang; berada di antara FIFO dan LIFO.</div></div>
+
+<table>
+<thead><tr><th style="width:20%">Metode</th><th style="width:20%">Dampak pada COGS</th><th style="width:20%">Dampak pada Persediaan</th><th style="width:20%">Dampak pada Laba</th><th style="width:20%">Dampak pada Pajak</th></tr></thead>
+<tbody>
+<tr><td><strong>FIFO</strong></td><td>Biaya lama (lebih rendah saat inflasi)</td><td>Biaya terkini (lebih tinggi)</td><td>Laba lebih tinggi</td><td>Pajak lebih tinggi</td></tr>
+<tr><td><strong>LIFO</strong></td><td>Biaya terkini (lebih tinggi saat inflasi)</td><td>Biaya lama (lebih rendah)</td><td>Laba lebih rendah</td><td>Pajak lebih rendah</td></tr>
+<tr><td><strong>Avg Cost</strong></td><td>Rata-rata</td><td>Rata-rata</td><td>Di antara FIFO &amp; LIFO</td><td>Di antara FIFO &amp; LIFO</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb"><div class="ibt">📌 LIFO Reserve dan Penyesuaian Analis</div>
+<p>Perusahaan yang menggunakan LIFO (khususnya di bawah US GAAP) wajib mengungkapkan <strong>LIFO reserve</strong> — selisih antara nilai persediaan LIFO dan nilai FIFO. Analis menggunakan LIFO reserve untuk: (a) mengkonversi persediaan LIFO ke FIFO untuk komparabilitas, (b) menghitung <em>LIFO liquidation</em> — ketika persediaan berkurang dan lapisan biaya lama masuk COGS, menghasilkan laba tinggi yang tidak sustainable, dan (c) mengestimasi dampak pajak dari konversi metode. Di Indonesia, LIFO tidak diizinkan sehingga isu ini relevan hanya untuk membandingkan perusahaan Indonesia (FIFO/avg) dengan perusahaan AS (LIFO).</p>
+</div>
+
+<h3>3.3 Analisis Gross Margin / Gross Margin Analysis</h3>
+
+<div class="def"><div class="den">Margin Laba Kotor / Gross Profit Margin</div><div class="did">Gross profit margin (Laba Kotor / Pendapatan) adalah indikator pertama profitabilitas dan <em>pricing power</em> perusahaan. Tren penurunan gross margin dapat mengindikasikan: (a) tekanan harga dari kompetisi, (b) kenaikan biaya input tanpa kemampuan meneruskan ke pelanggan (<em>cost pass-through</em>), (c) perubahan bauran produk (<em>product mix</em>) ke produk bermargin rendah, (d) LIFO liquidation yang menghasilkan COGS rendah sementara. Tren peningkatan gross margin menunjukkan pricing power yang membaik atau efisiensi produksi. Untuk perusahaan jasa seperti TLKM, "gross margin" dihitung sebagai (Revenue − Cost of Revenue) / Revenue.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Contoh Analisis: COGS untuk Perusahaan Jasa (Telekomunikasi)</div>
+<p>Untuk perusahaan telekomunikasi seperti TLKM, "Cost of Revenue" (beban pokok pendapatan) bukanlah biaya bahan baku melainkan biaya penyediaan layanan: biaya jaringan (tower lease, bandwidth, fiber optic), biaya interkoneksi ke operator lain, biaya konten digital, dan biaya langsung layanan enterprise. Gross margin TLKM 2023: (149,2 − 83,8) / 149,2 = ~43,9%. Angka ini mencerminkan intensitas biaya infrastruktur telekomunikasi dan positioning TLKM di pasar.</p>
+</div>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Beban Operasional / Operating Expenses</h2>
+
+<p>Di luar COGS, perusahaan menanggung berbagai beban operasional untuk menjalankan bisnis. Analisis komponen beban operasional membantu memahami efisiensi operasional, prioritas strategis, dan potensi ruang perbaikan margin.</p>
+
+<h3>4.1 Selling, General &amp; Administrative (SG&amp;A)</h3>
+
+<div class="def"><div class="den">Beban Penjualan, Umum &amp; Administrasi / SG&amp;A Expenses</div><div class="did">SG&amp;A mencakup seluruh beban operasional di luar COGS: (a) <strong>beban penjualan</strong> (<em>selling expenses</em>) — gaji tenaga penjualan, komisi, biaya distribusi, biaya iklan; (b) <strong>beban umum &amp; administrasi</strong> (<em>G&amp;A</em>) — gaji manajemen, sewa kantor, utilitas, asuransi, biaya hukum dan audit, depresiasi aset non-produksi. Rasio SG&amp;A/Revenue mengukur efisiensi operasional; tren penurunan rasio menunjukkan <em>operating leverage</em> — kemampuan menghasilkan pendapatan tambahan tanpa peningkatan beban proporsional.</div></div>
+
+<h3>4.2 Research &amp; Development (R&amp;D)</h3>
+
+<div class="def"><div class="den">Beban Riset &amp; Pengembangan / R&amp;D Expenses</div><div class="did">Perlakuan akuntansi R&amp;D berbeda signifikan antara US GAAP dan IFRS. <strong>US GAAP (ASC 730)</strong>: hampir seluruh biaya R&amp;D dibebankan (<em>expensed</em>) saat terjadi — kecuali biaya pengembangan perangkat lunak (ASC 985/ASC 350-40) yang dapat dikapitalisasi setelah kelayakan teknologis tercapai. <strong>IFRS (IAS 38)</strong>: biaya <em>research</em> selalu dibebankan, tetapi biaya <em>development</em> <strong>wajib dikapitalisasi</strong> jika enam kriteria terpenuhi (kelayakan teknis, niat menyelesaikan, kemampuan menggunakan/menjual, manfaat ekonomi, ketersediaan sumber daya, kemampuan mengukur biaya). Implikasi: perusahaan IFRS mungkin melaporkan laba lebih tinggi karena kapitalisasi R&amp;D, membuat komparabilitas dengan perusahaan US GAAP memerlukan penyesuaian.</div></div>
+
+<div class="ibox nb"><div class="ibt">⚠️ R&amp;D dan Implikasi Analitis</div>
+<p>Pembebanan R&amp;D menciptakan <strong>aset tak tercatat</strong> (<em>unrecorded intangible assets</em>) — investasi dalam inovasi yang tidak muncul di neraca tetapi menghasilkan pendapatan masa depan. Perusahaan dengan R&amp;D intensif (farmasi, teknologi) sering memiliki <em>book value</em> yang sangat <em>understated</em> karena investasi intelektual mereka dibebankan sepenuhnya. Analis perlu: (a) mengkapitalisasi R&amp;D secara analitis untuk komparabilitas, (b) mengevaluasi produktivitas R&amp;D (<em>R&amp;D yield</em>), dan (c) memahami bahwa pemotongan R&amp;D meningkatkan laba jangka pendek tetapi merusak <em>earnings persistence</em> jangka panjang.</p>
+</div>
+
+<h3>4.3 Biaya Iklan / Advertising Costs</h3>
+
+<div class="def"><div class="den">Perlakuan Beban Iklan / Advertising Expense Treatment</div><div class="did">Biaya iklan umumnya dibebankan saat terjadi atau saat iklan pertama kali ditayangkan. Pengecualian terbatas: <em>direct-response advertising</em> dapat dikapitalisasi di bawah US GAAP jika terdapat bukti langsung bahwa pengeluaran menghasilkan respons pelanggan yang terukur dan manfaat ekonomi masa depan yang probable. Dari perspektif analitis, biaya iklan — seperti R&amp;D — menciptakan aset tak tercatat (brand value) yang tidak muncul di neraca, tetapi berkontribusi pada pendapatan masa depan.</div></div>
+
+<h3>4.4 Depresiasi dan Amortisasi / Depreciation and Amortization</h3>
+
+<div class="def"><div class="den">Alokasi Biaya Aset / Asset Cost Allocation</div><div class="did">Depresiasi (untuk aset berwujud) dan amortisasi (untuk aset tak berwujud dengan umur terbatas) adalah proses alokasi biaya aset ke periode-periode yang menerima manfaat. Metode utama: <strong>garis lurus</strong> (<em>straight-line</em>) — alokasi merata sepanjang umur manfaat; <strong>saldo menurun</strong> (<em>declining balance</em>) — beban lebih tinggi di awal; <strong>unit produksi</strong> (<em>units of production</em>) — berdasarkan output aktual. Pilihan metode, estimasi umur manfaat, dan nilai residu secara material mempengaruhi beban periodik dan laba yang dilaporkan. Bagi perusahaan <em>capital-intensive</em> seperti TLKM (D&amp;A ~18% dari pendapatan), depresiasi adalah komponen beban yang sangat signifikan.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Depresiasi: Area Discretion Manajemen</div>
+<p>Depresiasi adalah area di mana manajemen memiliki <strong>diskresi signifikan</strong>: pemilihan metode, estimasi umur manfaat, dan nilai residu semuanya mempengaruhi besaran beban. Perubahan estimasi — misalnya memperpanjang umur manfaat — mengurangi beban depresiasi dan meningkatkan laba <em>tanpa perubahan ekonomi riil</em>. Analis harus: (a) membandingkan kebijakan depresiasi antar-perusahaan sejenis, (b) menghitung rasio <em>average age</em> dan <em>average useful life</em> dari data gross/net PP&amp;E dan beban depresiasi, dan (c) mengevaluasi apakah perubahan estimasi bersifat wajar atau merupakan <em>earnings management</em>.</p>
+</div>
+
+<h3>4.5 Operating Leverage dan Analisis Efisiensi</h3>
+
+<div class="def"><div class="den">Operating Leverage / Leverage Operasional</div><div class="did"><em>Operating leverage</em> mengukur seberapa sensitif laba operasional terhadap perubahan pendapatan. Perusahaan dengan <strong>biaya tetap tinggi</strong> (depresiasi besar, sewa, gaji tetap) memiliki operating leverage tinggi — peningkatan kecil dalam revenue menghasilkan peningkatan besar dalam operating income (karena biaya tetap tidak berubah), tetapi penurunan revenue juga menyebabkan penurunan laba yang lebih dramatis. Degree of Operating Leverage (DOL) = %Δ Operating Income / %Δ Revenue. Perusahaan telco seperti TLKM memiliki DOL tinggi karena infrastruktur jaringan merupakan biaya tetap yang sangat besar.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Rasio Analitis untuk Beban Operasional</div>
+<table>
+<thead><tr><th style="width:30%">Rasio</th><th style="width:35%">Formula</th><th style="width:35%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td>SG&amp;A / Revenue</td><td>SG&amp;A ÷ Revenue</td><td>Efisiensi overhead; tren menurun menunjukkan skala ekonomi</td></tr>
+<tr><td>R&amp;D / Revenue</td><td>R&amp;D ÷ Revenue</td><td>Intensitas investasi inovasi; terlalu rendah = underinvestment</td></tr>
+<tr><td>D&amp;A / Revenue</td><td>D&amp;A ÷ Revenue</td><td>Capital intensity; tinggi untuk telco, manufaktur berat</td></tr>
+<tr><td>D&amp;A / Gross PP&amp;E</td><td>D&amp;A ÷ Gross PP&amp;E</td><td>Implied depreciation rate; mengestimasi umur manfaat rata-rata</td></tr>
+<tr><td>Capex / D&amp;A</td><td>Capex ÷ D&amp;A</td><td>&gt;1 = investasi melebihi depresiasi (pertumbuhan); &lt;1 = asset aging</td></tr>
+<tr><td>OPEX Growth / Revenue Growth</td><td>%Δ OPEX ÷ %Δ Revenue</td><td>&lt;1 menunjukkan operating leverage positif</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Item Non-Berulang / Non-Recurring Items</h2>
+
+<p>Identifikasi item non-berulang adalah keterampilan analitis yang krusial. Laporan laba rugi sering mencampur pendapatan dan beban yang bersifat <strong>berulang</strong> (<em>recurring/persistent</em>) dengan yang bersifat <strong>satu kali</strong> (<em>transitory/non-recurring</em>). Kegagalan memisahkan keduanya menghasilkan valuasi yang salah.</p>
+
+<h3>5.1 Discontinued Operations / Operasi yang Dihentikan</h3>
+
+<div class="def"><div class="den">Operasi yang Dihentikan / Discontinued Operations</div><div class="did">Di bawah ASC 205-20 (US GAAP) dan IFRS 5, komponen entitas yang telah dilepas atau diklasifikasikan sebagai <em>held for sale</em> disajikan secara terpisah dalam laporan laba rugi sebagai <em>discontinued operations</em> — <strong>setelah</strong> laba dari operasi berlanjut (<em>income from continuing operations</em>). Penyajian terpisah ini membantu analis mengisolasi kinerja bisnis yang akan terus beroperasi. Kriteria: komponen merepresentasikan <em>strategic shift</em> yang memiliki dampak besar pada operasi dan hasil keuangan entitas (US GAAP); atau merupakan lini bisnis utama atau area geografis utama yang terpisah (IFRS).</div></div>
+
+<h3>5.2 Restructuring Charges / Beban Restrukturisasi</h3>
+
+<div class="def"><div class="den">Beban Restrukturisasi / Restructuring Charges</div><div class="did">Beban restrukturisasi timbul dari program reorganisasi yang melibatkan: penutupan fasilitas, pengurangan karyawan (<em>severance pay</em>), relokasi operasi, atau perubahan fundamental dalam operasi bisnis. Di bawah ASC 420 (US GAAP), liabilitas diakui saat dua kondisi terpenuhi: manajemen berkomitmen pada rencana dan biaya terukur secara andal. Di bawah IAS 37, <em>constructive obligation</em> harus ada. <strong>Perhatian analitis</strong>: beberapa perusahaan menyalahgunakan <em>restructuring</em> untuk (a) <em>big bath</em> — mengambil beban berlebihan saat tahun buruk untuk membuat tahun berikutnya terlihat baik, atau (b) <em>cookie jar reserves</em> — membalik kelebihan provisi di masa depan untuk meningkatkan laba.</div></div>
+
+<h3>5.3 Asset Impairments / Penurunan Nilai Aset</h3>
+
+<div class="def"><div class="den">Penurunan Nilai Aset / Asset Impairments</div><div class="did">Aset mengalami penurunan nilai (<em>impairment</em>) ketika nilai tercatatnya melebihi nilai yang dapat dipulihkan. Untuk aset berwujud dan tak berwujud dengan umur terbatas: di bawah US GAAP, uji penurunan dilakukan saat ada <em>triggering event</em> menggunakan dua langkah (uji recoverability, lalu pengukuran kerugian). Di bawah IFRS (IAS 36), aset diuji jika ada indikasi penurunan, dan kerugian = nilai tercatat − recoverable amount (yang lebih tinggi dari fair value less costs to sell dan value in use). Goodwill diuji minimal setiap tahun di kedua standar. Impairment bersifat <strong>non-reversible</strong> di US GAAP untuk aset berwujud; IFRS mengizinkan pembalikan (kecuali goodwill).</div></div>
+
+<h3>5.4 Extraordinary Items dan Unusual/Infrequent Items</h3>
+
+<div class="def"><div class="den">Item Luar Biasa dan Tidak Biasa / Extraordinary and Unusual Items</div><div class="did">Sebelum ASU 2015-01, US GAAP mengizinkan penyajian terpisah <em>extraordinary items</em> — kejadian yang bersifat unusual in nature DAN infrequent in occurrence (misalnya, kerugian akibat bencana alam di lokasi yang jarang terkena). ASU 2015-01 <strong>menghapus konsep extraordinary items</strong> dari US GAAP — item unusual atau infrequent sekarang tetap berada dalam <em>income from continuing operations</em> tetapi harus diungkapkan secara terpisah. IFRS <strong>tidak pernah mengizinkan</strong> klasifikasi extraordinary items. Implikasi: analis harus lebih aktif mencari item non-berulang dalam catatan keuangan karena penyajiannya kini kurang menonjol di laporan laba rugi.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Panduan Analitis: Memisahkan Recurring dari Non-Recurring</div>
+<p>Pendekatan sistematis untuk identifikasi item non-berulang:</p>
+<ol>
+<li><strong>Scan laporan laba rugi</strong> — cari baris terpisah: <em>restructuring</em>, <em>impairment</em>, <em>gain/loss on disposal</em>, <em>litigation settlement</em></li>
+<li><strong>Baca catatan keuangan</strong> — detail tentang sifat, besaran, dan ekspektasi berulangnya item</li>
+<li><strong>Evaluasi riwayat</strong> — jika perusahaan melaporkan <em>restructuring</em> setiap tahun selama 5 tahun, itu bukan "non-recurring"</li>
+<li><strong>Periksa MD&amp;A</strong> — manajemen sering mengidentifikasi item "non-core" di <em>Management Discussion</em></li>
+<li><strong>Gunakan judgment</strong> — tidak semua item yang diidentifikasi manajemen sebagai "non-recurring" benar-benar bersifat satu kali</li>
+</ol>
+</div>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Persistensi Laba dan Kualitas Laba / Earnings Persistence and Earnings Quality</h2>
+
+<p>Dari perspektif valuasi, tidak semua rupiah laba memiliki nilai yang sama. Laba yang bersifat <strong>permanen</strong> (berulang, sustainable) jauh lebih berharga daripada laba <strong>transitori</strong> (satu kali, tidak berulang) karena laba permanenlah yang menentukan arus kas masa depan — dan arus kas masa depanlah yang menentukan nilai perusahaan.</p>
+
+<h3>6.1 Klasifikasi Komponen Laba</h3>
+
+<div class="def"><div class="den">Laba Permanen vs Transitori / Permanent vs Transitory Earnings</div><div class="did"><strong>Laba permanen</strong> (<em>permanent earnings</em>) adalah komponen laba yang diharapkan berulang di masa depan dengan tingkat yang serupa — misalnya pendapatan langganan bulanan TLKM, beban operasional reguler, depresiasi aset. <strong>Laba transitori</strong> (<em>transitory earnings</em>) adalah komponen yang tidak diharapkan berulang — misalnya keuntungan penjualan aset, beban restrukturisasi, impairment. Untuk valuasi: laba permanen dikalikan <em>earnings multiple</em> (P/E); laba transitori dinilai pada <em>face value</em> (1× tanpa multiple) atau diabaikan sepenuhnya.</div></div>
+
+<div class="def"><div class="den">Kualitas Laba / Earnings Quality</div><div class="did">Kualitas laba (<em>earnings quality</em>) merujuk pada seberapa baik laba yang dilaporkan merepresentasikan kinerja ekonomi yang sebenarnya dan seberapa berguna untuk memprediksi kinerja masa depan. Dimensi kualitas laba meliputi: (a) <strong>persistensi</strong> — apakah laba sustainable; (b) <strong>prediktabilitas</strong> — seberapa akurat laba saat ini memprediksi laba masa depan; (c) <strong>variabilitas</strong> — stabilitas laba dari waktu ke waktu; (d) <strong>konservatisme</strong> — apakah kebijakan akuntansi cenderung konservatif atau agresif; dan (e) <strong>konversi kas</strong> — seberapa cepat laba akrual berubah menjadi kas (rasio <em>operating cash flow / net income</em>).</div></div>
+
+<table>
+<thead><tr><th style="width:30%">Indikator</th><th style="width:35%">Kualitas Tinggi</th><th style="width:35%">Kualitas Rendah</th></tr></thead>
+<tbody>
+<tr><td>Pertumbuhan Pendapatan</td><td>Selaras dengan pertumbuhan arus kas operasi</td><td>Jauh melampaui pertumbuhan arus kas</td></tr>
+<tr><td>Akrual</td><td>Akrual rendah relatif terhadap laba (cash-driven)</td><td>Akrual tinggi (accrual-driven earnings)</td></tr>
+<tr><td>Non-Recurring Items</td><td>Jarang dan benar-benar satu kali</td><td>Sering berulang meskipun dilabeli "non-recurring"</td></tr>
+<tr><td>Kebijakan Akuntansi</td><td>Konsisten dan konservatif</td><td>Sering berubah; agresif dalam estimasi</td></tr>
+<tr><td>Revenue/Receivable Growth</td><td>Tumbuh seimbang</td><td>Piutang tumbuh jauh lebih cepat dari pendapatan</td></tr>
+</tbody>
+</table>
+
+<h3>6.2 Implikasi untuk Valuasi / Valuation Implications</h3>
+
+<div class="ibox nb"><div class="ibt">📌 Earnings Persistence dan P/E Multiple</div>
+<p>Hubungan antara persistensi laba dan valuasi adalah langsung: <strong>laba permanen layak mendapat multiple tinggi; laba transitori mendapat multiple 1× atau nol</strong>. Contoh: jika perusahaan melaporkan laba Rp 10 triliun di mana Rp 8 T bersifat permanen dan Rp 2 T dari penjualan aset (transitori), dan P/E wajar = 15×, maka:</p>
+<ul>
+<li>Valuasi <strong>salah</strong>: 15 × Rp 10 T = Rp 150 T</li>
+<li>Valuasi <strong>benar</strong>: (15 × Rp 8 T) + (1 × Rp 2 T) = Rp 120 T + Rp 2 T = Rp 122 T</li>
+</ul>
+<p>Selisih Rp 28 T (~19%) ini menunjukkan betapa pentingnya memisahkan komponen laba sebelum melakukan valuasi.</p>
+</div>
+
+<h3>6.3 Model Analitis: Normalisasi Laba / Earnings Normalization Model</h3>
+
+<div class="fbox nb">
+<p><strong>Proses Normalisasi Laba (Earnings Normalization):</strong></p>
+<p><strong>Langkah 1: Mulai dari Reported Net Income.</strong></p>
+<p><strong>Langkah 2: Identifikasi Non-Recurring Items</strong> — scan laporan laba rugi, baca catatan keuangan, dan evaluasi sejarah pelaporan. Untuk setiap item: apakah benar-benar satu kali? Apakah besarannya material?</p>
+<p><strong>Langkah 3: Keluarkan Non-Recurring (net of tax)</strong> — item transitori harus disesuaikan setelah memperhitungkan dampak pajaknya. Restructuring charge Rp 500 miliar dengan tarif pajak 22% memiliki after-tax impact = Rp 500M × (1−0,22) = Rp 390 miliar.</p>
+<p><strong>Langkah 4: Evaluasi Kebijakan Akuntansi</strong> — apakah ada kebijakan yang agresif atau tidak konsisten dengan peers? Jika ya, sesuaikan (misalnya, jika perusahaan mengapitalisasi biaya yang di-expense oleh peers, reverse kapitalisasi tersebut).</p>
+<p><strong>Langkah 5: Pertimbangkan Cyclicality</strong> — untuk perusahaan siklikal, gunakan average earnings melewati siklus penuh, bukan peak atau trough earnings.</p>
+<p><strong>Langkah 6: Hasil = Normalized Earnings</strong> — angka ini yang digunakan sebagai basis untuk proyeksi dan valuasi.</p>
+</div>
+
+<h3>6.4 Akrual dan Kualitas Laba / Accruals and Earnings Quality</h3>
+
+<div class="def"><div class="den">Komponen Akrual vs Komponen Kas / Accrual vs Cash Component of Earnings</div><div class="did">Laba dapat didekomposisi menjadi: <strong>komponen kas</strong> (CFO — cash from operations) dan <strong>komponen akrual</strong> (Net Income − CFO). Penelitian akademis (Sloan 1996, "Do Stock Prices Fully Reflect Information in Accruals and Cash Flows about Future Earnings?") menunjukkan bahwa <em>komponen kas lebih persisten daripada komponen akrual</em> — perusahaan dengan laba yang didominasi akrual cenderung mengalami penurunan laba di masa depan (<em>accrual anomaly</em>). Implikasi: rasio CFO/NI yang tinggi adalah indikator kualitas laba yang tinggi; rasio yang rendah (<em>earnings driven by accruals</em>) merupakan warning sign.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Sloan (1996) Accrual Anomaly — Implikasi Praktis</div>
+<p>Studi Sloan menemukan bahwa investor cenderung <em>over-price</em> perusahaan dengan akrual tinggi dan <em>under-price</em> perusahaan dengan akrual rendah. Trading strategy yang membeli (menjual) perusahaan dengan akrual rendah (tinggi) menghasilkan abnormal returns signifikan. Untuk analis fundamental:</p>
+<ul>
+<li>Hitung <strong>total accruals</strong> = (ΔCurrent Assets − ΔCash) − (ΔCurrent Liabilities − ΔSTD − ΔTax Payable) − D&amp;A</li>
+<li>Normalisasi dengan rata-rata total aset: <strong>accrual ratio</strong> = Total Accruals / Avg Total Assets</li>
+<li>Accrual ratio yang sangat positif (laba melebihi cash flow) → kualitas laba <em>rendah</em></li>
+<li>Accrual ratio mendekati nol atau negatif (cash flow ≥ laba) → kualitas laba <em>tinggi</em></li>
+</ul>
+</div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Akuntansi Pajak Penghasilan / Income Tax Accounting</h2>
+
+<p>Akuntansi pajak penghasilan adalah area kompleks yang menciptakan beberapa item neraca dan laba rugi yang penting untuk analisis. Perbedaan antara laba akuntansi (<em>book income</em>) dan laba fiskal (<em>taxable income</em>) menimbulkan aset dan liabilitas pajak tangguhan.</p>
+
+<h3>7.1 Perbedaan Temporer dan Permanen</h3>
+
+<div class="def"><div class="den">Perbedaan Temporer / Temporary Differences</div><div class="did">Perbedaan temporer timbul ketika pengakuan suatu item untuk tujuan akuntansi dan tujuan pajak terjadi pada <strong>periode yang berbeda</strong> — tetapi jumlah totalnya sama sepanjang waktu. Contoh: depresiasi akselerasi untuk pajak vs garis lurus untuk akuntansi — beban depresiasi total sama, tetapi timing berbeda. Perbedaan temporer menciptakan <strong>Deferred Tax Liabilities</strong> (DTL) ketika pajak yang dibayar saat ini lebih rendah dari beban pajak akuntansi (akan "dibayar kembali" di masa depan) atau <strong>Deferred Tax Assets</strong> (DTA) ketika pajak yang dibayar saat ini lebih tinggi (akan "dipulihkan" di masa depan).</div></div>
+
+<div class="def"><div class="den">Perbedaan Permanen / Permanent Differences</div><div class="did">Perbedaan permanen timbul dari item yang diakui untuk tujuan akuntansi tetapi <strong>tidak pernah</strong> diakui untuk tujuan pajak, atau sebaliknya. Contoh: denda dan penalti (dibebankan di akuntansi tetapi tidak deductible untuk pajak), pendapatan bunga obligasi pemerintah (diakui di akuntansi tetapi bebas pajak). Perbedaan permanen <strong>tidak</strong> menciptakan DTA/DTL karena tidak ada reversibilitas, tetapi mempengaruhi <em>effective tax rate</em> — menyebabkannya menyimpang dari tarif pajak statutori.</div></div>
+
+<h3>7.2 Deferred Tax Assets dan Liabilities</h3>
+
+<div class="def"><div class="den">Aset Pajak Tangguhan / Deferred Tax Assets (DTA)</div><div class="did">DTA merepresentasikan pajak yang telah dibayar lebih ("prepaid tax") atau manfaat pajak masa depan dari item-item seperti: rugi fiskal yang dapat dikompensasi (<em>net operating loss carryforwards</em>), penyisihan yang belum deductible (misalnya provisi garansi), kompensasi berbasis saham yang sudah dibebankan di akuntansi tetapi belum deductible. DTA harus dievaluasi untuk realisasinya — jika "more likely than not" bahwa DTA tidak akan direalisasi, <strong>valuation allowance</strong> harus dibentuk. Peningkatan <em>valuation allowance</em> adalah sinyal negatif — manajemen meragukan profitabilitas masa depan.</div></div>
+
+<div class="def"><div class="den">Liabilitas Pajak Tangguhan / Deferred Tax Liabilities (DTL)</div><div class="did">DTL merepresentasikan pajak yang "terutang" di masa depan akibat perbedaan temporer: laba akuntansi lebih tinggi dari laba fiskal saat ini (misalnya, akibat depresiasi akselerasi untuk pajak). DTL bersifat <em>quasi-permanent</em> bagi banyak perusahaan — selama perusahaan terus berinvestasi di aset tetap, DTL baru terus terbentuk saat DTL lama berbalik, sehingga saldo DTL agregat tidak pernah benar-benar "dibayar." Implikasi analitis: beberapa analis memperlakukan DTL sebagai ekuitas (bukan utang) dalam analisis leverage jika dianggap tidak akan berbalik.</div></div>
+
+<h3>7.3 Analisis Tarif Pajak Efektif / Effective Tax Rate Analysis</h3>
+
+<div class="ibox nb"><div class="ibt">📌 Mengapa Tarif Pajak Efektif Penting</div>
+<p><em>Effective tax rate</em> (ETR) = Beban Pajak / Laba Sebelum Pajak. ETR yang sangat berbeda dari tarif statutori (Indonesia: 22%) mengindikasikan: (a) perbedaan permanen yang signifikan, (b) perubahan valuation allowance, (c) pajak luar negeri dengan tarif berbeda, (d) insentif pajak atau tax holiday, atau (e) potensi masalah pelaporan. Analis harus menelaah <em>tax rate reconciliation</em> di catatan keuangan untuk memahami penyebab perbedaan dan menilai apakah ETR saat ini <em>sustainable</em> untuk proyeksi laba masa depan.</p>
+</div>
+
+<h3>7.4 Implikasi Analitis Pajak Tangguhan / Analytical Implications of Deferred Taxes</h3>
+
+<div class="ibox nb"><div class="ibt">📌 Penyesuaian Analitis Terkait Pajak</div>
+<p>Aset dan liabilitas pajak tangguhan memerlukan penilaian analitis yang cermat:</p>
+<ul>
+<li><strong>DTA dari NOL carryforwards</strong>: Jika perusahaan memiliki DTA besar dari kerugian fiskal yang belum dikompensasikan, analis harus mengevaluasi: (a) berapa lama NOL tersebut dapat digunakan (di Indonesia, umumnya 5 tahun), (b) apakah profitabilitas masa depan cukup untuk merealisasi DTA, dan (c) apakah <em>valuation allowance</em> memadai. DTA tanpa VA yang kemudian dibentuk VA = hit besar terhadap laba.</li>
+<li><strong>DTL yang bersifat permanent</strong>: Untuk perusahaan yang terus berinvestasi, DTL dari depresiasi akselerasi terus tumbuh dan secara efektif merupakan "interest-free loan" dari pemerintah. Beberapa analis menghitung <em>cash tax rate</em> (kas aktual yang dibayar untuk pajak / laba sebelum pajak) sebagai pelengkap ETR.</li>
+<li><strong>Cash Tax Rate vs Book ETR</strong>: Perbedaan yang konsisten antara cash tax rate dan book ETR menunjukkan seberapa besar "manfaat pajak" yang diperoleh dari perbedaan temporer — dan apakah manfaat ini sustainable.</li>
+</ul>
+</div>
+
+<div class="exb nb"><div class="exn">💡 Contoh: Tax Rate Reconciliation</div>
+<p>Tax rate reconciliation TLKM di catatan keuangan menunjukkan rekonsiliasi antara tarif statutori (22%) dan ETR aktual. Komponen tipikal:</p>
+<table>
+<thead><tr><th style="width:50%">Item Rekonsiliasi</th><th style="width:25%">Dampak pada ETR</th><th style="width:25%">Sifat</th></tr></thead>
+<tbody>
+<tr><td>Tarif statutori Indonesia</td><td>22,0%</td><td>—</td></tr>
+<tr><td>Pendapatan dikenakan pajak final</td><td>Mengurangi ETR</td><td>Permanent</td></tr>
+<tr><td>Beban tidak dapat dikurangkan</td><td>Meningkatkan ETR</td><td>Permanent</td></tr>
+<tr><td>Perbedaan tarif anak perusahaan asing</td><td>Bervariasi</td><td>Structural</td></tr>
+<tr><td>Perubahan valuation allowance</td><td>Bervariasi</td><td>Judgment-based</td></tr>
+<tr><td><strong>ETR Efektif</strong></td><td><strong>~24–26%</strong></td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Kompensasi Karyawan / Employee Compensation</h2>
+
+<p>Kompensasi karyawan — terutama kompensasi berbasis saham — merupakan beban operasional yang memerlukan pemahaman khusus karena sifat non-kasnya dan dampaknya pada laba per saham.</p>
+
+<h3>8.1 Kompensasi Berbasis Saham / Stock-Based Compensation</h3>
+
+<div class="def"><div class="den">Stock Options / Opsi Saham</div><div class="did">Di bawah ASC 718 (US GAAP) dan IFRS 2, <em>stock options</em> diakui sebagai beban kompensasi pada <strong>fair value</strong> tanggal pemberian (<em>grant date</em>) menggunakan model penilaian opsi (Black-Scholes atau binomial). Beban dialokasikan sepanjang periode vesting. Implikasi analitis: (a) beban non-kas tetapi mengurangi laba — analis harus memutuskan apakah memasukkan atau mengeluarkannya dari <em>normalized earnings</em>; (b) meningkatkan jumlah saham potensial beredar → mengurangi EPS dilutif; (c) mendapat perlakuan pajak khusus yang mempengaruhi ETR.</div></div>
+
+<div class="def"><div class="den">Restricted Stock Units (RSUs) / Unit Saham Terbatas</div><div class="did">RSUs memberikan hak atas saham setelah periode vesting tanpa memerlukan pembayaran oleh karyawan (berbeda dari stock options yang memerlukan exercise price). Beban diakui pada fair value tanggal pemberian — untuk RSUs, ini biasanya harga pasar saham pada tanggal pemberian. RSUs semakin populer karena tetap memberikan nilai bahkan jika harga saham turun (berbeda dari options yang bisa "out of the money"). Perlakuan akuntansi serupa: beban selama periode vesting, dengan <em>true-up</em> untuk <em>forfeitures</em>.</div></div>
+
+<h3>8.2 Beban Pensiun / Pension Expense</h3>
+
+<div class="def"><div class="den">Komponen Beban Pensiun / Pension Expense Components</div><div class="did">Untuk program pensiun <em>defined benefit</em>, beban pensiun periodik (<em>net periodic pension cost</em>) terdiri dari beberapa komponen: (a) <strong>service cost</strong> — biaya manfaat yang diperoleh karyawan pada periode berjalan (komponen operasional utama); (b) <strong>interest cost</strong> — akrual bunga atas kewajiban pensiun; (c) <strong>expected return on plan assets</strong> — mengurangi beban; (d) <strong>amortisasi prior service cost</strong> dan <strong>actuarial gains/losses</strong>. Di bawah ASU 2017-07, hanya <em>service cost</em> yang disajikan di beban operasional; komponen lainnya di bawah <em>operating income</em>. Implikasi: memilah komponen pensiun antara yang operasional dan non-operasional penting untuk analisis margin.</div></div>
+</div>
+
+<div id="s9" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>9. Pendapatan Bunga, Pendapatan Investasi, dan Efek Mata Uang Asing</h2>
+
+<h3>9.1 Pendapatan dan Beban Bunga / Interest Income and Expense</h3>
+
+<div class="def"><div class="den">Pendapatan dan Beban Bunga / Interest Income and Expense</div><div class="did">Pendapatan bunga berasal dari kas, setara kas, dan investasi dalam sekuritas utang. Beban bunga timbul dari utang berbunga. Untuk analisis operasional, beban bunga umumnya diklasifikasikan sebagai <strong>non-operasional</strong> karena mencerminkan keputusan pembiayaan, bukan operasi. Namun, klasifikasi ini tidak selalu jelas — untuk perusahaan jasa keuangan, pendapatan dan beban bunga <em>adalah</em> aktivitas operasi inti. Analis harus memisahkan <em>operating income</em> dari <em>interest expense</em> untuk menghitung NOPAT (<em>Net Operating Profit After Tax</em>), metrik kunci untuk ROIC.</div></div>
+
+<h3>9.2 Pendapatan dari Investasi / Investment Income</h3>
+
+<div class="def"><div class="den">Equity Income dan Gains/Losses on Investments</div><div class="did"><em>Equity income</em> dari perusahaan asosiasi (metode ekuitas, Ch.5) biasanya disajikan di bawah pendapatan operasional atau sebagai item terpisah. Keuntungan dan kerugian dari penjualan investasi bersifat transitori. Untuk analisis, analis perlu menentukan apakah <em>equity income</em> bersifat recurring (jika investasi di asosiasi bersifat strategis dan permanen) atau transitori (jika investasi bersifat oportunistik).</div></div>
+
+<h3>9.3 Dampak Translasi Mata Uang Asing / Foreign Currency Translation Effects</h3>
+
+<div class="def"><div class="den">Translasi Mata Uang Asing / Foreign Currency Translation</div><div class="did">Perusahaan multinasional yang memiliki operasi luar negeri harus menerjemahkan laporan keuangan anak perusahaan asing ke mata uang fungsional induk. Di bawah IAS 21/ASC 830: (a) <strong>transaksi dalam mata uang asing</strong> — diukur pada kurs saat transaksi; selisih kurs saat penyelesaian diakui di laba rugi; (b) <strong>translasi laporan keuangan anak perusahaan asing</strong> — menggunakan <em>current rate method</em> (seluruh aset/liabilitas di kurs penutupan; pendapatan/beban di kurs rata-rata) dengan selisih translasi diakui di <em>OCI</em> (<em>cumulative translation adjustment</em> / CTA); atau <em>temporal method</em> jika mata uang fungsional anak = mata uang induk. Untuk TLKM, dampak translasi relatif terbatas karena operasi utama di Indonesia, tetapi tetap relevan untuk anak perusahaan luar negeri.</div></div>
+</div>
+
+<div id="s10" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>10. Laba Komprehensif / Comprehensive Income</h2>
+
+<div class="def"><div class="den">Laba Bersih vs Laba Komprehensif / Net Income vs Comprehensive Income</div><div class="did"><strong>Laba bersih</strong> (<em>net income</em>) adalah pengukuran kinerja tradisional yang mencakup seluruh pendapatan, beban, keuntungan, dan kerugian yang diakui dalam laporan laba rugi. <strong>Laba komprehensif</strong> (<em>comprehensive income</em>) = laba bersih + <em>other comprehensive income</em> (OCI). OCI mencakup item-item yang mengubah ekuitas tetapi <strong>tidak melewati</strong> laporan laba rugi: (a) perubahan nilai wajar investasi FVOCI, (b) <em>cumulative translation adjustment</em> dari operasi asing, (c) keuntungan/kerugian aktuarial pensiun, (d) bagian efektif dari <em>cash flow hedges</em>. Laba komprehensif memberikan gambaran lebih lengkap tentang perubahan kekayaan pemegang saham.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 OCI dan Implikasi Analitis</div>
+<p>Perdebatan tentang relevansi OCI untuk valuasi masih berlangsung. Argumen <strong>pro</strong>: OCI mengandung informasi ekonomi riil (perubahan nilai investasi, eksposur mata uang) yang mempengaruhi kekayaan pemegang saham. Argumen <strong>kontra</strong>: komponen OCI sering bersifat <em>volatile</em>, tidak terkait kinerja operasional inti, dan mungkin berbalik (<em>reverse</em>) di masa depan. Pendekatan analitis yang bijak: (a) evaluasi setiap komponen OCI secara terpisah, (b) komponen yang terkait operasi (misalnya CTA untuk perusahaan multinasional) lebih relevan dari yang tidak (misalnya <em>unrealized gains on AFS securities</em> untuk perusahaan non-keuangan), (c) perhatikan <em>recycling</em> — kapan item OCI akan berpindah ke laba rugi.</p>
+</div>
+
+<div class="def"><div class="den">Accumulated Other Comprehensive Income (AOCI) / Akumulasi Pendapatan Komprehensif Lain</div><div class="did">AOCI adalah komponen ekuitas yang mengakumulasikan seluruh item OCI dari periode-periode sebelumnya. Saldo AOCI yang besar (positif atau negatif) menunjukkan bahwa ada keuntungan atau kerugian signifikan yang "tersimpan" di ekuitas dan belum melewati laporan laba rugi. Misalnya, AOCI negatif yang besar dari kerugian aktuarial pensiun mengindikasikan bahwa laba bersih historis mungkin telah <em>overstate</em> laba ekonomi yang sebenarnya — karena kerugian pensiun diakui di OCI, bukan di laba rugi. Analis harus memeriksa AOCI dan memahami komposisinya untuk mendapat gambaran yang lengkap.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Pelaporan Laba Komprehensif: Satu Laporan vs Dua Laporan</div>
+<p>Baik IFRS maupun US GAAP mengizinkan perusahaan menyajikan laba komprehensif dalam: (a) <strong>satu laporan tunggal</strong> (<em>single continuous statement</em>) yang dimulai dari pendapatan, berlanjut ke laba bersih, lalu ke OCI dan total comprehensive income; atau (b) <strong>dua laporan terpisah</strong> — laporan laba rugi yang berakhir di net income, dilanjutkan dengan laporan laba komprehensif yang dimulai dari net income dan menambahkan OCI. Mayoritas perusahaan menggunakan format dua laporan. Dari perspektif analitis, formatnya tidak mempengaruhi substansi — yang penting adalah analis memeriksa <em>kedua</em> laporan, bukan hanya berhenti di net income.</p>
+</div>
+
+<table>
+<thead><tr><th style="width:35%">Komponen OCI</th><th style="width:30%">Standar</th><th style="width:35%">Recycling ke P&amp;L?</th></tr></thead>
+<tbody>
+<tr><td>Unrealized G/L — FVOCI debt instruments</td><td>IFRS 9 / ASC 320</td><td>Ya, saat dijual atau impaired</td></tr>
+<tr><td>Unrealized G/L — FVOCI equity (IFRS)</td><td>IFRS 9</td><td>Tidak (irrevocable election)</td></tr>
+<tr><td>Foreign currency translation adjustment</td><td>IAS 21 / ASC 830</td><td>Ya, saat operasi asing dilepas</td></tr>
+<tr><td>Cash flow hedges — effective portion</td><td>IFRS 9 / ASC 815</td><td>Ya, saat item yang di-hedge mempengaruhi P&amp;L</td></tr>
+<tr><td>Pension remeasurements (IFRS) / Actuarial G/L</td><td>IAS 19 / ASC 715</td><td>IFRS: Tidak. US GAAP: Ya (amortisasi corridor)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s11" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>11. Suplemen: Kerangka Analisis Akuntansi Palepu — Evaluasi Kualitas Pelaporan Operasional</h2>
+<p><em>Palepu Chapter 4 Supplement: Accounting Analysis Framework for Evaluating Operating Performance Quality</em></p>
+
+<p>Palepu Ch.4 melengkapi pendekatan teknis Subramanyam dengan <strong>kerangka kerja evaluatif</strong> (<em>accounting analysis framework</em>) — sebelum melakukan analisis keuangan (rasio, tren), analis harus terlebih dahulu mengevaluasi apakah angka-angka yang akan dianalisis <strong>layak dipercaya</strong>.</p>
+
+<h3>11.1 Tujuan Accounting Analysis</h3>
+
+<div class="def"><div class="den">Accounting Analysis / Analisis Akuntansi</div><div class="did">Accounting analysis adalah proses mengevaluasi sejauh mana laporan keuangan perusahaan mencerminkan realitas ekonomi yang mendasari. Tujuannya: (a) mengidentifikasi area di mana <strong>diskresi akuntansi</strong> (<em>accounting flexibility</em>) digunakan — wajar atau agresif; (b) mengevaluasi <strong>kesesuaian kebijakan akuntansi</strong> dengan realitas bisnis; (c) mengidentifikasi area di mana informasi di catatan keuangan memungkinkan <strong>penyesuaian analitis</strong>; dan (d) menentukan tingkat <em>noise</em> dan <em>bias</em> dalam angka yang dilaporkan sebelum membangun model valuasi.</div></div>
+
+<h3>11.2 Langkah-Langkah Accounting Analysis</h3>
+
+<div class="fbox nb">
+<p><strong>Langkah 1: Identifikasi Kebijakan Akuntansi Kunci</strong> — Tentukan kebijakan utama yang mempengaruhi item-item laba rugi material: pengakuan pendapatan, depresiasi, kapitalisasi vs pembebanan, penyisihan, pajak tangguhan. Untuk setiap kebijakan, tentukan apakah ada <em>accounting flexibility</em>.</p>
+<p><strong>Langkah 2: Evaluasi Accounting Flexibility</strong> — Beberapa area memiliki fleksibilitas tinggi (estimasi umur manfaat, provisi, revenue timing) dan beberapa rendah (akuntansi kas, penggajian). Area dengan fleksibilitas tinggi memerlukan pengawasan lebih ketat.</p>
+<p><strong>Langkah 3: Evaluasi Strategi Akuntansi</strong> — Apakah manajemen menggunakan fleksibilitas secara konservatif atau agresif? Apakah perubahan kebijakan atau estimasi memiliki justifikasi ekonomi? Apakah strategi akuntansi perusahaan konsisten dengan peers?</p>
+<p><strong>Langkah 4: Evaluasi Kualitas Pengungkapan</strong> — Apakah catatan keuangan memberikan informasi yang cukup untuk memahami kinerja? Apakah perubahan material dijelaskan? Apakah ada pengungkapan sukarela yang membantu analisis?</p>
+<p><strong>Langkah 5: Identifikasi Red Flags</strong> — Perubahan kebijakan akuntansi yang tidak dijelaskan, transaksi pihak berelasi yang tidak wajar, kualifikasi auditor, pertumbuhan piutang yang tidak selaras dengan pendapatan, biaya tangguhan yang meningkat signifikan.</p>
+<p><strong>Langkah 6: Lakukan Penyesuaian (Undo Distortions)</strong> — Jika distorsi teridentifikasi, lakukan penyesuaian analitis: normalisasi laba (keluarkan non-recurring), konversi metode akuntansi untuk komparabilitas, kapitalkan biaya yang seharusnya di neraca.</p>
+</div>
+
+<h3>11.3 Red Flags Spesifik untuk Aktivitas Operasi</h3>
+
+<div class="ibox nb"><div class="ibt">🚩 Red Flags dalam Pelaporan Operasional</div>
+<table>
+<thead><tr><th style="width:35%">Red Flag</th><th style="width:30%">Area</th><th style="width:35%">Potensi Masalah</th></tr></thead>
+<tbody>
+<tr><td>Piutang tumbuh &gt;&gt; pendapatan</td><td>Revenue recognition</td><td>Front-loading revenue; channel stuffing</td></tr>
+<tr><td>Persediaan tumbuh &gt;&gt; COGS</td><td>COGS / Inventory</td><td>Overproduction; obsolescence risk; potential write-down</td></tr>
+<tr><td>Perubahan estimasi depresiasi</td><td>Operating expenses</td><td>Memperpanjang umur manfaat untuk mengurangi beban</td></tr>
+<tr><td>Kapitalisasi agresif</td><td>R&amp;D / SG&amp;A</td><td>Menunda pengakuan beban; inflasi laba saat ini</td></tr>
+<tr><td>Restructuring berulang setiap tahun</td><td>Non-recurring items</td><td>"Non-recurring" yang sebenarnya recurring</td></tr>
+<tr><td>Valuation allowance meningkat</td><td>Income tax</td><td>Manajemen meragukan profitabilitas masa depan</td></tr>
+<tr><td>ETR jauh berbeda dari tarif statutori</td><td>Income tax</td><td>Tax planning agresif; manfaat pajak tidak sustainable</td></tr>
+<tr><td>SBC meningkat signifikan</td><td>Compensation</td><td>Dilusi EPS; beban non-kas yang material</td></tr>
+<tr><td>Deferred revenue menurun tanpa revenue naik</td><td>Revenue recognition</td><td>Percepatan pengakuan pendapatan dari kontrak yang ada</td></tr>
+<tr><td>Days sales outstanding (DSO) meningkat</td><td>Revenue / Receivables</td><td>Perlunakan credit terms atau piutang fictitious</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>11.4 Earnings Management: Teknik dan Deteksi / Earnings Management Techniques and Detection</h3>
+
+<div class="def"><div class="den">Earnings Management / Manajemen Laba</div><div class="did"><em>Earnings management</em> terjadi ketika manajemen menggunakan diskresi akuntansi secara strategis untuk mempengaruhi laba yang dilaporkan — untuk memenuhi ekspektasi analis, memenuhi kovenan utang, atau meningkatkan kompensasi berbasis kinerja. Teknik umum meliputi: (a) <strong>Income Smoothing</strong> — meratakan laba antar-periode (mengecilkan laba saat baik, memperbesar saat buruk) menggunakan penyisihan, estimasi, dan timing pengakuan; (b) <strong>Big Bath</strong> — mengambil beban besar (write-offs, restructuring) saat laba sudah buruk untuk "membersihkan" neraca dan membuat periode berikutnya terlihat baik; (c) <strong>Cookie Jar Reserves</strong> — membentuk provisi berlebihan saat laba tinggi dan membalikkannya saat laba rendah.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Alat Deteksi Earnings Management</div>
+<ul>
+<li><strong>Beneish M-Score</strong>: Model statistik yang menggunakan 8 variabel dari laporan keuangan untuk mendeteksi kemungkinan manipulasi laba. M-Score > −1,78 mengindikasikan kemungkinan manipulasi.</li>
+<li><strong>Modified Jones Model</strong>: Mengestimasi <em>discretionary accruals</em> — komponen akrual yang melampaui tingkat normal berdasarkan perubahan revenue dan level PP&amp;E. Discretionary accruals yang tinggi = earnings management.</li>
+<li><strong>Cash Flow / Earnings Divergence</strong>: Jika laba bersih secara konsisten melebihi CFO, investigasi lebih lanjut diperlukan.</li>
+<li><strong>Peer Comparison</strong>: Membandingkan kebijakan akuntansi, gross margin, dan akrual dengan perusahaan sejenis membantu mengidentifikasi outlier yang mungkin mengelola laba.</li>
+</ul>
+</div>
+</div>
+
+<div id="s12" class="section pb">
+<div class="phdr"><span>Chapter 6 · Operating Activities</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>12. Integrasi: Dari Pengukuran Laba ke Valuasi</h2>
+
+<p>Chapter 6 bukan tujuan akhir — ia adalah <strong>jembatan</strong> antara pemahaman laporan keuangan dan analisis valuasi. Setiap konsep yang telah dibahas memiliki implikasi langsung untuk tahapan kursus berikutnya.</p>
+
+<div class="cgrid nb">
+<div class="cg"><div class="cgt">Revenue Recognition → Cash Flow Analysis (Ch.7-8)</div>
+<p>Kualitas pengakuan pendapatan menentukan kualitas arus kas operasi. Pendapatan yang diakui terlalu dini menghasilkan piutang tinggi dan konversi kas rendah — langsung terlihat di statement of cash flows.</p></div>
+
+<div class="cg"><div class="cgt">Earnings Persistence → Prospective Analysis (Ch.10)</div>
+<p>Peramalan laba masa depan harus didasarkan pada komponen laba persisten. Menggunakan total reported earnings (termasuk item transitori) menghasilkan proyeksi yang misleading.</p></div>
+
+<div class="cg"><div class="cgt">Non-Recurring Items → Equity Valuation (Ch.11-12)</div>
+<p>Model valuasi (DCF, residual income) memerlukan estimasi laba normalized — earnings setelah non-recurring items dikeluarkan dan kebijakan akuntansi dinormalisasi.</p></div>
+
+<div class="cg"><div class="cgt">Income Tax → NOPAT &amp; ROIC (Ch.9)</div>
+<p>Untuk menghitung NOPAT dan ROIC, analis memerlukan tarif pajak efektif yang sustainable — pemahaman tentang DTA/DTL dan perbedaan temporer/permanen kritis untuk estimasi ini.</p></div>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎓 Perspektif Valuasi: Kualitas Laba Menentukan Segalanya</div>
+<p>Seluruh chapter 6 dapat diringkas dalam satu prinsip untuk valuasi: <strong>hanya laba berkualitas tinggi yang layak di-<em>capitalize</em></strong>. Laba yang berasal dari pendapatan yang belum ditransfer secara ekonomi, dari estimasi yang agresif, dari item satu kali, atau dari manipulasi pajak — semuanya harus diidentifikasi, diukur, dan disesuaikan sebelum digunakan dalam model valuasi. Tanpa pemahaman mendalam tentang aktivitas operasi yang dibahas di chapter ini, valuasi yang dihasilkan hanyalah angka yang dibangun di atas fondasi yang rapuh.</p>
+</div>
+
+<h3>12.1 Ringkasan Penyesuaian Analitis / Summary of Analytical Adjustments</h3>
+
+<div class="ibox nb"><div class="ibt">📌 Checklist Penyesuaian Laba untuk Analisis</div>
+<table>
+<thead><tr><th style="width:30%">Penyesuaian</th><th style="width:30%">Kapan Diperlukan</th><th style="width:40%">Bagaimana Melakukannya</th></tr></thead>
+<tbody>
+<tr><td>Remove non-recurring items</td><td>Selalu; saat ada restructuring, impairment, G/L on disposal</td><td>Identifikasi → keluarkan net of tax → hitung normalized earnings</td></tr>
+<tr><td>Normalize revenue recognition</td><td>Jika kebijakan pendapatan agresif vs peers</td><td>Sesuaikan timing berdasarkan evaluasi performance obligations</td></tr>
+<tr><td>Capitalize operating leases</td><td>Jika pre-IFRS 16 / membandingkan dengan perusahaan yang owns assets</td><td>Capitalize lease payments; adjust D&amp;A and interest</td></tr>
+<tr><td>Capitalize R&amp;D</td><td>Jika membandingkan GAAP (expense) vs IFRS (capitalize), atau untuk perusahaan R&amp;D-intensive</td><td>Amortize historical R&amp;D over estimated useful life</td></tr>
+<tr><td>Adjust inventory method</td><td>Membandingkan LIFO vs FIFO companies</td><td>Gunakan LIFO reserve untuk convert ke FIFO basis</td></tr>
+<tr><td>Normalize tax rate</td><td>ETR sangat berbeda dari tarif struktural perusahaan</td><td>Gunakan mid-cycle ETR atau tarif statutori yang disesuaikan untuk permanent differences</td></tr>
+<tr><td>Adjust SBC expense</td><td>SBC material dan mempengaruhi EPS</td><td>Tentukan apakah SBC adalah cost of doing business (include) atau non-cash noise (exclude)</td></tr>
+<tr><td>Normalize pension expense</td><td>Komponen non-service cost material</td><td>Hanya include service cost sebagai operating expense</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>12.2 Dari Chapter 6 ke Chapters Selanjutnya / Bridging to Subsequent Chapters</h3>
+
+<div class="fbox nb">
+<p><strong>Chapter 6 → Chapter 7/8 (Cash Flow Analysis)</strong>: Laba akrual yang telah dipahami di sini akan di-"konversi" ke arus kas. Perbedaan antara net income dan operating cash flow (OCF) berasal dari item-item yang telah kita pelajari: depresiasi (non-cash expense yang ditambahkan kembali), perubahan piutang (cash belum diterima meski revenue diakui), perubahan persediaan, dan perubahan utang usaha.</p>
+<p><strong>Chapter 6 → Chapter 9 (Profitability Analysis)</strong>: Dekomposisi DuPont memerlukan pemahaman net profit margin yang dimulai di sini. NOPAT (Net Operating Profit After Tax) dihitung dari operating income × (1 − tax rate) — memerlukan pemahaman tentang apa yang termasuk "operating" dan berapa tarif pajak yang tepat.</p>
+<p><strong>Chapter 6 → Chapter 10/11/12 (Forecasting &amp; Valuation)</strong>: Model valuasi residual income dan DCF memerlukan proyeksi laba atau arus kas masa depan. Proyeksi yang baik dimulai dengan normalized earnings dan mengaplikasikan growth rates yang realistis terhadap komponen persisten, sambil mengeksklusi komponen transitori.</p>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-05/main-summary.html">← Week 05</a>
+  
+  
+  <a href="../week-07/main-summary.html">Week 07 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

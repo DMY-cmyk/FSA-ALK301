@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 02 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 02: Financial Reporting and Analysis Environment</h1>
+  <div class="meta">
+    <span>📚 Analisis dan pelaporan keuangan</span>
+    
+    <span>📖 Subramanyam Ch. 1, 2</span>
+    
+    
+    <span>📗 Palepu Ch. 1, 2</span>
+    
+    
+    <span>🏢 UNVR — Unilever Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Financial reporting environment; accrual accounting; earnings quality; regulatory framework</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 02 Study Guide — Financial Reporting and Analysis Environment -->
+<!-- Subramanyam Ch.1 (deepened) + Ch.2 (Primary) | Palepu Ch.1-2 (Supplementary) | No articles this week -->
+
+<h2>Panduan Belajar Minggu 02: Analisis dan Pelaporan Keuangan</h2>
+<p><em>Week 02 Study Guide: Financial Reporting and Analysis Environment</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu lalu kita membangun <em>framework</em> analisis bisnis dengan empat komponen. Minggu ini kita mendalami <strong>kualitas pelaporan</strong> (<em>reporting quality</em>) di balik angka-angka keuangan. Tujuannya: memahami bagaimana lingkungan pelaporan keuangan (<em>financial reporting environment</em>), akuntansi akrual (<em>accrual accounting</em>), dan pilihan kebijakan akuntansi (<em>accounting policy choices</em>) mempengaruhi keandalan data yang menjadi input framework tersebut. Anda akan belajar mengevaluasi apakah laporan keuangan secara <em>faithful</em> merepresentasikan realitas ekonomi perusahaan — atau justru menyembunyikannya.</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">Langkah 1: Baca Subramanyam Chapter 2 (Bacaan Utama / Primary Reading)</div>
+<div class="did">
+<p>Ini adalah inti minggu ini. Fokuskan pada: dasar-dasar <em>accrual accounting</em> dan mengapa metode ini dipilih sebagai basis pelaporan keuangan; lingkungan pelaporan keuangan (<em>standard-setters</em>, <em>statutory audit</em>, pengawasan SEC/OJK); <em>accounting analysis</em> sebagai proses evaluasi kualitas pelaporan; konsep <em>earnings quality</em> (persistensi, prediktabilitas, <em>smoothing</em>); serta <em>earnings management</em> — motivasi, metode, dan konsekuensinya.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">Langkah 2: Kunjungi Kembali Subramanyam Chapter 1 — Bagian Accounting Risk &amp; Accounting Analysis (Pendalaman)</div>
+<div class="did">
+<p>Baca ulang bagian tentang <em>accounting risk</em> dan <em>accounting analysis</em> di Chapter 1. Minggu lalu kita membacanya sebagai bagian dari gambaran besar; sekarang baca dengan pemahaman yang lebih dalam setelah mempelajari Chapter 2. Perhatikan bagaimana <em>accounting risk</em> menjadi komponen kritis dalam kerangka analisis bisnis.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">Langkah 3: Baca Palepu Chapter 1–2 (Bacaan Pelengkap / Supplementary Reading)</div>
+<div class="did">
+<p>Palepu memberikan perspektif pelengkap: <em>strategy analysis framework</em> sebagai konteks untuk memahami <strong>mengapa</strong> perusahaan membuat pilihan pelaporan tertentu. Chapter 2 mendalami bagaimana dinamika kompetitif (<em>competitive dynamics</em>) mempengaruhi pemilihan kebijakan akuntansi. Baca untuk memperkaya, bukan menggantikan, pemahaman dari Subramanyam.</p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Hierarki Konsep Minggu Ini / This Week's Concept Hierarchy</div>
+<ol>
+<li><strong>Financial Reporting Environment</strong> — infrastruktur regulasi: penyusun standar (<em>standard-setters</em> seperti FASB/IASB/DSAK-IAI), auditor, regulator (SEC/OJK), dan bursa (NYSE/IDX).</li>
+<li><strong>Accrual Accounting</strong> — fondasi yang membuat laporan keuangan informatif, tetapi sekaligus memperkenalkan <em>estimation risk</em>. Pengakuan pendapatan dan beban berdasarkan substansi ekonomi, bukan arus kas.</li>
+<li><strong>Accounting Analysis</strong> — proses mengevaluasi apakah pelaporan secara <em>faithful</em> merepresentasikan realitas ekonomi, atau terdistorsi oleh fleksibilitas standar dan insentif manajemen.</li>
+<li><strong>Earnings Quality</strong> — mencakup <em>persistence</em> (apakah laba berkelanjutan?), <em>predictability</em> (apakah laba bisa diprediksi?), <em>smoothing</em> (apakah volatilitas disembunyikan?), dan keterkaitan dengan arus kas.</li>
+<li><strong>Earnings Management</strong> — motivasi (kompensasi, <em>debt covenants</em>, pajak, IPO), metode (<em>real</em> vs <em>accrual-based</em>), deteksi, dan konsekuensi bagi analis.</li>
+<li><strong>Book Value vs Market Value</strong> — mengapa keduanya berbeda dan apa implikasinya bagi analisis: <em>conservatism</em>, <em>intangible assets</em>, dan ekspektasi pertumbuhan.</li>
+</ol>
+</div>
+
+<h3>3. Kaitan dengan Minggu 01 / How This Week Builds on Week 01</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Dari Framework ke Kualitas Data / From Framework to Data Quality</div>
+<p>Minggu 01 memperkenalkan <em>business analysis framework</em> dengan empat komponen: (1) Business Strategy Analysis, (2) <strong>Accounting Analysis</strong>, (3) Financial Analysis, dan (4) Prospective Analysis. Minggu ini kita melakukan <em>deep dive</em> ke komponen <strong>kedua</strong> — Accounting Analysis. Kita mempelajari "mesin" di balik angka: bagaimana akuntansi akrual bekerja, mengapa ada risiko distorsi, dan bagaimana mengevaluasi kualitas pelaporan. Tanpa pemahaman ini, semua rasio dan model valuasi yang akan kita pelajari di minggu-minggu berikutnya akan dibangun di atas fondasi yang rapuh. <em>Accrual accounting</em> adalah prasyarat (<em>prerequisite</em>) mutlak untuk seluruh materi berikutnya.</p>
+</div>
+
+<h3>4. Koneksi Antar-Minggu / Course Connections</h3>
+
+<table>
+<thead>
+<tr>
+<th>Konsep Minggu 02</th>
+<th>Terhubung ke</th>
+<th>Penjelasan Koneksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accrual Accounting</td>
+<td>Week 06 — Revenue Recognition, Operating Activities</td>
+<td>Prinsip akrual diterapkan langsung pada pengakuan pendapatan dan analisis aktivitas operasi</td>
+</tr>
+<tr>
+<td>Earnings Quality</td>
+<td>Week 06 &amp; Week 09 — Earnings Persistence, Profitability Analysis</td>
+<td>Kualitas laba menentukan keandalan analisis profitabilitas dan proyeksi</td>
+</tr>
+<tr>
+<td>Accounting Risk</td>
+<td>Week 03 — Financing Activities, Off-Balance Sheet</td>
+<td>Risiko akuntansi meningkat pada item pembiayaan dan pos di luar neraca</td>
+</tr>
+<tr>
+<td>Financial Reporting Environment</td>
+<td>Week 07 — Cash Flow Analysis</td>
+<td>Memahami kerangka pelaporan membantu merekonsiliasi laba akrual dengan arus kas</td>
+</tr>
+<tr>
+<td>Book Value vs Market Value</td>
+<td>Week 12 — Valuation Models</td>
+<td>Divergensi antara nilai buku dan pasar adalah inti model valuasi residual income</td>
+</tr>
+<tr>
+<td>Earnings Management</td>
+<td>Week 10 — Credit Analysis, Distress Prediction</td>
+<td>Manipulasi laba sering mendahului <em>financial distress</em>; kritis untuk analisis kredit</td>
+</tr>
+</tbody>
+</table>
+
+<h3>5. Cara Mendekati Ringkasan Utama / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Ringkasan / Summary Reading Guidance</div>
+<p>Ringkasan utama minggu ini cukup padat karena mencakup lingkungan pelaporan <em>dan</em> analisis akuntansi. Saat membaca, jangan sekadar menghafal definisi — selalu tanyakan: <strong>"Bagaimana konsep ini mempengaruhi keandalan angka yang saya analisis?"</strong> Untuk setiap topik (misalnya <em>earnings management</em>), pikirkan contoh nyata di perusahaan Indonesia. Perhatikan bahwa ringkasan mengikuti alur logis: lingkungan → mekanisme akrual → risiko distorsi → cara mendeteksi dan menyesuaikan. Ikuti alur ini, jangan melompat-lompat.</p>
+</div>
+
+<h3>6. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Dipikir Sebelum dan Sesudah Membaca / Questions to Consider</div>
+<ol>
+<li>Mengapa akuntansi akrual dianggap sebagai kekuatan terbesar sekaligus kelemahan terbesar pelaporan keuangan? (<em>Why is accrual accounting considered both the greatest strength and the greatest weakness of financial reporting?</em>)</li>
+<li>Apa tiga sumber <em>accounting risk</em>, dan bagaimana masing-masing mempengaruhi analisis secara berbeda? (<em>What are the three sources of accounting risk, and how does each affect analysis differently?</em>)</li>
+<li>Bagaimana motivasi <em>earnings management</em> berbeda antara perusahaan privat dan publik? (<em>How do earnings management motivations differ between private and public companies?</em>)</li>
+<li>Mengapa perusahaan dengan <em>earnings quality</em> tinggi mungkin tetap memiliki <em>earnings persistence</em> yang rendah? (<em>Why might a company with high earnings quality still have low earnings persistence?</em>)</li>
+<li>Bagaimana lingkungan regulasi yang berbeda (GAAP vs IFRS vs PSAK) mempengaruhi komparabilitas lintas negara? (<em>How does the regulatory environment affect cross-country comparability?</em>)</li>
+<li>Apa <em>trade-off</em> antara relevansi (<em>relevance</em>) dan keandalan (<em>reliability</em>) dalam standar akuntansi? (<em>What is the trade-off between relevance and reliability in accounting standards?</em>)</li>
+<li>Bagaimana seorang analis seharusnya mendeteksi dan menyesuaikan (<em>adjust</em>) praktik <em>earnings management</em>? (<em>How should an analyst detect and adjust for earnings management?</em>)</li>
+<li>Bandingkan laba berbasis akrual vs arus kas — kapan masing-masing memberikan informasi yang lebih superior? (<em>Compare accrual-based earnings vs cash flows — when does each give superior information?</em>)</li>
+<li>Jika Anda adalah auditor, <em>red flags</em> apa yang akan Anda cari untuk mengidentifikasi pelaporan agresif? (<em>What red flags would you look for to identify aggressive reporting?</em>)</li>
+</ol>
+</div>
+
+<h3>7. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Apa yang Membedakan S1 dan S2 / Undergraduate vs Graduate Distinction</div>
+<p><strong>Level S1</strong>: Mahasiswa S1 cukup mengetahui definisi akuntansi akrual, bisa menyebutkan jenis-jenis <em>earnings management</em>, dan memahami peran regulator secara deskriptif.</p>
+<p><strong>Level S2 (yang diharapkan dari Anda)</strong>: Anda harus mampu (1) mengevaluasi secara kritis <strong>mengapa</strong> akuntansi akrual mendominasi meskipun ada risiko distorsi — argumen ekonominya, bukan sekadar deskripsi; (2) menganalisis <em>economic incentives</em> di balik <em>earnings management</em> menggunakan kerangka teori keagenan (<em>agency theory</em>) dan teori sinyal (<em>signaling theory</em>); (3) merancang penyesuaian (<em>adjustments</em>) untuk "membatalkan" distorsi akuntansi dalam analisis Anda; dan (4) memahami ketegangan fundamental antara <em>standardization</em> (yang meningkatkan <em>reliability</em> dan komparabilitas) vs <em>flexibility</em> (yang meningkatkan <em>relevance</em> karena mengakomodasi keunikan bisnis). Berpikirlah sebagai analis, bukan mahasiswa yang menghafal.</p>
+</div>
+
+<h3>8. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perusahaan Minggu Ini: UNVR (Unilever Indonesia Tbk)</div>
+<p>Minggu ini kita menggunakan <strong>UNVR</strong> sebagai contoh untuk mengilustrasikan lingkungan pelaporan keuangan di Indonesia. Perhatikan hal-hal berikut:</p>
+<ul>
+<li><strong>Kerangka PSAK</strong>: UNVR menyusun laporan berdasarkan PSAK (konvergensi IFRS). Bandingkan dengan US GAAP — di mana fleksibilitas lebih besar? Di mana lebih ketat?</li>
+<li><strong>Pengawasan OJK &amp; Persyaratan IDX</strong>: Sebagai emiten, UNVR tunduk pada regulasi OJK dan aturan pencatatan IDX. Bagaimana <em>enforcement</em> regulasi di Indonesia dibandingkan SEC di AS?</li>
+<li><strong>Pilihan Kebijakan Akuntansi</strong>: Perhatikan pengakuan pendapatan UNVR berdasarkan <strong>PSAK 72</strong> (<em>Revenue from Contracts with Customers</em>) — kapan dan bagaimana pendapatan diakui untuk produk FMCG dengan retur dan diskon? Perhatikan juga akuntansi imbalan kerja berdasarkan <strong>PSAK 24</strong> (<em>Employee Benefits</em>) — estimasi aktuarial apa yang digunakan, dan bagaimana ini mempengaruhi laba?</li>
+<li><strong>Kualitas Pelaporan</strong>: UNVR secara konsisten meraih penilaian tata kelola yang tinggi — analisis apakah ini tercermin dalam kualitas pelaporan keuangannya.</li>
+</ul>
+<p>📁 Lihat file <em>Indonesian Company Examples</em> untuk analisis lebih detail tentang UNVR dalam konteks konsep minggu ini.</p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-01/study-guide.html">← Week 01</a>
+  
+  
+  <a href="../week-03/study-guide.html">Week 03 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

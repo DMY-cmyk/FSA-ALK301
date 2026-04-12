@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 09 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 09: Profitability Analysis and ROIC</h1>
+  <div class="meta">
+    <span>📚 Analisis profitabilitas dan return on invested capital</span>
+    
+    <span>📖 Subramanyam Ch. 8</span>
+    
+    
+    <span>📗 Palepu Ch. 5, 6</span>
+    
+    
+    <span>🏢 BBRI — Bank Rakyat Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 DuPont decomposition; ROE; ROIC; profit margins; asset turnover; financial leverage analysis</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 09 Study Guide — Profitability Analysis and Return on Invested Capital -->
+<!-- Subramanyam Ch.8 (primary) + Palepu Ch.5-6 (supplement) | No article this week | BBRI (Indonesian Example) -->
+
+<h2>Panduan Belajar Minggu 09: Analisis Profitabilitas dan Return on Invested Capital</h2>
+<p><em>Week 09 Study Guide: Profitability Analysis &amp; Return on Invested Capital — Subramanyam Chapter 8 + Palepu Chapters 5–6</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu ini kita memasuki inti dari <strong>analisis kinerja keuangan</strong>: mengukur seberapa efektif perusahaan menghasilkan laba dari modal yang diinvestasikan. Chapter 8 Subramanyam membahas <em>profitability analysis</em> secara komprehensif — mulai dari <em>Return on Equity</em> (ROE), <em>Return on Assets</em> (ROA), hingga <em>Return on Invested Capital</em> (ROIC). Alat analisis sentral minggu ini adalah <strong>dekomposisi DuPont</strong> — teknik yang menguraikan ROE menjadi komponen-komponen margin, perputaran aset, dan leverage, sehingga analis dapat mengidentifikasi <em>driver</em> profitabilitas yang sesungguhnya. Palepu Ch.5–6 melengkapi dengan kerangka analisis rasio dan benchmarking. Bersama dengan analisis arus kas (Minggu 08), analisis profitabilitas memberikan <strong>gambaran lengkap kinerja historis</strong> yang menjadi fondasi untuk analisis prospektif (Minggu 10) dan valuasi ekuitas (Minggu 12).</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">📖 Langkah 1: Baca Subramanyam Chapter 8 — Return on Invested Capital (Bacaan Utama / Primary Reading)</div>
+<div class="did">
+<p>Ini adalah bacaan utama yang padat dan penting. Chapter 8 membangun kerangka analisis profitabilitas secara sistematis. Fokuskan pada: <strong>Return on Equity (ROE)</strong> — definisi, perhitungan, dan signifikansi sebagai ukuran pengembalian bagi pemegang saham; <strong>dekomposisi DuPont tiga langkah</strong> (<em>3-step DuPont</em>) — ROE = Profit Margin × Asset Turnover × Equity Multiplier; <strong>dekomposisi DuPont lima langkah</strong> (<em>5-step extended DuPont</em>) — memisahkan efek operasi, bunga, dan pajak; <strong>Return on Assets (ROA)</strong> — dekomposisi menjadi margin dan perputaran; <strong>Return on Invested Capital (ROIC)</strong> — NOPAT/Invested Capital, mengukur kinerja operasi murni tanpa pengaruh leverage; <strong>analisis margin laba</strong> — gross margin, operating margin, net margin; <strong>analisis perputaran aset</strong> — total asset turnover, receivables, inventory, payables; <strong>efek leverage keuangan</strong> — kapan leverage meningkatkan vs menurunkan ROE; dan <strong>sustainable growth rate</strong>. Baca secara berurutan karena konsep membangun di atas konsep sebelumnya.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 2: Baca Palepu Chapters 5–6 — Financial Analysis Framework &amp; Ratio Analysis (Bacaan Pelengkap / Supplementary)</div>
+<div class="did">
+<p>Palepu memberikan perspektif alternatif dan pelengkap yang berharga: <strong>Chapter 5</strong> membahas kerangka analisis keuangan (<em>financial analysis framework</em>) — bagaimana rasio keuangan digunakan secara sistematis untuk mengevaluasi strategi bisnis, kinerja operasi, dan posisi keuangan. <strong>Chapter 6</strong> memberikan detail lebih lanjut tentang analisis rasio — kategori rasio (profitabilitas, efisiensi, likuiditas, leverage), <em>cross-sectional benchmarking</em> (perbandingan antar perusahaan dan industri), dan <em>time-series analysis</em> (tren temporal). Palepu juga memperkenalkan varian dekomposisi DuPont yang sedikit berbeda dari Subramanyam — memahami kedua pendekatan memperkaya analisis Anda.</p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Hierarki Konsep Minggu Ini / This Week's Concept Hierarchy</div>
+<ol>
+<li><strong>Return on Equity (ROE)</strong> — ukuran pengembalian bagi pemegang saham: Laba Bersih / Ekuitas. Mengukur berapa banyak laba yang dihasilkan per rupiah ekuitas yang diinvestasikan. ROE adalah titik awal analisis profitabilitas karena merangkum interaksi antara margin, efisiensi, dan leverage.</li>
+<li><strong>Dekomposisi DuPont 3-Langkah (<em>3-Step DuPont</em>)</strong> — ROE = <em>Net Profit Margin</em> (NI/Revenue) × <em>Asset Turnover</em> (Revenue/Assets) × <em>Equity Multiplier</em> (Assets/Equity). Memungkinkan identifikasi apakah ROE didorong oleh profitabilitas operasional (margin), efisiensi aset (turnover), atau penggunaan utang (leverage).</li>
+<li><strong>Dekomposisi DuPont 5-Langkah (<em>5-Step Extended DuPont</em>)</strong> — memisahkan lebih lanjut: <em>Operating Profit Margin</em> × <em>Asset Turnover</em> × <em>Interest Burden</em> (EBT/EBIT) × <em>Tax Burden</em> (NI/EBT) × <em>Equity Multiplier</em>. Memungkinkan analisis terpisah dari efek operasi, biaya utang, efisiensi pajak, dan leverage.</li>
+<li><strong>Return on Assets (ROA)</strong> — Laba Bersih / Total Aset, didekomposisi menjadi ROA = <em>Profit Margin</em> × <em>Asset Turnover</em>. Mengukur efisiensi keseluruhan tanpa mempertimbangkan sumber pendanaan.</li>
+<li><strong>Return on Invested Capital (ROIC)</strong> — NOPAT / Invested Capital. Mengeliminasi efek leverage sehingga mengukur kinerja operasi murni. Perbandingan ROIC vs WACC menentukan apakah perusahaan menciptakan atau menghancurkan nilai ekonomi.</li>
+<li><strong>Analisis Margin dan Perputaran Aset</strong> — analisis mendalam terhadap gross margin, operating margin, net margin, serta komponen perputaran (receivables, inventory, payables, fixed assets). Menghubungkan efisiensi operasional dengan profitabilitas.</li>
+<li><strong>Efek Leverage Keuangan (<em>Financial Leverage Effect</em>)</strong> — leverage meningkatkan ROE ketika ROIC > cost of debt, tetapi menurunkan ROE ketika sebaliknya. Konsep <em>spread</em> (ROIC − cost of debt) menentukan arah efek leverage.</li>
+<li><strong>Sustainable Growth Rate &amp; Economic Profit</strong> — SGR = ROE × retention ratio; mengukur tingkat pertumbuhan yang dapat dipertahankan tanpa pendanaan eksternal. Economic profit = (ROIC − WACC) × Invested Capital; mengukur penciptaan nilai di atas biaya modal.</li>
+</ol>
+</div>
+
+<h3>3. Kaitan dengan Minggu Sebelumnya dan Sesudahnya / Course Connections</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Membangun Toolkit Analitis / Building the Analytical Toolkit</div>
+<p>Analisis profitabilitas minggu ini adalah <strong>langkah kedua</strong> dalam membangun toolkit analitis paruh kedua kursus. Jika Minggu 08 (arus kas) memberikan perspektif berbasis kas, Minggu 09 memberikan perspektif berbasis akrual yang terstruktur:</p>
+<ul>
+<li><strong>Minggu 08</strong> (Cash Flow Analysis) — mengevaluasi kinerja dari perspektif kas: CFO, FCF, kualitas arus kas. Memberikan informasi tentang likuiditas dan keberlanjutan operasi yang menjadi konteks penting untuk menilai apakah profitabilitas akrual didukung oleh kas riil.</li>
+<li><strong>Minggu 09</strong> (Profitability &amp; ROIC — MINGGU INI) — mengukur pengembalian dari perspektif akrual: ROE, ROA, ROIC, dekomposisi DuPont. Mengidentifikasi driver profitabilitas (margin vs turnover vs leverage) yang menjadi basis untuk proyeksi kinerja masa depan.</li>
+<li><strong>Minggu 10</strong> (Prospective Analysis) — menggunakan pola profitabilitas historis (dari Minggu 09) dan pola arus kas (dari Minggu 08) untuk membuat proyeksi laporan keuangan — langkah terakhir sebelum valuasi.</li>
+<li><strong>Minggu 12</strong> (Equity Valuation) — model valuasi (DCF, residual income) membutuhkan proyeksi arus kas dan estimasi ROIC — kedua input ini berasal langsung dari Minggu 08–10.</li>
+</ul>
+</div>
+
+<table>
+<thead>
+<tr><th>Konsep Minggu 09</th><th>Terhubung ke</th><th>Penjelasan Koneksi</th></tr>
+</thead>
+<tbody>
+<tr><td>ROE &amp; DuPont Decomposition</td><td>Week 03 — Financing Activities</td><td>Leverage (equity multiplier) dalam DuPont berasal dari keputusan pembiayaan yang dipelajari di Ch.3</td></tr>
+<tr><td>Profit Margin Analysis</td><td>Week 06 — Operating Activities</td><td>Margin operasi bergantung pada pengakuan pendapatan dan beban yang dipelajari di Ch.6</td></tr>
+<tr><td>Asset Turnover Analysis</td><td>Week 04 — Investing Activities</td><td>Perputaran aset mencerminkan efisiensi penggunaan aset yang dipelajari di Ch.4</td></tr>
+<tr><td>ROIC vs Cost of Capital</td><td>Week 12 — Equity Valuation</td><td>Perbandingan ROIC vs WACC adalah fondasi analisis penciptaan nilai dalam valuasi</td></tr>
+<tr><td>Sustainable Growth Rate</td><td>Week 10 — Prospective Analysis</td><td>SGR menjadi input untuk proyeksi pertumbuhan pendapatan dan laba masa depan</td></tr>
+<tr><td>CFO/NI Quality Check</td><td>Week 08 — Cash Flow Analysis</td><td>Profitabilitas akrual tinggi harus divalidasi dengan kualitas arus kas yang baik (CFO ≥ NI)</td></tr>
+</tbody>
+</table>
+
+<h3>4. Konsep Kunci yang Harus Dikuasai / Key Concepts to Master</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Formula dan Kerangka Kritis Minggu Ini</div>
+<table>
+<thead><tr><th style="width:25%">Konsep</th><th style="width:42%">Formula / Kerangka</th><th style="width:33%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>ROE</td><td>Net Income / Shareholders' Equity</td><td>Gunakan rata-rata ekuitas; ukuran akhir bagi pemegang saham</td></tr>
+<tr><td>DuPont 3-Step</td><td>ROE = (NI/Rev) × (Rev/Assets) × (Assets/Equity)</td><td>Margin × Turnover × Leverage; identifikasi driver utama</td></tr>
+<tr><td>DuPont 5-Step</td><td>(EBIT/Rev) × (Rev/Assets) × (EBT/EBIT) × (NI/EBT) × (Assets/Eq)</td><td>Pisahkan efek operasi, bunga, pajak, leverage</td></tr>
+<tr><td>ROA</td><td>Net Income / Total Assets = Margin × Turnover</td><td>Kinerja sebelum efek leverage</td></tr>
+<tr><td>ROIC</td><td>NOPAT / Invested Capital</td><td>NOPAT = EBIT × (1−T); IC = Debt + Equity − Excess Cash</td></tr>
+<tr><td>Leverage Effect</td><td>ROE = ROIC + (ROIC − cost of debt) × D/E</td><td>Spread positif → leverage meningkatkan ROE</td></tr>
+<tr><td>SGR</td><td>ROE × (1 − payout ratio)</td><td>Pertumbuhan tanpa pendanaan eksternal</td></tr>
+<tr><td>Economic Profit</td><td>(ROIC − WACC) × Invested Capital</td><td>Penciptaan nilai di atas biaya modal</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5. Cara Mendekati Ringkasan Utama / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Ringkasan / Summary Reading Guidance</div>
+<p>Ringkasan utama minggu ini mengikuti alur Chapter 8 Subramanyam dan dilengkapi dengan perspektif Palepu Ch.5–6. Saat membaca, selalu tanyakan: <strong>"Apa yang sebenarnya mendorong profitabilitas perusahaan ini — apakah margin yang tinggi, perputaran aset yang efisien, atau leverage keuangan?"</strong> Dekomposisi DuPont bukan sekadar rumus matematis; ia adalah <em>diagnostic tool</em> yang mengungkap strategi bisnis. Perusahaan dengan margin tinggi + turnover rendah (misalnya luxury goods) memiliki model bisnis yang secara fundamental berbeda dari perusahaan dengan margin rendah + turnover tinggi (misalnya retail). Kedua bisa memiliki ROE yang sama, tetapi risiko dan keberlanjutannya berbeda.</p>
+</div>
+
+<h3>6. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Dipikir Sebelum dan Sesudah Membaca / Questions to Consider</div>
+<ol>
+<li>Mengapa ROE saja tidak cukup untuk menilai kinerja perusahaan — dan bagaimana dekomposisi DuPont mengungkap informasi yang tersembunyi di balik angka ROE? (<em>Why is ROE alone insufficient for evaluating performance — and how does DuPont decomposition reveal hidden information?</em>)</li>
+<li>Dua perusahaan memiliki ROE identik sebesar 20%. Perusahaan A memiliki margin 10%, turnover 1,0×, dan leverage 2,0×. Perusahaan B memiliki margin 4%, turnover 2,0×, dan leverage 2,5×. Analisis perbedaan risiko dan keberlanjutan mereka. (<em>Analyze the differences in risk and sustainability between these two identical-ROE firms.</em>)</li>
+<li>Apa perbedaan konseptual antara ROA, ROE, dan ROIC — dan kapan masing-masing paling informatif? (<em>What are the conceptual differences between ROA, ROE, and ROIC — and when is each most informative?</em>)</li>
+<li>Bagaimana leverage keuangan dapat sekaligus menjadi "pedang bermata dua" — meningkatkan ROE ketika kondisi baik dan menghancurkannya ketika kondisi buruk? (<em>How can financial leverage be a "double-edged sword" for ROE?</em>)</li>
+<li>Untuk industri perbankan seperti BBRI, bagaimana dekomposisi DuPont perlu diadaptasi — dan mengapa NIM (Net Interest Margin) menggantikan peran gross margin? (<em>How must DuPont analysis be adapted for banking — and why does NIM replace gross margin?</em>)</li>
+<li>Jika ROIC perusahaan sebesar 12% dan WACC sebesar 10%, apakah perusahaan menciptakan nilai ekonomi? Bagaimana jika ROIC turun menjadi 8%? (<em>If ROIC is 12% and WACC is 10%, is the firm creating economic value? What if ROIC drops to 8%?</em>)</li>
+<li>Bagaimana sustainable growth rate membantu analis mengevaluasi apakah target pertumbuhan manajemen realistis — dan apa yang terjadi jika pertumbuhan aktual melebihi SGR? (<em>How does SGR help evaluate whether management's growth targets are realistic?</em>)</li>
+<li>Bandingkan pendekatan Subramanyam (Chapter 8) dengan Palepu (Chapters 5–6) dalam menganalisis profitabilitas — di mana mereka sepakat dan di mana mereka berbeda? (<em>Compare Subramanyam and Palepu's approaches to profitability analysis.</em>)</li>
+<li>Hubungkan analisis profitabilitas minggu ini dengan analisis arus kas Minggu 08: apakah profitabilitas akrual yang tinggi selalu berarti kinerja kas yang kuat? Berikan contoh di mana keduanya bisa divergen. (<em>Connect this week's profitability analysis with last week's cash flow analysis: does high accrual profitability always mean strong cash performance?</em>)</li>
+</ol>
+</div>
+
+<h3>7. Kesalahan Umum yang Harus Dihindari / Common Mistakes to Avoid</h3>
+
+<div class="exb nb">
+<div class="exn">🚩 Kesalahan Konseptual dan Analitis Umum</div>
+<ul>
+<li><strong>Menyimpulkan ROE tinggi selalu positif tanpa memeriksa sumbernya</strong> — ROE tinggi yang didorong oleh leverage berlebihan jauh lebih berisiko daripada yang didorong oleh margin dan turnover yang kuat. DuPont decomposition adalah alat untuk membedakan keduanya.</li>
+<li><strong>Membandingkan ROE lintas industri tanpa konteks</strong> — bank memiliki equity multiplier 8–15×, sementara perusahaan teknologi mungkin 1,5–3×. Perbandingan harus <em>within-industry</em> atau menggunakan ROIC yang mengeliminasi efek leverage.</li>
+<li><strong>Menggunakan ROIC tanpa mendefinisikan invested capital dengan benar</strong> — invested capital harus mengeluarkan <em>excess cash</em> dan <em>non-operating assets</em>; menggunakan total assets akan mendistorsi ROIC.</li>
+<li><strong>Mengabaikan hubungan terbalik antara margin dan turnover</strong> — dalam banyak industri, margin tinggi berkorelasi negatif dengan turnover (luxury vs mass market). Ini bukan kelemahan — ini mencerminkan strategi bisnis yang berbeda.</li>
+<li><strong>Menghitung sustainable growth rate tanpa memvalidasi asumsinya</strong> — SGR = ROE × retention ratio mengasumsikan rasio-rasio konstan; dalam praktik, perusahaan yang bertumbuh cepat sering mengubah leverage dan payout policy.</li>
+</ul>
+</div>
+
+<h3>8. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Apa yang Membedakan S1 dan S2 / Undergraduate vs Graduate Distinction</div>
+<p><strong>Level S1</strong>: Mahasiswa S1 cukup memahami definisi ROE, ROA, dan dekomposisi DuPont dasar, serta menghitung rasio dari data yang diberikan.</p>
+<p><strong>Level S2 (yang diharapkan dari Anda)</strong>: Anda harus mampu (1) <strong>menginterpretasikan secara strategis</strong> — menghubungkan komponen DuPont dengan strategi bisnis (cost leadership → margin rendah + turnover tinggi; differentiation → margin tinggi + turnover rendah); (2) <strong>mengevaluasi keberlanjutan</strong> — apakah level ROE saat ini dapat dipertahankan mengingat tren margin, kompetisi, dan perubahan leverage; (3) <strong>membandingkan secara kritis</strong> — memilih metrik yang tepat (ROA vs ROE vs ROIC) berdasarkan tujuan analisis; (4) <strong>mengadaptasi untuk industri spesifik</strong> — misalnya perbankan, di mana leverage sangat tinggi dan NIM menggantikan gross margin; dan (5) <strong>menghubungkan dengan valuasi</strong> — memahami bahwa ROIC vs WACC menentukan apakah perusahaan layak diperdagangkan di atas atau di bawah nilai buku, yang merupakan fondasi model <em>residual income</em>.</p>
+</div>
+
+<h3>9. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perusahaan Minggu Ini: BBRI (Bank Rakyat Indonesia)</div>
+<p>Minggu ini kita menggunakan <strong>BBRI (PT Bank Rakyat Indonesia Persero Tbk)</strong> sebagai studi kasus analisis profitabilitas. Sebagai bank terbesar di Indonesia berdasarkan laba dan salah satu bank dengan ROE tertinggi di ASEAN, BBRI menawarkan kasus yang kaya untuk dekomposisi DuPont:</p>
+<ul>
+<li><strong>DuPont Banking Adaptation</strong>: Perbankan memerlukan adaptasi DuPont karena leverage sangat tinggi (equity multiplier 6–7×), margin diukur melalui NIM dan BOPO, dan "perputaran aset" diukur melalui yield on earning assets.</li>
+<li><strong>ROE Trend Analysis</strong>: BBRI mengalami pertumbuhan ROE signifikan dari 17,3% (2021) ke 22,0% (2023), didorong oleh perbaikan BOPO (efisiensi operasional) dan pertumbuhan kredit mikro yang kuat.</li>
+<li><strong>Cross-Sectional Benchmarking</strong>: Perbandingan dengan BBCA (Bank Central Asia) memberikan perspektif menarik — BBCA memiliki ROE lebih tinggi dengan NIM lebih rendah tetapi efisiensi biaya (CIR) yang superior.</li>
+<li><strong>Sustainable Growth</strong>: Dengan ROE ~22% dan payout ratio ~65%, SGR BBRI menunjukkan kapasitas pertumbuhan yang kuat.</li>
+</ul>
+<p>📁 Lihat file <em>Indonesian Company Examples</em> untuk dekomposisi DuPont lengkap menggunakan data aktual BBRI 2021–2023.</p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-08/study-guide.html">← Week 08</a>
+  
+  
+  <a href="../week-10/study-guide.html">Week 10 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

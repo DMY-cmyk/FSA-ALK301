@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 07 — Main Summary</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 07: Pre-Midterm Review: Synthesis and Article Discussion</h1>
+  <div class="meta">
+    <span>📚 Review bahan</span>
+    
+    
+    
+    <span>📄 2 article(s)</span>
+    
+    <span>🏢 Various — Various IDX Cases</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Synthesis of Weeks 1-6; earnings management detection; cross-industry ratio analysis; exam preparation</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<div id="s1" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Pendahuluan: Mengapa Sintesis Diperlukan / Why Synthesis Matters</h2>
+
+<p>Minggu ketujuh adalah titik tengah kursus — saatnya berhenti sejenak dan menghubungkan seluruh kerangka analitis yang telah dipelajari dalam enam minggu pertama. Chapter 1 hingga 6 Subramanyam membangun arsitektur analisis laporan keuangan secara bertahap: dari kerangka besar (<em>Business Analysis Framework</em>) ke detail teknis (pengakuan pendapatan, depresiasi, konsolidasi). Dokumen sintesis ini mengorganisasi seluruh materi tersebut menjadi <strong>satu kerangka terintegrasi</strong> yang siap digunakan untuk UTS maupun analisis nyata.</p>
+
+<div class="ibox nb"><div class="ibt">📌 Posisi Minggu 07 dalam Kerangka Kursus</div>
+<p>Minggu ini tidak memperkenalkan chapter baru. Sebagai gantinya, kita melakukan tiga hal: (1) <strong>Sintesis</strong> — menghubungkan konsep dari Ch.1–6 menjadi alur analitis yang koheren; (2) <strong>Pendalaman melalui artikel</strong> — Jones (1991) memberikan model kuantitatif untuk <em>earnings management</em> dan Acaravci (2007) menguji perilaku konvergensi rasio keuangan; (3) <strong>Persiapan UTS</strong> — membangun peta konsep, matriks formula, dan checklist analitis.</p>
+<p><strong>Ch.1 → Ch.2 → Ch.3 → Ch.4 → Ch.5 → Ch.6 → <u>MINGGU 07: SINTESIS &amp; REVIEW</u> → Ch.7–12</strong></p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<ul>
+<li>Mengintegrasikan keempat komponen <em>Business Analysis Framework</em> dengan detail teknis dari Ch.2–6</li>
+<li>Membangun peta konsep yang menghubungkan seluruh topik paruh pertama kursus</li>
+<li>Memahami Jones Model (1991) sebagai alat kuantitatif untuk mendeteksi <em>earnings management</em></li>
+<li>Memahami <em>partial adjustment model</em> Acaravci (2007) dan implikasinya untuk penggunaan <em>industry benchmarks</em></li>
+<li>Mengompilasi matriks rasio keuangan komprehensif dari Ch.3–6</li>
+<li>Menerapkan seluruh kerangka secara terintegrasi pada perusahaan Indonesia</li>
+<li>Mempersiapkan diri secara strategis untuk Ujian Tengah Semester</li>
+</ul>
+</div>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Business Analysis Framework: Kerangka Payung (Ch.1)</h2>
+
+<p>Chapter 1 Subramanyam memperkenalkan <strong>Business Analysis Framework</strong> (BAF) — kerangka empat tahap yang menjadi fondasi seluruh kursus. Setiap tahap analisis bergantung pada tahap sebelumnya, dan kegagalan di satu tahap merusak seluruh analisis.</p>
+
+<div class="def"><div class="den">Tahap 1: Strategy Analysis / Analisis Strategi</div><div class="did">Evaluasi lingkungan kompetitif perusahaan menggunakan kerangka seperti Porter's Five Forces, analisis rantai nilai, dan <em>competitive advantage assessment</em>. Tujuannya: memahami <strong>konteks bisnis</strong> sebelum melihat angka — industri apa, posisi kompetitif bagaimana, apa sumber keunggulan, dan apa risikonya. Tanpa analisis strategi, analis tidak dapat menilai apakah angka-angka keuangan masuk akal. Contoh: margin operasional 30% sangat tinggi untuk industri ritel tetapi normal untuk perusahaan teknologi SaaS.</div></div>
+
+<div class="def"><div class="den">Tahap 2: Accounting Analysis / Analisis Akuntansi</div><div class="did">Evaluasi kualitas informasi keuangan yang dilaporkan. Ini mencakup: identifikasi kebijakan akuntansi kritis, evaluasi fleksibilitas akuntansi, evaluasi strategi pelaporan manajemen, kualitas pengungkapan, dan identifikasi <em>red flags</em>. <strong>Tujuannya: memastikan data yang akan dianalisis dapat dipercaya.</strong> Ch.2 membahas ini secara mendalam — dan Jones Model (1991) memberikan alat kuantitatifnya. Tanpa accounting analysis, seluruh financial analysis dibangun di atas fondasi yang rapuh.</div></div>
+
+<div class="def"><div class="den">Tahap 3: Financial Analysis / Analisis Keuangan</div><div class="did">Menggunakan data yang sudah dievaluasi kualitasnya untuk menganalisis kinerja dan posisi keuangan melalui analisis rasio dan arus kas. Mencakup: rasio profitabilitas (margin, ROA, ROE), rasio likuiditas (current, quick), rasio solvabilitas (leverage, interest coverage), rasio efisiensi (turnover), dan analisis arus kas. Ch.3–6 memberikan detail komponen yang dianalisis; Ch.9 akan mendalami analisis profitabilitas.</div></div>
+
+<div class="def"><div class="den">Tahap 4: Prospective Analysis / Analisis Prospektif</div><div class="did">Peramalan kinerja keuangan masa depan berdasarkan hasil tiga tahap sebelumnya. Mencakup: peramalan laporan laba rugi, neraca, dan arus kas; estimasi nilai intrinsik. Ini adalah tujuan akhir dari seluruh proses analisis — dan akan dibahas di Ch.10–12. Kualitas peramalan sangat bergantung pada kualitas analisis di tahap 1–3.</div></div>
+
+<div class="fbox nb">
+<p><strong>Alur Interdependensi BAF:</strong></p>
+<p><code>Strategy Analysis (Ch.1) → Accounting Analysis (Ch.2) → Financial Analysis (Ch.3–6, 9) → Prospective Analysis (Ch.10–12)</code></p>
+<p>Setiap tahap membutuhkan output tahap sebelumnya. <em>Accounting analysis</em> tidak bisa dilakukan tanpa memahami konteks bisnis; <em>financial analysis</em> tidak bermakna tanpa memastikan kualitas data; peramalan tidak akurat tanpa analisis kinerja historis yang baik.</p>
+</div>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Financial Reporting Quality &amp; Earnings Management (Ch.2)</h2>
+
+<p>Chapter 2 adalah chapter paling kritis untuk pembentukan <em>analytical skepticism</em> — kemampuan untuk mengevaluasi apakah angka-angka yang dilaporkan layak dipercaya sebelum menggunakannya.</p>
+
+<h3>3.1 Akuntansi Akrual / Accrual Accounting</h3>
+
+<div class="def"><div class="den">Prinsip Dasar Akuntansi Akrual</div><div class="did">Akuntansi akrual mengakui pendapatan saat <em>earned</em> (bukan saat kas diterima) dan beban saat <em>incurred</em> (bukan saat kas dibayar). Ini menghasilkan perbedaan antara laba bersih dan arus kas operasi — perbedaan inilah yang disebut <strong>akrual</strong> (<em>accruals</em>). Akrual mencakup: piutang usaha (pendapatan diakui tetapi kas belum diterima), persediaan (biaya dikapitalisasi tetapi belum menjadi beban), utang usaha (beban diakui tetapi kas belum dibayar), dan depresiasi (alokasi biaya aset tetap ke periode manfaat). <strong>Total Accruals = Net Income − Cash Flow from Operations.</strong></div></div>
+
+<div class="def"><div class="den">Earnings Management / Manajemen Laba</div><div class="did"><em>Earnings management</em> adalah penggunaan diskresi manajemen dalam pelaporan keuangan untuk mengubah laporan keuangan dengan tujuan: menyesatkan <em>stakeholders</em> tentang kinerja ekonomi perusahaan, atau mempengaruhi hasil kontraktual yang bergantung pada angka akuntansi (bonus, debt covenants). Bentuk-bentuk utama: (1) <strong>Accrual-based earnings management</strong> — mengubah estimasi dan kebijakan akuntansi (misalnya umur manfaat aset, <em>allowance for doubtful accounts</em>, <em>revenue recognition timing</em>); (2) <strong>Real earnings management</strong> — mengubah keputusan operasional nyata (menunda R&amp;D, memotong harga untuk meningkatkan penjualan akhir kuartal, overproduction untuk menyerap overhead tetap).</div></div>
+
+<h3>3.2 Red Flags Kualitas Pelaporan</h3>
+
+<div class="exb nb"><div class="exn">🚩 Red Flags — Kualitas Pelaporan Keuangan</div>
+<ul>
+<li>Pertumbuhan pendapatan yang signifikan tanpa pertumbuhan arus kas operasi yang proporsional</li>
+<li>Piutang usaha tumbuh lebih cepat daripada pendapatan (<em>days sales outstanding</em> meningkat)</li>
+<li>Persediaan tumbuh lebih cepat daripada COGS (<em>days inventory outstanding</em> meningkat)</li>
+<li>Perubahan kebijakan akuntansi yang meningkatkan laba (umur manfaat diperpanjang, metode depresiasi diubah)</li>
+<li>Item "non-berulang" yang muncul berulang kali</li>
+<li>Perbedaan besar antara laba akuntansi dan laba fiskal</li>
+<li>Kualifikasi atau penekanan hal (<em>emphasis of matter</em>) dalam laporan auditor</li>
+<li>Transaksi signifikan dengan pihak berelasi</li>
+<li>Akrual diskresioner besar (terdeteksi melalui Jones Model atau varian-variannya)</li>
+</ul>
+</div>
+
+<h3>3.3 Koneksi ke Jones Model (1991)</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Dari Konsep ke Kuantifikasi: Jones Model</div>
+<p>Chapter 2 menjelaskan <em>mengapa</em> earnings management terjadi dan <em>apa</em> bentuknya. Jones (1991) memberikan <em>bagaimana</em> mendeteksinya secara kuantitatif. Model Jones memisahkan total akrual menjadi:</p>
+<p><strong>Total Accruals (TA) = Non-Discretionary Accruals (NDA) + Discretionary Accruals (DA)</strong></p>
+<p>Dimana NDA diestimasi menggunakan regresi: TA<sub>it</sub>/A<sub>it-1</sub> = α<sub>i</sub>(1/A<sub>it-1</sub>) + β<sub>1i</sub>(ΔREV<sub>it</sub>/A<sub>it-1</sub>) + β<sub>2i</sub>(PPE<sub>it</sub>/A<sub>it-1</sub>) + ε<sub>it</sub></p>
+<p>Residual (ε) = estimasi <em>discretionary accruals</em> = ukuran manajemen laba. Residual negatif besar → indikasi manajemen laba menurunkan laba. Residual positif besar → indikasi manajemen laba meningkatkan laba.</p>
+</div>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Balance Sheet Analysis: Financing Activities (Ch.3)</h2>
+
+<p>Chapter 3 menganalisis sisi kanan neraca — <strong>bagaimana perusahaan membiayai operasinya</strong> melalui utang dan ekuitas.</p>
+
+<h3>4.1 Konsep Kunci Pembiayaan</h3>
+
+<div class="def"><div class="den">Struktur Modal / Capital Structure</div><div class="did">Campuran antara utang (<em>debt</em>) dan ekuitas (<em>equity</em>) yang digunakan untuk membiayai aset perusahaan. <em>Static trade-off theory</em> (dasar Acaravci 2007) berargumen bahwa perusahaan memiliki target struktur modal optimal yang menyeimbangkan manfaat pajak utang (<em>tax shield</em>) dengan biaya <em>financial distress</em>. <em>Pecking order theory</em> berargumen bahwa perusahaan memprioritaskan sumber pembiayaan: laba ditahan → utang → ekuitas baru. Kedua teori menghasilkan prediksi berbeda tentang apakah rasio leverage akan konvergen ke rata-rata industri.</div></div>
+
+<div class="def"><div class="den">Off-Balance-Sheet Financing</div><div class="did">Pengaturan pembiayaan yang secara historis tidak muncul di neraca: <em>operating leases</em> (sebelum IFRS 16/PSAK 73), <em>special purpose entities</em> (SPE/VIE), <em>take-or-pay contracts</em>, penjualan piutang (<em>factoring</em>). Pasca IFRS 16, sebagian besar lease dikapitalisasi, tetapi bentuk-bentuk OBS lainnya masih relevan. Analis harus mengidentifikasi dan menyesuaikan (<em>adjust</em>) untuk mendapatkan gambaran leverage yang sesungguhnya.</div></div>
+
+<div class="def"><div class="den">Kewajiban Pensiun dan Imbalan Pasca-Kerja</div><div class="did">Program pensiun <em>defined benefit</em> menciptakan aset atau liabilitas pensiun neto di neraca. Komponen: <em>projected benefit obligation</em> (PBO), <em>plan assets</em>, <em>service cost</em>, <em>interest cost</em>, <em>expected return on plan assets</em>, dan <em>actuarial gains/losses</em>. Di Indonesia, PSAK 24 (IAS 19) mengatur imbalan pasca-kerja — UU Cipta Kerja dan PP 35/2021 menentukan besaran minimum. Liabilitas ini signifikan untuk perusahaan padat karya dan harus dimasukkan dalam analisis leverage.</div></div>
+
+<h3>4.2 Rasio Kunci Pembiayaan</h3>
+
+<table class="nb">
+<thead><tr><th style="width:30%">Rasio</th><th style="width:35%">Formula</th><th style="width:35%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Debt-to-Equity</strong></td><td>Total Debt / Total Equity</td><td>Tingkat leverage; semakin tinggi → risiko keuangan lebih besar</td></tr>
+<tr><td><strong>Debt-to-Assets</strong></td><td>Total Debt / Total Assets</td><td>Proporsi aset yang dibiayai utang</td></tr>
+<tr><td><strong>Interest Coverage</strong></td><td>EBIT / Interest Expense</td><td>Kemampuan membayar bunga; &lt;1.5× → sinyal bahaya</td></tr>
+<tr><td><strong>Current Ratio</strong></td><td>Current Assets / Current Liabilities</td><td>Likuiditas jangka pendek; konvergen cepat ke rata-rata industri (Acaravci)</td></tr>
+<tr><td><strong>Quick Ratio</strong></td><td>(CA − Inventory) / Current Liabilities</td><td>Likuiditas ketat; konvergen cepat (Acaravci: β = 0.16)</td></tr>
+<tr><td><strong>Equity-to-Total-Debt</strong></td><td>Equity / Total Debt</td><td>Solvabilitas jangka panjang; diuji Acaravci (β = 0.11)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Balance Sheet Analysis: Investing Activities (Ch.4)</h2>
+
+<p>Chapter 4 menganalisis sisi kiri neraca — <strong>bagaimana perusahaan mengalokasikan modal ke aset produktif</strong>.</p>
+
+<h3>5.1 Konsep Kunci Investasi</h3>
+
+<div class="def"><div class="den">Aset Tetap dan Depresiasi / PP&amp;E and Depreciation</div><div class="did">Aset tetap (<em>property, plant &amp; equipment</em>) dicatat pada biaya historis dikurangi akumulasi depresiasi. Metode depresiasi (garis lurus, saldo menurun, unit produksi) mempengaruhi profil beban dan laba. <strong>Koneksi ke Jones Model:</strong> PPE bruto dimasukkan dalam model Jones sebagai variabel independen untuk mengendalikan porsi akrual total yang berasal dari depresiasi non-diskresioner — mengisolasi manipulasi dari depresiasi normal. Isu analitis kunci: estimasi umur manfaat (perpanjangan = meningkatkan laba), metode depresiasi, dan <em>impairment testing</em>.</div></div>
+
+<div class="def"><div class="den">Intangible Assets &amp; Goodwill</div><div class="did">Aset takberwujud: paten, hak cipta, merek dagang, lisensi — diamortisasi selama umur manfaatnya. Goodwill — kelebihan harga akuisisi di atas nilai wajar aset bersih teridentifikasi — <strong>tidak diamortisasi</strong> tetapi diuji <em>impairment</em> secara tahunan. Keputusan impairment melibatkan estimasi nilai wajar yang subjektif — area rawan manajemen laba. Penundaan impairment meningkatkan aset dan laba; percepatan impairment menurunkan laba (relevan untuk konteks Jones: <em>big bath</em>).</div></div>
+
+<div class="def"><div class="den">Asset Impairment / Penurunan Nilai</div><div class="did">Di bawah PSAK 48 (IAS 36), aset harus diuji penurunan nilai ketika terdapat indikasi bahwa nilai tercatat melebihi nilai terpulihkan (<em>recoverable amount</em> = maks dari <em>fair value less costs of disposal</em> dan <em>value in use</em>). Kerugian impairment langsung diakui di laba rugi. Isu analitis: timing impairment (apakah ditunda untuk menghindari penurunan laba?), besaran impairment (apakah terlalu besar — <em>big bath</em>?), dan reversibilitas (<em>goodwill impairment</em> tidak dapat di-<em>reverse</em>).</div></div>
+
+<h3>5.2 Rasio Kunci Investasi</h3>
+
+<table class="nb">
+<thead><tr><th style="width:30%">Rasio</th><th style="width:35%">Formula</th><th style="width:35%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Asset Turnover</strong></td><td>Revenue / Total Assets</td><td>Efisiensi penggunaan aset; diuji Acaravci (β = 0.10, lambat)</td></tr>
+<tr><td><strong>PP&amp;E Turnover</strong></td><td>Revenue / Net PP&amp;E</td><td>Efisiensi aset tetap; industri capital-intensive memiliki turnover rendah</td></tr>
+<tr><td><strong>Inventory Turnover</strong></td><td>COGS / Average Inventory</td><td>Kecepatan persediaan terjual; diuji Acaravci (β = 0.10, lambat)</td></tr>
+<tr><td><strong>D&amp;A-to-Revenue</strong></td><td>Depreciation &amp; Amortization / Revenue</td><td>Intensitas modal; PPE dalam Jones Model menangkap komponen ini</td></tr>
+<tr><td><strong>Capex Ratio</strong></td><td>Capital Expenditure / Revenue</td><td>Tingkat reinvestasi; industri capital-intensive &gt; 15%</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Intercorporate Investments &amp; Consolidation (Ch.5)</h2>
+
+<p>Chapter 5 membahas bagaimana investasi di perusahaan lain dilaporkan — ini menambah kompleksitas signifikan pada analisis laporan keuangan.</p>
+
+<h3>6.1 Metode Akuntansi berdasarkan Tingkat Pengaruh</h3>
+
+<table class="nb">
+<thead><tr><th style="width:20%">Kepemilikan</th><th style="width:20%">Tingkat Pengaruh</th><th style="width:20%">Metode</th><th style="width:40%">Dampak pada Laporan Keuangan</th></tr></thead>
+<tbody>
+<tr><td>&lt; 20%</td><td>Tidak signifikan</td><td>Nilai wajar (FVTPL/FVOCI)</td><td>Investasi dicatat pada nilai wajar; perubahan masuk laba rugi atau OCI</td></tr>
+<tr><td>20%–50%</td><td>Pengaruh signifikan</td><td>Equity method</td><td>Investasi awal + bagian laba/rugi investee; satu baris di laba rugi</td></tr>
+<tr><td>&gt; 50%</td><td>Pengendalian</td><td>Konsolidasi penuh</td><td>Seluruh aset, liabilitas, pendapatan, beban konsolidasi; eliminasi transaksi intra-grup</td></tr>
+</tbody>
+</table>
+
+<div class="def"><div class="den">Goodwill &amp; Minority Interest dalam Konsolidasi</div><div class="did"><strong>Goodwill</strong> = harga akuisisi − nilai wajar aset bersih teridentifikasi anak perusahaan. Di bawah IFRS 3/PSAK 22, goodwill diuji impairment tahunan (tidak diamortisasi). <strong>Non-controlling interest</strong> (NCI) = bagian ekuitas anak perusahaan yang tidak dimiliki induk. NCI muncul di neraca konsolidasi (bagian ekuitas) dan laba rugi konsolidasi (alokasi laba bersih). Isu analitis: valuasi goodwill, timing impairment, dan apakah NCI dikonsolidasikan menggunakan <em>full goodwill</em> atau <em>partial goodwill method</em>.</div></div>
+
+<h3>6.2 Implikasi untuk Analisis Rasio &amp; Konvergensi Industri</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Konsolidasi dan Analisis Rasio (Koneksi ke Acaravci)</div>
+<p>Konsolidasi secara fundamental mengubah rasio keuangan: total aset, pendapatan, dan utang meningkat karena penjumlahan seluruh anak perusahaan. Ini mempengaruhi interpretasi konvergensi rasio industri (Acaravci):</p>
+<ul>
+<li>Perusahaan holding/konglomerat (seperti ASII) memiliki laporan konsolidasi yang mencakup berbagai industri — rasio konsolidasi mereka mungkin <strong>tidak konvergen</strong> ke rata-rata satu industri manapun</li>
+<li>Eliminasi transaksi intra-grup mengubah rasio turnover — <em>days receivable</em> dan <em>days payable</em> konsolidasi mungkin lebih rendah dari rata-rata anak perusahaan individual</li>
+<li>Goodwill dan NCI menambah kompleksitas pada rasio solvabilitas (equity-to-debt) — analis harus mempertimbangkan apakah menggunakan <em>parent-only</em> atau laporan konsolidasi</li>
+</ul>
+</div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Operating Activities &amp; Income Statement Analysis (Ch.6)</h2>
+
+<p>Chapter 6 menganalisis sisi kinerja perusahaan — <strong>laporan laba rugi dan aktivitas operasi</strong>.</p>
+
+<h3>7.1 Revenue Recognition (ASC 606 / IFRS 15 / PSAK 72)</h3>
+
+<div class="def"><div class="den">Model Lima Langkah Pengakuan Pendapatan</div><div class="did">(1) Identifikasi kontrak dengan pelanggan; (2) Identifikasi kewajiban kinerja (<em>performance obligations</em>); (3) Tentukan harga transaksi; (4) Alokasikan harga ke setiap kewajiban kinerja; (5) Akui pendapatan saat kewajiban terpenuhi. <strong>Relevansi untuk earnings management:</strong> Manajemen memiliki diskresi dalam setiap langkah — estimasi <em>variable consideration</em>, penentuan apakah <em>performance obligations</em> terpisah, keputusan <em>over time</em> vs <em>point in time</em>. Manipulasi pengakuan pendapatan adalah bentuk paling umum dari <em>accrual-based earnings management</em> yang dapat dideteksi Jones Model melalui perubahan piutang usaha.</div></div>
+
+<h3>7.2 Cost of Goods Sold &amp; Operating Expenses</h3>
+
+<div class="def"><div class="den">Beban Pokok Penjualan dan Metode Persediaan</div><div class="did">COGS bergantung pada metode arus biaya: <strong>FIFO</strong> (persediaan akhir mencerminkan harga terbaru, COGS mencerminkan harga lama → dalam inflasi: laba lebih tinggi), <strong>LIFO</strong> (sebaliknya — hanya US GAAP), <strong>weighted average</strong> (umum di Indonesia/PSAK). Perubahan metode persediaan adalah sinyal <em>earnings management</em>. <strong>Koneksi ke Jones Model:</strong> Perubahan persediaan adalah komponen total accruals — kenaikan persediaan yang tidak proporsional dengan COGS menaikkan akrual total dan dapat terdeteksi sebagai akrual diskresioner positif.</div></div>
+
+<div class="def"><div class="den">Beban Operasional: SG&amp;A, R&amp;D, Depreciation</div><div class="did"><strong>SG&amp;A</strong>: biaya penjualan, umum, dan administrasi — stickiness (kecenderungan tidak turun proporsional saat pendapatan turun) mengindikasikan struktur biaya. <strong>R&amp;D</strong>: dibebankan langsung (US GAAP/PSAK 19 fase riset) atau dikapitalisasi (fase pengembangan jika kriteria terpenuhi) — pilihan ini mempengaruhi laba secara material. <strong>Depreciation</strong>: metode dan estimasi umur manfaat adalah area diskresi manajemen. Semua komponen ini masuk dalam total accruals dan dipengaruhi oleh keputusan manajerial — sesuai kerangka Ch.2.</div></div>
+
+<h3>7.3 Earnings Persistence &amp; Quality</h3>
+
+<div class="def"><div class="den">Laba Permanen vs Transitori</div><div class="did"><strong>Laba permanen</strong> (<em>permanent/persistent earnings</em>) — komponen laba yang diharapkan berulang di masa depan: pendapatan inti, COGS normal, beban operasional reguler. <strong>Laba transitori</strong> — komponen satu kali: <em>restructuring charges</em>, <em>impairment losses</em>, keuntungan/kerugian penjualan aset, <em>discontinued operations</em>. Untuk valuasi: hanya laba permanen yang dikalikan <em>P/E multiple</em>; laba transitori dievaluasi satu per satu. <strong>Paradoks:</strong> perusahaan yang secara berulang melaporkan "item non-berulang" mungkin menggunakan klasifikasi ini sebagai <em>earnings management tool</em> — mengeluarkan beban negatif dari "core earnings" untuk meningkatkan penampilan laba inti.</div></div>
+
+<h3>7.4 Income Tax Accounting</h3>
+
+<div class="def"><div class="den">Deferred Tax Assets (DTA) &amp; Deferred Tax Liabilities (DTL)</div><div class="did"><strong>DTA</strong> muncul dari perbedaan temporer yang menghasilkan pengurangan pajak masa depan (misalnya: rugi fiskal yang dapat dikompensasi, beban yang sudah diakui akuntansi tetapi belum diakui pajak). <strong>DTL</strong> muncul dari perbedaan temporer yang menghasilkan tambahan pajak masa depan (misalnya: depresiasi fiskal lebih cepat dari akuntansi). <em>Valuation allowance</em> pada DTA — penyisihan jika manajemen menilai tidak <em>probable</em> bahwa DTA akan terealisasi — adalah area signifikan untuk diskresi manajemen dan <em>red flag</em> kualitas laba.</div></div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Matriks Sintesis: Cross-Chapter Connections</h2>
+
+<p>Tabel berikut menunjukkan bagaimana konsep-konsep dari berbagai chapter saling terhubung — pemahaman koneksi ini adalah kunci untuk UTS dan untuk analisis FSA yang sesungguhnya.</p>
+
+<div class="cgrid nb">
+<table>
+<thead><tr><th style="width:18%">Konsep</th><th style="width:14%">Chapter Utama</th><th style="width:14%">Terhubung ke</th><th style="width:27%">Koneksi</th><th style="width:27%">Relevansi Artikel</th></tr></thead>
+<tbody>
+<tr><td>Earnings Management</td><td>Ch.2</td><td>Ch.6, Jones</td><td>Diskresi akuntansi → manipulasi akrual → distorsi laba</td><td>Jones (1991): model kuantitatif untuk mendeteksi DA</td></tr>
+<tr><td>Accrual Accounting</td><td>Ch.2</td><td>Ch.3–6, Jones</td><td>Setiap chapter menambah komponen akrual (piutang, persediaan, depresiasi)</td><td>Jones Model memecah total akrual menjadi NDA + DA</td></tr>
+<tr><td>Capital Structure</td><td>Ch.3</td><td>Ch.1, Acaravci</td><td>Strategi pembiayaan → leverage ratio → konvergensi industri</td><td>Acaravci: equity-to-debt menyesuaikan ke rata-rata industri (β = 0.11)</td></tr>
+<tr><td>Depreciation</td><td>Ch.4</td><td>Ch.6, Jones</td><td>Metode depresiasi → beban operasional → total accruals</td><td>Jones: PPE mengendalikan depresiasi non-diskresioner</td></tr>
+<tr><td>Goodwill Impairment</td><td>Ch.5</td><td>Ch.2, Ch.6</td><td>Keputusan impairment = area diskresi → earnings management tool</td><td>Jones Model: impairment besar → akrual diskresioner negatif besar</td></tr>
+<tr><td>Revenue Recognition</td><td>Ch.6</td><td>Ch.2, Jones</td><td>Timing pengakuan → perubahan piutang → komponen total accruals</td><td>Jones: ΔREV mengendalikan perubahan modal kerja normal</td></tr>
+<tr><td>Industry Benchmarks</td><td>Ch.1–6</td><td>Acaravci</td><td>Analisis rasio menggunakan rata-rata industri sebagai pembanding</td><td>Acaravci: rasio memang konvergen, tapi kecepatan berbeda</td></tr>
+<tr><td>Liquidity Ratios</td><td>Ch.3</td><td>Acaravci</td><td>Current &amp; quick ratio → manajemen modal kerja jangka pendek</td><td>Acaravci: adjustment speed tertinggi (β ≈ 0.16–0.17)</td></tr>
+<tr><td>Turnover Ratios</td><td>Ch.4, Ch.6</td><td>Acaravci</td><td>Asset &amp; inventory turnover → efisiensi operasional</td><td>Acaravci: adjustment speed terendah (β ≈ 0.10)</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s9" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>9. Jones Model (1991): Ringkasan Teknis</h2>
+
+<p>Bagian ini merangkum Jones Model secara teknis sebagai referensi cepat — analisis mendalam tersedia di dokumen <em>Article Analysis</em>.</p>
+
+<div class="fbox nb">
+<p><strong>Model Ekspektasi Akrual (The Jones Model):</strong></p>
+<p>TA<sub>it</sub> / A<sub>it-1</sub> = α<sub>i</sub>(1/A<sub>it-1</sub>) + β<sub>1i</sub>(ΔREV<sub>it</sub> / A<sub>it-1</sub>) + β<sub>2i</sub>(PPE<sub>it</sub> / A<sub>it-1</sub>) + ε<sub>it</sub></p>
+<p>Dimana:</p>
+<ul>
+<li><strong>TA<sub>it</sub></strong> = Total accruals tahun t firma i = ΔCurrent Assets − ΔCash − ΔCurrent Liabilities − Depreciation</li>
+<li><strong>A<sub>it-1</sub></strong> = Total aset tahun t−1 (scaler untuk mengurangi heteroskedastisitas)</li>
+<li><strong>ΔREV<sub>it</sub></strong> = Perubahan pendapatan tahun t vs t−1 (mengendalikan perubahan modal kerja normal)</li>
+<li><strong>PPE<sub>it</sub></strong> = Property, plant &amp; equipment bruto (mengendalikan depresiasi non-diskresioner)</li>
+<li><strong>ε<sub>it</sub></strong> = Residual = estimasi discretionary accruals</li>
+</ul>
+</div>
+
+<div class="ibox nb"><div class="ibt">📊 Temuan Kunci Jones (1991)</div>
+<ul>
+<li>Sampel: 23 perusahaan dari 5 industri (automobiles, carbon steel, stainless steel, copper, footwear)</li>
+<li>Periode estimasi: rata-rata 25,3 tahun per perusahaan (14–32 tahun)</li>
+<li>Rata-rata R² model: 0,232 (variasi cukup besar lintas perusahaan)</li>
+<li><strong>Temuan utama</strong>: Discretionary accruals signifikan negatif di tahun investigasi (year 0) — Z-statistic = −3,459, p &lt; 0,001</li>
+<li>Year −1: tidak signifikan (Z = −0,372); Year +1: tidak signifikan (Z = −1,228)</li>
+<li>Kesimpulan: manajer menurunkan laba melalui manajemen akrual selama investigasi impor ITC</li>
+</ul>
+</div>
+</div>
+
+<div id="s10" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>10. Acaravci (2007): Ringkasan Teknis</h2>
+
+<div class="fbox nb">
+<p><strong>Partial Adjustment Model (Berbasis Lev, 1969):</strong></p>
+<p>y<sub>t</sub> − y<sub>t-1</sub> = β(y*<sub>t</sub> − y<sub>t-1</sub>), dimana 0 &lt; β ≤ 1</p>
+<p>Model estimasi: y<sub>ki,t</sub> − y<sub>ki,t-1</sub> = α + β(x<sub>ki,t-1</sub> − y<sub>ki,t-1</sub>) + u<sub>it</sub></p>
+<p>Dimana:</p>
+<ul>
+<li><strong>y<sub>ki,t</sub></strong> = Rasio keuangan k untuk perusahaan i pada tahun t (log natural)</li>
+<li><strong>x<sub>ki,t-1</sub></strong> = Rata-rata aritmetik rasio k untuk industri perusahaan i pada tahun t−1 (proxy target)</li>
+<li><strong>β</strong> = Koefisien penyesuaian (0 = tidak ada penyesuaian, 1 = penyesuaian penuh dalam satu periode)</li>
+<li><strong>α</strong> = Konstanta; jika ≠ 0, perusahaan menyesuaikan ke target berbeda dari rata-rata industri</li>
+</ul>
+</div>
+
+<div class="ibox nb"><div class="ibt">📊 Temuan Kunci Acaravci (2007)</div>
+<table>
+<thead><tr><th>Rasio</th><th>β (Adjustment Speed)</th><th>α Signifikan?</th><th>Interpretasi</th></tr></thead>
+<tbody>
+<tr><td>Quick Ratio</td><td>0,156</td><td>Ya (positif)</td><td>Target di atas rata-rata industri; penyesuaian relatif cepat</td></tr>
+<tr><td>Current Ratio</td><td>0,170</td><td>Ya (positif)</td><td>Target di atas rata-rata industri; penyesuaian tercepat</td></tr>
+<tr><td>Equity/Total Debt</td><td>0,113</td><td>Ya (positif)</td><td>Target di atas rata-rata industri; penyesuaian moderat</td></tr>
+<tr><td>Sales/Inventory</td><td>0,098</td><td>Tidak</td><td>Menyesuaikan ke rata-rata industri; penyesuaian lambat</td></tr>
+<tr><td>Sales/Total Assets</td><td>0,095</td><td>Ya (negatif)</td><td>Target di bawah rata-rata industri; penyesuaian terlambat</td></tr>
+</tbody>
+</table>
+<p><strong>Kesimpulan utama:</strong> Rasio keuangan memang menyesuaikan secara periodik ke rata-rata industri, tetapi kecepatan penyesuaian di Turki <strong>lebih lambat</strong> dibanding negara maju dan negara transisi. Rasio likuiditas jangka pendek memiliki kecepatan penyesuaian tertinggi karena melibatkan item yang berada di bawah kendali langsung manajemen.</p>
+</div>
+</div>
+
+<div id="s11" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>11. Checklist Analitis untuk UTS / Analytical Checklist for Midterm</h2>
+
+<div class="ibox nb"><div class="ibt">✅ Checklist Persiapan UTS</div>
+<table>
+<thead><tr><th style="width:8%">No</th><th style="width:35%">Area</th><th style="width:57%">Yang Harus Dikuasai</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Business Analysis Framework (Ch.1)</td><td>Empat tahap BAF; mengapa urutan penting; bagaimana strategy analysis memberi konteks</td></tr>
+<tr><td>2</td><td>Financial Reporting Quality (Ch.2)</td><td>Akuntansi akrual; definisi &amp; jenis earnings management; red flags; Jones Model sebagai alat deteksi</td></tr>
+<tr><td>3</td><td>Financing Activities (Ch.3)</td><td>Debt vs equity; capital structure theories; OBS financing; pension; lease; rasio leverage</td></tr>
+<tr><td>4</td><td>Investing Activities (Ch.4)</td><td>PP&amp;E; depreciation methods; impairment; intangibles; capitalization vs expensing; rasio turnover</td></tr>
+<tr><td>5</td><td>Intercorporate Investments (Ch.5)</td><td>Fair value, equity method, consolidation; goodwill; NCI; eliminasi intra-grup; dampak pada rasio</td></tr>
+<tr><td>6</td><td>Operating Activities (Ch.6)</td><td>Revenue recognition (5 langkah); COGS; SG&amp;A; non-recurring items; earnings persistence; deferred tax</td></tr>
+<tr><td>7</td><td>Jones Model (1991)</td><td>Formula; intuisi variabel; interpretasi residual; temuan empiris; keterbatasan</td></tr>
+<tr><td>8</td><td>Acaravci (2007)</td><td>Partial adjustment model; rasio yang diuji; adjustment speeds; implikasi untuk benchmarking</td></tr>
+<tr><td>9</td><td>Cross-Chapter Integration</td><td>Koneksi antar-chapter; bagaimana konsep dari satu chapter mempengaruhi analisis di chapter lain</td></tr>
+<tr><td>10</td><td>Konteks Indonesia</td><td>PSAK vs IFRS; IDX cases; OJK enforcement; karakteristik pasar berkembang</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s12" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>12. Formula Reference Sheet</h2>
+
+<p>Kompilasi formula kunci dari seluruh paruh pertama kursus untuk referensi cepat.</p>
+
+<h3>12.1 Jones Model (1991)</h3>
+<div class="fbox nb">
+<ul>
+<li><strong>Total Accruals:</strong> TA<sub>t</sub> = (ΔCA<sub>t</sub> − ΔCash<sub>t</sub>) − (ΔCL<sub>t</sub>) − Dep<sub>t</sub></li>
+<li><strong>Jones Regression:</strong> TA<sub>it</sub>/A<sub>it-1</sub> = α(1/A<sub>it-1</sub>) + β₁(ΔREV<sub>it</sub>/A<sub>it-1</sub>) + β₂(PPE<sub>it</sub>/A<sub>it-1</sub>) + ε</li>
+<li><strong>Discretionary Accruals:</strong> DA<sub>it</sub> = TA<sub>it</sub>/A<sub>it-1</sub> − [â(1/A<sub>it-1</sub>) + b̂₁(ΔREV<sub>it</sub>/A<sub>it-1</sub>) + b̂₂(PPE<sub>it</sub>/A<sub>it-1</sub>)]</li>
+<li><strong>Modified Jones (Dechow et al., 1995):</strong> Mengganti ΔREV dengan ΔREV − ΔREC pada tahap estimasi NDA</li>
+</ul>
+</div>
+
+<h3>12.2 Partial Adjustment Model (Acaravci 2007 / Lev 1969)</h3>
+<div class="fbox nb">
+<ul>
+<li><strong>Model Dasar:</strong> y<sub>t</sub> − y<sub>t-1</sub> = β(y*<sub>t</sub> − y<sub>t-1</sub>)</li>
+<li><strong>Model Estimasi:</strong> y<sub>ki,t</sub> − y<sub>ki,t-1</sub> = α + β(x<sub>ki,t-1</sub> − y<sub>ki,t-1</sub>) + u<sub>it</sub></li>
+<li>β mendekati 1 → penyesuaian cepat; β mendekati 0 → penyesuaian lambat</li>
+<li>α = 0 → target = rata-rata industri; α ≠ 0 → target berbeda dari rata-rata industri</li>
+</ul>
+</div>
+
+<h3>12.3 Rasio Keuangan Kunci (Ch.3–6)</h3>
+<div class="fbox nb">
+<p><strong>Liquidity:</strong></p>
+<ul>
+<li>Current Ratio = Current Assets / Current Liabilities</li>
+<li>Quick Ratio = (CA − Inventory) / Current Liabilities</li>
+<li>Cash Ratio = Cash &amp; Equivalents / Current Liabilities</li>
+</ul>
+<p><strong>Solvency / Leverage:</strong></p>
+<ul>
+<li>Debt-to-Equity = Total Debt / Total Equity</li>
+<li>Debt-to-Assets = Total Debt / Total Assets</li>
+<li>Interest Coverage = EBIT / Interest Expense</li>
+<li>Equity-to-Total Debt = Equity / Total Debt</li>
+</ul>
+<p><strong>Efficiency / Turnover:</strong></p>
+<ul>
+<li>Asset Turnover = Revenue / Total Assets</li>
+<li>Inventory Turnover = COGS / Average Inventory</li>
+<li>Receivables Turnover = Revenue / Average Accounts Receivable</li>
+<li>Payables Turnover = COGS / Average Accounts Payable</li>
+</ul>
+<p><strong>Profitability:</strong></p>
+<ul>
+<li>Gross Margin = (Revenue − COGS) / Revenue</li>
+<li>Operating Margin = Operating Income / Revenue</li>
+<li>Net Margin = Net Income / Revenue</li>
+<li>ROA = Net Income / Total Assets</li>
+<li>ROE = Net Income / Shareholders' Equity</li>
+</ul>
+<p><strong>Accrual Quality:</strong></p>
+<ul>
+<li>Accrual Ratio = (Net Income − CFO) / Total Assets</li>
+<li>Discretionary Accruals = Residual dari Jones Model</li>
+</ul>
+</div>
+</div>
+
+<div id="s13" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>13. Peta Konsep Visual / Visual Concept Map</h2>
+
+<div class="vgrid nb">
+<table>
+<thead><tr><th colspan="4" style="text-align:center"><strong>BUSINESS ANALYSIS FRAMEWORK (Ch.1)</strong></th></tr></thead>
+<tbody>
+<tr>
+<td style="text-align:center; width:25%"><strong>Strategy Analysis</strong><br>Lingkungan kompetitif, Porter's 5 Forces, rantai nilai, keunggulan kompetitif</td>
+<td style="text-align:center; width:25%"><strong>Accounting Analysis</strong><br>Kualitas pelaporan (Ch.2), earnings management, red flags, Jones Model</td>
+<td style="text-align:center; width:25%"><strong>Financial Analysis</strong><br>Rasio &amp; arus kas (Ch.3–6), konvergensi industri (Acaravci)</td>
+<td style="text-align:center; width:25%"><strong>Prospective Analysis</strong><br>Peramalan, valuasi (Ch.10–12, paruh kedua)</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th colspan="4" style="text-align:center"><strong>DETAIL TEKNIS: Ch.2–6</strong></th></tr></thead>
+<tbody>
+<tr>
+<td style="width:20%; text-align:center"><strong>Ch.2: Pelaporan</strong><br>Akrual, earnings management, red flags</td>
+<td style="width:20%; text-align:center"><strong>Ch.3: Financing</strong><br>Utang, ekuitas, lease, pensiun, OBS</td>
+<td style="width:20%; text-align:center"><strong>Ch.4: Investing</strong><br>PP&amp;E, depresiasi, impairment, intangibles</td>
+<td style="width:20%; text-align:center"><strong>Ch.5: Intercorporate</strong><br>FV, equity, konsolidasi, goodwill, NCI</td>
+</tr>
+<tr><td colspan="4" style="text-align:center"><strong>Ch.6: Operating Activities</strong><br>Revenue recognition, COGS, SG&amp;A, non-recurring items, earnings persistence, deferred tax</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th colspan="2" style="text-align:center"><strong>ARTIKEL PENGAYAAN</strong></th></tr></thead>
+<tbody>
+<tr>
+<td style="width:50%; text-align:center"><strong>Jones (1991)</strong><br>Model kuantitatif: TA/A = α(1/A) + β₁(ΔREV/A) + β₂(PPE/A) + ε<br>→ Deteksi earnings management melalui discretionary accruals<br><em>Koneksi: Ch.2, Ch.6</em></td>
+<td style="width:50%; text-align:center"><strong>Acaravci (2007)</strong><br>Partial adjustment: Δy = β(y* − y<sub>t-1</sub>)<br>→ Rasio keuangan konvergen ke rata-rata industri; kecepatan bervariasi<br><em>Koneksi: Ch.1–6 (semua rasio)</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s14" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>14. Varian dan Pengembangan Jones Model</h2>
+
+<p>Jones Model (1991) telah menjadi fondasi untuk seluruh literatur deteksi <em>earnings management</em>. Beberapa varian penting:</p>
+
+<div class="def"><div class="den">Modified Jones Model (Dechow, Sloan &amp; Sweeney, 1995)</div><div class="did">Modifikasi utama: pada tahap perhitungan NDA (bukan estimasi koefisien), ΔREV digantikan dengan ΔREV − ΔREC (perubahan pendapatan dikurangi perubahan piutang). Alasan: jika manajemen memanipulasi pendapatan melalui penjualan kredit fiktif, piutang naik bersamaan dengan pendapatan — Jones Model asli akan menganggap ini sebagai akrual non-diskresioner normal. Dengan mengurangi perubahan piutang, Modified Jones Model menangkap manipulasi pendapatan yang berujung pada kenaikan piutang.</div></div>
+
+<div class="def"><div class="den">Performance-Matched Discretionary Accruals (Kothari, Leone &amp; Wasley, 2005)</div><div class="did">Menambahkan ROA sebagai variabel kontrol: TA/A = α(1/A) + β₁(ΔREV/A) + β₂(PPE/A) + β₃(ROA) + ε. Alasan: akrual secara natural berkorelasi dengan kinerja perusahaan — perusahaan yang berkinerja baik cenderung memiliki akrual yang lebih tinggi. Tanpa kontrol kinerja, Jones Model mungkin keliru mengidentifikasi perusahaan berkinerja baik sebagai melakukan <em>earnings management</em>.</div></div>
+
+<div class="def"><div class="den">Cross-Sectional Jones Model</div><div class="did">Versi Jones asli menggunakan estimasi <em>time-series</em> (satu regresi per perusahaan menggunakan data historis panjang). Versi cross-sectional mengestimasi model menggunakan seluruh perusahaan dalam satu industri pada tahun tertentu. Keuntungan: tidak memerlukan data historis panjang; kerugian: mengasumsikan koefisien homogen lintas perusahaan dalam industri yang sama.</div></div>
+
+<div class="nb">
+<p><strong>Keterbatasan Jones Model yang perlu dipahami:</strong></p>
+<ul>
+<li><em>Endogenitas pendapatan</em>: pendapatan dapat dimanipulasi oleh manajemen, sehingga ΔREV bukan variabel eksogen murni</li>
+<li><em>R² rendah</em> (rata-rata 0,232): model hanya menjelaskan ~23% variasi total accruals</li>
+<li><em>Asumsi stasioneritas</em>: hubungan antara NDA dan variabel independen diasumsikan stabil sepanjang estimasi</li>
+<li><em>Tidak menangkap real earnings management</em>: manipulasi keputusan operasional nyata (memotong R&amp;D, overproduction) tidak terdeteksi</li>
+<li><em>Type I/II errors</em>: dapat menghasilkan false positives (perusahaan sehat dianggap memanipulasi) atau false negatives (manipulasi tidak terdeteksi)</li>
+</ul>
+</div>
+</div>
+
+<div id="s15" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>15. Implikasi untuk Konteks Indonesia</h2>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Penerapan Kerangka Sintesis pada Perusahaan Indonesia</div>
+<p>Seluruh kerangka dari Ch.1–6 serta kedua artikel memiliki implikasi khusus dalam konteks Indonesia:</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:40%">Implikasi Indonesia</th><th style="width:35%">Koneksi Kursus</th></tr></thead>
+<tbody>
+<tr><td>Standar Akuntansi</td><td>PSAK mengadopsi IFRS melalui konvergensi bertahap; beberapa perbedaan masih ada. PSAK 72 (IFRS 15), PSAK 73 (IFRS 16), PSAK 22 (IFRS 3) adalah standar kunci.</td><td>Ch.2–6: setiap isu akuntansi perlu diterjemahkan ke konteks PSAK</td></tr>
+<tr><td>Dominasi BUMN</td><td>BUMN mungkin memiliki target leverage yang berbeda (dipengaruhi kebijakan pemerintah) — bias pada partial adjustment model</td><td>Acaravci: apakah rata-rata industri valid jika BUMN mendominasi?</td></tr>
+<tr><td>Enforcement OJK</td><td>OJK memiliki wewenang sanksi atas pelanggaran pelaporan; kasus-kasus restatement dan delisting memberikan contoh earnings management</td><td>Ch.2, Jones: deteksi dan sanksi earnings management di Indonesia</td></tr>
+<tr><td>Konglomerat</td><td>Grup besar (ASII, Sinar Mas, Lippo) memiliki laporan konsolidasi lintas-industri — analisis rasio lebih kompleks</td><td>Ch.5: konsolidasi; Acaravci: konvergensi industri kurang berlaku untuk konglomerat</td></tr>
+<tr><td>Pasar Berkembang</td><td>Likuiditas pasar, kualitas pengungkapan, dan efisiensi harga mungkin lebih rendah — meningkatkan pentingnya accounting analysis</td><td>Ch.1–2: analisis strategi dan akuntansi lebih kritis di pasar berkembang</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s16" class="section pb">
+<div class="phdr"><span>Review Pra-UTS · Sintesis Ch.1–6</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>16. Tips Final Persiapan UTS / Final Midterm Preparation Tips</h2>
+
+<div class="nb">
+<ol>
+<li><strong>Kuasai kerangka, bukan hafalan</strong>: UTS level S2 menguji pemahaman integratif — kemampuan menghubungkan konsep dari chapter yang berbeda untuk menyelesaikan masalah analitis kompleks.</li>
+<li><strong>Latihlah analisis kasus</strong>: Ambil satu perusahaan IDX dan terapkan seluruh alur BAF (Ch.1–6) dari strategi hingga kualitas laba operasional.</li>
+<li><strong>Pahami Jones Model secara intuitif</strong>: Bukan hanya formula — mengapa ΔREV dan PPE? Apa intuisi ekonomi di balik setiap variabel? Kapan model ini gagal?</li>
+<li><strong>Pahami implikasi Acaravci</strong>: Bagaimana temuan tentang kecepatan penyesuaian mempengaruhi cara Anda menggunakan industry benchmarks?</li>
+<li><strong>Bangun koneksi</strong>: Untuk setiap konsep, tanyakan: "Bagaimana ini berhubungan dengan minimal dua chapter lain?" Jika Anda tidak bisa menjawab, review koneksi tersebut.</li>
+<li><strong>Kritis terhadap data</strong>: Selalu tanyakan: "Apakah angka ini bisa dipercaya? Apa yang bisa salah? Bagaimana saya mendeteksi jika ada manipulasi?"</li>
+<li><strong>Gunakan formula reference sheet</strong>: Pastikan Anda bisa menghitung dan menginterpretasikan setiap rasio dan model — bukan sekadar menghafal formula.</li>
+</ol>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎓 Pesan Penutup</div>
+<p>Tujuan akhir dari seluruh paruh pertama kursus ini bukan menghafal enam chapter secara terpisah, tetapi membangun <strong>kerangka analitis yang koheren</strong> untuk mengevaluasi laporan keuangan perusahaan manapun, di industri manapun, di pasar manapun. Jones Model mengajarkan bahwa manipulasi bisa dideteksi; Acaravci mengajarkan bahwa rasio memiliki perilaku konvergensi yang bisa diprediksi. Gabungan keduanya dengan kerangka Subramanyam memberikan toolkit yang powerful untuk analisis keuangan tingkat lanjut.</p>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-06/main-summary.html">← Week 06</a>
+  
+  
+  <a href="../week-08/main-summary.html">Week 08 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

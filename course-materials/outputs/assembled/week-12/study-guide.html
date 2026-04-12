@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 12 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 12: Equity Analysis and Valuation</h1>
+  <div class="meta">
+    <span>📚 Analisis ekuitas dan penilaian</span>
+    
+    <span>📖 Subramanyam Ch. 11</span>
+    
+    
+    <span>📗 Palepu Ch. 8, 9</span>
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 BBCA — Bank Central Asia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Residual income valuation; DDM; DCF; P&#x2F;E and P&#x2F;B multiples; equity risk premium; intrinsic value</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 12 Study Guide — Equity Analysis and Valuation -->
+<!-- Subramanyam Ch.11 + Palepu Ch.8-9 | Article: Cheng 2006 (degraded) | BBCA (Indonesian Example) -->
+
+<h2>Panduan Belajar Minggu 12: Analisis Ekuitas dan Penilaian</h2>
+<p><em>Week 12 Study Guide: Equity Analysis and Valuation — Subramanyam Chapter 11 + Palepu Chapters 8-9 | Cheng 2006 (Degraded Mode)</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu ini adalah <strong>puncak dari seluruh analisis laporan keuangan yang dibangun sejak Minggu 01</strong>. Seluruh alat analisis — akuntansi (Minggu 04–06), arus kas (Minggu 08), profitabilitas (Minggu 09), analisis prospektif (Minggu 10), dan analisis kredit (Minggu 11) — kini diintegrasikan ke dalam satu tujuan akhir: <strong>mengestimasi nilai intrinsik ekuitas perusahaan</strong> (<em>intrinsic equity value</em>). Chapter 11 Subramanyam menyajikan kerangka valuasi ekuitas yang komprehensif: <em>Dividend Discount Model</em> (DDM), <em>Discounted Cash Flow</em> (DCF) melalui FCFE dan FCFF, <em>Residual Income Model</em> (RIM), serta <em>price multiples</em> (P/E, P/B, EV/EBITDA). Palepu Ch.8–9 melengkapi dengan teknik valuasi praktis dan penjelasan bagaimana analisis laporan keuangan terhubung langsung dengan estimasi nilai. Artikel Cheng (2006) — dibahas dalam mode terdegradasi — meneliti pengaruh rasio keuangan terhadap pengembalian IPO menggunakan <em>Principal Component Analysis</em>, memberikan perspektif empiris tentang rasio mana yang paling relevan dalam valuasi ekuitas. BBCA (Bank Central Asia) digunakan sebagai studi kasus Indonesia untuk mendemonstrasikan penerapan model-model valuasi dengan data aktual.</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">📖 Langkah 1: Baca Subramanyam Chapter 11 — Equity Analysis and Valuation (Bacaan Utama / Primary Reading)</div>
+<div class="did">
+<p>Ini adalah bacaan utama dan terpenting minggu ini. Chapter 11 membangun kerangka valuasi ekuitas dari dasar hingga aplikasi. Fokuskan pada: <strong>konsep nilai intrinsik (<em>intrinsic value</em>)</strong> dan hubungannya dengan harga pasar; <strong>Dividend Discount Model (DDM)</strong> — dari Gordon Growth Model (satu tahap) hingga DDM multi-tahap; <strong>Discounted Cash Flow (DCF)</strong> — FCFE (<em>Free Cash Flow to Equity</em>) untuk valuasi langsung ekuitas vs FCFF (<em>Free Cash Flow to Firm</em>) / WACC untuk valuasi perusahaan; <strong>Residual Income Model (RIM)</strong> — model yang menghubungkan langsung nilai buku akuntansi dengan nilai pasar melalui laba residual, termasuk <em>clean surplus relation</em>; <strong>price multiples</strong> — P/E, P/B, EV/EBITDA, dan bagaimana menghubungkan multiples dengan <em>value drivers</em> (pertumbuhan, profitabilitas, risiko); <strong>estimasi biaya ekuitas (<em>cost of equity</em>)</strong> — CAPM, <em>build-up method</em>, <em>equity risk premium</em>; serta <strong>efisiensi pasar</strong> dan implikasinya terhadap kemampuan analisis fundamental menghasilkan <em>abnormal returns</em>.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 2: Baca Palepu Chapter 8 — Valuation: Detailed Techniques (Bacaan Pelengkap / Supplementary)</div>
+<div class="did">
+<p>Palepu Ch.8 memberikan detail teknis valuasi yang lebih mendalam daripada Subramanyam: <strong>penerapan praktis model DCF</strong> — langkah demi langkah dari proyeksi hingga estimasi nilai dengan contoh numerik; <strong>valuasi berbasis multiples</strong> — pemilihan <em>comparable companies</em>, penyesuaian untuk perbedaan pertumbuhan dan risiko, <em>forward</em> vs <em>trailing multiples</em>; serta <strong>penentuan <em>terminal value</em></strong> — sensitivitas terhadap asumsi pertumbuhan terminal dan tingkat diskonto, proporsi TV terhadap total nilai. Palepu juga menekankan pentingnya <em>cross-checking</em> hasil dari berbagai model valuasi.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 3: Baca Palepu Chapter 9 — Linking Analysis to Valuation (Bacaan Pelengkap / Supplementary)</div>
+<div class="did">
+<p>Palepu Ch.9 menjembatani analisis laporan keuangan dengan valuasi: <strong>bagaimana kualitas akuntansi mempengaruhi valuasi</strong> — distorsi akuntansi (<em>accounting distortions</em>) dapat menyebabkan <em>mispricing</em> jika tidak diidentifikasi; <strong>peran analisis fundamental dalam menghasilkan <em>abnormal returns</em></strong> — bukti empiris bahwa strategi berbasis rasio keuangan dapat mengidentifikasi saham yang <em>mispriced</em>; serta <strong>integrasi analisis bisnis, akuntansi, dan keuangan</strong> ke dalam estimasi nilai.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 4: Catatan tentang Cheng 2006 — Financial Ratios, PCA, and IPO Returns (Mode Terdegradasi / Degraded Mode)</div>
+<div class="did">
+<p>⚠️ <strong>Mode Terdegradasi</strong>: File PDF artikel ini tidak tersedia. Artikel Cheng (2006) meneliti <strong>pengaruh rasio keuangan terhadap pengembalian IPO menggunakan Principal Component Analysis (PCA)</strong> — relevan dengan valuasi ekuitas karena menguji rasio keuangan mana yang paling berpengaruh terhadap kinerja saham pasca-IPO. PCA mengidentifikasi kluster rasio yang paling <em>informatif</em> untuk penilaian perusahaan baru (<em>newly listed companies</em>). 📁 Lihat file <em>Article Analysis</em> untuk pembahasan lebih lanjut.</p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Hierarki Model Valuasi Minggu Ini / This Week's Valuation Model Hierarchy</div>
+<ol>
+<li><strong>Dividend Discount Model (DDM)</strong> — Model paling fundamental: nilai saham = present value dari seluruh dividen masa depan. <em>Gordon Growth Model</em> (satu tahap): P₀ = D₁/(r−g) untuk perusahaan dengan pertumbuhan stabil. DDM multi-tahap untuk perusahaan dengan fase pertumbuhan yang berubah. Keterbatasan: tidak cocok untuk perusahaan yang tidak membayar dividen atau dengan kebijakan dividen tidak stabil.</li>
+<li><strong>Discounted Cash Flow (DCF)</strong> — Dua varian: (a) <em>FCFE Model</em>: mendiskonto arus kas bebas ke pemegang ekuitas (setelah pembayaran utang) pada <em>cost of equity</em>; (b) <em>FCFF/WACC Model</em>: mendiskonto arus kas bebas ke seluruh perusahaan pada WACC, lalu kurangi nilai utang untuk mendapatkan nilai ekuitas. DCF lebih fleksibel daripada DDM karena tidak tergantung pada kebijakan dividen.</li>
+<li><strong>Residual Income Model (RIM)</strong> — Menghubungkan langsung nilai buku akuntansi dengan nilai pasar: V₀ = BV₀ + Σ(NI_t − r·BV_{t-1})/(1+r)^t. Keunggulan: berbasis data akuntansi yang tersedia, menangkap <em>value creation</em> melalui selisih ROE vs cost of equity. Menggunakan <em>clean surplus relation</em>: BV_t = BV_{t-1} + NI_t − D_t.</li>
+<li><strong>Price Multiples</strong> — P/E (<em>price-to-earnings</em>): menilai berapa kali laba yang bersedia dibayar pasar; dipengaruhi oleh pertumbuhan, risiko, dan kebijakan akuntansi. P/B (<em>price-to-book</em>): menilai premium atas nilai buku; terkait erat dengan ROE — perusahaan dengan ROE > cost of equity diperdagangkan di atas nilai buku. EV/EBITDA: mengukur valuasi enterprise relatif terhadap laba operasi kas. Metode komparasi (<em>comparable valuation</em>) menggunakan multiples perusahaan sejenis sebagai benchmark.</li>
+<li><strong>Cost of Equity &amp; Risk Premium</strong> — CAPM: r = R_f + β(R_m − R_f); <em>build-up method</em> untuk perusahaan privat atau emerging markets; estimasi <em>equity risk premium</em> (ERP) yang tepat sangat krusial karena perubahan kecil sangat mempengaruhi valuasi.</li>
+</ol>
+</div>
+
+<h3>3. Kaitan dengan Minggu Sebelumnya dan Sesudahnya / Course Connections</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Kulminasi Seluruh Analisis: Dari Data Akuntansi ke Estimasi Nilai</div>
+<p>Valuasi ekuitas minggu ini adalah <strong>tujuan akhir dari seluruh kerangka analisis laporan keuangan</strong>. Setiap minggu sebelumnya telah membangun blok analitis yang sekarang diintegrasikan:</p>
+<ul>
+<li><strong>Minggu 04–06</strong> (Akuntansi &amp; Laporan Keuangan) — Pemahaman tentang kualitas laba, pengakuan pendapatan, dan distorsi akuntansi mempengaruhi input valuasi. Laba yang berkualitas rendah menghasilkan valuasi yang menyesatkan.</li>
+<li><strong>Minggu 08</strong> (Cash Flow Analysis) — Analisis arus kas menghasilkan estimasi FCF historis yang menjadi basis untuk proyeksi FCF dalam model DCF.</li>
+<li><strong>Minggu 09</strong> (Profitability &amp; ROE) — Dekomposisi DuPont dan analisis ROE adalah input kunci untuk P/B multiple dan <em>Residual Income Model</em> (ROE vs cost of equity).</li>
+<li><strong>Minggu 10</strong> (Prospective Analysis) — Proyeksi laporan keuangan pro forma yang dibangun minggu 10 langsung menjadi input numerik untuk model DCF dan RIM minggu ini.</li>
+<li><strong>Minggu 11</strong> (Credit Analysis) — Analisis risiko kredit menginformasikan estimasi <em>cost of debt</em> dan <em>capital structure</em> yang dibutuhkan untuk menghitung WACC.</li>
+<li><strong>Minggu 12</strong> (Equity Valuation — MINGGU INI) — Mengintegrasikan seluruh analisis di atas untuk mengestimasi nilai intrinsik ekuitas.</li>
+<li><strong>Minggu 13</strong> (Comprehensive Case) — Menerapkan seluruh kerangka valuasi dalam studi kasus terintegrasi dari awal hingga akhir.</li>
+</ul>
+</div>
+
+<table>
+<thead>
+<tr><th>Konsep Minggu 12</th><th>Terhubung ke</th><th>Penjelasan Koneksi</th></tr>
+</thead>
+<tbody>
+<tr><td>Residual Income Model</td><td>Week 09 — ROE &amp; DuPont</td><td>RIM digerakkan oleh selisih ROE vs cost of equity; dekomposisi DuPont menjelaskan sumber ROE</td></tr>
+<tr><td>DCF (FCFE/FCFF)</td><td>Week 08 — Cash Flow &amp; Week 10 — Pro Forma</td><td>Model DCF membutuhkan proyeksi FCF dari analisis arus kas dan laporan pro forma</td></tr>
+<tr><td>WACC / Cost of Debt</td><td>Week 11 — Credit Analysis</td><td>Rating kredit dan spread menentukan cost of debt; leverage menentukan bobot WACC</td></tr>
+<tr><td>P/E dan P/B Multiples</td><td>Week 09 — Profitability</td><td>P/E dipengaruhi oleh pertumbuhan dan risiko; P/B terhubung langsung dengan ROE</td></tr>
+<tr><td>Kualitas Laba untuk Valuasi</td><td>Week 04–06 — Accounting</td><td>Distorsi akuntansi menyebabkan mispricing jika tidak diidentifikasi sebelum valuasi</td></tr>
+<tr><td>Terminal Value</td><td>Week 10 — Forecast Horizon</td><td>Asumsi terminal value dari prospective analysis sangat menentukan hasil valuasi akhir</td></tr>
+<tr><td>Financial Ratios &amp; IPO Returns (Cheng 2006)</td><td>Week 03 — Financial Ratios</td><td>PCA mengidentifikasi rasio keuangan mana yang paling informatif untuk valuasi IPO</td></tr>
+</tbody>
+</table>
+
+<h3>4. Konsep Kunci yang Harus Dikuasai / Key Concepts to Master</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Formula dan Kerangka Kritis Minggu Ini</div>
+<table>
+<thead><tr><th style="width:22%">Konsep</th><th style="width:45%">Formula / Kerangka</th><th style="width:33%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>Gordon Growth DDM</td><td>P₀ = D₁ / (r − g)</td><td>Hanya untuk perusahaan dengan dividen stabil dan pertumbuhan konstan; r &gt; g wajib</td></tr>
+<tr><td>Residual Income Model</td><td>V₀ = BV₀ + Σ (NI_t − r·BV_{t-1}) / (1+r)^t</td><td>Clean surplus: BV_t = BV_{t-1} + NI_t − D_t; RIM berbasis data akuntansi</td></tr>
+<tr><td>FCFE Model</td><td>V_equity = Σ FCFE_t / (1 + r_e)^t</td><td>FCFE = NI + Depr − ΔWC − Capex + Net Borrowing</td></tr>
+<tr><td>FCFF/WACC Model</td><td>V_firm = Σ FCFF_t / (1 + WACC)^t; V_equity = V_firm − Debt</td><td>FCFF = NOPAT + Depr − ΔWC − Capex</td></tr>
+<tr><td>CAPM</td><td>r_e = R_f + β × (R_m − R_f)</td><td>R_f = risk-free rate; β = sensitivitas terhadap pasar; (R_m − R_f) = equity risk premium</td></tr>
+<tr><td>P/E Decomposition</td><td>P/E = payout ratio / (r − g) = (1 − b) / (r − g)</td><td>P/E naik jika: g naik, r turun, atau payout naik; sangat sensitif terhadap asumsi</td></tr>
+<tr><td>P/B dan ROE</td><td>P/B = (ROE − g) / (r − g) jika ROE &gt; r → P/B &gt; 1</td><td>Perusahaan dengan ROE di atas cost of equity diperdagangkan di atas nilai buku</td></tr>
+<tr><td>Terminal Value</td><td>TV = FCF_{n+1} / (WACC − g_terminal)</td><td>g_terminal ≤ pertumbuhan ekonomi jangka panjang; TV sering &gt;50% total nilai</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5. Cara Mendekati Ringkasan Utama / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Ringkasan / Summary Reading Guidance</div>
+<p>Ringkasan utama minggu ini membahas seluruh model valuasi secara sistematis. Saat membaca, selalu tanyakan: <strong>"Asumsi apa yang mendasari setiap model, dan kapan masing-masing model paling tepat digunakan?"</strong> Setiap model valuasi memiliki kekuatan dan keterbatasan yang berbeda — DDM paling cocok untuk perusahaan pembayar dividen stabil, DCF untuk perusahaan dengan arus kas yang dapat diprediksi, RIM untuk perusahaan dengan nilai buku yang bermakna (terutama sektor keuangan), dan multiples untuk valuasi komparatif cepat. Perhatikan juga bagaimana Subramanyam menghubungkan semua model: <strong>dalam kondisi ideal (clean surplus, terminal convergence), semua model menghasilkan nilai yang sama</strong> — perbedaan muncul dari asumsi implementasi. Pahami mengapa <em>cost of equity</em> adalah variabel paling kritis namun paling sulit diestimasi.</p>
+</div>
+
+<h3>6. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Dipikir Sebelum dan Sesudah Membaca / Questions to Consider</div>
+<ol>
+<li>Apa konsep <em>intrinsic value</em> dan bagaimana perbedaannya dengan harga pasar? Dalam kondisi apa keduanya konvergen — dan kapan divergen? (<em>What is intrinsic value and when does it diverge from market price?</em>)</li>
+<li>Jelaskan mengapa DDM, DCF, dan Residual Income Model secara teoritis harus menghasilkan nilai yang sama — dan identifikasi asumsi apa yang menyebabkan perbedaan dalam praktik. (<em>Why should DDM, DCF, and RIM theoretically converge — and what assumptions cause divergence?</em>)</li>
+<li>Untuk BBCA (Bank Central Asia) yang memiliki ROE ~21% dan P/B ~4.2x: apa yang menjelaskan premium ini dari perspektif Residual Income Model? (<em>What explains BBCA's high P/B through the RIM lens?</em>)</li>
+<li>Bagaimana estimasi <em>equity risk premium</em> (ERP) mempengaruhi semua model valuasi — dan mengapa perbedaan 1% dalam ERP dapat mengubah valuasi secara dramatis? (<em>How does ERP estimation impact all valuation models?</em>)</li>
+<li>Kapan P/E multiple menyesatkan sebagai alat valuasi? Identifikasi minimal tiga kondisi di mana P/E tidak bermakna atau menyesatkan. (<em>When is P/E misleading as a valuation tool? Identify at least three conditions.</em>)</li>
+<li>Hubungkan temuan Cheng (2006) tentang rasio keuangan dan IPO returns dengan kerangka valuasi Subramanyam: rasio apa yang mungkin paling kuat memprediksi kinerja pasca-IPO dan mengapa? (<em>Connect Cheng 2006's findings to the Subramanyam valuation framework.</em>)</li>
+<li>Mengapa <em>Residual Income Model</em> dianggap lebih cocok untuk menilai bank dan perusahaan keuangan dibandingkan DCF? Hubungkan dengan sifat neraca bank. (<em>Why is RIM better suited for bank valuation than DCF?</em>)</li>
+<li>Jika pasar efisien dalam bentuk semi-strong, apakah analisis fundamental masih memiliki nilai? Argumen apa yang mendukung dan menentang? (<em>Does fundamental analysis add value in semi-strong efficient markets?</em>)</li>
+</ol>
+</div>
+
+<h3>7. Kesalahan Umum yang Harus Dihindari / Common Mistakes to Avoid</h3>
+
+<div class="exb nb">
+<div class="exn">🚩 Kesalahan Konseptual dan Analitis Umum dalam Valuasi Ekuitas</div>
+<ul>
+<li><strong>Menggunakan satu model tunggal tanpa cross-check</strong> — Analis yang kompeten selalu menggunakan minimal dua model (misal: DCF + multiples) dan merekonsiliasi perbedaan. Jika DCF dan P/E memberikan hasil yang sangat berbeda, ini menandakan asumsi perlu diperiksa ulang.</li>
+<li><strong>Mengabaikan hubungan ROE-P/B dalam valuasi bank</strong> — Bank dengan ROE &gt; cost of equity seharusnya diperdagangkan di atas nilai buku (P/B &gt; 1). BBCA dengan ROE ~21% dan cost of equity ~12% memiliki P/B tinggi yang justified secara fundamental.</li>
+<li><strong>Menggunakan terminal growth rate yang melebihi pertumbuhan ekonomi</strong> — g_terminal &gt; pertumbuhan GDP jangka panjang (4-5% untuk Indonesia) secara implisit mengasumsikan perusahaan akan melebihi seluruh ekonomi — tidak logis.</li>
+<li><strong>Tidak menyesuaikan CAPM untuk emerging market risk</strong> — CAPM standar mungkin meremehkan cost of equity di Indonesia. Pertimbangkan <em>country risk premium</em> atau <em>build-up method</em>.</li>
+<li><strong>Membandingkan P/E lintas industri yang berbeda</strong> — P/E 20x untuk bank (BBCA) memiliki makna yang sangat berbeda dari P/E 20x untuk perusahaan teknologi. Multiple harus dibandingkan dengan peers di industri yang sama.</li>
+</ul>
+</div>
+
+<h3>8. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Apa yang Membedakan S1 dan S2 / Undergraduate vs Graduate Distinction</div>
+<p><strong>Level S1</strong>: Mahasiswa S1 cukup memahami formula dasar DDM dan P/E, menghitung valuasi sederhana dengan Gordon Growth Model, dan mendefinisikan CAPM.</p>
+<p><strong>Level S2 (yang diharapkan dari Anda)</strong>: Anda harus mampu (1) <strong>mengevaluasi kesesuaian setiap model valuasi untuk konteks tertentu</strong> — menjelaskan mengapa RIM lebih cocok untuk bank, DCF lebih cocok untuk perusahaan dengan FCF stabil, dan multiples untuk screening awal; (2) <strong>menghitung dan menginterpretasikan residual income</strong> — memahami clean surplus relation, menghubungkan RI dengan ROE-cost of equity spread, dan mengapa RI menurun seiring waktu karena mean reversion; (3) <strong>melakukan analisis sensitivitas terhadap variabel kritis</strong> — menunjukkan bagaimana perubahan cost of equity, terminal growth rate, dan ERP mempengaruhi estimasi nilai secara non-linear; (4) <strong>mengintegrasikan seluruh analisis dari Minggu 01–11</strong> ke dalam proses valuasi yang koheren; dan (5) <strong>mengevaluasi secara kritis mengapa BBCA diperdagangkan pada premium multiples</strong> relatif terhadap peers perbankan Indonesia — menghubungkan dengan kualitas aset, konsistensi ROE, franchise value, dan corporate governance.</p>
+</div>
+
+<h3>9. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perusahaan Minggu Ini: BBCA (Bank Central Asia)</div>
+<p>Minggu ini kita menggunakan <strong>BBCA (PT Bank Central Asia Tbk)</strong> sebagai studi kasus valuasi ekuitas. BBCA adalah bank swasta terbesar di Indonesia berdasarkan kapitalisasi pasar dan secara konsisten diperdagangkan pada premium multiples (P/E ~20-22x, P/B ~4.0-4.5x) yang jauh di atas rata-rata perbankan Indonesia. Ini menjadikan BBCA kasus yang sempurna untuk mengeksplorasi:</p>
+<ul>
+<li><strong>P/E dan P/B Premium</strong>: Mengapa pasar bersedia membayar 20x laba dan 4x nilai buku? Jawabannya terletak pada ROE yang konsisten tinggi (~21%), kualitas aset superior (NPL terendah di industri), dan franchise value dari basis deposito CASA terbesar di Indonesia.</li>
+<li><strong>Residual Income Model</strong>: Dengan ROE ~21% vs cost of equity ~12%, BBCA menghasilkan residual income positif yang signifikan — menjelaskan premium P/B secara kuantitatif.</li>
+<li><strong>Gordon Growth DDM</strong>: Kebijakan dividen BBCA yang relatif stabil (payout ratio ~35-40%) memungkinkan penerapan DDM, meskipun hasilnya perlu dibandingkan dengan model lain.</li>
+<li><strong>Perbandingan dengan Peers</strong>: Bandingkan multiples BBCA dengan BBRI, BMRI, dan BBNI untuk memahami sumber premium dan apakah premium tersebut justified.</li>
+</ul>
+<p>📁 Lihat file <em>Indonesian Company Examples</em> untuk analisis valuasi menggunakan data aktual BBCA 2021–2023.</p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-11/study-guide.html">← Week 11</a>
+  
+  
+  <a href="../week-13/study-guide.html">Week 13 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

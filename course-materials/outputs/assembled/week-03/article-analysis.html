@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 03 — Article Analysis</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 03: Financing Activities Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis pendanaan (financing)</span>
+    
+    <span>📖 Subramanyam Ch. 3</span>
+    
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 BBCA — Bank Central Asia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Debt vs equity financing; leases; off-balance-sheet items; capital structure analysis</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 03 Article Analysis — Altman 1968 -->
+<!-- "Financial Ratios, Discriminant Analysis, and the Prediction of Corporate Bankruptcy" -->
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Altman (1968)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>Analisis Artikel: Altman (1968) — Prediksi Kebangkrutan dengan Analisis Diskriminan</h2>
+<p><em>Article Analysis: Financial Ratios, Discriminant Analysis, and the Prediction of Corporate Bankruptcy</em></p>
+
+<div class="def">
+<div class="den">📄 Sitasi Lengkap / Full Citation</div>
+<div class="did">
+<p>Altman, Edward I. (1968). "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy." <em>The Journal of Finance</em>, Vol. 23, No. 4 (September 1968), pp. 589–609.</p>
+<p><strong>Konteks publikasi:</strong> Diterbitkan dalam <em>The Journal of Finance</em> — jurnal utama American Finance Association dan salah satu "Top 3" jurnal keuangan global. Artikel ini telah menjadi salah satu karya paling banyak dikutip dalam literatur keuangan empiris, dengan lebih dari 40.000 sitasi. Model Z-score yang diperkenalkan tetap digunakan secara luas oleh praktisi, lembaga pemeringkat kredit, dan regulator hingga hari ini.</p>
+</div>
+</div>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Altman (1968)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>1. Pertanyaan Penelitian dan Motivasi / Research Question and Motivation</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Pertanyaan Sentral / Central Research Question</div>
+<p><strong>Apakah rasio-rasio keuangan, ketika dikombinasikan secara multivariat menggunakan analisis diskriminan, dapat memprediksi kebangkrutan perusahaan secara akurat?</strong></p>
+<p><em>Can financial ratios, when combined using multivariate discriminant analysis, accurately predict corporate bankruptcy?</em></p>
+</div>
+
+<p>Sebelum Altman (1968), penelitian prediksi kebangkrutan didominasi oleh pendekatan <strong>univariat</strong> — menguji satu rasio keuangan pada satu waktu. Karya paling terkenal adalah Beaver (1966), yang menunjukkan bahwa rasio-rasio seperti <em>cash flow / total debt</em> memiliki daya prediksi individual yang baik. Namun, pendekatan univariat memiliki keterbatasan fundamental:</p>
+<ul>
+<li>Rasio yang berbeda dapat memberikan sinyal yang <strong>bertentangan</strong> (<em>conflicting signals</em>) untuk perusahaan yang sama — satu rasio menunjukkan kesehatan, rasio lain menunjukkan distress.</li>
+<li>Tidak ada cara sistematis untuk <strong>mengkombinasikan</strong> informasi dari beberapa rasio secara simultan.</li>
+<li>Analis harus membuat <em>judgment</em> subjektif tentang bagaimana menimbang (<em>weight</em>) rasio-rasio yang berbeda.</li>
+</ul>
+
+<p>Altman mengusulkan pendekatan <strong>multivariat</strong> yang mengatasi keterbatasan ini dengan menggunakan <em>Multiple Discriminant Analysis</em> (MDA) — teknik statistik yang mengkombinasikan beberapa variabel sekaligus untuk mengklasifikasikan observasi ke dalam kelompok-kelompok yang telah ditentukan (<em>a priori groups</em>).</p>
+
+<h3>2. Metodologi / Methodology</h3>
+
+<h4>2.1 Sampel / Sample Selection</h4>
+
+<table>
+<thead>
+<tr><th style="width:25%">Aspek</th><th style="width:75%">Detail</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Kelompok Bangkrut</strong></td><td>33 perusahaan manufaktur yang mengajukan petisi kebangkrutan (<em>bankruptcy petition</em>) berdasarkan <em>National Bankruptcy Act</em> selama periode 1946–1965.</td></tr>
+<tr><td><strong>Kelompok Tidak Bangkrut</strong></td><td>33 perusahaan manufaktur yang masih beroperasi, dipilih secara <em>paired sampling</em> berdasarkan ukuran (total aset) dan industri (manufaktur).</td></tr>
+<tr><td><strong>Total Sampel</strong></td><td>66 perusahaan — <em>matched pair design</em> untuk mengontrol efek ukuran dan industri.</td></tr>
+<tr><td><strong>Batasan Industri</strong></td><td>Hanya perusahaan <strong>manufaktur</strong> — sektor keuangan, utilitas, dan jasa dikeluarkan karena perbedaan struktur neraca.</td></tr>
+<tr><td><strong>Ukuran Perusahaan</strong></td><td>Total aset perusahaan bangkrut berkisar $0,7 juta – $25,9 juta (rata-rata ~$6,4 juta) — perusahaan kecil hingga menengah pada masanya.</td></tr>
+<tr><td><strong>Data</strong></td><td>Laporan keuangan <strong>satu tahun sebelum</strong> kebangkrutan digunakan sebagai dasar prediksi.</td></tr>
+</tbody>
+</table>
+
+<h4>2.2 Multiple Discriminant Analysis (MDA)</h4>
+
+<div class="def">
+<div class="den">Multiple Discriminant Analysis / Analisis Diskriminan Berganda</div>
+<div class="did">
+<p>Teknik statistik multivariat yang mengklasifikasikan observasi ke dalam dua atau lebih kelompok berdasarkan kombinasi linear variabel independen. MDA menemukan fungsi diskriminan yang <strong>memaksimalkan</strong> perbedaan antar kelompok (<em>between-group variance</em>) sambil <strong>meminimalkan</strong> perbedaan dalam kelompok (<em>within-group variance</em>). Berbeda dari regresi, MDA dirancang secara eksplisit untuk masalah <em>classification</em>.</p>
+</div>
+</div>
+
+<p>Altman memulai dengan 22 rasio keuangan yang berpotensi sebagai prediktor, dikelompokkan dalam lima kategori standar: <em>liquidity</em>, <em>profitability</em>, <em>leverage</em>, <em>solvency</em>, dan <em>activity</em>. Melalui proses seleksi yang mempertimbangkan (1) signifikansi statistik individual, (2) korelasi antar-variabel, (3) daya prediksi dalam konteks multivariat, dan (4) <em>judgment</em> peneliti tentang relevansi analitis, lima variabel final dipilih.</p>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Altman (1968)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>3. Model Z-Score: Lima Rasio dan Interpretasinya</h3>
+
+<div class="fbox">
+<p><strong>Model Z-Score Altman (1968)</strong></p>
+<p style="font-size:1.15em; text-align:center;">Z = 1,2 X<sub>1</sub> + 1,4 X<sub>2</sub> + 3,3 X<sub>3</sub> + 0,6 X<sub>4</sub> + 1,0 X<sub>5</sub></p>
+<p style="font-size:0.9em; text-align:center;"><em>Catatan: Koefisien di atas berlaku ketika variabel dinyatakan dalam desimal (misal, 0,20 bukan 20%). Dalam paper asli, Altman menyatakan variabel dalam persentase sehingga koefisien tertulis sebagai 0,012; 0,014; 0,033; 0,006; dan 0,999.</em></p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th style="width:8%">Var.</th>
+<th style="width:22%">Rasio</th>
+<th style="width:8%">Koef.</th>
+<th style="width:15%">Dimensi</th>
+<th style="width:47%">Interpretasi dan Relevansi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>X<sub>1</sub></strong></td>
+<td>Working Capital / Total Assets</td>
+<td>1,2</td>
+<td>Likuiditas</td>
+<td>Mengukur <em>net liquid assets</em> relatif terhadap total kapitalisasi. Modal kerja negatif menunjukkan ketidakmampuan memenuhi kewajiban jangka pendek. Perusahaan yang mengalami kerugian operasi berulang akan mengalami penyusutan aset lancar relatif terhadap total aset.</td>
+</tr>
+<tr>
+<td><strong>X<sub>2</sub></strong></td>
+<td>Retained Earnings / Total Assets</td>
+<td>1,4</td>
+<td>Profitabilitas Kumulatif / Umur Perusahaan</td>
+<td>Mengukur <em>cumulative profitability</em> sepanjang umur perusahaan. Rasio rendah menunjukkan perusahaan muda atau perusahaan yang telah mengakumulasi kerugian. Terdapat <strong>bias umur</strong>: perusahaan baru secara mekanis memiliki X<sub>2</sub> rendah. Altman mengakui bias ini tetapi berargumen bahwa insiden kebangkrutan memang lebih tinggi pada perusahaan muda.</td>
+</tr>
+<tr>
+<td><strong>X<sub>3</sub></strong></td>
+<td>EBIT / Total Assets</td>
+<td>3,3</td>
+<td>Profitabilitas Operasi</td>
+<td>Mengukur <em>earning power</em> aset perusahaan, terlepas dari pajak dan leverage. Koefisien <strong>tertinggi</strong> (3,3) menunjukkan bahwa variabel ini memiliki kontribusi diskriminan terbesar. Ini masuk akal: kemampuan menghasilkan laba operasi adalah penentu utama kelangsungan hidup.</td>
+</tr>
+<tr>
+<td><strong>X<sub>4</sub></strong></td>
+<td>Market Value of Equity / Book Value of Total Debt</td>
+<td>0,6</td>
+<td>Solvabilitas / Struktur Modal</td>
+<td>Mengukur seberapa besar nilai pasar ekuitas melebihi total utang. Ini adalah <strong>variabel paling relevan untuk Chapter 3</strong>: variabel ini langsung mencerminkan keputusan pendanaan (berapa banyak utang vs ekuitas). Penurunan harga saham atau peningkatan utang langsung menurunkan X<sub>4</sub> dan Z-score. Penggunaan nilai <em>pasar</em> (bukan buku) memungkinkan penggabungan ekspektasi investor tentang prospek perusahaan.</td>
+</tr>
+<tr>
+<td><strong>X<sub>5</sub></strong></td>
+<td>Sales / Total Assets</td>
+<td>1,0</td>
+<td>Efisiensi / Perputaran Aset</td>
+<td>Mengukur <em>asset turnover</em> — kemampuan aset menghasilkan pendapatan. Meskipun secara individual kurang signifikan secara statistik, Altman mempertahankan variabel ini karena kontribusinya dalam konteks multivariat dan hubungannya dengan kemampuan bersaing perusahaan.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="ibox nb">
+<div class="ibt">📌 Catatan Penting tentang Variabel / Key Notes on Variables</div>
+<p>Kelima variabel merepresentasikan <strong>dimensi berbeda</strong> dari kesehatan keuangan: X<sub>1</sub> (likuiditas), X<sub>2</sub> (profitabilitas kumulatif), X<sub>3</sub> (profitabilitas saat ini), X<sub>4</sub> (solvabilitas/leverage), dan X<sub>5</sub> (efisiensi). Perhatikan bahwa <strong>tiga dari lima</strong> variabel (X<sub>1</sub>, X<sub>2</sub>, X<sub>4</sub>) secara langsung dipengaruhi oleh keputusan pendanaan yang dibahas dalam Chapter 3. Sebuah perusahaan yang menambah utang secara agresif akan mengalami penurunan X<sub>1</sub> (jika utang jangka pendek), penurunan X<sub>4</sub> (lebih banyak utang di penyebut), dan potensi penurunan X<sub>2</sub> (jika beban bunga menggerus laba ditahan).</p>
+</div>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Altman (1968)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>4. Hasil Klasifikasi dan Akurasi / Classification Results and Accuracy</h3>
+
+<div class="ibox nb">
+<div class="ibt">📊 Zona Klasifikasi / Classification Zones</div>
+<table>
+<thead>
+<tr><th style="width:20%">Zona</th><th style="width:20%">Rentang Z-Score</th><th style="width:60%">Interpretasi</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Distress Zone</strong></td><td>Z &lt; 1,81</td><td>Perusahaan diklasifikasikan sebagai <strong>bangkrut</strong>. Hampir seluruh perusahaan yang benar-benar bangkrut memiliki Z &lt; 1,81 satu tahun sebelum kegagalan.</td></tr>
+<tr><td><strong>Gray Zone</strong> (<em>Zone of Ignorance</em>)</td><td>1,81 ≤ Z ≤ 2,99</td><td>Zona abu-abu di mana klasifikasi <strong>tidak pasti</strong>. Perusahaan di zona ini rentan terhadap kesalahan klasifikasi — baik <em>Type I error</em> (perusahaan bangkrut diklasifikasikan sehat) maupun <em>Type II error</em> (perusahaan sehat diklasifikasikan bangkrut).</td></tr>
+<tr><td><strong>Safe Zone</strong></td><td>Z &gt; 2,99</td><td>Perusahaan diklasifikasikan sebagai <strong>tidak bangkrut</strong> (sehat secara finansial). Probabilitas kegagalan rendah.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>4.1 Akurasi Prediksi / Prediction Accuracy</h4>
+
+<table>
+<thead>
+<tr><th style="width:35%">Horizon Prediksi</th><th style="width:25%">Akurasi (%)</th><th style="width:40%">Catatan</th></tr>
+</thead>
+<tbody>
+<tr><td>1 tahun sebelum kebangkrutan</td><td><strong>95%</strong></td><td>Hanya 1 dari 33 perusahaan bangkrut salah diklasifikasikan (Type I error)</td></tr>
+<tr><td>2 tahun sebelum kebangkrutan</td><td><strong>72%</strong></td><td>Penurunan signifikan menunjukkan deteriorasi keuangan sering terjadi secara cepat</td></tr>
+<tr><td>3 tahun sebelum kebangkrutan</td><td>~48%</td><td>Mendekati peluang acak; model kurang efektif untuk prediksi jangka panjang</td></tr>
+<tr><td>4 tahun sebelum kebangkrutan</td><td>~29%</td><td>Akurasi di bawah peluang acak; tidak reliabel</td></tr>
+<tr><td>5 tahun sebelum kebangkrutan</td><td>~36%</td><td>Tidak reliabel; terlalu jauh dari titik kegagalan</td></tr>
+</tbody>
+</table>
+
+<p>Hasil ini menunjukkan bahwa model Z-score paling efektif sebagai <strong>early warning system jangka pendek</strong> — sangat akurat 1–2 tahun sebelum kebangkrutan, tetapi kehilangan daya prediksi secara signifikan untuk horizon yang lebih panjang. Ini konsisten dengan sifat deteriorasi keuangan yang seringkali cepat dan non-linear.</p>
+
+<h4>4.2 Zone of Ignorance (Gray Zone)</h4>
+
+<p>Altman mengakui bahwa zona antara 1,81 dan 2,99 adalah area di mana kesalahan klasifikasi paling sering terjadi. Ia menyebutnya <em>"zone of ignorance"</em> karena model tidak dapat memberikan klasifikasi yang definitif. Implikasi praktis:</p>
+<ul>
+<li>Perusahaan di zona ini memerlukan <strong>analisis lebih lanjut</strong> — Z-score saja tidak cukup.</li>
+<li><strong>Type I errors</strong> (mengklasifikasikan perusahaan bangkrut sebagai sehat) lebih mahal daripada <strong>Type II errors</strong> (mengklasifikasikan perusahaan sehat sebagai bangkrut) bagi pemberi kredit.</li>
+<li>Cutoff 2,675 meminimalkan total kesalahan klasifikasi; namun pemberi kredit yang konservatif mungkin menggunakan cutoff lebih tinggi (mendekati 2,99).</li>
+</ul>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Altman (1968)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>5. Kontribusi terhadap Literatur / Contribution to the Literature</h3>
+
+<div class="cgrid">
+<div class="cc">
+<h4>Inovasi Metodologis</h4>
+<p>Pertama kali menerapkan <strong>MDA multivariat</strong> untuk prediksi kebangkrutan, mengatasi keterbatasan pendekatan univariat Beaver (1966). Menunjukkan bahwa kombinasi rasio memberikan daya prediksi yang jauh lebih tinggi daripada rasio individual.</p>
+</div>
+<div class="cc">
+<h4>Model yang Dapat Direplikasi</h4>
+<p>Z-score memberikan <strong>skor tunggal yang sederhana</strong> dan mudah dihitung, dengan cutoff yang jelas. Ini memungkinkan adopsi luas oleh praktisi — tidak memerlukan keahlian statistik untuk menggunakan model.</p>
+</div>
+<div class="cc">
+<h4>Fondasi Literatur</h4>
+<p>Menjadi titik tolak bagi seluruh literatur prediksi kebangkrutan berikutnya: Deakin (1972), Ohlson (1980), Zmijewski (1984), dan ratusan studi lainnya. Model ini secara eksplisit dibangun di atas dan merespons keterbatasan yang diidentifikasi Altman.</p>
+</div>
+<div class="cc">
+<h4>Validasi Rasio Keuangan</h4>
+<p>Memberikan bukti empiris bahwa <strong>rasio keuangan mengandung informasi prediktif</strong> yang signifikan — menjawab skeptisisme tentang kegunaan analisis rasio tradisional.</p>
+</div>
+</div>
+
+<h3>6. Keterbatasan dan Perkembangan Selanjutnya / Limitations and Subsequent Developments</h3>
+
+<table>
+<thead>
+<tr><th style="width:30%">Keterbatasan</th><th style="width:35%">Penjelasan</th><th style="width:35%">Perkembangan Selanjutnya</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sampel kecil dan terbatas</strong></td>
+<td>Hanya 66 perusahaan manufaktur AS; <em>matched-pair design</em> mungkin memperkenalkan bias seleksi.</td>
+<td>Studi-studi berikutnya menggunakan sampel yang jauh lebih besar: Ohlson (1980) menggunakan 2.058 perusahaan; Zmijewski (1984) membahas bias sampel secara eksplisit.</td>
+</tr>
+<tr>
+<td><strong>Asumsi statistik MDA</strong></td>
+<td>MDA mengasumsikan distribusi normal multivariat dan kesamaan matriks kovarians antar-kelompok — asumsi yang seringkali dilanggar oleh data keuangan.</td>
+<td>Ohlson (1980) menggunakan <em>logistic regression</em> (logit) yang tidak memerlukan asumsi-asumsi ini; menghasilkan probabilitas yang lebih mudah diinterpretasi.</td>
+</tr>
+<tr>
+<td><strong>Hanya manufaktur</strong></td>
+<td>Model diestimasi dan divalidasi hanya pada perusahaan manufaktur; koefisien mungkin tidak valid untuk sektor lain (jasa, keuangan, teknologi).</td>
+<td>Altman sendiri mengembangkan Z'-score (untuk perusahaan privat) dan Z''-score (untuk non-manufaktur dan pasar berkembang) pada tahun-tahun berikutnya.</td>
+</tr>
+<tr>
+<td><strong>Tidak memperhitungkan variabel makroekonomi</strong></td>
+<td>Model hanya menggunakan data level perusahaan; tidak memasukkan kondisi ekonomi makro (suku bunga, GDP, siklus kredit).</td>
+<td>Model-model generasi berikutnya dan pendekatan <em>hazard model</em> (Shumway 2001) memasukkan variabel makro dan time-varying covariates.</td>
+</tr>
+<tr>
+<td><strong>Bias temporal</strong></td>
+<td>Koefisien diestimasi dari data 1946–1965; lingkungan ekonomi dan standar akuntansi telah berubah secara fundamental sejak itu.</td>
+<td>Re-estimasi berkala diperlukan; Altman (2000) memperbarui model untuk konteks kontemporer.</td>
+</tr>
+<tr>
+<td><strong>Definisi kebangkrutan yang sempit</strong></td>
+<td>Hanya menggunakan pengajuan petisi kebangkrutan formal; tidak mencakup bentuk <em>financial distress</em> lain (gagal bayar, restrukturisasi, delisting).</td>
+<td>Studi modern menggunakan definisi distress yang lebih luas; beberapa menggunakan <em>credit default swaps</em> atau peringkat kredit sebagai proksi.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Altman (1968)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>7. Koneksi ke Chapter 3: Bagaimana Keputusan Pendanaan Mempengaruhi Z-Score</h3>
+<p><em>Connection to Chapter 3: How Financing Decisions Affect the Z-Score</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🔗 Menghubungkan Altman dengan Aktivitas Pendanaan / Linking Altman to Financing Activities</div>
+<p>Hubungan antara artikel Altman dan materi Chapter 3 bersifat <strong>langsung dan substansial</strong>. Berikut analisis bagaimana setiap keputusan pendanaan yang dibahas dalam Chapter 3 mempengaruhi komponen Z-score:</p>
+</div>
+
+<table>
+<thead>
+<tr><th style="width:25%">Keputusan Pendanaan (Ch.3)</th><th style="width:15%">Variabel Z yang Terpengaruh</th><th style="width:60%">Mekanisme Dampak</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Penerbitan Obligasi</strong></td>
+<td>X<sub>4</sub> ↓, X<sub>3</sub> ↓</td>
+<td>Menambah <em>book value of total debt</em> (penyebut X<sub>4</sub> naik); beban bunga mengurangi EBIT jika dikapitalisasi, atau mengurangi laba setelah EBIT. Dampak bersih: Z-score menurun.</td>
+</tr>
+<tr>
+<td><strong>Penerbitan Saham Baru</strong></td>
+<td>X<sub>4</sub> ↑, X<sub>1</sub> ↑</td>
+<td>Menambah ekuitas (pembilang X<sub>4</sub> naik, baik melalui <em>market cap</em>); kas masuk meningkatkan modal kerja (X<sub>1</sub> naik). Dampak: Z-score meningkat.</td>
+</tr>
+<tr>
+<td><strong>Pembelian Kembali Saham (<em>Treasury Stock</em>)</strong></td>
+<td>X<sub>4</sub> ↓, X<sub>1</sub> ↓</td>
+<td>Mengurangi ekuitas dan kas; dapat menurunkan market cap jika pasar tidak merespons positif. Dampak: Z-score menurun.</td>
+</tr>
+<tr>
+<td><strong>Sewa Operasi → Kapitalisasi (ASC 842)</strong></td>
+<td>X<sub>4</sub> ↓, X<sub>1</sub> ↓</td>
+<td>Menambah liabilitas di neraca (X<sub>4</sub> turun); current portion sewa mengurangi modal kerja bersih (X<sub>1</sub> turun). Ilustrasi bagaimana perubahan standar akuntansi mempengaruhi <em>apparent</em> risk.</td>
+</tr>
+<tr>
+<td><strong>Sekuritisasi (<em>Off-Balance-Sheet</em>)</strong></td>
+<td>X<sub>4</sub> → (stabil)</td>
+<td>Jika berhasil memindahkan aset dan utang ke luar neraca, X<sub>4</sub> tidak berubah — inilah <strong>motivasi</strong> OBS. Implikasi: Z-score yang "sehat" mungkin menyembunyikan risiko sebenarnya. Analis harus mengkapitalisasi item OBS sebelum menghitung Z-score.</td>
+</tr>
+<tr>
+<td><strong>Akumulasi Laba Ditahan</strong></td>
+<td>X<sub>2</sub> ↑, X<sub>4</sub> ↑</td>
+<td>Retensi laba langsung meningkatkan X<sub>2</sub>; juga menambah <em>book equity</em>. Ini adalah alasan X<sub>2</sub> menangkap "umur dan profitabilitas kumulatif."</td>
+</tr>
+<tr>
+<td><strong>Pembayaran Dividen Berlebihan</strong></td>
+<td>X<sub>2</sub> ↓, X<sub>1</sub> ↓</td>
+<td>Mengurangi laba ditahan dan kas. Perusahaan yang membayar dividen melebihi kemampuan labanya akan mengalami penurunan X<sub>2</sub> dan X<sub>1</sub> secara bersamaan.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="ibox nb">
+<div class="ibt">📌 Implikasi Kunci untuk Analisis / Key Analytical Implications</div>
+<ol>
+<li><strong>Z-score bukan hanya alat prediksi — ia adalah cerminan keputusan pendanaan.</strong> Setiap komponen Z-score dipengaruhi oleh bagaimana perusahaan membiayai dirinya sendiri. Memahami Chapter 3 berarti memahami <em>input</em> model Altman.</li>
+<li><strong>Off-balance-sheet financing dapat "menipu" Z-score.</strong> Perusahaan dengan banyak item OBS mungkin tampak memiliki Z-score tinggi padahal risiko sebenarnya lebih besar. Ini menghubungkan ke diskusi <em>accounting risk</em> dari Minggu 02.</li>
+<li><strong>Untuk bank seperti BBCA, Z-score asli tidak berlaku.</strong> Struktur pendanaan bank (didominasi deposito, regulasi CAR) sangat berbeda dari perusahaan manufaktur dalam sampel Altman. Diperlukan model terpisah (seperti Z-score untuk lembaga keuangan atau model CAMELS).</li>
+</ol>
+</div>
+
+<h3>8. Pertanyaan Reflektif / Reflective Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Diskusi / Discussion Questions</div>
+<ol>
+<li>Jika Altman menulis paper ini hari ini, variabel apa yang mungkin ia tambahkan atau ubah, mengingat perubahan standar akuntansi dan struktur ekonomi? Pertimbangkan: <em>intangible assets</em>, <em>stock-based compensation</em>, <em>operating lease capitalization</em>.</li>
+<li>Mengapa Altman menggunakan <em>market value</em> (bukan <em>book value</em>) ekuitas untuk X<sub>4</sub>? Apa implikasinya bagi perusahaan yang tidak diperdagangkan secara publik?</li>
+<li>Bagaimana Anda menginterpretasikan perusahaan dengan Z-score di "gray zone"? Langkah analitis apa yang akan Anda ambil selanjutnya?</li>
+<li>Apakah model Z-score asli dapat diterapkan untuk perusahaan Indonesia? Identifikasi setidaknya tiga alasan mengapa koefisien perlu diestimasi ulang.</li>
+<li>Bandingkan pendekatan MDA Altman dengan logistic regression Ohlson (1980). Apa keunggulan dan kelemahan masing-masing dari perspektif seorang analis kredit?</li>
+</ol>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-02/article-analysis.html">← Week 02</a>
+  
+  
+  <a href="../week-04/article-analysis.html">Week 04 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

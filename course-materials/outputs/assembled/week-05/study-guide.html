@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 05 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 05: Intercorporate Investments Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis investasi: Intercorporate investment</span>
+    
+    <span>📖 Subramanyam Ch. 5</span>
+    
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 ASII — Astra International Tbk + United Tractors (UNTR)</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Equity method; consolidation; minority interests; goodwill; intercorporate investment accounting</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 05 Study Guide — Intercorporate Investments -->
+<!-- Subramanyam Ch.5 (Primary) | Raheman et al. 2010 (Degraded) | ASII + UNTR (Indonesian Example) -->
+
+<h2>Panduan Belajar Minggu 05: Investasi Antarkorporat</h2>
+<p><em>Week 05 Study Guide: Intercorporate Investments</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu lalu kita menganalisis <strong>aset individual perusahaan</strong> — PP&amp;E, persediaan, aset tak berwujud. Minggu ini kita naik satu level: <strong>apa yang terjadi ketika perusahaan berinvestasi di perusahaan lain?</strong> Topik ini — <em>intercorporate investments</em> — adalah salah satu area paling kompleks dalam akuntansi keuangan dan analisis laporan keuangan. Tujuannya: memahami klasifikasi investasi antarkorporat (sekuritas diperdagangkan, <em>equity method</em>, konsolidasi penuh), menguasai mekanisme konsolidasi dan eliminasi transaksi antar-entitas, menganalisis <em>non-controlling interests</em> (NCI), mengevaluasi goodwill dari akuisisi, dan memahami <em>Variable Interest Entities</em> (VIEs). Anda akan belajar membaca laporan keuangan konsolidasi secara kritis — memahami bahwa angka-angka dalam neraca konsolidasi <strong>bukan</strong> sekadar penjumlahan, melainkan hasil dari proses eliminasi dan penyesuaian yang kompleks.</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">📖 Langkah 1: Baca Subramanyam Chapter 5 — Intercorporate Investments (Bacaan Utama / Primary Reading)</div>
+<div class="did">
+<p>Ini adalah bacaan utama dan paling penting minggu ini. Chapter ini padat dan teknis — jangan terburu-buru. Fokuskan pada: <strong>klasifikasi investasi</strong> berdasarkan tingkat pengaruh (passive &lt;20%, significant influence 20–50%, control &gt;50%); <strong>perlakuan akuntansi</strong> untuk setiap klasifikasi — <em>fair value through profit or loss</em> (FVTPL), <em>fair value through OCI</em> (FVOCI), amortized cost, equity method, dan konsolidasi penuh; <strong>mekanisme konsolidasi</strong> — eliminasi investasi terhadap ekuitas anak, eliminasi transaksi intra-grup, goodwill, dan NCI; serta <strong>implikasi analitis</strong> — bagaimana metode akuntansi yang berbeda mempengaruhi rasio keuangan dan interpretasi kinerja.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 2: Konteks Artikel — Raheman et al. (2010) [Mode Terdegradasi]</div>
+<div class="did">
+<p>Artikel asli <strong>tidak tersedia</strong> dalam perpustakaan kursus ini. Namun, Anda tetap perlu memahami konteks akademiknya: Raheman et al. (2010) meneliti dampak <em>working capital management</em> terhadap kinerja perusahaan di sektor manufaktur Pakistan. Koneksi dengan minggu ini: ketika perusahaan induk (<em>parent company</em>) memiliki banyak anak perusahaan, manajemen modal kerja di <strong>seluruh portofolio investasi</strong> menjadi tantangan strategis. Lihat file <em>Article Analysis</em> untuk detail lebih lanjut. Jangan habiskan terlalu banyak waktu di sini — prioritaskan Chapter 5.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 3: Review Konsep dari Minggu 03–04</div>
+<div class="did">
+<p>Investasi antarkorporat membangun di atas fondasi yang sudah Anda pelajari. Pastikan mengingat: <em>financing activities</em> (Chapter 3) — utang dan ekuitas yang digunakan untuk mendanai akuisisi; <em>investing activities</em> (Chapter 4) — goodwill, aset tak berwujud, dan PP&amp;E yang muncul dari akuisisi; serta <em>fair value measurement</em> yang sudah disinggung di kedua chapter sebelumnya. Minggu ini menyatukan semuanya dalam konteks investasi di entitas lain.</p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Hierarki Konsep Minggu Ini / This Week's Concept Hierarchy</div>
+<ol>
+<li><strong>Klasifikasi Investasi Antarkorporat</strong> — berdasarkan tingkat pengaruh: <em>passive investments</em> (&lt;20%), <em>significant influence</em> (20–50%, metode ekuitas), <em>control</em> (&gt;50%, konsolidasi penuh). Di bawah IFRS 9: <em>amortized cost</em>, FVOCI, dan FVTPL.</li>
+<li><strong>Metode Ekuitas (<em>Equity Method</em>)</strong> — diterapkan untuk investasi pada perusahaan asosiasi (20–50% kepemilikan); investor mengakui bagian laba/rugi investee dalam laba rugi dan menyesuaikan nilai tercatat investasi.</li>
+<li><strong>Konsolidasi Penuh (<em>Full Consolidation</em>)</strong> — diterapkan ketika investor mengendalikan investee (&gt;50% atau kontrol de facto); seluruh aset, liabilitas, pendapatan, dan beban anak perusahaan digabungkan baris demi baris (<em>line-by-line</em>), lalu transaksi intra-grup dieliminasi.</li>
+<li><strong>Kepentingan Non-Pengendali / <em>Non-Controlling Interests</em> (NCI)</strong> — porsi ekuitas anak perusahaan yang <strong>tidak</strong> dimiliki oleh induk; disajikan terpisah dalam ekuitas konsolidasi dan laba rugi konsolidasi.</li>
+<li><strong>Goodwill</strong> — selisih antara harga akuisisi dan nilai wajar aset bersih teridentifikasi anak perusahaan; diuji penurunan nilainya setiap tahun (<em>impairment-only approach</em>) di bawah IFRS dan US GAAP.</li>
+<li><strong><em>Variable Interest Entities</em> (VIEs) / <em>Special Purpose Entities</em> (SPEs)</strong> — entitas yang dikonsolidasikan bukan berdasarkan kepemilikan saham mayoritas, melainkan berdasarkan siapa yang menanggung risiko dan menerima manfaat.</li>
+<li><strong><em>Joint Ventures</em> dan <em>Proportionate Consolidation</em></strong> — ventura bersama dicatat dengan metode ekuitas di bawah IFRS 11; konsolidasi proporsional tidak lagi diizinkan untuk <em>joint ventures</em> (kecuali <em>joint operations</em>).</li>
+</ol>
+</div>
+
+<h3>3. Kaitan dengan Minggu Sebelumnya dan Sesudahnya / Course Connections</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Dari Aset Individual ke Investasi di Entitas Lain / From Individual Assets to Investments in Other Entities</div>
+<p>Alur kursus kita mengikuti peningkatan kompleksitas: Minggu 03 (<em>financing</em> — bagaimana modal diperoleh) → Minggu 04 (<em>investing</em> — aset individual) → <strong>Minggu 05 (<em>intercorporate investments</em> — investasi di entitas lain)</strong> → Minggu 06 (<em>operating activities</em> — bagaimana seluruh aset menghasilkan pendapatan). Minggu ini adalah jembatan kritis:</p>
+<ul>
+<li><strong>Minggu 06</strong> (Operating Activities) — pendapatan konsolidasi yang akan kita analisis berasal dari <em>seluruh</em> entitas yang dikonsolidasikan; memahami konsolidasi adalah prasyarat.</li>
+<li><strong>Minggu 08</strong> (Cash Flow Analysis) — arus kas konsolidasi mencakup seluruh anak perusahaan; investasi akuisisi muncul di <em>investing activities</em>.</li>
+<li><strong>Minggu 09</strong> (ROIC &amp; Profitability) — <em>return on invested capital</em> konsolidasi vs entitas tunggal bisa sangat berbeda; NCI mempengaruhi <em>return to equity holders of the parent</em>.</li>
+<li><strong>Minggu 12</strong> (Equity Valuation) — valuasi konglomerat memerlukan <em>sum-of-the-parts</em> atau penerapan <em>conglomerate discount</em>; langsung terkait konsep konsolidasi.</li>
+</ul>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Konsep Minggu 05</th>
+<th>Terhubung ke</th>
+<th>Penjelasan Koneksi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Konsolidasi Penuh</td>
+<td>Week 06 — Operating Activities</td>
+<td>Pendapatan dan beban konsolidasi menggabungkan seluruh anak perusahaan; eliminasi intra-grup mempengaruhi margin</td>
+</tr>
+<tr>
+<td>Metode Ekuitas</td>
+<td>Week 09 — Profitability Analysis</td>
+<td><em>Equity income</em> dari asosiasi muncul sebagai satu baris di laba rugi tetapi tidak masuk pendapatan operasional — mempengaruhi margin analysis</td>
+</tr>
+<tr>
+<td>Goodwill &amp; Impairment</td>
+<td>Week 04 — Investing Activities</td>
+<td>Goodwill dari akuisisi (Ch.5) memperluas konsep aset tak berwujud (Ch.4); impairment testing berlaku sama</td>
+</tr>
+<tr>
+<td>NCI</td>
+<td>Week 12 — Equity Valuation</td>
+<td>Laba yang diatribusikan ke NCI bukan milik pemegang saham induk; valuasi harus memisahkan laba <em>attributable to parent</em></td>
+</tr>
+<tr>
+<td>VIEs / Off-Balance Sheet</td>
+<td>Week 03 — Financing Activities</td>
+<td>SPEs sering digunakan untuk <em>off-balance-sheet financing</em>; konsolidasi VIE mengembalikan liabilitas ke neraca</td>
+</tr>
+<tr>
+<td>Working Capital (Raheman)</td>
+<td>Week 08 — Cash Flow Analysis</td>
+<td>Manajemen modal kerja lintas anak perusahaan mempengaruhi arus kas konsolidasi dari operasi</td>
+</tr>
+</tbody>
+</table>
+
+<h3>4. Cara Mendekati Ringkasan Utama / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Ringkasan / Summary Reading Guidance</div>
+<p>Ringkasan utama minggu ini mengikuti alur peningkatan tingkat pengaruh: dimulai dari investasi pasif (<em>fair value</em>), naik ke <em>significant influence</em> (equity method), lalu ke kontrol penuh (konsolidasi). Saat membaca, selalu tanyakan: <strong>"Bagaimana metode akuntansi ini mempengaruhi gambaran keuangan perusahaan — dan apakah gambaran itu menyesatkan?"</strong> Contoh: konsolidasi penuh menambahkan 100% aset dan liabilitas anak perusahaan ke neraca induk, padahal induk mungkin hanya memiliki 51%. Ini bisa membuat <em>leverage ratio</em> terlihat lebih tinggi dari realitas ekonomi sebenarnya. Pahami mekanisme dulu, lalu pikirkan implikasi analitisnya.</p>
+</div>
+
+<h3>5. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Dipikir Sebelum dan Sesudah Membaca / Questions to Consider</div>
+<ol>
+<li>Mengapa klasifikasi investasi antarkorporat berdasarkan tingkat pengaruh (pasif, signifikan, kontrol) menghasilkan perlakuan akuntansi yang sangat berbeda — dan apa implikasinya bagi komparabilitas laporan keuangan? (<em>Why does the classification of intercorporate investments by level of influence result in vastly different accounting treatments — and what does this mean for comparability?</em>)</li>
+<li>Bagaimana metode ekuitas (<em>equity method</em>) berbeda dari konsolidasi penuh dalam penyajian aset, liabilitas, pendapatan, dan laba — dan kapan masing-masing lebih "informatif" bagi analis? (<em>How does the equity method differ from full consolidation in presenting assets, liabilities, revenue, and income — and when is each more "informative" for analysts?</em>)</li>
+<li>Dalam konsolidasi penuh, mengapa seluruh aset dan liabilitas anak perusahaan digabungkan 100% meskipun induk mungkin hanya memiliki 60%? Apa yang "dikompensasi" oleh pos <em>non-controlling interests</em>? (<em>In full consolidation, why are 100% of the subsidiary's assets and liabilities combined even when the parent may own only 60%? What does the NCI line "compensate" for?</em>)</li>
+<li>Apa itu goodwill dalam konteks akuisisi, bagaimana dihitung, dan mengapa pendekatan <em>impairment-only</em> (tanpa amortisasi) dikritik oleh banyak pihak? (<em>What is goodwill in the acquisition context, how is it measured, and why is the impairment-only approach criticized?</em>)</li>
+<li>Bagaimana <em>Variable Interest Entities</em> (VIEs) memungkinkan perusahaan mengendalikan entitas tanpa kepemilikan saham mayoritas — dan mengapa ini menjadi perhatian khusus setelah skandal Enron? (<em>How do VIEs allow companies to control entities without majority share ownership — and why did this become a focus post-Enron?</em>)</li>
+<li>Apa dampak konsolidasi terhadap rasio-rasio keuangan kunci seperti <em>debt-to-equity</em>, <em>asset turnover</em>, dan <em>profit margin</em> — dibandingkan jika investasi dicatat dengan metode ekuitas? (<em>How does consolidation affect key financial ratios compared to the equity method?</em>)</li>
+<li>Dalam konteks ASII sebagai induk dan UNTR sebagai anak perusahaan, bagaimana konsolidasi mempengaruhi gambaran keuangan ASII — dan mengapa analis mungkin perlu "membalik" konsolidasi (<em>deconsolidation</em>) untuk memahami kinerja sebenarnya? (<em>In the context of ASII as parent and UNTR as subsidiary, how does consolidation affect ASII's financial picture — and why might analysts need to "undo" consolidation?</em>)</li>
+<li>Bagaimana perbedaan antara IFRS 9 (FVOCI tanpa recycling untuk ekuitas) dan US GAAP (ASC 321) dalam klasifikasi investasi pasif mempengaruhi laba rugi dan <em>OCI</em>? (<em>How do IFRS 9 vs US GAAP differences in classifying passive investments affect P&amp;L and OCI?</em>)</li>
+<li>Mengapa Raheman et al. (2010) mengenai <em>working capital management</em> relevan untuk konteks investasi antarkorporat — bagaimana perusahaan induk mengelola modal kerja lintas anak perusahaan? (<em>Why is Raheman et al.'s work on working capital management relevant to intercorporate investments — how does a parent manage working capital across subsidiaries?</em>)</li>
+</ol>
+</div>
+
+<h3>6. Catatan tentang Artikel Terdegradasi / Note on Degraded Article</h3>
+
+<div class="ibox nb">
+<div class="ibt">⚠️ Raheman et al. (2010) — Mode Terdegradasi</div>
+<p>Artikel "Working Capital Management and Corporate Performance: Sector-Wise Analysis" oleh Raheman, Qayyum, dan Afza (2010) <strong>tidak tersedia</strong> dalam format digital di perpustakaan kursus ini. Analisis yang tersedia dalam file <em>Article Analysis</em> disusun berdasarkan deskripsi bibliografis dan konteks akademik. Pendekatan yang disarankan:</p>
+<ul>
+<li><strong>Prioritaskan Chapter 5</strong> — ini adalah materi inti minggu ini.</li>
+<li>Gunakan analisis artikel yang tersedia untuk memahami <strong>konteks akademik</strong> penelitian working capital management dan keterkaitannya dengan investasi antarkorporat.</li>
+<li>Jika Anda menemukan artikel asli melalui perpustakaan universitas (IRJFE, Issue 47, 2010), bacalah untuk pemahaman lebih mendalam.</li>
+<li>Fokus pada <strong>koneksi konseptual</strong>: bagaimana manajemen modal kerja di anak perusahaan mempengaruhi kinerja konsolidasi grup.</li>
+</ul>
+</div>
+
+<h3>7. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Apa yang Membedakan S1 dan S2 / Undergraduate vs Graduate Distinction</div>
+<p><strong>Level S1</strong>: Mahasiswa S1 cukup mengetahui bahwa investasi &gt;50% dikonsolidasikan, 20–50% menggunakan equity method, dan &lt;20% dicatat di fair value. Mereka mungkin bisa membuat jurnal konsolidasi sederhana.</p>
+<p><strong>Level S2 (yang diharapkan dari Anda)</strong>: Anda harus mampu (1) menganalisis <strong>distorsi analitis</strong> yang diciptakan oleh konsolidasi — bagaimana 100% aset anak perusahaan masuk neraca padahal induk hanya memiliki 51%, dan bagaimana ini mendistorsi rasio leverage, asset turnover, dan profitabilitas; (2) melakukan <strong>penyesuaian analitis</strong> — dekonsolidasi, konsolidasi proporsional manual, pemisahan equity income dari pendapatan operasional; (3) mengevaluasi <strong>goodwill</strong> secara kritis — apakah premium akuisisi masih dapat dipertahankan, bagaimana risiko <em>goodwill impairment</em> mempengaruhi valuasi; dan (4) menghubungkan investasi antarkorporat dengan <strong>strategi korporat</strong> — mengapa perusahaan memilih akuisisi penuh vs investasi minoritas vs joint venture, dan implikasi masing-masing terhadap laporan keuangan dan valuasi. Berpikirlah sebagai analis yang harus "membuka" laporan konsolidasi untuk melihat kenyataan ekonomi di baliknya.</p>
+</div>
+
+<h3>8. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perusahaan Minggu Ini: ASII (Astra International) + UNTR (United Tractors)</div>
+<p>Minggu ini kita menggunakan <strong>ASII</strong> dan <strong>UNTR</strong> untuk mengilustrasikan konsep investasi antarkorporat. ASII adalah contoh sempurna: sebagai <em>holding company</em> terbesar di Indonesia, seluruh laporan keuangan yang dipublikasikan adalah <strong>laporan konsolidasi</strong> yang mencakup puluhan anak perusahaan. Perhatikan:</p>
+<ul>
+<li><strong>Struktur Konsolidasi</strong>: ASII memiliki ~59,5% saham UNTR (anak perusahaan terkonsolidasi), ~79,7% AUTO, ~79,7% AALI — masing-masing dengan NCI yang berbeda.</li>
+<li><strong>NCI yang Signifikan</strong>: Karena ASII tidak memiliki 100% anak perusahaannya, <em>non-controlling interests</em> dalam ekuitas ASII konsolidasi sangat besar (~Rp 63 triliun pada 2023) — sekitar 25% dari total ekuitas.</li>
+<li><strong>Goodwill dari Akuisisi</strong>: Goodwill ~Rp 5 triliun mencerminkan premium yang dibayar atas akuisisi historis — terutama dari akuisisi entitas pertambangan dan infrastruktur.</li>
+<li><strong>Dampak pada Rasio</strong>: ASII konsolidasi memiliki total aset Rp 446 triliun, tetapi berapa yang benar-benar "milik" pemegang saham ASII? Analisis ini kritis untuk valuasi.</li>
+</ul>
+<p>📁 Lihat file <em>Indonesian Company Examples</em> untuk analisis detail tentang struktur ASII–UNTR dan dampak konsolidasi.</p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-04/study-guide.html">← Week 04</a>
+  
+  
+  <a href="../week-06/study-guide.html">Week 06 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

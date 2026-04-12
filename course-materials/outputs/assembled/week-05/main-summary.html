@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 05 — Main Summary</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 05: Intercorporate Investments Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis investasi: Intercorporate investment</span>
+    
+    <span>📖 Subramanyam Ch. 5</span>
+    
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 ASII — Astra International Tbk + United Tractors (UNTR)</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Equity method; consolidation; minority interests; goodwill; intercorporate investment accounting</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<div id="s1" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Introduction: Mengapa Investasi Antarkorporat Penting / Why Intercorporate Investments Matter</h2>
+
+<p>Chapter 5 membahas salah satu area paling kompleks dan berdampak besar dalam analisis laporan keuangan: <strong>investasi antarkorporat</strong> (<em>intercorporate investments</em>) — yaitu ketika satu perusahaan berinvestasi di perusahaan lain. Kompleksitas ini berasal dari fakta bahwa perlakuan akuntansi yang berbeda secara fundamental diterapkan tergantung pada <strong>tingkat pengaruh</strong> yang dimiliki investor terhadap investee, dan setiap perlakuan menciptakan gambaran keuangan yang sangat berbeda.</p>
+
+<div class="ibox nb"><div class="ibt">📌 Posisi Chapter 5 dalam Kerangka Kursus</div>
+<p>Pada Chapter 3, kita menganalisis bagaimana perusahaan memperoleh modal (financing). Pada Chapter 4, kita menganalisis bagaimana modal dialokasikan ke aset individual. Sekarang: <strong>apa yang terjadi ketika "aset" itu adalah perusahaan lain?</strong> Investasi di perusahaan lain — baik sebagai investasi minoritas, asosiasi, atau anak perusahaan — memerlukan kerangka akuntansi yang sama sekali berbeda dari aset biasa.</p>
+<p><strong>Ch.1 (Framework) → Ch.2 (Reporting Quality) → Ch.3 (Financing) → Ch.4 (Investing) → <u>Ch.5 (Intercorporate Investments — MINGGU INI)</u> → Ch.6 (Operating Activities) → Ch.7–11 (Analysis &amp; Valuation)</strong></p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<ul>
+<li>Mengklasifikasikan investasi antarkorporat berdasarkan tingkat pengaruh dan perlakuan akuntansi yang sesuai</li>
+<li>Memahami akuntansi investasi pasif: <em>trading securities</em>, <em>available-for-sale</em> (AFS), <em>held-to-maturity</em> (HTM), dan klasifikasi IFRS 9</li>
+<li>Menguasai metode ekuitas (<em>equity method</em>): pengakuan awal, bagian laba, dividen, penurunan nilai</li>
+<li>Memahami mekanisme konsolidasi penuh: eliminasi investasi, eliminasi intra-grup, goodwill, NCI</li>
+<li>Menganalisis <em>non-controlling interests</em> (NCI) dalam neraca dan laba rugi konsolidasi</li>
+<li>Mengevaluasi goodwill: pengukuran, pengujian penurunan nilai, implikasi analitis</li>
+<li>Memahami <em>Variable Interest Entities</em> (VIEs) dan persyaratan konsolidasi</li>
+<li>Menganalisis <em>joint ventures</em> dan <em>joint operations</em> di bawah IFRS 11</li>
+<li>Mengevaluasi dampak metode akuntansi yang berbeda terhadap rasio keuangan dan keputusan investasi</li>
+</ul>
+</div>
+
+<table class="nb">
+<thead><tr><th style="width:25%">Topik Utama</th><th style="width:40%">Cakupan</th><th style="width:35%">Relevansi untuk Analis</th></tr></thead>
+<tbody>
+<tr><td><strong>Passive Investments</strong></td><td>Trading, AFS, HTM (legacy); FVTPL, FVOCI, amortized cost (IFRS 9)</td><td>Pengaruh pada laba vs OCI; volatilitas laba dari <em>mark-to-market</em></td></tr>
+<tr><td><strong>Equity Method</strong></td><td>20–50% ownership; share of income; dividend adjustments</td><td>Satu baris di laba rugi menyembunyikan detail operasional investee</td></tr>
+<tr><td><strong>Full Consolidation</strong></td><td>&gt;50% or control; line-by-line combination; elimination entries</td><td>100% aset/liabilitas masuk neraca meski induk tidak memiliki 100%</td></tr>
+<tr><td><strong>NCI</strong></td><td>Equity presentation; income allocation; partial vs full goodwill</td><td>Memisahkan laba milik pemegang saham induk vs pemegang saham minoritas</td></tr>
+<tr><td><strong>Goodwill</strong></td><td>Acquisition accounting; impairment testing</td><td>Sering merupakan aset terbesar dari akuisisi; rentan overvaluation</td></tr>
+<tr><td><strong>VIEs/SPEs</strong></td><td>Control without majority ownership; risk/reward analysis</td><td>Mekanisme potensial untuk <em>off-balance-sheet</em> financing</td></tr>
+<tr><td><strong>Joint Ventures</strong></td><td>IFRS 11; equity method; joint operations</td><td>Perbedaan signifikan antara IFRS dan US GAAP historis</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Kerangka Klasifikasi / Classification Framework</h2>
+
+<p>Perlakuan akuntansi untuk investasi antarkorporat ditentukan oleh <strong>tingkat pengaruh</strong> (<em>level of influence</em>) yang dimiliki investor terhadap investee. Ini adalah prinsip fundamental yang mendasari seluruh chapter.</p>
+
+<div class="def"><div class="den">Klasifikasi Berdasarkan Tingkat Pengaruh / Classification by Level of Influence</div><div class="did">Investasi antarkorporat diklasifikasikan menjadi tiga kategori utama berdasarkan kemampuan investor untuk mempengaruhi kebijakan keuangan dan operasional investee: (1) <strong>investasi pasif</strong> — tidak ada pengaruh signifikan, umumnya &lt;20% kepemilikan; (2) <strong>pengaruh signifikan</strong> — kemampuan berpartisipasi dalam keputusan kebijakan tanpa mengendalikan, umumnya 20–50% kepemilikan; (3) <strong>kontrol</strong> — kemampuan mengarahkan kebijakan keuangan dan operasional, umumnya &gt;50% kepemilikan atau kontrol <em>de facto</em>.</div></div>
+
+<table>
+<thead><tr><th style="width:18%">Tingkat Pengaruh</th><th style="width:15%">Kepemilikan Tipikal</th><th style="width:22%">Metode Akuntansi</th><th style="width:22%">Penyajian Neraca</th><th style="width:23%">Penyajian Laba Rugi</th></tr></thead>
+<tbody>
+<tr><td><strong>Pasif</strong></td><td>&lt;20%</td><td>Fair value (FVTPL, FVOCI) atau amortized cost</td><td>Investasi dicatat di fair value atau amortized cost</td><td>Dividen dan/atau perubahan fair value di P&amp;L atau OCI</td></tr>
+<tr><td><strong>Pengaruh Signifikan</strong></td><td>20–50%</td><td>Metode ekuitas (<em>equity method</em>)</td><td>Satu baris: "Investasi pada perusahaan asosiasi"</td><td>Satu baris: "Bagian laba entitas asosiasi"</td></tr>
+<tr><td><strong>Kontrol</strong></td><td>&gt;50%</td><td>Konsolidasi penuh (<em>full consolidation</em>)</td><td>100% aset &amp; liabilitas anak digabungkan; NCI di ekuitas</td><td>100% pendapatan &amp; beban digabungkan; NCI di laba</td></tr>
+</tbody>
+</table>
+
+<div class="nb ibox"><div class="ibt">⚠️ Ambang 20% dan 50% Bukan Absolut</div>
+<p>Ambang kepemilikan 20% dan 50% adalah <strong>panduan umum</strong>, bukan aturan kaku. Pengaruh signifikan dapat ada di bawah 20% (misalnya, representasi di dewan direksi, partisipasi dalam pengambilan keputusan, pertukaran personel manajerial, atau transaksi material antar-entitas) atau tidak ada di atas 20% (misalnya, investor pasif tanpa representasi dewan). Demikian pula, kontrol dapat ada tanpa kepemilikan mayoritas (<em>de facto control</em>). Standar akuntansi (IAS 28, IFRS 10) mengharuskan penilaian substansi di atas bentuk (<em>substance over form</em>).</p>
+</div>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Investasi Pasif / Passive Investments (Minority Interests &lt;20%)</h2>
+
+<h3>3.1 Klasifikasi di Bawah US GAAP (Legacy: ASC 320)</h3>
+
+<p>Di bawah kerangka US GAAP yang lebih lama (ASC 320, sebelum ASU 2016-01), investasi dalam sekuritas utang dan ekuitas diklasifikasikan menjadi tiga kategori:</p>
+
+<div class="def"><div class="den">Trading Securities / Sekuritas Diperdagangkan</div><div class="did">Sekuritas utang dan ekuitas yang dipegang dengan tujuan dijual dalam <strong>jangka pendek</strong> untuk memperoleh keuntungan dari perubahan harga. Dicatat di <strong>fair value</strong> dengan perubahan nilai wajar diakui dalam <strong>laba rugi</strong> (<em>earnings</em>). Keuntungan dan kerugian yang belum direalisasi langsung mempengaruhi <em>net income</em>, menciptakan volatilitas laba.</div></div>
+
+<div class="def"><div class="den">Available-for-Sale (AFS) Securities / Sekuritas Tersedia untuk Dijual</div><div class="did">Sekuritas yang <strong>tidak</strong> diklasifikasikan sebagai trading maupun held-to-maturity. Dicatat di <strong>fair value</strong> dengan perubahan nilai wajar diakui dalam <strong>other comprehensive income</strong> (OCI) — bukan laba rugi. Keuntungan/kerugian yang belum direalisasi "ditampung" di OCI sampai sekuritas dijual, saat itu dipindahkan ke laba rugi (<em>recycling</em>). Ini menciptakan <em>accumulated other comprehensive income</em> (AOCI) di ekuitas.</div></div>
+
+<div class="def"><div class="den">Held-to-Maturity (HTM) Securities / Sekuritas Dipegang hingga Jatuh Tempo</div><div class="did">Hanya berlaku untuk <strong>sekuritas utang</strong> yang dimiliki perusahaan dengan niat positif dan kemampuan untuk memegang hingga jatuh tempo. Dicatat di <strong>amortized cost</strong> — tidak ada pengakuan keuntungan/kerugian yang belum direalisasi. Metode ini mengisolasi laba dari volatilitas pasar tetapi memerlukan komitmen nyata untuk memegang hingga jatuh tempo; penjualan sebelum jatuh tempo dapat <em>taint</em> seluruh portofolio HTM.</div></div>
+
+<h3>3.2 Klasifikasi di Bawah IFRS 9</h3>
+
+<p>IFRS 9 (berlaku sejak 2018) menggantikan IAS 39 dengan model klasifikasi yang lebih berbasis prinsip, berdasarkan dua kriteria: (1) <strong>model bisnis</strong> (<em>business model</em>) entitas untuk mengelola aset keuangan, dan (2) <strong>karakteristik arus kas kontraktual</strong> (<em>SPPI test</em> — Solely Payments of Principal and Interest).</p>
+
+<table>
+<thead><tr><th style="width:22%">Kategori IFRS 9</th><th style="width:30%">Kriteria</th><th style="width:24%">Pengukuran</th><th style="width:24%">Dampak pada P&amp;L vs OCI</th></tr></thead>
+<tbody>
+<tr><td><strong>Amortized Cost</strong></td><td>Model bisnis: <em>hold to collect</em>; arus kas = SPPI</td><td>Amortized cost (metode suku bunga efektif)</td><td>Pendapatan bunga di P&amp;L; impairment di P&amp;L</td></tr>
+<tr><td><strong>FVOCI</strong> (Utang)</td><td>Model bisnis: <em>hold to collect and sell</em>; arus kas = SPPI</td><td>Fair value; perubahan di OCI</td><td>Bunga &amp; impairment di P&amp;L; fair value changes di OCI; <strong>recycling</strong> saat dijual</td></tr>
+<tr><td><strong>FVOCI</strong> (Ekuitas)</td><td>Pilihan irrevocable saat pengakuan awal untuk ekuitas non-trading</td><td>Fair value; perubahan di OCI</td><td>Dividen di P&amp;L; fair value changes di OCI; <strong>tanpa recycling</strong></td></tr>
+<tr><td><strong>FVTPL</strong></td><td>Default untuk semua yang tidak memenuhi kriteria di atas; atau pilihan <em>fair value option</em></td><td>Fair value; perubahan di P&amp;L</td><td>Seluruh perubahan fair value di P&amp;L — paling volatil</td></tr>
+</tbody>
+</table>
+
+<div class="nb ibox"><div class="ibt">📌 Perbedaan Kritis: Recycling vs Non-Recycling</div>
+<p>Di bawah IFRS 9, investasi ekuitas yang diklasifikasikan sebagai FVOCI <strong>tidak</strong> mengalami <em>recycling</em> — artinya keuntungan/kerugian yang terakumulasi di OCI <strong>tidak pernah</strong> dipindahkan ke laba rugi, bahkan saat sekuritas dijual. Keuntungan/kerugian dari penjualan ditransfer langsung dari OCI ke <em>retained earnings</em>. Ini berbeda secara fundamental dari AFS di bawah IAS 39 dan US GAAP, di mana recycling terjadi. Implikasi: laba bersih di bawah IFRS 9 untuk investasi ekuitas FVOCI tidak akan pernah mencerminkan realized gains/losses dari penjualan sekuritas — hanya dividen.</p>
+</div>
+
+<div class="exb nb">
+<p><strong>Implikasi Analitis:</strong> Klasifikasi investasi pasif mempengaruhi volatilitas laba dan OCI secara signifikan. Analis harus: (1) mengidentifikasi berapa besar portofolio investasi yang di-mark-to-market melalui P&amp;L vs OCI; (2) mengevaluasi apakah keuntungan/kerugian yang belum direalisasi di OCI bersifat sementara atau permanen; (3) untuk perusahaan keuangan (bank, asuransi), klasifikasi ini memiliki dampak material terhadap ekuitas regulatori dan laba yang dilaporkan.</p>
+</div>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Metode Ekuitas / Equity Method (Significant Influence, 20–50%)</h2>
+
+<div class="def"><div class="den">Equity Method / Metode Ekuitas</div><div class="did">Metode akuntansi yang diterapkan ketika investor memiliki <strong>pengaruh signifikan</strong> (<em>significant influence</em>) terhadap investee — umumnya kepemilikan 20–50%. Di bawah metode ekuitas, investasi awalnya dicatat di <strong>biaya perolehan</strong>, kemudian disesuaikan secara periodik untuk: (1) bagian investor atas laba/rugi investee (<em>share of profit/loss</em>); (2) dividen yang diterima dari investee (mengurangi nilai investasi); (3) amortisasi perbedaan antara biaya perolehan dan bagian atas nilai wajar aset bersih investee (<em>excess cost amortization</em>); dan (4) penurunan nilai jika diperlukan.</div></div>
+
+<h3>4.1 Mekanisme Metode Ekuitas / Equity Method Mechanics</h3>
+
+<div class="fbox">
+<p><strong>Pergerakan Nilai Investasi di Bawah Metode Ekuitas</strong></p>
+<p style="text-align:center;">Nilai Awal (Cost) + Bagian Laba Investee − Dividen Diterima − Amortisasi Excess Cost − Impairment = Nilai Akhir Investasi</p>
+</div>
+
+<table>
+<thead><tr><th style="width:30%">Komponen</th><th style="width:35%">Perlakuan Akuntansi</th><th style="width:35%">Dampak pada Laporan Keuangan Investor</th></tr></thead>
+<tbody>
+<tr><td><strong>Investasi Awal</strong></td><td>Dicatat di biaya perolehan (<em>cost</em>)</td><td>Muncul sebagai aset non-lancar "Investasi pada Entitas Asosiasi"</td></tr>
+<tr><td><strong>Bagian Laba Investee</strong></td><td>Investor mengakui % kepemilikan × laba bersih investee</td><td>Menambah nilai investasi di neraca; diakui sebagai pendapatan di laba rugi ("Bagian laba entitas asosiasi")</td></tr>
+<tr><td><strong>Dividen Diterima</strong></td><td>Mengurangi nilai investasi (<em>bukan</em> pendapatan)</td><td>Mengurangi aset investasi; kas masuk dari dividen di arus kas</td></tr>
+<tr><td><strong>Amortisasi Excess Cost</strong></td><td>Selisih biaya akuisisi &gt; bagian nilai wajar aset bersih diamortisasi</td><td>Mengurangi nilai investasi dan equity income secara berkala</td></tr>
+<tr><td><strong>Penurunan Nilai</strong></td><td>Jika recoverable amount &lt; carrying amount</td><td>Write-down investasi; kerugian di laba rugi</td></tr>
+</tbody>
+</table>
+
+<h3>4.2 Equity Income: "One-Line Consolidation"</h3>
+
+<div class="nb ibox"><div class="ibt">📌 Mengapa Metode Ekuitas Disebut "One-Line Consolidation"</div>
+<p>Metode ekuitas sering disebut <em>"one-line consolidation"</em> karena efek netonya pada <strong>laba bersih</strong> dan <strong>ekuitas</strong> investor sama dengan konsolidasi penuh — tetapi tanpa menggabungkan aset, liabilitas, pendapatan, dan beban baris demi baris. Di neraca: satu baris "Investasi pada Entitas Asosiasi." Di laba rugi: satu baris "Bagian Laba Entitas Asosiasi." Ini menyembunyikan seluruh detail operasional investee — pendapatan, beban, utang, aset — di balik satu angka. Bagi analis, ini adalah <em>black box</em> yang memerlukan penyelidikan lebih lanjut melalui laporan keuangan investee.</p>
+</div>
+
+<div class="exb nb">
+<p><strong>Red Flag Analitis:</strong> Equity income yang besar relatif terhadap total laba bersih investor menandakan ketergantungan signifikan pada investee yang detailnya tidak terlihat di laporan konsolidasi. Analis harus: (1) membaca laporan keuangan investee secara terpisah; (2) mengevaluasi apakah equity income bersifat <em>sustainable</em>; (3) memeriksa apakah dividen dari investee mendekati equity income — jika jauh lebih rendah, laba "tersembunyi" di investee tanpa menghasilkan arus kas bagi investor.</p>
+</div>
+
+<h3>4.3 Perbedaan Metode Ekuitas vs Fair Value</h3>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:37%">Metode Ekuitas</th><th style="width:38%">Fair Value (FVTPL/FVOCI)</th></tr></thead>
+<tbody>
+<tr><td>Pengukuran Neraca</td><td>Cost ± adjustments (bukan fair value pasar)</td><td>Fair value pasar (market price)</td></tr>
+<tr><td>Pengakuan Laba</td><td>Bagian laba investee (akrual)</td><td>Dividen dan/atau perubahan fair value</td></tr>
+<tr><td>Kaitan dengan Kinerja Investee</td><td>Langsung terkait laba investee</td><td>Terkait sentimen pasar dan harga saham</td></tr>
+<tr><td>Informasi yang Tersembunyi</td><td>Detail operasional investee</td><td>Fundamental investee</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Konsolidasi Penuh / Full Consolidation (Control, &gt;50%)</h2>
+
+<div class="def"><div class="den">Full Consolidation / Konsolidasi Penuh</div><div class="did">Metode akuntansi yang diterapkan ketika investor (perusahaan induk / <em>parent</em>) memiliki <strong>kontrol</strong> atas investee (anak perusahaan / <em>subsidiary</em>). Kontrol didefinisikan oleh IFRS 10 sebagai <em>power over the investee, exposure to variable returns, and the ability to use that power to affect those returns</em>. Dalam konsolidasi penuh, <strong>100%</strong> aset, liabilitas, pendapatan, dan beban anak perusahaan digabungkan secara baris demi baris (<em>line-by-line</em>) dengan laporan induk. Seluruh transaksi dan saldo antar induk dan anak dieliminasi. Porsi ekuitas anak yang tidak dimiliki induk disajikan sebagai <em>non-controlling interests</em> (NCI).</div></div>
+
+<h3>5.1 Mekanisme Konsolidasi / Consolidation Mechanics</h3>
+
+<div class="nb ibox"><div class="ibt">📐 Langkah-Langkah Konsolidasi</div>
+<ol>
+<li><strong>Penggabungan baris demi baris</strong>: Jumlahkan 100% setiap baris di neraca dan laba rugi induk dengan anak perusahaan.</li>
+<li><strong>Eliminasi investasi vs ekuitas anak</strong>: Hapus saldo "Investasi pada anak perusahaan" di neraca induk terhadap "ekuitas anak perusahaan" yang dimiliki induk. Selisih = goodwill (jika harga akuisisi &gt; fair value aset bersih teridentifikasi) atau <em>bargain purchase gain</em> (jika sebaliknya).</li>
+<li><strong>Pengakuan aset dan liabilitas di fair value</strong>: Aset dan liabilitas anak perusahaan dinilai kembali ke <em>fair value</em> pada tanggal akuisisi (<em>acquisition-date fair values</em>). Selisih dengan nilai tercatat menciptakan penyesuaian <em>fair value</em> yang diamortisasi setelah akuisisi.</li>
+<li><strong>Eliminasi transaksi intra-grup</strong>: Hapus seluruh pendapatan, beban, piutang, utang, dan laba/rugi yang belum direalisasi dari transaksi antara induk dan anak perusahaan.</li>
+<li><strong>Pengakuan NCI</strong>: Alokasikan porsi ekuitas dan laba bersih anak perusahaan yang tidak dimiliki induk ke NCI.</li>
+</ol>
+</div>
+
+<h3>5.2 Eliminasi Transaksi Intra-Grup / Intercompany Eliminations</h3>
+
+<p>Konsolidasi memperlakukan induk dan anak perusahaan sebagai <strong>satu entitas ekonomi tunggal</strong>. Oleh karena itu, transaksi antar entitas dalam grup harus dieliminasi karena entitas tunggal tidak dapat bertransaksi dengan dirinya sendiri.</p>
+
+<table>
+<thead><tr><th style="width:30%">Jenis Transaksi</th><th style="width:35%">Contoh</th><th style="width:35%">Eliminasi yang Diperlukan</th></tr></thead>
+<tbody>
+<tr><td><strong>Penjualan Intra-Grup</strong></td><td>Induk menjual barang ke anak perusahaan</td><td>Eliminasi pendapatan induk dan beban pokok anak; hapus laba intra-grup yang belum direalisasi dalam persediaan</td></tr>
+<tr><td><strong>Piutang/Utang Intra-Grup</strong></td><td>Piutang induk = utang anak</td><td>Eliminasi kedua saldo agar neraca konsolidasi hanya menunjukkan piutang/utang kepada pihak ketiga</td></tr>
+<tr><td><strong>Pinjaman Intra-Grup</strong></td><td>Induk meminjamkan dana ke anak</td><td>Eliminasi piutang pinjaman induk dan utang pinjaman anak; eliminasi pendapatan bunga induk dan beban bunga anak</td></tr>
+<tr><td><strong>Transfer Aset Tetap</strong></td><td>Induk menjual mesin ke anak dengan keuntungan</td><td>Eliminasi keuntungan yang belum direalisasi; sesuaikan nilai aset tetap dan depresiasi terkait</td></tr>
+<tr><td><strong>Dividen Intra-Grup</strong></td><td>Anak membayar dividen ke induk</td><td>Eliminasi pendapatan dividen induk dan pembayaran dividen anak (transaksi internal)</td></tr>
+</tbody>
+</table>
+
+<div class="exb nb">
+<p><strong>Contoh Kritis — Unrealized Profit in Inventory:</strong> Jika induk menjual barang seharga Rp 120 miliar ke anak (biaya perolehan Rp 100 miliar), ada laba intra-grup Rp 20 miliar. Jika barang ini masih ada di persediaan anak pada tanggal neraca, laba Rp 20 miliar <strong>belum direalisasi</strong> dari perspektif entitas konsolidasi (belum dijual ke pihak ketiga). Eliminasi: kurangi persediaan konsolidasi Rp 20 miliar dan kurangi laba konsolidasi Rp 20 miliar. Ini mencegah "inflasi laba" dari transaksi internal.</p>
+</div>
+
+<h3>5.3 Akuntansi Akuisisi / Acquisition Accounting (IFRS 3 / ASC 805)</h3>
+
+<div class="def"><div class="den">Acquisition Method / Metode Akuisisi</div><div class="did">Satu-satunya metode yang diizinkan oleh IFRS 3 dan ASC 805 untuk mencatat penggabungan usaha (<em>business combinations</em>). Prinsip utama: seluruh aset teridentifikasi dan liabilitas yang diasumsikan dari <em>acquiree</em> dicatat di <strong>fair value</strong> pada tanggal akuisisi. Selisih antara <em>consideration transferred</em> (harga akuisisi) dan fair value aset bersih teridentifikasi = <strong>goodwill</strong> (jika positif) atau <strong>gain on bargain purchase</strong> (jika negatif — langsung diakui di P&amp;L).</div></div>
+
+<div class="fbox">
+<p><strong>Perhitungan Goodwill</strong></p>
+<p style="text-align:center;">Goodwill = Consideration Transferred + NCI (at fair value) + Previously Held Equity Interest (at fair value) − Fair Value of Net Identifiable Assets Acquired</p>
+</div>
+
+<div class="nb ibox"><div class="ibt">📌 Fair Value of Net Identifiable Assets</div>
+<p>Pada tanggal akuisisi, <em>acquirer</em> harus mengidentifikasi dan mengukur di fair value <strong>seluruh</strong> aset teridentifikasi dan liabilitas anak perusahaan — termasuk aset tak berwujud yang sebelumnya tidak diakui di neraca anak (misalnya, merek dagang yang dibangun internal, daftar pelanggan, teknologi proprietary, kontrak menguntungkan). Ini sering menghasilkan penyesuaian fair value yang signifikan di atas nilai buku anak perusahaan.</p>
+</div>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Non-Controlling Interests (NCI) / Kepentingan Non-Pengendali</h2>
+
+<div class="def"><div class="den">Non-Controlling Interests (NCI) / Kepentingan Non-Pengendali</div><div class="did">Porsi ekuitas anak perusahaan yang <strong>tidak</strong> dimiliki, baik langsung maupun tidak langsung, oleh perusahaan induk. NCI merepresentasikan klaim pemegang saham minoritas atas aset bersih dan laba anak perusahaan. Dalam laporan konsolidasi, NCI disajikan: (1) di neraca — sebagai komponen terpisah dalam <strong>ekuitas</strong>, bukan liabilitas; (2) di laba rugi — laba/rugi anak perusahaan dialokasikan antara "laba yang diatribusikan kepada pemilik entitas induk" dan "laba yang diatribusikan kepada NCI."</div></div>
+
+<h3>6.1 Penyajian NCI / NCI Presentation</h3>
+
+<table>
+<thead><tr><th style="width:25%">Laporan Keuangan</th><th style="width:40%">Penyajian NCI</th><th style="width:35%">Implikasi Analitis</th></tr></thead>
+<tbody>
+<tr><td><strong>Neraca (Ekuitas)</strong></td><td>NCI disajikan terpisah dalam ekuitas konsolidasi, di bawah ekuitas yang diatribusikan ke pemilik induk</td><td>Total ekuitas konsolidasi = ekuitas pemilik induk + NCI; rasio yang menggunakan "equity" harus memilih basis yang tepat</td></tr>
+<tr><td><strong>Laba Rugi</strong></td><td>"Laba bersih konsolidasi" dipecah menjadi: (a) laba yang diatribusikan ke pemilik induk, (b) laba yang diatribusikan ke NCI</td><td>EPS dihitung berdasarkan laba yang diatribusikan ke pemilik induk — bukan laba konsolidasi total</td></tr>
+<tr><td><strong>Laporan Perubahan Ekuitas</strong></td><td>Kolom terpisah untuk NCI menunjukkan pergerakan (bagian laba, dividen ke NCI, perubahan kepemilikan)</td><td>Dividen yang dibayar ke NCI mengurangi kas grup tetapi tidak mengurangi ekuitas pemilik induk</td></tr>
+</tbody>
+</table>
+
+<h3>6.2 Metode Goodwill Parsial vs Penuh / Partial vs Full Goodwill</h3>
+
+<div class="cgrid nb">
+<div>
+<h4>Metode Goodwill Parsial (<em>Partial Goodwill</em>)</h4>
+<p>NCI diukur berdasarkan <strong>bagian proporsional atas fair value aset bersih teridentifikasi</strong> anak perusahaan. Goodwill hanya mencerminkan premium yang dibayar oleh <em>parent</em> — NCI tidak mengandung goodwill. Ini menghasilkan NCI dan goodwill yang lebih <strong>rendah</strong> di neraca.</p>
+<p><em>NCI = % NCI × Fair Value of Net Identifiable Assets</em></p>
+</div>
+<div>
+<h4>Metode Goodwill Penuh (<em>Full Goodwill</em>)</h4>
+<p>NCI diukur di <strong>fair value</strong> — yang mencakup porsi goodwill yang "melekat" pada kepentingan minoritas. Total goodwill = goodwill induk + goodwill NCI. Ini menghasilkan NCI dan goodwill yang lebih <strong>tinggi</strong> di neraca. US GAAP (ASC 805) mewajibkan metode ini; IFRS 3 mengizinkan pilihan per akuisisi.</p>
+<p><em>NCI = Fair Value of NCI (e.g., NCI shares × market price)</em></p>
+</div>
+</div>
+
+<div class="exb nb">
+<p><strong>Dampak Analitis:</strong> Perusahaan yang melaporkan di bawah IFRS dapat memilih metode goodwill parsial atau penuh untuk setiap akuisisi. Pilihan ini mempengaruhi: (1) total goodwill di neraca — lebih rendah dengan metode parsial; (2) ukuran NCI di ekuitas; (3) potensi impairment di masa depan — goodwill yang lebih tinggi berarti risiko impairment yang lebih besar. Analis harus memeriksa kebijakan akuntansi perusahaan dan menyesuaikan jika membandingkan perusahaan yang menggunakan metode berbeda.</p>
+</div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Goodwill: Pengukuran, Pengujian Penurunan Nilai, dan Analisis / Goodwill: Measurement, Impairment, and Analysis</h2>
+
+<h3>7.1 Sifat Goodwill / Nature of Goodwill</h3>
+
+<div class="def"><div class="den">Goodwill / Muhibah</div><div class="did">Aset tak berwujud yang muncul dalam penggabungan usaha — merepresentasikan selisih antara <em>consideration transferred</em> (harga akuisisi) dan <strong>fair value aset bersih teridentifikasi</strong> dari entitas yang diakuisisi. Goodwill mencerminkan: sinergi yang diharapkan dari penggabungan, keahlian karyawan (<em>assembled workforce</em>), reputasi bisnis, dan elemen lain yang tidak memenuhi syarat pengakuan terpisah sebagai aset tak berwujud teridentifikasi. Goodwill <strong>tidak</strong> diamortisasi — melainkan diuji penurunan nilainya setiap tahun (<em>impairment-only approach</em>).</div></div>
+
+<h3>7.2 Pengujian Penurunan Nilai Goodwill / Goodwill Impairment Testing</h3>
+
+<div class="cgrid nb">
+<div>
+<h4>IAS 36 (IFRS)</h4>
+<p>Goodwill dialokasikan ke <strong>cash-generating units</strong> (CGUs) atau kelompok CGUs. Pengujian dilakukan minimal <strong>setahun sekali</strong> dan kapan pun terdapat indikasi penurunan nilai. Uji: <em>carrying amount</em> CGU (termasuk goodwill) dibandingkan dengan <em>recoverable amount</em> (higher of fair value less costs of disposal dan value in use). Jika carrying &gt; recoverable → impairment loss dialokasikan pertama ke goodwill, lalu ke aset lain dalam CGU secara proporsional. <strong>Pembalikan rugi penurunan nilai goodwill tidak diizinkan.</strong></p>
+</div>
+<div>
+<h4>ASC 350 (US GAAP)</h4>
+<p>Goodwill dialokasikan ke <strong>reporting units</strong>. Setelah ASU 2017-04, pengujian menjadi <strong>satu langkah</strong>: bandingkan fair value reporting unit dengan carrying amount (termasuk goodwill). Jika carrying &gt; fair value → impairment = selisih, dibatasi maksimal sebesar goodwill yang tercatat. Opsional: <em>qualitative assessment</em> terlebih dahulu (<em>"Step 0"</em>) — jika lebih mungkin dari tidak bahwa fair value &gt; carrying, pengujian kuantitatif tidak diperlukan.</p>
+</div>
+</div>
+
+<div class="nb ibox"><div class="ibt">⚠️ Kritik terhadap Impairment-Only Approach</div>
+<p>Pendekatan <em>impairment-only</em> (tanpa amortisasi) untuk goodwill telah dikritik secara luas oleh akademisi, regulator, dan praktisi:</p>
+<ul>
+<li><strong>"Too little, too late"</strong>: Impairment sering diakui terlambat — manajemen memiliki insentif untuk menghindari atau menunda pengakuan impairment karena dampaknya terhadap laba.</li>
+<li><strong>Goodwill yang terus membengkak</strong>: Tanpa amortisasi, goodwill menumpuk di neraca dari akuisisi yang berurutan, membuat proporsi aset "tidak berwujud dan tidak dapat diverifikasi" semakin besar.</li>
+<li><strong>Diskresi manajemen dalam penilaian</strong>: Pengujian impairment melibatkan estimasi <em>fair value</em> dan <em>value in use</em> yang sangat subjektif — proyeksi arus kas, tingkat diskonto, tingkat pertumbuhan terminal.</li>
+<li><strong>Asimetri informasi</strong>: Akuisisi goodwill diakui di neraca, tetapi goodwill yang dibangun internal (<em>internally generated goodwill</em>) tidak — menciptakan ketidaksetaraan antara perusahaan yang tumbuh organik vs melalui akuisisi.</li>
+</ul>
+<p>IASB dan FASB telah mempertimbangkan untuk memperkenalkan kembali amortisasi goodwill. FASB mengeluarkan ASU 2025-02 (Maret 2025) yang mengizinkan amortisasi goodwill selama periode tidak lebih dari 10 tahun untuk entitas tertentu. IASB juga sedang mempertimbangkan perubahan serupa melalui proyek <em>"Business Combinations — Disclosures, Goodwill and Impairment."</em></p>
+</div>
+
+<h3>7.3 Analisis Goodwill untuk Analis / Goodwill Analysis for Analysts</h3>
+
+<div class="exb nb">
+<p><strong>Langkah-Langkah Analitis:</strong></p>
+<ol>
+<li><strong>Goodwill-to-Total Assets Ratio</strong>: Berapa proporsi aset perusahaan yang berupa goodwill? Rasio tinggi (&gt;30%) menandakan ketergantungan besar pada akuisisi dan risiko impairment yang signifikan.</li>
+<li><strong>Goodwill-to-Equity Ratio</strong>: Jika goodwill melebihi ekuitas, seluruh ekuitas perusahaan secara efektif didukung oleh aset yang tidak terlihat dan tidak likuid. Impairment material bisa menghapus ekuitas.</li>
+<li><strong>Tren Goodwill</strong>: Apakah goodwill terus meningkat dari akuisisi berturut-turut tanpa impairment? Ini bisa menandakan akumulasi premium akuisisi yang berlebihan.</li>
+<li><strong>Disclosure Quality</strong>: Periksa catatan atas laporan keuangan untuk: asumsi pengujian impairment (discount rate, growth rate), sensitivitas, dan apakah ada CGU/reporting unit yang mendekati ambang impairment.</li>
+</ol>
+</div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Variable Interest Entities (VIEs) / Entitas Kepentingan Variabel</h2>
+
+<div class="def"><div class="den">Variable Interest Entity (VIE) / Entitas Kepentingan Variabel</div><div class="did">Entitas di mana pemegang ekuitas (<em>equity holders</em>) tidak memiliki karakteristik kepentingan keuangan pengendali — yaitu: (1) ekuitas yang tidak cukup untuk mendanai aktivitas tanpa dukungan finansial tambahan; (2) pemegang ekuitas yang tidak memiliki kekuasaan untuk mengarahkan aktivitas yang paling signifikan mempengaruhi kinerja ekonomi entitas; atau (3) pemegang ekuitas yang tidak menyerap kerugian atau menerima manfaat secara proporsional. Entitas yang merupakan <em>primary beneficiary</em> — yaitu yang memiliki (a) kekuasaan untuk mengarahkan aktivitas signifikan dan (b) kewajiban menyerap kerugian atau hak menerima manfaat — harus <strong>mengkonsolidasikan</strong> VIE tersebut.</div></div>
+
+<h3>8.1 Konteks Historis: Mengapa VIE Rules Muncul</h3>
+
+<p>Aturan konsolidasi VIE (ASC 810, sebelumnya FIN 46R) muncul sebagai respons langsung terhadap <strong>skandal Enron</strong> (2001). Enron menggunakan ribuan <em>Special Purpose Entities</em> (SPEs) untuk:</p>
+<ul>
+<li>Memindahkan utang dari neraca konsolidasi (<em>off-balance-sheet financing</em>)</li>
+<li>Mengakui keuntungan dari transaksi dengan entitas yang sebenarnya dikendalikan Enron</li>
+<li>Menyembunyikan kerugian investasi dari investor dan analis</li>
+</ul>
+<p>Sebelum FIN 46R, konsolidasi didasarkan pada <em>voting interest model</em> — hanya entitas di mana perusahaan memiliki &gt;50% hak suara yang dikonsolidasikan. SPEs Enron dirancang agar "pihak ketiga" memiliki mayoritas ekuitas (meski minimal), sehingga Enron tidak perlu mengkonsolidasikan. FIN 46R memperkenalkan <em>variable interest model</em> yang mewajibkan konsolidasi berdasarkan siapa yang menanggung <strong>risiko</strong> dan menerima <strong>manfaat</strong>, bukan siapa yang memiliki saham terbanyak.</p>
+
+<h3>8.2 Relevansi di Bawah IFRS</h3>
+
+<p>IFRS 10 menggunakan model kontrol tunggal (<em>single control model</em>) yang secara implisit mencakup situasi VIE melalui definisi kontrol yang berbasis <em>power, exposure to variable returns, dan ability to use power to affect returns</em>. Meskipun istilah "VIE" tidak digunakan secara eksplisit di IFRS, substansi analisisnya serupa — entitas terstruktur (<em>structured entities</em>) yang dikendalikan secara <em>de facto</em> harus dikonsolidasikan.</p>
+
+<div class="exb nb">
+<p><strong>Implikasi Analitis VIE:</strong> Analis harus: (1) memeriksa catatan atas laporan keuangan untuk pengungkapan tentang entitas terstruktur, <em>variable interests</em>, dan entitas yang dikonsolidasikan tanpa kepemilikan mayoritas; (2) mengevaluasi apakah ada entitas <em>off-balance-sheet</em> yang seharusnya dikonsolidasikan tetapi tidak; (3) menilai risiko yang tersembunyi dalam VIEs — termasuk komitmen kontraktual, jaminan, dan kewajiban potensial.</p>
+</div>
+</div>
+
+<div id="s9" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>9. Joint Ventures dan Joint Arrangements / Ventura Bersama</h2>
+
+<div class="def"><div class="den">Joint Arrangement / Pengaturan Bersama (IFRS 11)</div><div class="did">Pengaturan di mana dua atau lebih pihak memiliki <strong>pengendalian bersama</strong> (<em>joint control</em>) — yaitu persetujuan kontraktual untuk berbagi pengendalian atas suatu pengaturan, yang ada hanya ketika keputusan tentang aktivitas relevan memerlukan persetujuan bulat (<em>unanimous consent</em>) dari pihak-pihak yang berbagi pengendalian. IFRS 11 mengklasifikasikan pengaturan bersama menjadi: (1) <strong>joint operations</strong> — di mana pihak-pihak memiliki hak atas aset dan kewajiban atas liabilitas; (2) <strong>joint ventures</strong> — di mana pihak-pihak memiliki hak atas aset bersih pengaturan.</div></div>
+
+<h3>9.1 Perlakuan Akuntansi / Accounting Treatment</h3>
+
+<table>
+<thead><tr><th style="width:25%">Jenis</th><th style="width:35%">Perlakuan IFRS</th><th style="width:40%">Dampak pada Laporan Keuangan</th></tr></thead>
+<tbody>
+<tr><td><strong>Joint Operation</strong></td><td>Setiap <em>joint operator</em> mengakui aset, liabilitas, pendapatan, dan bebannya sendiri terkait operasi bersama — <strong>termasuk bagiannya</strong> atas aset, liabilitas, pendapatan, dan beban bersama</td><td>Mirip konsolidasi proporsional — aset dan liabilitas bagian investor muncul di neraca</td></tr>
+<tr><td><strong>Joint Venture</strong></td><td><strong>Metode ekuitas</strong> (IAS 28 / IFRS 11) — konsolidasi proporsional <strong>tidak diizinkan</strong></td><td>Satu baris di neraca dan laba rugi, sama seperti investasi asosiasi — menyembunyikan skala operasional</td></tr>
+</tbody>
+</table>
+
+<h3>9.2 Konsolidasi Proporsional: Konsep dan Relevansi Historis</h3>
+
+<div class="def"><div class="den">Proportionate Consolidation / Konsolidasi Proporsional</div><div class="did">Metode di mana investor menggabungkan <strong>bagian proporsionalnya</strong> atas setiap baris aset, liabilitas, pendapatan, dan beban joint venture ke dalam laporan keuangannya. Misalnya, jika investor memiliki 50% joint venture: 50% aset JV ditambahkan ke aset investor, 50% liabilitas JV ditambahkan ke liabilitas investor, dst. Di bawah IFRS 11, metode ini <strong>tidak lagi diizinkan</strong> untuk joint ventures (hanya equity method). Namun, beberapa standar lokal dan US GAAP untuk industri tertentu masih mengizinkannya.</div></div>
+
+<div class="nb ibox"><div class="ibt">📌 Dampak Analitis: Equity Method vs Proportionate Consolidation</div>
+<p>Perubahan dari konsolidasi proporsional ke metode ekuitas (IFRS 11, berlaku 2013) memiliki dampak signifikan pada perusahaan dengan joint ventures material:</p>
+<ul>
+<li><strong>Aset dan liabilitas</strong> menurun — karena bagian investor atas aset/liabilitas JV tidak lagi digabungkan baris demi baris.</li>
+<li><strong>Pendapatan</strong> menurun — hanya equity income yang muncul, bukan bagian proporsional atas pendapatan JV.</li>
+<li><strong>Rasio leverage</strong> membaik secara artifisial — utang JV "menghilang" dari neraca investor.</li>
+<li><strong>Margin</strong> berubah — equity income biasanya memiliki "margin" yang berbeda dari bisnis inti.</li>
+</ul>
+<p>Analis sering melakukan <strong>penyesuaian konsolidasi proporsional manual</strong> untuk mengembalikan transparansi — terutama untuk perusahaan di sektor pertambangan, real estat, dan infrastruktur yang banyak menggunakan joint ventures.</p>
+</div>
+</div>
+
+<div id="s10" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>10. Dampak terhadap Analisis Keuangan / Impact on Financial Analysis</h2>
+
+<h3>10.1 Distorsi Rasio dari Metode Akuntansi yang Berbeda</h3>
+
+<p>Perbedaan metode akuntansi untuk investasi antarkorporat menciptakan <strong>distorsi sistematis</strong> pada rasio keuangan. Analis harus memahami distorsi ini untuk membuat perbandingan yang bermakna.</p>
+
+<table>
+<thead><tr><th style="width:20%">Rasio</th><th style="width:27%">Konsolidasi Penuh</th><th style="width:27%">Metode Ekuitas</th><th style="width:26%">Fair Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Total Assets</strong></td><td>Tertinggi — 100% aset anak digabungkan</td><td>Lebih rendah — hanya satu baris investasi</td><td>Terendah — hanya nilai pasar investasi</td></tr>
+<tr><td><strong>Total Liabilities</strong></td><td>Tertinggi — 100% liabilitas anak digabungkan</td><td>Tidak termasuk liabilitas investee</td><td>Tidak termasuk liabilitas investee</td></tr>
+<tr><td><strong>Revenue</strong></td><td>Tertinggi — 100% pendapatan anak digabungkan</td><td>Hanya equity income</td><td>Hanya dividen/perubahan FV</td></tr>
+<tr><td><strong>Debt-to-Equity</strong></td><td>Tertinggi — utang anak masuk neraca</td><td>Lebih rendah — utang anak tersembunyi</td><td>Terendah</td></tr>
+<tr><td><strong>Asset Turnover</strong></td><td>Lebih rendah — asset base lebih besar</td><td>Lebih tinggi — asset base lebih kecil</td><td>Tertinggi</td></tr>
+<tr><td><strong>Profit Margin</strong></td><td>Lebih rendah — revenue dilution dari anak</td><td>Tergantung equity income margin</td><td>Tidak bermakna</td></tr>
+<tr><td><strong>Net Income</strong></td><td>Sama* — tetapi dialokasikan ke parent + NCI</td><td>Sama* — bagian laba investee diakui</td><td>Berbeda — tergantung FV changes</td></tr>
+</tbody>
+</table>
+<p><em>*Net income attributable to parent shareholders seharusnya sama antara konsolidasi dan equity method — inilah mengapa equity method disebut "one-line consolidation."</em></p>
+
+<h3>10.2 Penyesuaian Analitis / Analytical Adjustments</h3>
+
+<div class="nb ibox"><div class="ibt">🔧 Teknik Penyesuaian Utama</div>
+<ol>
+<li><strong>Dekonsolidasi (<em>Deconsolidation</em>)</strong>: Membalik konsolidasi untuk melihat kinerja entitas induk secara <em>standalone</em>. Berguna untuk menilai apakah value creation berasal dari induk atau anak perusahaan. Langkah: hapus 100% aset/liabilitas/pendapatan/beban anak; tambahkan kembali investasi di equity method.</li>
+<li><strong>Konsolidasi Proporsional Manual</strong>: Untuk investasi equity method, menambahkan bagian proporsional investor atas aset, liabilitas, dan pendapatan investee. Berguna untuk menilai "true leverage" dan "true scale" investor.</li>
+<li><strong>Penyesuaian NCI</strong>: Gunakan "laba yang diatribusikan ke pemilik induk" (bukan laba konsolidasi total) untuk menghitung ROE dan EPS. Gunakan "ekuitas pemilik induk" (bukan total ekuitas konsolidasi) sebagai denominator ROE.</li>
+<li><strong>Penyesuaian Goodwill</strong>: Untuk analisis konservatif, kurangi goodwill dari ekuitas dan aset untuk menilai <em>tangible book value</em> dan rasio leverage berbasis aset berwujud.</li>
+</ol>
+</div>
+
+<h3>10.3 Implikasi untuk Valuasi / Valuation Implications</h3>
+
+<div class="exb nb">
+<p><strong>Sum-of-the-Parts (SOTP) Valuation:</strong> Untuk konglomerat seperti ASII, analis sering menggunakan pendekatan <em>sum-of-the-parts</em>: menilai setiap anak perusahaan/segmen secara terpisah menggunakan multipel atau DCF yang sesuai untuk industri masing-masing, lalu menjumlahkannya. Konglomerat sering diperdagangkan pada <em>conglomerate discount</em> — yaitu nilai pasar total lebih rendah dari jumlah nilai individu bagian-bagiannya. Penyebab: biaya overhead holding, alokasi modal sub-optimal, kompleksitas analisis, dan kurangnya transparansi. Pemahaman konsolidasi adalah prasyarat untuk SOTP valuation.</p>
+</div>
+
+<div class="exb nb">
+<p><strong>Equity Method Investee Valuation:</strong> Untuk investasi equity method yang material, analis harus: (1) mendapatkan dan menganalisis laporan keuangan investee secara terpisah; (2) menilai investee menggunakan metode valuasi yang sesuai; (3) membandingkan hasil valuasi dengan carrying amount investasi di neraca investor; (4) mengevaluasi apakah equity income yang dilaporkan <em>sustainable</em> dan apakah dividen yang diterima memadai.</p>
+</div>
+</div>
+
+<div id="s11" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>11. Perbandingan IFRS vs US GAAP / IFRS vs US GAAP Comparison</h2>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:37%">IFRS</th><th style="width:38%">US GAAP</th></tr></thead>
+<tbody>
+<tr><td><strong>Definisi Kontrol</strong></td><td>IFRS 10: power + exposure to variable returns + ability to use power (single control model)</td><td>ASC 810: voting interest model (majority voting) + variable interest model (VIE)</td></tr>
+<tr><td><strong>Klasifikasi Investasi Pasif</strong></td><td>IFRS 9: amortized cost, FVOCI, FVTPL berdasarkan business model + SPPI test</td><td>ASC 321/320: trading, AFS, HTM (untuk utang); ekuitas di fair value melalui P&amp;L</td></tr>
+<tr><td><strong>Investasi Ekuitas FVOCI</strong></td><td>Pilihan irrevocable; tanpa recycling</td><td>Tidak ada ekuivalen langsung; ekuitas non-trading sebelumnya AFS (dengan recycling)</td></tr>
+<tr><td><strong>Joint Ventures</strong></td><td>IFRS 11: equity method wajib</td><td>ASC 323: equity method (serupa)</td></tr>
+<tr><td><strong>NCI Measurement</strong></td><td>IFRS 3: pilihan — fair value (full goodwill) ATAU proportionate share (partial goodwill)</td><td>ASC 805: fair value (full goodwill) wajib</td></tr>
+<tr><td><strong>Goodwill Impairment</strong></td><td>IAS 36: CGU-based; one-step; no reversal</td><td>ASC 350: reporting unit-based; one-step (post ASU 2017-04); no reversal</td></tr>
+<tr><td><strong>Goodwill Amortization</strong></td><td>Tidak diizinkan (sedang dipertimbangkan)</td><td>ASU 2025-02: diizinkan untuk non-public entities (≤10 tahun)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s12" class="section pb">
+<div class="phdr"><span>Chapter 5 · Intercorporate Investments</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>12. Ringkasan Kerangka Analitis / Analytical Framework Summary</h2>
+
+<div class="nb ibox"><div class="ibt">📐 Checklist Analis untuk Investasi Antarkorporat</div>
+<ol>
+<li><strong>Identifikasi semua investasi antarkorporat</strong>: Periksa catatan atas laporan keuangan untuk daftar anak perusahaan, asosiasi, joint ventures, dan investasi keuangan. Perhatikan persentase kepemilikan dan metode akuntansi yang diterapkan.</li>
+<li><strong>Evaluasi konsistensi klasifikasi</strong>: Apakah ambang kepemilikan sesuai dengan tingkat pengaruh yang sebenarnya? Apakah ada investasi 25% yang seharusnya dikonsolidasikan karena kontrol <em>de facto</em>?</li>
+<li><strong>Analisis dampak pada neraca</strong>: Berapa proporsi total aset, liabilitas, dan ekuitas yang berasal dari anak perusahaan vs entitas induk? Berapa besar NCI?</li>
+<li><strong>Analisis dampak pada laba rugi</strong>: Berapa proporsi laba yang berasal dari equity income vs operasi konsolidasi? Berapa laba yang diatribusikan ke NCI?</li>
+<li><strong>Evaluasi goodwill</strong>: Berapa Goodwill/Total Assets dan Goodwill/Equity? Apakah ada indikasi impairment? Seberapa sensitif terhadap asumsi?</li>
+<li><strong>Periksa VIEs dan off-balance-sheet</strong>: Apakah ada entitas terstruktur yang tidak dikonsolidasikan? Apa risiko yang tersembunyi?</li>
+<li><strong>Lakukan penyesuaian analitis</strong>: Dekonsolidasi, konsolidasi proporsional manual, penyesuaian NCI, dan pengecualian goodwill sesuai tujuan analisis.</li>
+<li><strong>Hubungkan ke valuasi</strong>: Gunakan SOTP untuk konglomerat; nilai investasi equity method secara terpisah; pertimbangkan conglomerate discount.</li>
+</ol>
+</div>
+
+<div class="fbox">
+<p><strong>Ringkasan Dampak Metode Akuntansi pada Rasio Kunci</strong></p>
+<table>
+<thead><tr><th style="width:25%">Transisi Metode</th><th style="width:25%">Aset</th><th style="width:25%">Leverage</th><th style="width:25%">Revenue</th></tr></thead>
+<tbody>
+<tr><td>Fair Value → Equity Method</td><td>↑ (investasi berubah dari FV ke cost-adjusted)</td><td>= (tidak ada liabilitas baru)</td><td>↑ (equity income vs dividen saja)</td></tr>
+<tr><td>Equity Method → Full Consolidation</td><td>↑↑ (100% aset anak masuk)</td><td>↑↑ (100% liabilitas anak masuk)</td><td>↑↑ (100% pendapatan anak masuk)</td></tr>
+<tr><td>Proportionate → Equity Method</td><td>↓ (bagian aset anak keluar)</td><td>↓ (bagian liabilitas anak keluar)</td><td>↓ (bagian pendapatan anak keluar)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="nb ibox"><div class="ibt">🎓 Graduate-Level Takeaway</div>
+<p>Investasi antarkorporat adalah area di mana <strong>bentuk akuntansi</strong> dapat sangat berbeda dari <strong>substansi ekonomi</strong>. Dua perusahaan dengan investasi identik secara ekonomi dapat melaporkan neraca dan laba rugi yang sangat berbeda hanya karena perbedaan metode akuntansi. Tugas analis level S2: (1) memahami mekanisme setiap metode; (2) mengidentifikasi distorsi yang diciptakan; (3) melakukan penyesuaian untuk mengungkapkan realitas ekonomi; dan (4) menghubungkan analisis ke keputusan investasi dan valuasi. Jangan pernah menerima angka konsolidasi secara <em>face value</em> — selalu tanyakan: "Apa yang tersembunyi di balik konsolidasi ini?"</p>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-04/main-summary.html">← Week 04</a>
+  
+  
+  <a href="../week-06/main-summary.html">Week 06 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

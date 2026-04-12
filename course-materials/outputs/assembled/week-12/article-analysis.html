@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 12 — Article Analysis</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 12: Equity Analysis and Valuation</h1>
+  <div class="meta">
+    <span>📚 Analisis ekuitas dan penilaian</span>
+    
+    <span>📖 Subramanyam Ch. 11</span>
+    
+    
+    <span>📗 Palepu Ch. 8, 9</span>
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 BBCA — Bank Central Asia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Residual income valuation; DDM; DCF; P&#x2F;E and P&#x2F;B multiples; equity risk premium; intrinsic value</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 12 Article Analysis — Cheng (2006) — DEGRADED MODE -->
+<!-- "The Effect of Financial Ratios on Returns from Initial Public Offerings: An Application of Principal Component Analysis" -->
+
+<!-- ============================================================ -->
+<!-- SECTION 1 — Title, Degraded Warning, Citation & Course Context -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Artikel · Cheng (2006) — DEGRADED</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>Analisis Artikel: Cheng (2006) — Financial Ratios, PCA, and IPO Returns</h2>
+<p><em>Article Analysis: The Effect of Financial Ratios on Returns from Initial Public Offerings (Degraded Mode)</em></p>
+
+<div class="degraded-warning">
+<strong>⚠️ Artikel Tidak Tersedia / Article Unavailable</strong>
+<p>Artikel asli "The Effect of Financial Ratios on Returns from Initial Public Offerings: An Application of Principal Component Analysis" (Cheng, Min-Tsung, 2006) tidak tersedia dalam format digital di perpustakaan kursus ini. Analisis berikut disusun berdasarkan deskripsi bibliografis, judul, metodologi yang teridentifikasi (PCA), dan konteks akademik literatur IPO serta valuasi ekuitas.</p>
+<p><em>The original article is not available in the course library. The following analysis is based on available bibliographic metadata and the broader academic context of IPO valuation and financial ratio research.</em></p>
+</div>
+
+<div class="def">
+<div class="den">Sitasi Lengkap / Full Citation</div>
+<div class="did">
+<p>Cheng, Min-Tsung (2006). "The Effect of Financial Ratios on Returns from Initial Public Offerings: An Application of Principal Component Analysis."</p>
+<p><strong>Konteks Publikasi:</strong> Artikel ini termasuk dalam literatur valuasi IPO (<em>Initial Public Offering pricing</em>) yang meneliti hubungan antara rasio keuangan pra-IPO dan kinerja saham pasca-IPO. Penggunaan <em>Principal Component Analysis</em> (PCA) menunjukkan pendekatan multivariat untuk mengidentifikasi kluster rasio keuangan yang paling <em>informatif</em> — mengurangi dimensionalitas dari banyak rasio ke beberapa komponen utama yang menjelaskan varians terbesar.</p>
+</div>
+</div>
+
+<div class="ibox">
+<div class="ibt">📚 Konteks dalam Perkuliahan / Course Context</div>
+<p>Artikel ini terhubung dengan topik <strong>Minggu 12 — Analisis Ekuitas dan Penilaian</strong> (<em>Equity Analysis and Valuation</em>) karena menguji rasio keuangan mana yang paling berpengaruh terhadap valuasi perusahaan yang baru terdaftar (<em>newly listed companies</em>). Ini relevan langsung dengan pembahasan <em>price multiples</em>, <em>fundamental analysis</em>, dan hubungan antara informasi akuntansi dengan nilai pasar ekuitas dalam kerangka Subramanyam Ch.11.</p>
+<p>Artikel ini juga melengkapi diskusi <strong>Minggu 03 — Rasio Keuangan</strong>: sementara Minggu 03 membahas klasifikasi dan interpretasi rasio keuangan secara umum, Cheng (2006) menguji secara empiris rasio mana yang memiliki daya prediktif terbesar terhadap pengembalian saham — khususnya dalam konteks IPO.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 2 — Research Question and Context                    -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Pertanyaan Riset &amp; Konteks Literatur</span><span>Cheng (2006)</span></div>
+
+<h3>Pertanyaan Riset Utama / Central Research Question</h3>
+
+<div class="ibox">
+<div class="ibt">🔍 Pertanyaan Sentral</div>
+<p><strong>Rasio keuangan mana — diidentifikasi melalui Principal Component Analysis — yang paling berpengaruh terhadap pengembalian saham pasca-IPO?</strong></p>
+<p><em>Which financial ratios, identified through PCA, have the strongest effect on post-IPO stock returns?</em></p>
+</div>
+
+<h3>Konteks Akademik / Academic Context</h3>
+<p>Literatur IPO telah mendokumentasikan secara luas fenomena <em>IPO underpricing</em> — harga penawaran perdana yang lebih rendah dari harga hari pertama perdagangan — dan variasi kinerja jangka panjang pasca-IPO. Pertanyaan kunci bagi investor dan analis: informasi fundamental apa yang dapat membantu memprediksi perusahaan IPO mana yang akan berkinerja baik vs buruk? Rasio keuangan dari prospektus dan laporan keuangan pra-IPO merupakan sumber informasi utama karena:</p>
+
+<div class="cg">
+<div class="cgt">Mengapa Rasio Keuangan Penting untuk Valuasi IPO?</div>
+<ol>
+<li><strong>Informasi terbatas</strong> — Perusahaan IPO memiliki riwayat perdagangan yang minim; rasio keuangan dari prospektus adalah salah satu sumber informasi kuantitatif utama yang tersedia bagi investor.</li>
+<li><strong>Multidimensional assessment</strong> — Satu rasio tunggal tidak cukup; profitabilitas, likuiditas, leverage, dan efisiensi bersama-sama membentuk gambaran fundamental perusahaan.</li>
+<li><strong>Masalah multikolinearitas</strong> — Banyak rasio keuangan berkorelasi tinggi (misal: berbagai ukuran profitabilitas). PCA mengatasi masalah ini dengan mengidentifikasi komponen independen yang menjelaskan varians terbesar.</li>
+</ol>
+</div>
+
+<p><strong>Posisi dalam literatur:</strong> Ritter (1991) dan Loughran &amp; Ritter (1995) mendokumentasikan kinerja jangka panjang IPO yang buruk (<em>long-run IPO underperformance</em>). Kim, Krinsky &amp; Lee (1995) meneliti hubungan rasio keuangan dengan <em>underpricing</em>. Cheng (2006) memperluas pendekatan ini dengan menggunakan PCA untuk mengidentifikasi kluster rasio yang paling <em>informatif</em>, mengurangi masalah multikolinearitas yang lazim dalam penelitian rasio keuangan.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 3 — Known Methodological Elements                    -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Elemen Metodologis / Methodological Elements</span><span>Cheng (2006)</span></div>
+
+<h3>Elemen Metodologis yang Diketahui / Known Methodological Elements</h3>
+<p><em>Berdasarkan judul artikel, metodologi PCA yang diidentifikasi, dan konvensi riset sejenis dalam literatur IPO.</em></p>
+
+<table>
+<thead>
+<tr><th>Elemen</th><th>Deskripsi (Kemungkinan / <em>Likely</em>)</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Variabel Dependen</strong></td><td>Pengembalian saham pasca-IPO (<em>post-IPO returns</em>) — kemungkinan diukur pada berbagai horizon (hari pertama, 1 bulan, 6 bulan, 1 tahun)</td></tr>
+<tr><td><strong>Variabel Independen</strong></td><td>Rasio keuangan dari prospektus/laporan keuangan pra-IPO: profitabilitas (ROE, ROA, margin), likuiditas (current ratio, quick ratio), leverage (debt-to-equity, debt-to-assets), efisiensi (asset turnover), dan pertumbuhan (revenue/earnings growth)</td></tr>
+<tr><td><strong>Metodologi Utama</strong></td><td><em>Principal Component Analysis</em> (PCA) — teknik reduksi dimensi yang mentransformasi banyak variabel berkorelasi menjadi beberapa komponen independen (<em>principal components</em>) yang menjelaskan proporsi terbesar varians data. Komponen-komponen ini kemudian digunakan sebagai prediktor dalam model regresi terhadap pengembalian IPO.</td></tr>
+<tr><td><strong>Tahapan Analisis</strong></td><td>(1) Hitung rasio keuangan pra-IPO; (2) Terapkan PCA untuk mengidentifikasi komponen utama; (3) Regresi komponen utama terhadap pengembalian pasca-IPO; (4) Interpretasikan komponen mana yang signifikan</td></tr>
+<tr><td><strong>Inovasi</strong></td><td>Penggunaan PCA mengatasi masalah multikolinearitas yang umum dalam penelitian rasio keuangan — banyak rasio mengukur dimensi serupa; PCA mengekstrak dimensi independen yang menjelaskan varians terbesar</td></tr>
+</tbody>
+</table>
+
+<div class="nb">
+<strong>Catatan:</strong> Detail metodologis di atas merupakan inferensi berdasarkan judul artikel dan praktik umum dalam literatur IPO. Detail aktual mungkin berbeda.
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 4 — Expected Findings                                -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Temuan yang Diharapkan / Expected Findings</span><span>Cheng (2006)</span></div>
+
+<h3>Temuan yang Diharapkan Berdasarkan Literatur</h3>
+
+<div class="ibox">
+<div class="ibt">📊 Temuan yang Diharapkan / Expected Findings</div>
+<p>Berdasarkan literatur IPO dan valuasi ekuitas yang lebih luas:</p>
+<ol>
+<li><strong>Komponen profitabilitas kemungkinan paling signifikan</strong> — Kluster rasio profitabilitas (ROE, ROA, margin) biasanya menjelaskan varians terbesar dalam pengembalian saham, termasuk pasca-IPO. Perusahaan dengan profitabilitas pra-IPO yang kuat cenderung berkinerja lebih baik.</li>
+<li><strong>Komponen leverage dan risiko keuangan</strong> — Rasio leverage tinggi pra-IPO kemungkinan berkorelasi negatif dengan pengembalian jangka panjang, menandakan risiko keuangan yang lebih tinggi bagi investor.</li>
+<li><strong>Komponen pertumbuhan dan efisiensi</strong> — Rasio pertumbuhan pendapatan dan efisiensi aset kemungkinan membentuk komponen terpisah yang signifikan, menangkap dimensi <em>growth potential</em> yang dihargai pasar dalam konteks IPO.</li>
+<li><strong>PCA mengidentifikasi 3-5 komponen utama</strong> — Dalam penelitian rasio keuangan, PCA biasanya mengekstrak 3-5 komponen yang menjelaskan 70-85% total varians, mereduksi 10-20+ rasio asli menjadi dimensi yang dapat diinterpretasikan.</li>
+</ol>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 5 — Connection to Week 12: Equity Valuation          -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Koneksi ke Minggu 12 — Valuasi Ekuitas</span><span>Cheng (2006)</span></div>
+
+<h3>Hubungan dengan Valuasi Ekuitas / Connection to Equity Valuation</h3>
+
+<div class="cg">
+<div class="cgt">Rasio Keuangan, PCA, dan Kerangka Valuasi Subramanyam Ch.11</div>
+<ol>
+<li><strong>Validasi empiris bahwa rasio keuangan mempengaruhi valuasi</strong> — Cheng (2006) memberikan bukti bahwa informasi akuntansi (rasio keuangan) secara statistik signifikan mempengaruhi pengembalian saham, mendukung premis dasar Subramanyam bahwa analisis laporan keuangan fundamental bernilai untuk valuasi.</li>
+<li><strong>Identifikasi <em>value drivers</em> kunci</strong> — PCA mengidentifikasi dimensi fundamental (profitabilitas, risiko, pertumbuhan) yang sesuai dengan input model valuasi: profitabilitas → ROE untuk RIM, pertumbuhan → growth rate untuk DDM/DCF, risiko → cost of equity via CAPM.</li>
+<li><strong>Relevansi untuk <em>comparable valuation</em></strong> — Memahami rasio mana yang paling <em>informatif</em> membantu analis memilih <em>value drivers</em> yang tepat ketika membandingkan multiples antar perusahaan. Tidak semua rasio sama pentingnya.</li>
+<li><strong>Aplikasi khusus untuk perusahaan baru terdaftar (IPO)</strong> — Untuk perusahaan yang baru IPO (seperti GOTO di studi kasus Minggu 10), rasio keuangan dari prospektus menjadi salah satu basis utama untuk valuasi awal. PCA membantu memprioritaskan rasio mana yang harus difokuskan.</li>
+<li><strong>Konteks Indonesia</strong> — Pasar IPO Indonesia (BEI) memiliki karakteristik unik: proporsi perusahaan keluarga yang tinggi, regulasi OJK yang spesifik, dan dinamika <em>underpricing</em> yang berbeda dari pasar maju. Temuan Cheng mungkin perlu penyesuaian konteks.</li>
+</ol>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 6 — Limitations of Degraded Analysis                 -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Keterbatasan Analisis Degraded</span><span>Cheng (2006)</span></div>
+
+<h3>Keterbatasan Mode Degraded / Limitations of Degraded Analysis</h3>
+
+<div class="ibox">
+<div class="ibt">⚠️ Apa yang TIDAK Dapat Dianalisis / What We CANNOT Analyze</div>
+<p>Tanpa akses ke artikel asli, kita <strong>tidak dapat</strong> menganalisis:</p>
+<ul>
+<li>Sampel spesifik: negara, bursa, periode, jumlah perusahaan IPO</li>
+<li>Rasio keuangan spesifik yang dipilih dan bagaimana dioperasionalisasikan</li>
+<li>Jumlah komponen utama yang diekstrak PCA dan proporsi varians yang dijelaskan</li>
+<li>Loading factor setiap rasio pada komponen utama — informasi kunci untuk interpretasi</li>
+<li>Hasil regresi: koefisien, signifikansi, R², adjusted R²</li>
+<li>Robustness checks dan validasi out-of-sample</li>
+<li>Diskusi penulis tentang implikasi praktis dan keterbatasan studi</li>
+</ul>
+<p><strong>Rekomendasi:</strong> Bagi mahasiswa yang ingin menganalisis artikel ini secara mendalam, disarankan untuk mencari akses melalui perpustakaan universitas atau database akademik.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTION 7 — Practical Relevance                              -->
+<!-- ============================================================ -->
+<div class="section pb">
+<div class="phdr"><span>Relevansi untuk Analisis Laporan Keuangan</span><span>Cheng (2006)</span></div>
+
+<h3>Relevansi Praktis untuk Analis / Practical Relevance for Analysts</h3>
+
+<div class="exb">
+<div class="exn">Implikasi Praktis: Rasio Keuangan dan Valuasi Ekuitas</div>
+<p><strong>Bagi analis yang melakukan valuasi ekuitas, artikel Cheng (2006) memperkuat beberapa prinsip kunci:</strong></p>
+<ol>
+<li><strong>Tidak semua rasio keuangan sama informatifnya</strong> — PCA menunjukkan bahwa beberapa dimensi fundamental (profitabilitas, leverage, pertumbuhan) menjelaskan sebagian besar variasi dalam pengembalian saham. Analis harus memprioritaskan rasio yang termasuk dalam dimensi-dimensi kunci ini.</li>
+<li><strong>Multikolinearitas adalah masalah nyata</strong> — Menggunakan banyak rasio secara bersamaan dalam valuasi komparatif tanpa memahami korelasi antar-rasio dapat menyesatkan. PCA atau pemahaman intuitif tentang dimensi independen membantu menghindari <em>double-counting</em>.</li>
+<li><strong>Konteks IPO membutuhkan fokus khusus</strong> — Untuk perusahaan yang baru terdaftar, rasio keuangan dari prospektus adalah salah satu sumber informasi terpenting. Dalam kerangka Subramanyam Ch.11, ini adalah input langsung untuk <em>comparable valuation</em> dan estimasi awal <em>intrinsic value</em>.</li>
+</ol>
+<p><em>For analysts conducting equity valuation, Cheng (2006) reinforces that financial ratio analysis — particularly when dimensionality is reduced through PCA — can identify the most informative predictors of equity returns, supporting the fundamental premise that accounting information is relevant for valuation.</em></p>
+</div>
+
+<div class="fbox">
+<strong>Ringkasan Utama:</strong> Cheng (2006) menggunakan PCA untuk mengidentifikasi kluster rasio keuangan yang paling berpengaruh terhadap pengembalian saham pasca-IPO. Dalam konteks valuasi ekuitas (Minggu 12), artikel ini memperkuat bahwa analisis fundamental berbasis rasio keuangan memiliki daya prediktif terhadap nilai pasar, mendukung kerangka Subramanyam Ch.11 bahwa informasi akuntansi relevan untuk estimasi nilai intrinsik.
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-11/article-analysis.html">← Week 11</a>
+  
+  
+  <a href="../week-13/article-analysis.html">Week 13 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

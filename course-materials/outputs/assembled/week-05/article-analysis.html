@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 05 — Article Analysis</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 05: Intercorporate Investments Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis investasi: Intercorporate investment</span>
+    
+    <span>📖 Subramanyam Ch. 5</span>
+    
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 ASII — Astra International Tbk + United Tractors (UNTR)</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Equity method; consolidation; minority interests; goodwill; intercorporate investment accounting</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 05 Article Analysis — Raheman et al. (2010) — DEGRADED MODE -->
+<!-- "Working Capital Management and Corporate Performance: Sector-Wise Analysis" -->
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Raheman et al. (2010) — DEGRADED</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>Analisis Artikel: Raheman et al. (2010) — Working Capital Management</h2>
+<p><em>Article Analysis: Working Capital Management and Corporate Performance (Degraded Mode)</em></p>
+
+<div class="degraded-warning">
+<strong>⚠️ Artikel Tidak Tersedia / Article Unavailable</strong>
+<p>Artikel asli "Working Capital Management and Corporate Performance: Sector-Wise Analysis" (Raheman et al., 2010) tidak tersedia dalam format digital di perpustakaan kursus ini. Analisis berikut disusun berdasarkan deskripsi bibliografis dan konteks akademik yang tersedia.</p>
+<p><em>The original article is not available in the course library. The following analysis is based on available bibliographic descriptions and academic context.</em></p>
+</div>
+
+<div class="def">
+<div class="den">📄 Sitasi Lengkap / Full Citation</div>
+<div class="did">
+<p>Raheman, Abdul; Qayyum, Abdul; Afza, Talat. (2010). "Working Capital Management and Corporate Performance: Sector-Wise Analysis." <em>International Research Journal of Finance and Economics</em>, Issue 47, pp. 156–170.</p>
+<p><strong>Konteks publikasi:</strong> Diterbitkan dalam <em>International Research Journal of Finance and Economics</em> (IRJFE), jurnal yang mencakup penelitian empiris di bidang keuangan korporat, pasar modal, dan analisis keuangan. Artikel ini merupakan bagian dari literatur yang berkembang pesat tentang hubungan antara manajemen modal kerja (<em>working capital management</em>) dan kinerja perusahaan (<em>corporate performance</em>), khususnya di pasar berkembang (<em>emerging markets</em>).</p>
+</div>
+</div>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Raheman et al. (2010) — DEGRADED</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>1. Pertanyaan Penelitian dan Konteks / Research Question and Context</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Pertanyaan Sentral (Berdasarkan Deskripsi Bibliografis)</div>
+<p><strong>Apakah manajemen modal kerja mempengaruhi kinerja perusahaan, dan apakah pengaruh ini bervariasi antar sektor industri?</strong></p>
+<p><em>Does working capital management affect corporate performance, and does this effect vary across industry sectors?</em></p>
+</div>
+
+<p>Berdasarkan deskripsi yang tersedia, penelitian ini memperluas literatur <em>working capital management</em> (WCM) dengan menambahkan dimensi <strong>analisis sektoral</strong> — mengakui bahwa hubungan antara modal kerja dan kinerja tidak bersifat homogen lintas industri. Perusahaan manufaktur, perdagangan, dan jasa memiliki kebutuhan modal kerja yang berbeda secara fundamental.</p>
+
+<h3>2. Elemen Metodologi yang Diketahui / Known Methodological Elements</h3>
+
+<table>
+<thead>
+<tr><th style="width:30%">Aspek</th><th style="width:70%">Detail (Berdasarkan Deskripsi Bibliografis)</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Sampel</strong></td><td>Perusahaan manufaktur yang terdaftar di Karachi Stock Exchange (KSE), Pakistan — mencakup beberapa sektor industri manufaktur.</td></tr>
+<tr><td><strong>Periode</strong></td><td>Data panel multi-tahun (perkiraan 1998–2007 berdasarkan literatur terkait).</td></tr>
+<tr><td><strong>Metodologi</strong></td><td>Regresi data panel (<em>panel regression</em>) — kemungkinan <em>fixed effects</em> dan/atau <em>random effects</em> models untuk mengendalikan heterogenitas perusahaan.</td></tr>
+<tr><td><strong>Variabel Dependen</strong></td><td>Ukuran kinerja perusahaan — kemungkinan <em>net operating profitability</em> (NOP) atau <em>return on assets</em> (ROA).</td></tr>
+<tr><td><strong>Variabel Independen Utama</strong></td><td><em>Cash Conversion Cycle</em> (CCC), <em>Net Trade Cycle</em> (NTC), <em>days of accounts receivable</em>, <em>days of inventory</em>, <em>days of accounts payable</em>.</td></tr>
+<tr><td><strong>Variabel Kontrol</strong></td><td>Kemungkinan mencakup ukuran perusahaan (<em>firm size</em>), leverage, pertumbuhan penjualan, dan rasio aset lancar.</td></tr>
+<tr><td><strong>Inovasi Utama</strong></td><td>Analisis <strong>sektor-per-sektor</strong> (<em>sector-wise</em>) — memecah sampel berdasarkan industri untuk menguji apakah hubungan WCM-kinerja bersifat industri-spesifik.</td></tr>
+</tbody>
+</table>
+
+<h3>3. Temuan yang Diharapkan / Expected Findings</h3>
+
+<div class="ibox nb">
+<div class="ibt">📊 Temuan Umum dalam Literatur WCM (Konteks untuk Raheman et al.)</div>
+<p>Berdasarkan posisi artikel ini dalam literatur WCM yang lebih luas (termasuk Deloof 2003, Shin &amp; Soenen 1998, Raheman &amp; Nasr 2007), temuan yang diharapkan meliputi:</p>
+<ul>
+<li><strong>Hubungan negatif CCC — Profitabilitas</strong>: Semakin pendek <em>cash conversion cycle</em>, semakin tinggi profitabilitas — perusahaan yang mengelola modal kerja secara efisien menghasilkan kinerja lebih baik.</li>
+<li><strong>Variasi antar-sektor</strong>: Kekuatan dan signifikansi hubungan ini bervariasi antar sektor — sektor dengan inventory-intensive (manufaktur berat) mungkin menunjukkan pengaruh yang lebih kuat.</li>
+<li><strong>Komponen CCC</strong>: <em>Days of inventory</em> dan <em>days of receivable</em> berpengaruh negatif terhadap profitabilitas; <em>days of payable</em> memiliki efek yang ambigu.</li>
+</ul>
+</div>
+</div>
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Raheman et al. (2010) — DEGRADED</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h3>4. Koneksi dengan Minggu 05: Investasi Antarkorporat / Connection to Week 05</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Working Capital Management dalam Konteks Investasi Antarkorporat</div>
+<p>Hubungan antara penelitian Raheman et al. dan topik minggu ini (<em>intercorporate investments</em>) bersifat <strong>konseptual dan strategis</strong>:</p>
+<ol>
+<li><strong>Manajemen WCM Lintas Anak Perusahaan</strong>: Ketika perusahaan induk seperti ASII memiliki puluhan anak perusahaan di berbagai sektor, manajemen modal kerja menjadi <strong>tantangan portofolio</strong> — setiap anak perusahaan memiliki siklus konversi kas yang berbeda (UNTR di pertambangan vs Astra Agro di perkebunan vs Astra Financial di jasa keuangan).</li>
+<li><strong>Dampak pada Laporan Konsolidasi</strong>: Piutang, persediaan, dan utang usaha yang muncul di neraca konsolidasi adalah <strong>agregat</strong> dari seluruh anak perusahaan. Analis harus memahami bahwa "persediaan konsolidasi" mencakup suku cadang alat berat (UNTR), tandan buah sawit (AALI), dan suku cadang otomotif (AUTO) — masing-masing dengan siklus yang sangat berbeda.</li>
+<li><strong>Eliminasi Transaksi Intra-Grup</strong>: Transaksi penjualan antar anak perusahaan dalam grup dieliminasi saat konsolidasi. Ini berarti <em>days of receivable</em> dan <em>days of payable</em> konsolidasi mungkin <strong>tidak mencerminkan</strong> siklus kas sesungguhnya karena sebagian piutang/utang intra-grup telah dieliminasi.</li>
+<li><strong>Keputusan Investasi Strategis</strong>: Kinerja WCM anak perusahaan mempengaruhi keputusan induk — apakah menambah investasi, melakukan divestasi, atau merestrukturisasi. Ini menghubungkan <em>operational efficiency</em> (fokus Raheman) dengan <em>intercorporate investment strategy</em> (fokus Ch.5).</li>
+</ol>
+</div>
+
+<h3>5. Keterbatasan Analisis Degraded / Limitations of Degraded Analysis</h3>
+
+<div class="nb ibox">
+<div class="ibt">⚠️ Apa yang TIDAK Bisa Kita Analisis Tanpa Artikel Asli</div>
+<ul>
+<li>Spesifikasi model regresi yang tepat dan variabel-variabel yang digunakan.</li>
+<li>Hasil statistik detail — koefisien, signifikansi, R² per sektor.</li>
+<li>Sektor-sektor spesifik yang dianalisis dan temuan per sektor.</li>
+<li>Robustness checks dan tes sensitivitas yang dilakukan.</li>
+<li>Perbandingan langsung dengan temuan Deloof (2003), Shin &amp; Soenen (1998), atau Raheman &amp; Nasr (2007).</li>
+</ul>
+<p><strong>Rekomendasi</strong>: Jika Anda memiliki akses ke perpustakaan universitas, carilah artikel ini di IRJFE Issue 47 (2010). Untuk keperluan kursus ini, pemahaman konteks akademik dan koneksi konseptual di atas sudah memadai.</p>
+</div>
+
+<h3>6. Relevansi untuk Analisis Laporan Keuangan / Relevance to FSA</h3>
+
+<div class="exb nb">
+<p><strong>Implikasi Praktis:</strong> Ketika menganalisis perusahaan holding seperti ASII, analis tidak boleh hanya melihat rasio modal kerja konsolidasi. Mereka harus: (1) memeriksa rasio WCM <strong>per segmen</strong> atau per anak perusahaan jika data tersedia; (2) memahami bahwa eliminasi intra-grup mendistorsi <em>days of receivable</em> dan <em>days of payable</em> konsolidasi; (3) mengevaluasi apakah kebijakan modal kerja grup secara keseluruhan menciptakan atau menghancurkan nilai; dan (4) menggunakan analisis sektoral (seperti yang dilakukan Raheman et al.) sebagai <em>benchmark</em> untuk menilai efisiensi setiap segmen.</p>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-04/article-analysis.html">← Week 04</a>
+  
+  
+  <a href="../week-06/article-analysis.html">Week 06 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

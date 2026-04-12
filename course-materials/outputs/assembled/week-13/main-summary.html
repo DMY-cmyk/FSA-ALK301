@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 13 — Main Summary</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 13: Comprehensive Case Study</h1>
+  <div class="meta">
+    <span>📚 Comprehensive case: Applying financial statement analysis</span>
+    
+    
+    <span>📗 Palepu Ch. 10</span>
+    
+    
+    <span>🏢 HMSP — HM Sampoerna Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Integrating all FSA techniques into a comprehensive company analysis; case methodology</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<div id="s1" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Integration Framework</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Pendahuluan — Integrasi Seluruh Kerangka FSA / Integrating the Entire FSA Framework</h2>
+
+<p>Minggu 13 merupakan <em>capstone</em> dari seluruh kursus Analisis Laporan Keuangan dan Valuasi Sekuritas. Selama 12 minggu sebelumnya, mahasiswa telah mempelajari berbagai komponen analisis secara terpisah — mulai dari analisis strategi bisnis, analisis akuntansi, analisis pembiayaan, analisis investasi, analisis operasi, analisis arus kas, analisis profitabilitas, analisis prospektif, analisis kredit, hingga valuasi. Minggu ini, seluruh kerangka analitis tersebut <strong>diintegrasikan</strong> ke dalam satu analisis perusahaan yang komprehensif dan koheren. Kerangka pengorganisasian utama mengacu pada Palepu Ch.10, yang menyajikan metodologi <em>comprehensive case analysis</em> — pendekatan sistematis untuk menganalisis perusahaan secara menyeluruh dari strategi hingga valuasi.</p>
+
+<p>Tujuan akhir dari analisis komprehensif adalah menghasilkan <strong>rekomendasi investasi yang terinformasi</strong> (<em>informed investment recommendation</em>) — bukan sekadar kumpulan rasio dan angka, melainkan narasi analitis yang koheren yang menghubungkan strategi bisnis, kualitas akuntansi, kinerja keuangan, prospek masa depan, dan estimasi nilai intrinsik. Pendekatan lima langkah Palepu (<em>Palepu's Five-Step Framework</em>) memberikan struktur untuk mencapai tujuan ini.</p>
+
+<div class="ibox nb"><div class="ibt">📋 Kerangka Lima Langkah / The Five-Step Framework</div>
+<table>
+<thead><tr><th style="width:5%">No</th><th style="width:28%">Langkah Analisis</th><th style="width:37%">Deskripsi</th><th style="width:30%">Referensi Kursus</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Analisis Strategi Bisnis</strong> (<em>Business Strategy Analysis</em>)</td><td>Memahami industri, posisi kompetitif, model bisnis, dan <em>value drivers</em> perusahaan</td><td>Minggu 1–2 (Subramanyam Ch.1–2)</td></tr>
+<tr><td>2</td><td><strong>Analisis Akuntansi</strong> (<em>Accounting Analysis</em>)</td><td>Mengevaluasi kualitas akuntansi, mengidentifikasi <em>red flags</em>, dan melakukan penyesuaian analitis</td><td>Minggu 5–6 (Subramanyam Ch.5–6)</td></tr>
+<tr><td>3</td><td><strong>Analisis Keuangan</strong> (<em>Financial Analysis</em>)</td><td>Menganalisis kinerja keuangan secara menyeluruh: pembiayaan, investasi, operasi, arus kas, profitabilitas</td><td>Minggu 3–4, 6, 8–9 (Ch.3–4, 6–8)</td></tr>
+<tr><td>4</td><td><strong>Analisis Prospektif</strong> (<em>Prospective Analysis</em>)</td><td>Memproyeksikan kinerja masa depan berdasarkan analisis historis dan asumsi strategis</td><td>Minggu 10 (Ch.9)</td></tr>
+<tr><td>5</td><td><strong>Valuasi</strong> (<em>Valuation</em>)</td><td>Mengestimasi nilai intrinsik menggunakan DCF, residual income, dan multiples</td><td>Minggu 11–12 (Ch.10–11)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<table>
+<thead><tr><th style="width:5%">No</th><th style="width:50%">Tujuan Pembelajaran</th><th style="width:45%">Relevansi</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Mengintegrasikan seluruh kerangka analisis FSA ke dalam satu analisis perusahaan yang koheren</td><td>Kemampuan inti analis keuangan profesional</td></tr>
+<tr><td>2</td><td>Menerapkan Kerangka Lima Langkah Palepu dalam analisis komprehensif</td><td>Metodologi sistematis untuk <em>comprehensive case analysis</em></td></tr>
+<tr><td>3</td><td>Menghubungkan temuan dari setiap langkah analisis untuk membangun narasi yang konsisten</td><td>Menghindari analisis <em>piecemeal</em> yang misleading</td></tr>
+<tr><td>4</td><td>Mengidentifikasi dan mengatasi kontradiksi antar langkah analisis</td><td>Kualitas analisis ditentukan oleh kemampuan rekonsiliasi</td></tr>
+<tr><td>5</td><td>Menyusun rekomendasi investasi yang didukung bukti dari seluruh langkah analisis</td><td>Output akhir dari seluruh proses FSA</td></tr>
+<tr><td>6</td><td>Menghindari <em>common pitfalls</em> dalam analisis komprehensif: <em>tunnel vision</em>, <em>confirmation bias</em>, <em>anchoring</em></td><td>Meningkatkan objektivitas dan kredibilitas analisis</td></tr>
+<tr><td>7</td><td>Melakukan analisis sensitivitas dan menyajikan rentang nilai (<em>range of values</em>)</td><td>Mengkomunikasikan ketidakpastian secara profesional</td></tr>
+<tr><td>8</td><td>Menerapkan <em>best practices</em> dalam penyusunan laporan analisis tingkat <em>graduate</em></td><td>Standar profesional untuk <em>equity research</em> dan <em>investment banking</em></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="def"><div class="den">Analisis Perusahaan Komprehensif / Comprehensive Company Analysis</div><div class="did">Analisis perusahaan komprehensif (<em>comprehensive company analysis</em>) adalah proses evaluasi menyeluruh terhadap suatu perusahaan yang mengintegrasikan analisis strategi bisnis, kualitas akuntansi, kinerja keuangan historis, proyeksi masa depan, dan estimasi nilai intrinsik ke dalam satu kerangka analitis yang koheren. Berbeda dengan analisis parsial yang hanya memeriksa satu aspek (misalnya hanya rasio keuangan atau hanya valuasi), analisis komprehensif menuntut analis untuk memahami <strong>bagaimana setiap komponen saling mempengaruhi</strong>. Menurut Palepu, nilai analisis komprehensif terletak pada kemampuannya menghasilkan <em>insight</em> yang tidak mungkin diperoleh dari analisis parsial — misalnya, mengapa profitabilitas tinggi mungkin tidak berkelanjutan jika posisi kompetitif sedang melemah, atau mengapa arus kas rendah sementara mungkin justru menandakan investasi strategis yang positif.</div></div>
+
+<div class="def"><div class="den">Kerangka Lima Langkah Palepu / Palepu's Five-Step Framework</div><div class="did">Kerangka Lima Langkah Palepu (<em>Palepu's Five-Step Framework</em>) adalah metodologi sistematis untuk menganalisis perusahaan secara komprehensif, sebagaimana disajikan dalam Palepu, Healy, dan Peek (<em>Business Analysis and Valuation</em>). Kerangka ini terdiri dari: (1) <strong>Analisis Strategi Bisnis</strong> — memahami industri dan posisi kompetitif sebagai konteks untuk seluruh analisis; (2) <strong>Analisis Akuntansi</strong> — mengevaluasi kualitas data keuangan yang akan dianalisis; (3) <strong>Analisis Keuangan</strong> — menilai kinerja dan kesehatan keuangan menggunakan data yang telah disesuaikan; (4) <strong>Analisis Prospektif</strong> — memproyeksikan kinerja masa depan; (5) <strong>Valuasi</strong> — mengestimasi nilai intrinsik. Setiap langkah menjadi input bagi langkah berikutnya, menciptakan aliran analitis yang logis dan koheren. Kekuatan kerangka ini terletak pada sifatnya yang <em>sequential yet iterative</em> — analis sering kembali ke langkah sebelumnya ketika temuan baru mengubah pemahaman.</div></div>
+
+<table>
+<thead><tr><th style="width:20%">Aspek</th><th style="width:40%">Analisis Parsial (<em>Piecemeal</em>)</th><th style="width:40%">Analisis Terintegrasi (<em>Integrated</em>)</th></tr></thead>
+<tbody>
+<tr><td><strong>Pendekatan</strong></td><td>Memeriksa satu dimensi secara terisolasi (misalnya hanya rasio)</td><td>Menghubungkan seluruh dimensi dalam kerangka koheren</td></tr>
+<tr><td><strong>Konteks</strong></td><td>Angka tanpa konteks bisnis atau industri</td><td>Setiap angka diinterpretasi dalam konteks strategi dan industri</td></tr>
+<tr><td><strong>Kualitas Data</strong></td><td>Menerima data akuntansi apa adanya (<em>face value</em>)</td><td>Mengevaluasi dan menyesuaikan kualitas akuntansi terlebih dahulu</td></tr>
+<tr><td><strong>Koherensi</strong></td><td>Temuan bisa saling bertentangan tanpa terdeteksi</td><td>Kontradiksi teridentifikasi dan direkonsiliasi</td></tr>
+<tr><td><strong>Proyeksi</strong></td><td>Ekstrapolasi mekanis dari tren historis</td><td>Proyeksi berbasis strategi, akuntansi, dan kinerja historis</td></tr>
+<tr><td><strong>Valuasi</strong></td><td>Model valuasi berdiri sendiri tanpa fondasi analitis</td><td>Valuasi sebagai kulminasi dari seluruh langkah analisis</td></tr>
+<tr><td><strong>Risiko Kesalahan</strong></td><td>Tinggi — mudah melewatkan informasi penting</td><td>Lebih rendah — <em>cross-check</em> antar langkah menangkap kesalahan</td></tr>
+<tr><td><strong>Output</strong></td><td>Kumpulan rasio dan angka</td><td>Narasi analitis dengan rekomendasi yang terinformasi</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb"><div class="ibt">⚠️ Mengapa Integrasi Penting / Why Integration Matters</div>
+<p>Analisis individual yang dilakukan secara terpisah dapat menyesatkan (<em>misleading</em>). Beberapa contoh konkret:</p>
+<ul>
+<li><strong>ROE tinggi tanpa analisis strategi</strong> → Tidak terdeteksi bahwa ROE tinggi berasal dari leverage berlebihan, bukan operasional unggul; risiko kebangkrutan tersembunyi</li>
+<li><strong>Pertumbuhan pendapatan tinggi tanpa analisis akuntansi</strong> → Tidak terdeteksi bahwa pertumbuhan didorong oleh pengakuan pendapatan agresif (<em>aggressive revenue recognition</em>), bukan pertumbuhan organik</li>
+<li><strong>Arus kas operasi kuat tanpa analisis investasi</strong> → Tidak terdeteksi bahwa CFO tinggi karena <em>underinvestment</em> dalam capex, yang akan merusak kinerja masa depan</li>
+<li><strong>Rasio profitabilitas membaik tanpa konteks industri</strong> → Tidak terdeteksi bahwa perbaikan hanya karena siklus industri, bukan keunggulan kompetitif</li>
+<li><strong>Valuasi DCF tanpa analisis prospektif berkualitas</strong> → <em>Garbage in, garbage out</em>; model valuasi hanya sebaik asumsi yang mendasarinya</li>
+</ul>
+<p>Integrasi memaksa analis untuk <strong>menguji konsistensi</strong> temuan antar langkah dan menghasilkan pemahaman yang lebih dalam dan akurat tentang perusahaan.</p>
+</div>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Business Strategy Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Langkah 1 — Analisis Strategi Bisnis / Business Strategy Analysis</h2>
+
+<p>Langkah pertama dalam Kerangka Lima Langkah Palepu adalah <em>business strategy analysis</em> — memahami industri, lingkungan kompetitif, dan strategi perusahaan sebelum menyentuh laporan keuangan. Analisis strategi bisnis berfungsi sebagai <strong>lensa</strong> (<em>lens</em>) yang melaluinya seluruh angka keuangan harus diinterpretasi. Tanpa pemahaman strategi, analis tidak memiliki konteks untuk menilai apakah rasio keuangan tertentu mencerminkan kekuatan, kelemahan, atau sekadar karakteristik model bisnis tertentu. Materi ini merujuk kembali pada Minggu 1–2 (Subramanyam Ch.1–2), di mana mahasiswa pertama kali diperkenalkan dengan kerangka analisis bisnis dan berbagai aktivitas bisnis perusahaan.</p>
+
+<h3>2.1 Analisis Industri / Industry Analysis</h3>
+
+<p>Analisis industri menggunakan kerangka <em>Porter's Five Forces</em> untuk mengevaluasi daya tarik struktural industri dan memahami tekanan kompetitif yang dihadapi perusahaan. Dalam konteks analisis komprehensif, analisis industri memberikan <strong>baseline</strong> untuk mengevaluasi apakah kinerja perusahaan superior, setara, atau inferior dibandingkan industri.</p>
+
+<div class="def"><div class="den">Analisis Industri / Industry Analysis</div><div class="did">Analisis industri (<em>industry analysis</em>) dalam konteks FSA komprehensif adalah proses evaluasi sistematis terhadap struktur industri di mana perusahaan beroperasi untuk memahami faktor-faktor yang menentukan profitabilitas rata-rata industri dan dinamika kompetitif. Menggunakan kerangka <em>Porter's Five Forces</em>: (1) <strong>Ancaman pendatang baru</strong> (<em>threat of new entrants</em>) — seberapa mudah pemain baru memasuki industri; (2) <strong>Kekuatan tawar pemasok</strong> (<em>bargaining power of suppliers</em>) — sejauh mana pemasok dapat menekan margin; (3) <strong>Kekuatan tawar pembeli</strong> (<em>bargaining power of buyers</em>) — sejauh mana pelanggan dapat menekan harga; (4) <strong>Ancaman produk substitusi</strong> (<em>threat of substitutes</em>) — keberadaan alternatif yang membatasi pricing power; (5) <strong>Rivalitas antar pemain</strong> (<em>rivalry among existing competitors</em>) — intensitas persaingan dalam industri. Implikasi kritis: profitabilitas perusahaan tidak hanya ditentukan oleh strategi internal tetapi juga oleh <em>structural forces</em> industri.</div></div>
+
+<div class="def"><div class="den">Keunggulan Kompetitif / Competitive Advantage</div><div class="did">Keunggulan kompetitif (<em>competitive advantage</em>) adalah kondisi di mana perusahaan mampu menghasilkan pengembalian ekonomi yang secara konsisten lebih tinggi daripada rata-rata industri (<em>excess returns</em>). Sumber keunggulan kompetitif meliputi: (1) <strong><em>Cost leadership</em></strong> — kemampuan memproduksi dengan biaya lebih rendah dari pesaing melalui skala ekonomi, efisiensi operasional, atau akses istimewa terhadap sumber daya; (2) <strong>Diferensiasi</strong> (<em>differentiation</em>) — kemampuan menawarkan produk/layanan yang dianggap unik dan bernilai lebih oleh pelanggan, memungkinkan <em>premium pricing</em>; (3) <strong><em>Economic moat</em></strong> — hambatan struktural yang melindungi keunggulan kompetitif dari erosi, seperti <em>network effects</em>, biaya berpindah (<em>switching costs</em>), aset tak berwujud (merek, paten), dan keunggulan biaya struktural. Keunggulan kompetitif yang <em>sustainable</em> memiliki implikasi langsung pada analisis keuangan: perusahaan dengan <em>moat</em> yang kuat cenderung mempertahankan profitabilitas di atas rata-rata untuk periode lebih lama, sehingga <em>mean reversion</em> terjadi lebih lambat.</div></div>
+
+<div class="def"><div class="den">Analisis Rantai Nilai / Value Chain Analysis</div><div class="did">Analisis rantai nilai (<em>value chain analysis</em>) memetakan seluruh aktivitas yang dilakukan perusahaan dalam menciptakan, memproduksi, dan mengirimkan produk/layanan kepada pelanggan. Berdasarkan model Porter, aktivitas terbagi menjadi: (a) <strong>Aktivitas primer</strong>: logistik masuk (<em>inbound logistics</em>), operasi (<em>operations</em>), logistik keluar (<em>outbound logistics</em>), pemasaran dan penjualan (<em>marketing &amp; sales</em>), serta layanan (<em>service</em>); (b) <strong>Aktivitas pendukung</strong>: infrastruktur perusahaan, manajemen SDM, pengembangan teknologi, dan pengadaan (<em>procurement</em>). Dalam analisis komprehensif, <em>value chain analysis</em> membantu mengidentifikasi di mana perusahaan menciptakan nilai relatif terhadap pesaing, dan di mana terdapat peluang perbaikan atau kerentanan (<em>vulnerability</em>).</div></div>
+
+<table>
+<thead><tr><th style="width:25%">Porter's Five Forces</th><th style="width:35%">Pertanyaan Kunci</th><th style="width:40%">Implikasi bagi Analisis Keuangan</th></tr></thead>
+<tbody>
+<tr><td><strong>Ancaman Pendatang Baru</strong></td><td>Seberapa tinggi <em>barriers to entry</em>? Apakah ada hambatan regulasi, modal besar, atau <em>network effects</em>?</td><td>Industri dengan hambatan rendah → profitabilitas tinggi mungkin tidak <em>sustainable</em>; perlu konservatisme dalam proyeksi</td></tr>
+<tr><td><strong>Kekuatan Pemasok</strong></td><td>Apakah pemasok terkonsentrasi? Ada substitusi input?</td><td>Pemasok kuat → tekanan pada margin kotor; analisis tren <em>gross margin</em> kritis</td></tr>
+<tr><td><strong>Kekuatan Pembeli</strong></td><td>Apakah pelanggan terkonsentrasi? Biaya berpindah rendah?</td><td>Pembeli kuat → tekanan pada harga dan margin; risiko pendapatan</td></tr>
+<tr><td><strong>Ancaman Substitusi</strong></td><td>Apakah ada produk alternatif yang lebih murah atau lebih baik?</td><td>Substitusi tinggi → <em>pricing power</em> terbatas; pertumbuhan pendapatan rentan</td></tr>
+<tr><td><strong>Rivalitas Industri</strong></td><td>Berapa banyak pesaing? Apakah industri terfragmentasi? Pertumbuhan lambat?</td><td>Rivalitas intens → perang harga, margin tertekan, capex tinggi untuk bertahan</td></tr>
+</tbody>
+</table>
+
+<div class="exb nb"><div class="exn">💡 Contoh: Bagaimana Dinamika Industri Mengubah Interpretasi Rasio Keuangan</div>
+<p>Pertimbangkan dua perusahaan dengan <em>net profit margin</em> identik sebesar 5%:</p>
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:37%">Perusahaan A (Ritel Massal)</th><th style="width:38%">Perusahaan B (Konsultansi)</th></tr></thead>
+<tbody>
+<tr><td><strong>Industri</strong></td><td>Ritel (<em>commodity products</em>, margin tipis)</td><td>Konsultansi profesional (jasa diferensiasi)</td></tr>
+<tr><td><strong>Margin Normal Industri</strong></td><td>2–4%</td><td>12–18%</td></tr>
+<tr><td><strong>Interpretasi Margin 5%</strong></td><td><span style="color:green"><strong>Outperformer</strong></span> — margin di atas rata-rata industri menunjukkan efisiensi operasional unggul</td><td><span style="color:red"><strong>Underperformer</strong></span> — margin jauh di bawah industri menandakan masalah serius</td></tr>
+<tr><td><strong>Implikasi Analisis</strong></td><td>Investigasi sumber keunggulan: skala, logistik, <em>private label</em>?</td><td>Investigasi penyebab kelemahan: utilisasi rendah, tekanan harga, biaya berlebih?</td></tr>
+</tbody>
+</table>
+<p><strong>Insight kunci:</strong> Angka yang sama memiliki makna yang sangat berbeda tergantung konteks industri. Tanpa analisis strategi bisnis sebagai Langkah 1, analis akan salah menginterpretasi kinerja keuangan.</p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🔗 Pertanyaan Kunci: Bagaimana Model Bisnis Mengubah Interpretasi Rasio?</div>
+<p>Dalam analisis komprehensif, analis harus selalu bertanya: <em>"Bagaimana pemahaman saya tentang model bisnis dan strategi perusahaan mengubah cara saya menginterpretasi rasio keuangan?"</em> Contoh-contoh konkret:</p>
+<ul>
+<li><strong>Perusahaan teknologi</strong> dengan R&amp;D tinggi → SGA/Revenue tinggi bukan kelemahan, melainkan investasi; bandingkan dengan <em>revenue growth</em> dan <em>product pipeline</em></li>
+<li><strong>Perusahaan infrastruktur</strong> dengan leverage tinggi → Debt/Equity tinggi mungkin optimal karena pendapatan regulasi yang stabil dan predictable; beda dengan leverage tinggi di perusahaan siklus</li>
+<li><strong>Platform digital</strong> dengan <em>asset-light model</em> → Total asset turnover sangat tinggi karena aset minimal; ROA tinggi bukan karena margin, melainkan karena denominator kecil</li>
+<li><strong>Perusahaan property</strong> dengan inventory tinggi → Current ratio rendah bukan tanda masalah likuiditas jika inventory adalah tanah yang sedang dikembangkan</li>
+</ul>
+</div>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Accounting Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Langkah 2 — Analisis Akuntansi / Accounting Analysis</h2>
+
+<p>Langkah kedua dalam Kerangka Lima Langkah adalah <em>accounting analysis</em> — mengevaluasi sejauh mana laporan keuangan perusahaan mencerminkan realitas ekonomi yang mendasarinya. Sebelum melakukan analisis keuangan (Langkah 3), analis harus terlebih dahulu memastikan bahwa <strong>data yang akan dianalisis berkualitas</strong>. Analisis akuntansi berfungsi sebagai "quality filter" — menyaring distorsi dan noise akuntansi sehingga analisis keuangan berbasis data yang lebih akurat. Materi ini merujuk kembali pada Minggu 5–6 (Subramanyam Ch.5–6) mengenai analisis aktivitas operasi dan evaluasi kualitas laba.</p>
+
+<div class="def"><div class="den">Kualitas Akuntansi / Accounting Quality</div><div class="did">Kualitas akuntansi (<em>accounting quality</em>) mengukur sejauh mana laporan keuangan secara akurat dan transparan mencerminkan kondisi ekonomi perusahaan yang sebenarnya. Kualitas akuntansi tinggi ditandai oleh: (1) <strong>Transparansi</strong> — pengungkapan yang memadai dan jelas tentang kebijakan, estimasi, dan risiko akuntansi; (2) <strong>Konservatisme yang tepat</strong> — tidak bias optimistis maupun pesimistis secara berlebihan; (3) <strong>Konsistensi</strong> — penerapan kebijakan akuntansi yang konsisten dari periode ke periode; (4) <strong>Korespondensi ekonomi</strong> — angka akuntansi merepresentasikan realitas ekonomi, bukan sekadar memenuhi aturan teknis. Kualitas akuntansi rendah dapat disebabkan oleh: (a) <em>earnings management</em> yang disengaja oleh manajemen; (b) fleksibilitas standar akuntansi yang dieksploitasi; (c) estimasi akuntansi yang tidak akurat. Dalam konteks analisis komprehensif, kualitas akuntansi menentukan <strong>reliabilitas seluruh langkah analisis selanjutnya</strong>.</div></div>
+
+<div class="def"><div class="den">Penyesuaian Analitis / Analytical Adjustments</div><div class="did">Penyesuaian analitis (<em>analytical adjustments</em>) adalah modifikasi yang dilakukan analis terhadap laporan keuangan yang dilaporkan (<em>as-reported</em>) untuk menghasilkan laporan keuangan yang lebih mencerminkan realitas ekonomi (<em>adjusted/restated</em>). Penyesuaian umum meliputi: (1) <strong>Kapitalisasi sewa operasi</strong> — mengakui sewa operasi sebagai aset dan kewajiban di neraca (pre-IFRS 16); (2) <strong>Penyesuaian goodwill</strong> — mengurangi goodwill dari ekuitas untuk analisis berbasis aset berwujud; (3) <strong>Reklasifikasi <em>off-balance-sheet items</em></strong> — memasukkan kewajiban kontinjensi, SPE/VIE; (4) <strong>Normalisasi <em>one-time items</em></strong> — mengeluarkan keuntungan/kerugian non-berulang dari laba operasi; (5) <strong>Penyesuaian R&amp;D</strong> — mengkapitalisasi R&amp;D dan mengamortisasi untuk perusahaan teknologi. Tujuan: mendapatkan gambaran keuangan yang lebih <em>comparable</em> dan <em>economically meaningful</em> untuk analisis dan valuasi.</div></div>
+
+<h3>3.1 Red Flags dan Indikator Earnings Management</h3>
+
+<p>Dalam analisis komprehensif, analis harus secara sistematis memeriksa tanda-tanda peringatan (<em>red flags</em>) yang menunjukkan kualitas akuntansi rendah atau potensi <em>earnings management</em>:</p>
+
+<table>
+<thead><tr><th style="width:30%">Distorsi Akuntansi</th><th style="width:35%">Cara Mendeteksi</th><th style="width:35%">Dampak pada Analisis</th></tr></thead>
+<tbody>
+<tr><td><strong>Pengakuan pendapatan agresif</strong> (<em>aggressive revenue recognition</em>)</td><td>Piutang tumbuh lebih cepat dari pendapatan; DSO meningkat; pendapatan terkonsentrasi di akhir kuartal</td><td>Overstates revenue growth dan profitability; memerlukan penyesuaian revenue dan working capital</td></tr>
+<tr><td><strong>Kapitalisasi beban yang seharusnya di-expense-kan</strong></td><td>Capex/Revenue naik signifikan tanpa ekspansi nyata; aset intangible naik cepat</td><td>Understates expenses, overstates assets dan laba; memerlukan reklasifikasi dan penyesuaian depresiasi</td></tr>
+<tr><td><strong>Estimasi cadangan yang tidak memadai</strong> (<em>understated reserves</em>)</td><td>Allowance for doubtful accounts menurun saat piutang naik; warranty reserves menurun saat penjualan naik</td><td>Overstates assets dan laba saat ini; risiko <em>write-off</em> besar di masa depan</td></tr>
+<tr><td><strong>Transaksi <em>off-balance-sheet</em></strong></td><td>Catatan kaki tentang SPE, VIE, operating lease signifikan; komitmen kontinjensi besar</td><td>Understates leverage dan total aset; memerlukan konsolidasi untuk analisis struktur modal</td></tr>
+<tr><td><strong><em>Big bath</em> accounting</strong></td><td><em>Write-off</em> besar terkonsentrasi dalam satu periode; sering terjadi saat pergantian manajemen</td><td>Satu periode terlihat sangat buruk, tetapi periode berikutnya terlihat baik secara artifisial; normalisasi diperlukan</td></tr>
+<tr><td><strong>Perubahan kebijakan akuntansi</strong></td><td>Perubahan metode depresiasi, estimasi masa manfaat, atau kebijakan pengakuan; diungkapkan di catatan kaki</td><td>Mengubah komparabilitas antar-periode; memerlukan penyesuaian pro forma untuk konsistensi</td></tr>
+<tr><td><strong>Transaksi pihak berelasi</strong> (<em>related-party transactions</em>)</td><td>Volume signifikan transaksi dengan entitas berelasi; harga transfer yang tidak wajar</td><td>Mengaburkan kinerja sebenarnya; memerlukan analisis apakah transaksi at arm's length</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb"><div class="ibt">🔗 Bagaimana Analisis Akuntansi Mengalir ke Langkah Selanjutnya</div>
+<p>Output dari analisis akuntansi menjadi input kritis bagi langkah-langkah selanjutnya:</p>
+<ul>
+<li><strong>→ Analisis Keuangan (Langkah 3)</strong>: Rasio keuangan dihitung menggunakan data yang telah disesuaikan, bukan data <em>as-reported</em>. Adjusted ROE, adjusted D/E, dan adjusted margins memberikan gambaran yang lebih akurat tentang kinerja sebenarnya.</li>
+<li><strong>→ Analisis Prospektif (Langkah 4)</strong>: Laba yang telah dinormalisasi (<em>normalized earnings</em>) menjadi basis yang lebih andal untuk proyeksi masa depan. Proyeksi berdasarkan laba yang mengandung <em>one-time items</em> atau <em>earnings management</em> akan menghasilkan estimasi yang bias.</li>
+<li><strong>→ Valuasi (Langkah 5)</strong>: Kualitas valuasi tergantung pada kualitas input. DCF berdasarkan arus kas yang terpengaruh distorsi akuntansi menghasilkan nilai intrinsik yang tidak akurat. <em>Residual income model</em> sangat sensitif terhadap kualitas book value dan laba.</li>
+</ul>
+</div>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Financial Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Langkah 3 — Analisis Keuangan / Financial Analysis</h2>
+
+<p>Langkah ketiga — dan yang paling ekstensif — dalam kerangka Palepu adalah <em>financial analysis</em>. Dalam konteks kursus ini, analisis keuangan mencakup <strong>lima sub-analisis</strong> yang telah dipelajari secara terpisah sepanjang semester: analisis pembiayaan, analisis investasi, analisis operasi, analisis arus kas, dan analisis profitabilitas. Kekuatan analisis komprehensif terletak pada kemampuan <strong>mengintegrasikan</strong> kelima sub-analisis ini — melihat bagaimana keputusan pembiayaan memengaruhi profitabilitas, bagaimana pola investasi memengaruhi arus kas, dan bagaimana semuanya saling terkait dalam menciptakan (atau menghancurkan) nilai pemegang saham.</p>
+
+<div class="def"><div class="den">Integrasi Analisis Keuangan / Financial Analysis Integration</div><div class="did">Integrasi analisis keuangan (<em>financial analysis integration</em>) adalah proses menghubungkan temuan dari berbagai dimensi analisis keuangan — pembiayaan, investasi, operasi, arus kas, dan profitabilitas — ke dalam pemahaman holistik tentang kinerja dan posisi keuangan perusahaan. Prinsip dasar integrasi: (1) rasio individual mendapat makna hanya ketika diinterpretasi bersama rasio lain; (2) perubahan di satu dimensi selalu memiliki implikasi di dimensi lain; (3) konsistensi antar temuan memperkuat kesimpulan, sementara kontradiksi menuntut investigasi lebih lanjut. Sebagai contoh, profitabilitas tinggi (ROE) yang disertai arus kas operasi lemah menandakan kemungkinan kualitas laba rendah — akrual tinggi tanpa konversi kas.</div></div>
+
+<h3>4A. Analisis Pembiayaan / Financing Analysis (Minggu 3, Ch.3)</h3>
+
+<p><strong>Konsep kunci:</strong> Analisis pembiayaan memeriksa bagaimana perusahaan mendanai operasi dan investasinya — proporsi utang vs ekuitas, kapasitas utang, dan implikasi struktur modal terhadap risiko dan pengembalian.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:40%">Konsep Inti</th><th style="width:35%">Koneksi ke Analisis Terintegrasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Struktur Modal</strong></td><td>Debt-to-Equity, Debt-to-Capital, Times Interest Earned</td><td>Menentukan <em>financial leverage</em> dalam dekomposisi DuPont ROE (Langkah Profitabilitas)</td></tr>
+<tr><td><strong>Kapasitas Utang</strong></td><td>DSCR, ICR, leverage covenants, rating kredit</td><td>Menentukan fleksibilitas keuangan untuk mendanai pertumbuhan (Langkah Prospektif)</td></tr>
+<tr><td><strong>Biaya Modal</strong></td><td>WACC, cost of debt after-tax, cost of equity (CAPM)</td><td>Menjadi discount rate dalam DCF dan hurdle rate dalam economic profit (Langkah Valuasi)</td></tr>
+<tr><td><strong>Off-Balance-Sheet</strong></td><td>Lease obligations, guarantees, contingent liabilities</td><td>Harus dimasukkan setelah penyesuaian analisis akuntansi (Langkah 2)</td></tr>
+</tbody>
+</table>
+
+<h3>4B. Analisis Investasi / Investing Analysis (Minggu 4, Ch.4)</h3>
+
+<p><strong>Konsep kunci:</strong> Analisis investasi memeriksa bagaimana perusahaan mengalokasikan modal — komposisi aset, kualitas investasi, dan efisiensi penggunaan aset.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:40%">Konsep Inti</th><th style="width:35%">Koneksi ke Analisis Terintegrasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Komposisi Aset</strong></td><td>Proporsi aset lancar vs tetap, tangible vs intangible</td><td>Menjelaskan perbedaan <em>asset turnover</em> antar model bisnis (Profitabilitas)</td></tr>
+<tr><td><strong>Alokasi Modal</strong></td><td>Capex vs maintenance, M&amp;A, R&amp;D investment</td><td>Capex tinggi hari ini → pendapatan masa depan; input untuk proyeksi (Prospektif)</td></tr>
+<tr><td><strong>Efisiensi Aset</strong></td><td>Total asset turnover, fixed asset turnover, inventory turnover</td><td>Komponen kunci dekomposisi DuPont ROA (Profitabilitas)</td></tr>
+<tr><td><strong>Kualitas Aset</strong></td><td>Goodwill/Total Assets, aging of receivables, impairment risk</td><td>Terkait erat dengan temuan analisis akuntansi (Langkah 2); memengaruhi book value untuk RIM</td></tr>
+</tbody>
+</table>
+
+<h3>4C. Analisis Operasi / Operating Analysis (Minggu 6, Ch.6)</h3>
+
+<p><strong>Konsep kunci:</strong> Analisis operasi meneliti bagaimana perusahaan menghasilkan pendapatan dan mengelola biaya — efisiensi operasional, marjin, dan tren kinerja operasi.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:40%">Konsep Inti</th><th style="width:35%">Koneksi ke Analisis Terintegrasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Analisis Pendapatan</strong></td><td>Revenue growth, mix shift, pricing vs volume</td><td>Driver utama untuk proyeksi revenue (Prospektif); dinilai dalam konteks industri (Strategi)</td></tr>
+<tr><td><strong>Analisis Marjin</strong></td><td>Gross margin, EBIT margin, net margin trends</td><td>Komponen <em>profit margin</em> dalam DuPont (Profitabilitas); basis proyeksi expenses (Prospektif)</td></tr>
+<tr><td><strong>Struktur Biaya</strong></td><td>Fixed vs variable, operating leverage, cost efficiency</td><td>Menentukan sensitivitas laba terhadap perubahan revenue (Prospektif, skenario)</td></tr>
+<tr><td><strong>Kualitas Laba Operasi</strong></td><td>Sustainability, recurring vs non-recurring</td><td>Setelah penyesuaian akuntansi (Langkah 2); menjadi input normalisasi untuk valuasi</td></tr>
+</tbody>
+</table>
+
+<h3>4D. Analisis Arus Kas / Cash Flow Analysis (Minggu 8, Ch.7)</h3>
+
+<p><strong>Konsep kunci:</strong> Analisis arus kas mengevaluasi kemampuan perusahaan menghasilkan kas dari operasi, kualitas arus kas relatif terhadap laba, dan pola penggunaan kas.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:40%">Konsep Inti</th><th style="width:35%">Koneksi ke Analisis Terintegrasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Kualitas CFO</strong></td><td>CFO/Net Income, cash conversion, accrual ratio</td><td>Cross-check terhadap kualitas laba (Akuntansi); laba tanpa CFO → <em>red flag</em></td></tr>
+<tr><td><strong>Free Cash Flow</strong></td><td>FCF = CFO − Capex; FCFE = FCF − Net Debt Payments</td><td>Input langsung untuk model DCF (Valuasi); mengindikasikan kapasitas dividen</td></tr>
+<tr><td><strong>Pola Arus Kas</strong></td><td>Operating/Investing/Financing cash flow patterns</td><td>Menunjukkan tahap siklus hidup perusahaan (terkait Strategi Bisnis)</td></tr>
+<tr><td><strong>Cash Conversion Cycle</strong></td><td>DSO + DIO − DPO</td><td>Mengindikasikan efisiensi working capital; input untuk proyeksi neraca (Prospektif)</td></tr>
+</tbody>
+</table>
+
+<h3>4E. Analisis Profitabilitas / Profitability Analysis (Minggu 9, Ch.8)</h3>
+
+<p><strong>Konsep kunci:</strong> Analisis profitabilitas mengevaluasi kemampuan perusahaan menghasilkan pengembalian atas modal yang diinvestasikan, menggunakan dekomposisi DuPont dan konsep economic profit.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:40%">Konsep Inti</th><th style="width:35%">Koneksi ke Analisis Terintegrasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Dekomposisi DuPont</strong></td><td>ROE = Margin × Turnover × Leverage</td><td>Mengintegrasikan temuan operasi (margin), investasi (turnover), dan pembiayaan (leverage)</td></tr>
+<tr><td><strong>ROE vs ROIC</strong></td><td>ROIC mengukur pengembalian operasional tanpa leverage effect</td><td>ROIC vs WACC menentukan apakah perusahaan menciptakan nilai (Valuasi)</td></tr>
+<tr><td><strong>Economic Profit</strong></td><td>EP = (ROIC − WACC) × Invested Capital</td><td>Konsep dasar <em>residual income model</em> (Valuasi); mengukur value creation</td></tr>
+<tr><td><strong>Disagregasi Lanjutan</strong></td><td>DuPont 5-step: operating, financing, tax effects</td><td>Memisahkan kinerja operasional dari keputusan pembiayaan dan efek pajak</td></tr>
+</tbody>
+</table>
+
+<h3>4F. Matriks Integrasi Analisis Keuangan / Financial Analysis Integration Matrix</h3>
+
+<p>Tabel berikut menunjukkan bagaimana kelima sub-analisis saling terhubung. Setiap sel menunjukkan hubungan kritis antara dua komponen analisis:</p>
+
+<table>
+<thead><tr><th style="width:16%"></th><th style="width:17%">Pembiayaan</th><th style="width:17%">Investasi</th><th style="width:17%">Operasi</th><th style="width:17%">Arus Kas</th><th style="width:16%">Profitabilitas</th></tr></thead>
+<tbody>
+<tr><td><strong>Pembiayaan</strong></td><td>—</td><td>Sumber dana untuk investasi</td><td>Beban bunga memengaruhi laba operasi</td><td>CFI dan CFF: investasi didanai utang vs kas internal</td><td>Leverage memperbesar ROE (positif/negatif)</td></tr>
+<tr><td><strong>Investasi</strong></td><td>Kebutuhan modal menentukan leverage</td><td>—</td><td>Aset produktif menghasilkan pendapatan</td><td>Capex mengurangi FCF; depresiasi bersifat non-kas</td><td>Asset turnover = efisiensi investasi</td></tr>
+<tr><td><strong>Operasi</strong></td><td>Laba operasi menentukan kapasitas pembayaran utang</td><td>Revenue mendorong kebutuhan working capital</td><td>—</td><td>Laba vs kas: accruals bridge</td><td>Profit margin = efisiensi operasional</td></tr>
+<tr><td><strong>Arus Kas</strong></td><td>CFO menentukan kapasitas pembayaran utang; FCF untuk deleveraging</td><td>CFO mendanai investasi internal</td><td>CCC memengaruhi working capital needs</td><td>—</td><td>Cash ROE, cash conversion sebagai quality check</td></tr>
+<tr><td><strong>Profitabilitas</strong></td><td>Spread ROIC vs cost of debt menentukan leverage optimal</td><td>ROIC mengukur return on invested capital</td><td>Margin decomposition menjelaskan sumber laba</td><td>CFO/NI mengukur kualitas profitabilitas</td><td>—</td></tr>
+</tbody>
+</table>
+
+<div class="cg"><div class="cgt">Insight Kunci: Rasio Individual Bermakna Hanya dalam Konteks Terintegrasi</div>
+<p>Satu rasio keuangan, betapapun populernya, tidak pernah memberikan gambaran lengkap. Sebagai contoh: ROE = 25% bisa berarti (a) perusahaan yang sangat menguntungkan dengan margin dan turnover tinggi, (b) perusahaan biasa-biasa saja yang menggunakan leverage berlebihan, atau (c) perusahaan dengan ekuitas yang terdeplesi karena akumulasi kerugian. Hanya melalui dekomposisi DuPont (analisis profitabilitas), pemeriksaan struktur modal (analisis pembiayaan), evaluasi kualitas aset (analisis investasi), konfirmasi kas (analisis arus kas), dan normalisasi laba (analisis akuntansi) — barulah analis dapat memberikan interpretasi yang benar dan lengkap.</p>
+</div>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Prospective Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Langkah 4 — Analisis Prospektif / Prospective Analysis</h2>
+
+<p>Langkah keempat mengubah arah analisis dari <em>backward-looking</em> menjadi <em>forward-looking</em>. Analisis prospektif menggunakan seluruh temuan dari Langkah 1–3 sebagai input untuk memproyeksikan kinerja keuangan masa depan perusahaan. Kualitas proyeksi sangat bergantung pada kualitas analisis yang mendahuluinya — tanpa pemahaman strategi yang memadai, kualitas akuntansi yang terevaluasi, dan kinerja keuangan historis yang teranalisis, proyeksi hanyalah ekstrapolasi mekanis tanpa fondasi. Materi ini merujuk kembali pada Minggu 10 (Subramanyam Ch.9).</p>
+
+<div class="def"><div class="den">Analisis Prospektif Terintegrasi / Integrated Prospective Analysis</div><div class="did">Analisis prospektif terintegrasi (<em>integrated prospective analysis</em>) berbeda dari peramalan mekanis karena setiap asumsi proyeksi didasarkan pada temuan spesifik dari langkah-langkah analisis sebelumnya. Asumsi pertumbuhan pendapatan berasal dari analisis strategi bisnis (ukuran pasar, pangsa pasar, posisi kompetitif); asumsi margin dari analisis operasi (tren margin historis yang telah disesuaikan); asumsi capex dari analisis investasi (kebutuhan pemeliharaan dan ekspansi); asumsi leverage dari analisis pembiayaan (kapasitas utang dan target struktur modal). Setiap asumsi harus <strong>traceable</strong> — dapat ditelusuri ke analisis yang mendasarinya.</div></div>
+
+<h3>5.1 Input dari Langkah Sebelumnya yang Mengalir ke Analisis Prospektif</h3>
+
+<table>
+<thead><tr><th style="width:22%">Langkah Sebelumnya</th><th style="width:38%">Input untuk Proyeksi</th><th style="width:40%">Elemen Proyeksi yang Terpengaruh</th></tr></thead>
+<tbody>
+<tr><td><strong>Strategi Bisnis (1)</strong></td><td>Ukuran pasar, pertumbuhan industri, posisi kompetitif, barriers to entry</td><td>Asumsi pertumbuhan pendapatan jangka panjang; <em>terminal growth rate</em></td></tr>
+<tr><td><strong>Analisis Akuntansi (2)</strong></td><td>Laba yang dinormalisasi, penyesuaian analitis, kualitas akrual</td><td>Basis laba untuk proyeksi; adjusted margins sebagai starting point</td></tr>
+<tr><td><strong>Analisis Pembiayaan (3A)</strong></td><td>Kapasitas utang, biaya modal, fleksibilitas keuangan</td><td>Asumsi leverage masa depan; beban bunga; WACC untuk valuasi</td></tr>
+<tr><td><strong>Analisis Investasi (3B)</strong></td><td>Kebutuhan capex, working capital intensity, M&amp;A potential</td><td>Proyeksi capex, perubahan working capital, proyeksi aset</td></tr>
+<tr><td><strong>Analisis Operasi (3C)</strong></td><td>Tren margin, struktur biaya, operating leverage</td><td>Proyeksi COGS, SGA, dan margin operasi</td></tr>
+<tr><td><strong>Analisis Arus Kas (3D)</strong></td><td>Cash conversion, pola arus kas historis</td><td>Proyeksi CFO, FCF, dan kebutuhan pendanaan</td></tr>
+<tr><td><strong>Analisis Profitabilitas (3E)</strong></td><td>ROE/ROIC tren, mean reversion pattern, sustainable growth</td><td>Validasi konsistensi proyeksi; terminal value assumptions</td></tr>
+</tbody>
+</table>
+
+<h3>5.2 Proses Peramalan dalam Konteks Komprehensif</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Langkah Peramalan Terintegrasi</div>
+<ol>
+<li><strong>Peramalan Pendapatan</strong> — menggunakan pendekatan <em>top-down</em> (pertumbuhan industri × pangsa pasar) dan <em>bottom-up</em> (unit economics per segmen), divalidasi terhadap temuan analisis strategi bisnis</li>
+<li><strong>Proyeksi Beban</strong> — COGS berdasarkan asumsi gross margin (dari analisis operasi); SGA berdasarkan pola historis yang dinormalisasi (dari analisis akuntansi); D&amp;A berdasarkan jadwal depresiasi dan proyeksi capex (dari analisis investasi)</li>
+<li><strong>Pro Forma Laba Rugi</strong> — menyusun proyeksi laba rugi 5–10 tahun berdasarkan revenue dan expense assumptions</li>
+<li><strong>Pro Forma Neraca</strong> — proyeksi aset (working capital, PP&amp;E, intangibles), kewajiban (utang, payables), dan ekuitas; harus konsisten dengan laba rugi</li>
+<li><strong>Pro Forma Arus Kas</strong> — diturunkan dari laba rugi dan perubahan neraca; memvalidasi konsistensi seluruh proyeksi</li>
+<li><strong>Analisis Skenario</strong> — membangun skenario optimistis, basis, dan pesimistis berdasarkan variasi asumsi kunci</li>
+</ol>
+</div>
+
+<h3>5.3 Kesalahan Umum dalam Analisis Prospektif Komprehensif</h3>
+
+<div class="exb nb"><div class="exn">⚠️ Common Forecasting Pitfalls in Comprehensive Analysis</div>
+<table>
+<thead><tr><th style="width:30%">Pitfall</th><th style="width:35%">Deskripsi</th><th style="width:35%">Cara Menghindari</th></tr></thead>
+<tbody>
+<tr><td><strong>Ekstrapolasi tanpa konteks</strong></td><td>Memproyeksikan tren historis tanpa mempertimbangkan perubahan strategi atau industri</td><td>Selalu kaitkan asumsi proyeksi dengan temuan analisis strategi bisnis</td></tr>
+<tr><td><strong>Mengabaikan mean reversion</strong></td><td>Mengasumsikan profitabilitas di atas rata-rata akan bertahan selamanya</td><td>Kecuali ada <em>sustainable competitive advantage</em> yang teridentifikasi, buat asumsi konvergensi bertahap</td></tr>
+<tr><td><strong>Inkonsistensi antar statement</strong></td><td>Laba rugi, neraca, dan arus kas tidak saling konsisten</td><td>Gunakan model terintegrasi; pastikan ΔBS = IS + CF adjustments</td></tr>
+<tr><td><strong>Basis data yang belum disesuaikan</strong></td><td>Memproyeksikan dari data <em>as-reported</em> yang mengandung distorsi akuntansi</td><td>Gunakan data yang telah dinormalisasi dari Langkah 2 (analisis akuntansi)</td></tr>
+<tr><td><strong>Mengabaikan kapasitas pertumbuhan</strong></td><td>Memproyeksikan pertumbuhan yang melebihi <em>sustainable growth rate</em> tanpa sumber pendanaan</td><td>Validasi bahwa pertumbuhan konsisten dengan asumsi leverage dan retained earnings</td></tr>
+<tr><td><strong>Terminal value yang tidak masuk akal</strong></td><td>Terminal growth rate melebihi pertumbuhan GDP jangka panjang; terminal value > 80% total value</td><td>Gunakan terminal growth rate ≤ pertumbuhan ekonomi nominal; lakukan sensitivitas</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="def"><div class="den">Analisis Skenario / Scenario Analysis</div><div class="did">Analisis skenario (<em>scenario analysis</em>) adalah teknik di mana analis membangun beberapa set proyeksi berdasarkan asumsi yang berbeda untuk menangkap rentang hasil yang mungkin (<em>range of outcomes</em>). Dalam analisis komprehensif, skenario biasanya mencakup: (1) <strong>Skenario Optimistis (<em>Bull Case</em>)</strong> — pertumbuhan di atas ekspektasi, margin expansion, eksekusi strategi berhasil; (2) <strong>Skenario Basis (<em>Base Case</em>)</strong> — proyeksi yang paling mungkin berdasarkan analisis fundamental; (3) <strong>Skenario Pesimistis (<em>Bear Case</em>)</strong> — pertumbuhan melambat, margin pressure, risiko materialisasi. Setiap skenario harus <em>internally consistent</em> — tidak boleh memiliki asumsi yang saling bertentangan (misalnya pertumbuhan tinggi dengan margin rendah tanpa penjelasan investasi). Output akhir: rentang nilai intrinsik yang mencerminkan ketidakpastian secara eksplisit.</div></div>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Langkah 5 — Valuasi / Valuation</h2>
+
+<p>Langkah kelima dan final adalah <em>valuation</em> — mengestimasi nilai intrinsik perusahaan menggunakan proyeksi dari Langkah 4 dan seluruh pemahaman yang dibangun dari Langkah 1–3. Valuasi bukan sekadar memasukkan angka ke model — melainkan kulminasi dari seluruh proses analisis. Analis yang telah melakukan empat langkah sebelumnya dengan baik memiliki fondasi yang kuat untuk menghasilkan estimasi nilai yang <em>well-informed</em> dan <em>defensible</em>. Materi ini merujuk kembali pada Minggu 12 (Subramanyam Ch.11) untuk metode valuasi dan Minggu 11 (Ch.10) untuk analisis kredit yang menginformasikan penilaian risiko.</p>
+
+<div class="def"><div class="den">Nilai Intrinsik / Intrinsic Value</div><div class="did">Nilai intrinsik (<em>intrinsic value</em>) adalah estimasi nilai sebenarnya dari suatu perusahaan berdasarkan analisis fundamental, terlepas dari harga pasar saat ini. Nilai intrinsik ditentukan oleh: (1) <strong>arus kas masa depan</strong> yang diharapkan dari perusahaan; (2) <strong>risiko</strong> yang terkait dengan arus kas tersebut (tercermin dalam discount rate); (3) <strong>pertumbuhan</strong> yang diharapkan dari arus kas tersebut di masa depan. Dalam konteks analisis komprehensif, estimasi nilai intrinsik bukanlah titik tunggal (<em>single point estimate</em>) melainkan <strong>rentang nilai</strong> (<em>range of values</em>) yang mencerminkan ketidakpastian inheren dalam proyeksi. Perbandingan antara nilai intrinsik dan harga pasar menghasilkan rekomendasi investasi: jika nilai intrinsik > harga pasar (dengan <em>margin of safety</em> yang memadai), saham dianggap <em>undervalued</em>.</div></div>
+
+<h3>6.1 Metode Valuasi dalam Konteks Komprehensif</h3>
+
+<table>
+<thead><tr><th style="width:18%">Metode</th><th style="width:22%">Formula Inti</th><th style="width:20%">Kekuatan</th><th style="width:20%">Kelemahan</th><th style="width:20%">Paling Tepat Untuk</th></tr></thead>
+<tbody>
+<tr><td><strong>Discounted Cash Flow (DCF)</strong></td><td>V = Σ FCFt/(1+WACC)^t + TV/(1+WACC)^n</td><td>Berbasis fundamental; fleksibel; explicit assumptions</td><td>Sangat sensitif terhadap terminal value dan WACC; memerlukan proyeksi detail</td><td>Perusahaan dengan arus kas positif dan predictable; analisis mendalam</td></tr>
+<tr><td><strong>Residual Income Model (RIM)</strong></td><td>V = BV₀ + Σ RIt/(1+r)^t</td><td>Anchored pada book value; bekerja saat FCF negatif; kurang sensitif terhadap terminal value</td><td>Sensitif terhadap kualitas akuntansi; memerlukan clean surplus</td><td>Perusahaan finansial (bank); perusahaan growth dengan FCF negatif</td></tr>
+<tr><td><strong>Dividend Discount Model (DDM)</strong></td><td>V = Σ Dt/(1+r)^t</td><td>Sederhana; langsung mengukur kas ke pemegang saham</td><td>Tidak berlaku untuk perusahaan yang tidak membayar dividen; sensitif terhadap g</td><td>Perusahaan mature dengan kebijakan dividen stabil</td></tr>
+<tr><td><strong>Multiples (Relative Valuation)</strong></td><td>V = Metric × Comparable Multiple (P/E, EV/EBITDA, P/B)</td><td>Sederhana; berbasis pasar; quick estimation</td><td>Mengasumsikan <em>comparables</em> dinilai tepat; mengabaikan perbedaan fundamental</td><td>Screening awal; validasi model fundamental; industri homogen</td></tr>
+</tbody>
+</table>
+
+<h3>6.2 Integrasi Analisis Kredit dalam Valuasi</h3>
+
+<p>Analisis kredit (Minggu 11, Palepu Ch.10) menginformasikan valuasi dalam beberapa cara kritis:</p>
+
+<div class="ibox nb"><div class="ibt">🔗 Analisis Kredit → Valuasi: Koneksi Kunci</div>
+<ul>
+<li><strong>Discount rate (WACC)</strong> — penilaian risiko kredit memengaruhi cost of debt; perusahaan dengan risiko kredit tinggi memiliki cost of debt (dan WACC) yang lebih tinggi, menurunkan present value arus kas masa depan</li>
+<li><strong>Financial distress risk</strong> — jika analisis kredit menunjukkan risiko distress yang material, valuasi harus memasukkan <em>probability-weighted distress scenario</em> dengan recovery value yang rendah</li>
+<li><strong>Debt capacity dan flexibility</strong> — kapasitas utang menentukan apakah perusahaan dapat mendanai pertumbuhan yang diproyeksikan; jika tidak, proyeksi harus disesuaikan</li>
+<li><strong>Terminal value reasonableness</strong> — perusahaan dengan risiko kredit tinggi memerlukan konservatisme ekstra dalam terminal value; going concern assumption harus divalidasi</li>
+<li><strong>Capital structure evolution</strong> — perubahan leverage yang diproyeksikan (deleveraging atau leveraging up) memengaruhi WACC dari waktu ke waktu; analis dapat menggunakan <em>time-varying WACC</em></li>
+</ul>
+</div>
+
+<div class="def"><div class="den">Rekonsiliasi Valuasi / Valuation Reconciliation</div><div class="did">Rekonsiliasi valuasi (<em>valuation reconciliation</em>) adalah proses membandingkan dan menyelaraskan hasil dari berbagai metode valuasi yang diterapkan pada perusahaan yang sama. Dalam analisis komprehensif, analis biasanya menerapkan 2–3 metode valuasi dan memeriksa konsistensi hasil: (1) <strong>Jika hasil konsisten</strong> (rentang yang tumpang tindih) — memperkuat keyakinan bahwa estimasi nilai wajar; (2) <strong>Jika hasil berbeda signifikan</strong> — menuntut investigasi mengapa; perbedaan sering disebabkan oleh asumsi yang berbeda (growth rate, discount rate, terminal value) atau kesesuaian metode dengan jenis perusahaan. Rekonsiliasi juga melibatkan <em>triangulation</em> — menggunakan hasil dari satu metode untuk memvalidasi kewajaran asumsi metode lain. Misalnya, implied growth rate dari P/E multiples dapat digunakan untuk memeriksa apakah asumsi pertumbuhan dalam DCF masuk akal.</div></div>
+
+<h3>6.3 Dari Nilai Intrinsik ke Rekomendasi Investasi</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Framework: Dari Valuasi ke Keputusan</div>
+<table>
+<thead><tr><th style="width:25%">Perbandingan</th><th style="width:25%">Interpretasi</th><th style="width:25%">Rekomendasi</th><th style="width:25%">Pertimbangan</th></tr></thead>
+<tbody>
+<tr><td>Intrinsic Value ≫ Market Price (margin &gt; 30%)</td><td>Signifikan <em>undervalued</em></td><td><strong>Strong Buy</strong></td><td>Pastikan bukan karena asumsi terlalu optimistis; periksa risiko tersembunyi</td></tr>
+<tr><td>Intrinsic Value &gt; Market Price (margin 10–30%)</td><td>Moderately <em>undervalued</em></td><td><strong>Buy</strong></td><td>Margin of safety memadai; pertimbangkan catalyst untuk realisasi nilai</td></tr>
+<tr><td>Intrinsic Value ≈ Market Price (margin &lt; 10%)</td><td><em>Fairly valued</em></td><td><strong>Hold</strong></td><td>Pasar sudah merefleksikan fundamental; cari peluang lain</td></tr>
+<tr><td>Intrinsic Value &lt; Market Price</td><td><em>Overvalued</em></td><td><strong>Sell / Avoid</strong></td><td>Periksa apakah ada growth option atau intangible yang belum dimodelkan</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Synthesis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Sintesis — Menyatukan Seluruh Analisis / Synthesis — Bringing It All Together</h2>
+
+<p>Sintesis adalah tahap kritis yang membedakan analisis biasa dari analisis berkualitas tinggi. Setelah menyelesaikan kelima langkah Palepu, analis harus <strong>menyatukan seluruh temuan ke dalam narasi analitis yang koheren</strong> — sebuah cerita (<em>investment story</em>) yang secara logis menghubungkan kondisi industri, strategi perusahaan, kualitas pelaporan, kinerja historis, prospek masa depan, dan estimasi nilai. Narasi ini harus mampu meyakinkan pembaca yang kritis bahwa rekomendasi investasi didukung oleh bukti dari setiap langkah analisis.</p>
+
+<h3>7.1 Kerangka Penulisan Rekomendasi Investasi</h3>
+
+<div class="ibox nb"><div class="ibt">📝 Struktur Laporan Analisis Komprehensif</div>
+<ol>
+<li><strong>Executive Summary</strong> — Rekomendasi (Buy/Sell/Hold), target harga, tesis investasi dalam 2–3 kalimat</li>
+<li><strong>Profil Perusahaan dan Industri</strong> — Deskripsi bisnis, posisi kompetitif, dinamika industri (Langkah 1)</li>
+<li><strong>Evaluasi Kualitas Pelaporan</strong> — Temuan analisis akuntansi, penyesuaian yang dilakukan (Langkah 2)</li>
+<li><strong>Analisis Kinerja Keuangan</strong> — Ringkasan temuan dari kelima sub-analisis keuangan (Langkah 3)</li>
+<li><strong>Proyeksi dan Asumsi</strong> — Pro forma financial statements dengan asumsi yang eksplisit (Langkah 4)</li>
+<li><strong>Valuasi</strong> — Hasil dari 2–3 metode valuasi; rekonsiliasi dan rentang nilai (Langkah 5)</li>
+<li><strong>Risiko dan Mitigasi</strong> — Identifikasi risiko kunci dan sensitivitas terhadap asumsi</li>
+<li><strong>Kesimpulan dan Rekomendasi</strong> — Tesis investasi yang didukung bukti; aksi yang disarankan</li>
+</ol>
+</div>
+
+<h3>7.2 Mengatasi Kontradiksi Antar Langkah Analisis</h3>
+
+<p>Dalam praktik, temuan dari berbagai langkah analisis sering kali tidak sepenuhnya konsisten. Analis yang baik tidak mengabaikan kontradiksi — melainkan <strong>menginvestigasi dan menjelaskannya</strong>:</p>
+
+<table>
+<thead><tr><th style="width:35%">Kontradiksi Tipikal</th><th style="width:30%">Kemungkinan Penjelasan</th><th style="width:35%">Implikasi Analitis</th></tr></thead>
+<tbody>
+<tr><td>Profitabilitas tinggi (ROE↑) tetapi arus kas operasi lemah (CFO↓)</td><td>Akrual tinggi; earnings management; pertumbuhan agresif yang mengonsumsi working capital</td><td>Cek kualitas laba (Langkah 2); accrual ratio; risiko <em>unsustainable earnings</em></td></tr>
+<tr><td>Pertumbuhan pendapatan kuat tetapi margin menyusut</td><td>Perusahaan membeli pertumbuhan dengan potongan harga; kompetisi meningkat; diseconomies of scale</td><td>Evaluasi apakah strategi pertumbuhan menciptakan atau menghancurkan nilai; cek ROIC vs WACC</td></tr>
+<tr><td>Arus kas kuat tetapi leverage meningkat</td><td>M&amp;A besar yang didanai utang; buyback agresif; dividen di atas earnings</td><td>Analisis keberlanjutan kebijakan payout; risiko kredit meningkat?</td></tr>
+<tr><td>Industri dalam tekanan tetapi perusahaan outperform</td><td>Keunggulan kompetitif nyata; market share gains; efisiensi biaya superior</td><td>Validasi sustainability keunggulan; apakah <em>moat</em> dapat bertahan jika industri memburuk lebih lanjut?</td></tr>
+</tbody>
+</table>
+
+<h3>7.3 Kesalahan Analitis Umum dan Cara Menghindarinya</h3>
+
+<div class="ibox nb"><div class="ibt">⚠️ Delapan Pitfall dalam Analisis Komprehensif</div>
+<table>
+<thead><tr><th style="width:5%">No</th><th style="width:25%">Pitfall</th><th style="width:40%">Deskripsi</th><th style="width:30%">Cara Menghindari</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Tunnel Vision</strong></td><td>Terlalu fokus pada satu aspek (misalnya hanya valuasi multiples) sambil mengabaikan aspek lain (kualitas akuntansi, arus kas)</td><td>Gunakan checklist lima langkah; pastikan setiap langkah terwakili dalam analisis</td></tr>
+<tr><td>2</td><td><strong>Confirmation Bias</strong></td><td>Mencari data yang mendukung pandangan awal dan mengabaikan bukti yang bertentangan (<em>contradictory evidence</em>)</td><td>Aktif mencari <em>disconfirming evidence</em>; tunjukkan argumen tandingan (<em>bear case</em>) dalam laporan</td></tr>
+<tr><td>3</td><td><strong>Anchoring pada Kinerja Historis</strong></td><td>Mengasumsikan masa depan akan menyerupai masa lalu tanpa mempertimbangkan perubahan struktural (disrupsi teknologi, regulasi baru)</td><td>Evaluasi apakah <em>drivers</em> historis masih relevan; pertimbangkan <em>regime change</em> dalam industri</td></tr>
+<tr><td>4</td><td><strong>Mengabaikan Konteks Industri</strong></td><td>Menginterpretasi rasio keuangan tanpa membandingkan dengan benchmark industri atau memahami norma industri</td><td>Selalu bandingkan dengan <em>peers</em> dan median industri; interpretasi relatif, bukan absolut</td></tr>
+<tr><td>5</td><td><strong>Analisis Rasio Mekanis</strong></td><td>Menghitung rasio tanpa memahami ekonomi yang mendasarinya; analisis tanpa narasi (<em>"spreadsheet jockey"</em>)</td><td>Untuk setiap rasio, tanyakan: <em>"Mengapa?"</em> — hubungkan angka dengan strategi bisnis dan keputusan manajemen</td></tr>
+<tr><td>6</td><td><strong>Overcomplicating</strong></td><td>Terlalu banyak rasio, terlalu detail, kehilangan gambaran besar (<em>"missing the forest for the trees"</em>)</td><td>Fokus pada 5–10 metrik terpenting yang benar-benar membedakan perusahaan; hierarchy of importance</td></tr>
+<tr><td>7</td><td><strong>Sensitivity Testing Tidak Memadai</strong></td><td>Menyajikan satu angka valuasi tanpa menguji sensitivitas terhadap asumsi kunci</td><td>Lakukan analisis sensitivitas untuk 3–5 variabel terpenting; sajikan rentang nilai, bukan titik tunggal</td></tr>
+<tr><td>8</td><td><strong>Mengabaikan Transaksi Pihak Berelasi</strong></td><td>Tidak mengevaluasi transaksi dengan anak perusahaan, entitas berelasi, atau pihak terkait yang mungkin tidak <em>arm's length</em></td><td>Periksa catatan kaki terkait <em>related-party transactions</em>; evaluasi dampaknya terhadap pendapatan, biaya, dan aset</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>7.4 Best Practices Analisis Komprehensif Tingkat Graduate</h3>
+
+<div class="exb nb"><div class="exn">🎓 Best Practices untuk Case Study Analysis</div>
+<table>
+<thead><tr><th style="width:5%">No</th><th style="width:30%">Best Practice</th><th style="width:65%">Penjelasan</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Mulai dengan Hipotesis, Uji Secara Ketat</strong></td><td>Setelah analisis strategi awal, bentuk hipotesis tentang valuasi perusahaan (<em>"perusahaan ini undervalued karena..."</em>). Kemudian uji hipotesis ini secara ketat melalui setiap langkah analisis. Bersedia mengubah hipotesis jika bukti tidak mendukung.</td></tr>
+<tr><td>2</td><td><strong>Gunakan Multiple Valuation Approaches dan Rekonsiliasi</strong></td><td>Jangan bergantung pada satu metode valuasi. Gunakan minimal DCF + satu metode lain (RIM atau multiples). Bandingkan hasil; investigasi perbedaan signifikan. Konsistensi antar metode meningkatkan kredibilitas.</td></tr>
+<tr><td>3</td><td><strong>Nyatakan Asumsi Secara Eksplisit</strong></td><td>Setiap asumsi dalam model harus dinyatakan secara eksplisit dan diberi alasan (<em>justified</em>). Pembaca harus dapat mengevaluasi setiap asumsi secara independen. Asumsi implisit adalah kelemahan analitis terbesar.</td></tr>
+<tr><td>4</td><td><strong>Sajikan Rentang Nilai, Bukan Estimasi Tunggal</strong></td><td>Nilai intrinsik selalu merupakan estimasi dengan ketidakpastian. Sajikan rentang (misalnya Rp 8.500–Rp 11.200) berdasarkan skenario dan sensitivitas, bukan titik tunggal. Ini menunjukkan kematangan analitis.</td></tr>
+<tr><td>5</td><td><strong>Address Counterarguments</strong></td><td>Laporan yang kredibel mengakui dan merespons argumen tandingan. Jika merekomendasikan Buy, jelaskan mengapa <em>bear case</em> kurang meyakinkan. Ini menunjukkan objektivitas dan analisis yang menyeluruh.</td></tr>
+<tr><td>6</td><td><strong>Dukung Kesimpulan dengan Bukti dari Setiap Langkah</strong></td><td>Setiap klaim harus didukung bukti spesifik. Misalnya, <em>"margin expansion yang diproyeksikan didukung oleh (a) trend gross margin 3 tahun terakhir [Langkah 3C], (b) strategi cost optimization manajemen [Langkah 1], dan (c) operating leverage dari peningkatan volume [Langkah 4]."</em></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cg"><div class="cgt">Kualitas Analisis = Kualitas Pertanyaan yang Diajukan</div>
+<p>Analis terbaik bukan yang memiliki model Excel terkompleks, melainkan yang mengajukan <strong>pertanyaan yang tepat</strong>. Di setiap langkah analisis, kembali ke pertanyaan fundamental: <em>"Apa yang benar-benar mendorong nilai perusahaan ini?"</em> Apakah keunggulan kompetitif? Pertumbuhan pasar? Efisiensi operasional? Kualitas manajemen? Kemudian fokuskan analisis pada faktor-faktor tersebut. Seribu rasio yang tidak relevan bernilai lebih rendah daripada satu <em>insight</em> yang benar-benar menjawab pertanyaan: <em>"Berapa nilai wajar perusahaan ini, dan mengapa pasar mungkin salah?"</em></p>
+</div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Comprehensive Case · Master Integration</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Master Integration Framework — Kerangka Integrasi Utama</h2>
+
+<h3>8.1 Peta Integrasi Komprehensif / Comprehensive Integration Map</h3>
+
+<p>Diagram berikut (disajikan sebagai tabel) menunjukkan aliran logis dari seluruh proses analisis komprehensif — dari input awal hingga output final berupa rekomendasi investasi:</p>
+
+<table>
+<thead><tr><th style="width:15%">Tahap</th><th style="width:25%">Langkah Analisis</th><th style="width:30%">Input Utama</th><th style="width:30%">Output / Deliverable</th></tr></thead>
+<tbody>
+<tr><td><strong>TAHAP 1</strong></td><td>Analisis Strategi Bisnis</td><td>Laporan tahunan, laporan industri, data makroekonomi, berita perusahaan</td><td>Pemahaman industri, posisi kompetitif, <em>key value drivers</em>, tesis awal</td></tr>
+<tr><td><strong>TAHAP 2</strong></td><td>Analisis Akuntansi</td><td>Laporan keuangan audited, catatan atas laporan keuangan, laporan auditor</td><td>Penilaian kualitas akuntansi, daftar penyesuaian, laporan keuangan yang dinormalisasi</td></tr>
+<tr><td><strong>TAHAP 3A</strong></td><td>Analisis Pembiayaan</td><td>Neraca (adjusted), catatan utang, data pasar</td><td>Profil struktur modal, kapasitas utang, estimasi WACC</td></tr>
+<tr><td><strong>TAHAP 3B</strong></td><td>Analisis Investasi</td><td>Neraca (adjusted), catatan aset, laporan capex</td><td>Profil alokasi modal, efisiensi aset, kebutuhan capex</td></tr>
+<tr><td><strong>TAHAP 3C</strong></td><td>Analisis Operasi</td><td>Laba rugi (adjusted), data segmen</td><td>Tren margin, analisis revenue, cost structure</td></tr>
+<tr><td><strong>TAHAP 3D</strong></td><td>Analisis Arus Kas</td><td>Laporan arus kas, neraca perbandingan</td><td>Kualitas CFO, FCF, cash conversion, CCC</td></tr>
+<tr><td><strong>TAHAP 3E</strong></td><td>Analisis Profitabilitas</td><td>Semua output Tahap 3A–3D</td><td>DuPont decomposition, ROE/ROIC, economic profit, <em>integrated diagnosis</em></td></tr>
+<tr><td><strong>TAHAP 4</strong></td><td>Analisis Prospektif</td><td>Semua output Tahap 1–3, asumsi makro</td><td>Pro forma IS, BS, CF (3–10 tahun); skenario; terminal assumptions</td></tr>
+<tr><td><strong>TAHAP 5A</strong></td><td>Analisis Kredit</td><td>Output Tahap 3A + Tahap 4</td><td>Penilaian risiko kredit, probability of distress, impact on cost of capital</td></tr>
+<tr><td><strong>TAHAP 5B</strong></td><td>Valuasi</td><td>Output Tahap 4 + WACC dari Tahap 3A/5A</td><td>Nilai intrinsik (DCF, RIM, multiples); rentang nilai; rekonsiliasi</td></tr>
+<tr><td><strong>TAHAP 6</strong></td><td>Sintesis &amp; Rekomendasi</td><td>Semua output Tahap 1–5</td><td>Laporan analisis komprehensif; rekomendasi investasi yang terinformasi</td></tr>
+</tbody>
+</table>
+
+<h3>8.2 Tabel Referensi Lengkap: Minggu, Chapter, dan Langkah Analisis</h3>
+
+<table>
+<thead><tr><th style="width:10%">Minggu</th><th style="width:18%">Referensi Buku</th><th style="width:25%">Topik Utama</th><th style="width:22%">Langkah Palepu</th><th style="width:25%">Kontribusi ke Analisis Komprehensif</th></tr></thead>
+<tbody>
+<tr><td>01</td><td>Subramanyam Ch.1</td><td>Pengantar Analisis Laporan Keuangan</td><td>Fondasi</td><td>Kerangka konseptual; tujuan analisis; pengguna informasi</td></tr>
+<tr><td>02</td><td>Subramanyam Ch.2</td><td>Pelaporan Keuangan dan Analisis</td><td>Fondasi</td><td>Memahami laporan keuangan; basis akrual vs kas</td></tr>
+<tr><td>03</td><td>Subramanyam Ch.3</td><td>Analisis Aktivitas Pembiayaan</td><td>Langkah 3 (Pembiayaan)</td><td>Struktur modal; kapasitas utang; cost of capital</td></tr>
+<tr><td>04</td><td>Subramanyam Ch.4</td><td>Analisis Aktivitas Investasi</td><td>Langkah 3 (Investasi)</td><td>Komposisi aset; alokasi modal; efisiensi aset</td></tr>
+<tr><td>05</td><td>Subramanyam Ch.5</td><td>Analisis Aktivitas Operasi — Pendapatan</td><td>Langkah 2 &amp; 3 (Akuntansi &amp; Operasi)</td><td>Pengakuan pendapatan; kualitas laba; analisis revenue</td></tr>
+<tr><td>06</td><td>Subramanyam Ch.6</td><td>Analisis Aktivitas Operasi — Beban</td><td>Langkah 2 &amp; 3 (Akuntansi &amp; Operasi)</td><td>Analisis beban; marjin; penyesuaian analitis</td></tr>
+<tr><td>07</td><td colspan="4"><em>Ujian Tengah Semester (UTS)</em></td></tr>
+<tr><td>08</td><td>Subramanyam Ch.7</td><td>Analisis Arus Kas</td><td>Langkah 3 (Arus Kas)</td><td>Kualitas CFO; FCF; cash conversion; CCC</td></tr>
+<tr><td>09</td><td>Subramanyam Ch.8</td><td>Analisis Profitabilitas</td><td>Langkah 3 (Profitabilitas)</td><td>DuPont; ROE/ROIC; economic profit; integrasi rasio</td></tr>
+<tr><td>10</td><td>Subramanyam Ch.9</td><td>Analisis Prospektif</td><td>Langkah 4</td><td>Peramalan; pro forma; skenario; terminal value</td></tr>
+<tr><td>11</td><td>Palepu Ch.10</td><td>Analisis Kredit dan Risiko</td><td>Langkah 5 (Kredit)</td><td>Risiko kredit; probability of distress; cost of debt</td></tr>
+<tr><td>12</td><td>Subramanyam Ch.11</td><td>Valuasi Ekuitas</td><td>Langkah 5 (Valuasi)</td><td>DCF; RIM; multiples; estimasi nilai intrinsik</td></tr>
+<tr><td><strong>13</strong></td><td><strong>Palepu Ch.10 (Case)</strong></td><td><strong>Comprehensive Case Integration</strong></td><td><strong>Langkah 1–5 Terintegrasi</strong></td><td><strong>Integrasi seluruh kerangka; rekomendasi investasi</strong></td></tr>
+<tr><td>14</td><td colspan="4"><em>Ujian Akhir Semester (UAS)</em></td></tr>
+</tbody>
+</table>
+
+<h3>8.3 Pertanyaan Refleksi / Reflection Questions</h3>
+
+<div class="qb"><span class="qn">Q13-1.</span> Explain why a comprehensive analysis that integrates all five steps of Palepu's framework produces superior insights compared to analyzing each component in isolation. Provide a specific example where integrated analysis would change the conclusion.<br><span class="qid">Jelaskan mengapa analisis komprehensif yang mengintegrasikan kelima langkah kerangka Palepu menghasilkan insight yang superior dibandingkan menganalisis setiap komponen secara terpisah. Berikan contoh spesifik di mana analisis terintegrasi akan mengubah kesimpulan.</span></div>
+
+<div class="qb"><span class="qn">Q13-2.</span> A company reports consistently high ROE (25%+) over the past five years. Describe systematically how you would use all five analytical steps to determine whether this ROE level is sustainable and what it means for valuation.<br><span class="qid">Sebuah perusahaan melaporkan ROE yang konsisten tinggi (25%+) selama lima tahun terakhir. Jelaskan secara sistematis bagaimana Anda akan menggunakan kelima langkah analisis untuk menentukan apakah level ROE ini berkelanjutan dan apa maknanya bagi valuasi.</span></div>
+
+<div class="qb"><span class="qn">Q13-3.</span> Discuss how findings from accounting analysis (Step 2) can fundamentally alter the conclusions drawn from financial analysis (Step 3) and ultimately change the valuation outcome (Step 5). Use a concrete scenario.<br><span class="qid">Diskusikan bagaimana temuan dari analisis akuntansi (Langkah 2) dapat secara fundamental mengubah kesimpulan dari analisis keuangan (Langkah 3) dan pada akhirnya mengubah hasil valuasi (Langkah 5). Gunakan skenario konkret.</span></div>
+
+<div class="qb"><span class="qn">Q13-4.</span> You find that a company's profitability ratios are strong and improving, but cash flow from operations is declining relative to net income. Using the integrated framework, explain how you would investigate this contradiction and what it might imply for your investment recommendation.<br><span class="qid">Anda menemukan bahwa rasio profitabilitas perusahaan kuat dan membaik, tetapi arus kas operasi menurun relatif terhadap laba bersih. Menggunakan kerangka terintegrasi, jelaskan bagaimana Anda akan menginvestigasi kontradiksi ini dan apa implikasinya bagi rekomendasi investasi Anda.</span></div>
+
+<div class="qb"><span class="qn">Q13-5.</span> Explain the concept of "valuation reconciliation." If your DCF model suggests a value of Rp 12,000 per share but the comparable multiples approach suggests Rp 8,500, how would you investigate and resolve this discrepancy?<br><span class="qid">Jelaskan konsep "rekonsiliasi valuasi." Jika model DCF Anda menunjukkan nilai Rp 12.000 per saham tetapi pendekatan multiples menunjukkan Rp 8.500, bagaimana Anda akan menginvestigasi dan menyelesaikan diskrepansi ini?</span></div>
+
+<div class="qb"><span class="qn">Q13-6.</span> Describe the eight common analytical pitfalls discussed in this week's material. For each pitfall, provide a specific example of how it could lead to an incorrect investment recommendation.<br><span class="qid">Deskripsikan delapan kesalahan analitis umum (<em>pitfalls</em>) yang dibahas dalam materi minggu ini. Untuk setiap pitfall, berikan contoh spesifik bagaimana kesalahan tersebut dapat mengarah pada rekomendasi investasi yang salah.</span></div>
+
+<div class="qb"><span class="qn">Q13-7.</span> How does credit analysis (Week 11) inform and improve equity valuation? Discuss at least four specific channels through which credit risk assessment affects the estimation of intrinsic equity value.<br><span class="qid">Bagaimana analisis kredit (Minggu 11) menginformasikan dan meningkatkan valuasi ekuitas? Diskusikan setidaknya empat saluran spesifik di mana penilaian risiko kredit memengaruhi estimasi nilai intrinsik ekuitas.</span></div>
+
+<div class="qb"><span class="qn">Q13-8.</span> As a graduate-level exercise: outline your approach to conducting a comprehensive analysis of a publicly listed Indonesian company. Describe which data sources you would use, how you would apply each of the five steps, and how you would present your final investment recommendation.<br><span class="qid">Sebagai latihan tingkat <em>graduate</em>: uraikan pendekatan Anda untuk melakukan analisis komprehensif terhadap perusahaan yang terdaftar di BEI. Jelaskan sumber data yang akan Anda gunakan, bagaimana Anda menerapkan masing-masing dari lima langkah, dan bagaimana Anda menyajikan rekomendasi investasi akhir Anda.</span></div>
+
+<div class="cg"><div class="cgt">Pesan Penutup: Seni dan Sains Analisis Laporan Keuangan / The Art and Science of FSA</div>
+<p>Analisis laporan keuangan dan valuasi sekuritas adalah perpaduan antara <strong>sains</strong> (model kuantitatif, rasio, formula valuasi) dan <strong>seni</strong> (judgment, interpretasi, sintesis). Sains memberikan kerangka dan alat; seni memberikan wisdom untuk menerapkannya dengan tepat. Sepanjang 13 minggu kursus ini, mahasiswa telah membangun toolbox analitis yang komprehensif — dari pemahaman laporan keuangan dasar hingga valuasi DCF yang canggih. Tantangan sesungguhnya terletak pada <strong>kemampuan mengintegrasikan</strong> seluruh alat ini menjadi analisis yang koheren, objektif, dan bermanfaat bagi pengambilan keputusan investasi. Ingat: tujuan akhir bukan menghitung rasio atau membangun model — melainkan <em>memahami bisnis</em> dan membuat <em>keputusan investasi yang terinformasi</em>.</p>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-12/main-summary.html">← Week 12</a>
+  
+  
+  <a href="../week-14/main-summary.html">Week 14 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

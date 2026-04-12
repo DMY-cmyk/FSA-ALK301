@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 01 — Main Summary</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 01: Syllabus and Introduction to FSA</h1>
+  <div class="meta">
+    <span>📚 Silabus dan pengenalan ALK</span>
+    
+    <span>📖 Subramanyam Ch. 1</span>
+    
+    
+    <span>📗 Palepu Ch. 1</span>
+    
+    
+    <span>🏢 UNVR — Unilever Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Framework for financial statement analysis; role of accounting information in capital markets</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- PLACEHOLDERS (replaced in Tasks 2-9) -->
+<div id="s2" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Business Analysis / Analisis Bisnis</h2>
+
+<div class="def"><div class="den">Business Analysis</div><div class="did">Proses evaluasi prospek dan risiko perusahaan untuk tujuan pengambilan keputusan bisnis. Mencakup analisis lingkungan bisnis, strategi, posisi keuangan, dan kinerja perusahaan. Berguna untuk keputusan investasi ekuitas, analisis kredit, prediksi laba, audit, negosiasi kompensasi, dan lainnya.</div></div>
+<div class="def"><div class="den">Financial Statement Analysis (FSA)</div><div class="did">Penerapan alat dan teknik analitik pada laporan keuangan umum dan data terkait untuk menghasilkan estimasi dan inferensi yang berguna dalam analisis bisnis. Mengurangi ketergantungan pada firasat dan intuisi; memberikan dasar yang sistematis dan efektif untuk pengambilan keputusan bisnis.</div></div>
+
+<h3>2.1 Types of Business Analysis / Jenis-Jenis Analisis Bisnis</h3>
+<table class="nb">
+<thead><tr><th style="width:18%">Dimensi</th><th style="width:41%">Credit Analysis / Analisis Kredit</th><th style="width:41%">Equity Analysis / Analisis Ekuitas</th></tr></thead>
+<tbody>
+<tr><td><strong>Users</strong></td><td>Kreditor, bank, lembaga pemeringkat (S&amp;P, Moody's, Fitch)</td><td>Investor ekuitas, manajer investasi, analis sekuritas, individual investor</td></tr>
+<tr><td><strong>Focus</strong></td><td>Creditworthiness — kemampuan membayar kewajiban (utang + bunga)</td><td>Intrinsic value — nilai fundamental saham perusahaan</td></tr>
+<tr><td><strong>Risk Orientation</strong></td><td>Downside only — risiko gagal bayar (default risk)</td><td>Symmetric — downside AND upside potential</td></tr>
+<tr><td><strong>Key Metrics</strong></td><td>Liquidity, solvency, cash flow coverage, earnings stability</td><td>Earnings quality, growth prospects, ROE, P/E, intrinsic value</td></tr>
+<tr><td><strong>Benefit</strong></td><td>Terbatas pada bunga + pokok (fixed upside)</td><td>Tidak terbatas — residual interest setelah semua klaim lain dipenuhi</td></tr>
+<tr><td><strong>Time Horizon</strong></td><td>Short-term: current assets/liabilities; Long-term: sustainable earning power</td><td>Long-term: proyeksi earnings dan cash flows masa depan</td></tr>
+</tbody></table>
+
+<div class="def" style="margin-top:8px"><div class="den">Fundamental Analysis</div><div class="did">Proses menentukan <strong>intrinsic value</strong> (nilai fundamental) perusahaan dengan menganalisis faktor-faktor kunci ekonomi, industri, dan perusahaan. Strategi sederhana: beli jika nilai intrinsik &gt; harga pasar; jual jika nilai intrinsik &lt; harga pasar; tahan jika nilai intrinsik ≈ harga pasar.</div></div>
+<div class="def"><div class="den">Liquidity / Likuiditas</div><div class="did">Kemampuan perusahaan untuk memenuhi kewajiban jangka pendek. Bergantung pada arus kas dan komposisi aset lancar dan liabilitas lancar.</div></div>
+<div class="def"><div class="den">Solvency / Solvabilitas</div><div class="did">Kemampuan perusahaan untuk bertahan dalam jangka panjang dan membayar kewajiban jangka panjang. Bergantung pada profitabilitas jangka panjang dan struktur modal (pembiayaan).</div></div>
+
+<h3>2.2 Other Users of Business Analysis / Pengguna Lain</h3>
+<table class="nb">
+<thead><tr><th>Pengguna</th><th>Tujuan Penggunaan FSA</th></tr></thead>
+<tbody>
+<tr><td><strong>Managers</strong></td><td>Analisis kompetitor, perbandingan antar perusahaan (interfirm comparison), benchmarking kinerja operasi dan keuangan</td></tr>
+<tr><td><strong>M&amp;A / Divestitures</strong></td><td>Identifikasi target akuisisi, penentuan nilai wajar, evaluasi sinergi merger; investment bankers menentukan nilai target</td></tr>
+<tr><td><strong>Financial Management</strong></td><td>Evaluasi dampak keputusan pendanaan dan kebijakan dividen terhadap nilai perusahaan dan risiko</td></tr>
+<tr><td><strong>Directors</strong></td><td>Pengawasan (oversight) aktivitas manajemen; perlindungan kepentingan pemegang saham</td></tr>
+<tr><td><strong>Regulators</strong></td><td>IRS menggunakan alat FSA untuk mengaudit SPT pajak dan memeriksa kewajaran angka yang dilaporkan perusahaan</td></tr>
+<tr><td><strong>Labor Unions</strong></td><td>Negosiasi kontrak kerja kolektif berdasarkan data keuangan perusahaan</td></tr>
+<tr><td><strong>Customers</strong></td><td>Menentukan profitabilitas pemasok dan estimasi laba dari transaksi bersama</td></tr>
+</tbody></table>
+
+<h3>2.3 Components of Business Analysis / Komponen Analisis Bisnis</h3>
+<table class="nb">
+<thead><tr><th>Komponen</th><th>Definisi</th><th>Cakupan</th></tr></thead>
+<tbody>
+<tr><td><strong>Business Environment &amp; Strategy Analysis</strong></td><td>Analisis lingkungan ekonomi, industri, dan strategi kompetitif perusahaan</td><td>Industry analysis (Porter's Five Forces, value chain) + Strategy analysis (competitive advantage, product mix, cost structure)</td></tr>
+<tr><td><strong>Accounting Analysis</strong></td><td>Evaluasi sejauh mana akuntansi mencerminkan realitas ekonomi; penyesuaian laporan keuangan untuk meningkatkan kandungan ekonominya</td><td>Earnings quality, earnings management, accounting risk, restatement of financials</td></tr>
+<tr><td><strong>Financial Analysis</strong></td><td>Penggunaan laporan keuangan untuk menganalisis posisi dan kinerja keuangan serta menilai kinerja keuangan masa depan</td><td>Profitability analysis + Risk analysis + Analysis of cash flows</td></tr>
+<tr><td><strong>Prospective Analysis</strong></td><td>Peramalan payoffs masa depan — earnings, cash flows, atau keduanya. "An art, not a science."</td><td>Output berupa estimasi nilai intrinsik perusahaan menggunakan valuation models</td></tr>
+</tbody></table>
+
+<div class="def"><div class="den">Accounting Risk</div><div class="did">Ketidakpastian dalam analisis akibat distorsi akuntansi. Tiga sumber: (1) <em>estimation error</em> — kesalahan estimasi yang jujur, (2) <em>earnings management</em> — diskresi manajemen yang menyesatkan, (3) keterbatasan standar akuntansi. Tujuan accounting analysis: mengevaluasi dan mengurangi accounting risk serta meningkatkan comparability.</div></div>
+
+<div class="cg"><div class="cgt">🏭 Colgate-Palmolive — Applied Illustration</div>
+<p><strong>Mengapa business analysis lebih dari sekadar membaca ringkasan keuangan?</strong></p>
+<ul>
+<li>Net income tumbuh 89% dalam 10 tahun (2002–2011), tetapi pertumbuhan <em>tidak merata</em>: stagnasi 2004–2006 akibat program restrukturisasi besar yang menurunkan laba sesaat</li>
+<li>ROE mendekati 100% bukan semata karena kinerja operasi luar biasa, tetapi karena equity base sangat kecil akibat pembelian kembali saham senilai ~$15 miliar selama 10 tahun</li>
+<li>Total debt/equity = 4.01 tampak berisiko tinggi, tetapi times interest earned = 73.87× — risiko solvabilitas sesungguhnya sangat rendah karena profitabilitas sangat kuat dan stabil</li>
+<li>Gross profit margin menurun (58.9%→57.3% dalam 2006–2011) meski net income margin meningkat — cost savings dari restrukturisasi mengkompensasi tekanan kompetitif pada gross margin</li>
+<li><em>Pelajaran: angka keuangan harus selalu diinterpretasikan dalam konteks strategi bisnis dan lingkungan industri perusahaan.</em></li>
+</ul></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 Unilever Indonesia (UNVR) — Perbandingan Bisnis</div>
+<p><strong>Model bisnis:</strong> Portfolio consumer goods: Oral Care (Pepsodent), Personal Care (Lifebuoy, Dove, Sunsilk), Home Care (Rinso, Sunlight), Foods &amp; Refreshment (Bango, Wall's). IDX-listed sejak 1982 (ticker: UNVR), ~85% dimiliki Unilever NV.</p>
+<p><strong>Paralel dengan Colgate:</strong> Keduanya adalah consumer goods, anak perusahaan global parent, dan menghadapi tekanan biaya bahan baku.</p>
+<p><strong>Key insight:</strong> Revenue UNVR turun 6,3% (2022→2023), laba bersih turun 10,5% — tekanan serupa dengan Colgate yang mengalami stagnasi 2004–2006 akibat program restrukturisasi besar.</p>
+</div>
+
+<div class="def nb"><div class="den">Konteks Regulasi Indonesia</div><div class="did">Di Indonesia, laporan keuangan disusun berdasarkan <strong>PSAK</strong> (Pernyataan Standar Akuntansi Keuangan) yang berbasis IFRS, bukan US GAAP. Regulator utama adalah <strong>OJK</strong> (Otoritas Jasa Keuangan) dan <strong>Bursa Efek Indonesia</strong> (BEI/IDX).</div></div>
+
+</div>
+<div id="s3" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Financial Statements — Basis of Analysis / Laporan Keuangan sebagai Dasar Analisis</h2>
+
+<h3>3.1 Four Business Activities / Empat Aktivitas Bisnis</h3>
+<table class="nb">
+<thead><tr><th style="width:14%">Aktivitas</th><th style="width:14%">English</th><th style="width:36%">Definisi &amp; Konsep Kunci</th><th style="width:36%">Contoh Colgate (2011)</th></tr></thead>
+<tbody>
+<tr><td><strong>Perencanaan</strong></td><td>Planning</td><td>Business plan menangkap tujuan, strategi, dan taktik perusahaan. Sumber utama: Letter to Shareholders, MD&amp;A section of annual report.</td><td>Fokus pada Oral, Personal, Home Care dan Pet Nutrition. Inovasi produk berbasis consumer insights, diluncurkan secara global.</td></tr>
+<tr><td><strong>Pendanaan</strong></td><td>Financing</td><td>Metode perusahaan mendapatkan dana. Dua sumber: (1) equity investors (owners/shareholders) dan (2) creditors — trade creditors (operating) dan nontrade creditors (debt).</td><td>Equity: $2.07B (20% aset). Creditor: $10.18B (80% aset). Debt: $4.81B; Operating creditors: $5.37B. Treasury stock: ($12.81B) — pembelian kembali saham besar.</td></tr>
+<tr><td><strong>Investasi</strong></td><td>Investing</td><td>Akuisisi dan pemeliharaan investasi untuk mendukung operasi (operating assets) dan untuk menginvestasikan kelebihan kas (financial assets). Current vs noncurrent assets.</td><td>Total assets $12.72B: Current $4.40B (35%), PP&amp;E $3.67B (29%), Intangibles $1.34B, Goodwill $2.66B, Cash $0.88B.</td></tr>
+<tr><td><strong>Operasi</strong></td><td>Operating</td><td>"Pelaksanaan" business plan. Minimal 5 komponen: R&amp;D, pengadaan (procurement), produksi, pemasaran, administrasi. Sumber utama earnings perusahaan.</td><td>Net sales $16.73B; Net income $2.43B; Operating margin 22.95%. Return on avg total assets = 20.3%.</td></tr>
+</tbody></table>
+
+<div class="def nb"><div class="den">Key Financing Concepts</div><div class="did">
+<strong>Return</strong> = imbal hasil ekuitas berupa distribusi laba (dividends) atau reinvestasi laba. <br>
+<strong>Dividend payout ratio</strong> = Dividen / Net income (Colgate 2011: $2.27/$4.98 = 45.58%). <br>
+<strong>Earnings reinvestment ratio (retention ratio)</strong> = 1 − dividend payout ratio. <br>
+<strong>Working capital</strong> = Current assets − Current liabilities (Colgate 2011: $4,402M − $3,716M = $686M).
+</div></div>
+
+<h3>3.2 The Four Financial Statements / Empat Laporan Keuangan</h3>
+
+<div class="nb">
+<h4>① Balance Sheet / Neraca</h4>
+<p><strong>Tujuan:</strong> Melaporkan posisi keuangan pada <em>satu titik waktu (point in time)</em> — aset, liabilitas, dan ekuitas.</p>
+<div class="fbox"><div class="ftitle">Accounting Equation / Persamaan Akuntansi</div>
+<div class="ff">Assets = Liabilities + Equity</div>
+<div class="ff">Total Investing = Total Financing = Creditor Financing + Owner Financing</div>
+<div class="fw">Assets = sumber daya yang dikendalikan perusahaan | Liabilities = kewajiban kepada kreditor | Equity = (1) modal disetor/contributed capital + (2) retained earnings sejak pendirian − distribusi kepada pemilik. Current assets/liabilities = jatuh tempo ≤ 1 tahun atau siklus operasi.</div></div>
+<div class="cg"><div class="cgt">Colgate Balance Sheet — Dec 31, 2011 ($ millions)</div>
+<p>Total assets: $12,724 | Total liabilities: $10,183 | Shareholders' equity: $2,541</p>
+<p>Current assets: $4,402 (35%) · PP&amp;E net: $3,668 (29%) · Goodwill: $2,657 (21%) · Intangibles: $1,341 (11%)</p>
+<p>Long-term debt: $4,430 · Treasury stock: ($12,808) — accumulated stock repurchases</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 UNVR — Neraca / Balance Sheet (2023)</div>
+<p>Total aset: Rp16,7 triliun | Total liabilitas: Rp13,3 triliun | Ekuitas: Rp3,4 triliun</p>
+<p>Aset lancar: Rp6,2 triliun (37%) · Aset tetap &amp; lainnya: Rp10,5 triliun (63%)</p>
+<p>Liabilitas lancar: Rp11,2 triliun → <strong>working capital NEGATIF</strong> (Rp5,0 triliun)</p>
+<p style="font-size:9.5pt;color:#555"><em>Perbandingan:</em> UNVR memiliki negative working capital (seperti Colgate yang thin WC), tetapi di UNVR ini bahkan lebih ekstrem — liabilitas lancar hampir 2× aset lancar.</p>
+</div>
+
+</div>
+
+<div class="nb">
+<h4>② Income Statement / Laporan Laba Rugi</h4>
+<p><strong>Tujuan:</strong> Mengukur kinerja keuangan selama <em>satu periode (period of time)</em>. Menggunakan <span class="term">accrual basis</span>.</p>
+<table><thead><tr><th>Ukuran Laba</th><th>Formula</th><th>Colgate 2011 ($M)</th></tr></thead>
+<tbody>
+<tr><td><strong>Gross Profit</strong></td><td>Net Sales − Cost of Sales</td><td>$9,590 (57.31% of sales)</td></tr>
+<tr><td><strong>Operating Income</strong></td><td>Gross Profit − SG&amp;A − Other expenses</td><td>$3,841 (22.95%)</td></tr>
+<tr><td><strong>Income before tax</strong></td><td>Operating Income − Net interest expense</td><td>$3,789</td></tr>
+<tr><td><strong>Net Income</strong></td><td>Income before tax − Income taxes</td><td>$2,431 (14.53%)</td></tr>
+<tr><td><strong>EPS (basic)</strong></td><td>Net Income / Weighted avg shares</td><td>$4.98 per share</td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555">Accrual basis: pendapatan diakui saat barang/jasa diserahkan (bukan saat kas diterima); beban diakui saat terkait dengan pendapatan tersebut (bukan saat kas dibayar).</p>
+</div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 UNVR — Laporan Laba Rugi / Income Statement (2023)</div>
+<p>Pendapatan bersih: Rp38,6 triliun | Beban pokok penjualan: Rp19,4 triliun</p>
+<p>Laba bruto: Rp19,2 triliun (<strong>gross margin 49,7%</strong> — lebih rendah dari Colgate 57,3%)</p>
+<p>Laba usaha: Rp6,3 triliun (operating margin 16,3%) | Laba bersih: Rp4,8 triliun (net margin 12,4%)</p>
+</div>
+
+<div class="nb">
+<h4>③ Statement of Changes in Shareholders' Equity / Laporan Perubahan Ekuitas</h4>
+<p><strong>Tujuan:</strong> Mengidentifikasi alasan perubahan klaim pemegang saham atas aset perusahaan selama satu periode.</p>
+<p>Komponen utama: Common Stock · Additional Paid-In Capital · Unearned Compensation · Treasury Stock · Retained Earnings · Accumulated Other Comprehensive Income (AOCI)</p>
+<div class="cg"><div class="cgt">Colgate — Retained Earnings Linkage (2011)</div>
+<p>Retained earnings Dec 31, 2010: $14,329M</p>
+<p>+ Net income attributable to Colgate: +$2,431M</p>
+<p>− Dividends paid: (−$1,111M)</p>
+<p>= Retained earnings Dec 31, 2011: <strong>$15,649M</strong></p>
+<p style="font-size:9.5pt;color:#666">Note: Comprehensive income also includes Other Comprehensive Income (OCI) — items that bypass the income statement. Colgate 2011 OCI: −$360M → AOCI moves from (−$2,115M) to (−$2,475M).</p></div>
+</div>
+
+<div class="nb">
+<h4>④ Statement of Cash Flows / Laporan Arus Kas</h4>
+<p><strong>Tujuan:</strong> Melaporkan arus kas masuk dan keluar selama satu periode, dipisahkan menurut tiga jenis aktivitas.</p>
+<table><thead><tr><th>Aktivitas</th><th>Isi</th><th>Colgate 2011 ($M)</th></tr></thead>
+<tbody>
+<tr><td><strong>Operating</strong></td><td>Arus kas dari operasi bisnis utama (net income ± adjustments)</td><td>+$2,896</td></tr>
+<tr><td><strong>Investing</strong></td><td>Pembelian/penjualan aset jangka panjang, akuisisi, investasi sekuritas</td><td>(−$1,213): capex ($537), acquisitions ($966), securities net +$67</td></tr>
+<tr><td><strong>Financing</strong></td><td>Penerbitan/pelunasan utang; penerbitan/pembelian kembali saham; pembayaran dividen</td><td>(−$1,242): dividends ($1,203), treasury stock ($1,806), net debt +$1,414</td></tr>
+<tr><td colspan="2"><strong>Net increase in cash</strong></td><td>+$388M → Cash: $490M → $878M</td></tr>
+</tbody></table>
+<div class="cg" style="margin-top:6px"><div class="cgt">Cash Flow Interpretation — Colgate</div>
+<p>Colgate generates $2.9B from operations → invests $1.2B for growth (capex + acquisitions) → returns remaining cash to shareholders through dividends and stock repurchases. This pattern reflects a mature, highly profitable company with disciplined capital allocation.</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 UNVR — Laporan Arus Kas / Cash Flow Statement (2023)</div>
+<p><strong>Arus kas operasi:</strong> Rp7,1 triliun (positif — bisnis FMCG menghasilkan kas stabil)</p>
+<p><strong>Arus kas investasi:</strong> −Rp0,8 triliun (belanja modal rutin)</p>
+<p><strong>Arus kas pendanaan:</strong> −Rp5,8 triliun (pembayaran dividen sangat besar)</p>
+<p style="font-size:9.5pt;color:#555">Pattern mirip Colgate: generate cash from operations → return to shareholders via dividends. UNVR memiliki dividend payout ratio mendekati ~100%, terlihat dari financing outflow yang hampir setara operating inflow.</p>
+</div>
+
+</div>
+
+<div class="nb">
+<h3>3.3 Links Between Financial Statements / Keterkaitan Antar Laporan (Artikulasi)</h3>
+<div class="ibox nb"><div class="ibt">Articulation — Ketiga laporan periode menjelaskan perubahan antar dua neraca</div>
+<p>① Income Statement: Net income $2,431M → meningkatkan Retained Earnings di Equity Statement</p>
+<p>② Cash Flow Statement: Net cash +$388M → menjelaskan perubahan Cash di Balance Sheet ($490M→$878M)</p>
+<p>③ Equity Statement: Perubahan share capital, retained earnings, AOCI, treasury stock → semuanya tercermin di Balance Sheet</p>
+<p style="margin-top:6px"><strong>Prinsip:</strong> Balance sheet = "snapshot" posisi keuangan pada satu titik waktu. Ketiga laporan periode (IS, SCF, Equity Statement) menjelaskan "perjalanan" dari satu snapshot ke snapshot berikutnya. Setiap transaksi yang ditangkap di ketiga laporan tersebut pada akhirnya mempengaruhi satu atau lebih akun Balance Sheet.</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 Konteks Pelaporan di Indonesia</div>
+<p><strong>OJK</strong> (Otoritas Jasa Keuangan): regulator pasar modal, setara SEC di AS.</p>
+<p><strong>BEI</strong> (Bursa Efek Indonesia): bursa efek, setara NYSE.</p>
+<p>Perusahaan publik wajib menyampaikan laporan keuangan tahunan yang diaudit dalam <strong>120 hari</strong> setelah akhir tahun buku.</p>
+</div>
+</div>
+
+<div class="nb">
+<h3>3.4 Additional Information Sources / Sumber Informasi Tambahan</h3>
+<table class="nb">
+<thead><tr><th>Sumber</th><th>Isi Utama</th><th>Relevansi untuk Analis</th></tr></thead>
+<tbody>
+<tr><td><strong>MD&amp;A</strong></td><td>Tren favorable/unfavorable, risiko likuiditas, capital resources, prospective information</td><td>Wajib diungkapkan (SEC); sumber prospektif penting; Colgate menggunakannya untuk membahas strategi bisnis</td></tr>
+<tr><td><strong>Management Report</strong></td><td>Tanggung jawab manajemen atas pelaporan keuangan dan pengendalian internal</td><td>Mempertegas akuntabilitas manajemen (Sarbanes-Oxley Act)</td></tr>
+<tr><td><strong>Auditor's Report</strong></td><td>Opini independen kesesuaian laporan dengan GAAP (Colgate: unqualified opinion dari PricewaterhouseCoopers)</td><td>Unqualified opinion = terbaik. Apapun kurang dari itu meningkatkan risiko analisis.</td></tr>
+<tr><td><strong>Explanatory Notes</strong></td><td>Kebijakan akuntansi, rincian item LK, komitmen, kontijensi, kombinasi bisnis, pihak berelasi, opsi saham</td><td>Kritis untuk accounting analysis; mengandung informasi yang tidak ada di laporan utama</td></tr>
+<tr><td><strong>Supplementary Info</strong></td><td>Data segmen bisnis, penjualan ekspor, sekuritas, pinjaman jangka pendek, data kuartalan</td><td>Analisis segmen dan kinerja periodik (e.g., Colgate note 14: segment operations)</td></tr>
+<tr><td><strong>Proxy Statement</strong></td><td>Identitas pemegang saham ≥5%, kompensasi direksi/eksekutif, rencana opsi saham, corporate governance</td><td>Informasi tata kelola dan potensi konflik kepentingan; tidak biasanya masuk dalam annual report</td></tr>
+</tbody></table>
+</div>
+</div>
+<div id="s4ac" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Financial Statement Analysis Preview / Pratinjau Analisis Laporan Keuangan</h2>
+<p>Bagian ini memperkenalkan lima alat analisis keuangan utama dan menerapkannya pada data Colgate-Palmolive sebagai ilustrasi awal. Alat-alat yang lebih canggih dibahas di bab-bab berikutnya.</p>
+
+<h3>4.1 Five Analysis Tools Overview / Lima Alat Analisis Utama</h3>
+<table class="nb">
+<thead><tr><th>No.</th><th>Alat (ID)</th><th>English Term</th><th>Deskripsi Singkat</th><th>Colgate Applied</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Analisis Komparatif</strong></td><td>Comparative Analysis</td><td>Membandingkan laporan keuangan antar periode (year-to-year) atau menggunakan index-number trend</td><td>Net sales +7.5% (2010→2011); Index 2006=100, Index 2011≈139</td></tr>
+<tr><td>2</td><td><strong>Analisis Common-Size</strong></td><td>Common-Size Analysis</td><td>Menyatakan setiap item sebagai persentase dari total (total aset atau penjualan) — vertical analysis</td><td>COGS 42.69% of sales; Gross profit 57.31% (2011)</td></tr>
+<tr><td>3</td><td><strong>Analisis Rasio</strong></td><td>Ratio Analysis</td><td>Hubungan matematis antara dua kuantitas yang secara ekonomi penting dan bermakna</td><td>ROE 45.37%; ROA 20.63%; Current ratio 1.18×</td></tr>
+<tr><td>4</td><td><strong>Analisis Arus Kas</strong></td><td>Cash Flow Analysis</td><td>Evaluasi sumber dan penggunaan dana untuk pembiayaan, investasi, dan perencanaan likuiditas</td><td>Operating CF $2,896M; Free CF = $2,896M − $537M capex = $2,359M</td></tr>
+<tr><td>5</td><td><strong>Valuasi</strong></td><td>Valuation</td><td>Estimasi nilai intrinsik perusahaan menggunakan model valuasi berbasis PV dari payoffs masa depan</td><td>P/E 18.55×; P/B 17.05×; Intrinsic value analysis via DDM, FCFE, RI</td></tr>
+</tbody></table>
+
+<div class="nb">
+<h3>4.2 Comparative Financial Statement Analysis / Analisis Laporan Keuangan Komparatif</h3>
+<p>Juga disebut <span class="term">horizontal analysis</span>. Tujuan: mengidentifikasi arah, kecepatan, dan luasnya tren. Dua teknik utama:</p>
+</div>
+
+<h4>A. Year-to-Year Change Analysis</h4>
+<div class="fbox nb"><div class="ftitle">Formulas</div>
+<div class="ff">% Change = (Current Period Value − Base Period Value) / |Base Period Value| × 100</div>
+<div class="ff">Dollar Change = Current Period Value − Base Period Value</div>
+<div class="fw">Catatan penting: (1) Jika base period negatif dan current positif → tidak dapat dihitung secara bermakna. (2) Jika base period = 0 → tidak dapat dihitung. (3) Base period kecil → % change besar meski perubahan absolut kecil, interpretasi harus hati-hati.</div></div>
+<div class="cg nb"><div class="cgt">Colgate — Year-to-Year Comparative Income Statement (2010→2011)</div>
+<table style="margin:4px 0"><thead><tr><th>Item</th><th>2011 ($M)</th><th>2010 ($M)</th><th>Change ($M)</th><th>% Change</th></tr></thead>
+<tbody>
+<tr><td>Net sales</td><td>16,734</td><td>15,564</td><td>+1,170</td><td>+7.5%</td></tr>
+<tr><td>Cost of sales</td><td>7,144</td><td>6,360</td><td>+784</td><td>+12.3%</td></tr>
+<tr><td>Gross profit</td><td>9,590</td><td>9,204</td><td>+386</td><td>+4.2%</td></tr>
+<tr><td>SG&amp;A</td><td>5,758</td><td>5,414</td><td>+344</td><td>+6.4%</td></tr>
+<tr><td>Operating profit</td><td>3,841</td><td>3,489</td><td>+352</td><td>+10.1%</td></tr>
+<tr><td>Net income (Colgate)</td><td>2,431</td><td>2,203</td><td>+228</td><td>+10.3%</td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555">Interpretasi: Cost of sales naik lebih cepat (+12.3%) dari sales (+7.5%) → gross profit margin menurun. Namun SG&amp;A naik lebih lambat (+6.4%) → operating margin meningkat. Net income +10.3% mencerminkan efisiensi biaya yang berhasil mengkompensasi tekanan gross margin.</p></div>
+
+<h4>B. Index-Number Trend Analysis</h4>
+<div class="fbox nb"><div class="ftitle">Formula</div>
+<div class="ff">Index Number = (Current Year Balance / Base Year Balance) × 100</div>
+<div class="fw">Base period ditetapkan = 100. Pilih base period yang "normal" (bukan tahun krisis atau outlier). Untuk menghitung % change antar dua periode non-base: % change = (Index₂ − Index₁) / Index₁ × 100, BUKAN Index₂ − Index₁.</div></div>
+<div class="cg nb"><div class="cgt">Colgate — Index-Number Trend (Base: 2006 = 100)</div>
+<table style="margin:4px 0"><thead><tr><th>Item</th><th>2006</th><th>2007</th><th>2008</th><th>2009</th><th>2010</th><th>2011</th></tr></thead>
+<tbody>
+<tr><td>Net sales</td><td>100</td><td>113</td><td>125</td><td>125</td><td>127</td><td>137</td></tr>
+<tr><td>Operating expenses</td><td>100</td><td>113</td><td>128</td><td>122</td><td>123</td><td>132</td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555">Interpretasi: Net sales tumbuh secara konsisten. Operating expenses tumbuh lebih cepat pada 2007–2008 (tekanan biaya), namun berhasil dikendalikan pada 2009–2011 — mencerminkan keberhasilan program cost saving pasca restrukturisasi 2004.</p></div>
+
+<div class="nb">
+<h3>4.3 Common-Size Financial Statement Analysis / Analisis Laporan Keuangan Common-Size</h3>
+<p>Juga disebut <span class="term">vertical analysis</span>. Setiap item dinyatakan sebagai persentase dari angka dasar (total aset untuk neraca; net sales untuk laporan laba rugi). Berguna untuk perbandingan antar perusahaan (intercompany comparison) karena menghilangkan perbedaan skala.</p>
+</div>
+<div class="ibox nb"><div class="ibt">Common-Size: Two Key Uses</div>
+<p><strong>Balance Sheet:</strong> Menganalisis (1) sumber pembiayaan (distribusi current liabilities, noncurrent liabilities, equity) dan (2) komposisi aset (current vs noncurrent, intangibles).</p>
+<p><strong>Income Statement:</strong> Setiap beban dinyatakan sebagai % dari sales → menilai efisiensi operasi dan margin pada berbagai level laba.</p></div>
+<div class="cg nb"><div class="cgt">Colgate — Common-Size Income Statement (% of Net Sales)</div>
+<table style="margin:4px 0"><thead><tr><th>Item</th><th>2011</th><th>2010</th><th>2009</th><th>2008</th><th>2007</th><th>2006</th></tr></thead>
+<tbody>
+<tr><td>Net sales</td><td>100.0</td><td>100.0</td><td>100.0</td><td>100.0</td><td>100.0</td><td>100.0</td></tr>
+<tr><td>Cost of sales</td><td>42.69</td><td>40.86</td><td>41.23</td><td>41.20</td><td>40.41</td><td>41.08</td></tr>
+<tr><td>Gross profit</td><td>57.31</td><td>59.14</td><td>58.77</td><td>58.80</td><td>59.59</td><td>58.92</td></tr>
+<tr><td>SG&amp;A</td><td>34.41</td><td>34.79</td><td>34.46</td><td>34.84</td><td>35.70</td><td>35.21</td></tr>
+<tr><td>Operating profit</td><td>22.95</td><td>22.42</td><td>23.59</td><td>20.35</td><td>19.84</td><td>18.22</td></tr>
+<tr><td>Net income (Colgate)</td><td>14.53</td><td>14.15</td><td>14.95</td><td>12.77</td><td>12.60</td><td>11.06</td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555">Interpretasi: Gross profit margin menurun (58.92%→57.31%) karena tekanan biaya produksi. Namun net income margin meningkat signifikan (11.06%→14.53%) karena SG&amp;A turun sebagai % sales dan other expenses menurun — keberhasilan efisiensi biaya selama 2006–2011.</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 PT Telkom Indonesia (TLKM) — Analisis Komparatif Year-to-Year (2022→2023)</div>
+<table style="margin:6px 0"><thead><tr><th>Item</th><th>2023 (T)</th><th>2022 (T)</th><th>Change (T)</th><th>% Change</th></tr></thead>
+<tbody>
+<tr><td>Pendapatan</td><td>149,2</td><td>147,3</td><td>+1,9</td><td>+1,3%</td></tr>
+<tr><td>Beban usaha</td><td>104,3</td><td>107,7</td><td>−3,4</td><td>−3,2%</td></tr>
+<tr><td>Laba usaha</td><td>44,4</td><td>39,6</td><td>+4,8</td><td>+12,1%</td></tr>
+<tr><td>Laba bersih</td><td>24,6</td><td>20,8</td><td>+3,8</td><td>+18,3%</td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555"><em>Interpretasi:</em> Revenue tumbuh moderat (+1,3%), tapi efisiensi biaya menghasilkan pertumbuhan laba bersih +18,3% — mencerminkan keberhasilan program efisiensi, mirip Colgate yang mengkompensasi tekanan gross margin melalui penghematan SG&amp;A.</p>
+</div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 PT Telkom Indonesia (TLKM) — Common-Size Income Statement (2023)</div>
+<table style="margin:6px 0"><thead><tr><th>Item</th><th>2023 %</th></tr></thead>
+<tbody>
+<tr><td>Pendapatan</td><td>100,0%</td></tr>
+<tr><td>Beban usaha</td><td>69,9%</td></tr>
+<tr><td>Laba usaha</td><td>29,7%</td></tr>
+<tr><td>Laba bersih</td><td>16,5%</td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555">→ Operating margin TLKM (29,7%) lebih tinggi dari Colgate (22,95%) karena bisnis telekomunikasi memiliki operating leverage yang tinggi.</p>
+</div>
+
+</div>
+<div id="s4d" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4d. Key Ratio Reference / Referensi Rasio Keuangan Utama</h2>
+<p><span class="term">Ratio analysis</span> adalah alat analisis yang paling umum digunakan namun sering disalahpahami. Rasio hanya bermakna jika: (1) mencerminkan hubungan ekonomi yang penting, (2) diinterpretasikan dalam konteks historis, standar industri, dan rasio kompetitor, dan (3) disesuaikan dengan potensi distorsi akuntansi.</p>
+<div class="def nb"><div class="den">Three Areas of Ratio Application</div><div class="did">
+1. <strong>Credit (Risk) Analysis:</strong> (a) Liquidity — kemampuan memenuhi kewajiban jangka pendek; (b) Capital structure &amp; solvency — kemampuan memenuhi kewajiban jangka panjang.<br>
+2. <strong>Profitability Analysis:</strong> (a) Return on investment — imbal hasil bagi penyedia modal; (b) Operating performance — profit margins; (c) Asset utilization — efektivitas penggunaan aset.<br>
+3. <strong>Valuation:</strong> Estimasi nilai intrinsik saham.
+</div></div>
+
+<h3>A. Liquidity / Likuiditas</h3>
+<table class="nb"><thead><tr><th>Rasio</th><th>Formula</th><th>Colgate 2011</th><th>Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Current Ratio</strong></td><td>Current Assets / Current Liabilities</td><td>$4,402/$3,716 = <strong>1.18×</strong></td><td>118 sen aset lancar per $1 kewajiban lancar. Moderate.</td></tr>
+<tr><td><strong>Acid-Test (Quick) Ratio</strong></td><td>(Cash + Mktable Securities + AR) / CL</td><td>($878+$1,675)/$3,716 = <strong>0.69×</strong></td><td>69 sen aset paling likuid per $1 CL. Perlu perhatian, tapi cash flow operasi kuat.</td></tr>
+<tr><td><strong>Collection Period</strong></td><td>Avg AR / (Net Sales / 360)</td><td>($1,675+$1,610)/2 ÷ ($16,734/360) = <strong>35.3 days</strong></td><td>Colgate menagih piutang rata-rata dalam ~35 hari. Normal untuk consumer products.</td></tr>
+<tr><td><strong>Days to Sell Inventory</strong></td><td>Avg Inventory / (COGS / 360)</td><td>($1,327+$1,222)/2 ÷ ($7,144/360) = <strong>64.2 days</strong></td><td>Perputaran persediaan setiap ~64 hari. Tidak menunjukkan masalah likuiditas.</td></tr>
+</tbody></table>
+
+<h3>B. Capital Structure &amp; Solvency / Struktur Modal &amp; Solvabilitas</h3>
+<table class="nb"><thead><tr><th>Rasio</th><th>Formula</th><th>Colgate 2011</th><th>Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Total Debt to Equity</strong></td><td>Total Liabilities / Shareholders' Equity</td><td>$10,183/$2,541 = <strong>4.01×</strong></td><td>Setiap $1 ekuitas didukung $4.01 utang dari kreditor. Tinggi, tetapi wajar mengingat profitabilitas Colgate.</td></tr>
+<tr><td><strong>Long-term Debt to Equity</strong></td><td>Long-term Liabilities / Shareholders' Equity</td><td>$6,467/$2,541 = <strong>2.55×</strong></td><td>$2.55 utang jangka panjang per $1 ekuitas.</td></tr>
+<tr><td><strong>Times Interest Earned</strong></td><td>(Income before tax + Interest exp) / Interest exp</td><td>($3,789+$52)/$52 = <strong>73.87×</strong></td><td>Laba menutupi beban bunga 73.87× → risiko solvabilitas sangat rendah meski leverage tinggi.</td></tr>
+</tbody></table>
+
+<h3>C. Return on Investment / Imbal Hasil Investasi</h3>
+<table class="nb"><thead><tr><th>Rasio</th><th>Formula</th><th>Colgate 2011</th><th>Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Return on Assets (ROA)</strong></td><td>[Net Income + Interest×(1−tax rate)] / Avg Total Assets</td><td>[$2,431+$52×(1−0.326)] / [($12,724+$11,172)/2] = <strong>20.63%</strong></td><td>Setiap $1 investasi aset menghasilkan 20.63 sen laba. Jauh di atas rata-rata industri ~7%.</td></tr>
+<tr><td><strong>Return on Common Equity (ROE)</strong></td><td>Net Income / Avg Shareholders' Equity</td><td>$2,431 / [($2,541+$2,817)/2] = <strong>45.37%</strong></td><td>45.37 sen laba per $1 ekuitas. Salah satu ROE tertinggi di perusahaan publik AS.</td></tr>
+</tbody></table>
+
+<h3>D. Operating Performance / Kinerja Operasi</h3>
+<table class="nb"><thead><tr><th>Rasio</th><th>Formula</th><th>Colgate 2011</th></tr></thead>
+<tbody>
+<tr><td><strong>Gross Profit Margin</strong></td><td>(Net Sales − COGS) / Net Sales</td><td>$9,590/$16,734 = <strong>57.31%</strong></td></tr>
+<tr><td><strong>Operating Profit Margin (pretax)</strong></td><td>Income from Operations / Net Sales</td><td>$3,841/$16,734 = <strong>22.95%</strong></td></tr>
+<tr><td><strong>Net Profit Margin</strong></td><td>Net Income / Net Sales</td><td>$2,431/$16,734 = <strong>14.53%</strong></td></tr>
+</tbody></table>
+
+<h3>E. Asset Utilization / Utilisasi Aset</h3>
+<table class="nb"><thead><tr><th>Rasio</th><th>Formula</th><th>Colgate 2011</th></tr></thead>
+<tbody>
+<tr><td><strong>Total Asset Turnover</strong></td><td>Net Sales / Avg Total Assets</td><td>$16,734/[($12,724+$11,172)/2] = <strong>1.40×</strong></td></tr>
+<tr><td><strong>Inventory Turnover</strong></td><td>COGS / Avg Inventory</td><td>$7,144/[($1,327+$1,222)/2] = <strong>5.61×</strong></td></tr>
+<tr><td><strong>AR Turnover</strong></td><td>Net Sales / Avg AR</td><td>$16,734/[($1,675+$1,610)/2] = <strong>10.19×</strong></td></tr>
+<tr><td><strong>Working Capital Turnover</strong></td><td>Net Sales / Avg Working Capital</td><td><strong>48.65×</strong> (WC kecil → perputaran sangat tinggi)</td></tr>
+<tr><td><strong>PPE Turnover</strong></td><td>Net Sales / Avg PP&amp;E</td><td>$16,734/[($3,668+$3,693)/2] = <strong>4.55×</strong></td></tr>
+<tr><td><strong>Cash Turnover</strong></td><td>Net Sales / Avg Cash &amp; Equivalents</td><td>$16,734/[($878+$490)/2] = <strong>24.46×</strong></td></tr>
+</tbody></table>
+
+<h3>F. Market Measures / Ukuran Pasar</h3>
+<table class="nb"><thead><tr><th>Rasio</th><th>Formula</th><th>Colgate 2011</th><th>Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Price-to-Earnings (P/E)</strong></td><td>Market Price per Share / EPS</td><td>$92.39/$4.98 = <strong>18.55×</strong></td><td>Investor membayar 18.55× EPS — mencerminkan kepercayaan pasar pada stabilitas Colgate</td></tr>
+<tr><td><strong>Earnings Yield</strong></td><td>EPS / Market Price per Share</td><td>$4.98/$92.39 = <strong>5.39%</strong></td><td>Kebalikan dari P/E</td></tr>
+<tr><td><strong>Price-to-Book (P/B)</strong></td><td>Market Price per Share / Book Value per Share</td><td>$92.39/$5.42 = <strong>17.05×</strong></td><td>Pasar menilai Colgate 17× nilai bukunya — mencerminkan intangible value yang kuat</td></tr>
+<tr><td><strong>Dividend Yield</strong></td><td>Cash DPS / Market Price per Share</td><td>$2.31/$92.39 = <strong>2.51%</strong></td><td>Hasil dividen yang wajar untuk saham blue-chip</td></tr>
+<tr><td><strong>Dividend Payout Rate</strong></td><td>Cash DPS / EPS</td><td>$2.27/$4.98 = <strong>45.58%</strong></td><td>Colgate mendistribusikan ~46% laba sebagai dividen — kebijakan yang konsisten dan dermawan</td></tr>
+</tbody></table>
+
+<div class="cg nb"><div class="cgt">Colgate Ratio Analysis — Summary Interpretation</div>
+<p><strong>Liquidity:</strong> Current ratio 1.18× moderate, acid-test 0.69× rendah, TETAPI operating cash flow $2,896M sangat kuat — tidak ada risiko likuiditas nyata.</p>
+<p><strong>Solvency:</strong> Leverage tinggi (D/E=4.01) namun times interest earned 73.87× → risiko default sangat rendah.</p>
+<p><strong>Profitability:</strong> ROA 20.63% dan ROE 45.37% jauh di atas rata-rata — salah satu perusahaan consumer products paling profitable di dunia.</p>
+<p><strong>Market:</strong> P/E 18.55× dan P/B 17.05× mencerminkan premium yang diberikan pasar atas stabilitas, brand strength, dan track record Colgate.</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 PT Bank Central Asia (BBCA) — Perbandingan Rasio Keuangan (2023)</div>
+<p>Banking-specific ratios — berbeda dari perusahaan manufaktur:</p>
+<table style="margin:6px 0"><thead><tr><th>Rasio</th><th>Formula / Keterangan</th><th>BBCA 2023</th></tr></thead>
+<tbody>
+<tr><td><strong>NIM</strong> (Net Interest Margin)</td><td>Net Interest Income / Avg Earning Assets</td><td><strong>5,5%</strong></td></tr>
+<tr><td><strong>LDR</strong> (Loan to Deposit Ratio)</td><td>Total Kredit / DPK</td><td><strong>70%</strong></td></tr>
+<tr><td><strong>NPL</strong> (Non-Performing Loan)</td><td>Kredit Bermasalah / Total Kredit</td><td><strong>1,9%</strong></td></tr>
+<tr><td><strong>ROA</strong></td><td>Laba Bersih / Rata-rata Total Aset</td><td><strong>3,6%</strong></td></tr>
+<tr><td><strong>ROE</strong></td><td>Laba Bersih / Rata-rata Total Ekuitas</td><td><strong>21,5%</strong></td></tr>
+<tr><td><strong>D/E ratio</strong></td><td>Total Liabilitas / Total Ekuitas</td><td>Rp1.166T / Rp242T = <strong>4,82×</strong></td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555"><strong>Key insight:</strong> D/E ratio BBCA (4,82×) lebih tinggi dari Colgate (4,01×), tetapi ini <em>normal</em> untuk bank. Bisnis perbankan adalah intermediasi: menghimpun dana masyarakat (DPK = Rp1.102 triliun) dan menyalurkannya sebagai kredit (Rp810 triliun). Leverage tinggi bukan tanda risiko jika NPL rendah dan CAR memadai.</p>
+</div>
+
+</div>
+<div id="s4e" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4e. Valuation Models / Model Valuasi</h2>
+<p><span class="term">Valuation</span> adalah proses mengkonversi perkiraan payoffs masa depan menjadi estimasi nilai perusahaan atau sahamnya. Dasar teoritis: <strong>present value theory</strong> — nilai suatu aset = PV dari semua expected future payoffs yang didiskontokan pada tingkat diskonto yang tepat.</p>
+
+<h3>Debt Valuation / Valuasi Obligasi</h3>
+<div class="fbox nb"><div class="ftitle">Bond Valuation Formula</div>
+<div class="ff">B_t = I_(t+1)/(1+r)¹ + I_(t+2)/(1+r)² + ... + I_(t+n)/(1+r)ⁿ + F/(1+r)ⁿ</div>
+<div class="fw">I_(t+n) = pembayaran bunga (coupon) pada periode t+n | F = nilai pokok (face value) | r = yield to maturity (required rate of return)</div>
+<div class="fw">Contoh (Illustration 1.5): 8-year bond, coupon 8%, face value $100. Pada Year 6 (3 tahun tersisa), yield = 6%.<br>
+B = $8/(1.06)¹ + $8/(1.06)² + $8/(1.06)³ + $100/(1.06)³ = $7.55 + $7.12 + $6.72 + $83.96 = <strong>$105.35</strong><br>
+→ Bond premium karena coupon rate (8%) > yield (6%).</div></div>
+
+<h3>Equity Valuation / Valuasi Ekuitas</h3>
+<p>Valuasi ekuitas lebih kompleks dari obligasi karena payoffs (dividends + capital appreciation) tidak pasti dan tidak terbatas. Tiga model utama yang secara teoritis ekuivalen:</p>
+
+<div class="fbox nb"><div class="ftitle">1. Dividend Discount Model (DDM)</div>
+<div class="ff">V_t = E(D_(t+1))/(1+k)¹ + E(D_(t+2))/(1+k)² + E(D_(t+3))/(1+k)³ + ...</div>
+<div class="fw">D_(t+n) = dividen yang diharapkan pada periode t+n | k = cost of capital (risk-adjusted required rate of return)<br>
+Kelemahan: dividen bersifat diskresioner dan tidak mencerminkan semua payoffs perusahaan. Sulit diterapkan untuk perusahaan yang tidak membayar atau membayar dividen rendah.</div></div>
+
+<div class="fbox nb"><div class="ftitle">2. Free Cash Flow to Equity Model (FCFE)</div>
+<div class="ff">V_t = E(FCFE_(t+1))/(1+k)¹ + E(FCFE_(t+2))/(1+k)² + E(FCFE_(t+3))/(1+k)³ + ...</div>
+<div class="ff">FCFE = Operating Cash Flow − Capital Expenditures + Net Increases in Debt</div>
+<div class="fw">FCFE = arus kas yang tersedia untuk dibayarkan kepada pemegang ekuitas. Mengatasi masalah dividen diskresioner, tetapi masih bergantung pada definisi "free cash flows" yang vague.</div></div>
+
+<div class="fbox nb"><div class="ftitle">3. Residual Income Model (RI)</div>
+<div class="ff">V_t = BV_t + E(RI_(t+1))/(1+k)¹ + E(RI_(t+2))/(1+k)² + E(RI_(t+3))/(1+k)³ + ...</div>
+<div class="ff">RI_t = NI_t − (k × BV_(t-1))</div>
+<div class="fw">BV_t = book value (nilai buku) ekuitas pada akhir periode t | RI = residual income = laba bersih dikurangi biaya modal atas book value awal<br>
+Keunggulan: menggunakan variabel akuntansi (bukan cash flows) → lebih langsung terhubung dengan FSA. Sering menghasilkan continuing value yang lebih kecil dibanding DDM/FCFE.</div></div>
+
+<div class="def nb"><div class="den">Continuing Value / Terminal Value</div><div class="did">Karena ketiga model di atas memiliki horizon tak terbatas (infinite), dalam praktik kita memotong horizon pada titik tertentu (5 atau 10 tahun) dan mengestimasi <strong>continuing value</strong> — nilai semua payoffs di luar horizon tersebut. Estimasi continuing value adalah sumber kesalahan terbesar dalam valuasi ekuitas.</div></div>
+
+<h3>Worked Example — Illustration 1.6 (Labrador/Pitbull)</h3>
+<div class="cg nb"><div class="cgt">Semua Tiga Model Menghasilkan Nilai Intrinsik yang Sama = $19.31</div>
+<p><strong>Situasi:</strong> Pitbull Co. memiliki 51% saham Labrador (perusahaan all-equity). Pitbull setuju membeli sisa 49% pada akhir 2015 seharga $25/saham. Labrador mempertahankan dividen $1/saham hingga 2015. Cost of capital = 10%. Nilai intrinsik 49% saham Labrador pada akhir 2010:</p>
+<table style="margin:6px 0;font-size:9.5pt"><thead><tr><th>Tahun</th><th>Dividends</th><th>FCFE</th><th>Net Income</th><th>Beg. BV</th><th>Capital Charge (10%)</th><th>RI</th></tr></thead>
+<tbody>
+<tr><td>2011</td><td>$1.00</td><td>$1.00</td><td>$1.20</td><td>$5.00</td><td>$0.50</td><td>$0.70</td></tr>
+<tr><td>2012</td><td>$1.00</td><td>$1.00</td><td>$1.30</td><td>$5.20</td><td>$0.52</td><td>$0.78</td></tr>
+<tr><td>2013</td><td>$1.00</td><td>$1.00</td><td>$1.40</td><td>$5.50</td><td>$0.55</td><td>$0.85</td></tr>
+<tr><td>2014</td><td>$1.00</td><td>$1.00</td><td>$1.50</td><td>$5.90</td><td>$0.59</td><td>$0.91</td></tr>
+<tr><td>2015</td><td>$1.00+$25 terminal</td><td>$1.00+$25 terminal</td><td>$1.65</td><td>$6.40</td><td>$0.64</td><td>$1.01+$17.95*</td></tr>
+</tbody></table>
+<p style="font-size:9pt;color:#666">*$17.95 = gain on sale to Pitbull: $25 − $7.05 (BV at end of 2015)</p>
+<p style="margin-top:6px"><strong>DDM:</strong> V = $1/(1.1)¹ + $1/(1.1)² + $1/(1.1)³ + $1/(1.1)⁴ + ($1+$25)/(1.1)⁵ = <strong>$19.31</strong></p>
+<p><strong>FCFE:</strong> V = $1/(1.1)¹ + $1/(1.1)² + $1/(1.1)³ + $1/(1.1)⁴ + ($1+$25)/(1.1)⁵ = <strong>$19.31</strong></p>
+<p><strong>RI:</strong> V = $5.00 + $0.70/(1.1)¹ + $0.78/(1.1)² + $0.85/(1.1)³ + $0.91/(1.1)⁴ + ($1.01+$17.95)/(1.1)⁵ = <strong>$19.31</strong></p>
+<p style="margin-top:6px;font-style:italic;color:#8B6914">→ Ketiga model menghasilkan nilai yang sama karena secara matematis ekuivalen. Perbedaannya hanya pada cara mendekati "continuing value" dalam praktik dengan horizon terbatas.</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 Konteks Valuasi di Bursa Efek Indonesia (IDX)</div>
+<p><strong>BBCA market measures (2023):</strong> P/E ~14×, P/B ~3×, EPS Rp467, DPS Rp336, Dividend yield ~4,5%</p>
+<p><strong>Perbandingan:</strong> Colgate P/E 18,55× vs BBCA ~14×; Colgate P/B 17,05× vs BBCA ~3×</p>
+<p>Perbedaan P/B dijelaskan oleh: (1) book value bank lebih dekat ke economic value karena aset kebanyakan finansial, (2) UNVR/Colgate memiliki intangible value (brand) yang jauh melampaui book value.</p>
+<p><strong>IHSG</strong> (Jakarta Composite Index) average P/E: ~12–15×, lebih rendah dari S&amp;P 500 (~20–25×) karena <em>emerging market risk premium</em>.</p>
+</div>
+
+</div>
+<div id="s5" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Analysis in an Efficient Market / Analisis dalam Pasar yang Efisien</h2>
+<div class="def"><div class="den">Efficient Market Hypothesis (EMH)</div><div class="did">Hipotesis pasar efisien menyatakan bahwa harga pasar bereaksi terhadap informasi keuangan dan informasi lainnya. Pasar efisien berarti harga sekuritas mencerminkan semua informasi yang tersedia secara akurat dan cepat.</div></div>
+
+<h3>5.1 Three Forms of EMH / Tiga Bentuk EMH</h3>
+<table class="nb">
+<thead><tr><th style="width:18%">Bentuk</th><th style="width:36%">Definisi (EN)</th><th style="width:28%">Implikasi untuk Analisis</th><th style="width:18%">Bukti Empiris</th></tr></thead>
+<tbody>
+<tr style="background:#EEF4FF">
+  <td><strong>Weak Form</strong><br><em>Bentuk Lemah</em></td>
+  <td>Harga saham sepenuhnya mencerminkan informasi yang terkandung dalam pergerakan harga historis.</td>
+  <td>Technical analysis (charting) tidak berguna untuk mendapatkan excess returns secara konsisten.</td>
+  <td>Didukung kuat. Harga saham bersifat random walk — tidak ada pola prediktabel dalam harga historis.</td>
+</tr>
+<tr style="background:#FFF3E0">
+  <td><strong>Semistrong Form</strong><br><em>Bentuk Semikuat</em></td>
+  <td>Harga saham sepenuhnya mencerminkan semua informasi yang tersedia untuk publik (termasuk laporan keuangan).</td>
+  <td>Fundamental analysis tidak dapat menghasilkan excess returns secara konsisten jika semua informasi sudah tercermin dalam harga.</td>
+  <td>Didukung secara umum, tetapi ada anomali: P/E effect, P/B effect, post-earnings announcement drift.</td>
+</tr>
+<tr style="background:#FCE8E8">
+  <td><strong>Strong Form</strong><br><em>Bentuk Kuat</em></td>
+  <td>Harga saham mencerminkan SEMUA informasi — termasuk informasi dalam (insider information).</td>
+  <td>Tidak ada seorang pun, termasuk insider, yang dapat secara konsisten menghasilkan excess returns.</td>
+  <td>Tidak didukung. Insider trading menghasilkan excess returns yang konsisten (karenanya dilarang).</td>
+</tr>
+</tbody></table>
+
+<div class="nb">
+<h3>5.2 The EMH Paradox / Paradoks EMH</h3>
+<div class="ibox nb"><div class="ibt">Paradoks: Analis membuat pasar efisien, tetapi EMH mengatakan upaya mereka sia-sia?</div>
+<p>EMH mengasumsikan keberadaan analis kompeten yang terus-menerus mengevaluasi dan bertindak atas informasi yang memasuki pasar. Namun di sisi lain, EMH menyiratkan bahwa analis tidak dapat memperoleh excess returns dari upaya mereka.</p>
+<p>Resolusi: EMH dibangun di atas perilaku investor secara <em>agregat</em>, bukan individual. EMH tidak menyangkal bahwa analis tertentu dengan kemampuan, ketekunan, dan timing superior dapat menghasilkan excess returns. Pasar untuk perusahaan besar lebih efisien karena lebih banyak analis yang mengikutinya.</p></div>
+</div>
+
+<div class="nb">
+<h3>5.3 Market Anomalies &amp; Behavioral Finance / Anomali Pasar</h3>
+<table class="nb"><thead><tr><th>Anomali</th><th>Deskripsi</th><th>Implikasi</th></tr></thead>
+<tbody>
+<tr><td><strong>January Effect</strong></td><td>Harga saham (terutama perusahaan kecil) naik abnormal di bulan Januari</td><td>Bukti weak form inefficiency — ada pola kalender yang dapat diprediksi</td></tr>
+<tr><td><strong>P/E &amp; P/B Anomaly</strong></td><td>Saham dengan P/E atau P/B rendah secara historis menghasilkan return lebih tinggi</td><td>Bukti semistrong inefficiency — strategi value investing dapat mengalahkan pasar</td></tr>
+<tr><td><strong>Post-Earnings Announcement Drift</strong></td><td>Harga saham terus bergerak ke arah earnings surprise selama beberapa bulan setelah pengumuman</td><td>Pasar tidak langsung memproses informasi earnings secara penuh</td></tr>
+<tr><td><strong>Residual Income Anomaly</strong></td><td>Residual income valuation model dapat mengidentifikasi saham yang over/undervalued</td><td>FSA berbasis akuntansi memiliki nilai prediktif terhadap return saham</td></tr>
+<tr><td><strong>Behavioral Finance</strong></td><td>Pasar menunjukkan irasionalitas dan emosi — paradigma alternatif untuk menjelaskan anomali</td><td>Menjelaskan mengapa proliferasi bukti inefisiensi tidak berarti pasar kacau atau sepenuhnya irasional</td></tr>
+</tbody></table>
+</div>
+
+<h3>5.4 Implications for FSA / Implikasi untuk FSA</h3>
+<div class="cg nb"><div class="cgt">Warren Buffett (Berkshire Hathaway Annual Report)</div>
+<p><em>"The difference between frequently efficient and always efficient is night and day."</em></p>
+<p style="margin-top:6px">Pasar sering efisien, tidak selalu efisien. Bahkan jika semua informasi tersedia, harga tidak selalu mencerminkan <strong>interpretasi yang benar</strong> atas informasi tersebut.</p>
+<p>FSA menambah nilai melalui <strong>interpretasi yang benar</strong>, bukan hanya akses informasi. Efisiensi pasar bergantung tidak hanya pada ketersediaan informasi tetapi juga pada kemampuan individu untuk memproses dan menginterpretasikannya secara tepat. Analis yang kompeten dengan mosaic informasi yang kuat dan kemampuan interpretasi superior dapat memperoleh keuntungan kompetitif.</p></div>
+
+<div class="id-box nb"><div class="idt">🇮🇩 Efisiensi Pasar Indonesia (IDX/BEI)</div>
+<p>BEI umumnya dianggap <strong>semistrong efficient</strong> untuk saham LQ45 (likuid), tetapi <em>less efficient</em> untuk saham small-cap.</p>
+<p><strong>OJK</strong> berperan setara SEC: menegakkan keterbukaan informasi (full disclosure).</p>
+<p><strong>Anomali spesifik di IDX:</strong></p>
+<ul>
+<li><strong>Ramadan effect:</strong> beberapa studi menunjukkan return positif abnormal selama bulan Ramadan (unik untuk pasar Muslim-majority)</li>
+<li><strong>January effect:</strong> ditemukan di IDX meski magnitude-nya lebih kecil dari pasar AS</li>
+<li><strong>Post-earnings drift:</strong> juga ditemukan di IDX, menunjukkan pasar tidak langsung fully efficient</li>
+</ul>
+<p>Regulasi insider trading: UU Pasar Modal No. 8/1995, diperkuat oleh UU OJK No. 21/2011.</p>
+<p style="font-size:9.5pt;color:#555"><em>Implikasi:</em> FSA tetap sangat berguna di pasar Indonesia karena banyak perusahaan IDX yang kurang diikuti analis (under-covered) dibandingkan NYSE.</p>
+</div>
+
+</div>
+<div id="s6" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Practice Questions &amp; Exercises / Soal Latihan</h2>
+
+<div class="nb">
+<h3>6.1 Discussion Questions / Pertanyaan Diskusi</h3>
+<div class="qb"><span class="qn">Q1-1.</span> Describe business analysis and identify its objectives.<br><span class="qid">Deskripsikan analisis bisnis dan identifikasi tujuan-tujuannya. Apa perbedaan antara business analysis dan financial statement analysis?</span></div>
+</div>
+<div class="qb"><span class="qn">Q1-2.</span> Explain the claim: "Financial statement analysis is an integral part of business analysis."<br><span class="qid">Jelaskan klaim: "Analisis laporan keuangan adalah bagian integral dari analisis bisnis." Apa yang dimaksud, dan mengapa demikian?</span></div>
+<div class="qb"><span class="qn">Q1-3.</span> Describe the different types of business analysis. Identify the category of users of financial statements that applies to each type.<br><span class="qid">Deskripsikan jenis-jenis analisis bisnis. Identifikasi kategori pengguna laporan keuangan yang sesuai dengan setiap jenis analisis. Apa perbedaan utama antara credit analysis dan equity analysis?</span></div>
+<div class="qb"><span class="qn">Q1-5.</span> What is fundamental analysis? What is its main objective?<br><span class="qid">Apa itu fundamental analysis? Apa tujuan utamanya? Bagaimana seorang investor menggunakan intrinsic value dalam membuat keputusan investasi?</span></div>
+<div class="qb"><span class="qn">Q1-6.</span> Explain the various component processes in business analysis with reference to equity analysis.<br><span class="qid">Jelaskan proses-proses komponen dalam analisis bisnis dengan referensi pada equity analysis. Gambarkan bagaimana keempat komponen saling terkait menuju estimasi nilai intrinsik.</span></div>
+<div class="qb"><span class="qn">Q1-10.</span> Identify and discuss the four major activities of a business enterprise.<br><span class="qid">Identifikasi dan diskusikan empat aktivitas bisnis utama suatu perusahaan. Berikan contoh untuk setiap aktivitas menggunakan perusahaan yang Anda kenal.</span></div>
+<div class="qb"><span class="qn">Q1-12.</span> Identify and discuss the four primary financial statements of a business.<br><span class="qid">Identifikasi dan diskusikan empat laporan keuangan utama. Untuk setiap laporan, jelaskan: (a) tujuan, (b) period of time vs point in time, (c) keterkaitan dengan laporan lainnya.</span></div>
+<div class="qb"><span class="qn">Q1-24.</span> What is a necessary condition for usefulness of a ratio of financial numbers? Explain.<br><span class="qid">Apa syarat yang diperlukan agar suatu rasio keuangan berguna? Jelaskan mengapa tidak semua kombinasi angka keuangan menghasilkan rasio yang bermakna. Berikan contoh rasio yang berguna dan tidak berguna.</span></div>
+<div class="qb"><span class="qn">Q1-28.</span> What is meant by "time value of money"? Explain the role of this concept in valuation.<br><span class="qid">Apa yang dimaksud dengan "time value of money"? Jelaskan perannya dalam valuasi sekuritas. Mengapa investor lebih memilih $1 hari ini daripada $1 di masa depan?</span></div>
+<div class="qb"><span class="qn">Q1-32.</span> Explain how the efficient market hypothesis (EMH) depicts the reaction of market prices to financial and other data.<br><span class="qid">Jelaskan bagaimana EMH menggambarkan reaksi harga pasar terhadap informasi keuangan. Diskusikan tiga bentuk EMH dan implikasinya terhadap kegunaan analisis laporan keuangan.</span></div>
+
+<h3>6.2 Worked Exercises / Latihan dengan Solusi</h3>
+
+<div class="exb nb">
+<div class="ext">Exercise 1-2: Computing Common-Size Percents (Harbison Corporation)</div>
+<p>Express the following income statement data in common-size percents and assess whether the situation is favorable or unfavorable:</p>
+<table style="margin:6px 0"><thead><tr><th>Item</th><th>2006</th><th>2005</th></tr></thead>
+<tbody>
+<tr><td>Sales</td><td>$720,000</td><td>$535,000</td></tr>
+<tr><td>Cost of goods sold</td><td>475,200</td><td>280,340</td></tr>
+<tr><td>Gross profit</td><td>244,800</td><td>254,660</td></tr>
+<tr><td>Operating expenses</td><td>151,200</td><td>103,790</td></tr>
+<tr><td>Net income</td><td>$93,600</td><td>$150,870</td></tr>
+</tbody></table>
+<div class="sol"><div class="solt">Solution / Solusi</div>
+<table style="margin:4px 0"><thead><tr><th>Item</th><th>2006 %</th><th>2005 %</th><th>Assessment</th></tr></thead>
+<tbody>
+<tr><td>Sales</td><td>100.0%</td><td>100.0%</td><td>—</td></tr>
+<tr><td>Cost of goods sold</td><td>66.0%</td><td>52.4%</td><td>Unfavorable — COGS naik drastis sebagai % sales</td></tr>
+<tr><td>Gross profit</td><td>34.0%</td><td>47.6%</td><td>Unfavorable — gross margin turun 13.6 poin</td></tr>
+<tr><td>Operating expenses</td><td>21.0%</td><td>19.4%</td><td>Unfavorable — opex juga naik</td></tr>
+<tr><td>Net income</td><td>13.0%</td><td>28.2%</td><td>Sangat Unfavorable — net margin turun dari 28.2% ke 13.0%</td></tr>
+</tbody></table>
+<p>Meski sales meningkat $185,000 (+34.6%), kinerja secara keseluruhan <strong>sangat tidak menguntungkan</strong>. COGS naik jauh lebih cepat (+69.5%) dari sales (+34.6%), mengikis gross profit margin secara dramatis. Net income turun $57,270 meski sales naik — ini indikasi serius masalah manajemen biaya.</p></div>
+</div>
+
+<div class="exb nb">
+<div class="ext">Exercise 1-3 &amp; 1-5: Short-Term Liquidity Analysis (Mixon Company)</div>
+<p>Year-end balance sheets (selected) and income statement data:</p>
+<table style="margin:6px 0;font-size:9.5pt"><thead><tr><th>Item</th><th>2006</th><th>2005</th><th>2004</th></tr></thead>
+<tbody>
+<tr><td>Cash</td><td>$30,800</td><td>$35,625</td><td>$36,800</td></tr>
+<tr><td>Accounts receivable, net</td><td>88,500</td><td>62,500</td><td>49,200</td></tr>
+<tr><td>Merchandise inventory</td><td>111,500</td><td>82,500</td><td>53,000</td></tr>
+<tr><td>Current liabilities</td><td>128,900</td><td>75,250</td><td>49,250</td></tr>
+<tr><td>Net sales (2006: $672,500; 2005: $530,000 — all credit)</td><td colspan="3"></td></tr>
+<tr><td>COGS (2006: $410,225; 2005: $344,500)</td><td colspan="3"></td></tr>
+</tbody></table>
+<div class="sol"><div class="solt">Solution / Solusi</div>
+<p><strong>Current Ratio:</strong> 2006: ($30,800+$88,500+$111,500+$9,700)/$128,900 = $240,500/$128,900 = <strong>1.87×</strong> | 2005: $190,000/$75,250 = <strong>2.53×</strong> | 2004: $143,000/$49,250 = <strong>2.90×</strong></p>
+<p><strong>Acid-Test Ratio:</strong> 2006: ($30,800+$88,500)/$128,900 = $119,300/$128,900 = <strong>0.93×</strong> | 2005: $98,125/$75,250 = <strong>1.30×</strong> | 2004: $86,000/$49,250 = <strong>1.75×</strong></p>
+<p><strong>Collection Period (2006):</strong> Avg AR = ($88,500+$62,500)/2 = $75,500; $75,500/($672,500/360) = <strong>40.4 days</strong></p>
+<p><strong>AR Turnover (2006):</strong> $672,500/$75,500 = <strong>8.9×</strong></p>
+<p><strong>Inventory Turnover (2006):</strong> $410,225/[($111,500+$82,500)/2] = $410,225/$97,000 = <strong>4.23×</strong></p>
+<p style="margin-top:6px"><strong>Interpretasi:</strong> Tren likuiditas Mixon <em>sangat mengkhawatirkan</em>. Current ratio menurun dari 2.90× (2004) ke 1.87× (2006); acid-test turun dari 1.75× ke 0.93× (di bawah 1.0). Current liabilities naik 162% dalam 2 tahun sementara kas justru turun. Collection period 40.4 hari dan inventory turnover 4.23× menunjukkan perputaran aset yang lambat. Perusahaan perlu mengevaluasi kebijakan kredit dan manajemen persediaan.</p></div>
+</div>
+
+<div class="exb nb">
+<div class="ext">Exercise 1-13: Debt Valuation — Bond Pricing / Valuasi Obligasi (Parts a &amp; b)</div>
+
+<p><strong>Part a:</strong> 10-year bond, face value $100, coupon 10% per annum (year-end). Priced at end of Year 5 (5 years remaining). Required yield = 14% per annum.</p>
+<p><strong>Part b:</strong> 14-year bond, face value $1,000, coupon 8% per annum (year-end). Priced at beginning of Year 10 (5 years remaining). Required yield = 6% per annum.</p>
+
+<div class="sol"><div class="solt">Solution / Solusi</div>
+
+<div class="fbox" style="margin:4px 0"><div class="ftitle">Bond Valuation Formula</div>
+<div class="ff">B = Σ [Coupon / (1+r)ⁿ] + Face Value / (1+r)ᴺ</div>
+<div class="fw">C = annual coupon payment | F = face value | r = yield to maturity | N = remaining periods</div></div>
+
+<p style="margin-top:8px"><strong>Part a: Bond Discount</strong></p>
+<p>Annual coupon = $100 × 10% = $10. Remaining periods = 5. Required yield r = 14%.</p>
+<p>B = $10/(1.14)¹ + $10/(1.14)² + $10/(1.14)³ + $10/(1.14)⁴ + $10/(1.14)⁵ + $100/(1.14)⁵</p>
+<p>= $8.77 + $7.70 + $6.75 + $5.92 + $5.19 + $51.94 = <strong>$86.27</strong></p>
+<p style="font-size:9.5pt;color:#555">→ Bond dijual pada <em>discount</em> karena coupon rate (10%) &lt; required yield (14%). Investor hanya mau membayar di bawah par karena coupon yang diterima lebih rendah dari return yang diinginkan.</p>
+
+<p style="margin-top:8px"><strong>Part b: Bond Premium</strong></p>
+<p>Annual coupon = $1,000 × 8% = $80. Remaining periods = 5. Required yield r = 6%.</p>
+<p>B = $80/(1.06)¹ + $80/(1.06)² + $80/(1.06)³ + $80/(1.06)⁴ + $80/(1.06)⁵ + $1,000/(1.06)⁵</p>
+<p>= $75.47 + $71.20 + $67.17 + $63.37 + $59.78 + $747.26 = <strong>$1,084.25</strong></p>
+<p style="font-size:9.5pt;color:#555">→ Bond dijual pada <em>premium</em> karena coupon rate (8%) &gt; required yield (6%). Investor bersedia membayar di atas par.</p>
+
+<p style="margin-top:8px"><strong>Perbandingan &amp; Prinsip Umum:</strong></p>
+<table style="margin:4px 0"><thead><tr><th>Situasi</th><th>Coupon vs Yield</th><th>Harga vs Face Value</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td>Part a</td><td>Coupon (10%) &lt; Yield (14%)</td><td>$86.27 &lt; $100</td><td><strong>Discount</strong></td></tr>
+<tr><td>Part b</td><td>Coupon (8%) &gt; Yield (6%)</td><td>$1,084.25 &gt; $1,000</td><td><strong>Premium</strong></td></tr>
+<tr><td>Umum</td><td>Coupon = Yield</td><td>Harga = Face Value</td><td><strong>Par</strong></td></tr>
+</tbody></table>
+<p style="font-size:9.5pt;color:#555">Prinsip: Harga obligasi berbanding terbalik dengan yield to maturity. Semakin tinggi yield yang disyaratkan, semakin rendah harga yang bersedia dibayar investor.</p>
+</div>
+</div>
+
+<h3>6.3 Case Problem (Self-Study) / Soal Kasus</h3>
+
+<div class="exb nb">
+<div class="ext">Case 1-3: Credit &amp; Equity Analysis — Datatech vs. Sigma Company</div>
+<p>Dua perusahaan dalam industri yang sama dievaluasi oleh bank yang hanya dapat memberikan pinjaman kepada satu perusahaan. Data kunci (tahun berjalan):</p>
+
+<table style="margin:6px 0;font-size:9.5pt"><thead><tr><th>Item</th><th>Datatech</th><th>Sigma</th></tr></thead>
+<tbody>
+<tr><td>Total assets</td><td>$434,440</td><td>$536,450</td></tr>
+<tr><td>Cash</td><td>$18,500</td><td>$33,000</td></tr>
+<tr><td>Accounts receivable, net</td><td>36,400</td><td>56,400</td></tr>
+<tr><td>Inventory</td><td>83,440</td><td>131,500</td></tr>
+<tr><td>Sales (revenue)</td><td>$660,000</td><td>$780,200</td></tr>
+<tr><td>Cost of goods sold</td><td>485,100</td><td>532,500</td></tr>
+<tr><td>Net income</td><td>67,770</td><td>105,000</td></tr>
+<tr><td>Interest expense</td><td>6,900</td><td>11,000</td></tr>
+<tr><td>Income tax expense</td><td>12,800</td><td>19,300</td></tr>
+</tbody></table>
+
+<div class="ibox" style="margin-top:8px"><div class="ibt">Panduan Analisis / Student Guidance</div>
+<p><strong>Step 1: Common-Size Analysis</strong> — Hitung common-size income statement (% of sales) untuk kedua perusahaan. Bandingkan gross margin dan net margin.</p>
+<p><strong>Step 2: Credit Analysis</strong> — Hitung dan bandingkan: current ratio dan acid-test ratio (asumsikan current liabilities = 25% dari total aset). Hitung times interest earned. Perusahaan mana yang lebih layak mendapat kredit?</p>
+<p><strong>Step 3: Equity Analysis</strong> — Hitung dan bandingkan: gross profit margin, net profit margin, ROA (gunakan aset akhir untuk simplifikasi). Perusahaan mana yang lebih menarik bagi investor ekuitas?</p>
+<p><strong>Step 4: Rekomendasi</strong> — Berikan rekomendasi terpisah: (a) dari perspektif bank (pinjaman), (b) dari perspektif investor ekuitas. Ingat bahwa bank dan investor memiliki perspektif risiko yang berbeda.</p>
+<p style="margin-top:6px;font-style:italic;color:#555">Petunjuk: Perhatikan bahwa Sigma memiliki net income lebih tinggi ($105K vs $67.7K), tetapi apakah itu berarti Sigma lebih layak mendapat pinjaman? Credit analysis berfokus pada kemampuan membayar kembali, bukan hanya profitabilitas.</p></div>
+</div>
+
+<h3>6.4 Indonesian Company Exercises / Latihan Perusahaan Indonesia</h3>
+
+<div class="exb nb">
+<div class="ext">🇮🇩 Exercise: Analisis Rasio — PT Telkom Indonesia (TLKM) 2023</div>
+<p>Given data (simplified from actual 2023 annual report):</p>
+<table style="margin:6px 0"><thead><tr><th>Item</th><th>2023 (Rp miliar)</th></tr></thead>
+<tbody>
+<tr><td>Total aset</td><td>287.042</td></tr>
+<tr><td>Total liabilitas</td><td>130.480</td></tr>
+<tr><td>Total ekuitas</td><td>156.562</td></tr>
+<tr><td>Aset lancar</td><td>55.613</td></tr>
+<tr><td>Liabilitas lancar</td><td>71.568</td></tr>
+<tr><td>Pendapatan</td><td>149.216</td></tr>
+<tr><td>Beban usaha</td><td>104.300</td></tr>
+<tr><td>Laba usaha</td><td>44.384</td></tr>
+<tr><td>Laba bersih</td><td>24.560</td></tr>
+</tbody></table>
+<p><strong>Required:</strong></p>
+<ol type="a">
+<li>Current ratio</li>
+<li>Debt-to-equity ratio</li>
+<li>Operating profit margin (gunakan laba usaha / pendapatan)</li>
+<li>Net profit margin</li>
+<li>ROA dan ROE (gunakan ending balances)</li>
+<li>Interpretasi: apakah TLKM lebih sehat dari Colgate (2011)? Bandingkan minimal 3 rasio.</li>
+</ol>
+<div class="sol"><div class="solt">Solution / Solusi</div>
+<p><strong>a. Current ratio:</strong> 55.613 / 71.568 = <strong>0,78×</strong> (di bawah 1,0 → working capital negatif)</p>
+<p><strong>b. D/E ratio:</strong> 130.480 / 156.562 = <strong>0,83×</strong> (lebih rendah dari Colgate 4,01× → leverage jauh lebih konservatif)</p>
+<p><strong>c. Operating margin:</strong> 44.384 / 149.216 = <strong>29,7%</strong> (lebih tinggi dari Colgate 22,95%)</p>
+<p><strong>d. Net margin:</strong> 24.560 / 149.216 = <strong>16,5%</strong> (lebih tinggi dari Colgate 14,53%)</p>
+<p><strong>e. ROA:</strong> 24.560 / 287.042 = <strong>8,6%</strong> | <strong>ROE:</strong> 24.560 / 156.562 = <strong>15,7%</strong></p>
+<p><strong>f. Interpretasi:</strong> TLKM memiliki operating margin dan net margin lebih tinggi dari Colgate, tetapi ROE jauh lebih rendah (15,7% vs 45,37%) karena leverage Colgate yang sangat tinggi memperbesar return on equity. Current ratio TLKM (0,78×) lebih rendah dari Colgate (1,18×), tetapi arus kas operasi yang kuat memitigasi risiko likuiditas.</p>
+</div>
+</div>
+
+<div class="exb nb">
+<div class="ext">🇮🇩 Case Problem: Perbandingan Dua Emiten IDX — UNVR vs TLKM (Self-Study)</div>
+<p>Data berikut disederhanakan dari laporan keuangan tahunan 2023:</p>
+<table style="margin:6px 0"><thead><tr><th>Item</th><th>UNVR (Rp miliar)</th><th>TLKM (Rp miliar)</th></tr></thead>
+<tbody>
+<tr><td>Total aset</td><td>16.664</td><td>287.042</td></tr>
+<tr><td>Total liabilitas</td><td>13.283</td><td>130.480</td></tr>
+<tr><td>Ekuitas</td><td>3.381</td><td>156.562</td></tr>
+<tr><td>Aset lancar</td><td>6.192</td><td>55.613</td></tr>
+<tr><td>Liabilitas lancar</td><td>11.224</td><td>71.568</td></tr>
+<tr><td>Pendapatan</td><td>38.611</td><td>149.216</td></tr>
+<tr><td>Laba bersih</td><td>4.801</td><td>24.560</td></tr>
+</tbody></table>
+<div class="ibox" style="margin-top:8px"><div class="ibt">Panduan Analisis / Student Guidance</div>
+<p><strong>a.</strong> Hitung current ratio, D/E, ROA, ROE, net margin untuk kedua perusahaan.</p>
+<p><strong>b.</strong> Dari perspektif credit analysis: perusahaan mana yang lebih layak mendapat pinjaman bank?</p>
+<p><strong>c.</strong> Dari perspektif equity analysis: perusahaan mana yang lebih menarik bagi investor?</p>
+<p><strong>d.</strong> Jelaskan mengapa jawaban (b) dan (c) mungkin berbeda.</p>
+<p style="margin-top:6px;font-style:italic;color:#555">Petunjuk: UNVR memiliki laba bersih lebih kecil, tetapi periksa ROA dan ROE-nya — apakah ukuran perusahaan selalu menentukan kualitas investasi?</p></div>
+</div>
+
+</div>
+
+<!-- SECTION 7: QUICK REFERENCE CHEAT SHEET -->
+<div id="s7" class="section pb">
+<div class="phdr"><span>Chapter 1 · Overview of Financial Statement Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Quick Reference Cheat Sheet / Lembar Referensi Cepat</h2>
+
+<h3>Analysis Objectives / Tujuan Analisis (Condensed)</h3>
+<table style="font-size:9pt" class="nb"><thead><tr><th style="width:5%">#</th><th style="width:47.5%">English</th><th style="width:47.5%">Bahasa Indonesia</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Explain business analysis &amp; FSA relationship</td><td>Menjelaskan hubungan analisis bisnis dan FSA</td></tr>
+<tr><td>2</td><td>Identify types of business analysis</td><td>Mengidentifikasi jenis analisis bisnis</td></tr>
+<tr><td>3</td><td>Describe component analyses of business analysis</td><td>Mendeskripsikan komponen analisis bisnis</td></tr>
+<tr><td>4</td><td>Explain business activities &amp; financial statements</td><td>Menjelaskan aktivitas bisnis dan laporan keuangan</td></tr>
+<tr><td>5</td><td>Describe purpose &amp; linkages of financial statements</td><td>Mendeskripsikan tujuan &amp; keterkaitan laporan keuangan</td></tr>
+<tr><td>6</td><td>Identify information beyond financial statements</td><td>Mengidentifikasi informasi di luar laporan keuangan</td></tr>
+<tr><td>7</td><td>Analyze &amp; interpret financial statements (preview)</td><td>Menganalisis &amp; menginterpretasikan laporan keuangan</td></tr>
+<tr><td>8</td><td>Apply basic FSA techniques</td><td>Menerapkan teknik FSA dasar</td></tr>
+<tr><td>9</td><td>Define &amp; formulate basic valuation models</td><td>Mendefinisikan &amp; merumuskan model valuasi dasar</td></tr>
+<tr><td>10</td><td>Explain FSA purpose in an efficient market</td><td>Menjelaskan tujuan FSA dalam pasar efisien</td></tr>
+</tbody></table>
+
+<div class="cgrid" style="margin-top:10px">
+
+<div class="cc nb">
+<h4>Four Business Activities</h4>
+<p><strong>Planning</strong> — Business plan &amp; strategy<br>
+<strong>Financing</strong> — Equity + Creditor sources<br>
+<strong>Investing</strong> — Operating + Financial assets<br>
+<strong>Operating</strong> — R&amp;D, production, marketing, admin</p>
+</div>
+
+<div class="cc nb">
+<h4>Four Financial Statements</h4>
+<p><strong>Balance Sheet</strong> — A = L + E (point in time)<br>
+<strong>Income Statement</strong> — Rev − Exp = NI (period)<br>
+<strong>Equity Statement</strong> — Changes in SE (period)<br>
+<strong>Cash Flow Statement</strong> — Op/Inv/Fin (period)</p>
+</div>
+
+<div class="cc nb">
+<h4>Liquidity Ratios</h4>
+<p class="cf">Current Ratio = CA / CL<br>
+Acid-Test = (Cash+MS+AR) / CL<br>
+Collection Period = Avg AR / (Sales/360)<br>
+Days to Sell Inv = Avg Inv / (COGS/360)</p>
+</div>
+
+<div class="cc nb">
+<h4>Capital Structure &amp; Solvency</h4>
+<p class="cf">Total D/E = Total Liabilities / SE<br>
+LT D/E = LT Liabilities / SE<br>
+Times Int Earned = (EBT+Int) / Int</p>
+</div>
+
+<div class="cc nb">
+<h4>Return on Investment</h4>
+<p class="cf">ROA = [NI + Int×(1−t)] / Avg TA<br>
+ROE = NI / Avg SE</p>
+</div>
+
+<div class="cc nb">
+<h4>Operating Performance</h4>
+<p class="cf">Gross Margin = (Sales−COGS) / Sales<br>
+Op Margin = Op Income / Sales<br>
+Net Margin = NI / Sales</p>
+</div>
+
+<div class="cc nb">
+<h4>Asset Utilization</h4>
+<p class="cf">Asset TO = Sales / Avg TA<br>
+Inv TO = COGS / Avg Inventory<br>
+AR TO = Sales / Avg AR<br>
+WC TO = Sales / Avg WC<br>
+PPE TO = Sales / Avg PPE</p>
+</div>
+
+<div class="cc nb">
+<h4>Market Measures</h4>
+<p class="cf">P/E = Price / EPS<br>
+P/B = Price / BV per share<br>
+Earnings Yield = EPS / Price<br>
+Div Yield = DPS / Price<br>
+Div Payout = DPS / EPS</p>
+</div>
+
+<div class="cc nb">
+<h4>Valuation Models (3)</h4>
+<p class="cf">DDM: V = ΣE(D)/(1+k)ⁿ<br>
+FCFE: V = ΣFCFE/(1+k)ⁿ<br>
+&nbsp; FCFE = OpCF − CapEx + ΔDebt<br>
+RI: V = BV + ΣE(RI)/(1+k)ⁿ<br>
+&nbsp; RI = NI − k×BV(t−1)</p>
+</div>
+
+<div class="cc nb">
+<h4>EMH — Three Forms</h4>
+<p><strong>Weak:</strong> Prices reflect all past price data<br>
+<strong>Semistrong:</strong> Prices reflect all public info<br>
+<strong>Strong:</strong> Prices reflect all info (incl. insider)<br>
+<em>Paradox: Analysts make markets efficient, yet EMH says they can't earn excess returns.</em></p>
+</div>
+
+<div class="cc nb">
+<h4>🇮🇩 Indonesian Context</h4>
+<p><strong>PSAK</strong> = Standar Akuntansi (IFRS-based)<br>
+<strong>OJK</strong> = Otoritas Jasa Keuangan (≈ SEC)<br>
+<strong>BEI</strong> = Bursa Efek Indonesia (≈ NYSE)<br>
+<strong>IHSG</strong> = Jakarta Composite Index<br>
+<strong>NIM</strong> = Net Interest Margin (bank)<br>
+<strong>LDR</strong> = Loan to Deposit Ratio (bank)<br>
+<strong>CAR</strong> = Capital Adequacy Ratio (bank)<br>
+<strong>KSEI</strong> = Kustodian Sentral Efek Indonesia</p>
+</div>
+
+</div>
+
+<h3 style="margin-top:14px">Key Vocabulary / Kosa Kata Kunci</h3>
+<div class="vgrid nb">
+<div class="ven">Business Analysis</div><div class="vid">Analisis Bisnis</div>
+<div class="ven">Financial Statement Analysis</div><div class="vid">Analisis Laporan Keuangan</div>
+<div class="ven">Credit Analysis</div><div class="vid">Analisis Kredit</div>
+<div class="ven">Equity Analysis</div><div class="vid">Analisis Ekuitas</div>
+<div class="ven">Fundamental Analysis</div><div class="vid">Analisis Fundamental</div>
+<div class="ven">Intrinsic Value</div><div class="vid">Nilai Intrinsik</div>
+<div class="ven">Accounting Analysis</div><div class="vid">Analisis Akuntansi</div>
+<div class="ven">Financial Analysis</div><div class="vid">Analisis Keuangan</div>
+<div class="ven">Prospective Analysis</div><div class="vid">Analisis Prospektif</div>
+<div class="ven">Earnings Management</div><div class="vid">Manajemen Laba</div>
+<div class="ven">Balance Sheet</div><div class="vid">Neraca</div>
+<div class="ven">Income Statement</div><div class="vid">Laporan Laba Rugi</div>
+<div class="ven">Cash Flow Statement</div><div class="vid">Laporan Arus Kas</div>
+<div class="ven">Shareholders' Equity</div><div class="vid">Ekuitas Pemegang Saham</div>
+<div class="ven">Retained Earnings</div><div class="vid">Laba Ditahan</div>
+<div class="ven">Accrual Basis</div><div class="vid">Basis Akrual</div>
+<div class="ven">Comparative Analysis</div><div class="vid">Analisis Komparatif</div>
+<div class="ven">Common-Size Analysis</div><div class="vid">Analisis Common-Size</div>
+<div class="ven">Ratio Analysis</div><div class="vid">Analisis Rasio</div>
+<div class="ven">Current Ratio</div><div class="vid">Rasio Lancar</div>
+<div class="ven">Return on Assets (ROA)</div><div class="vid">Imbal Hasil Aset</div>
+<div class="ven">Return on Equity (ROE)</div><div class="vid">Imbal Hasil Ekuitas</div>
+<div class="ven">Dividend Discount Model</div><div class="vid">Model Diskon Dividen</div>
+<div class="ven">Residual Income</div><div class="vid">Laba Residual</div>
+<div class="ven">Yield to Maturity</div><div class="vid">Imbal Hasil hingga Jatuh Tempo</div>
+<div class="ven">Cost of Capital</div><div class="vid">Biaya Modal</div>
+<div class="ven">Continuing/Terminal Value</div><div class="vid">Nilai Terminal</div>
+<div class="ven">Efficient Market Hypothesis</div><div class="vid">Hipotesis Pasar Efisien</div>
+<div class="ven">Liquidity</div><div class="vid">Likuiditas</div>
+<div class="ven">Solvency</div><div class="vid">Solvabilitas</div>
+</div>
+
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <span></span>
+  
+  
+  <a href="../week-02/main-summary.html">Week 02 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

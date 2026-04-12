@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 08 — Main Summary</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 08: Cash Flow Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis aliran kas</span>
+    
+    <span>📖 Subramanyam Ch. 7</span>
+    
+    
+    
+    <span>🏢 ICBP — Indofood CBP Sukses Makmur Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Statement of cash flows; direct vs indirect method; free cash flow; cash flow quality analysis</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<div id="s1" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Pendahuluan: Mengapa Analisis Arus Kas Penting / Why Cash Flow Analysis Matters</h2>
+
+<p>Chapter 7 Subramanyam membahas analisis arus kas (<em>cash flow analysis</em>) — evaluasi komprehensif terhadap laporan arus kas (<em>statement of cash flows</em>) untuk memahami sumber dan penggunaan kas perusahaan. Jika laporan laba rugi mengukur kinerja dalam kerangka akrual, laporan arus kas mengukur kinerja dalam kerangka kas — <strong>berapa banyak uang tunai yang benar-benar masuk dan keluar</strong>. Perbedaan antara keduanya bukan sekadar teknis; ia mengungkapkan kualitas laba, keberlanjutan kinerja, dan kemampuan perusahaan untuk memenuhi kewajiban, berinvestasi, dan membayar dividen.</p>
+
+<div class="ibox nb"><div class="ibt">📌 Posisi Chapter 7 dalam Kerangka Kursus</div>
+<p>Chapter 7 adalah chapter pertama paruh kedua kursus. Selama enam minggu pertama (Ch.1–6), kita membangun pemahaman tentang <strong>bagaimana</strong> laporan keuangan disusun: dari kerangka analisis bisnis (Ch.1), kualitas pelaporan (Ch.2), pembiayaan (Ch.3), investasi (Ch.4), investasi antarkorporat (Ch.5), hingga aktivitas operasi (Ch.6). Mulai Chapter 7, kita menggunakan pemahaman tersebut untuk <strong>menganalisis dan mengevaluasi</strong>. Laporan arus kas menyatukan seluruh elemen sebelumnya: laba bersih (Ch.6) disesuaikan untuk item non-kas, investasi (Ch.4–5) muncul di CFI, pendanaan (Ch.3) muncul di CFF.</p>
+<p><strong>Ch.1–6 (Understanding the Statements) → <u>Ch.7 (Cash Flow Analysis — MINGGU INI)</u> → Ch.8–9 (ROIC &amp; Profitability) → Ch.10 (Prospective Analysis) → Ch.11–12 (Valuation)</strong></p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<ul>
+<li>Memahami tujuan, struktur, dan informasi yang disediakan oleh laporan arus kas</li>
+<li>Menguasai metode tidak langsung (<em>indirect method</em>) untuk menyusun dan menganalisis arus kas operasi</li>
+<li>Memahami metode langsung (<em>direct method</em>) dan perbedaannya dengan metode tidak langsung</li>
+<li>Menganalisis isu klasifikasi arus kas: bunga, dividen, pajak, akuisisi</li>
+<li>Menghitung dan menginterpretasikan <em>free cash flow</em> — FCFF dan FCFE</li>
+<li>Mengevaluasi kualitas arus kas dan hubungannya dengan kualitas laba</li>
+<li>Menghitung dan menginterpretasikan rasio arus kas utama</li>
+<li>Memahami fondasi valuasi berbasis arus kas (<em>discounted cash flow</em>)</li>
+<li>Mengidentifikasi dampak akuisisi, aktivitas non-kas, dan item khusus pada laporan arus kas</li>
+<li>Menganalisis laporan arus kas perusahaan nyata untuk mengambil kesimpulan analitis</li>
+</ul>
+</div>
+
+<table class="nb">
+<thead><tr><th style="width:25%">Topik Utama</th><th style="width:40%">Cakupan</th><th style="width:35%">Relevansi untuk Analis</th></tr></thead>
+<tbody>
+<tr><td><strong>Statement of Cash Flows</strong></td><td>Tujuan, struktur tiga bagian (CFO, CFI, CFF), hubungan dengan laporan lain</td><td>Sumber informasi utama tentang likuiditas, solvabilitas, dan fleksibilitas keuangan</td></tr>
+<tr><td><strong>Indirect Method</strong></td><td>Rekonsiliasi NI→CFO; penyesuaian non-kas; perubahan modal kerja</td><td>Metode paling umum; mengungkap sumber divergensi laba vs kas</td></tr>
+<tr><td><strong>Direct Method</strong></td><td>Penerimaan kas dari pelanggan, pembayaran ke pemasok, dll.</td><td>Lebih transparan; memungkinkan analisis komponen kas individual</td></tr>
+<tr><td><strong>Classification Issues</strong></td><td>Bunga (operasi vs pendanaan), dividen, pajak, akuisisi</td><td>Mempengaruhi CFO dan FCF; komparabilitas lintas perusahaan</td></tr>
+<tr><td><strong>Free Cash Flow</strong></td><td>FCFF, FCFE, perhitungan, interpretasi</td><td>Metrik sentral untuk valuasi DCF; mengukur kas setelah reinvestasi</td></tr>
+<tr><td><strong>Cash Flow Ratios</strong></td><td>CFO/NI, cash flow adequacy, reinvestment, coverage</td><td>Mengukur kualitas laba, kecukupan kas, dan kemampuan memenuhi kewajiban</td></tr>
+<tr><td><strong>Cash Flow Quality</strong></td><td>Sustainability, earnings quality, management</td><td>Mendeteksi manipulasi laba; menilai keberlanjutan kinerja</td></tr>
+<tr><td><strong>DCF Foundations</strong></td><td>Arus kas sebagai basis valuasi; hubungan historis-proyeksi</td><td>Jembatan dari analisis historis ke valuasi prospektif</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Laporan Arus Kas: Tujuan dan Struktur / Statement of Cash Flows: Purpose &amp; Structure</h2>
+
+<p>Laporan arus kas (<em>statement of cash flows</em>) menyajikan informasi tentang penerimaan dan pengeluaran kas perusahaan selama suatu periode. Berbeda dengan laporan laba rugi yang menggunakan basis akrual, laporan arus kas menggunakan <strong>basis kas</strong> — hanya transaksi yang melibatkan pergerakan kas dan setara kas yang dicatat.</p>
+
+<h3>2.1 Tujuan Laporan Arus Kas / Purpose of the Cash Flow Statement</h3>
+
+<div class="def"><div class="den">Tujuan Utama / Primary Objectives</div><div class="did">Laporan arus kas memiliki beberapa tujuan penting bagi analis: (1) <strong>Menilai kemampuan perusahaan menghasilkan kas</strong> — apakah operasi inti menghasilkan kas yang cukup untuk membiayai kegiatan bisnis; (2) <strong>Mengevaluasi kapasitas membayar kewajiban</strong> — apakah kas tersedia untuk membayar utang, bunga, dan dividen; (3) <strong>Menjelaskan perbedaan laba dan arus kas</strong> — mengapa laba tinggi tidak selalu berarti kas tinggi, dan sebaliknya; (4) <strong>Menilai kualitas laba</strong> — arus kas sebagai "second opinion" terhadap laba akrual; (5) <strong>Mengevaluasi dampak kas dari aktivitas investasi dan pendanaan</strong> — keputusan strategis (akuisisi, capex, penerbitan utang) dan implikasi kas-nya.</div></div>
+
+<div class="def"><div class="den">Kas dan Setara Kas / Cash and Cash Equivalents</div><div class="did">Laporan arus kas melaporkan perubahan dalam <strong>kas dan setara kas</strong> (<em>cash and cash equivalents</em>). Kas mencakup uang tunai dan simpanan di bank yang dapat ditarik sewaktu-waktu. Setara kas adalah investasi jangka pendek yang sangat likuid, mudah dikonversi ke jumlah kas yang diketahui, dan memiliki risiko perubahan nilai yang tidak signifikan — umumnya investasi dengan jatuh tempo tiga bulan atau kurang sejak tanggal akuisisi (misalnya deposito berjangka pendek, <em>treasury bills</em>, <em>commercial paper</em>). Definisi ini penting karena pergerakan antara kas dan setara kas <strong>tidak</strong> dilaporkan sebagai arus kas.</div></div>
+
+<h3>2.2 Tiga Bagian Laporan Arus Kas / Three Sections of the Cash Flow Statement</h3>
+
+<div class="def"><div class="den">Arus Kas dari Aktivitas Operasi / Cash Flows from Operating Activities (CFO)</div><div class="did">Mencakup arus kas yang berasal dari <strong>aktivitas utama penghasil pendapatan</strong> perusahaan dan aktivitas lain yang bukan investasi atau pendanaan. Ini termasuk: penerimaan kas dari pelanggan, pembayaran kas kepada pemasok dan karyawan, pembayaran pajak penghasilan, penerimaan/pembayaran bunga (menurut US GAAP; di bawah IFRS ada opsi klasifikasi berbeda), dan penerimaan/pembayaran kas operasional lainnya. CFO adalah indikator paling penting karena menunjukkan apakah operasi bisnis inti menghasilkan kas yang cukup tanpa bergantung pada sumber eksternal.</div></div>
+
+<div class="def"><div class="den">Arus Kas dari Aktivitas Investasi / Cash Flows from Investing Activities (CFI)</div><div class="did">Mencakup arus kas yang berkaitan dengan <strong>perolehan dan pelepasan aset jangka panjang</strong> dan investasi lain yang bukan setara kas. Ini termasuk: pembelian aset tetap (<em>capital expenditures</em>/capex — arus keluar utama), penjualan aset tetap, pembelian/penjualan investasi (surat berharga, saham perusahaan lain), kas dari akuisisi atau divestasi anak perusahaan, dan pinjaman yang diberikan kepada pihak lain. CFI yang negatif (arus keluar) umumnya normal dan mengindikasikan perusahaan berinvestasi untuk pertumbuhan masa depan.</div></div>
+
+<div class="def"><div class="den">Arus Kas dari Aktivitas Pendanaan / Cash Flows from Financing Activities (CFF)</div><div class="did">Mencakup arus kas yang berkaitan dengan <strong>perubahan struktur modal</strong> perusahaan — utang dan ekuitas. Ini termasuk: penerbitan saham baru (arus masuk), pembelian kembali saham (<em>treasury stock</em> — arus keluar), penerbitan obligasi atau pinjaman bank (arus masuk), pelunasan utang (arus keluar), dan pembayaran dividen (arus keluar; di bawah IFRS bisa diklasifikasikan di CFF atau CFO). Untuk perusahaan mature, CFF cenderung negatif (mengembalikan modal kepada kreditur dan pemegang saham).</div></div>
+
+<div class="fbox nb">
+<p><strong>Hubungan Fundamental:</strong></p>
+<p><code>Perubahan Kas = CFO + CFI + CFF</code></p>
+<p>Ketiga komponen harus berjumlah sama dengan perubahan saldo kas dan setara kas selama periode tersebut (disesuaikan untuk dampak kurs pada kas dalam mata uang asing). Hubungan ini memberikan <em>built-in check</em> untuk konsistensi laporan keuangan.</p>
+</div>
+
+<div class="exb nb"><div class="exn">💡 Pola Arus Kas dan Siklus Hidup Perusahaan / Cash Flow Patterns &amp; Life Cycle</div>
+<table>
+<thead><tr><th style="width:22%">Tahap Siklus Hidup</th><th style="width:13%">CFO</th><th style="width:13%">CFI</th><th style="width:13%">CFF</th><th style="width:39%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Start-up</strong></td><td>−</td><td>−</td><td>+</td><td>Operasi belum menghasilkan kas; investasi besar; bergantung pada pendanaan eksternal</td></tr>
+<tr><td><strong>Growth</strong></td><td>+/−</td><td>−</td><td>+</td><td>CFO mulai positif tetapi tidak cukup untuk investasi agresif; masih memerlukan pendanaan</td></tr>
+<tr><td><strong>Mature</strong></td><td>+</td><td>−</td><td>−</td><td>CFO kuat; investasi untuk pemeliharaan/pertumbuhan moderat; mengembalikan kas ke pemilik</td></tr>
+<tr><td><strong>Decline</strong></td><td>+/−</td><td>+</td><td>−</td><td>CFO melemah; menjual aset; melunasi utang; dividen mungkin dikurangi</td></tr>
+</tbody>
+</table>
+<p>ICBP sebagai perusahaan <em>consumer staples</em> mature menunjukkan pola klasik: <strong>CFO positif besar, CFI negatif (capex), CFF negatif (dividen dan pelunasan utang)</strong>.</p>
+</div>
+
+<h3>2.3 Analisis Mendalam CFI / Deeper CFI Analysis</h3>
+
+<div class="def"><div class="den">Komponen CFI dan Interpretasinya / CFI Components &amp; Interpretation</div><div class="did">Analis harus membedakan komponen-komponen CFI: (1) <strong>Capex rutin</strong> — investasi untuk pemeliharaan dan penggantian aset (maintenance capex) serta ekspansi kapasitas (growth capex); (2) <strong>Akuisisi</strong> — pembayaran untuk anak perusahaan atau bisnis yang diakuisisi, dikurangi kas yang diperoleh; (3) <strong>Divestasi</strong> — penerimaan dari penjualan segmen bisnis atau anak perusahaan; (4) <strong>Investasi portofolio</strong> — pembelian/penjualan sekuritas investasi. CFI yang negatif besar bisa berasal dari capex organik (positif — menandakan pertumbuhan) atau dari akuisisi besar (perlu evaluasi — apakah menciptakan nilai?). Tren capex relatif terhadap pendapatan (capex intensity) memberikan indikasi tentang kebutuhan reinvestasi industri dan strategi pertumbuhan perusahaan. Industri capital-intensive (telco, utilitas, manufaktur) memiliki capex intensity 8–15%, sementara industri ringan (konsultansi, software) mungkin hanya 1–3%.</div></div>
+
+<h3>2.4 Analisis Mendalam CFF / Deeper CFF Analysis</h3>
+
+<div class="def"><div class="den">Komponen CFF dan Kebijakan Struktur Modal / CFF Components &amp; Capital Structure Policy</div><div class="did">CFF mengungkapkan bagaimana perusahaan mengelola struktur modalnya: (1) <strong>Penerbitan vs pelunasan utang</strong> — net borrowing positif mengindikasikan peningkatan leverage; net borrowing negatif (deleveraging) mengindikasikan perusahaan mengurangi utang dari arus kas internal; (2) <strong>Penerbitan vs buyback saham</strong> — penerbitan saham baru mendilusi pemegang saham tetapi menambah modal; buyback mengurangi saham beredar dan meningkatkan EPS; (3) <strong>Pembayaran dividen</strong> — pola dan besaran dividen mengungkapkan kebijakan distribusi manajemen; (4) <strong>Pembayaran bunga</strong> (jika diklasifikasikan di CFF) — mencerminkan biaya utang aktual. Rasio CFF/CFO menunjukkan berapa banyak arus kas operasi yang digunakan untuk melayani penyedia modal — rasio yang sangat tinggi mengindikasikan kapasitas investasi terbatas.</div></div>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Metode Tidak Langsung / Indirect Method</h2>
+
+<p>Metode tidak langsung (<em>indirect method</em>) adalah metode paling umum untuk melaporkan arus kas dari aktivitas operasi. Metode ini dimulai dari <strong>laba bersih</strong> dan melakukan serangkaian penyesuaian untuk mengkonversinya menjadi arus kas operasi. Pemahaman mendalam tentang setiap penyesuaian adalah keterampilan analitis inti.</p>
+
+<h3>3.1 Kerangka Rekonsiliasi / Reconciliation Framework</h3>
+
+<div class="fbox nb">
+<p><strong>Kerangka Metode Tidak Langsung:</strong></p>
+<p><strong>Laba Bersih (<em>Net Income</em>)</strong></p>
+<p><strong>+ Penyesuaian Item Non-Kas:</strong></p>
+<ul>
+<li>+ Depresiasi dan amortisasi</li>
+<li>+ <em>Impairment losses</em></li>
+<li>+ Beban kompensasi berbasis saham (<em>stock-based compensation</em>)</li>
+<li>+ Amortisasi diskon/premium obligasi</li>
+<li>± Pajak tangguhan (<em>deferred tax</em>)</li>
+</ul>
+<p><strong>± Penyesuaian Keuntungan/Kerugian Penjualan Aset:</strong></p>
+<ul>
+<li>− Keuntungan penjualan aset (<em>gain on sale</em>) → dipindahkan ke CFI</li>
+<li>+ Kerugian penjualan aset (<em>loss on sale</em>) → dipindahkan ke CFI</li>
+</ul>
+<p><strong>± Perubahan Modal Kerja Operasi:</strong></p>
+<ul>
+<li>− Kenaikan piutang usaha / + Penurunan piutang usaha</li>
+<li>− Kenaikan persediaan / + Penurunan persediaan</li>
+<li>+ Kenaikan utang usaha / − Penurunan utang usaha</li>
+<li>± Perubahan beban akrual, pajak terutang, dll.</li>
+</ul>
+<p><strong>= Arus Kas dari Aktivitas Operasi (CFO)</strong></p>
+</div>
+
+<h3>3.2 Penyesuaian Item Non-Kas / Non-Cash Item Adjustments</h3>
+
+<div class="def"><div class="den">Depresiasi dan Amortisasi / Depreciation &amp; Amortization</div><div class="did">Depresiasi dan amortisasi adalah beban non-kas yang mengurangi laba bersih tetapi <strong>tidak</strong> melibatkan pengeluaran kas pada periode berjalan — kas telah dibayarkan saat aset diperoleh (tercatat di CFI). Dalam metode tidak langsung, depresiasi ditambahkan kembali (<em>added back</em>) ke laba bersih. <strong>Perhatian kritis</strong>: ini bukan berarti depresiasi adalah "sumber kas." Penambahan kembali semata-mata bertujuan menghilangkan efek beban non-kas dari laba bersih agar mendekati basis kas. Jika tidak ada transaksi lain, penambahan kembali depresiasi ke laba bersih akan menghasilkan penerimaan kas dari pelanggan dikurangi pembayaran kas untuk beban tunai. Bagi analis, besaran depresiasi yang material (umum di industri <em>capital-intensive</em>) menjelaskan sebagian besar perbedaan antara laba dan CFO.</div></div>
+
+<div class="def"><div class="den">Keuntungan dan Kerugian Penjualan Aset / Gains &amp; Losses on Asset Sales</div><div class="did">Keuntungan dari penjualan aset tetap atau investasi dikurangkan dari laba bersih dalam bagian operasi, dan kerugian ditambahkan kembali. Alasannya bukan bahwa transaksi ini "bukan operasi" secara sifat — melainkan karena <strong>total hasil kas</strong> dari penjualan aset dilaporkan di CFI. Jika keuntungan tidak dikurangkan dari CFO, maka akan terjadi <em>double counting</em>: sekali sebagai bagian dari laba bersih (di CFO) dan sekali lagi sebagai hasil penjualan (di CFI). Contoh: perusahaan menjual mesin seharga Rp 500 M dengan nilai buku Rp 300 M → keuntungan Rp 200 M masuk laba rugi → dalam CFO, kurangi Rp 200 M → di CFI, catat penerimaan Rp 500 M.</div></div>
+
+<div class="def"><div class="den">Pajak Tangguhan / Deferred Taxes</div><div class="did">Beban pajak penghasilan dalam laporan laba rugi mencakup komponen <em>current</em> (kas yang dibayar/terutang) dan <em>deferred</em> (perubahan DTA/DTL). Komponen pajak tangguhan tidak melibatkan arus kas pada periode berjalan. Dalam metode tidak langsung, kenaikan DTL (beban pajak tangguhan neto) ditambahkan kembali karena beban pajak dalam laba rugi lebih besar daripada pembayaran pajak kas aktual. Sebaliknya, kenaikan DTA dikurangkan. Bagi analis, pola pajak tangguhan yang persisten (terutama DTL dari depresiasi pajak yang dipercepat) mengindikasikan bahwa CFO secara sistematis lebih tinggi dari yang akan terjadi jika pajak dibayar penuh sesuai tarif efektif.</div></div>
+
+<div class="def"><div class="den">Kompensasi Berbasis Saham / Stock-Based Compensation</div><div class="did">Beban kompensasi berbasis saham (<em>stock options</em>, <em>RSUs</em>) dicatat sebagai beban di laporan laba rugi tetapi tidak melibatkan pengeluaran kas — perusahaan menerbitkan saham baru atau menggunakan saham treasuri. Dalam metode tidak langsung, beban ini ditambahkan kembali ke laba bersih. Untuk perusahaan teknologi, penyesuaian ini bisa sangat material — menciptakan gap besar antara <em>GAAP earnings</em> dan <em>cash earnings</em>. Analis harus mempertimbangkan apakah ini berarti CFO "terlalu tinggi" karena biaya riil (dilusi saham) tidak tercermin dalam arus kas.</div></div>
+
+<h3>3.3 Penyesuaian Perubahan Modal Kerja / Working Capital Change Adjustments</h3>
+
+<div class="def"><div class="den">Piutang Usaha / Accounts Receivable</div><div class="did">Kenaikan piutang usaha mengurangi CFO: perusahaan telah mengakui pendapatan (masuk laba bersih) tetapi belum menerima kas. Penurunan piutang menambah CFO: perusahaan menerima kas dari penjualan periode sebelumnya. <strong>Implikasi analitis</strong>: kenaikan piutang yang konsisten lebih cepat dari pendapatan (<em>days sales outstanding</em> meningkat) adalah <em>red flag</em> kualitas laba — mungkin mengindikasikan penjualan kredit agresif, pengakuan pendapatan prematur, atau kesulitan penagihan. Ini konsisten dengan <em>red flags</em> yang dibahas di Ch.2.</div></div>
+
+<div class="def"><div class="den">Persediaan / Inventory</div><div class="did">Kenaikan persediaan mengurangi CFO: perusahaan telah mengeluarkan kas (atau mengakui kewajiban) untuk membeli/memproduksi barang tetapi belum menjualnya, sehingga belum menjadi beban di laba rugi (masih sebagai aset). Penurunan persediaan menambah CFO. <strong>Implikasi analitis</strong>: penumpukan persediaan (<em>inventory build-up</em>) mengindikasikan kemungkinan penurunan permintaan, overproduction, atau potensi <em>inventory write-down</em> di masa depan. Sebaliknya, penurunan persediaan yang tajam bersama kenaikan COGS yang proporsional adalah sinyal permintaan yang kuat.</div></div>
+
+<div class="def"><div class="den">Utang Usaha dan Beban Akrual / Accounts Payable &amp; Accrued Expenses</div><div class="did">Kenaikan utang usaha menambah CFO: perusahaan telah mengakui beban (mengurangi laba bersih) tetapi belum membayar kas. Penurunan utang usaha mengurangi CFO. <strong>Implikasi analitis</strong>: kenaikan utang usaha yang tajam di akhir periode mungkin mengindikasikan perusahaan sengaja menunda pembayaran untuk memperbaiki CFO akhir kuartal — bentuk <em>cash flow management</em>. Analis harus membandingkan tren <em>days payable outstanding</em> (DPO) dengan periode sebelumnya dan dengan industri.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Contoh Rekonsiliasi NI → CFO (Ilustrasi Sederhana)</div>
+<table>
+<thead><tr><th style="width:55%">Item</th><th style="width:15%">Jumlah (Rp M)</th><th style="width:30%">Penjelasan</th></tr></thead>
+<tbody>
+<tr><td>Laba Bersih</td><td>5.000</td><td>Titik awal</td></tr>
+<tr><td>+ Depresiasi &amp; amortisasi</td><td>+2.000</td><td>Beban non-kas</td></tr>
+<tr><td>− Keuntungan penjualan aset</td><td>−300</td><td>Dipindah ke CFI</td></tr>
+<tr><td>+ Pajak tangguhan (kenaikan DTL)</td><td>+150</td><td>Beban pajak &gt; pembayaran pajak</td></tr>
+<tr><td>− Kenaikan piutang usaha</td><td>−800</td><td>Pendapatan diakui, kas belum diterima</td></tr>
+<tr><td>− Kenaikan persediaan</td><td>−500</td><td>Kas keluar untuk persediaan</td></tr>
+<tr><td>+ Kenaikan utang usaha</td><td>+600</td><td>Beban diakui, kas belum dibayar</td></tr>
+<tr><td><strong>= CFO</strong></td><td><strong>6.150</strong></td><td></td></tr>
+</tbody>
+</table>
+<p>CFO (Rp 6.150 M) &gt; NI (Rp 5.000 M) — perbedaan sebagian besar didorong oleh depresiasi, ditambah efek perubahan modal kerja neto.</p>
+</div>
+
+<h3>3.4 Interpretasi Analitis Perbedaan NI dan CFO / Analytical Interpretation of NI-CFO Differences</h3>
+
+<div class="def"><div class="den">Penyebab Umum CFO &gt; NI / Common Causes of CFO Exceeding NI</div><div class="did">Jika CFO secara konsisten melebihi laba bersih, penyebab yang paling umum adalah: (1) <strong>Depresiasi dan amortisasi besar</strong> — perusahaan <em>capital-intensive</em> (manufaktur, telekomunikasi, pertambangan) memiliki D&amp;A yang signifikan, yang mengurangi laba tetapi tidak mengurangi kas; (2) <strong>Kompensasi berbasis saham</strong> — khususnya perusahaan teknologi; (3) <strong>Pengurangan modal kerja</strong> — perusahaan yang berhasil meningkatkan efisiensi penagihan piutang atau mengurangi persediaan; (4) <strong>Pajak tangguhan (DTL meningkat)</strong> — pembayaran pajak kas lebih rendah dari beban pajak akrual. Pola CFO &gt; NI umumnya positif — mengindikasikan laba didukung atau dilampaui oleh kas. Namun, jika gap terlalu besar (misalnya CFO = 3× NI), perlu investigasi apakah ada manajemen modal kerja yang tidak berkelanjutan.</div></div>
+
+<div class="def"><div class="den">Penyebab Umum CFO &lt; NI / Common Causes of CFO Below NI</div><div class="did">Jika CFO secara konsisten di bawah laba bersih, ini adalah <em>red flag</em> yang memerlukan investigasi. Penyebab umum: (1) <strong>Kenaikan piutang melebihi pertumbuhan pendapatan</strong> — potensi penjualan kredit agresif atau pengakuan pendapatan prematur; (2) <strong>Penumpukan persediaan</strong> — kas terserap dalam persediaan yang mungkin tidak terjual; (3) <strong>Penurunan utang usaha yang signifikan</strong> — perusahaan membayar lebih cepat dari sebelumnya (bisa karena tekanan pemasok atau kehilangan syarat kredit); (4) <strong>Item non-kas yang menaikkan laba</strong> — misalnya keuntungan revaluasi, pembalikan penurunan nilai, pendapatan dari investasi yang belum diterima secara kas. Pola CFO &lt; NI selama lebih dari 2–3 tahun berturut-turut sangat mengkhawatirkan dan sering mendahului penurunan kinerja atau restatement.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Sinyal dari Tren CFO/NI — Skenario Diagnostik</div>
+<table>
+<thead><tr><th style="width:30%">Skenario</th><th style="width:35%">Kemungkinan Penyebab</th><th style="width:35%">Implikasi Analitis</th></tr></thead>
+<tbody>
+<tr><td>CFO/NI stabil ≈ 1,2–1,5×</td><td>D&amp;A yang stabil; WC terkendali</td><td>✅ Laba berkualitas tinggi; perusahaan mature</td></tr>
+<tr><td>CFO/NI menurun dari 1,3 ke 0,7</td><td>Akrual meningkat; piutang/persediaan naik</td><td>🚩 Red flag — potensi earnings management</td></tr>
+<tr><td>CFO/NI &gt; 2,0 secara tiba-tiba</td><td>Penjualan piutang, penundaan pembayaran</td><td>⚠️ Cash flow management — periksa keberlanjutan</td></tr>
+<tr><td>NI positif, CFO negatif (persisten)</td><td>Akrual sangat agresif; revenue recognized but cash not collected</td><td>🚩 Red flag serius — periksa piutang dan kualitas pendapatan</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Metode Langsung / Direct Method</h2>
+
+<p>Metode langsung (<em>direct method</em>) melaporkan arus kas operasi dengan menyajikan <strong>kategori utama penerimaan dan pengeluaran kas bruto</strong> — memberikan gambaran yang lebih langsung dan intuitif tentang dari mana kas berasal dan ke mana kas pergi.</p>
+
+<div class="def"><div class="den">Komponen Utama Metode Langsung / Direct Method Components</div><div class="did">Metode langsung menyajikan CFO sebagai berikut: (1) <strong>Penerimaan kas dari pelanggan</strong> = Pendapatan ± perubahan piutang; (2) <strong>Pembayaran kas kepada pemasok</strong> = COGS ± perubahan persediaan ± perubahan utang usaha; (3) <strong>Pembayaran gaji dan kompensasi</strong> = Beban gaji ± perubahan gaji terutang; (4) <strong>Pembayaran bunga</strong> = Beban bunga ± perubahan bunga terutang ± amortisasi premium/diskon; (5) <strong>Pembayaran pajak penghasilan</strong> = Beban pajak penghasilan ± perubahan pajak terutang ± perubahan pajak tangguhan; (6) <strong>Penerimaan/pembayaran operasional lainnya</strong>. Hasilnya (total CFO) identik dengan metode tidak langsung — yang berbeda hanyalah penyajiannya.</div></div>
+
+<div class="ibox nb"><div class="ibt">📐 Metode Langsung vs Tidak Langsung: Perbandingan</div>
+<table>
+<thead><tr><th style="width:20%">Aspek</th><th style="width:40%">Metode Tidak Langsung</th><th style="width:40%">Metode Langsung</th></tr></thead>
+<tbody>
+<tr><td><strong>Titik awal</strong></td><td>Laba bersih</td><td>Penerimaan/pengeluaran kas individual</td></tr>
+<tr><td><strong>Informasi</strong></td><td>Menjelaskan <em>mengapa</em> NI ≠ CFO</td><td>Menunjukkan komponen kas aktual</td></tr>
+<tr><td><strong>Prevalensi</strong></td><td>~97% perusahaan publik</td><td>~3% perusahaan publik</td></tr>
+<tr><td><strong>Keunggulan analis</strong></td><td>Mengungkap sumber perbedaan akrual-kas</td><td>Memungkinkan analisis penerimaan/pembayaran individual</td></tr>
+<tr><td><strong>Standar</strong></td><td>Diterima US GAAP &amp; IFRS</td><td>Dianjurkan FASB &amp; IASB (tetapi jarang dipraktikkan)</td></tr>
+<tr><td><strong>Rekonsiliasi</strong></td><td>Berfungsi sebagai rekonsiliasi itu sendiri</td><td>Memerlukan rekonsiliasi NI→CFO sebagai catatan tambahan</td></tr>
+</tbody>
+</table>
+<p><strong>Catatan untuk analis:</strong> Meskipun metode langsung lebih dianjurkan oleh badan standar (FASB, IASB/DSAK) karena menyajikan informasi arus kas yang lebih berguna untuk proyeksi, metode tidak langsung jauh lebih umum digunakan karena lebih mudah disiapkan dari data akuntansi dan menyediakan rekonsiliasi langsung dengan laba bersih — yang sangat berguna untuk analisis kualitas laba.</p>
+</div>
+
+<div class="fbox nb">
+<p><strong>Konversi dari Metode Tidak Langsung ke Langsung (Contoh Penerimaan dari Pelanggan):</strong></p>
+<p>Penerimaan Kas dari Pelanggan = Pendapatan − Kenaikan Piutang (atau + Penurunan Piutang)</p>
+<p>Contoh: Pendapatan Rp 20.000 M, Piutang naik Rp 800 M → Penerimaan kas = Rp 20.000 − Rp 800 = Rp 19.200 M</p>
+<p>Artinya: dari Rp 20.000 M pendapatan yang diakui, hanya Rp 19.200 M yang telah diterima dalam bentuk kas; sisanya masih berupa piutang.</p>
+</div>
+
+<div class="exb nb"><div class="exn">💡 Contoh Konversi Lengkap: Pembayaran kepada Pemasok</div>
+<p><strong>Formula:</strong> Pembayaran kas ke pemasok = COGS + Kenaikan Persediaan − Kenaikan Utang Usaha</p>
+<p>Contoh: COGS Rp 12.000 M, Persediaan naik Rp 500 M, Utang Usaha naik Rp 600 M</p>
+<p>Pembayaran ke pemasok = 12.000 + 500 − 600 = Rp 11.900 M</p>
+<p><strong>Interpretasi:</strong> Perusahaan membeli barang lebih dari yang dijual (persediaan naik) tetapi menunda sebagian pembayaran (utang usaha naik). Dari perspektif kas, pembayaran aktual (Rp 11.900 M) sedikit di bawah COGS (Rp 12.000 M).</p>
+</div>
+
+<h3>4.2 Mengapa Metode Langsung Jarang Digunakan / Why the Direct Method is Rarely Used</h3>
+
+<div class="def"><div class="den">Hambatan Praktis Metode Langsung</div><div class="did">Meskipun lebih informatif, metode langsung hanya digunakan oleh sekitar 3% perusahaan publik karena beberapa alasan: (1) <strong>Sistem akuntansi</strong> — kebanyakan sistem akuntansi dirancang untuk mencatat transaksi berdasarkan akrual, bukan kas. Menyajikan metode langsung memerlukan konversi tambahan atau tracking kas paralel; (2) <strong>Biaya kepatuhan</strong> — bahkan jika menggunakan metode langsung, perusahaan tetap harus menyajikan rekonsiliasi NI→CFO (persyaratan US GAAP dan IFRS), sehingga metode langsung menambah beban tanpa menghilangkan kebutuhan rekonsiliasi; (3) <strong>Inertia regulasi</strong> — regulator tidak mewajibkan metode langsung meskipun menganjurkannya; (4) <strong>Sensitivitas informasi</strong> — beberapa perusahaan menganggap pengungkapan penerimaan dan pembayaran kas bruto terlalu detail dan berpotensi mengungkap informasi kompetitif. Bagi analis, meskipun metode langsung jarang tersedia, informasi serupa dapat diturunkan (<em>derived</em>) dari laporan laba rugi dan perubahan neraca menggunakan rumus konversi.</div></div>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Isu Klasifikasi Arus Kas / Cash Flow Classification Issues</h2>
+
+<p>Salah satu aspek paling penting (dan sering diabaikan) dalam analisis arus kas adalah <strong>klasifikasi</strong> — bagaimana arus kas tertentu ditempatkan di antara CFO, CFI, dan CFF. Pilihan klasifikasi dapat secara signifikan mempengaruhi metrik arus kas yang dihitung analis.</p>
+
+<h3>5.1 Bunga Dibayar / Interest Paid</h3>
+
+<div class="def"><div class="den">Klasifikasi Bunga Dibayar / Interest Paid Classification</div><div class="did">Di bawah <strong>US GAAP</strong>, bunga yang dibayarkan <em>harus</em> diklasifikasikan sebagai arus kas <strong>operasi</strong> — logikanya karena bunga adalah beban yang dikurangkan dalam menghitung laba bersih (basis CFO). Di bawah <strong>IFRS (termasuk PSAK)</strong>, perusahaan memiliki <em>pilihan</em>: bunga dibayar dapat diklasifikasikan sebagai arus kas operasi <strong>atau</strong> pendanaan. Banyak perusahaan Indonesia memilih mengklasifikasikan bunga dibayar di CFF — yang membuat CFO terlihat lebih tinggi. <strong>Implikasi analitis</strong>: saat membandingkan CFO perusahaan Indonesia (PSAK/IFRS) dengan perusahaan AS (US GAAP), analis harus menyesuaikan klasifikasi agar apple-to-apple. Jika perusahaan Indonesia memasukkan bunga di CFF, CFO-nya akan lebih tinggi dibandingkan jika bunga dimasukkan di CFO.</div></div>
+
+<h3>5.2 Bunga dan Dividen Diterima / Interest &amp; Dividends Received</h3>
+
+<div class="def"><div class="den">Klasifikasi Penerimaan Bunga dan Dividen</div><div class="did">Di bawah <strong>US GAAP</strong>, bunga dan dividen yang diterima diklasifikasikan sebagai arus kas <strong>operasi</strong>. Di bawah <strong>IFRS</strong>, perusahaan memiliki pilihan: bunga dan dividen diterima dapat diklasifikasikan sebagai arus kas operasi <strong>atau</strong> investasi. Logika klasifikasi investasi: bunga dan dividen adalah <em>return on investment</em>, sehingga lebih tepat di CFI. Logika klasifikasi operasi: masuk dalam perhitungan laba bersih, sehingga konsisten di CFO.</div></div>
+
+<h3>5.3 Dividen Dibayar / Dividends Paid</h3>
+
+<div class="def"><div class="den">Klasifikasi Dividen Dibayar</div><div class="did">Di bawah <strong>US GAAP</strong>, dividen yang dibayarkan kepada pemegang saham diklasifikasikan sebagai arus kas <strong>pendanaan</strong> — logikanya karena dividen adalah distribusi kepada pemilik. Di bawah <strong>IFRS</strong>, perusahaan memiliki pilihan: dividen dibayar dapat diklasifikasikan sebagai arus kas pendanaan <strong>atau</strong> operasi. Klasifikasi di CFO jarang digunakan tetapi dapat terjadi — dan secara signifikan menurunkan CFO jika diterapkan.</div></div>
+
+<h3>5.4 Pajak Penghasilan / Income Taxes</h3>
+
+<div class="def"><div class="den">Klasifikasi Pajak / Tax Classification</div><div class="did">Baik US GAAP maupun IFRS mengklasifikasikan pembayaran pajak penghasilan sebagai arus kas <strong>operasi</strong>, kecuali jika pajak tersebut dapat diidentifikasi secara spesifik dengan aktivitas investasi atau pendanaan. Dalam praktik, hampir seluruh pembayaran pajak masuk di CFO. <strong>Catatan analitis</strong>: pembayaran pajak yang sangat besar dalam satu periode (misalnya karena penyelesaian sengketa pajak) dapat menekan CFO secara temporer — analis harus mengidentifikasi dan menormalisasi efek ini.</div></div>
+
+<div class="exb nb"><div class="exn">🚩 Ringkasan Perbedaan Klasifikasi IFRS vs US GAAP</div>
+<table>
+<thead><tr><th style="width:25%">Arus Kas</th><th style="width:25%">US GAAP</th><th style="width:25%">IFRS / PSAK</th><th style="width:25%">Dampak pada CFO</th></tr></thead>
+<tbody>
+<tr><td>Bunga dibayar</td><td>CFO (wajib)</td><td>CFO <em>atau</em> CFF (pilihan)</td><td>CFF → CFO lebih tinggi</td></tr>
+<tr><td>Bunga diterima</td><td>CFO (wajib)</td><td>CFO <em>atau</em> CFI (pilihan)</td><td>CFI → CFO lebih rendah</td></tr>
+<tr><td>Dividen diterima</td><td>CFO (wajib)</td><td>CFO <em>atau</em> CFI (pilihan)</td><td>CFI → CFO lebih rendah</td></tr>
+<tr><td>Dividen dibayar</td><td>CFF (wajib)</td><td>CFF <em>atau</em> CFO (pilihan)</td><td>CFO → CFO lebih rendah</td></tr>
+<tr><td>Pajak penghasilan</td><td>CFO (umumnya)</td><td>CFO (umumnya)</td><td>Tidak berbeda</td></tr>
+</tbody>
+</table>
+<p><strong>Implikasi praktis untuk ICBP:</strong> ICBP menggunakan PSAK (adopsi IFRS) dan mengklasifikasikan bunga dibayar di CFF — sehingga CFO ICBP secara relatif lebih tinggi dibandingkan jika menggunakan US GAAP. Saat menghitung FCF atau membandingkan dengan perusahaan AS, penyesuaian diperlukan.</p>
+</div>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Free Cash Flow / Arus Kas Bebas</h2>
+
+<p><em>Free cash flow</em> (FCF) adalah salah satu metrik paling penting dalam analisis keuangan dan valuasi. FCF mengukur <strong>kas yang tersedia setelah perusahaan memenuhi kebutuhan reinvestasi</strong> — kas yang bisa digunakan untuk membayar kreditur, membayar dividen, membeli kembali saham, atau melakukan akuisisi.</p>
+
+<h3>6.1 Free Cash Flow to Firm (FCFF)</h3>
+
+<div class="def"><div class="den">FCFF — Definisi dan Perhitungan</div><div class="did"><em>Free Cash Flow to Firm</em> (FCFF) adalah arus kas yang tersedia untuk <strong>seluruh penyedia modal</strong> — baik kreditur maupun pemegang saham — setelah memenuhi kebutuhan investasi operasional. FCFF mengukur kas yang dihasilkan oleh operasi bisnis sebelum distribusi kepada siapapun.
+<br><br>
+<strong>Perhitungan dari CFO:</strong><br>
+FCFF = CFO + Bunga Dibayar × (1 − Tarif Pajak) − Capex<br><br>
+<strong>Perhitungan dari Laba:</strong><br>
+FCFF = NOPAT + Depresiasi − Capex − Perubahan Modal Kerja Operasi Bersih<br>
+= EBIT × (1−T) + D&amp;A − Capex − ΔWC<br><br>
+<strong>Catatan</strong>: Jika bunga dibayar sudah termasuk di CFO (US GAAP), maka perlu ditambahkan kembali (setelah pajak) untuk mendapatkan arus kas sebelum klaim kreditur. Jika bunga dibayar di CFF (PSAK/IFRS), maka penyesuaian bunga tidak diperlukan — cukup FCFF = CFO − Capex.</div></div>
+
+<h3>6.2 Free Cash Flow to Equity (FCFE)</h3>
+
+<div class="def"><div class="den">FCFE — Definisi dan Perhitungan</div><div class="did"><em>Free Cash Flow to Equity</em> (FCFE) adalah arus kas yang tersedia khusus untuk <strong>pemegang saham</strong> — setelah memenuhi kebutuhan investasi dan kewajiban kepada kreditur.
+<br><br>
+<strong>Perhitungan:</strong><br>
+FCFE = FCFF − Bunga Dibayar × (1−T) + Pinjaman Baru Neto<br>
+= CFO − Capex + Pinjaman Baru Neto<br><br>
+Atau lebih sederhana:<br>
+FCFE = CFO − Capex + Pinjaman Baru − Pelunasan Pinjaman<br><br>
+<strong>Perbedaan kunci</strong>: FCFF mengukur kas sebelum pembayaran utang; FCFE mengukur kas setelah kewajiban utang terpenuhi. FCFF digunakan dengan WACC dalam DCF; FCFE digunakan dengan cost of equity.</div></div>
+
+<h3>6.3 Signifikansi Free Cash Flow</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Mengapa FCF Penting / Why FCF Matters</div>
+<ul>
+<li><strong>Valuasi DCF</strong>: Nilai intrinsik perusahaan = nilai sekarang dari FCFF masa depan yang didiskontokan pada WACC (atau FCFE didiskontokan pada cost of equity). FCF historis menjadi basis proyeksi.</li>
+<li><strong>Fleksibilitas Finansial</strong>: FCF positif konsisten menunjukkan perusahaan dapat membiayai pertumbuhan secara organik tanpa bergantung pada pendanaan eksternal.</li>
+<li><strong>Keberlanjutan Dividen</strong>: Dividen yang melebihi FCF secara persisten mengindikasikan perusahaan mendanai dividen dari utang atau penjualan aset — tidak berkelanjutan.</li>
+<li><strong>Kualitas Laba</strong>: Perusahaan dengan laba tinggi tetapi FCF rendah/negatif secara persisten menimbulkan pertanyaan tentang kualitas laba.</li>
+<li><strong>Indikator M&amp;A</strong>: FCF yang terakumulasi dapat mendorong akuisisi; sebaliknya, FCF negatif setelah akuisisi besar menunjukkan tekanan integrasi.</li>
+</ul>
+</div>
+
+<div class="exb nb"><div class="exn">💡 FCFF vs FCFE — Kapan Menggunakan Yang Mana?</div>
+<table>
+<thead><tr><th style="width:20%">Situasi</th><th style="width:40%">Gunakan FCFF</th><th style="width:40%">Gunakan FCFE</th></tr></thead>
+<tbody>
+<tr><td>Struktur modal</td><td>Berubah signifikan atau target berbeda dari aktual</td><td>Stabil dan diharapkan tetap stabil</td></tr>
+<tr><td>Leverage</td><td>Tinggi atau volatile (FCFE bisa negatif meskipun FCFF positif)</td><td>Rendah dan stabil</td></tr>
+<tr><td>Pendekatan valuasi</td><td>Enterprise value via WACC → kurangi utang untuk equity value</td><td>Langsung ke equity value via cost of equity</td></tr>
+<tr><td>Contoh</td><td>Perusahaan dengan utang tinggi; leveraged buyout target</td><td>Perusahaan stabil dengan leverage rendah</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>6.4 Analisis FCF dan Kebijakan Alokasi Modal / FCF &amp; Capital Allocation Policy</h3>
+
+<div class="def"><div class="den">Capital Allocation Framework / Kerangka Alokasi Modal</div><div class="did">Setelah menghitung FCF, pertanyaan analitis kunci adalah: <strong>bagaimana perusahaan mengalokasikan arus kas bebasnya?</strong> Pilihan alokasi modal mencerminkan prioritas manajemen dan berdampak langsung pada penciptaan nilai. Opsi utama: (1) <strong>Reinvestasi organik</strong> (growth capex, R&amp;D) — menciptakan nilai jika ROI &gt; cost of capital; (2) <strong>Akuisisi</strong> — menciptakan nilai jika harga akuisisi di bawah nilai intrinsik target; sering menghancurkan nilai karena overpayment; (3) <strong>Pelunasan utang</strong> — mengurangi risiko keuangan; efektif jika leverage di atas optimal; (4) <strong>Dividen</strong> — memberikan return langsung ke pemegang saham; mengindikasikan kedewasaan dan keyakinan manajemen; (5) <strong>Pembelian kembali saham</strong> — meningkatkan EPS dan ekuitas per saham; efektif jika saham diperdagangkan di bawah nilai intrinsik. Analis mengevaluasi alokasi modal historis perusahaan untuk menilai <em>track record</em> manajemen dalam menciptakan nilai.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Alokasi Modal ICBP 2021–2023: Studi Kasus Prioritas Manajemen</div>
+<p>Setelah akuisisi Pinehill (2020), prioritas manajemen ICBP jelas terlihat dari alokasi kas:</p>
+<table>
+<thead><tr><th style="width:25%">Alokasi</th><th style="width:15%">2023</th><th style="width:15%">2022</th><th style="width:15%">2021</th><th style="width:30%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td>Capex (organik)</td><td>Rp 3,5 T</td><td>Rp 3,3 T</td><td>Rp 3,2 T</td><td>Stabil; maintenance level</td></tr>
+<tr><td>Pelunasan utang (neto)</td><td>Rp 2,0 T</td><td>Rp 0,6 T</td><td>Rp 8,5 T</td><td>Prioritas #1 pasca-akuisisi</td></tr>
+<tr><td>Dividen</td><td>Rp 2,3 T</td><td>Rp 2,8 T</td><td>Rp 2,5 T</td><td>Komitmen stabil ke pemegang saham</td></tr>
+<tr><td>Bunga</td><td>Rp 1,3 T</td><td>Rp 1,4 T</td><td>Rp 1,7 T</td><td>Menurun seiring deleveraging</td></tr>
+</tbody>
+</table>
+<p><strong>Pola alokasi:</strong> Selama 2021–2023, ICBP memprioritaskan <em>deleveraging</em> sambil mempertahankan dividen dan capex pada level stabil. Ini adalah strategi alokasi modal yang konservatif dan tepat pasca-akuisisi besar — mengurangi risiko keuangan sebelum beralih ke pertumbuhan organik yang lebih agresif.</p>
+</div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Rasio Arus Kas / Cash Flow Ratios</h2>
+
+<p>Rasio arus kas melengkapi rasio keuangan tradisional (yang berbasis akrual) dengan perspektif berbasis kas. Rasio-rasio ini membantu analis mengevaluasi kecukupan kas, kualitas laba, dan kemampuan perusahaan memenuhi kewajiban dari arus kas operasional.</p>
+
+<h3>7.1 Rasio Kecukupan Arus Kas / Cash Flow Adequacy Ratios</h3>
+
+<div class="def"><div class="den">Cash Flow Adequacy Ratio</div><div class="did">Mengukur apakah CFO cukup untuk memenuhi kebutuhan utama perusahaan secara berkelanjutan.
+<br><br>
+<strong>Formula:</strong> Cash Flow Adequacy = CFO / (Capex + Pembayaran Utang Jangka Panjang + Dividen Dibayar)<br><br>
+<strong>Interpretasi</strong>: Rasio ≥ 1,0 mengindikasikan perusahaan dapat membiayai capex, melunasi utang, dan membayar dividen sepenuhnya dari arus kas operasi — tidak memerlukan pendanaan eksternal. Rasio &lt; 1,0 mengindikasikan perusahaan memerlukan sumber kas tambahan (utang baru, penerbitan saham, penjualan aset) untuk memenuhi kebutuhan ini. Subramanyam merekomendasikan menghitung rasio ini menggunakan rata-rata 3–5 tahun untuk menghilangkan volatilitas tahunan.</div></div>
+
+<div class="def"><div class="den">Capital Expenditure Coverage / Cakupan Belanja Modal</div><div class="did"><strong>Formula:</strong> Capex Coverage = CFO / Capex<br><br>
+<strong>Interpretasi</strong>: Mengukur berapa kali CFO dapat membiayai belanja modal. Rasio &gt; 1,0 berarti perusahaan menghasilkan kas cukup untuk membiayai investasi dari operasi. Untuk perusahaan mature, rasio idealnya 1,5–3,0× — cukup untuk capex plus sisa kas untuk dividen dan pelunasan utang. Rasio yang sangat tinggi (misalnya &gt; 5,0×) mungkin mengindikasikan <em>underinvestment</em>.</div></div>
+
+<div class="def"><div class="den">Reinvestment Ratio / Rasio Reinvestasi</div><div class="did"><strong>Formula:</strong> Reinvestment Ratio = Capex / Depresiasi<br><br>
+<strong>Interpretasi</strong>: Mengukur sejauh mana perusahaan mengganti dan menambah aset tetapnya. Rasio = 1,0 berarti capex hanya mengganti aset yang terdepresiasi (<em>maintenance capex</em>). Rasio &gt; 1,0 mengindikasikan <em>growth capex</em> — perusahaan berinvestasi di atas kebutuhan pemeliharaan. Rasio &lt; 1,0 secara persisten mengindikasikan perusahaan mengkonsumsi basis asetnya — potensi masalah jangka panjang. Namun, interpretasi harus mempertimbangkan umur aset dan inflasi — capex nominal mungkin kurang dari depresiasi meskipun perusahaan berinvestasi cukup jika aset relatif baru.</div></div>
+
+<h3>7.2 Rasio Kualitas Laba / Earnings Quality Ratios</h3>
+
+<div class="def"><div class="den">Cash Flow to Income Ratio (CFO/NI)</div><div class="did"><strong>Formula:</strong> CFO / Laba Bersih<br><br>
+<strong>Interpretasi</strong>: Mengukur sejauh mana laba bersih didukung oleh arus kas operasi. Rasio mendekati atau di atas 1,0 mengindikasikan laba berkualitas tinggi — sebagian besar laba yang dilaporkan telah dikonversi menjadi kas. Rasio yang konsisten di bawah 1,0 mengindikasikan akrual yang meningkat — potensi <em>red flag</em> kualitas laba. Rasio yang sangat tinggi (misalnya &gt; 1,5) mungkin mengindikasikan perusahaan terlalu konservatif dalam pengakuan pendapatan, atau memiliki beban non-kas yang besar (depresiasi tinggi). <strong>Analisis tren lebih penting daripada angka satu tahun</strong> — penurunan rasio dari waktu ke waktu lebih mengkhawatirkan daripada rasio yang stabil di bawah 1,0 (yang mungkin normal untuk industri tertentu).</div></div>
+
+<div class="def"><div class="den">Cash Flow to Revenue Ratio</div><div class="did"><strong>Formula:</strong> CFO / Pendapatan<br><br>
+<strong>Interpretasi</strong>: Mengukur efisiensi konversi pendapatan menjadi kas operasi — "cash margin" perusahaan. Mirip dengan margin operasional, tetapi berbasis kas. Berguna untuk perbandingan lintas perusahaan karena tidak terpengaruh oleh kebijakan depresiasi atau estimasi akuntansi lainnya.</div></div>
+
+<h3>7.3 Rasio Solvabilitas Berbasis Kas / Cash-Based Solvency Ratios</h3>
+
+<div class="def"><div class="den">Cash Flow Coverage Ratio / Rasio Cakupan Arus Kas</div><div class="did"><strong>Formula:</strong> Cash Flow Coverage = (CFO + Bunga Dibayar + Pajak Dibayar) / Bunga Dibayar<br><br>
+<strong>Interpretasi</strong>: Versi berbasis kas dari <em>interest coverage ratio</em>. Mengukur kemampuan perusahaan membayar bunga dari arus kas operasi (sebelum bunga dan pajak). Lebih reliabel daripada <em>times interest earned</em> berbasis akrual karena menggunakan kas aktual, bukan laba akuntansi.</div></div>
+
+<div class="def"><div class="den">Cash Flow to Total Debt / Arus Kas terhadap Total Utang</div><div class="did"><strong>Formula:</strong> CFO / Total Utang<br><br>
+<strong>Interpretasi</strong>: Mengukur kemampuan perusahaan melunasi seluruh utangnya dari arus kas operasi. Semakin tinggi rasio, semakin cepat perusahaan secara teoritis dapat melunasi seluruh utang. Rasio ini sangat diperhatikan oleh lembaga pemeringkat kredit (<em>credit rating agencies</em>) sebagai salah satu indikator utama kemampuan membayar utang.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Matriks Rasio Arus Kas — Ringkasan Komprehensif</div>
+<table>
+<thead><tr><th style="width:24%">Rasio</th><th style="width:26%">Formula</th><th style="width:18%">Benchmark</th><th style="width:32%">Relevansi Analitis</th></tr></thead>
+<tbody>
+<tr><td>Cash Flow Adequacy</td><td>CFO / (Capex + Debt Repay + Dividends)</td><td>≥ 1,0</td><td>Kecukupan kas untuk kebutuhan utama</td></tr>
+<tr><td>Capex Coverage</td><td>CFO / Capex</td><td>1,5 – 3,0×</td><td>Kemampuan membiayai investasi dari operasi</td></tr>
+<tr><td>Reinvestment Ratio</td><td>Capex / Depresiasi</td><td>&gt; 1,0 = growth</td><td>Tingkat reinvestasi aset tetap</td></tr>
+<tr><td>CFO/Net Income</td><td>CFO / NI</td><td>≈ 1,0+</td><td>Kualitas laba — konversi ke kas</td></tr>
+<tr><td>Cash Return on Assets</td><td>CFO / Total Aset</td><td>Industri-spesifik</td><td>Produktivitas aset berbasis kas</td></tr>
+<tr><td>Cash Flow Coverage</td><td>(CFO + Interest + Tax) / Interest</td><td>&gt; 3,0×</td><td>Kemampuan membayar bunga dari kas</td></tr>
+<tr><td>CFO/Total Debt</td><td>CFO / Total Debt</td><td>&gt; 0,20</td><td>Kemampuan melunasi utang dari operasi</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Kualitas Arus Kas / Cash Flow Quality</h2>
+
+<p>Analisis kualitas arus kas (<em>cash flow quality analysis</em>) mengevaluasi apakah arus kas yang dilaporkan bersifat berkelanjutan, mencerminkan realitas ekonomi, dan konsisten dengan laba yang dilaporkan. Sama seperti kualitas laba (<em>earnings quality</em>), kualitas arus kas juga dapat dimanipulasi.</p>
+
+<h3>8.1 Keberlanjutan CFO / CFO Sustainability</h3>
+
+<div class="def"><div class="den">Analisis Keberlanjutan / Sustainability Analysis</div><div class="did">Tidak semua CFO diciptakan sama. CFO yang berkualitas tinggi berasal dari operasi inti yang berkelanjutan — bukan dari item temporer atau manipulasi waktu. <strong>CFO berkualitas tinggi</strong>: didorong oleh penjualan yang kuat, margin yang stabil, dan manajemen modal kerja yang efisien. <strong>CFO yang dipertanyakan</strong>: didorong oleh: (a) penundaan pembayaran kepada pemasok (kenaikan utang usaha yang tidak biasa); (b) percepatan penagihan piutang di akhir kuartal (<em>channel stuffing</em>); (c) penjualan piutang (<em>factoring</em>) — kas masuk tetapi risiko kredit berpindah; (d) item tidak berulang yang meningkatkan CFO satu kali; (e) perubahan klasifikasi (memindahkan item dari CFO ke CFI/CFF atau sebaliknya). Analis harus membedakan CFO yang <em>sustainable</em> dari yang <em>engineered</em>.</div></div>
+
+<h3>8.2 Hubungan CFO dan Kualitas Laba / CFO-Earnings Quality Relationship</h3>
+
+<div class="def"><div class="den">Akrual sebagai Indikator Kualitas / Accruals as Quality Indicator</div><div class="did">Konsep fundamental: <strong>Total Accruals = Laba Bersih − CFO</strong>. Akrual yang besar (positif) mengindikasikan laba jauh melebihi kas — yang bisa berarti: (a) pertumbuhan bisnis yang memerlukan investasi modal kerja (normal); atau (b) manipulasi laba melalui akrual agresif (masalah kualitas). Penelitian akademis (Sloan 1996) menunjukkan bahwa komponen <strong>akrual</strong> dari laba kurang persisten dibandingkan komponen <strong>kas</strong> — artinya laba yang didominasi akrual cenderung tidak bertahan (<em>mean-reverts</em>) di periode berikutnya. Ini memiliki implikasi langsung untuk peramalan dan valuasi: analis harus memberikan bobot lebih pada komponen kas dari laba.</div></div>
+
+<div class="ibox nb"><div class="ibt">🚩 Red Flags Kualitas Arus Kas</div>
+<ul>
+<li><strong>CFO/NI yang menurun tren-nya</strong> — laba tumbuh tetapi CFO stagnan atau menurun → akrual meningkat → potensi manajemen laba</li>
+<li><strong>CFO negatif meskipun laba positif</strong> secara persisten (lebih dari 2–3 tahun) — sinyal kuat masalah kualitas</li>
+<li><strong>Kenaikan piutang atau persediaan yang melebihi pertumbuhan pendapatan/COGS</strong> — divergensi komponen modal kerja</li>
+<li><strong>Kenaikan utang usaha/beban akrual yang tidak proporsional</strong> di kuartal IV — potensi <em>cash flow management</em> akhir tahun</li>
+<li><strong>Reklasifikasi arus kas</strong> antara kategori yang menguntungkan CFO — misalnya memindahkan pengeluaran tertentu dari operasi ke investasi</li>
+<li><strong>Penjualan piutang (<em>factoring</em>) yang signifikan</strong> tanpa pengungkapan yang memadai — CFO naik tetapi perusahaan kehilangan margin dari biaya <em>factoring</em></li>
+<li><strong>Capex yang tidak proporsional rendah</strong> dibandingkan depresiasi secara persisten — <em>underinvestment</em> yang sementara meningkatkan FCF tetapi merusak kapasitas jangka panjang</li>
+</ul>
+</div>
+
+<h3>8.3 Cash Flow Management / Manajemen Arus Kas</h3>
+
+<div class="def"><div class="den">Teknik Manajemen Arus Kas / Cash Flow Management Techniques</div><div class="did">Seperti <em>earnings management</em>, perusahaan juga dapat melakukan <em>cash flow management</em> — mengambil tindakan untuk memanipulasi waktu (<em>timing</em>) arus kas agar CFO terlihat lebih baik. Teknik-teknik umum: (1) <strong>Menunda pembayaran</strong> ke pemasok di akhir kuartal — meningkatkan utang usaha dan CFO; (2) <strong>Mempercepat penagihan</strong> piutang melalui diskon atau tekanan — mengurangi piutang dan meningkatkan CFO; (3) <strong>Menjual piutang</strong> (<em>accounts receivable factoring/securitization</em>) — mengkonversi piutang menjadi kas segera; (4) <strong>Kapitalisasi pengeluaran</strong> — mengalihkan pengeluaran dari CFO (beban) ke CFI (capex); (5) <strong>Manipulasi klasifikasi</strong> — memanfaatkan fleksibilitas IFRS untuk menempatkan arus kas di kategori yang paling menguntungkan. Analis harus mengevaluasi tren perubahan modal kerja dan konsistensi kebijakan klasifikasi dari waktu ke waktu.</div></div>
+
+<h3>8.4 Analisis Cash Conversion Cycle / Cash Conversion Cycle Analysis</h3>
+
+<div class="def"><div class="den">Cash Conversion Cycle (CCC)</div><div class="did"><em>Cash Conversion Cycle</em> mengukur waktu (dalam hari) yang diperlukan perusahaan untuk mengkonversi investasi dalam persediaan dan sumber daya lainnya menjadi arus kas dari penjualan. CCC menghubungkan tiga komponen modal kerja operasi:
+<br><br>
+<strong>CCC = DSO + DIO − DPO</strong><br><br>
+Dimana: <strong>DSO</strong> (<em>Days Sales Outstanding</em>) = Piutang / (Pendapatan/365) — berapa hari rata-rata untuk menagih piutang; <strong>DIO</strong> (<em>Days Inventory Outstanding</em>) = Persediaan / (COGS/365) — berapa hari rata-rata persediaan disimpan; <strong>DPO</strong> (<em>Days Payable Outstanding</em>) = Utang Usaha / (COGS/365) — berapa hari rata-rata perusahaan membayar pemasok.
+<br><br>
+CCC yang lebih pendek menunjukkan konversi kas yang lebih efisien — perusahaan menagih lebih cepat, menjual persediaan lebih cepat, atau membayar pemasok lebih lambat. CCC negatif (seperti pada beberapa retailer) berarti perusahaan menerima kas dari pelanggan sebelum membayar pemasok — posisi modal kerja yang sangat menguntungkan.
+<br><br>
+<strong>Hubungan CCC dengan CFO:</strong> Perubahan CCC dari periode ke periode secara langsung mempengaruhi perubahan modal kerja dalam rekonsiliasi NI→CFO. CCC yang memanjang → modal kerja meningkat → menekan CFO. CCC yang memendek → modal kerja menurun → meningkatkan CFO.</div></div>
+
+<div class="exb nb"><div class="exn">💡 CCC dalam Konteks Industri — Consumer Goods vs Teknologi</div>
+<table>
+<thead><tr><th style="width:20%">Industri</th><th style="width:15%">DSO</th><th style="width:15%">DIO</th><th style="width:15%">DPO</th><th style="width:15%">CCC</th><th style="width:20%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td>Consumer Goods (ICBP)</td><td>~25 hari</td><td>~55 hari</td><td>~35 hari</td><td>~45 hari</td><td>Siklus pendek; kas cepat berputar</td></tr>
+<tr><td>Properti (BSDE)</td><td>~90 hari</td><td>~400+ hari</td><td>~60 hari</td><td>~430+ hari</td><td>Sangat panjang; persediaan = tanah/properti</td></tr>
+<tr><td>Teknologi (SaaS)</td><td>~40 hari</td><td>~0 hari</td><td>~30 hari</td><td>~10 hari</td><td>Tidak ada persediaan fisik; CCC sangat pendek</td></tr>
+<tr><td>Retail (modern)</td><td>~5 hari</td><td>~30 hari</td><td>~45 hari</td><td>−10 hari</td><td>CCC negatif — menerima kas sebelum membayar pemasok</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>8.5 Kerangka Evaluasi Komprehensif / Comprehensive Evaluation Framework</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Matriks Evaluasi Kualitas Arus Kas</div>
+<p>Untuk mengevaluasi kualitas arus kas secara komprehensif, analis harus menggunakan pendekatan multi-dimensi:</p>
+<table>
+<thead><tr><th style="width:22%">Dimensi</th><th style="width:28%">Indikator Positif</th><th style="width:28%">Indikator Negatif</th><th style="width:22%">Alat Analisis</th></tr></thead>
+<tbody>
+<tr><td><strong>Keberlanjutan</strong></td><td>CFO stabil atau tumbuh seiring pendapatan</td><td>CFO volatile atau divergen dari pendapatan</td><td>Tren CFO multi-tahun; CFO/Revenue</td></tr>
+<tr><td><strong>Konversi Laba</strong></td><td>CFO/NI ≥ 1,0 konsisten</td><td>CFO/NI menurun; NI positif tetapi CFO negatif</td><td>CFO/NI tren; analisis akrual</td></tr>
+<tr><td><strong>Modal Kerja</strong></td><td>CCC stabil atau memendek</td><td>DSO/DIO meningkat; DPO meningkat tajam di Q4</td><td>CCC components; seasonality analysis</td></tr>
+<tr><td><strong>Reinvestasi</strong></td><td>Capex/D&amp;A ≥ 1,0; capex konsisten</td><td>Capex/D&amp;A &lt; 1,0 persisten</td><td>Reinvestment ratio; capex/revenue</td></tr>
+<tr><td><strong>Klasifikasi</strong></td><td>Kebijakan klasifikasi konsisten antar tahun</td><td>Perubahan kebijakan yang menguntungkan CFO</td><td>Catatan kebijakan; perbandingan YoY</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s9" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>9. Item Khusus dalam Laporan Arus Kas / Special Items in the Cash Flow Statement</h2>
+
+<h3>9.1 Dampak Akuisisi / Acquisition Effects</h3>
+
+<div class="def"><div class="den">Akuisisi dan Laporan Arus Kas / Acquisitions &amp; Cash Flow Reporting</div><div class="did">Akuisisi anak perusahaan memiliki dampak kompleks pada laporan arus kas: (1) <strong>Kas yang dibayarkan untuk akuisisi</strong> dilaporkan di CFI sebagai "pembayaran untuk akuisisi anak perusahaan, dikurangi kas yang diperoleh" — ini bisa menjadi angka sangat besar yang mendominasi CFI (contoh: akuisisi Pinehill oleh ICBP senilai ~USD 2,99 miliar); (2) <strong>Pasca-akuisisi</strong>, CFO konsolidasi meningkat karena mencakup arus kas operasi dari entitas yang diakuisisi — membuat tren CFO sulit dibandingkan secara year-over-year tanpa penyesuaian; (3) <strong>Working capital yang diakuisisi</strong> mempengaruhi perubahan modal kerja dalam periode akuisisi; (4) <strong>Biaya integrasi</strong> dan <em>restructuring charges</em> pasca-akuisisi mempengaruhi CFO periode berikutnya. Analis harus memisahkan CFO organik dari CFO yang berasal dari akuisisi — baik dengan mengurangi estimasi CFO entitas yang diakuisisi atau dengan menganalisis pertumbuhan CFO organik secara terpisah.</div></div>
+
+<h3>9.2 Aktivitas Non-Kas / Non-Cash Activities</h3>
+
+<div class="def"><div class="den">Aktivitas Investasi dan Pendanaan Non-Kas</div><div class="did">Beberapa transaksi investasi dan pendanaan yang signifikan <strong>tidak melibatkan kas</strong> dan oleh karena itu tidak muncul dalam laporan arus kas — tetapi diungkapkan dalam catatan atau jadwal terpisah. Contoh: (1) <strong>Konversi utang menjadi ekuitas</strong> — struktur modal berubah tetapi tidak ada arus kas; (2) <strong>Akuisisi aset melalui penerbitan saham</strong> — perusahaan memperoleh aset tanpa pengeluaran kas; (3) <strong>Kapitalisasi lease</strong> — di bawah PSAK 73 (IFRS 16), perusahaan mengakui aset hak-guna dan liabilitas lease tanpa arus kas awal; (4) <strong>Pertukaran aset non-kas</strong>. Meskipun tidak ada dalam arus kas, transaksi ini memiliki implikasi ekonomi yang penting dan harus diperhatikan analis. PSAK (IAS 7) mensyaratkan pengungkapan terpisah untuk aktivitas non-kas yang signifikan.</div></div>
+
+<h3>9.3 Kas Terbatas / Restricted Cash</h3>
+
+<div class="def"><div class="den">Kas dan Setara Kas yang Dibatasi Penggunaannya</div><div class="did"><em>Restricted cash</em> adalah kas yang dibatasi penggunaannya untuk tujuan tertentu — misalnya jaminan untuk pinjaman, escrow untuk akuisisi, atau persyaratan regulasi. Di bawah ASU 2016-18 (US GAAP), perubahan <em>restricted cash</em> harus dimasukkan dalam rekonsiliasi kas akhir pada laporan arus kas. Di bawah IFRS, perlakuannya kurang terstandarisasi. <strong>Implikasi analitis</strong>: kas terbatas mengurangi likuiditas efektif perusahaan — Rp 5 T di neraca mungkin hanya Rp 3 T yang benar-benar tersedia jika Rp 2 T restricted. Analis harus memeriksa catatan atas laporan keuangan untuk besaran dan sifat kas terbatas.</div></div>
+
+<h3>9.4 Dampak Kurs pada Kas / Foreign Currency Effects</h3>
+
+<div class="def"><div class="den">Dampak Perubahan Kurs terhadap Kas</div><div class="did">Untuk perusahaan yang memegang kas dalam mata uang asing, perubahan kurs menciptakan keuntungan atau kerugian translasi yang mempengaruhi saldo kas tetapi <strong>bukan</strong> arus kas dari operasi, investasi, atau pendanaan. Efek kurs ini dilaporkan secara terpisah dalam laporan arus kas sebagai item rekonsiliasi. Untuk perusahaan seperti ICBP yang memiliki operasi internasional (Pinehill di Timur Tengah, Afrika), efek kurs bisa signifikan.</div></div>
+
+<h3>9.5 Pengungkapan Tambahan / Supplemental Disclosures</h3>
+
+<div class="def"><div class="den">Informasi Pelengkap Laporan Arus Kas</div><div class="did">Selain tiga bagian utama (CFO, CFI, CFF), laporan arus kas memerlukan pengungkapan tambahan yang kritis untuk analisis: (1) <strong>Pajak penghasilan yang dibayar</strong> — jumlah kas aktual yang dibayarkan untuk pajak, berbeda dari beban pajak penghasilan; (2) <strong>Bunga yang dibayar</strong> — jumlah kas aktual yang dibayarkan untuk bunga, termasuk bunga yang dikapitalisasi; (3) <strong>Aktivitas investasi dan pendanaan non-kas</strong> — transaksi signifikan yang tidak melibatkan kas (konversi utang ke ekuitas, kapitalisasi lease, akuisisi melalui penerbitan saham); (4) <strong>Rekonsiliasi kas dan setara kas</strong> — menunjukkan komponen kas di neraca yang membentuk total kas akhir dalam laporan arus kas. Pengungkapan-pengungkapan ini sering tersembunyi dalam catatan kaki tetapi mengandung informasi analitis yang kritis.</div></div>
+
+<div class="exb nb"><div class="exn">💡 Checklist Pengungkapan Tambahan untuk Analis</div>
+<table>
+<thead><tr><th style="width:30%">Item Pengungkapan</th><th style="width:35%">Pertanyaan Analitis</th><th style="width:35%">Potensi Red Flag</th></tr></thead>
+<tbody>
+<tr><td>Pajak dibayar vs beban pajak</td><td>Apakah pajak kas mendekati beban pajak akrual?</td><td>Deviasi besar → pajak tangguhan signifikan → perlu evaluasi reversibility</td></tr>
+<tr><td>Bunga dibayar vs beban bunga</td><td>Apakah ada bunga yang dikapitalisasi (masuk CFI)?</td><td>Kapitalisasi bunga besar → CFO artificially higher</td></tr>
+<tr><td>Aktivitas non-kas</td><td>Seberapa besar transaksi non-kas yang signifikan?</td><td>Transaksi non-kas yang sangat besar tanpa pengungkapan memadai</td></tr>
+<tr><td>Komponen kas akhir</td><td>Berapa porsi kas yang restricted?</td><td>Kas restricted besar → likuiditas efektif lebih rendah dari yang terlihat</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s10" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>10. Fondasi Valuasi Berbasis Arus Kas / Cash Flow-Based Valuation Foundations</h2>
+
+<p>Analisis arus kas yang dilakukan di Chapter 7 bukan hanya evaluasi historis — ia menyediakan <strong>fondasi</strong> untuk valuasi prospektif menggunakan model <em>discounted cash flow</em> (DCF), yang merupakan salah satu pendekatan valuasi paling fundamental.</p>
+
+<div class="ibox nb"><div class="ibt">📌 Mengapa DCF Menjadi Pendekatan Valuasi Dominan</div>
+<p>Pendekatan DCF mendominasi praktik valuasi profesional karena didasarkan pada prinsip ekonomi fundamental: <strong>nilai aset ditentukan oleh arus kas yang akan dihasilkannya di masa depan</strong>. Dibandingkan valuasi berbasis multiple (P/E, EV/EBITDA) yang bersifat relatif dan bergantung pada asumsi bahwa perusahaan pembanding dihargai secara tepat oleh pasar, DCF menyediakan estimasi nilai <strong>intrinsik</strong> yang independen dari sentimen pasar. Namun, kualitas valuasi DCF sepenuhnya bergantung pada kualitas proyeksi arus kas — dan proyeksi ini hanya dapat dibuat dengan pemahaman mendalam terhadap pola arus kas historis, yang merupakan fokus Chapter 7 ini.</p>
+</div>
+
+<h3>10.1 Prinsip DCF / DCF Principles</h3>
+
+<div class="def"><div class="den">Discounted Cash Flow Model</div><div class="did">Model DCF menyatakan bahwa <strong>nilai perusahaan sama dengan nilai sekarang dari seluruh arus kas bebas masa depan</strong>, didiskontokan pada tingkat pengembalian yang mencerminkan risiko arus kas tersebut. Dua variasi utama:
+<br><br>
+<strong>Enterprise DCF (FCFF-based):</strong><br>
+Enterprise Value = Σ [FCFF<sub>t</sub> / (1+WACC)<sup>t</sup>] + Terminal Value / (1+WACC)<sup>n</sup><br><br>
+<strong>Equity DCF (FCFE-based):</strong><br>
+Equity Value = Σ [FCFE<sub>t</sub> / (1+k<sub>e</sub>)<sup>t</sup>] + Terminal Value / (1+k<sub>e</sub>)<sup>n</sup><br><br>
+Pemahaman pola arus kas historis — level, tren, volatilitas, dan driver — sangat penting untuk membangun proyeksi yang realistis. Ini adalah koneksi langsung antara Chapter 7 (analisis historis) dan Chapter 11–12 (valuasi).</div></div>
+
+<h3>10.2 Dari Analisis Historis ke Proyeksi / From Historical Analysis to Projection</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Jembatan Analitis: Ch.7 → Ch.10 → Ch.11–12</div>
+<table>
+<thead><tr><th style="width:30%">Analisis Historis (Ch.7)</th><th style="width:35%">Proyeksi (Ch.10)</th><th style="width:35%">Valuasi (Ch.11–12)</th></tr></thead>
+<tbody>
+<tr><td>Level dan tren CFO</td><td>Proyeksi pertumbuhan CFO</td><td>Input numerator DCF</td></tr>
+<tr><td>Pola capex vs depresiasi</td><td>Estimasi maintenance vs growth capex</td><td>Pengurang untuk memperoleh FCF</td></tr>
+<tr><td>Rasio CFO/NI historis</td><td>Proyeksi konversi laba ke kas</td><td>Validasi proyeksi earnings-based</td></tr>
+<tr><td>Perubahan modal kerja</td><td>Proyeksi kebutuhan WC berdasarkan % pendapatan</td><td>Komponen pengurang di FCF</td></tr>
+<tr><td>Pola CFF (dividen, utang)</td><td>Asumsi struktur modal target</td><td>Menentukan WACC dan distribusi</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>10.3 Terminal Value dan Arus Kas Berkelanjutan / Terminal Value &amp; Sustainable Cash Flows</h3>
+
+<div class="def"><div class="den">Terminal Value dalam DCF</div><div class="did">Dalam model DCF, nilai perusahaan terdiri dari dua komponen: (1) <strong>Nilai eksplisit</strong> — nilai sekarang dari arus kas selama periode proyeksi eksplisit (biasanya 5–10 tahun); (2) <strong>Terminal value</strong> — nilai sekarang dari seluruh arus kas setelah periode eksplisit, dihitung menggunakan <em>Gordon Growth Model</em>: TV = FCF<sub>n+1</sub> / (WACC − g), dimana g adalah tingkat pertumbuhan jangka panjang yang berkelanjutan (<em>sustainable growth rate</em>). Terminal value sering menyumbang 60–80% dari total nilai perusahaan — ini berarti asumsi tentang keberlanjutan arus kas jangka panjang sangat kritis. Analisis arus kas historis di Chapter 7 memberikan basis untuk menilai apakah tingkat arus kas saat ini dapat dipertahankan dan pada tingkat berapa ia akan tumbuh secara realistis.</div></div>
+
+<div class="def"><div class="den">Maintenance Capex vs Growth Capex dalam Proyeksi</div><div class="did">Untuk proyeksi arus kas, analis perlu membedakan: (1) <strong>Maintenance capex</strong> — investasi minimum yang diperlukan untuk mempertahankan kapasitas produksi saat ini (proksi: depresiasi); (2) <strong>Growth capex</strong> — investasi tambahan untuk memperluas kapasitas. Dalam <em>terminal value</em>, hanya maintenance capex yang dikurangkan karena asumsi pertumbuhan sudah tercermin dalam growth rate (g). Ini menghasilkan FCF terminal yang lebih tinggi daripada FCF historis jika perusahaan saat ini dalam fase investasi pertumbuhan. Pemahaman pola capex/depresiasi historis dari Chapter 7 menjadi input kritis untuk estimasi ini.</div></div>
+
+<h3>10.4 Dampak PSAK 73 (IFRS 16) terhadap Arus Kas / IFRS 16 Impact on Cash Flows</h3>
+
+<div class="def"><div class="den">Perubahan Klasifikasi Arus Kas akibat PSAK 73</div><div class="did">Penerapan PSAK 73 (IFRS 16) tentang sewa (<em>leases</em>) secara signifikan mengubah penyajian arus kas: sebelum PSAK 73, seluruh pembayaran sewa operasi masuk di CFO. Setelah PSAK 73, pembayaran sewa dipecah menjadi: (a) pembayaran pokok sewa → CFF; (b) pembayaran bunga sewa → CFO atau CFF (tergantung kebijakan). Dampaknya: <strong>CFO meningkat</strong> karena sebagian besar pembayaran sewa berpindah ke CFF. Untuk perusahaan dengan sewa signifikan (retail, penerbangan, telekomunikasi), efek ini bisa sangat material. Analis harus menyadari bahwa peningkatan CFO pasca-PSAK 73 bukan mencerminkan perbaikan operasional — melainkan reklasifikasi akuntansi. Saat membandingkan CFO lintas waktu (pre vs post-PSAK 73), penyesuaian diperlukan.</div></div>
+</div>
+
+<div id="s11" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>11. Analisis Kasus: Colgate-Palmolive / Case Analysis: Colgate-Palmolive</h2>
+
+<p>Subramanyam menggunakan Colgate-Palmolive sebagai studi kasus utama di Chapter 7 untuk mengilustrasikan analisis arus kas pada perusahaan <em>consumer goods</em> global. Berikut adalah kerangka analitis yang diterapkan — dan yang akan kita replikasi untuk ICBP dalam contoh Indonesia.</p>
+
+<div class="ibox nb"><div class="ibt">📐 Kerangka Analisis Colgate-Palmolive</div>
+<ul>
+<li><strong>Pola CFO yang konsisten positif</strong>: Sebagai perusahaan <em>consumer staples</em> mature, Colgate menghasilkan CFO yang stabil dan kuat — mencerminkan <em>brand power</em>, pricing, dan manajemen modal kerja yang efisien.</li>
+<li><strong>CFO &gt; Net Income secara persisten</strong>: Didorong oleh depresiasi yang besar sebagai perusahaan dengan aset tetap signifikan (pabrik global) dan kompensasi berbasis saham. Rasio CFO/NI konsisten di atas 1,2×.</li>
+<li><strong>CFI negatif untuk capex dan akuisisi selektif</strong>: Capex berkisar 3–4% dari pendapatan — moderat untuk perusahaan consumer goods; akuisisi selektif untuk memperluas portofolio produk.</li>
+<li><strong>CFF negatif — pengembalian modal agresif</strong>: Colgate secara konsisten membeli kembali saham (<em>share buybacks</em>) dan membayar dividen — sering mendanai buybacks sebagian dari utang (financial engineering).</li>
+<li><strong>Free Cash Flow kuat</strong>: FCFF dan FCFE yang positif konsisten — menandakan kemampuan membiayai pertumbuhan, dividen, dan buybacks dari operasi.</li>
+</ul>
+<p><strong>Pelajaran untuk analis:</strong> Colgate menggambarkan perusahaan "cash cow" — profil arus kas ideal untuk valuasi DCF karena prediktabilitas tinggi. Namun, CFF yang sangat negatif (buybacks didanai utang) menciptakan leverage yang meningkat — perlu dievaluasi keberlanjutannya.</p>
+</div>
+
+<h3>11.2 Perbandingan Colgate-Palmolive vs ICBP / Colgate vs ICBP Comparison</h3>
+
+<div class="exb nb"><div class="exn">💡 Perbandingan Profil Arus Kas: Colgate (Textbook) vs ICBP (Indonesian Case)</div>
+<table>
+<thead><tr><th style="width:25%">Dimensi</th><th style="width:37%">Colgate-Palmolive (US GAAP)</th><th style="width:38%">ICBP (PSAK/IFRS)</th></tr></thead>
+<tbody>
+<tr><td><strong>Pola CFO</strong></td><td>Konsisten positif dan stabil</td><td>Konsisten positif; sedikit lebih volatile karena efek Pinehill</td></tr>
+<tr><td><strong>CFO/NI</strong></td><td>~1,2–1,5× (bunga masuk di CFO)</td><td>~1,3–1,9× (bunga di CFF → CFO relatif lebih tinggi)</td></tr>
+<tr><td><strong>Capex/Revenue</strong></td><td>~3–4%</td><td>~5–5,3% (manufaktur lebih berat)</td></tr>
+<tr><td><strong>CFF driver utama</strong></td><td>Share buybacks + dividen</td><td>Deleveraging (Pinehill) + dividen</td></tr>
+<tr><td><strong>Standar akuntansi</strong></td><td>US GAAP — bunga wajib di CFO</td><td>PSAK/IFRS — bunga dipilih di CFF</td></tr>
+<tr><td><strong>Tantangan komparabilitas</strong></td><td>Buybacks mengubah ekuitas dan EPS</td><td>Akuisisi besar mengubah baseline arus kas</td></tr>
+</tbody>
+</table>
+<p><strong>Pelajaran kritis:</strong> Kedua perusahaan menunjukkan profil "cash cow" yang serupa, tetapi perbandingan langsung CFO/NI tidak valid tanpa penyesuaian klasifikasi bunga. Jika bunga ICBP (~Rp 1,3 T) dipindahkan dari CFF ke CFO (setara US GAAP), rasio CFO/NI 2023 akan turun dari 1,85× menjadi ~1,60× — masih sehat tetapi lebih rendah. Ini mengilustrasikan pentingnya memahami klasifikasi sebelum membandingkan metrik arus kas lintas negara.</p>
+</div>
+
+<h3>11.3 Teknik Analisis yang Ditunjukkan Colgate Case / Analytical Techniques from the Colgate Case</h3>
+
+<div class="ibox nb"><div class="ibt">📋 Checklist dari Studi Kasus Colgate</div>
+<ol>
+<li><strong>Trend analysis</strong>: Bandingkan CFO, CFI, CFF selama minimal 3–5 tahun untuk mengidentifikasi tren dan anomali</li>
+<li><strong>Common-size analysis</strong>: Nyatakan komponen arus kas sebagai persentase dari pendapatan atau total aset untuk komparabilitas lintas waktu dan lintas perusahaan</li>
+<li><strong>Working capital decomposition</strong>: Pisahkan perubahan modal kerja menjadi komponen individual (piutang, persediaan, utang usaha) dan evaluasi masing-masing</li>
+<li><strong>FCF sustainability</strong>: Evaluasi apakah FCF yang kuat didorong oleh operasi yang berkelanjutan atau oleh pengurangan capex yang tidak berkelanjutan</li>
+<li><strong>Capital allocation analysis</strong>: Bagaimana perusahaan mengalokasikan FCF — reinvestasi, dividen, buybacks, pelunasan utang, akuisisi — dan apakah alokasi ini menciptakan atau menghancurkan nilai</li>
+</ol>
+</div>
+</div>
+
+<div id="s12" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>12. Keterbatasan Analisis Arus Kas / Limitations of Cash Flow Analysis</h2>
+
+<p>Meskipun analisis arus kas sangat bernilai, ia memiliki keterbatasan yang harus dipahami analis untuk menghindari kesimpulan yang tidak tepat.</p>
+
+<div class="def"><div class="den">Keterbatasan 1: Arus Kas Tidak Mengukur Profitabilitas Ekonomi</div><div class="did">Arus kas tidak mempertimbangkan <strong>matching</strong> — prinsip dasar akuntansi yang mencocokkan pendapatan dengan beban yang menghasilkannya. Perusahaan yang baru membeli mesin seharga Rp 100 M akan menunjukkan CFI negatif besar, meskipun mesin tersebut akan menghasilkan pendapatan selama 10 tahun. Arus kas tidak mencerminkan alokasi manfaat ekonomi lintas periode — itulah mengapa laba akrual tetap diperlukan.</div></div>
+
+<div class="def"><div class="den">Keterbatasan 2: Timing dan Volatilitas</div><div class="did">CFO dapat berfluktuasi signifikan antar periode karena perbedaan waktu pembayaran dan penerimaan yang tidak mencerminkan perubahan kinerja ekonomi fundamental. Pembayaran pajak besar di kuartal I, atau penerimaan besar dari pelanggan di akhir kuartal IV, dapat menciptakan volatilitas CFO kuartalan yang tidak informatif. <strong>Solusi</strong>: gunakan arus kas tahunan (bukan kuartalan) dan analisis tren multi-tahun.</div></div>
+
+<div class="def"><div class="den">Keterbatasan 3: Manipulasi Klasifikasi</div><div class="did">Seperti dibahas di bagian kualitas arus kas, perusahaan memiliki diskresi dalam mengklasifikasikan arus kas — terutama di bawah IFRS. Ini mengurangi komparabilitas dan dapat menyembunyikan masalah. CFO yang terlihat kuat mungkin mencerminkan klasifikasi yang menguntungkan, bukan operasi yang kuat.</div></div>
+
+<div class="def"><div class="den">Keterbatasan 4: Tidak Memisahkan Maintenance vs Growth Capex</div><div class="did">Laporan arus kas melaporkan total capex sebagai satu angka — tidak membedakan antara <em>maintenance capex</em> (penggantian aset yang diperlukan untuk mempertahankan operasi) dan <em>growth capex</em> (investasi untuk ekspansi). Perbedaan ini kritis untuk perhitungan FCF yang tepat: maintenance capex harus dikurangi dari CFO untuk mendapatkan <em>true free cash flow</em>, sedangkan growth capex adalah investasi diskresioner. Pemisahan ini memerlukan estimasi analis — biasanya menggunakan depresiasi sebagai proksi untuk maintenance capex.</div></div>
+
+<div class="def"><div class="den">Keterbatasan 5: Backward-Looking</div><div class="did">Laporan arus kas melaporkan arus kas <strong>historis</strong> — apa yang sudah terjadi. Untuk valuasi, analis memerlukan arus kas <strong>masa depan</strong>. Meskipun pola historis informatif untuk proyeksi, tidak ada jaminan bahwa pola tersebut akan berlanjut — terutama jika perusahaan mengalami perubahan struktural (akuisisi besar, perubahan model bisnis, gangguan industri).</div></div>
+
+<div class="def"><div class="den">Keterbatasan 6: Tidak Menangkap Penciptaan Nilai Intelektual</div><div class="did">Laporan arus kas menangkap arus kas dari aset fisik dan keuangan, tetapi <strong>tidak menangkap penciptaan nilai dari aset tak berwujud</strong> yang dihasilkan secara internal — misalnya brand value, hubungan pelanggan, kekayaan intelektual, atau human capital. Pengeluaran R&amp;D dan pemasaran yang membangun aset-aset ini muncul sebagai arus kas keluar (beban) di CFO, meskipun manfaatnya dinikmati selama bertahun-tahun. Ini menyebabkan FCF perusahaan yang berinvestasi besar dalam intangibles (<em>asset-light firms</em>) terlihat lebih rendah daripada realitas ekonomisnya — kebalikan dari masalah matching di laba akrual.</div></div>
+
+<div class="ibox nb"><div class="ibt">📐 Analisis Arus Kas sebagai Komplemen, Bukan Pengganti</div>
+<p>Analisis arus kas <strong>paling bernilai jika digunakan bersama</strong> analisis laba dan neraca — bukan sebagai pengganti. Tabel berikut menunjukkan kapan setiap perspektif paling informatif:</p>
+<table>
+<thead><tr><th style="width:25%">Pertanyaan Analitis</th><th style="width:25%">Laba (Akrual)</th><th style="width:25%">Arus Kas</th><th style="width:25%">Neraca</th></tr></thead>
+<tbody>
+<tr><td>Profitabilitas ekonomi?</td><td>✅ Utama</td><td>⚠️ Pelengkap</td><td>⚠️ Terbatas</td></tr>
+<tr><td>Likuiditas dan solvabilitas?</td><td>⚠️ Terbatas</td><td>✅ Utama</td><td>✅ Utama</td></tr>
+<tr><td>Kualitas laba?</td><td>⚠️ Perlu validasi</td><td>✅ Validator utama</td><td>⚠️ Pelengkap</td></tr>
+<tr><td>Valuasi DCF?</td><td>⚠️ Input alternatif</td><td>✅ Input utama</td><td>⚠️ Terbatas</td></tr>
+<tr><td>Kapasitas masa depan?</td><td>✅ Dengan normalisasi</td><td>⚠️ Backward-looking</td><td>✅ Basis aset</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s13" class="section pb">
+<div class="phdr"><span>Chapter 7 · Cash Flow Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>13. Kerangka Analitis Terintegrasi / Integrated Analytical Framework</h2>
+
+<p>Bab penutup ringkasan ini menyatukan seluruh konsep menjadi kerangka kerja analitis yang dapat diterapkan pada perusahaan manapun.</p>
+
+<div class="ibox nb"><div class="ibt">📋 Checklist Analisis Arus Kas — Langkah demi Langkah</div>
+<ol>
+<li><strong>Evaluasi pola dasar:</strong> Apakah CFO positif secara konsisten? Apakah pola CFO/CFI/CFF konsisten dengan tahap siklus hidup perusahaan?</li>
+<li><strong>Analisis rekonsiliasi NI→CFO:</strong> Apa penyebab utama perbedaan antara laba dan CFO? Apakah didominasi item non-kas (normal) atau perubahan modal kerja (perlu investigasi)?</li>
+<li><strong>Evaluasi komponen modal kerja:</strong> Apakah perubahan piutang, persediaan, dan utang usaha konsisten dengan pertumbuhan pendapatan dan COGS? Adakah <em>red flags</em>?</li>
+<li><strong>Periksa klasifikasi:</strong> Standar apa yang digunakan (US GAAP vs IFRS)? Di mana bunga dan dividen diklasifikasikan? Apakah ada perubahan klasifikasi dari tahun sebelumnya?</li>
+<li><strong>Hitung dan evaluasi FCF:</strong> FCFF dan FCFE positif? Bagaimana trennya? Apakah capex cukup untuk mempertahankan dan menumbuhkan bisnis?</li>
+<li><strong>Hitung rasio arus kas kunci:</strong> CFO/NI, cash flow adequacy, capex coverage, reinvestment ratio, cash flow coverage.</li>
+<li><strong>Identifikasi item khusus:</strong> Akuisisi besar, aktivitas non-kas, kas terbatas, efek kurs — bagaimana masing-masing mempengaruhi interpretasi?</li>
+<li><strong>Evaluasi kualitas dan keberlanjutan:</strong> Apakah CFO berkelanjutan? Adakah tanda <em>cash flow management</em>? Bagaimana hubungan CFO/NI dari waktu ke waktu?</li>
+<li><strong>Hubungkan dengan valuasi:</strong> Berdasarkan analisis, apakah arus kas dapat diprediksi cukup untuk model DCF? Apa driver utama yang harus diproyeksikan?</li>
+</ol>
+</div>
+
+<div class="cg nb">
+<div class="cgt">🔗 Forward Connection: Week 09 — Profitability Analysis (ROIC)</div>
+<p>Analisis arus kas yang dilakukan di minggu ini memberikan perspektif kas terhadap profitabilitas. Minggu depan (Ch.8–9), kita akan menganalisis profitabilitas dari perspektif akrual — <em>Return on Invested Capital</em> (ROIC), dekomposisi DuPont, analisis margin. Kedua perspektif (kas dan akrual) saling melengkapi: profitabilitas yang tinggi berdasarkan laba tetapi tidak didukung oleh arus kas adalah profitabilitas yang dipertanyakan. Sebaliknya, CFO yang kuat tetapi margin akrual yang menurun mungkin mengindikasikan manfaat sementara (misalnya, pengurangan modal kerja yang tidak dapat diulang). Gabungan analisis arus kas (Ch.7) dan profitabilitas (Ch.8–9) memberikan gambaran kinerja yang lengkap untuk analisis prospektif (Ch.10) dan valuasi (Ch.11–12).</p>
+</div>
+
+<div class="nb">
+<p><strong>Rangkuman bab:</strong> Chapter 7 mengajarkan kita bahwa kas adalah "darah" perusahaan — tanpa arus kas yang memadai, perusahaan yang "menguntungkan" secara akrual pun dapat mengalami kesulitan finansial. Menguasai analisis arus kas — dari rekonsiliasi NI→CFO hingga perhitungan free cash flow dan evaluasi kualitas — adalah keterampilan analitis yang esensial untuk setiap analis yang ingin melampaui angka-angka permukaan dan memahami realitas ekonomi perusahaan.</p>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-07/main-summary.html">← Week 07</a>
+  
+  
+  <a href="../week-09/main-summary.html">Week 09 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

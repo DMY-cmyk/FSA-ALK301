@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11 — Study Guide</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 11: Credit Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis kredit</span>
+    
+    <span>📖 Subramanyam Ch. 10</span>
+    
+    
+    
+    <span>🏢 BUMI — Bumi Resources Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Liquidity analysis; solvency ratios; credit scoring; bankruptcy prediction; bond ratings</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 11 Study Guide — Credit Analysis -->
+<!-- Subramanyam Ch.10 | No article this week | BUMI (Indonesian Example) -->
+
+<h2>Panduan Belajar Minggu 11: Analisis Kredit</h2>
+<p><em>Week 11 Study Guide: Credit Analysis — Subramanyam Chapter 10 | BUMI (Indonesian Case Study)</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu ini membahas <strong>analisis kredit (<em>credit analysis</em>)</strong> — evaluasi kemampuan perusahaan memenuhi kewajiban keuangannya. Setelah membangun proyeksi keuangan di Minggu 10 (Prospective Analysis), kini kita menggunakan alat analitis untuk menilai <strong>risiko kredit</strong>: apakah perusahaan mampu membayar utangnya? Chapter 10 Subramanyam menyajikan kerangka komprehensif meliputi <em>liquidity analysis</em> (kemampuan memenuhi kewajiban jangka pendek), <em>capital structure and solvency analysis</em> (kemampuan memenuhi kewajiban jangka panjang), <em>credit scoring models</em> (Altman Z-score, Ohlson O-score), <em>bond ratings</em>, dan kerangka keputusan pemberian kredit. Tidak ada artikel tambahan minggu ini — seluruh fokus pada penguasaan Chapter 10 yang kaya akan rasio dan model kuantitatif. Analisis kredit adalah <strong>sisi lain dari koin valuasi</strong>: jika valuasi ekuitas (Minggu 12) menilai <em>upside potential</em>, analisis kredit menilai <em>downside risk</em>.</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">📖 Langkah 1: Baca Subramanyam Chapter 10 — Credit Analysis (Bacaan Utama dan Satu-satunya / Primary &amp; Only Reading)</div>
+<div class="did">
+<p>Chapter 10 adalah satu-satunya bacaan minggu ini — bacalah dengan teliti dan menyeluruh. Fokuskan pada lima area utama: (1) <strong>Analisis likuiditas (<em>liquidity analysis</em>)</strong> — <em>current ratio</em>, <em>quick ratio</em>, <em>cash ratio</em>, <em>cash conversion cycle</em>, dan analisis modal kerja; (2) <strong>Struktur modal dan solvabilitas (<em>capital structure and solvency</em>)</strong> — <em>debt-to-equity ratio</em>, <em>debt-to-capital ratio</em>, <em>times interest earned</em>, <em>debt service coverage ratio</em>; (3) <strong>Model prediksi kebangkrutan (<em>bankruptcy prediction models</em>)</strong> — Altman Z-score dengan kelima komponennya (X1–X5), interpretasi zona (safe/grey/distress), dan sekilas tentang Ohlson O-score; (4) <strong>Peringkat obligasi (<em>bond ratings</em>)</strong> — determinan peringkat kredit, peran lembaga pemeringkat (S&amp;P, Moody's, Fitch, Pefindo di Indonesia), hubungan antara rasio keuangan dan peringkat; (5) <strong>Kerangka keputusan kredit (<em>lending decision framework</em>)</strong> — analisis karakter, kapasitas, modal, kondisi, dan jaminan (5C of Credit).</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 2: Review Kembali Rasio Likuiditas dan Leverage dari Minggu-minggu Sebelumnya</div>
+<div class="did">
+<p>Sebelum masuk ke materi baru, pastikan Anda menguasai kembali rasio-rasio yang telah diperkenalkan di minggu-minggu sebelumnya: <em>current ratio</em> dan <em>quick ratio</em> (Minggu 03), <em>debt-to-equity ratio</em> dan leverage dalam DuPont decomposition (Minggu 09), serta pola arus kas operasional sebagai indikator kemampuan membayar utang (Minggu 08). Chapter 10 memperdalam dan menyatukan semua rasio ini dalam konteks keputusan kredit yang terstruktur.</p>
+</div>
+</div>
+
+<h3>2. Konsep Sentral / Central Concepts</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Hierarki Konsep Minggu Ini / This Week's Concept Hierarchy</div>
+<ol>
+<li><strong>Likuiditas (<em>Liquidity</em>)</strong> — kemampuan perusahaan memenuhi kewajiban jangka pendek saat jatuh tempo. Diukur melalui <em>current ratio</em>, <em>quick ratio</em>, <em>cash ratio</em>, dan <em>cash conversion cycle</em> (CCC). Likuiditas tinggi mengurangi risiko gagal bayar jangka pendek, tetapi likuiditas berlebihan bisa menandakan inefisiensi penggunaan aset.</li>
+<li><strong>Solvabilitas (<em>Solvency</em>)</strong> — kemampuan perusahaan memenuhi kewajiban jangka panjang dan bertahan dalam jangka panjang. Diukur melalui <em>debt-to-equity</em>, <em>debt-to-capital</em>, dan rasio cakupan (<em>coverage ratios</em>). Solvabilitas menilai apakah struktur modal perusahaan berkelanjutan.</li>
+<li><strong>Rasio Cakupan (<em>Coverage Ratios</em>)</strong> — <em>times interest earned</em> (TIE), <em>debt service coverage ratio</em> (DSCR), dan <em>fixed charge coverage</em>. Rasio ini mengukur "bantalan keamanan" (<em>margin of safety</em>) antara laba/arus kas yang dihasilkan dengan kewajiban pembayaran bunga dan pokok utang.</li>
+<li><strong>Model Prediksi Kebangkrutan (<em>Bankruptcy Prediction</em>)</strong> — Altman Z-score (model diskriminan multivariat dengan lima rasio berbobot) dan Ohlson O-score (model logistik). Z-score membagi perusahaan ke zona aman (&gt;2,99), abu-abu (1,81–2,99), dan distress (&lt;1,81).</li>
+<li><strong>Peringkat Obligasi (<em>Bond Ratings</em>)</strong> — klasifikasi risiko kredit oleh lembaga pemeringkat (AAA hingga D). Determinan utama: profitabilitas, leverage, cakupan bunga, stabilitas arus kas, ukuran perusahaan, dan faktor industri. Di Indonesia, Pefindo berperan sebagai lembaga pemeringkat domestik.</li>
+<li><strong>Kerangka 5C of Credit</strong> — Character, Capacity, Capital, Conditions, Collateral — kerangka kualitatif-kuantitatif yang digunakan kreditur dalam keputusan pemberian pinjaman.</li>
+<li><strong>Financial Distress dan Restrukturisasi</strong> — proses yang terjadi ketika perusahaan tidak mampu memenuhi kewajiban: restrukturisasi utang, <em>debt-for-equity swap</em>, PKPU, hingga likuidasi. Relevan untuk memahami kasus BUMI.</li>
+</ol>
+</div>
+
+<h3>3. Kaitan dengan Minggu Sebelumnya dan Sesudahnya / Course Connections</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Dari Analisis Prospektif ke Penilaian Risiko Kredit / From Prospective Analysis to Credit Risk Assessment</div>
+<p>Analisis kredit menggunakan hampir seluruh alat yang telah dibangun di minggu-minggu sebelumnya, tetapi dengan perspektif <em>downside</em> — bukan seberapa besar potensi keuntungan, melainkan seberapa besar risiko kerugian bagi kreditur:</p>
+<ul>
+<li><strong>Minggu 03</strong> (Analisis Rasio) — rasio likuiditas dan leverage pertama kali diperkenalkan; Chapter 10 memperdalam dan mengontekstualisasikan dalam kerangka keputusan kredit.</li>
+<li><strong>Minggu 08</strong> (Cash Flow Analysis) — arus kas operasi sebagai ukuran kemampuan membayar utang; <em>free cash flow to firm</em> (FCFF) menentukan kapasitas pelunasan utang.</li>
+<li><strong>Minggu 09</strong> (Profitability &amp; ROIC) — profitabilitas yang konsisten mendukung kemampuan memenuhi kewajiban; leverage dalam DuPont menunjukkan risiko.</li>
+<li><strong>Minggu 10</strong> (Prospective Analysis) — proyeksi keuangan menjadi basis untuk menilai kemampuan pembayaran utang di masa depan; <em>projected debt service coverage</em>.</li>
+<li><strong>Minggu 11</strong> (Credit Analysis — MINGGU INI) — menyatukan semua alat analitis untuk menilai risiko kredit secara komprehensif.</li>
+<li><strong>Minggu 12</strong> (Equity Valuation) — analisis kredit menentukan <em>cost of debt</em> dalam WACC; risiko kebangkrutan mempengaruhi valuasi ekuitas; kreditur dan investor ekuitas memiliki perspektif berbeda terhadap perusahaan yang sama.</li>
+</ul>
+</div>
+
+<table>
+<thead>
+<tr><th>Konsep Minggu 11</th><th>Terhubung ke</th><th>Penjelasan Koneksi</th></tr>
+</thead>
+<tbody>
+<tr><td>Current Ratio &amp; Quick Ratio</td><td>Week 03 — Ratio Analysis</td><td>Pertama kali diperkenalkan; kini dianalisis dalam konteks keputusan kredit spesifik</td></tr>
+<tr><td>Cash Conversion Cycle</td><td>Week 06 — Operating Activities</td><td>DSO, DIO, DPO yang membentuk CCC berasal dari analisis aktivitas operasi</td></tr>
+<tr><td>Debt Service Coverage</td><td>Week 08 — Cash Flow Analysis</td><td>CFO sebagai sumber utama pelunasan utang; FCF menentukan kapasitas nyata</td></tr>
+<tr><td>Leverage &amp; DuPont</td><td>Week 09 — Profitability</td><td>Financial leverage amplifier dalam DuPont = indikator risiko kredit</td></tr>
+<tr><td>Projected Coverage Ratios</td><td>Week 10 — Prospective Analysis</td><td>Pro forma statements menentukan projected TIE dan DSCR masa depan</td></tr>
+<tr><td>Altman Z-score</td><td>Week 03 — Early Introduction</td><td>Pertama kali disebutkan; kini dipelajari secara mendalam dengan formula lengkap</td></tr>
+<tr><td>Cost of Debt</td><td>Week 12 — Equity Valuation</td><td>Credit risk premium menentukan cost of debt dalam WACC untuk model DCF</td></tr>
+<tr><td>Financial Distress (BUMI)</td><td>Week 10 — GOTO (Growth-stage risk)</td><td>Berbeda dari GOTO (growth-stage burn), BUMI menunjukkan distress pada perusahaan mature</td></tr>
+</tbody>
+</table>
+
+<h3>4. Konsep Kunci yang Harus Dikuasai / Key Concepts to Master</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Formula dan Kerangka Kritis Minggu Ini</div>
+<table>
+<thead><tr><th style="width:25%">Konsep</th><th style="width:42%">Formula / Kerangka</th><th style="width:33%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>Current Ratio</td><td>Aset Lancar / Kewajiban Lancar</td><td>Benchmark umum &gt;1,5; sangat bervariasi antar industri</td></tr>
+<tr><td>Quick Ratio</td><td>(Kas + Surat Berharga + Piutang) / Kewajiban Lancar</td><td>Lebih konservatif; mengeluarkan persediaan dan aset kurang likuid</td></tr>
+<tr><td>Cash Ratio</td><td>(Kas + Surat Berharga) / Kewajiban Lancar</td><td>Paling konservatif; kemampuan bayar tanpa mengandalkan penagihan</td></tr>
+<tr><td>Debt-to-Equity</td><td>Total Utang / Total Ekuitas</td><td>Mengukur leverage; D/E &gt;2 umumnya dianggap tinggi</td></tr>
+<tr><td>Times Interest Earned</td><td>EBIT / Beban Bunga</td><td>TIE &lt;1,5 = zona bahaya; &gt;3 = relatif aman</td></tr>
+<tr><td>Debt Service Coverage</td><td>(EBIT + Depresiasi) / (Bunga + Pokok Utang)</td><td>Mengukur kemampuan membayar seluruh kewajiban utang</td></tr>
+<tr><td>Altman Z-Score</td><td>Z = 1,2X1 + 1,4X2 + 3,3X3 + 0,6X4 + 1,0X5</td><td>&gt;2,99 = aman; 1,81–2,99 = abu-abu; &lt;1,81 = distress</td></tr>
+<tr><td>Cash Conversion Cycle</td><td>DSO + DIO − DPO</td><td>CCC negatif = perusahaan dibiayai oleh pemasok (menguntungkan)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5. Cara Mendekati Ringkasan Utama / How to Approach the Main Summary</h3>
+
+<div class="cg nb">
+<div class="cgt">📖 Panduan Membaca Ringkasan / Summary Reading Guidance</div>
+<p>Ringkasan utama minggu ini mengikuti alur Chapter 10 Subramanyam secara sistematis — dari analisis likuiditas ke solvabilitas, lalu ke model prediksi kebangkrutan dan peringkat obligasi. Saat membaca, adopsi <strong>perspektif kreditur</strong>: setiap rasio dan metrik harus dievaluasi dari sudut pandang "apakah perusahaan ini mampu membayar utangnya?" Perhatikan bagaimana rasio-rasio individual saling melengkapi — satu rasio saja tidak cukup; kreditur melihat <em>mosaic</em> indikator. Pahami perbedaan antara likuiditas (jangka pendek) dan solvabilitas (jangka panjang), serta mengapa perusahaan bisa likuid tetapi tidak solven, atau solven tetapi tidak likuid.</p>
+</div>
+
+<h3>6. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Dipikir Sebelum dan Sesudah Membaca / Questions to Consider</div>
+<ol>
+<li>Apa perbedaan mendasar antara <em>liquidity risk</em> dan <em>solvency risk</em> — dan mengapa perusahaan yang terlihat "sehat" secara profitabilitas tetap bisa mengalami krisis likuiditas? (<em>What distinguishes liquidity risk from solvency risk — and why can a profitable company still face a liquidity crisis?</em>)</li>
+<li>Mengapa <em>current ratio</em> saja tidak cukup untuk menilai likuiditas — apa kelemahan rasio ini dan bagaimana <em>quick ratio</em> serta <em>cash conversion cycle</em> melengkapinya? (<em>Why is the current ratio insufficient alone — what are its weaknesses and how do complementary measures address them?</em>)</li>
+<li>Jelaskan kelima komponen Altman Z-score (X1–X5) dan intuisi ekonomi di balik masing-masing: mengapa rasio-rasio tersebut relevan untuk memprediksi kebangkrutan? (<em>Explain the five Z-score components and the economic intuition behind each.</em>)</li>
+<li>BUMI (Bumi Resources) mengalami periode ekuitas negatif dan restrukturisasi utang masif. Bagaimana Anda menilai risiko kredit perusahaan yang berada dalam kondisi <em>financial distress</em> aktif — apakah rasio-rasio standar masih bermakna? (<em>How do you assess credit risk for a company in active financial distress like BUMI?</em>)</li>
+<li>Bagaimana analisis kredit mempengaruhi valuasi ekuitas — khususnya, bagaimana risiko kebangkrutan tercermin dalam <em>cost of capital</em> dan <em>equity risk premium</em>? (<em>How does credit analysis influence equity valuation through cost of capital?</em>)</li>
+<li>Bandingkan perspektif kreditur dan investor ekuitas terhadap perusahaan yang sama: apa yang diinginkan masing-masing, dan di mana kepentingan mereka berbenturan? (<em>Compare creditor vs equity investor perspectives on the same company: what does each want, and where do interests conflict?</em>)</li>
+<li>Mengapa industri pertambangan seperti yang digeluti BUMI memiliki profil risiko kredit yang unik — bagaimana siklisitas harga komoditas mempengaruhi analisis kredit? (<em>Why does the mining industry have unique credit risk profiles — how does commodity price cyclicality affect credit analysis?</em>)</li>
+</ol>
+</div>
+
+<h3>7. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perusahaan Minggu Ini: BUMI (Bumi Resources Tbk)</div>
+<p>Minggu ini kita menggunakan <strong>BUMI (PT Bumi Resources Tbk)</strong> sebagai studi kasus analisis kredit — salah satu contoh paling dramatis dari <em>financial distress</em> di pasar modal Indonesia. BUMI, yang pernah menjadi produsen batubara terbesar di Indonesia, mengalami krisis utang masif pada 2014–2017 yang mengakibatkan ekuitas negatif, gagal bayar obligasi, dan restrukturisasi utang berkepanjangan melalui PKPU (<em>Penundaan Kewajiban Pembayaran Utang</em>):</p>
+<ul>
+<li><strong>Kasus Financial Distress Nyata</strong>: BUMI menunjukkan bagaimana kombinasi leverage berlebihan, penurunan harga komoditas, dan tata kelola yang lemah dapat menghancurkan perusahaan yang sebelumnya dominan di industrinya.</li>
+<li><strong>Altman Z-score dalam Praktik</strong>: Perhitungan Z-score BUMI menunjukkan nilai jauh di bawah zona distress — mengonfirmasi kekuatan prediktif model dalam konteks Indonesia.</li>
+<li><strong>Perbandingan dengan Peers</strong>: ADRO (Adaro Energy) dan ITMG (Indo Tambangraya Megah) — perusahaan tambang batubara yang tetap sehat — memberikan kontras tajam dengan BUMI dalam hal manajemen utang dan likuiditas.</li>
+<li><strong>Regulasi Indonesia</strong>: Proses PKPU di Indonesia (UU No. 37/2004 tentang Kepailitan dan PKPU) memberikan konteks hukum untuk memahami opsi perusahaan dalam kondisi distress.</li>
+</ul>
+<p>📁 Lihat file <em>Indonesian Company Examples</em> untuk analisis kredit lengkap menggunakan data aktual BUMI termasuk perhitungan Altman Z-score dan perbandingan dengan <em>peers</em>.</p>
+</div>
+
+<h3>8. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Apa yang Membedakan S1 dan S2 / Undergraduate vs Graduate Distinction</div>
+<p><strong>Level S1</strong>: Menghitung rasio likuiditas dan leverage dasar, mengetahui formula Altman Z-score, memahami peringkat obligasi secara umum.</p>
+<p><strong>Level S2 (yang diharapkan dari Anda)</strong>: Anda harus mampu (1) <strong>mengintegrasikan multiple credit indicators</strong> — tidak hanya menghitung rasio individual, tetapi menyusun <em>mosaic</em> risiko kredit yang mempertimbangkan likuiditas, solvabilitas, arus kas, dan faktor kualitatif secara simultan; (2) <strong>mengevaluasi keterbatasan model</strong> — memahami mengapa Z-score memiliki <em>Type I</em> dan <em>Type II errors</em>, dan kapan model gagal (perusahaan jasa, perusahaan emerging market, perusahaan dengan off-balance-sheet liabilities); (3) <strong>menghubungkan analisis kredit dengan valuasi</strong> — memahami bahwa credit risk premium mempengaruhi cost of debt, yang mempengaruhi WACC, yang mempengaruhi DCF valuation; (4) <strong>menganalisis kasus distress nyata</strong> — menggunakan BUMI untuk memahami dinamika restrukturisasi utang, negosiasi kreditur, dan implikasi bagi pemegang saham; (5) <strong>mempertimbangkan konteks Indonesia</strong> — perbedaan rezim kepailitan, peran Pefindo, dan karakteristik pasar obligasi domestik.</p>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-10/study-guide.html">← Week 10</a>
+  
+  
+  <a href="../week-12/study-guide.html">Week 12 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

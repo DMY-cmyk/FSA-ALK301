@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 11 — Indonesian Company Examples</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 11: Credit Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis kredit</span>
+    
+    <span>📖 Subramanyam Ch. 10</span>
+    
+    
+    
+    <span>🏢 BUMI — Bumi Resources Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Liquidity analysis; solvency ratios; credit scoring; bankruptcy prediction; bond ratings</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 11 Indonesian Company Examples — BUMI (PT Bumi Resources Tbk) -->
+<!-- Focus: Credit Analysis — Financial Distress History, Debt Restructuring, Credit Risk Indicators, Altman Z-Score -->
+
+<h2>Contoh Perusahaan Indonesia: BUMI — Analisis Kredit dan Financial Distress</h2>
+<p><em>Indonesian Company Example for Week 11: Credit Analysis — Financial Distress History, Debt Restructuring, Credit Risk Assessment, and Altman Z-Score Application for PT Bumi Resources Tbk</em></p>
+
+<p><strong>PT Bumi Resources Tbk (BUMI)</strong> adalah salah satu kasus <em>financial distress</em> paling dramatis dan berkepanjangan di pasar modal Indonesia. Pernah menjadi perusahaan tambang batubara terbesar di Indonesia dengan kapitalisasi pasar mencapai puncak sekitar Rp 170 triliun (2008), BUMI kemudian mengalami krisis utang masif akibat kombinasi penurunan harga batubara, leverage berlebihan, dan masalah tata kelola. Kasus BUMI memberikan pelajaran yang sangat kaya tentang analisis kredit, prediksi kebangkrutan, dan proses restrukturisasi utang.</p>
+
+<!-- ============================================================ -->
+<!-- 1. Company Profile & Distress History                          -->
+<!-- ============================================================ -->
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Profil BUMI &amp; Kronologi Financial Distress / BUMI Profile &amp; Distress Timeline</div>
+<p><strong>PT Bumi Resources Tbk (BUMI)</strong> bergerak di bidang pertambangan batubara, mengendalikan dua anak perusahaan utama: PT Kaltim Prima Coal (KPC) dan PT Arutmin Indonesia — dua produsen batubara terbesar di Indonesia. BUMI tercatat di BEI sejak 1990, dan menjadi perusahaan dengan kapitalisasi pasar terbesar di Indonesia pada puncak boom komoditas 2007–2008.</p>
+
+<table>
+<thead><tr><th style="width:15%">Periode</th><th style="width:85%">Peristiwa Kunci</th></tr></thead>
+<tbody>
+<tr><td><strong>2007–2008</strong></td><td>Puncak harga batubara; BUMI menjadi salah satu saham berkapitalisasi terbesar di BEI (harga saham pernah mencapai Rp 8.750). Akuisisi agresif dibiayai oleh utang dalam jumlah besar.</td></tr>
+<tr><td><strong>2009–2011</strong></td><td>Harga batubara mulai fluktuatif; beban utang masih dapat ditanggung berkat volume produksi tinggi. Namun, utang terus meningkat untuk ekspansi.</td></tr>
+<tr><td><strong>2012–2013</strong></td><td>Harga batubara global anjlok signifikan (dari ~USD 120/ton ke ~USD 60/ton). Pendapatan turun tajam, namun beban bunga utang tetap tinggi. Laba bersih mulai negatif.</td></tr>
+<tr><td><strong>2014–2015</strong></td><td><strong>Puncak krisis</strong>: ekuitas menjadi negatif; gagal bayar obligasi; harga saham jatuh ke Rp 50–80. BUMI mengajukan PKPU (Penundaan Kewajiban Pembayaran Utang) untuk menghindari pailit.</td></tr>
+<tr><td><strong>2016–2017</strong></td><td>Proses restrukturisasi utang berkepanjangan: negosiasi dengan kreditur, konversi utang ke ekuitas (<em>debt-for-equity swap</em>), perpanjangan jatuh tempo, dan <em>haircut</em> pada sebagian obligasi.</td></tr>
+<tr><td><strong>2018–2020</strong></td><td>Restrukturisasi disetujui; beban utang berkurang signifikan. Harga batubara mulai pulih, tetapi BUMI masih menanggung sisa utang besar dan proses pemulihan berjalan lambat.</td></tr>
+<tr><td><strong>2021–2023</strong></td><td>Harga batubara melonjak akibat krisis energi global (Rusia–Ukraina); pendapatan BUMI meningkat tajam, membantu perbaikan keuangan. Namun, <em>legacy</em> utang dan masalah tata kelola tetap menjadi perhatian.</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. Key Financial Data                                          -->
+<!-- ============================================================ -->
+
+<h3>1. Data Keuangan Utama BUMI / Key Financial Data</h3>
+<p><em>Consolidated Financial Highlights (2019–2023)</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Ringkasan Keuangan Konsolidasi BUMI (2019–2023)</div>
+<table>
+<thead><tr><th style="width:30%">Metrik Keuangan</th><th style="width:14%">2023</th><th style="width:14%">2022</th><th style="width:14%">2021</th><th style="width:14%">2020</th><th style="width:14%">2019</th></tr></thead>
+<tbody>
+<tr><td>Pendapatan (<em>Revenue</em>)</td><td>USD 1.396 M</td><td>USD 2.072 M</td><td>USD 1.479 M</td><td>USD 781 M</td><td>USD 984 M</td></tr>
+<tr><td>Laba/(Rugi) Bersih (<em>Net Income</em>)</td><td>USD (188) M</td><td>USD 370 M</td><td>USD 127 M</td><td>USD (247) M</td><td>USD (144) M</td></tr>
+<tr><td>Total Aset</td><td>USD 3.246 M</td><td>USD 3.557 M</td><td>USD 3.050 M</td><td>USD 2.761 M</td><td>USD 3.024 M</td></tr>
+<tr><td>Total Kewajiban</td><td>USD 3.124 M</td><td>USD 3.119 M</td><td>USD 3.132 M</td><td>USD 3.029 M</td><td>USD 3.136 M</td></tr>
+<tr><td>Total Ekuitas</td><td>USD 122 M</td><td>USD 438 M</td><td>USD (82) M</td><td>USD (268) M</td><td>USD (112) M</td></tr>
+<tr><td>Total Utang Berbunga (<em>Interest-bearing Debt</em>)</td><td>USD 1.953 M</td><td>USD 1.948 M</td><td>USD 2.149 M</td><td>USD 2.287 M</td><td>USD 2.311 M</td></tr>
+<tr><td>Kas &amp; Setara Kas</td><td>USD 130 M</td><td>USD 291 M</td><td>USD 165 M</td><td>USD 67 M</td><td>USD 96 M</td></tr>
+<tr><td>EBIT</td><td>USD (28) M</td><td>USD 685 M</td><td>USD 355 M</td><td>USD (112) M</td><td>USD (15) M</td></tr>
+<tr><td>Beban Bunga (<em>Interest Expense</em>)</td><td>USD 199 M</td><td>USD 186 M</td><td>USD 196 M</td><td>USD 205 M</td><td>USD 216 M</td></tr>
+<tr><td>Arus Kas Operasi (CFO)</td><td>USD 102 M</td><td>USD 533 M</td><td>USD 308 M</td><td>USD 58 M</td><td>USD 85 M</td></tr>
+</tbody>
+</table>
+<p><strong>Sorotan:</strong> Perhatikan volatilitas ekstrem kinerja keuangan BUMI — dari rugi bersih USD 247 juta (2020) ke laba bersih USD 370 juta (2022) hanya karena harga batubara. Ekuitas baru kembali positif pada 2022 setelah <strong>tiga tahun berturut-turut ekuitas negatif</strong> (2019–2021). Total utang berbunga tetap sangat tinggi (~USD 2 miliar) dan beban bunga ~USD 200 juta/tahun membebani profitabilitas meskipun pendapatan meningkat.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. Credit Ratios Analysis                                      -->
+<!-- ============================================================ -->
+
+<h3>2. Analisis Rasio Kredit BUMI / Credit Ratio Analysis</h3>
+<p><em>Liquidity, Solvency, and Coverage Ratios (2019–2023)</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Rasio Kredit BUMI — Tren 5 Tahun</div>
+<table>
+<thead><tr><th style="width:28%">Rasio Kredit</th><th style="width:14%">2023</th><th style="width:14%">2022</th><th style="width:14%">2021</th><th style="width:14%">2020</th><th style="width:14%">2019</th></tr></thead>
+<tbody>
+<tr><td><strong>Current Ratio</strong></td><td>0,57</td><td>0,83</td><td>0,60</td><td>0,45</td><td>0,48</td></tr>
+<tr><td><strong>Debt-to-Equity (D/E)</strong></td><td>16,01</td><td>4,45</td><td>N/M*</td><td>N/M*</td><td>N/M*</td></tr>
+<tr><td><strong>Debt-to-Assets</strong></td><td>0,96</td><td>0,88</td><td>1,03</td><td>1,10</td><td>1,04</td></tr>
+<tr><td><strong>TIE (Interest Coverage)</strong></td><td>−0,14</td><td>3,68</td><td>1,81</td><td>−0,55</td><td>−0,07</td></tr>
+<tr><td><strong>CFO / Total Debt</strong></td><td>5,2%</td><td>27,4%</td><td>14,3%</td><td>2,5%</td><td>3,7%</td></tr>
+<tr><td><strong>Cash Interest Coverage (CFO/Interest)</strong></td><td>0,51</td><td>2,87</td><td>1,57</td><td>0,28</td><td>0,39</td></tr>
+</tbody>
+</table>
+<p><em>*N/M = Not Meaningful — D/E tidak bermakna ketika ekuitas negatif (2019–2021)</em></p>
+
+<p><strong>Analisis:</strong></p>
+<ul>
+<li><strong>Likuiditas sangat lemah</strong>: Current ratio konsisten di bawah 1,0 sepanjang periode — BUMI tidak memiliki cukup aset lancar untuk menutupi kewajiban jangka pendeknya. Nilai 0,45 (2020) menandakan kewajiban lancar lebih dari dua kali lipat aset lancar.</li>
+<li><strong>Leverage ekstrem</strong>: Debt-to-assets di atas 1,0 selama 2019–2021 berarti total kewajiban <em>melebihi</em> total aset — perusahaan secara teknis <em>insolvent</em>. D/E = 16,01 (2023) menandakan bahwa utang 16 kali lipat ekuitas.</li>
+<li><strong>Cakupan bunga berfluktuasi tajam</strong>: TIE bergerak dari −0,55 (2020) ke 3,68 (2022) dan kembali ke −0,14 (2023) — sepenuhnya bergantung pada harga batubara. TIE negatif berarti EBIT tidak cukup bahkan untuk membayar bunga.</li>
+<li><strong>Arus kas hanya sesekali memadai</strong>: CFO/Total Debt hanya mencapai level memadai (27,4%) pada 2022 saat harga batubara booming; pada tahun normal, rasio ini jauh di bawah benchmark minimal 15%.</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. Altman Z-Score Calculation                                  -->
+<!-- ============================================================ -->
+
+<h3>3. Perhitungan Altman Z-Score BUMI / Altman Z-Score Calculation</h3>
+<p><em>Applying the Z-Score Model to BUMI's Financial Data</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Altman Z-Score BUMI — Tahun 2022 (Tahun Terbaik) vs 2020 (Tahun Terburuk)</div>
+
+<div class="fbox">
+<strong>Altman Z-Score: Z = 1,2X₁ + 1,4X₂ + 3,3X₃ + 0,6X₄ + 1,0X₅</strong><br><br>
+
+<strong>Tahun 2022 (tahun terbaik dalam periode):</strong><br>
+• X₁ = Working Capital / Total Assets = (743 − 895) / 3.557 = −0,043<br>
+• X₂ = Retained Earnings / Total Assets ≈ −1.200 / 3.557 = −0,337<br>
+• X₃ = EBIT / Total Assets = 685 / 3.557 = 0,193<br>
+• X₄ = Market Cap / Total Liabilities ≈ 650 / 3.119 = 0,208 (est. harga saham × saham beredar)<br>
+• X₅ = Sales / Total Assets = 2.072 / 3.557 = 0,583<br><br>
+<strong>Z₂₀₂₂ = 1,2(−0,043) + 1,4(−0,337) + 3,3(0,193) + 0,6(0,208) + 1,0(0,583)</strong><br>
+<strong>Z₂₀₂₂ = −0,052 + (−0,472) + 0,637 + 0,125 + 0,583 = <u>0,821</u></strong><br>
+→ <strong>Jauh di bawah zona distress (1,81)</strong> — bahkan di tahun terbaiknya!<br><br>
+
+<strong>Tahun 2020 (tahun terburuk):</strong><br>
+• X₁ = Working Capital / Total Assets = (286 − 636) / 2.761 = −0,127<br>
+• X₂ = Retained Earnings / Total Assets ≈ −1.950 / 2.761 = −0,706<br>
+• X₃ = EBIT / Total Assets = −112 / 2.761 = −0,041<br>
+• X₄ = Market Cap / Total Liabilities ≈ 140 / 3.029 = 0,046 (harga saham ~Rp 50)<br>
+• X₅ = Sales / Total Assets = 781 / 2.761 = 0,283<br><br>
+<strong>Z₂₀₂₀ = 1,2(−0,127) + 1,4(−0,706) + 3,3(−0,041) + 0,6(0,046) + 1,0(0,283)</strong><br>
+<strong>Z₂₀₂₀ = −0,152 + (−0,988) + (−0,135) + 0,028 + 0,283 = <u>−0,964</u></strong><br>
+→ <strong>Z-score negatif!</strong> Jauh di bawah ambang distress — konsisten dengan kondisi financial distress aktif.
+</div>
+
+<table>
+<thead><tr><th style="width:20%">Komponen</th><th style="width:20%">2022 (Terbaik)</th><th style="width:20%">2020 (Terburuk)</th><th style="width:40%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td>X₁ (Likuiditas)</td><td>−0,043</td><td>−0,127</td><td>Modal kerja negatif — kewajiban lancar &gt; aset lancar</td></tr>
+<tr><td>X₂ (Leverage kumulatif)</td><td>−0,337</td><td>−0,706</td><td>Retained earnings sangat negatif — akumulasi rugi bertahun-tahun</td></tr>
+<tr><td>X₃ (Profitabilitas)</td><td>+0,193</td><td>−0,041</td><td>Satu-satunya komponen yang bervariasi signifikan; bergantung harga batubara</td></tr>
+<tr><td>X₄ (Solvabilitas pasar)</td><td>+0,208</td><td>+0,046</td><td>Market cap jauh di bawah total kewajiban — pasar menilai BUMI mendekati insolvency</td></tr>
+<tr><td>X₅ (Efisiensi aset)</td><td>+0,583</td><td>+0,283</td><td>Moderat — mencerminkan basis aset besar relatif terhadap penjualan</td></tr>
+<tr><td><strong>Z-Score Total</strong></td><td><strong>0,821</strong></td><td><strong>−0,964</strong></td><td><strong>Keduanya jauh di zona distress (&lt;1,81)</strong></td></tr>
+</tbody>
+</table>
+
+<p><strong>Temuan Kunci:</strong> Bahkan di tahun terbaiknya (2022, laba bersih USD 370 juta), Z-score BUMI (0,821) <strong>tetap jauh di bawah zona distress</strong>. Penyebab utama: <em>retained earnings</em> yang sangat negatif (akumulasi rugi bertahun-tahun) dan modal kerja negatif yang kronis. Ini menunjukkan bahwa satu tahun kinerja bagus tidak cukup untuk menghapus kerusakan struktural dari bertahun-tahun financial distress. Z-score mengonfirmasi: <strong>BUMI memerlukan bertahun-tahun laba konsisten</strong> untuk membangun kembali <em>retained earnings</em> dan modal kerja yang positif.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Debt Restructuring Story                                    -->
+<!-- ============================================================ -->
+
+<h3>4. Kisah Restrukturisasi Utang BUMI / BUMI's Debt Restructuring Story</h3>
+<p><em>How BUMI Navigated Financial Distress Through Indonesia's PKPU Process</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Restrukturisasi Utang BUMI — Studi Kasus</div>
+<p>Krisis utang BUMI adalah salah satu restrukturisasi korporat terbesar dalam sejarah pasar modal Indonesia. Beberapa elemen kunci:</p>
+
+<div class="exb nb">
+<div class="exn">Struktur Utang Pra-Restrukturisasi (~2014–2015)</div>
+<ul>
+<li><strong>Total utang berbunga: ~USD 3,9 miliar</strong> — terdiri dari obligasi dalam mata uang dolar AS (senior secured notes dan convertible bonds), pinjaman sindikasi bank, dan pinjaman bilateral</li>
+<li><strong>Obligasi utama</strong>: USD 700 juta Senior Secured Notes 2016, USD 300 juta Guaranteed Notes 2017, dan beberapa seri convertible bonds</li>
+<li><strong>Beban bunga tahunan: ~USD 300 juta</strong> — melebihi arus kas operasi yang tersedia saat harga batubara rendah</li>
+<li><strong>Masalah tambahan</strong>: kewajiban pajak yang dipersengketakan dengan pemerintah Indonesia dalam jumlah signifikan</li>
+</ul>
+</div>
+
+<div class="exb nb">
+<div class="exn">Mekanisme Restrukturisasi</div>
+<ul>
+<li><strong>PKPU (Penundaan Kewajiban Pembayaran Utang)</strong> — BUMI mengajukan PKPU di Pengadilan Niaga Jakarta Pusat untuk mendapatkan waktu bernegosiasi dengan kreditur (perlindungan dari tuntutan hukum selama proses negosiasi)</li>
+<li><strong>Debt-for-equity swap</strong> — sebagian kreditur mengkonversi klaim utang menjadi saham baru BUMI, secara signifikan mendilusi pemegang saham existing</li>
+<li><strong>Perpanjangan jatuh tempo</strong> — utang yang tersisa dijadwalkan ulang (<em>rescheduled</em>) dengan tenor baru yang lebih panjang</li>
+<li><strong>Haircut parsial</strong> — beberapa kreditur menerima pembayaran kurang dari 100% nilai pokok utang</li>
+<li><strong>Penurunan suku bunga</strong> — bunga atas utang yang direstrukturisasi diturunkan untuk mengurangi beban arus kas</li>
+</ul>
+</div>
+
+<div class="exb nb">
+<div class="exn">Hasil Restrukturisasi dan Situasi Pasca-Restrukturisasi</div>
+<ul>
+<li><strong>Pengurangan utang</strong>: Total utang berbunga berkurang dari ~USD 3,9 miliar ke ~USD 2,3 miliar (penurunan ~40%)</li>
+<li><strong>Dilusi pemegang saham</strong>: Penerbitan saham baru untuk konversi utang mendilusi kepemilikan pemegang saham lama secara signifikan</li>
+<li><strong>Namun utang masih tinggi</strong>: ~USD 2 miliar utang berbunga pasca-restrukturisasi tetap membebani, dengan beban bunga ~USD 200 juta/tahun</li>
+<li><strong>Ketergantungan pada harga batubara</strong>: Kelangsungan hidup pasca-restrukturisasi sangat bergantung pada harga batubara — krisis berulang jika harga turun tajam lagi</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. Peer Comparison                                             -->
+<!-- ============================================================ -->
+
+<h3>5. Perbandingan dengan Peers Sehat / Comparison with Creditworthy Mining Peers</h3>
+<p><em>BUMI vs ADRO (Adaro Energy) &amp; ITMG (Indo Tambangraya Megah) — Year 2022</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Mengapa ADRO dan ITMG Sehat sementara BUMI Distress?</div>
+<table>
+<thead><tr><th style="width:28%">Metrik Kredit (2022)</th><th style="width:24%">BUMI</th><th style="width:24%">ADRO</th><th style="width:24%">ITMG</th></tr></thead>
+<tbody>
+<tr><td>Current Ratio</td><td>0,83</td><td>2,35</td><td>2,87</td></tr>
+<tr><td>Debt-to-Equity</td><td>4,45</td><td>0,42</td><td>0,20</td></tr>
+<tr><td>Debt-to-Assets</td><td>0,88</td><td>0,35</td><td>0,27</td></tr>
+<tr><td>TIE (Interest Coverage)</td><td>3,68</td><td>45,2</td><td>62,8</td></tr>
+<tr><td>Net Income Margin</td><td>17,9%</td><td>28,3%</td><td>29,1%</td></tr>
+<tr><td>CFO / Total Debt</td><td>27,4%</td><td>78,5%</td><td>112,3%</td></tr>
+<tr><td>Dividend Payout</td><td>Tidak ada</td><td>~40%</td><td>~100%</td></tr>
+<tr><td>Altman Z-Score (est.)</td><td>0,82</td><td>4,85</td><td>6,12</td></tr>
+</tbody>
+</table>
+
+<p><strong>Analisis Perbandingan:</strong></p>
+<ul>
+<li><strong>Leverage</strong>: ADRO dan ITMG memiliki leverage sangat rendah (D/E 0,2–0,4) dibandingkan BUMI (4,45). Kedua perusahaan ini secara konsisten menjaga utang pada level konservatif, memungkinkan mereka bertahan saat harga batubara turun.</li>
+<li><strong>Cakupan bunga</strong>: TIE ADRO (45,2x) dan ITMG (62,8x) vs BUMI (3,68x) — perbedaan ini mencerminkan beban bunga BUMI yang masif (~USD 200 juta) dibandingkan utang minimal peers-nya.</li>
+<li><strong>Likuiditas</strong>: Current ratio ADRO dan ITMG &gt; 2,0 menandakan likuiditas sangat kuat; BUMI &lt; 1,0 menandakan defisiensi kronis.</li>
+<li><strong>Z-Score</strong>: ADRO (4,85) dan ITMG (6,12) berada jauh di zona aman; BUMI (0,82) di zona distress — meskipun ketiga perusahaan beroperasi di industri yang sama.</li>
+<li><strong>Pelajaran utama</strong>: Perbedaan ini bukan karena industri — ketiga perusahaan sama-sama tambang batubara. Perbedaannya terletak pada <strong>strategi pendanaan</strong>: BUMI mengambil utang berlebihan saat boom, sementara ADRO dan ITMG memilih pendekatan konservatif. <em>Discipline in capital allocation is the differentiator.</em></li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. Credit Risk Assessment Summary                              -->
+<!-- ============================================================ -->
+
+<h3>6. Penilaian Risiko Kredit BUMI / Credit Risk Assessment Summary</h3>
+<p><em>Comprehensive Credit Evaluation Using the 5C Framework</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Evaluasi 5C untuk BUMI</div>
+<table>
+<thead><tr><th style="width:15%">Elemen 5C</th><th style="width:15%">Penilaian</th><th style="width:70%">Justifikasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Character</strong></td><td>🔴 Lemah</td><td>Sejarah gagal bayar dan restrukturisasi; masalah tata kelola yang berkepanjangan termasuk sengketa antar pemegang saham; keterlambatan pelaporan keuangan yang berulang; masalah pajak yang dipersengketakan</td></tr>
+<tr><td><strong>Capacity</strong></td><td>🔴 Lemah</td><td>TIE negatif pada tahun normal; CFO sangat fluktuatif dan tidak memadai untuk membayar utang pada kebanyakan tahun; <em>highly cyclical</em> — kemampuan bayar sepenuhnya bergantung pada harga batubara global</td></tr>
+<tr><td><strong>Capital</strong></td><td>🔴 Sangat Lemah</td><td>Ekuitas baru positif sejak 2022 setelah bertahun-tahun negatif; retained earnings masih sangat negatif; D/E &gt; 16x (2023); bantalan keamanan bagi kreditur minimal</td></tr>
+<tr><td><strong>Conditions</strong></td><td>🟡 Mixed</td><td>Permintaan batubara global masih kuat jangka pendek (transisi energi memerlukan waktu); namun jangka panjang menghadapi risiko struktural dari dekarbonisasi dan regulasi lingkungan yang semakin ketat</td></tr>
+<tr><td><strong>Collateral</strong></td><td>🟡 Moderat</td><td>Memiliki aset tambang signifikan (KPC dan Arutmin); namun nilai likuidasi aset tambang bergantung pada harga komoditas; aset sudah banyak dijaminkan untuk utang existing</td></tr>
+</tbody>
+</table>
+
+<p><strong>Kesimpulan Analisis Kredit:</strong> BUMI tetap merupakan peminjam dengan risiko kredit <strong>sangat tinggi</strong> (<em>highly speculative grade</em>). Meskipun harga batubara yang tinggi pada 2021–2022 memberikan jeda sementara, kerentanan struktural tetap ada: leverage masih ekstrem, retained earnings sangat negatif, dan kemampuan bayar utang sepenuhnya bergantung pada harga komoditas yang berada di luar kendali manajemen. Seorang analis kredit yang prudent akan memberikan penilaian yang setara dengan peringkat CCC/idCCC — menandakan risiko gagal bayar yang tinggi dan kerentanan terhadap perubahan kondisi bisnis.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 8. Key Lessons                                                 -->
+<!-- ============================================================ -->
+
+<h3>7. Pelajaran Utama dari Kasus BUMI / Key Lessons from the BUMI Case</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Implikasi untuk Analisis Kredit</div>
+<div class="exb nb">
+<div class="exn">Pelajaran yang Relevan dengan Chapter 10 Subramanyam</div>
+<ol>
+<li><strong>Leverage berlebihan membunuh — bahkan perusahaan terbesar</strong>: BUMI adalah bukti bahwa ukuran perusahaan (<em>size</em>) tidak melindungi dari risiko utang berlebihan. Perusahaan terbesar di industrinya tetap bisa gagal bayar jika leverage terlalu tinggi.</li>
+<li><strong>Siklisitas industri memerlukan pendekatan konservatif</strong>: Industri dengan pendapatan yang sangat fluktuatif (pertambangan, minyak, komoditas) memerlukan leverage yang lebih rendah dibandingkan industri stabil. Rasio cakupan harus dievaluasi <em>through-the-cycle</em>, bukan pada titik puncak.</li>
+<li><strong>Z-score menangkap kerusakan struktural</strong>: Bahkan di tahun laba tertinggi (2022), Z-score BUMI tetap di zona distress karena <em>retained earnings</em> dan modal kerja yang terkikis — kerusakan struktural tidak hilang dalam satu tahun baik.</li>
+<li><strong>Satu rasio tidak cukup</strong>: TIE BUMI tahun 2022 (3,68) terlihat "memadai" secara isolasi, tetapi D/E (4,45), current ratio (0,83), dan Z-score (0,82) mengungkapkan risiko yang masih sangat tinggi. Analisis kredit harus bersifat <em>mosaic</em>.</li>
+<li><strong>Pentingnya analisis kualitatif</strong>: Masalah tata kelola, sengketa pemegang saham, dan masalah pajak BUMI tidak tertangkap oleh rasio keuangan, tetapi sangat relevan untuk penilaian risiko kredit (elemen Character dalam 5C).</li>
+<li><strong>Restrukturisasi bukan "reset"</strong>: Meskipun utang BUMI berkurang ~40% melalui restrukturisasi, sisa utang masih sangat besar. Restrukturisasi memberikan napas, tetapi tidak menghilangkan risiko struktural.</li>
+<li><strong>Perspektif kreditur vs pemegang saham</strong>: Kreditur BUMI yang menerima <em>debt-for-equity swap</em> menukar klaim prioritas (utang) dengan klaim residual (saham) — keputusan yang masuk akal hanya jika nilai likuidasi aset lebih rendah dari nilai <em>going concern</em> pasca-restrukturisasi.</li>
+</ol>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-10/id-examples.html">← Week 10</a>
+  
+  
+  <a href="../week-12/id-examples.html">Week 12 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

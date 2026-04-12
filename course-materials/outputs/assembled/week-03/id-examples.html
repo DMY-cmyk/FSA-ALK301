@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 03 — Indonesian Company Examples</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 03: Financing Activities Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis pendanaan (financing)</span>
+    
+    <span>📖 Subramanyam Ch. 3</span>
+    
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 BBCA — Bank Central Asia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Debt vs equity financing; leases; off-balance-sheet items; capital structure analysis</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 03 Indonesian Company Examples — BBCA (Bank Central Asia Tbk) -->
+<!-- Focus: Financing Activities, Capital Structure, Capital Adequacy, Subordinated Bonds -->
+
+<h2>Contoh Perusahaan Indonesia: BBCA — Aktivitas Pendanaan</h2>
+<p><em>Indonesian Company Example for Week 03: Financing Activities — Capital Structure Analysis</em></p>
+
+<!-- ============================================================ -->
+<!-- 1. Company Overview & Financing Context                       -->
+<!-- ============================================================ -->
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Profil Singkat BBCA / BBCA Overview</div>
+<p><strong>Bank Central Asia Tbk (BBCA)</strong> adalah bank swasta terbesar di Indonesia berdasarkan kapitalisasi pasar dan salah satu bank terbesar di Asia Tenggara. Tercatat di IDX sejak 2000, BBCA dikenal sebagai bank dengan kualitas aset terbaik dan <em>franchise</em> deposito yang sangat kuat.</p>
+<table>
+<thead><tr><th style="width:35%">Indikator</th><th style="width:30%">2023</th><th style="width:35%">Sumber</th></tr></thead>
+<tbody>
+<tr><td>Total Aset</td><td>Rp 1.408 triliun</td><td>LK Audit BBCA 2023</td></tr>
+<tr><td>Total Ekuitas</td><td>Rp 252 triliun</td><td>LK Audit BBCA 2023</td></tr>
+<tr><td>Laba Bersih</td><td>Rp 48,6 triliun</td><td>LK Audit BBCA 2023</td></tr>
+<tr><td>Kapitalisasi Pasar (Des 2023)</td><td>~Rp 1.140 triliun</td><td>IDX market data</td></tr>
+<tr><td>Peringkat Kredit</td><td>Baa1 (Moody's) / BBB (S&amp;P)</td><td>Laporan Tahunan 2023</td></tr>
+</tbody>
+</table>
+<p><strong>Mengapa BBCA untuk Minggu Ini:</strong> Sebagai bank, BBCA memiliki struktur pendanaan yang secara fundamental berbeda dari perusahaan non-keuangan. Ini memberikan perspektif unik tentang konsep Chapter 3 — liabilitas BBCA didominasi oleh <em>dana pihak ketiga</em> (DPK), bukan utang obligasi; dan regulasi permodalan (Basel/OJK) menggantikan peran <em>market discipline</em> dalam menentukan leverage.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. Capital Structure: Bank vs Non-Bank                        -->
+<!-- ============================================================ -->
+
+<h3>1. Struktur Modal BBCA: Sangat Berbeda dari Non-Bank</h3>
+<p><em>BBCA's Capital Structure: Fundamentally Different from Non-Financial Firms</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Komposisi Sisi Kanan Neraca BBCA (2023)</div>
+<table>
+<thead><tr><th style="width:40%">Komponen</th><th style="width:20%">Jumlah (Rp T)</th><th style="width:15%">% Total Aset</th><th style="width:25%">Kategori Ch.3</th></tr></thead>
+<tbody>
+<tr><td><strong>Dana Pihak Ketiga (DPK)</strong></td><td>~1.038</td><td>73,7%</td><td>Liabilitas — financing (unique to banks)</td></tr>
+<tr><td>&nbsp;&nbsp;— Giro (<em>Current Accounts</em>)</td><td>~298</td><td>21,2%</td><td>Current liability, on-demand</td></tr>
+<tr><td>&nbsp;&nbsp;— Tabungan (<em>Savings</em>)</td><td>~393</td><td>27,9%</td><td>Current liability, on-demand</td></tr>
+<tr><td>&nbsp;&nbsp;— Deposito Berjangka (<em>Time Deposits</em>)</td><td>~347</td><td>24,6%</td><td>Current/non-current, fixed-term</td></tr>
+<tr><td><strong>Pinjaman yang Diterima / Borrowings</strong></td><td>~18</td><td>1,3%</td><td>Financing liability</td></tr>
+<tr><td><strong>Obligasi yang Diterbitkan / Bonds</strong></td><td>~15</td><td>1,1%</td><td>Financing liability</td></tr>
+<tr><td><strong>Liabilitas Lainnya</strong></td><td>~85</td><td>6,0%</td><td>Mixed operating/financing</td></tr>
+<tr><td><strong>Total Liabilitas</strong></td><td>~1.156</td><td>82,1%</td><td>—</td></tr>
+<tr><td><strong>Total Ekuitas</strong></td><td>~252</td><td>17,9%</td><td>Ekuitas pemegang saham</td></tr>
+</tbody>
+</table>
+<p><strong>Observasi kunci:</strong> DPK (giro + tabungan + deposito) mendominasi <strong>~74%</strong> total aset — jauh lebih tinggi dari proporsi utang di perusahaan non-keuangan manapun. Ini adalah "utang" bank, tetapi sifatnya sangat berbeda dari obligasi: biaya rendah (terutama giro dan tabungan / CASA), dapat ditarik sewaktu-waktu, dan dilindungi oleh Lembaga Penjamin Simpanan (LPS).</p>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 CASA Ratio — Keunggulan Kompetitif BBCA</div>
+<p><strong>CASA ratio</strong> (<em>Current Account Savings Account ratio</em>) mengukur proporsi dana murah (giro + tabungan) terhadap total DPK:</p>
+<p style="text-align:center;"><strong>CASA Ratio BBCA (2023) = (298 + 393) / 1.038 ≈ 66,6%</strong></p>
+<p>Ini adalah salah satu CASA ratio tertinggi di industri perbankan Indonesia. Implikasi: biaya dana (<em>cost of funds</em>) BBCA sangat rendah (~2,0-2,5%), memungkinkan <em>net interest margin</em> (NIM) yang lebar meskipun suku bunga pinjaman kompetitif. Dalam terminologi Chapter 3, BBCA memiliki <em>cost of debt</em> yang sangat rendah relatif terhadap bank lain — keunggulan struktural yang sulit direplikasi.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. Capital Adequacy Ratios                                    -->
+<!-- ============================================================ -->
+
+<h3>2. Rasio Kecukupan Modal / Capital Adequacy Ratios (CAR/KPMM)</h3>
+<p><em>Bank-Specific Leverage Regulation</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Kerangka Permodalan Basel di Indonesia</div>
+<p>Berbeda dari perusahaan non-keuangan yang menentukan leverage berdasarkan keputusan manajemen dan respons pasar, bank tunduk pada <strong>regulasi permodalan wajib</strong> berdasarkan kerangka Basel yang diadopsi oleh OJK melalui POJK:</p>
+
+<div class="def">
+<div class="den">Capital Adequacy Ratio (CAR) / Rasio Kecukupan Modal Minimum (KPMM)</div>
+<div class="did">
+<p>Rasio modal bank terhadap Aset Tertimbang Menurut Risiko (ATMR / <em>Risk-Weighted Assets</em>). OJK mewajibkan minimum <strong>8%</strong> (Basel minimum), dengan buffer tambahan. Komponen modal:</p>
+<ul>
+<li><strong>Modal Inti (Tier 1):</strong> Modal saham biasa, laba ditahan, dan cadangan — komponen berkualitas tertinggi. Terdiri dari CET1 (<em>Common Equity Tier 1</em>) dan AT1 (<em>Additional Tier 1</em>).</li>
+<li><strong>Modal Pelengkap (Tier 2):</strong> Obligasi subordinasi, cadangan revaluasi aset, dan provisi umum — kualitas lebih rendah, kapasitas menyerap kerugian terbatas.</li>
+</ul>
+</div>
+</div>
+
+<table>
+<thead><tr><th style="width:35%">Komponen Modal BBCA</th><th style="width:20%">2023</th><th style="width:20%">2022</th><th style="width:25%">Persyaratan Minimum</th></tr></thead>
+<tbody>
+<tr><td><strong>CET1 Ratio</strong></td><td>25,4%</td><td>24,7%</td><td>Min. 4,5% + buffer</td></tr>
+<tr><td><strong>Tier 1 Ratio</strong></td><td>25,4%</td><td>24,7%</td><td>Min. 6% + buffer</td></tr>
+<tr><td><strong>Total CAR (KPMM)</strong></td><td>27,8%</td><td>26,9%</td><td>Min. 8% + buffer ≈ 11,5-13%</td></tr>
+<tr><td>ATMR (Rp T)</td><td>~881</td><td>~793</td><td>—</td></tr>
+</tbody>
+</table>
+<p><strong>Analisis:</strong> CAR BBCA sebesar 27,8% adalah <strong>lebih dari dua kali</strong> persyaratan minimum efektif (~13%). Ini menunjukkan:</p>
+<ol>
+<li><strong>Buffer modal yang sangat besar</strong> — kapasitas menyerap kerugian jauh melebihi minimum regulasi.</li>
+<li><strong>Kebijakan konservatif</strong> — BBCA secara sadar mempertahankan modal jauh di atas minimum, mengorbankan potensi <em>leverage amplification</em> pada ROE demi stabilitas.</li>
+<li><strong>Ruang untuk pertumbuhan</strong> — BBCA dapat secara signifikan meningkatkan ATMR (menyalurkan lebih banyak kredit) tanpa melanggar batas CAR.</li>
+</ol>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. Debt Instruments: Subordinated Bonds                       -->
+<!-- ============================================================ -->
+
+<h3>3. Instrumen Utang: Obligasi Subordinasi dan Pinjaman</h3>
+<p><em>Debt Instruments: Subordinated Bonds and Borrowings</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Obligasi Subordinasi BBCA</div>
+<p>BBCA telah menerbitkan <strong>obligasi subordinasi</strong> (<em>subordinated bonds</em>) yang merupakan contoh sempurna instrumen hybrid antara utang dan ekuitas:</p>
+<ul>
+<li><strong>Posisi dalam hierarki klaim:</strong> Di bawah deposito dan utang senior — dalam kebangkrutan, pemegang obligasi subordinasi dibayar setelah deposan dan kreditur senior tetapi sebelum pemegang saham.</li>
+<li><strong>Fungsi ganda:</strong> Secara hukum adalah utang (ada kewajiban membayar bunga dan pokok), tetapi dapat diperhitungkan sebagai <strong>modal Tier 2</strong> dalam perhitungan CAR — karena kemampuannya menyerap kerugian (<em>loss absorbency</em>) sebelum deposan terdampak.</li>
+<li><strong>Subordinated bonds BBCA yang masih beredar (2023):</strong> Saldo ~Rp 5 triliun, dengan tingkat bunga tetap dan variabel, berbagai tenor.</li>
+<li><strong>Implikasi analitis:</strong> Obligasi subordinasi BBCA mengilustrasikan konsep Chapter 3 tentang <em>subordinated debt</em> — tingkat bunga lebih tinggi daripada obligasi senior karena risiko lebih besar, tetapi lebih murah dari ekuitas karena deductibilitas pajak.</li>
+</ul>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Perbandingan: Instrumen Utang Bank vs Non-Bank</div>
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:38%">BBCA (Bank)</th><th style="width:37%">Perusahaan Non-Bank Tipikal</th></tr></thead>
+<tbody>
+<tr><td>Sumber utang utama</td><td>DPK (deposito) — ~90% liabilitas</td><td>Obligasi dan pinjaman bank</td></tr>
+<tr><td>Biaya utang rata-rata</td><td>Sangat rendah (2,0-2,5% cost of funds)</td><td>Lebih tinggi (6-10% untuk obligasi korporasi)</td></tr>
+<tr><td>Leverage ratio</td><td>Sangat tinggi (D/E ~4,6x) — normal untuk bank</td><td>Lebih rendah (D/E 0,5-2,0x tipikal)</td></tr>
+<tr><td>Regulasi leverage</td><td>Diatur ketat oleh OJK/Basel (CAR minimum)</td><td>Ditentukan oleh pasar dan covenant</td></tr>
+<tr><td>Risiko <em>bank run</em></td><td>Ada — DPK bisa ditarik sewaktu-waktu</td><td>Tidak ada — obligasi memiliki tanggal jatuh tempo tetap</td></tr>
+<tr><td>Penjaminan</td><td>LPS menjamin simpanan sampai Rp 2 miliar</td><td>Tidak ada penjaminan pemerintah</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Equity Components                                          -->
+<!-- ============================================================ -->
+
+<h3>4. Komponen Ekuitas BBCA</h3>
+<p><em>BBCA's Equity Components</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Rincian Ekuitas BBCA (2023)</div>
+<table>
+<thead><tr><th style="width:40%">Komponen</th><th style="width:25%">Jumlah (Rp T)</th><th style="width:35%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>Modal Ditempatkan dan Disetor</td><td>~1,5</td><td>Saham biasa, nilai nominal Rp 62,5/lembar</td></tr>
+<tr><td>Tambahan Modal Disetor (<em>APIC</em>)</td><td>~13,3</td><td>Selisih harga penerbitan di atas nominal</td></tr>
+<tr><td>Laba Ditahan (<em>Retained Earnings</em>)</td><td>~230</td><td>Dominan — mencerminkan profitabilitas kumulatif puluhan tahun</td></tr>
+<tr><td>OCI / Komprehensif Lain</td><td>~7</td><td>Termasuk revaluasi aset keuangan, aktuarial</td></tr>
+<tr><td><strong>Total Ekuitas</strong></td><td><strong>~252</strong></td><td>—</td></tr>
+</tbody>
+</table>
+<p><strong>Observasi kritis:</strong> <strong>~91%</strong> ekuitas BBCA berasal dari laba ditahan. Ini menunjukkan bahwa BBCA adalah contoh sempurna <em>internal financing</em> — pertumbuhan modal didorong oleh profitabilitas yang konsisten dan retensi laba, bukan penerbitan saham baru. Dalam kerangka Z-score, X<sub>2</sub> (retained earnings / total assets) BBCA sangat tinggi, menunjukkan perusahaan yang matang dan secara kumulatif sangat profitabel.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. Ch.3 Concepts Illustrated                                  -->
+<!-- ============================================================ -->
+
+<h3>5. Konsep Chapter 3 yang Diilustrasikan oleh BBCA</h3>
+<p><em>Ch.3 Concepts Illustrated by BBCA</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Tabel Koneksi: Konsep → Ilustrasi BBCA</div>
+<table>
+<thead><tr><th style="width:25%">Konsep Ch.3</th><th style="width:75%">Bagaimana BBCA Mengilustrasikannya</th></tr></thead>
+<tbody>
+<tr><td><strong>Operating vs Financing Liabilities</strong></td><td>Pada bank, klasifikasi ini menjadi kompleks: DPK secara teknis adalah liabilitas operasi (karena menghimpun dana adalah operasi inti bank), tetapi secara ekonomi berfungsi seperti liabilitas pendanaan. Ini menunjukkan batasan klasifikasi Ch.3 yang dirancang untuk perusahaan non-keuangan.</td></tr>
+<tr><td><strong>Subordinated Debt</strong></td><td>Obligasi subordinasi BBCA mengilustrasikan instrumen yang duduk di perbatasan utang-ekuitas: utang secara hukum, tetapi diperhitungkan sebagai modal regulasi (Tier 2).</td></tr>
+<tr><td><strong>Capital Structure Analysis</strong></td><td>Rasio leverage konvensional (D/E ~4,6x) memberikan gambaran yang menyesatkan — untuk bank, CAR dan buffer modal adalah metrik yang lebih bermakna daripada D/E ratio.</td></tr>
+<tr><td><strong>Retained Earnings</strong></td><td>Dominasi laba ditahan (91% ekuitas) menunjukkan kekuatan <em>internal financing</em> dan relevansi untuk X<sub>2</sub> dalam Z-score.</td></tr>
+<tr><td><strong>Contingencies</strong></td><td>Sebagai bank, BBCA memiliki komitmen dan kontinjensi signifikan: <em>bank guarantees</em>, fasilitas kredit yang belum ditarik (<em>undrawn commitments</em>), <em>letters of credit</em> — diungkapkan dalam catatan atas LK, bukan di neraca.</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. Z-Score Applicability to Banks                             -->
+<!-- ============================================================ -->
+
+<h3>6. Penerapan Z-Score pada Bank: Mengapa Tidak Langsung Berlaku</h3>
+<p><em>Z-Score Applicability to Banks: Why It Doesn't Directly Apply</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Mengapa Model Z-Score Asli Tidak Cocok untuk BBCA</div>
+<p>Model Z-score Altman (1968) dirancang untuk <strong>perusahaan manufaktur</strong> — dan Altman sendiri secara eksplisit mengeluarkan perusahaan keuangan dari sampelnya. Beberapa alasan mengapa model ini tidak langsung berlaku untuk BBCA:</p>
+<ol>
+<li><strong>Leverage ekstrem:</strong> D/E ratio bank (~4-10x) secara rutin menghasilkan X<sub>4</sub> sangat rendah → Z-score selalu di "distress zone" — padahal bank sehat.</li>
+<li><strong>Working capital tidak bermakna:</strong> X<sub>1</sub> (working capital / total assets) tidak memiliki interpretasi yang sama pada bank — "aset lancar" dan "liabilitas lancar" bank memiliki sifat yang berbeda dari perusahaan manufaktur.</li>
+<li><strong>Sales / total assets berbeda:</strong> "Sales" bank (pendapatan bunga) tidak sebanding dengan penjualan manufaktur. X<sub>5</sub> kehilangan makna komparatifnya.</li>
+<li><strong>Regulasi sebagai pengganti:</strong> CAR/KPMM menggantikan peran X<sub>4</sub>; regulasi OJK/BI menggantikan peran <em>market discipline</em> dalam membatasi leverage.</li>
+</ol>
+<p><strong>Model alternatif untuk bank:</strong> CAMELS rating (Capital, Asset quality, Management, Earnings, Liquidity, Sensitivity), model Z-score modifikasi untuk lembaga keuangan (Altman Z''), atau model berbasis probabilitas seperti Merton model yang menghitung <em>distance to default</em>.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 8. Comparison with Non-Bank: ASII                             -->
+<!-- ============================================================ -->
+
+<h3>7. Perbandingan dengan Perusahaan Non-Bank: ASII (Astra International)</h3>
+<p><em>Comparison with a Non-Financial Firm</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 BBCA vs ASII: Struktur Pendanaan</div>
+<p>Untuk mempertegas perbedaan, berikut perbandingan dengan <strong>ASII (Astra International Tbk)</strong>, konglomerat non-keuangan terbesar di Indonesia:</p>
+<table>
+<thead><tr><th style="width:30%">Metrik (2023)</th><th style="width:35%">BBCA (Bank)</th><th style="width:35%">ASII (Non-Bank)</th></tr></thead>
+<tbody>
+<tr><td>Debt-to-Equity</td><td>~4,6x</td><td>~1,1x</td></tr>
+<tr><td>Sumber utang utama</td><td>DPK (deposito): 90%</td><td>Pinjaman bank + obligasi</td></tr>
+<tr><td>Interest coverage</td><td>N/A (NIM lebih relevan)</td><td>~8x</td></tr>
+<tr><td>Regulasi modal</td><td>CAR 27,8% (OJK/Basel)</td><td>Tidak ada regulasi modal khusus</td></tr>
+<tr><td>Retained earnings / Equity</td><td>~91%</td><td>~70%</td></tr>
+<tr><td>Kesesuaian Z-score</td><td>❌ Tidak sesuai</td><td>✅ Dapat diterapkan (dengan penyesuaian)</td></tr>
+</tbody>
+</table>
+<p><strong>Implikasi:</strong> Perbandingan ini menunjukkan bahwa konsep-konsep Chapter 3 harus diterapkan dengan <strong>konteks industri</strong>. Rasio D/E 4,6x pada bank tidak mengindikasikan hal yang sama dengan D/E 4,6x pada perusahaan manufaktur. Analis harus menggunakan metrik yang sesuai untuk masing-masing sektor — CAR untuk bank, D/E dan <em>interest coverage</em> untuk non-keuangan.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 9. Key Takeaways                                              -->
+<!-- ============================================================ -->
+
+<div class="ibox nb">
+<div class="ibt">📌 Kesimpulan Utama dari Contoh BBCA</div>
+<ol>
+<li><strong>Struktur pendanaan bank bersifat unik</strong> — DPK menggantikan obligasi sebagai sumber utama; leverage tinggi adalah karakteristik industri, bukan tanda distress.</li>
+<li><strong>Regulasi permodalan menggantikan market discipline</strong> — CAR/KPMM lebih bermakna daripada D/E ratio untuk mengevaluasi leverage bank.</li>
+<li><strong>CASA ratio adalah proxy untuk "biaya utang"</strong> — BBCA's CASA ~66,6% menunjukkan keunggulan kompetitif dalam cost of funds.</li>
+<li><strong>Laba ditahan mendominasi ekuitas</strong> — menunjukkan kekuatan internal financing dan relevansi X<sub>2</sub> Z-score (meski Z-score itu sendiri tidak berlaku untuk bank).</li>
+<li><strong>Obligasi subordinasi mengilustrasikan batas utang-ekuitas</strong> — instrumen hybrid yang penting untuk pemahaman Chapter 3.</li>
+<li><strong>Model Z-score asli tidak berlaku untuk bank</strong> — diperlukan model alternatif; ini adalah keterbatasan penting yang harus dipahami.</li>
+<li><strong>Konteks industri selalu kritis</strong> — rasio yang sama memiliki interpretasi berbeda lintas sektor; analis harus menyesuaikan kerangka analisis.</li>
+</ol>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-02/id-examples.html">← Week 02</a>
+  
+  
+  <a href="../week-04/id-examples.html">Week 04 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

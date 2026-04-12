@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 01 — Indonesian Company Examples</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 01: Syllabus and Introduction to FSA</h1>
+  <div class="meta">
+    <span>📚 Silabus dan pengenalan ALK</span>
+    
+    <span>📖 Subramanyam Ch. 1</span>
+    
+    
+    <span>📗 Palepu Ch. 1</span>
+    
+    
+    <span>🏢 UNVR — Unilever Indonesia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Framework for financial statement analysis; role of accounting information in capital markets</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 01 Indonesian Company Examples — UNVR (Unilever Indonesia Tbk) -->
+<!-- Parallels: Colgate-Palmolive (Subramanyam Ch.1) → UNVR (Indonesian context) -->
+
+<h2>Contoh Perusahaan Indonesia: UNVR — Unilever Indonesia Tbk</h2>
+<p><em>Indonesian Company Example for Week 01: Introduction to FSA</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Profil Perusahaan / Company Profile</div>
+<p><strong>Ticker:</strong> UNVR.JK (IDX) | <strong>Sektor:</strong> Consumer Goods | <strong>Listing:</strong> 1982</p>
+<p><strong>Model Bisnis:</strong> Produsen dan distributor produk consumer goods terkemuka di Indonesia. Portfolio meliputi: Home Care (Rinso, Sunlight), Beauty &amp; Personal Care (Dove, Sunsilk, Lifebuoy, Pepsodent), dan Foods &amp; Refreshment (Bango, Wall's, SariWangi).</p>
+<p><strong>Kepemilikan:</strong> ~85% dimiliki oleh Unilever N.V./PLC (Belanda/Inggris), sisanya free float di IDX.</p>
+<p><strong>Mengapa dipilih:</strong> Paralel dengan Colgate-Palmolive — keduanya adalah anak perusahaan multinasional consumer goods dengan struktur keuangan bersih, profitabilitas historis tinggi, dan tekanan serupa dari kompetisi dan biaya bahan baku.</p>
+</div>
+
+<h3>1. Business Analysis Framework — Diterapkan pada UNVR</h3>
+
+<div class="id-box nb">
+<div class="idt">Lingkungan Bisnis &amp; Strategi</div>
+<p><strong>Industri:</strong> Fast-Moving Consumer Goods (FMCG) Indonesia — pasar domestik terbesar di ASEAN (~280 juta penduduk). Kompetisi intensif dari P&amp;G, Kao, Wings Group, dan merek lokal.</p>
+<p><strong>Strategi:</strong> Premiumisasi produk, ekspansi distribusi ke tier-2/3 cities, dan transformasi digital. Sejak 2020, menghadapi tekanan volume dari pergeseran konsumen ke produk lokal yang lebih murah.</p>
+<p><strong>Regulasi:</strong> Laporan keuangan disusun berdasarkan <strong>PSAK</strong> (Pernyataan Standar Akuntansi Keuangan, berbasis IFRS), diaudit oleh KAP Big Four, dan diawasi oleh <strong>OJK</strong> (Otoritas Jasa Keuangan).</p>
+</div>
+
+<h3>2. Empat Aktivitas Bisnis UNVR (Tahun Buku 2023)</h3>
+
+<table class="nb">
+<thead><tr><th style="width:16%">Aktivitas</th><th style="width:42%">Deskripsi pada UNVR</th><th style="width:42%">Data Kunci (2023)</th></tr></thead>
+<tbody>
+<tr><td><strong>Perencanaan</strong></td><td>Fokus pada "Future Foods", sustainability, dan premiumisasi. Strategi "Clean Future" dan "Positive Beauty".</td><td>Mengacu pada Letter to Shareholders &amp; MD&amp;A dalam Annual Report 2023.</td></tr>
+<tr><td><strong>Pendanaan</strong></td><td>UNVR secara historis memiliki equity base relatif kecil karena dividend payout ratio sangat tinggi (~100%). Utang terutama berupa utang usaha dan pinjaman bank jangka pendek.</td><td>Total ekuitas: Rp 4,4 triliun. Total liabilitas: Rp 14,9 triliun. Debt-to-equity ratio: ~3,4x.</td></tr>
+<tr><td><strong>Investasi</strong></td><td>Aset tetap berupa pabrik (Cikarang, Rungkut). Investasi pada merek-merek (intangible assets) dan distribusi.</td><td>Total aset: Rp 19,3 triliun. Aset tetap: Rp 6,6 triliun. Goodwill &amp; intangibles: Rp 1,1 triliun.</td></tr>
+<tr><td><strong>Operasi</strong></td><td>Produksi, distribusi, dan pemasaran produk consumer goods di seluruh Indonesia. Lebih dari 300.000 titik distribusi.</td><td>Pendapatan bersih: Rp 38,6 triliun (turun 6,3% YoY). Laba bersih: Rp 4,8 triliun (turun 10,5% YoY).</td></tr>
+</tbody>
+</table>
+
+<h3>3. Perbandingan Rasio Kunci: Colgate vs UNVR</h3>
+
+<table class="nb">
+<thead><tr><th>Rasio</th><th>Colgate-Palmolive (2011)</th><th>UNVR (2023)</th><th>Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Gross Profit Margin</strong></td><td>57,3%</td><td>49,5%</td><td>UNVR sedikit lebih rendah — mencerminkan tekanan biaya bahan baku dan kompetisi harga di pasar Indonesia</td></tr>
+<tr><td><strong>Net Profit Margin</strong></td><td>14,5%</td><td>12,4%</td><td>Keduanya profitable; UNVR sedikit tertekan oleh biaya distribusi yang lebih tinggi di pasar domestik yang luas</td></tr>
+<tr><td><strong>ROE</strong></td><td>~96%</td><td>~109%</td><td>Keduanya sangat tinggi karena equity base kecil (akibat high payout ratio). Bukan indikasi kinerja operasi murni — efek leverage.</td></tr>
+<tr><td><strong>Debt-to-Equity</strong></td><td>4,01x</td><td>~3,4x</td><td>Struktur serupa — keduanya memiliki leverage tinggi yang dibiayai oleh arus kas operasi yang kuat dan stabil.</td></tr>
+<tr><td><strong>Dividend Payout</strong></td><td>45,6%</td><td>~100%</td><td>UNVR secara historis membagikan hampir seluruh laba sebagai dividen, menyisakan equity base sangat tipis.</td></tr>
+</tbody>
+</table>
+
+<div class="cg nb">
+<div class="cgt">💡 Insight Analitis / Analytical Insight</div>
+<p><strong>Paralel kritis dengan Colgate:</strong> Baik Colgate maupun UNVR menunjukkan ROE yang sangat tinggi (mendekati atau melebihi 100%), yang sekilas tampak luar biasa. Namun analisis yang lebih mendalam menunjukkan bahwa ini sebagian besar adalah <em>efek leverage dan share buyback/high payout</em>, bukan semata-mata kinerja operasi superior.</p>
+<p><strong>Pelajaran untuk S2:</strong> ROE tinggi tanpa konteks bisa menyesatkan. Analis yang baik selalu melakukan <em>decomposition</em> (DuPont Analysis — akan dipelajari di Minggu 9) untuk memisahkan kontribusi profit margin, asset turnover, dan financial leverage terhadap ROE.</p>
+</div>
+
+<h3>4. Kerangka Regulasi Indonesia vs AS</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Perbandingan Kerangka Regulasi</div>
+<table>
+<thead><tr><th>Aspek</th><th>Amerika Serikat</th><th>Indonesia</th></tr></thead>
+<tbody>
+<tr><td><strong>Standar Akuntansi</strong></td><td>US GAAP (FASB)</td><td>PSAK (DSAK-IAI, berbasis IFRS)</td></tr>
+<tr><td><strong>Regulator Pasar Modal</strong></td><td>SEC (Securities and Exchange Commission)</td><td>OJK (Otoritas Jasa Keuangan)</td></tr>
+<tr><td><strong>Bursa Efek</strong></td><td>NYSE, NASDAQ</td><td>IDX (Bursa Efek Indonesia)</td></tr>
+<tr><td><strong>Auditor</strong></td><td>PCAOB oversight</td><td>OJK &amp; IAPI oversight</td></tr>
+<tr><td><strong>Mata Uang Pelaporan</strong></td><td>USD</td><td>IDR (Rupiah)</td></tr>
+<tr><td><strong>Format Pelaporan</strong></td><td>10-K, 10-Q (XBRL)</td><td>Laporan Keuangan Tahunan/Tengah Tahunan ke IDX</td></tr>
+</tbody>
+</table>
+<p><strong>Implikasi untuk FSA:</strong> Karena PSAK berbasis IFRS (bukan US GAAP), beberapa perbedaan penting muncul — misalnya dalam perlakuan revaluasi aset tetap, penyajian laporan laba rugi komprehensif, dan pengakuan pendapatan (PSAK 72 = IFRS 15). Analis harus memahami perbedaan ini ketika membandingkan perusahaan Indonesia dengan perusahaan AS.</p>
+</div>
+
+<h3>5. Sumber Data / Data Sources</h3>
+
+<div class="def nb">
+<div class="den">Sumber yang Digunakan</div>
+<div class="did">
+<ul>
+<li><strong>Annual Report UNVR 2023:</strong> <a href="https://www.unilever.co.id/investor-relations/">www.unilever.co.id/investor-relations/</a></li>
+<li><strong>Laporan Keuangan Auditan 2023:</strong> Filing IDX via <a href="https://www.idx.co.id">www.idx.co.id</a></li>
+<li><strong>IDX Fact Book 2024:</strong> Data profil emiten</li>
+<li><strong>Catatan:</strong> Data keuangan UNVR 2023 digunakan sebagai perbandingan kontemporer terhadap data Colgate-Palmolive 2011 yang digunakan Subramanyam. Perbedaan tahun harus diperhatikan — fokusnya pada pola analitis, bukan perbandingan absolut.</li>
+</ul>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <span></span>
+  
+  
+  <a href="../week-02/id-examples.html">Week 02 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

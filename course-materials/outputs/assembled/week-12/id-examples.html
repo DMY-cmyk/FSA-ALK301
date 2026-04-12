@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 12 — Indonesian Company Examples</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 12: Equity Analysis and Valuation</h1>
+  <div class="meta">
+    <span>📚 Analisis ekuitas dan penilaian</span>
+    
+    <span>📖 Subramanyam Ch. 11</span>
+    
+    
+    <span>📗 Palepu Ch. 8, 9</span>
+    
+    
+    <span>📄 1 article(s)</span>
+    
+    <span>🏢 BBCA — Bank Central Asia Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 Residual income valuation; DDM; DCF; P&#x2F;E and P&#x2F;B multiples; equity risk premium; intrinsic value</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 12 Indonesian Company Examples — BBCA (PT Bank Central Asia Tbk) -->
+<!-- Focus: Equity Valuation — P/E, P/B Multiples, DDM, Residual Income Model, Peer Comparison -->
+
+<h2>Contoh Perusahaan Indonesia: BBCA — Valuasi Ekuitas Bank Terbesar Indonesia</h2>
+<p><em>Indonesian Company Example for Week 12: Equity Analysis and Valuation — P/E, P/B Multiples, DDM, Residual Income Model, and Peer Comparison for Indonesia's Largest Private Bank</em></p>
+
+<p><strong>PT Bank Central Asia Tbk (BBCA)</strong> adalah bank swasta terbesar di Indonesia berdasarkan kapitalisasi pasar (~Rp 230 triliun pada akhir 2023) dan secara konsisten diperdagangkan pada premium multiples yang signifikan dibandingkan peers perbankan Indonesia. Dengan ROE yang stabil di ~20-21%, rasio NPL terendah di industri (~1,2%), dan basis deposito CASA (<em>Current Account Savings Account</em>) terbesar di Indonesia, BBCA merupakan kandidat ideal untuk mengaplikasikan seluruh model valuasi ekuitas: price multiples, DDM, dan Residual Income Model. Studi kasus ini mendemonstrasikan bagaimana kerangka valuasi Subramanyam Ch.11 diterapkan pada data aktual perusahaan Indonesia.</p>
+
+<!-- ============================================================ -->
+<!-- 1. Company Profile & Key Metrics                              -->
+<!-- ============================================================ -->
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Profil BBCA &amp; Data Keuangan Konsolidasi / BBCA Profile &amp; Key Financials</div>
+<p><strong>PT Bank Central Asia Tbk (BBCA)</strong> didirikan tahun 1957 dan merupakan bank swasta terbesar di Indonesia. BBCA dikenal karena: (1) basis CASA terbesar di Indonesia — memberikan biaya dana (<em>cost of funds</em>) paling rendah di industri; (2) platform transaksi digital terdepan — BCA mobile dan KlikBCA; (3) kualitas kredit superior — NPL gross konsisten ~1,2%, terendah di antara bank besar; (4) manajemen risiko konservatif — pencadangan yang memadai dan pertumbuhan kredit yang terkontrol.</p>
+<table>
+<thead><tr><th style="width:30%">Metrik Kunci</th><th style="width:18%">2023</th><th style="width:18%">2022</th><th style="width:18%">2021</th><th style="width:16%">Sumber</th></tr></thead>
+<tbody>
+<tr><td>Laba Bersih (<em>Net Income</em>)</td><td>Rp 48,6 T</td><td>Rp 40,7 T</td><td>Rp 31,4 T</td><td>LK Audit</td></tr>
+<tr><td>Total Ekuitas</td><td>Rp 235,0 T</td><td>Rp 210,0 T</td><td>Rp 187,0 T</td><td>LK Audit</td></tr>
+<tr><td>Total Aset</td><td>Rp 1.408 T</td><td>Rp 1.244 T</td><td>Rp 1.075 T</td><td>LK Audit</td></tr>
+<tr><td>EPS (split-adjusted)</td><td>Rp 452</td><td>Rp 398</td><td>Rp 307</td><td>Kalkulasi</td></tr>
+<tr><td>BPS (<em>Book Value/Share</em>)</td><td>Rp 2.219</td><td>Rp 1.982</td><td>Rp 1.767</td><td>Kalkulasi</td></tr>
+<tr><td>DPS (<em>Dividend/Share</em>)</td><td>Rp 170</td><td>Rp 135</td><td>Rp 85</td><td>RUPS</td></tr>
+<tr><td>Harga Saham (akhir tahun)</td><td>Rp 9.325</td><td>Rp 8.675</td><td>Rp 7.350</td><td>IDX</td></tr>
+<tr><td>ROE</td><td>20,7%</td><td>20,5%</td><td>17,6%</td><td>Kalkulasi</td></tr>
+<tr><td>Kapitalisasi Pasar</td><td>~Rp 230 T</td><td>~Rp 214 T</td><td>~Rp 181 T</td><td>Kalkulasi</td></tr>
+</tbody>
+</table>
+<p><strong>Catatan:</strong> BBCA melakukan stock split 1:5 pada April 2023. Seluruh data per saham (EPS, BPS, DPS, harga) disajikan pada basis split-adjusted untuk komparabilitas. Jumlah saham beredar pasca-split: ~24,655 miliar lembar.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. P/E Ratio Analysis                                         -->
+<!-- ============================================================ -->
+
+<h3>1. Analisis Rasio P/E / Price-to-Earnings Analysis</h3>
+<p><em>Trailing and Forward P/E, Decomposition, Peer Comparison</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Analisis P/E BBCA</div>
+
+<div class="fbox nb">
+<p><strong>Formula P/E:</strong></p>
+<p><code>P/E = Harga Saham / Laba per Saham (EPS)</code></p>
+<p><code>P/E BBCA 2023 (trailing) = Rp 9.325 / Rp 452 = 20,6x</code></p>
+<p><strong>Dekomposisi P/E (dari Gordon Growth Model):</strong></p>
+<p><code>P/E = Payout Ratio / (r − g) = (1 − b) / (r − g)</code></p>
+<p><code>P/E implied = 0,376 / (0,117 − 0,080) = 0,376 / 0,037 = 10,2x</code></p>
+</div>
+
+<p><strong>Observasi penting:</strong> P/E aktual BBCA (20,6x) jauh lebih tinggi daripada P/E implied dari Gordon Growth decomposition (10,2x). Diskrepansi ini menunjukkan bahwa <strong>pasar menilai BBCA lebih tinggi daripada yang diimplikasikan oleh model pertumbuhan konstan sederhana</strong>. Kemungkinan penjelasan:</p>
+<ol>
+<li><strong>Pertumbuhan yang diharapkan lebih tinggi dari asumsi konstan</strong> — Pasar mungkin mengekspektasikan pertumbuhan laba yang lebih tinggi dalam jangka pendek-menengah sebelum melandai ke g terminal.</li>
+<li><strong>Kualitas laba premium</strong> — Stabilitas dan prediktabilitas laba BBCA membenarkan valuasi lebih tinggi (lower risk = lower effective discount rate).</li>
+<li><strong>Franchise value</strong> — Basis CASA dan dominasi platform digital BBCA merupakan aset intangible yang tidak tercermin dalam laba atau nilai buku.</li>
+</ol>
+
+<table>
+<thead><tr><th style="width:25%">Metrik P/E</th><th style="width:15%">BBCA</th><th style="width:15%">BBRI</th><th style="width:15%">BMRI</th><th style="width:15%">BBNI</th><th style="width:15%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td>P/E Trailing 2023</td><td>20,6x</td><td>~15,0x</td><td>~10,5x</td><td>~8,5x</td><td>BBCA memiliki P/E tertinggi</td></tr>
+<tr><td>EPS Growth YoY</td><td>+13,6%</td><td>+10%</td><td>+15%</td><td>+12%</td><td>Pertumbuhan BBCA moderat tapi konsisten</td></tr>
+<tr><td>Dividend Yield</td><td>1,8%</td><td>~3,9%</td><td>~6,4%</td><td>~6,5%</td><td>BBCA lowest yield — investor membayar untuk capital appreciation</td></tr>
+</tbody>
+</table>
+
+<p><strong>Insight:</strong> P/E premium BBCA (20,6x vs rata-rata peers ~11x) mencerminkan ekspektasi pasar atas kualitas laba superior, konsistensi ROE, dan <em>franchise value</em>. Investor BBCA membayar harga premium karena percaya laba masa depan lebih pasti dan berkelanjutan dibanding peers.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. P/B Ratio and ROE-P/B Relationship                         -->
+<!-- ============================================================ -->
+
+<h3>2. Analisis P/B dan Hubungan ROE-P/B / P/B Analysis &amp; ROE Connection</h3>
+<p><em>Price-to-Book Value, ROE-P/B Relationship, Value Creation</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Analisis P/B dan Hubungan dengan ROE</div>
+
+<div class="fbox nb">
+<p><strong>Formula P/B:</strong></p>
+<p><code>P/B = Harga Saham / Nilai Buku per Saham (BPS)</code></p>
+<p><code>P/B BBCA 2023 = Rp 9.325 / Rp 2.219 = 4,20x</code></p>
+<p><strong>Hubungan ROE-P/B (dari Residual Income framework):</strong></p>
+<p><code>P/B = (ROE − g) / (r − g)</code></p>
+<p><code>P/B implied = (0,207 − 0,050) / (0,117 − 0,050) = 0,157 / 0,067 = 2,34x</code></p>
+</div>
+
+<p><strong>Observasi:</strong> P/B aktual BBCA (4,20x) lebih tinggi dari P/B implied (2,34x). Seperti pada P/E, ini menunjukkan pasar menghargai faktor-faktor di luar model pertumbuhan konstan — termasuk <em>franchise value</em>, konsistensi ROE, dan kualitas manajemen.</p>
+
+<table>
+<thead><tr><th style="width:25%">Metrik</th><th style="width:15%">BBCA</th><th style="width:15%">BBRI</th><th style="width:15%">BMRI</th><th style="width:15%">BBNI</th></tr></thead>
+<tbody>
+<tr><td>P/B 2023</td><td>4,20x</td><td>~2,8x</td><td>~2,2x</td><td>~1,3x</td></tr>
+<tr><td>ROE 2023</td><td>20,7%</td><td>~20,0%</td><td>~21,0%</td><td>~16,0%</td></tr>
+<tr><td>ROE − Cost of Equity</td><td>+9,0%</td><td>+7,5%</td><td>+8,5%</td><td>+3,5%</td></tr>
+<tr><td>NPL Gross</td><td>~1,2%</td><td>~3,0%</td><td>~1,5%</td><td>~2,5%</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb">
+<div class="ibt">💡 Insight Kunci: ROE vs P/B</div>
+<p><strong>Mengapa BBCA memiliki P/B jauh lebih tinggi dari BMRI meskipun ROE BMRI sedikit lebih tinggi (21,0% vs 20,7%)?</strong></p>
+<p>Jawaban: P/B tidak hanya ditentukan oleh ROE <em>saat ini</em>, tetapi oleh ekspektasi <em>keberlanjutan</em> ROE di atas cost of equity. BBCA memiliki keunggulan struktural yang membuat ROE tingginya lebih <em>sustainable</em>:</p>
+<ul>
+<li><strong>Cost of funds terendah</strong> — CASA ratio BBCA (~80%) jauh di atas peers (~60-65%), menghasilkan NIM (<em>Net Interest Margin</em>) yang lebih stabil</li>
+<li><strong>Kualitas aset terbaik</strong> — NPL gross ~1,2% vs peers 1,5-3,0%, mengurangi risiko kredit dan kebutuhan provisi</li>
+<li><strong>Volatilitas ROE terendah</strong> — ROE BBCA berfluktuasi jauh lebih sedikit dibanding peers lintas siklus ekonomi</li>
+<li><strong>Franchise value</strong> — Dominasi platform transaksi digital menciptakan <em>switching costs</em> tinggi bagi nasabah</li>
+</ul>
+<p>Pasar membayar premium untuk <em>certainty</em> dan <em>durability</em> ROE, bukan hanya level ROE saat ini.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. Gordon Growth DDM                                          -->
+<!-- ============================================================ -->
+
+<h3>3. Model Dividen Diskon (DDM) — Gordon Growth / Dividend Discount Model</h3>
+<p><em>Gordon Growth Model Application to BBCA</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Penerapan DDM Gordon Growth pada BBCA</div>
+
+<div class="fbox nb">
+<p><strong>Gordon Growth DDM:</strong></p>
+<p><code>P₀ = D₁ / (r − g)</code></p>
+<p><strong>Input:</strong></p>
+<ul>
+<li>D₀ (DPS 2023) = Rp 170</li>
+<li>g (pertumbuhan dividen jangka panjang) = 8,0% (berdasarkan CAGR DPS historis dan sustainable growth)</li>
+<li>D₁ = D₀ × (1 + g) = 170 × 1,08 = Rp 183,6</li>
+<li>r (cost of equity, CAPM) = 11,7%</li>
+</ul>
+<p><strong>Perhitungan:</strong></p>
+<p><code>P₀ = 183,6 / (0,117 − 0,080) = 183,6 / 0,037 = Rp 4.962</code></p>
+</div>
+
+<p><strong>Hasil DDM: Rp 4.962</strong> — jauh di bawah harga pasar Rp 9.325 (discount ~47%).</p>
+
+<div class="exb nb">
+<div class="exn">Analisis Kritis: Mengapa DDM Meremehkan Nilai BBCA?</div>
+<ol>
+<li><strong>Payout ratio rendah</strong> — BBCA hanya membagikan ~37,6% laba sebagai dividen; sebagian besar nilai perusahaan tercermin dalam pertumbuhan nilai buku (<em>retained earnings reinvested</em>) yang tidak ditangkap DDM sederhana.</li>
+<li><strong>Pertumbuhan dividen tidak konstan</strong> — DPS CAGR 2021-2023 jauh lebih tinggi (~41%) dari asumsi g=8%. Model multi-tahap lebih sesuai.</li>
+<li><strong>DDM kurang cocok untuk bank yang menahan laba</strong> — Bank dengan payout ratio rendah yang menginvestasikan kembali laba untuk pertumbuhan kredit dan ekuitas akan terlihat <em>undervalued</em> oleh DDM sederhana.</li>
+</ol>
+<p><strong>Kesimpulan:</strong> DDM Gordon Growth <strong>bukan model yang optimal untuk BBCA</strong> karena payout ratio yang relatif rendah dan pertumbuhan dividen yang tidak konstan. Residual Income Model lebih sesuai karena menangkap value creation dari laba ditahan.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Residual Income Model                                      -->
+<!-- ============================================================ -->
+
+<h3>4. Model Laba Residual / Residual Income Model (RIM)</h3>
+<p><em>Residual Income Valuation — The Most Appropriate Model for Bank Valuation</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Penerapan Residual Income Model pada BBCA</div>
+
+<div class="fbox nb">
+<p><strong>Residual Income Model:</strong></p>
+<p><code>V₀ = BV₀ + Σ[t=1→∞] (NI_t − r × BV_{t-1}) / (1+r)^t</code></p>
+<p><strong>Di mana:</strong> NI_t − r × BV_{t-1} = <em>Residual Income</em> (RI) = laba di atas biaya modal ekuitas</p>
+<p><strong>Atau equivalen:</strong> RI_t = (ROE_t − r) × BV_{t-1}</p>
+</div>
+
+<p><strong>Proyeksi 5 Tahun + Terminal Value:</strong></p>
+
+<table>
+<thead><tr><th style="width:12%">Tahun</th><th style="width:14%">BV awal</th><th style="width:12%">ROE</th><th style="width:14%">NI</th><th style="width:16%">Biaya Ekuitas</th><th style="width:14%">RI</th><th style="width:18%">PV(RI)</th></tr></thead>
+<tbody>
+<tr><td>2024</td><td>Rp 2.219</td><td>20,5%</td><td>Rp 455</td><td>Rp 260</td><td>Rp 195</td><td>Rp 175</td></tr>
+<tr><td>2025</td><td>Rp 2.504</td><td>20,0%</td><td>Rp 501</td><td>Rp 293</td><td>Rp 208</td><td>Rp 167</td></tr>
+<tr><td>2026</td><td>Rp 2.820</td><td>19,5%</td><td>Rp 550</td><td>Rp 330</td><td>Rp 220</td><td>Rp 158</td></tr>
+<tr><td>2027</td><td>Rp 3.165</td><td>19,0%</td><td>Rp 601</td><td>Rp 370</td><td>Rp 231</td><td>Rp 149</td></tr>
+<tr><td>2028</td><td>Rp 3.540</td><td>18,5%</td><td>Rp 655</td><td>Rp 414</td><td>Rp 241</td><td>Rp 139</td></tr>
+</tbody>
+</table>
+
+<p><em>Catatan: BV awal dihitung dari BV sebelumnya + NI − DPS (clean surplus); ROE diasumsikan mean-reverting secara gradual dari 20,7% ke 18,5%; biaya ekuitas = r × BV awal (11,7%); DPS diasumsikan ~37% dari NI.</em></p>
+
+<div class="fbox nb">
+<p><strong>Perhitungan Terminal Value RI:</strong></p>
+<p><code>RI terminal (2029) = (ROE_terminal − r) × BV_{2028}</code></p>
+<p><code>= (0,175 − 0,117) × Rp 3.926 = 0,058 × 3.926 = Rp 228</code></p>
+<p><code>TV_RI = RI_terminal / (r − g_terminal) = 228 / (0,117 − 0,050) = 228 / 0,067 = Rp 3.403</code></p>
+<p><code>PV(TV_RI) = 3.403 / (1,117)^5 = 3.403 / 1,735 = Rp 1.962</code></p>
+<p><strong>Total Nilai per Saham:</strong></p>
+<p><code>V₀ = BV₀ + Σ PV(RI) + PV(TV_RI)</code></p>
+<p><code>V₀ = 2.219 + (175 + 167 + 158 + 149 + 139) + 1.962</code></p>
+<p><code>V₀ = 2.219 + 788 + 1.962 = Rp 4.969</code></p>
+</div>
+
+<p><strong>Hasil RIM: ~Rp 4.969</strong> — masih di bawah harga pasar Rp 9.325 (discount ~47%).</p>
+
+<div class="exb nb">
+<div class="exn">Analisis Sensitivitas RIM: Mengapa Hasil Masih di Bawah Harga Pasar?</div>
+<p>Estimasi RIM konservatif kita (~Rp 4.969) jauh di bawah harga pasar. Beberapa faktor yang menjelaskan gap:</p>
+<ol>
+<li><strong>Asumsi mean reversion terlalu agresif</strong> — Model kita mengasumsikan ROE menurun dari 20,7% ke 17,5% terminal. Jika BBCA mempertahankan ROE ~20% karena <em>sustainable competitive advantage</em> (CASA franchise), valuasi meningkat signifikan.</li>
+<li><strong>Terminal growth rate</strong> — Menggunakan g=5,0% mungkin terlalu konservatif; Indonesia sebagai ekonomi berkembang berpotensi tumbuh 5-6% nominal jangka panjang.</li>
+<li><strong>Cost of equity mungkin terlalu tinggi</strong> — Jika pasar menilai BBCA sebagai investasi "less risky" dengan r efektif 10% (bukan 11,7%), valuasi meningkat secara non-linear.</li>
+</ol>
+
+<table>
+<thead><tr><th>Skenario</th><th>ROE Terminal</th><th>g Terminal</th><th>r (CoE)</th><th>Estimasi Nilai</th></tr></thead>
+<tbody>
+<tr><td>Konservatif (base)</td><td>17,5%</td><td>5,0%</td><td>11,7%</td><td>~Rp 4.969</td></tr>
+<tr><td>Moderate</td><td>19,0%</td><td>5,5%</td><td>11,0%</td><td>~Rp 7.200</td></tr>
+<tr><td>Optimistis</td><td>20,0%</td><td>5,5%</td><td>10,5%</td><td>~Rp 9.500</td></tr>
+</tbody>
+</table>
+
+<p><strong>Insight kunci:</strong> Harga pasar BBCA (~Rp 9.325) <em>implied</em> asumsi optimistis: ROE yang bertahan tinggi (~20%), cost of equity yang lebih rendah (~10,5%), dan pertumbuhan terminal yang mendekati pertumbuhan ekonomi. Ini mencerminkan keyakinan pasar yang tinggi terhadap <em>durability</em> keunggulan kompetitif BBCA.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. Why BBCA Trades at Premium Multiples                       -->
+<!-- ============================================================ -->
+
+<h3>5. Analisis Premium Pasar: Mengapa BBCA Diperdagangkan pada Multiples Premium?</h3>
+<p><em>Market Premium Analysis: Explaining BBCA's Valuation Premium</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Sumber Premium Valuasi BBCA</div>
+
+<div class="cg nb">
+<div class="cgt">Faktor Fundamental yang Menjelaskan Premium BBCA</div>
+<ol>
+<li><strong>CASA Franchise (Biaya Dana Terendah)</strong> — CASA ratio BBCA ~80% vs industri ~55-65%. Dana murah dari tabungan dan giro menghasilkan NIM yang stabil bahkan saat suku bunga berfluktuasi. Ini adalah <em>economic moat</em> yang sangat sulit direplikasi oleh kompetitor.</li>
+<li><strong>Kualitas Aset Superior</strong> — NPL gross BBCA konsisten ~1,2% — terendah di antara bank besar Indonesia. Ini berarti biaya provisi (<em>provision expense</em>) lebih rendah dan laba bersih lebih resilient terhadap siklus kredit.</li>
+<li><strong>Platform Digital Terdepan</strong> — BCA mobile dan KlikBCA memproses transaksi terbanyak di Indonesia. Platform digital menciptakan <em>switching costs</em> tinggi dan <em>network effects</em> — nasabah yang terintegrasi ke dalam ekosistem BCA sulit pindah ke bank lain.</li>
+<li><strong>Konsistensi ROE</strong> — ROE BBCA berfluktuasi minimal dibandingkan peers lintas siklus ekonomi (krisis 2008, pandemi 2020). Stabilitas ini dihargai tinggi oleh investor institusional.</li>
+<li><strong>Corporate Governance</strong> — Diantara yang terbaik di sektor perbankan Indonesia; transparansi tinggi dan manajemen yang berpengalaman.</li>
+</ol>
+</div>
+
+<table>
+<thead><tr><th style="width:22%">Dimensi</th><th style="width:19%">BBCA</th><th style="width:19%">BBRI</th><th style="width:19%">BMRI</th><th style="width:21%">Implikasi Valuasi</th></tr></thead>
+<tbody>
+<tr><td>P/E 2023</td><td>20,6x</td><td>~15,0x</td><td>~10,5x</td><td>BBCA at 87% premium vs average</td></tr>
+<tr><td>P/B 2023</td><td>4,20x</td><td>~2,8x</td><td>~2,2x</td><td>BBCA at 68% premium vs average</td></tr>
+<tr><td>ROE 2023</td><td>20,7%</td><td>~20,0%</td><td>~21,0%</td><td>Similar ROE — premium is about sustainability</td></tr>
+<tr><td>NPL Gross</td><td>~1,2%</td><td>~3,0%</td><td>~1,5%</td><td>BBCA lowest risk</td></tr>
+<tr><td>CASA Ratio</td><td>~80%</td><td>~63%</td><td>~60%</td><td>BBCA cost of funds advantage</td></tr>
+<tr><td>Dividend Yield</td><td>1,8%</td><td>~3,9%</td><td>~6,4%</td><td>BBCA: capital appreciation play</td></tr>
+</tbody>
+</table>
+
+<p><strong>Kesimpulan analisis premium:</strong> Premium multiples BBCA bukan anomali pasar — mereka dapat dijelaskan secara fundamental oleh <em>economic moat</em> yang terukur: cost of funds advantage (CASA), kualitas aset terbaik (NPL), dan platform digital dominan. Dalam bahasa Subramanyam Ch.11, BBCA memiliki <em>residual income</em> yang persisten tinggi karena keunggulan kompetitif yang berkelanjutan (<em>sustainable competitive advantage</em>), sehingga pasar menghargai sahamnya jauh di atas nilai buku.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. Summary & Key Takeaways                                    -->
+<!-- ============================================================ -->
+
+<h3>6. Ringkasan Valuasi BBCA / Valuation Summary</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Ringkasan Model Valuasi BBCA</div>
+<table>
+<thead><tr><th style="width:25%">Model</th><th style="width:20%">Estimasi Nilai</th><th style="width:20%">vs Harga Pasar</th><th style="width:35%">Komentar</th></tr></thead>
+<tbody>
+<tr><td>Gordon Growth DDM</td><td>~Rp 4.962</td><td>−47%</td><td>Kurang cocok — payout ratio rendah; tidak menangkap retained earnings value</td></tr>
+<tr><td>RIM (Konservatif)</td><td>~Rp 4.969</td><td>−47%</td><td>Base case dengan mean reversion agresif dan cost of equity tinggi</td></tr>
+<tr><td>RIM (Moderate)</td><td>~Rp 7.200</td><td>−23%</td><td>ROE lebih persisten, sedikit lebih rendah CoE</td></tr>
+<tr><td>RIM (Optimistis)</td><td>~Rp 9.500</td><td>+2%</td><td>Mendekati harga pasar — implied assumptions pasar</td></tr>
+<tr><td>Harga Pasar 2023</td><td>Rp 9.325</td><td>—</td><td>Mencerminkan asumsi optimistis atas sustainability ROE</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Pelajaran Kunci dari Studi Kasus BBCA / Key Lessons</div>
+<ol>
+<li><strong>Tidak ada model yang sempurna</strong> — Setiap model memberikan perspektif berbeda; valuasi terbaik menggunakan beberapa model dan merekonsiliasi perbedaan.</li>
+<li><strong>DDM tidak cocok untuk semua perusahaan</strong> — Perusahaan dengan payout ratio rendah yang menginvestasikan kembali laba (seperti BBCA) akan terlihat <em>undervalued</em> oleh DDM. RIM lebih sesuai karena menangkap <em>value creation</em> dari laba ditahan.</li>
+<li><strong>RIM paling cocok untuk bank</strong> — Bank memiliki nilai buku yang bermakna secara ekonomi (aset dan liabilitas di <em>fair value</em>), menjadikan BV sebagai titik awal yang tepat. Selisih ROE vs cost of equity langsung mengukur <em>value creation</em>.</li>
+<li><strong>Premium multiples harus dapat dijelaskan</strong> — P/B 4,2x BBCA bukan irasional; ia mencerminkan ROE persisten di atas cost of equity, kualitas aset terbaik, dan <em>franchise value</em>.</li>
+<li><strong>Asumsi kritis: sustainability ROE</strong> — Selisih antara valuasi konservatif dan harga pasar hampir seluruhnya dijelaskan oleh asumsi tentang berapa lama BBCA dapat mempertahankan ROE ~20%. Ini adalah pertanyaan valuasi paling kritis.</li>
+</ol>
+</div>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-11/id-examples.html">← Week 11</a>
+  
+  
+  <a href="../week-13/id-examples.html">Week 13 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>

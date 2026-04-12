@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 04 — Indonesian Company Examples</title>
+<style>
+/* === FSA ALK301 Study System — Base + Print Stylesheet === */
+
+/* --- CSS Variables --- */
+:root {
+  --navy: #1B3A6B;
+  --gold: #C9A84C;
+  --gray: #F5F5F5;
+  --lblue: #E8EEF7;
+  --colgbg: #FFF8E8;
+  --idbg: #FFF5F0;
+  --idborder: #E8A0A0;
+  --idaccent: #C41E3A;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  color: #222;
+  line-height: 1.45;
+  background: #fff;
+}
+
+/* --- Layout --- */
+.page-wrapper { max-width: 900px; margin: 0 auto; padding: 20px 30px; }
+nav.sidebar { display: none; }
+
+/* --- Metadata Banner --- */
+.week-banner {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+.week-banner h1 { font-size: 16pt; margin-bottom: 4px; }
+.week-banner .meta { font-size: 9.5pt; opacity: 0.85; }
+.week-banner .meta span { margin-right: 16px; }
+
+/* --- Headings --- */
+h2 { color: var(--navy); font-size: 14pt; border-bottom: 2.5px solid var(--navy); padding-bottom: 5px; margin: 14px 0 8px; }
+h3 { color: var(--navy); font-size: 12pt; margin: 10px 0 5px; }
+h4 { color: var(--navy); font-size: 11pt; margin: 8px 0 4px; }
+p { margin: 4px 0; }
+ul, ol { padding-left: 22px; margin: 4px 0; }
+li { margin: 3px 0; }
+strong { color: var(--navy); }
+
+/* --- Component Boxes --- */
+.def { background: var(--gray); border-left: 4px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.den { font-weight: bold; color: var(--navy); font-size: 11pt; }
+.did { color: #444; margin-top: 3px; font-size: 10.5pt; }
+
+.fbox { background: var(--gray); border: 1px solid #ccc; border-top: 3px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 0 0 5px 5px; }
+.ftitle { font-weight: bold; color: var(--navy); font-size: 10pt; margin-bottom: 5px; text-transform: uppercase; letter-spacing: .5px; }
+.ff { font-family: 'Courier New', monospace; font-size: 10pt; margin: 3px 0; }
+.fw { font-size: 9.5pt; color: #555; margin-top: 5px; }
+
+.cg { background: var(--colgbg); border: 1px solid #e8d5a0; border-left: 4px solid var(--gold); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.cgt { font-weight: bold; color: #8B6914; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.id-box { background: var(--idbg); border: 1px solid var(--idborder); border-left: 4px solid var(--idaccent); padding: 8px 12px; margin: 6px 0; border-radius: 0 5px 5px 0; }
+.idt { font-weight: bold; color: #8B1A2B; font-size: 9.5pt; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.ibox { background: var(--lblue); border: 1px solid var(--navy); padding: 8px 12px; margin: 6px 0; border-radius: 5px; }
+.ibt { font-weight: bold; color: var(--navy); margin-bottom: 4px; }
+
+.qb { background: var(--gray); border-radius: 5px; padding: 8px 12px; margin: 5px 0; }
+.qn { font-weight: bold; color: var(--navy); }
+
+.exb { border: 1px solid #ddd; border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 9px 12px; margin: 7px 0; }
+.ext { font-weight: bold; color: var(--navy); font-size: 11pt; margin-bottom: 5px; }
+
+.cc { background: var(--gray); border-top: 3px solid var(--navy); border-radius: 0 0 5px 5px; padding: 7px 8px; }
+.cc h4 { color: var(--navy); font-size: 10pt; margin-bottom: 5px; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+
+/* --- Tables --- */
+table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 10pt; }
+thead tr { background: var(--navy); color: #fff; }
+th { padding: 5px 7px; text-align: left; font-weight: 600; }
+tbody tr:nth-child(even) { background: var(--gray); }
+tbody tr:nth-child(odd) { background: #fff; }
+td { padding: 4px 7px; border-bottom: 1px solid #e5e5e5; vertical-align: top; }
+
+/* --- Vocabulary Grid --- */
+.vgrid { display: grid; grid-template-columns: 1fr 1fr; font-size: 9.5pt; }
+.ven { font-weight: bold; color: var(--navy); padding: 3px 6px; border-bottom: 1px solid #eee; }
+.vid { font-style: italic; color: #555; padding: 3px 6px; border-bottom: 1px solid #eee; }
+
+/* --- Degraded Article Warning --- */
+.degraded-warning {
+  background: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-left: 4px solid #FF9800;
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 0 5px 5px 0;
+  font-size: 10pt;
+}
+
+/* --- Prev/Next Navigation --- */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 2px solid var(--navy);
+  font-size: 10pt;
+}
+.page-nav a { color: var(--navy); text-decoration: none; font-weight: bold; }
+.page-nav a:hover { text-decoration: underline; }
+
+/* === PRINT STYLES === */
+@page {
+  size: A4;
+  margin: 1.8cm 2cm 2cm 2cm;
+}
+
+@media print {
+  .no-print, nav.sidebar, .page-nav { display: none; }
+  .page-break, .pb { page-break-before: always; }
+  .nb { page-break-inside: avoid; }
+  h2, h3, h4 { page-break-after: avoid; }
+  .def, .cg, .id-box, .fbox, .ibox, .exb, .qb, .cc { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+  body { font-size: 10pt; line-height: 1.5; }
+  .week-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  thead tr { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* === PRINT BUNDLE SPECIFIC === */
+.toc { page-break-after: always; }
+.toc h1 { color: var(--navy); font-size: 18pt; margin-bottom: 12px; }
+.toc ul { list-style: none; padding: 0; }
+.toc li { padding: 4px 0; border-bottom: 1px solid #eee; font-size: 11pt; }
+.toc a { color: var(--navy); text-decoration: none; }
+.week-section { page-break-before: always; }
+.content-section { margin-bottom: 16px; }
+
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+<!-- Week Metadata Banner -->
+<div class="week-banner nb">
+  <h1>Week 04: Investing Activities Analysis</h1>
+  <div class="meta">
+    <span>📚 Analisis investasi</span>
+    
+    <span>📖 Subramanyam Ch. 4</span>
+    
+    
+    
+    <span>🏢 ASII — Astra International Tbk</span>
+  </div>
+  <div class="meta" style="margin-top:4px;">
+    <span>🎯 PP&amp;E analysis; intangible assets; depreciation methods; asset impairment; capitalization vs expensing</span>
+  </div>
+</div>
+
+<!-- Body Content (injected fragment) -->
+<main>
+<!-- Week 04 Indonesian Company Examples — ASII (Astra International Tbk) -->
+<!-- Focus: Investing Activities, PP&E, Goodwill, Intangible Assets, Capex Patterns, Asset Quality -->
+
+<h2>Contoh Perusahaan Indonesia: ASII — Aktivitas Investasi</h2>
+<p><em>Indonesian Company Example for Week 04: Investing Activities — Asset Base Analysis</em></p>
+
+<!-- ============================================================ -->
+<!-- 1. Company Overview & Investing Context                        -->
+<!-- ============================================================ -->
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Profil Singkat ASII / ASII Overview</div>
+<p><strong>Astra International Tbk (ASII)</strong> adalah konglomerat terdiversifikasi terbesar di Indonesia — mencakup otomotif, jasa keuangan, alat berat &amp; pertambangan, agribisnis, infrastruktur, IT, dan properti. Basis aset ASII sangat beragam dan kompleks, menjadikannya contoh ideal untuk menganalisis konsep aktivitas investasi.</p>
+<table>
+<thead><tr><th style="width:35%">Indikator</th><th style="width:20%">2023</th><th style="width:20%">2022</th><th style="width:25%">Sumber</th></tr></thead>
+<tbody>
+<tr><td>Total Aset</td><td>Rp 445,7 T</td><td>~Rp 397 T</td><td>LK Audit ASII</td></tr>
+<tr><td>PP&amp;E (neto)</td><td>Rp 94,8 T</td><td>Rp 59,5 T</td><td>LK Audit ASII</td></tr>
+<tr><td>Net Revenue</td><td>Rp 316,6 T</td><td>~Rp 316,3 T</td><td>LK Audit ASII</td></tr>
+<tr><td>Net Income</td><td>Rp 33,8 T</td><td>—</td><td>LK Audit ASII</td></tr>
+<tr><td>Total Equity</td><td>Rp 250,4 T</td><td>—</td><td>LK Audit ASII</td></tr>
+</tbody>
+</table>
+<p><strong>Mengapa ASII untuk Minggu Ini:</strong> Sebagai konglomerat multi-segmen, ASII memiliki hampir semua jenis aset investasi yang dibahas di Chapter 4 — PP&amp;E pabrik dan pertambangan, properti investasi, <em>bearer plants</em>, properti pertambangan, goodwill dari akuisisi, dan aset tak berwujud lainnya. Kompleksitas ini mengilustrasikan tantangan nyata yang dihadapi analis saat mengevaluasi kualitas aset perusahaan konglomerat.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. Asset Composition Across Segments                           -->
+<!-- ============================================================ -->
+
+<h3>1. Komposisi Aset Investasi ASII: Keragaman Lintas Segmen</h3>
+<p><em>ASII's Investing Asset Composition: Diversity Across Segments</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Aset Investasi Utama ASII per Segmen (2023)</div>
+<table>
+<thead><tr><th style="width:22%">Segmen</th><th style="width:28%">Aset Investasi Utama</th><th style="width:25%">Jenis Aset (Ch.4)</th><th style="width:25%">Catatan Analitis</th></tr></thead>
+<tbody>
+<tr><td><strong>Otomotif</strong></td><td>Pabrik perakitan, lini produksi, cetakan (<em>dies &amp; molds</em>), jaringan dealer</td><td>PP&amp;E — mesin, bangunan, peralatan</td><td>Aset padat modal dengan siklus penggantian reguler</td></tr>
+<tr><td><strong>HEMCE</strong> (United Tractors)</td><td>Alat berat, properti pertambangan, infrastruktur tambang</td><td>PP&amp;E + Mining Properties + Natural Resources</td><td>Depresiasi/deplesi sangat signifikan; terikat siklus komoditas</td></tr>
+<tr><td><strong>Agribisnis</strong> (Astra Agro Lestari)</td><td>Tanaman kelapa sawit, pabrik pengolahan, lahan</td><td>Bearer Plants (PSAK 69) + PP&amp;E</td><td>Tanaman berbuah diklasifikasi sebagai PP&amp;E setelah IAS 41 amendment</td></tr>
+<tr><td><strong>Jasa Keuangan</strong></td><td>Aset keuangan (piutang pembiayaan, investasi), aset hak-guna</td><td>Financial Assets + Right-of-Use Assets</td><td>Dominasi aset keuangan, bukan aset fisik</td></tr>
+<tr><td><strong>Infrastruktur &amp; Logistik</strong></td><td>Jalan tol, menara telekomunikasi, pelabuhan</td><td>PP&amp;E + Intangible Assets (hak konsesi)</td><td>Masa manfaat sangat panjang (20-50 tahun); aset konsesi</td></tr>
+<tr><td><strong>IT</strong></td><td>Perangkat keras, lisensi software, IP</td><td>PP&amp;E + Intangible Assets</td><td>Masa manfaat pendek; amortisasi cepat</td></tr>
+<tr><td><strong>Properti</strong></td><td>Gedung komersial, pusat perbelanjaan</td><td>Investment Properties (PSAK 13)</td><td>Fair value model atau cost model; pendapatan sewa</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Rincian Aset Jangka Panjang ASII (2023)</div>
+<table>
+<thead><tr><th style="width:40%">Kategori Aset</th><th style="width:20%">Nilai Neto (Rp T)</th><th style="width:15%">% Total Aset</th><th style="width:25%">Standar Akuntansi</th></tr></thead>
+<tbody>
+<tr><td><strong>Aset Tetap / PP&amp;E</strong></td><td>94,8</td><td>21,3%</td><td>PSAK 16 (IAS 16)</td></tr>
+<tr><td><strong>Properti Pertambangan / Mining Properties</strong></td><td>16,4</td><td>3,7%</td><td>PSAK 64 (IFRS 6)</td></tr>
+<tr><td><strong>Tanaman Perkebunan / Bearer Plants</strong></td><td>~7,5</td><td>~1,7%</td><td>PSAK 69 (IAS 41) → PSAK 16</td></tr>
+<tr><td><strong>Properti Investasi / Investment Properties</strong></td><td>~7,0</td><td>~1,6%</td><td>PSAK 13 (IAS 40)</td></tr>
+<tr><td><strong>Goodwill</strong></td><td>5,0</td><td>1,1%</td><td>PSAK 22 (IFRS 3)</td></tr>
+<tr><td><strong>Aset Tak Berwujud Lainnya</strong></td><td>2,7</td><td>0,6%</td><td>PSAK 19 (IAS 38)</td></tr>
+<tr><td><strong>Total Aset Investasi Utama</strong></td><td><strong>~133,4</strong></td><td><strong>~29,9%</strong></td><td>—</td></tr>
+</tbody>
+</table>
+<p><strong>Observasi kunci:</strong> ~30% total aset ASII terdiri dari aset investasi jangka panjang (non-keuangan). Sisanya didominasi oleh aset keuangan (piutang pembiayaan dari segmen jasa keuangan), kas, piutang usaha, dan persediaan. Ini mencerminkan sifat hybrid ASII sebagai konglomerat industri-keuangan.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. Capex Patterns & Intensity                                  -->
+<!-- ============================================================ -->
+
+<h3>2. Pola Belanja Modal dan Intensitas / Capex Patterns &amp; Intensity (2021–2023)</h3>
+<p><em>Capital Expenditure Trends and Investment Cycle</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Tren Belanja Modal ASII</div>
+<table>
+<thead><tr><th style="width:28%">Metrik</th><th style="width:18%">2021</th><th style="width:18%">2022</th><th style="width:18%">2023</th><th style="width:18%">Tren</th></tr></thead>
+<tbody>
+<tr><td>Capex &amp; Investasi (Rp T)</td><td>~13</td><td>26,4</td><td>45,9</td><td>↑↑↑ Ekspansi agresif</td></tr>
+<tr><td>Depresiasi &amp; Amortisasi (Rp T)</td><td>~16</td><td>~16</td><td>18,5</td><td>↑ Moderat</td></tr>
+<tr><td>Capex / D&amp;A</td><td>~0,81x</td><td>~1,65x</td><td>2,48x</td><td>↑ Dari maintenance ke growth</td></tr>
+<tr><td>Capex / Revenue</td><td>~5,5%</td><td>~8,4%</td><td>14,5%</td><td>↑ Intensitas modal meningkat</td></tr>
+<tr><td>PP&amp;E (neto, Rp T)</td><td>55,3</td><td>59,5</td><td>94,8</td><td>↑ Pertumbuhan signifikan</td></tr>
+</tbody>
+</table>
+<p><strong>Analisis pola capex:</strong></p>
+<ol>
+<li><strong>2021 — Maintenance mode:</strong> Capex/D&amp;A di bawah 1,0x mengindikasikan bahwa ASII hanya melakukan investasi pemeliharaan (<em>maintenance capex</em>) — depresiasi melebihi investasi baru, sehingga basis aset secara efektif menyusut. Ini konsisten dengan lingkungan pasca-COVID yang masih penuh ketidakpastian.</li>
+<li><strong>2022 — Transisi ke growth:</strong> Capex/D&amp;A naik ke 1,65x — ASII mulai berinvestasi di atas tingkat pemeliharaan, didorong oleh booming komoditas (batu bara mendorong segmen HEMCE) dan pemulihan otomotif.</li>
+<li><strong>2023 — Ekspansi agresif:</strong> Capex/D&amp;A mencapai 2,48x — menandakan siklus investasi besar (<em>growth capex</em>). Rp 45,9 triliun mencakup ekspansi pertambangan, investasi infrastruktur (jalan tol, energi terbarukan), dan akuisisi strategis.</li>
+</ol>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Implikasi Analitis dari Siklus Capex ASII</div>
+<p>Bagi analis, lonjakan capex ASII memunculkan pertanyaan kritis:</p>
+<ul>
+<li><strong>Return on investment:</strong> Apakah investasi Rp 45,9 triliun akan menghasilkan return yang memadai? Karena aset baru belum sepenuhnya produktif, ROA dan <em>asset turnover</em> kemungkinan akan turun sementara (efek <em>J-curve</em>).</li>
+<li><strong>Kualitas capex:</strong> Berapa proporsi capex yang benar-benar merupakan pembelian PP&amp;E organik vs akuisisi entitas baru? Angka "capex &amp; investasi" ASII menggabungkan keduanya.</li>
+<li><strong>Free cash flow impact:</strong> Capex yang sangat tinggi menekan <em>free cash flow</em> secara signifikan — analis perlu membedakan tekanan FCF yang bersifat sementara (investasi produktif) vs permanen (investasi destruktif nilai).</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. Goodwill & Intangible Assets                                -->
+<!-- ============================================================ -->
+
+<h3>3. Goodwill dan Aset Tak Berwujud / Goodwill &amp; Intangible Assets</h3>
+<p><em>Goodwill from Acquisitions and Intangible Asset Base</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Goodwill ASII: Sumber dan Pengujian</div>
+<p>Goodwill sebesar <strong>Rp 5,0 triliun</strong> (2023) merupakan premium yang dibayar ASII atas akuisisi anak perusahaan dan entitas bisnis di masa lalu. Sumber utama goodwill meliputi:</p>
+<ul>
+<li><strong>Akuisisi di segmen otomotif:</strong> premium atas akuisisi dealer dan komponen otomotif</li>
+<li><strong>Konsolidasi entitas pertambangan:</strong> goodwill dari akuisisi tambahan di grup United Tractors</li>
+<li><strong>Akuisisi infrastruktur:</strong> premium atas akuisisi perusahaan jalan tol dan logistik</li>
+</ul>
+<p><strong>Pengujian penurunan nilai:</strong> Sesuai PSAK 48 (IAS 36), ASII melakukan uji penurunan nilai goodwill secara tahunan pada tingkat <em>cash-generating unit</em> (CGU). Tidak ada penurunan nilai goodwill material yang diakui pada 2021–2023 — menunjukkan bahwa nilai pakai (<em>value in use</em>) CGU terkait masih melebihi nilai tercatat.</p>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Properti Pertambangan dan Aset Tak Berwujud Unik</div>
+<p>Selain goodwill, ASII memiliki aset tak berwujud dan sumber daya alam yang signifikan:</p>
+<table>
+<thead><tr><th style="width:30%">Jenis Aset</th><th style="width:20%">Nilai 2023 (Rp T)</th><th style="width:50%">Deskripsi dan Perlakuan Akuntansi</th></tr></thead>
+<tbody>
+<tr><td><strong>Properti Pertambangan</strong></td><td>16,4</td><td>Hak penambangan, biaya pengembangan tambang, stripping costs — diamortisasi berdasarkan unit produksi (<em>units of production method</em>) sesuai cadangan terbukti dan terduga</td></tr>
+<tr><td><strong>Tanaman Perkebunan (Bearer Plants)</strong></td><td>~7,5</td><td>Tanaman kelapa sawit dewasa — didepresiasi selama estimasi masa produktif (~20-25 tahun); tanaman belum menghasilkan tidak didepresiasi</td></tr>
+<tr><td><strong>Aset Tak Berwujud Lainnya</strong></td><td>2,7</td><td>Termasuk hak konsesi, <em>customer relationships</em>, lisensi software, merek dagang dari akuisisi — diamortisasi sesuai masa manfaat masing-masing</td></tr>
+</tbody>
+</table>
+<p><strong>Catatan analitis:</strong> Properti pertambangan sebesar Rp 16,4 triliun menggunakan metode unit produksi — artinya beban amortisasi berfluktuasi mengikuti volume produksi tambang, bukan garis lurus. Ini menciptakan volatilitas laba yang terkait langsung dengan siklus komoditas.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Depreciation Policies & Asset Age                           -->
+<!-- ============================================================ -->
+
+<h3>4. Kebijakan Depresiasi dan Umur Aset / Depreciation Policies &amp; Asset Age Analysis</h3>
+<p><em>How ASII Depreciates Its Diverse Asset Base</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Kebijakan Depresiasi ASII (dari Catatan atas LK)</div>
+<table>
+<thead><tr><th style="width:28%">Jenis Aset</th><th style="width:22%">Metode Depresiasi</th><th style="width:22%">Estimasi Umur Manfaat</th><th style="width:28%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>Bangunan dan prasarana</td><td>Garis lurus</td><td>10–30 tahun</td><td>Rentang lebar mencerminkan keragaman segmen</td></tr>
+<tr><td>Mesin dan peralatan</td><td>Garis lurus</td><td>4–20 tahun</td><td>Pabrik otomotif vs alat berat pertambangan</td></tr>
+<tr><td>Kendaraan</td><td>Garis lurus</td><td>4–8 tahun</td><td>Armada operasional dan truk pertambangan</td></tr>
+<tr><td>Perabot dan perlengkapan</td><td>Garis lurus</td><td>3–10 tahun</td><td>—</td></tr>
+<tr><td>Alat berat pertambangan</td><td>Garis lurus / Unit produksi</td><td>5–8 tahun / jam operasi</td><td>Beberapa unit menggunakan <em>hours-based depreciation</em></td></tr>
+<tr><td>Properti pertambangan</td><td>Unit produksi</td><td>Sesuai cadangan</td><td>Deplesi berdasarkan volume ekstraksi</td></tr>
+<tr><td>Tanaman kelapa sawit</td><td>Garis lurus</td><td>20–25 tahun</td><td>Dari masa tanam hingga peremajaan (<em>replanting</em>)</td></tr>
+</tbody>
+</table>
+<p>ASII menggunakan <strong>model biaya</strong> (<em>cost model</em>) untuk PP&amp;E — bukan model revaluasi. Ini konsisten dengan praktik umum perusahaan Indonesia yang terdaftar di BEI, meskipun PSAK 16 (seperti IAS 16) mengizinkan model revaluasi.</p>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Estimasi Umur Aset / Asset Age Estimation</div>
+<p>Dari data depresiasi, kita dapat mengestimasi umur rata-rata aset ASII:</p>
+<div class="fbox">
+<p><strong>Average Asset Age</strong> ≈ Accumulated Depreciation / Annual Depreciation Expense</p>
+<p><strong>Average Useful Life</strong> ≈ Gross PP&amp;E / Annual Depreciation Expense</p>
+<p><strong>Remaining Useful Life</strong> ≈ Net PP&amp;E / Annual Depreciation Expense</p>
+</div>
+<p>Dengan depresiasi &amp; amortisasi Rp 18,5 triliun per tahun dan PP&amp;E neto Rp 94,8 triliun:</p>
+<p style="text-align:center;"><strong>Remaining Useful Life ≈ 94,8 / 18,5 ≈ 5,1 tahun</strong></p>
+<p>Estimasi ini menunjukkan bahwa rata-rata sisa umur manfaat aset ASII sekitar 5 tahun — cukup moderat, mengindikasikan campuran aset yang relatif baru (dari capex tinggi 2022-2023) dengan aset lama yang mendekati akhir masa manfaat. Peningkatan capex yang signifikan pada 2023 akan secara bertahap meningkatkan angka ini di tahun-tahun mendatang.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. Asset Turnover & Quality Ratios                             -->
+<!-- ============================================================ -->
+
+<h3>5. Rasio Kualitas Aset dan Efisiensi / Asset Quality &amp; Efficiency Ratios</h3>
+<p><em>Analytical Ratios for Evaluating ASII's Asset Base</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Rasio Analitis Aset ASII (2021–2023)</div>
+<table>
+<thead><tr><th style="width:32%">Rasio</th><th style="width:17%">2021</th><th style="width:17%">2022</th><th style="width:17%">2023</th><th style="width:17%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Total Asset Turnover</strong></td><td>0,64x</td><td>0,80x</td><td>0,71x</td><td>↓ Penurunan efisiensi di 2023</td></tr>
+<tr><td><strong>PP&amp;E Turnover</strong></td><td>4,29x</td><td>5,32x</td><td>3,34x</td><td>↓ Basis aset tumbuh lebih cepat dari revenue</td></tr>
+<tr><td><strong>Capex-to-D&amp;A</strong></td><td>0,81x</td><td>1,65x</td><td>2,48x</td><td>↑ Growth mode intensif</td></tr>
+<tr><td><strong>Capex Intensity</strong> (Capex/Rev)</td><td>5,5%</td><td>8,4%</td><td>14,5%</td><td>↑ Semakin capital-intensive</td></tr>
+<tr><td><strong>PP&amp;E / Total Assets</strong></td><td>15,0%</td><td>15,0%</td><td>21,3%</td><td>↑ Komposisi aset bergeser ke aset tetap</td></tr>
+<tr><td><strong>Goodwill / Total Assets</strong></td><td>~1,3%</td><td>~1,2%</td><td>1,1%</td><td>— Stabil dan relatif rendah</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Interpretasi Rasio: Apa yang Dikatakan Angka-Angka Ini</div>
+<ol>
+<li><strong>Penurunan asset turnover</strong> di 2023 (0,71x vs 0,80x di 2022) menunjukkan bahwa investasi besar belum sepenuhnya menghasilkan revenue tambahan — ini adalah efek <em>J-curve</em> yang tipikal dari siklus investasi besar.</li>
+<li><strong>PP&amp;E turnover turun drastis</strong> ke 3,34x di 2023 mengkonfirmasi bahwa basis aset tetap tumbuh jauh lebih cepat dari pendapatan. Analis harus memantau apakah rasio ini akan pulih di 2024-2025 seiring aset baru menjadi produktif.</li>
+<li><strong>Capex-to-D&amp;A 2,48x</strong> adalah indikator ekspansi yang sangat kuat — ASII menginvestasikan hampir 2,5 kali tingkat "pemeliharaan" basis aset. Ini bisa positif (investasi pertumbuhan strategis) atau negatif (overinvestment) — analisis mendalam per segmen diperlukan.</li>
+<li><strong>Goodwill relatif rendah</strong> (~1,1% total aset) menunjukkan bahwa pertumbuhan ASII lebih banyak didorong oleh investasi organik daripada akuisisi dengan premium tinggi — berbeda dari konglomerat di negara maju yang seringkali memiliki goodwill 10-30% total aset.</li>
+</ol>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. Ch.4 Concepts Illustrated by ASII                           -->
+<!-- ============================================================ -->
+
+<h3>6. Konsep Chapter 4 yang Diilustrasikan oleh ASII</h3>
+<p><em>Ch.4 Concepts Illustrated by ASII</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Tabel Koneksi: Konsep → Ilustrasi ASII</div>
+<table>
+<thead><tr><th style="width:25%">Konsep Ch.4</th><th style="width:75%">Bagaimana ASII Mengilustrasikannya</th></tr></thead>
+<tbody>
+<tr><td><strong>PP&amp;E Diversity</strong></td><td>ASII memiliki PP&amp;E dari pabrik otomotif hingga tambang batu bara, perkebunan sawit, dan jalan tol — menunjukkan bahwa "aset tetap" bukan kategori homogen dan memerlukan analisis per-segmen.</td></tr>
+<tr><td><strong>Depreciation Methods</strong></td><td>ASII menggunakan garis lurus untuk sebagian besar aset, tetapi unit produksi untuk properti pertambangan — pilihan metode mempengaruhi pola laba dan sensitivitas terhadap volume produksi.</td></tr>
+<tr><td><strong>Capex vs Maintenance</strong></td><td>Transisi capex/D&amp;A dari 0,81x ke 2,48x dalam tiga tahun mengilustrasikan perbedaan antara <em>maintenance capex</em> (menjaga basis aset) dan <em>growth capex</em> (membangun basis aset baru).</td></tr>
+<tr><td><strong>Goodwill &amp; Impairment</strong></td><td>Goodwill Rp 5 triliun dengan pengujian tahunan tanpa impairment material — menunjukkan bahwa akuisisi masa lalu masih menghasilkan nilai di atas biaya perolehan.</td></tr>
+<tr><td><strong>Natural Resources &amp; Depletion</strong></td><td>Properti pertambangan Rp 16,4 triliun menggunakan deplesi berbasis unit produksi — contoh nyata aset sumber daya alam yang "habis" seiring ekstraksi.</td></tr>
+<tr><td><strong>Bearer Plants (IAS 41/PSAK 69)</strong></td><td>Tanaman kelapa sawit Rp 7,5 triliun sebagai <em>bearer plants</em> — setelah amandemen IAS 41, diklasifikasi ulang sebagai PP&amp;E dan didepresiasi, bukan diukur pada <em>fair value</em>.</td></tr>
+<tr><td><strong>Investment Property</strong></td><td>Properti investasi Rp 7 triliun dari segmen properti — mengilustrasikan PSAK 13 (IAS 40) tentang aset yang dimiliki untuk pendapatan sewa atau apresiasi nilai.</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ============================================================ -->
+<!-- 8. Key Takeaways                                               -->
+<!-- ============================================================ -->
+
+<div class="ibox nb">
+<div class="ibt">📌 Kesimpulan Utama dari Contoh ASII</div>
+<ol>
+<li><strong>Konglomerat memiliki basis aset yang sangat heterogen</strong> — analis tidak dapat menganalisis PP&amp;E ASII sebagai satu kategori tunggal; diperlukan analisis per-segmen menggunakan informasi segmen PSAK 5 (IFRS 8).</li>
+<li><strong>Pola capex mengungkapkan strategi perusahaan</strong> — transisi dari maintenance mode (2021) ke aggressive growth (2023) menunjukkan keyakinan manajemen terhadap prospek pertumbuhan, tetapi juga meningkatkan risiko overinvestment.</li>
+<li><strong>Metode depresiasi harus sesuai dengan pola konsumsi manfaat</strong> — penggunaan unit produksi untuk properti pertambangan adalah pilihan tepat karena konsumsi aset terkait langsung dengan volume produksi.</li>
+<li><strong>Goodwill relatif kecil</strong> menunjukkan bahwa ASII lebih banyak bertumbuh secara organik daripada melalui akuisisi mahal — ini umumnya dianggap lebih sehat secara analitis.</li>
+<li><strong>Asset turnover menurun</strong> sementara saat investasi besar belum produktif — analis harus membedakan penurunan turnover sementara (J-curve) dari penurunan struktural (inefisiensi).</li>
+<li><strong>Keragaman standar akuntansi</strong> (PSAK 16 untuk PP&amp;E, PSAK 69 untuk bearer plants, PSAK 13 untuk properti investasi, PSAK 64 untuk eksplorasi) menunjukkan kompleksitas pelaporan konglomerat Indonesia.</li>
+</ol>
+</div>
+
+</main>
+
+<!-- Prev/Next Navigation -->
+<div class="page-nav no-print">
+  
+  <a href="../week-03/id-examples.html">← Week 03</a>
+  
+  
+  <a href="../week-05/id-examples.html">Week 05 →</a>
+  
+</div>
+
+</div><!-- .page-wrapper -->
+</body>
+</html>
