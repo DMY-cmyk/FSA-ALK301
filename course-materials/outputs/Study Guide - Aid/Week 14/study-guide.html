@@ -1,0 +1,137 @@
+<!-- Week 14 Study Guide — Pre-Final Review: Bankruptcy Prediction and Synthesis -->
+<!-- No new textbook chapters | Articles: Deakin 1972 + Ohlson 1980 | IDX Delisted (Indonesian Example) -->
+
+<h2>Panduan Belajar Minggu 14: Review Pra-UAS — Prediksi Kebangkrutan dan Sintesis Kursus</h2>
+<p><em>Week 14 Study Guide: Pre-Final Review — Bankruptcy Prediction and Course Synthesis | Articles: Deakin 1972 + Ohlson 1980 | IDX Delisted Companies (Indonesian Example)</em></p>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Tujuan Pembelajaran Minggu Ini / This Week's Learning Objective</div>
+<p>Minggu 14 memiliki <strong>dua tujuan utama</strong>: (1) <strong>menyelesaikan benang merah prediksi kebangkrutan</strong> (<em>bankruptcy prediction thread</em>) yang dimulai di Minggu 3 (Altman 1968) dan Minggu 11 (analisis kredit) dengan mempelajari dua artikel penting — Deakin (1972) yang memperluas MDA dan Ohlson (1980) yang memperkenalkan regresi logistik; serta (2) <strong>mensintesiskan seluruh materi kursus</strong> dari Minggu 01 hingga 13 menjadi kerangka analitis terpadu untuk persiapan UAS. Tidak ada chapter buku teks baru — minggu ini sepenuhnya berfokus pada integrasi, konsolidasi, dan penajaman pemahaman.</p>
+</div>
+
+<h3>1. Urutan Membaca / Reading Order</h3>
+
+<div class="def nb">
+<div class="den">📖 Langkah 1: Review Altman (1968) dari Minggu 3 — Fondasi Prediksi Kebangkrutan</div>
+<div class="did">
+<p>Sebelum membaca artikel baru, <strong>kembali ke analisis artikel Altman (1968)</strong> dari Minggu 3. Segarkan pemahaman Anda tentang: (a) motivasi penggunaan MDA untuk prediksi kebangkrutan; (b) lima rasio dalam Z-score (WC/TA, RE/TA, EBIT/TA, MVE/TL, Sales/TA); (c) zona klasifikasi (safe, grey, distress); (d) akurasi 95% satu tahun sebelum kebangkrutan tetapi <em>menurun tajam</em> pada tahun 2–5. Poin terakhir ini adalah motivasi utama Deakin (1972).</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 2: Baca Deakin (1972) — Extended MDA dengan 14 Rasio Beaver</div>
+<div class="did">
+<p>Deakin, E.B. (1972). "A Discriminant Analysis of Predictors of Business Failure." <em>Journal of Accounting Research</em>, Vol. 10, No. 1, pp. 167–179. Fokuskan pada: (a) bagaimana Deakin menggabungkan pendekatan Beaver (14 rasio) dengan metode Altman (MDA); (b) mengapa Deakin menggunakan <strong>fungsi diskriminan terpisah untuk setiap tahun</strong> (1–5 tahun sebelum kebangkrutan); (c) metode klasifikasi probabilistik via chi-square — berbeda dari cutoff tunggal Altman; (d) temuan bahwa fungsi tahun kedua paling robust (akurasi 90%); (e) masalah cross-validation dan keterbatasan sampel kecil (32 perusahaan gagal).</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 3: Baca Ohlson (1980) — Regresi Logistik dan O-Score</div>
+<div class="did">
+<p>Ohlson, J.A. (1980). "Financial Ratios and the Probabilistic Prediction of Bankruptcy." <em>Journal of Accounting Research</em>, Vol. 18, pp. 109–131. Ini adalah artikel <em>landmark</em> yang memperkenalkan <strong>pergeseran paradigma</strong> dari MDA ke regresi logistik. Fokuskan pada: (a) tiga kritik spesifik Ohlson terhadap MDA (asumsi distribusi, output non-interpretable, matching sewenang-wenang); (b) model O-score dengan 9 variabel prediktor; (c) interpretasi probabilistik langsung — P(kebangkrutan) antara 0 dan 1; (d) inovasi data — penggunaan 10-K (bukan Moody's) untuk memverifikasi timing informasi; (e) tingkat error realistis ~15% vs klaim ~5% studi sebelumnya.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Langkah 4: Sintesiskan Evolusi Metodologis / Synthesize the Methodological Evolution</div>
+<div class="did">
+<p>Setelah membaca ketiga artikel, bangun pemahaman tentang <strong>evolusi metodologi prediksi kebangkrutan</strong>: Beaver (1966, univariat) → Altman (1968, MDA 5 rasio) → Deakin (1972, MDA 14 rasio + fungsi per-tahun) → Ohlson (1980, logit 9 variabel). Identifikasi bagaimana setiap studi mengatasi keterbatasan studi sebelumnya, dan apa keterbatasan yang tetap belum terselesaikan. Hubungkan dengan analisis kredit (Minggu 11) — bagaimana model-model ini digunakan dalam praktik penilaian risiko kredit.</p>
+</div>
+</div>
+
+<h3>2. Benang Merah Prediksi Kebangkrutan dalam Kursus / Bankruptcy Prediction Thread Across the Course</h3>
+
+<div class="ibox nb">
+<div class="ibt">📌 Peta Evolusi Prediksi Kebangkrutan / Bankruptcy Prediction Evolution Map</div>
+<table>
+<thead><tr><th style="width:15%">Minggu</th><th style="width:20%">Peneliti</th><th style="width:25%">Metode</th><th style="width:40%">Kontribusi Kunci</th></tr></thead>
+<tbody>
+<tr><td>Konteks</td><td>Beaver (1966)</td><td>Univariat — dichotomous classification</td><td>Menunjukkan rasio keuangan individual dapat memprediksi kegagalan; cash flow/total debt paling kuat</td></tr>
+<tr><td>03</td><td>Altman (1968)</td><td>MDA — 5 rasio, Z-score</td><td>Pertama menggabungkan rasio secara multivariat; akurasi 95% tahun-1 tetapi menurun tajam tahun 2–5</td></tr>
+<tr><td>11</td><td>Analisis Kredit</td><td>Coverage ratios, scoring</td><td>Aplikasi praktis rasio keuangan untuk penilaian risiko gagal bayar — menghubungkan teori ke praktik</td></tr>
+<tr><td>14</td><td>Deakin (1972)</td><td>MDA — 14 rasio Beaver, fungsi per-tahun</td><td>Memperluas MDA dengan lebih banyak rasio; fungsi tahun-2 paling robust; klasifikasi probabilistik via χ²</td></tr>
+<tr><td>14</td><td>Ohlson (1980)</td><td>Logit — 9 variabel, O-score</td><td>Pergeseran paradigma ke regresi logistik; output probabilistik langsung; sampel besar tanpa matching</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>3. Sintesis Kursus — Peta Koneksi Seluruh Minggu / Course Synthesis — Full Connection Map</h3>
+
+<div class="cg nb">
+<div class="cgt">🔗 Kerangka Integrasi Kursus / Course Integration Framework</div>
+<p>Seluruh 13 minggu sebelumnya dapat diorganisir dalam tiga kluster analitis:</p>
+<p><strong>Kluster A — Memahami Laporan Keuangan (Minggu 1–6):</strong> Lingkungan pelaporan, analisis strategi bisnis (M01–02), aktivitas pendanaan dan struktur modal (M03), aktivitas investasi dan komposisi aset (M04), kualitas akuntansi dan analisis laba (M05), aktivitas operasi dan pengakuan pendapatan (M06).</p>
+<p><strong>Kluster B — Analisis untuk Keputusan (Minggu 8–12):</strong> Analisis arus kas dan kualitas CFO (M08), analisis profitabilitas dan dekomposisi DuPont (M09), analisis prospektif dan peramalan (M10), analisis kredit dan risiko gagal bayar (M11), valuasi ekuitas — DCF, residual income, multiples (M12).</p>
+<p><strong>Kluster C — Integrasi (Minggu 13–14):</strong> Studi kasus komprehensif HMSP (M13), review pra-UAS dan prediksi kebangkrutan (M14).</p>
+</div>
+
+<h3>4. Konsep Kunci Minggu Ini / Key Concepts This Week</h3>
+
+<div class="def nb">
+<div class="den">📖 Multiple Discriminant Analysis (MDA) vs. Logistic Regression (Logit)</div>
+<div class="did">
+<p><strong>MDA</strong> menghasilkan skor diskriminan linear yang mengklasifikasikan observasi ke dalam kelompok. <em>Asumsi</em>: distribusi normal multivariat, matriks varians-kovarians yang sama antar kelompok. <strong>Logit</strong> mengestimasi probabilitas keanggotaan kelompok secara langsung melalui fungsi logistik P = 1/(1+e<sup>−y</sup>). <em>Tidak memerlukan</em> asumsi normalitas atau kesamaan varians-kovarians. Ohlson (1980) menunjukkan bahwa asumsi MDA hampir selalu dilanggar oleh data rasio keuangan — menjadikan logit metode yang lebih tepat secara statistik.</p>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">📖 Error Tipe I vs Error Tipe II dalam Prediksi Kebangkrutan</div>
+<div class="did">
+<p><strong>Error Tipe I</strong>: Memprediksi perusahaan sehat padahal sebenarnya akan bangkrut (<em>false negative</em>) — sangat mahal bagi kreditur karena kehilangan pinjaman. <strong>Error Tipe II</strong>: Memprediksi perusahaan bangkrut padahal sebenarnya sehat (<em>false positive</em>) — mahal dalam bentuk peluang bisnis yang hilang. Dalam konteks kredit, Error Tipe I jauh lebih <em>costly</em> — sehingga cutoff optimal bukan selalu di P = 0.50 tetapi di tingkat yang meminimalkan total biaya kesalahan yang ditimbang.</p>
+</div>
+</div>
+
+<h3>5. Strategi Persiapan UAS / Final Exam Preparation Strategy</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Pendekatan Sistematis Persiapan UAS / Systematic Exam Preparation</div>
+<ol>
+<li><strong>Review ringkasan utama Minggu 01–12</strong> — fokus pada kerangka konseptual dan rumus kunci dari setiap chapter.</li>
+<li><strong>Kuasai hubungan antar topik</strong> — UAS pascasarjana menguji kemampuan integrasi, bukan hafalan terisolasi. Contoh: bagaimana kualitas akrual (M05) mempengaruhi peramalan (M10) yang mempengaruhi valuasi (M12)?</li>
+<li><strong>Siapkan rumus-rumus kritis</strong> — DuPont decomposition, Z-score, O-score, DCF, residual income model, sustainable growth rate, coverage ratios.</li>
+<li><strong>Review seluruh analisis artikel</strong> — setiap artikel memberikan perspektif empiris yang melengkapi teori dari buku teks.</li>
+<li><strong>Latihan integrasi</strong> — ambil satu perusahaan fiktif dan lakukan analisis komprehensif end-to-end menggunakan seluruh kerangka.</li>
+<li><strong>Identifikasi kelemahan</strong> — gunakan pertanyaan pemandu dari setiap minggu untuk menguji diri sendiri; perkuat area yang masih lemah.</li>
+</ol>
+</div>
+
+<h3>6. Pertanyaan Pemandu / Guiding Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan untuk Review dan Integrasi / Review and Integration Questions</div>
+<ol>
+<li>Apa perbedaan fundamental antara pendekatan univariat Beaver, MDA Altman/Deakin, dan logit Ohlson dalam memprediksi kebangkrutan? Apa kelebihan dan keterbatasan masing-masing? (<em>What are the fundamental differences between Beaver's univariate approach, Altman/Deakin's MDA, and Ohlson's logit in predicting bankruptcy?</em>)</li>
+<li>Mengapa Ohlson berargumen bahwa regresi logistik lebih superior daripada MDA? Apa tiga masalah spesifik yang ia identifikasi pada MDA? (<em>Why does Ohlson argue logistic regression is superior to MDA? What three specific problems does he identify?</em>)</li>
+<li>Bagaimana fungsi diskriminan tahun-2 Deakin dapat digunakan secara praktis oleh kreditur, dan apa keterbatasannya? (<em>How can Deakin's year-2 discriminant function be practically used by creditors, and what are its limitations?</em>)</li>
+<li>Hubungkan seluruh kerangka analitis kursus: bagaimana analisis strategi bisnis (M01–02) mempengaruhi kualitas analisis kredit (M11) dan valuasi (M12)? (<em>Connect the full analytical framework: how does business strategy analysis influence credit and valuation analysis?</em>)</li>
+<li>Apakah model prediksi kebangkrutan yang dikembangkan di AS (Altman, Deakin, Ohlson) dapat diterapkan langsung pada perusahaan Indonesia? Apa penyesuaian yang diperlukan? (<em>Can US-developed bankruptcy prediction models be directly applied to Indonesian companies?</em>)</li>
+<li>Dalam konteks UAS, bagaimana Anda akan menyusun analisis komprehensif yang mengintegrasikan peramalan (M10), analisis kredit (M11), dan valuasi (M12) secara koheren? (<em>For the final exam, how would you structure a comprehensive analysis integrating forecasting, credit analysis, and valuation coherently?</em>)</li>
+</ol>
+</div>
+
+<h3>7. Kesalahan Umum yang Harus Dihindari / Common Mistakes to Avoid</h3>
+
+<div class="ibox nb">
+<div class="ibt">⚠️ Perangkap Umum / Common Pitfalls</div>
+<ul>
+<li><strong>Menghafal rumus tanpa memahami logika</strong> — UAS pascasarjana menguji pemahaman konseptual, bukan hafalan mekanis. Pahami <em>mengapa</em> Z-score menggunakan rasio tertentu dan <em>mengapa</em> Ohlson beralih ke logit.</li>
+<li><strong>Tidak menghubungkan antar topik</strong> — memperlakukan setiap minggu sebagai silo terisolasi. Kursus ini dirancang sebagai bangunan kumulatif — setiap topik membangun di atas topik sebelumnya.</li>
+<li><strong>Mengabaikan keterbatasan model</strong> — setiap model prediksi memiliki asumsi yang dapat dilanggar. Kemampuan mengevaluasi keterbatasan adalah tanda analis yang matang.</li>
+<li><strong>Mengabaikan konteks Indonesia</strong> — model dari AS memerlukan penyesuaian untuk pasar berkembang: struktur industri berbeda, standar akuntansi (PSAK vs US GAAP), dan lingkungan hukum kebangkrutan yang berbeda.</li>
+<li><strong>Tidak mempersiapkan aspek kuantitatif DAN kualitatif</strong> — UAS kemungkinan menguji kemampuan perhitungan rasio DAN interpretasi strategis hasilnya.</li>
+</ul>
+</div>
+
+<h3>8. Catatan Level Pascasarjana / Graduate-Level Notes</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎓 Perspektif Pascasarjana / Graduate Perspective</div>
+<p>Di level pascasarjana, evaluasi kritis terhadap metodologi penelitian sama pentingnya dengan penguasaan konten. Untuk UAS, tunjukkan kemampuan Anda untuk: (1) <strong>mengevaluasi desain penelitian</strong> — mengapa Ohlson menggunakan sampel tidak berpasangan sementara Altman menggunakan <em>matched pairs</em>? Apa implikasi metodologisnya?; (2) <strong>mengidentifikasi ancaman validitas</strong> — Deakin mengakui masalah cross-validation tahun-1; apa artinya ini untuk penerapan praktis?; (3) <strong>menghubungkan teori dengan praktik</strong> — bagaimana lembaga pemeringkat kredit dan bank menggunakan (dan memodifikasi) model-model akademis ini?; (4) <strong>berpikir melampaui silabus</strong> — ekstensi modern ke <em>neural networks</em> dan <em>machine learning</em> untuk prediksi kebangkrutan menunjukkan evolusi berkelanjutan dari ide-ide yang sama.</p>
+</div>
+
+<h3>9. Konteks Indonesia / Indonesian Context</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Prediksi Kebangkrutan di Indonesia / Bankruptcy Prediction in Indonesia</div>
+<p>Indonesia memiliki konteks unik untuk prediksi kebangkrutan: (1) <strong>UU Kepailitan No. 37/2004</strong> dan mekanisme PKPU (<em>Penundaan Kewajiban Pembayaran Utang</em>) — berbeda signifikan dari <em>Chapter 7/11</em> AS; (2) <strong>kriteria delisting BEI</strong> — perusahaan dapat di-<em>delist</em> karena gagal memenuhi persyaratan pencatatan, bukan selalu karena kebangkrutan formal; (3) <strong>sejarah krisis 1998</strong> — gelombang kebangkrutan masif yang membentuk lanskap korporasi Indonesia saat ini; (4) <strong>penelitian lokal</strong> — beberapa peneliti Indonesia telah menguji Z-score dan O-score pada perusahaan BEI dengan hasil beragam, menunjukkan perlunya kalibrasi ulang koefisien untuk konteks lokal. Pelajari kasus-kasus delisting BEI (BTEL, BLTA, DAVO, TRUB) untuk memahami bagaimana sinyal distress keuangan muncul dalam konteks pasar modal Indonesia.</p>
+</div>

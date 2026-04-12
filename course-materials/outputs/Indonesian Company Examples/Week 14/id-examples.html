@@ -1,0 +1,258 @@
+<!-- Week 14 Indonesian Company Examples — IDX Delisted Companies -->
+<!-- Focus: Bankruptcy Prediction — Applying Z-Score & O-Score Concepts to Indonesian Corporate Failures -->
+
+<h2>Contoh Perusahaan Indonesia: Perusahaan Delisting BEI — Prediksi Kebangkrutan di Konteks Indonesia</h2>
+<p><em>Indonesian Company Example for Week 14: IDX Delisted Companies — Applying Bankruptcy Prediction Models (Altman Z-Score, Ohlson O-Score, Deakin MDA) to Indonesian Corporate Failures</em></p>
+
+<p>Minggu 14 menerapkan konsep prediksi kebangkrutan dari Altman (1968), Deakin (1972), dan Ohlson (1980) pada konteks <strong>perusahaan-perusahaan Indonesia yang mengalami kegagalan keuangan dan delisting dari Bursa Efek Indonesia (BEI/IDX)</strong>. Analisis ini menguji relevansi model prediksi kebangkrutan yang dikembangkan di AS terhadap pasar modal berkembang dengan karakteristik regulasi, struktur industri, dan lingkungan hukum yang berbeda.</p>
+
+<!-- ============================================================ -->
+<!-- 1. Overview: IDX Delisting Patterns                           -->
+<!-- ============================================================ -->
+
+<h3>1. Pola Delisting di BEI / IDX Delisting Patterns</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Gambaran Umum Delisting BEI / IDX Delisting Overview</div>
+<p><strong>Delisting</strong> di BEI terjadi ketika perusahaan tercatat dihapus dari daftar perdagangan bursa. BEI membedakan dua jenis delisting:</p>
+<ol>
+<li><strong>Forced delisting (<em>delisting paksa</em>)</strong> — BEI menghapus pencatatan karena perusahaan gagal memenuhi persyaratan: tidak menyampaikan laporan keuangan berkala, kondisi keuangan memburuk secara signifikan, saham disuspensi berkepanjangan (&gt;24 bulan), atau perusahaan dinyatakan pailit oleh pengadilan.</li>
+<li><strong>Voluntary delisting (<em>delisting sukarela</em>)</strong> — Perusahaan atau pemegang saham mayoritas mengajukan penghapusan pencatatan, biasanya melalui <em>go-private transaction</em> atau akuisisi penuh.</li>
+</ol>
+<p>Untuk keperluan analisis prediksi kebangkrutan, kita fokus pada <strong>forced delisting akibat kesulitan keuangan</strong> — kategori yang paling relevan dengan model Altman, Deakin, dan Ohlson.</p>
+
+<table>
+<thead><tr><th style="width:30%">Kriteria Delisting Paksa BEI</th><th style="width:70%">Deskripsi</th></tr></thead>
+<tbody>
+<tr><td>Kegagalan pelaporan</td><td>Tidak menyampaikan laporan keuangan audit selama periode yang ditentukan</td></tr>
+<tr><td>Kondisi keuangan memburuk</td><td>Ekuitas negatif, operasi terhenti, atau ketidakmampuan membayar utang secara material</td></tr>
+<tr><td>Suspensi berkepanjangan</td><td>Saham disuspensi &gt; 24 bulan tanpa perbaikan kondisi</td></tr>
+<tr><td>Putusan pailit</td><td>Perusahaan dinyatakan pailit oleh Pengadilan Niaga</td></tr>
+<tr><td>Pembubaran/likuidasi</td><td>Perusahaan dibubarkan berdasarkan RUPS atau putusan pengadilan</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Konteks Hukum: Kepailitan dan PKPU di Indonesia / Indonesian Bankruptcy Legal Framework</div>
+<p>Kerangka hukum kepailitan Indonesia diatur dalam <strong>UU No. 37 Tahun 2004 tentang Kepailitan dan Penundaan Kewajiban Pembayaran Utang (PKPU)</strong>. Perbedaan utama dengan sistem AS (Chapter 7/11):</p>
+<ul>
+<li><strong>PKPU (Suspension of Debt Payment Obligations)</strong> mirip dengan Chapter 11 AS — memberikan debitur waktu untuk merestrukturisasi utang sambil dilindungi dari kreditur. Namun, proses PKPU di Indonesia cenderung lebih singkat dan kurang fleksibel.</li>
+<li><strong>Kepailitan formal</strong> memerlukan minimal 2 kreditur dan minimal 1 utang jatuh tempo yang belum dibayar — ambang batas yang relatif rendah dibanding yurisdiksi lain.</li>
+<li><strong>Pengadilan Niaga</strong> (<em>Commercial Court</em>) adalah institusi khusus yang menangani perkara kepailitan — dengan timeline yang lebih cepat dari pengadilan umum.</li>
+<li><strong>Kurator</strong> (<em>receiver/trustee</em>) ditunjuk untuk mengelola harta pailit — perannya analog dengan <em>bankruptcy trustee</em> dalam sistem AS.</li>
+</ul>
+<p><em>Implikasi untuk prediksi kebangkrutan:</em> Definisi "kegagalan" di Indonesia tidak identik dengan definisi dalam studi Altman, Deakin, dan Ohlson — perlu kehati-hatian dalam menerapkan model secara langsung.</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. Case Study: BTEL (Bakrie Telecom)                          -->
+<!-- ============================================================ -->
+
+<h3>2. Studi Kasus: Bakrie Telecom (BTEL) — Kegagalan di Industri Telekomunikasi</h3>
+<p><em>Case Study: Bakrie Telecom — Telecommunications Industry Failure</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 BTEL — Dari CDMA Leader ke Delisting</div>
+<p><strong>PT Bakrie Telecom Tbk (BTEL)</strong>, bagian dari Grup Bakrie, adalah operator telekomunikasi yang mengandalkan teknologi CDMA melalui merek "Esia." BTEL melantai di BEI pada Februari 2006.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:75%">Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Puncak kinerja</strong></td><td>2008–2009: ~14 juta pelanggan, pendapatan puncak; termasuk 5 besar operator seluler Indonesia</td></tr>
+<tr><td><strong>Awal kesulitan</strong></td><td>2010–2012: Migrasi industri ke teknologi GSM/LTE; jumlah pelanggan CDMA turun drastis</td></tr>
+<tr><td><strong>Tanda distress keuangan</strong></td><td>Rugi bersih berulang sejak 2011; total utang melebihi aset (ekuitas negatif); gagal bayar obligasi</td></tr>
+<tr><td><strong>PKPU</strong></td><td>Mengajukan PKPU untuk merestrukturisasi utang (~USD 380 juta); homologasi disetujui 2014</td></tr>
+<tr><td><strong>Delisting</strong></td><td>Disuspensi berkepanjangan; operasi praktis terhenti; di-<em>delist</em> oleh BEI tahun 2020</td></tr>
+</tbody>
+</table>
+
+<div class="exb nb">
+<div class="exn">Sinyal Prediksi Kebangkrutan BTEL / Bankruptcy Warning Signals</div>
+<ul>
+<li><strong>Leverage ekstrem</strong>: Total debt/total assets &gt; 1,0 (ekuitas negatif) — dalam Z-score, MVE/TL mendekati nol; dalam O-score, OENEG = 1 dan TLTA &gt;&gt; 0,5.</li>
+<li><strong>Rugi berulang</strong>: Net income negatif &gt; 3 tahun berturut-turut — O-score INTWO = 1; NITA sangat negatif.</li>
+<li><strong>Arus kas operasi negatif</strong>: CFO negatif menunjukkan operasi inti tidak menghasilkan kas — FUTL negatif.</li>
+<li><strong>Perubahan teknologi</strong>: Risiko bisnis fundamental yang tidak tertangkap model kuantitatif murni — CDMA menjadi usang.</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. Case Study: BLTA (Berlian Laju Tanker)                     -->
+<!-- ============================================================ -->
+
+<h3>3. Studi Kasus: Berlian Laju Tanker (BLTA) — Kegagalan di Industri Perkapalan</h3>
+<p><em>Case Study: Berlian Laju Tanker — Shipping Industry Failure</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 BLTA — Overexpansion dan Krisis Perkapalan Global</div>
+<p><strong>PT Berlian Laju Tanker Tbk (BLTA)</strong> adalah perusahaan pelayaran yang mengoperasikan armada tanker kimia dan gas. BLTA pernah menjadi salah satu perusahaan pelayaran terbesar di Indonesia dan Asia Tenggara.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:75%">Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Puncak kinerja</strong></td><td>2006–2008: Ekspansi armada agresif melalui pembiayaan utang; total aset ~USD 2 miliar</td></tr>
+<tr><td><strong>Pemicu krisis</strong></td><td>2009–2011: Krisis keuangan global menurunkan tarif pengiriman; overkapasitas armada global; biaya utang membengkak</td></tr>
+<tr><td><strong>Tanda distress</strong></td><td>Debt-to-equity ratio &gt; 5x; gagal bayar kupon obligasi internasional; rugi bersih berulang</td></tr>
+<tr><td><strong>PKPU/Restrukturisasi</strong></td><td>2012: Mengajukan PKPU; restrukturisasi utang ~USD 1,4 miliar melalui <em>debt-to-equity conversion</em></td></tr>
+<tr><td><strong>Delisting</strong></td><td>Suspensi berkepanjangan; di-<em>delist</em> oleh BEI tahun 2018</td></tr>
+</tbody>
+</table>
+
+<div class="exb nb">
+<div class="exn">Sinyal Prediksi Kebangkrutan BLTA / Bankruptcy Warning Signals</div>
+<ul>
+<li><strong>Overexpansion yang didanai utang</strong>: Ekspansi armada agresif meningkatkan total debt/total assets secara dramatis — Z-score dan O-score akan menunjukkan peningkatan risiko yang signifikan.</li>
+<li><strong>Sensitivitas terhadap siklus industri</strong>: Industri perkapalan sangat siklikal; ketika tarif jatuh, perusahaan dengan leverage tinggi langsung tertekan — working capital/total assets menjadi negatif.</li>
+<li><strong>Pembiayaan dalam mata uang asing</strong>: Utang dalam USD sementara sebagian pendapatan dalam mata uang lokal — <em>currency mismatch</em> yang memperburuk rasio keuangan saat rupiah melemah.</li>
+<li><strong>Penurunan SIZE</strong>: Penjualan aset (kapal) secara paksa mengurangi total assets, tetapi utang tetap — memperburuk semua rasio leverage.</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 4. Case Study: DAVO (Davomas Abadi)                           -->
+<!-- ============================================================ -->
+
+<h3>4. Studi Kasus: Davomas Abadi (DAVO) — Kegagalan di Industri Makanan/Kakao</h3>
+<p><em>Case Study: Davomas Abadi — Food/Cocoa Industry Failure</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 DAVO — Gagal Bayar Obligasi dan Masalah Tata Kelola</div>
+<p><strong>PT Davomas Abadi Tbk (DAVO)</strong> adalah produsen bubuk kakao dan mentega kakao, salah satu eksportir kakao olahan terbesar Indonesia. Perusahaan ini mengalami kegagalan yang melibatkan kombinasi masalah keuangan dan tata kelola.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:75%">Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Puncak kinerja</strong></td><td>2006–2007: Pendapatan meningkat seiring kenaikan harga kakao global; eksportir kakao olahan terbesar ke-3 dunia</td></tr>
+<tr><td><strong>Pemicu krisis</strong></td><td>2008–2009: Gagal bayar obligasi USD 238 juta; harga kakao volatile; masalah likuiditas akut</td></tr>
+<tr><td><strong>Masalah tata kelola</strong></td><td>Dugaan penggunaan dana obligasi untuk tujuan yang tidak sesuai dengan prospektus; transparansi pelaporan dipertanyakan</td></tr>
+<tr><td><strong>Tanda distress</strong></td><td>CFO negatif berkepanjangan; keterlambatan pelaporan keuangan; gagal bayar obligasi internasional</td></tr>
+<tr><td><strong>Delisting</strong></td><td>Suspensi saham berkepanjangan; di-<em>delist</em> oleh BEI tahun 2015</td></tr>
+</tbody>
+</table>
+
+<div class="exb nb">
+<div class="exn">Pelajaran dari DAVO untuk Prediksi Kebangkrutan / Lessons for Bankruptcy Prediction</div>
+<ul>
+<li><strong>Keterbatasan model kuantitatif</strong>: Model Z-score dan O-score berdasarkan rasio keuangan yang dilaporkan — jika laporan keuangan itu sendiri tidak mencerminkan realitas (karena masalah tata kelola), maka prediksi model akan gagal.</li>
+<li><strong>Pentingnya analisis akuntansi</strong>: Kasus DAVO menunjukkan bahwa <em>accounting analysis</em> (Minggu 5) adalah prasyarat untuk analisis kredit (Minggu 11) — tanpa keyakinan atas kualitas data, model prediksi kehilangan validitasnya.</li>
+<li><strong>Sinyal non-keuangan</strong>: Keterlambatan pelaporan, pergantian auditor, dan kontroversi tata kelola adalah <em>red flags</em> yang tidak tertangkap oleh model kuantitatif.</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 5. Case Study: TRUB (Truba Alam Manunggal)                    -->
+<!-- ============================================================ -->
+
+<h3>5. Studi Kasus: Truba Alam Manunggal Engineering (TRUB) — Kegagalan di Industri EPC/Energi</h3>
+<p><em>Case Study: Truba Alam Manunggal Engineering — EPC/Energy Sector Failure</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 TRUB — Proyek Macet dan Akumulasi Utang</div>
+<p><strong>PT Truba Alam Manunggal Engineering Tbk (TRUB)</strong> (kemudian berganti nama menjadi PT TBS Energi Utama Tbk) bergerak di bidang <em>engineering, procurement, and construction</em> (EPC) untuk sektor energi. Perusahaan mengalami kesulitan keuangan serius sebelum akhirnya melakukan restrukturisasi.</p>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:75%">Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Model bisnis</strong></td><td>Kontraktor EPC untuk pembangkit listrik dan proyek energi — pendapatan berbasis proyek dengan siklus panjang</td></tr>
+<tr><td><strong>Pemicu kesulitan</strong></td><td>Beberapa proyek mengalami keterlambatan dan pembengkakan biaya; perselisihan dengan pemberi kerja; piutang macet</td></tr>
+<tr><td><strong>Tanda distress</strong></td><td>Working capital negatif; utang dagang menunggak; penurunan pendapatan signifikan; rugi bersih berulang</td></tr>
+<tr><td><strong>Perkembangan</strong></td><td>Melakukan restrukturisasi bisnis; berganti nama menjadi TBS Energi Utama; beralih fokus ke investasi energi terbarukan</td></tr>
+</tbody>
+</table>
+
+<div class="exb nb">
+<div class="exn">Sinyal Prediksi Kebangkrutan TRUB / Bankruptcy Warning Signals</div>
+<ul>
+<li><strong>Working capital negatif</strong>: WCTA sangat negatif — sinyal kuat dalam Z-score (X₁) dan O-score (WCTA).</li>
+<li><strong>Revenue berbasis proyek yang volatile</strong>: Pendapatan turun drastis ketika proyek besar tertunda — menghancurkan Sales/TA dalam Z-score.</li>
+<li><strong>Akumulasi piutang bermasalah</strong>: Piutang dari proyek bermasalah tidak tertagih, memperburuk likuiditas dan asset turnover.</li>
+<li><strong>Kasus turnaround</strong>: TRUB mendemonstrasikan bahwa kegagalan keuangan tidak selalu berujung pada delisting — restrukturisasi dapat menghasilkan kebangkitan jika ada perubahan strategi fundamental.</li>
+</ul>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 6. Applying Bankruptcy Models to Indonesian Context            -->
+<!-- ============================================================ -->
+
+<h3>6. Penerapan Model Prediksi Kebangkrutan pada Konteks Indonesia</h3>
+<p><em>Applying Western Bankruptcy Prediction Models to the Indonesian Market</em></p>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Simulasi Konseptual: Z-Score dan O-Score pada Perusahaan Delisting</div>
+<p>Meskipun data historis detail tidak selalu tersedia untuk perusahaan yang telah di-<em>delist</em>, kita dapat mengidentifikasi pola umum yang konsisten dengan prediktor dalam model Altman dan Ohlson:</p>
+
+<table>
+<thead><tr><th style="width:20%">Variabel</th><th style="width:20%">BTEL</th><th style="width:20%">BLTA</th><th style="width:20%">DAVO</th><th style="width:20%">Indikasi</th></tr></thead>
+<tbody>
+<tr><td>WC/TA (Z) / WCTA (O)</td><td>Negatif</td><td>Negatif</td><td>Negatif</td><td>⚠️ Distress kuat</td></tr>
+<tr><td>RE/TA (Z)</td><td>Negatif (akumulasi rugi)</td><td>Negatif</td><td>Negatif</td><td>⚠️ Distress kuat</td></tr>
+<tr><td>EBIT/TA (Z) / NITA (O)</td><td>Sangat negatif</td><td>Sangat negatif</td><td>Negatif</td><td>⚠️ Tidak profitabel</td></tr>
+<tr><td>MVE/TL (Z)</td><td>Mendekati 0</td><td>Sangat rendah</td><td>Sangat rendah</td><td>⚠️ Market cap tergerus</td></tr>
+<tr><td>TLTA (O)</td><td>&gt; 1,0</td><td>&gt; 0,8</td><td>&gt; 0,7</td><td>⚠️ Leverage berlebihan</td></tr>
+<tr><td>OENEG (O)</td><td>1</td><td>1 (akhir)</td><td>Kemungkinan 1</td><td>⚠️ Ekuitas negatif</td></tr>
+<tr><td>INTWO (O)</td><td>1</td><td>1</td><td>1</td><td>⚠️ Rugi 2+ tahun</td></tr>
+<tr><td>FUTL (O)</td><td>Negatif</td><td>Negatif</td><td>Negatif</td><td>⚠️ CFO gagal menutupi utang</td></tr>
+</tbody>
+</table>
+<p><strong>Pola konsisten:</strong> Keempat perusahaan menunjukkan sinyal distress yang kuat pada hampir semua variabel Z-score dan O-score setidaknya 2–3 tahun sebelum delisting, mengindikasikan bahwa secara konseptual model-model ini <em>mampu</em> mengidentifikasi risiko kebangkrutan di Indonesia.</p>
+</div>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Efektivitas Model Barat di Pasar Berkembang / Effectiveness of Western Models in Emerging Markets</div>
+<p>Penelitian empiris tentang penerapan Z-score dan O-score di Indonesia dan pasar berkembang lainnya menunjukkan hasil beragam:</p>
+
+<div class="exb nb">
+<div class="exn">Tantangan Penerapan Model Barat di Indonesia / Challenges of Applying Western Models</div>
+<ol>
+<li><strong>Perbedaan standar akuntansi</strong>: Meskipun Indonesia telah mengadopsi IFRS melalui PSAK, perbedaan dalam pengakuan dan pengukuran tetap ada — koefisien model yang dikalibrasi pada data US GAAP mungkin tidak optimal untuk data PSAK.</li>
+<li><strong>Struktur industri berbeda</strong>: Altman menggunakan sampel manufaktur AS; ekonomi Indonesia didominasi oleh komoditas, perbankan, dan konglomerat diversifikasi — struktur neraca berbeda secara fundamental.</li>
+<li><strong>Konglomerat dan group affiliation</strong>: Banyak perusahaan Indonesia merupakan bagian dari konglomerat (grup Bakrie, grup Lippo, dll.) — dukungan atau tekanan dari grup induk tidak tertangkap model individual.</li>
+<li><strong>Volatilitas mata uang</strong>: Perusahaan dengan utang USD menghadapi risiko kurs yang memperburuk rasio leverage secara tiba-tiba — faktor yang tidak ada dalam model asli.</li>
+<li><strong>Perbedaan definisi kegagalan</strong>: Model asli mendefinisikan kegagalan sebagai <em>bankruptcy filing</em>; di Indonesia, kegagalan bisa berupa PKPU, delisting paksa, atau suspensi berkepanjangan — kategori yang tidak identik.</li>
+<li><strong>Data yang kurang lengkap</strong>: Perusahaan yang mendekati kegagalan sering terlambat menyampaikan laporan keuangan atau mendapat opini audit yang tidak wajar — mengurangi ketersediaan data input.</li>
+</ol>
+</div>
+
+<div class="exb nb">
+<div class="exn">Faktor Pendukung Relevansi Model / Factors Supporting Model Relevance</div>
+<ol>
+<li><strong>Prediktor fundamental tetap relevan</strong>: Leverage berlebihan, rugi berulang, dan CFO negatif adalah tanda distress universal — tidak spesifik AS.</li>
+<li><strong>Pola konfirmatif</strong>: Analisis kasus BTEL, BLTA, DAVO, dan TRUB menunjukkan bahwa sinyal yang diprediksi model memang muncul sebelum delisting.</li>
+<li><strong>Kalibrasi lokal</strong>: Beberapa peneliti Indonesia (Ramadhani &amp; Lukviarman 2009; Hadi &amp; Anggraeni 2008) telah mengkalibrasi ulang koefisien Z-score untuk konteks Indonesia — menunjukkan bahwa <em>framework</em>-nya valid, hanya perlu penyesuaian parameter.</li>
+</ol>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 7. Lessons & Recommendations                                  -->
+<!-- ============================================================ -->
+
+<h3>7. Pelajaran untuk Analisis Kredit di Pasar Indonesia / Lessons for Credit Analysis</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Rekomendasi Praktis / Practical Recommendations</div>
+<ol>
+<li><strong>Gunakan model prediksi kebangkrutan sebagai alat screening, bukan verdict final</strong>: Z-score dan O-score efektif mengidentifikasi perusahaan berisiko tinggi, tetapi harus dilengkapi dengan analisis kualitatif (strategi bisnis, tata kelola, lingkungan regulasi).</li>
+<li><strong>Perhatikan sinyal non-keuangan</strong>: Keterlambatan pelaporan, pergantian auditor, opini audit <em>going concern</em>, dan kontroversi tata kelola adalah <em>red flags</em> yang tidak tertangkap model kuantitatif.</li>
+<li><strong>Pertimbangkan risiko mata uang</strong>: Untuk perusahaan dengan utang valas, lakukan stress test terhadap depresiasi rupiah — BLTA adalah contoh nyata bagaimana <em>currency mismatch</em> mempercepat kegagalan.</li>
+<li><strong>Integrasikan dengan analisis kredit Minggu 11</strong>: Coverage ratios, interest coverage, dan analisis arus kas (Minggu 8) memberikan perspektif tambahan yang melengkapi model scoring.</li>
+<li><strong>Pertimbangkan efek konglomerat</strong>: Analisis grup dan hubungan pihak berelasi (<em>related party transactions</em>) penting — dukungan atau beban dari induk/saudara perusahaan dapat mengubah prospek secara dramatis.</li>
+</ol>
+</div>
+
+<h3>8. Refleksi dan Pertanyaan / Reflection Questions</h3>
+
+<div class="qb nb">
+<div class="qn">Pertanyaan Refleksi — Prediksi Kebangkrutan di Indonesia / Reflection Questions</div>
+<ol>
+<li>Mengapa delisting BTEL terjadi ~6 tahun setelah tanda-tanda distress pertama kali muncul? Apa yang memperlambat proses dibandingkan <em>bankruptcy filing</em> di AS yang lebih cepat? (<em>Why did BTEL's delisting occur ~6 years after initial distress signals? What slows the process compared to faster US bankruptcy filings?</em>)</li>
+<li>Kasus DAVO menunjukkan bahwa masalah tata kelola dapat mengkontaminasi data keuangan. Bagaimana seharusnya analis menggabungkan penilaian kualitas akuntansi (Minggu 5) dengan model prediksi kebangkrutan? (<em>How should analysts combine accounting quality assessment with bankruptcy prediction models?</em>)</li>
+<li>Apakah lebih efektif mengkalibrasi ulang koefisien model Altman/Ohlson untuk Indonesia, ataukah lebih baik mengembangkan model prediksi kebangkrutan yang sepenuhnya baru? Apa trade-off-nya? (<em>Is it more effective to recalibrate Altman/Ohlson coefficients for Indonesia, or to develop entirely new models?</em>)</li>
+<li>Kasus TRUB menunjukkan bahwa kegagalan keuangan tidak selalu berujung pada delisting — perusahaan dapat melakukan turnaround. Bagaimana model prediksi kebangkrutan seharusnya memperhitungkan kemungkinan pemulihan? (<em>How should bankruptcy prediction models account for the possibility of recovery?</em>)</li>
+</ol>
+</div>

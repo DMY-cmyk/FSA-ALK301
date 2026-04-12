@@ -1,0 +1,333 @@
+<!-- Week 14 Article Analysis — Deakin (1972) + Ohlson (1980) -->
+<!-- "A Discriminant Analysis of Predictors of Business Failure" + "Financial Ratios and the Probabilistic Prediction of Bankruptcy" -->
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Deakin (1972) + Ohlson (1980)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>Analisis Artikel Minggu 14: Evolusi Prediksi Kebangkrutan — Deakin (1972) &amp; Ohlson (1980)</h2>
+<p><em>Week 14 Article Analysis: Bankruptcy Prediction Evolution — Extended MDA (Deakin) and Logistic Regression (Ohlson)</em></p>
+
+<div class="ibox nb">
+<div class="ibt">📌 Konteks Dua Artikel / Context for Both Articles</div>
+<p>Kedua artikel minggu ini melanjutkan <strong>benang merah prediksi kebangkrutan</strong> yang dimulai dengan Altman (1968) di Minggu 3. Deakin (1972) memperluas pendekatan MDA dengan menggunakan 14 rasio Beaver, sementara Ohlson (1980) memperkenalkan pergeseran paradigma dari MDA ke regresi logistik. Bersama-sama, ketiga artikel (Altman, Deakin, Ohlson) membentuk fondasi literatur prediksi kebangkrutan yang masih relevan hingga saat ini.</p>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- BAGIAN A — DEAKIN (1972)                                      -->
+<!-- ============================================================ -->
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Deakin (1972)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>A. Deakin (1972) — A Discriminant Analysis of Predictors of Business Failure</h2>
+
+<div class="def">
+<div class="den">📄 Sitasi Lengkap / Full Citation</div>
+<div class="did">
+<p>Deakin, Edward B. (1972). "A Discriminant Analysis of Predictors of Business Failure." <em>Journal of Accounting Research</em>, Vol. 10, No. 1 (Spring 1972), pp. 167–179.</p>
+<p><strong>Konteks publikasi:</strong> Diterbitkan dalam <em>Journal of Accounting Research</em> (JAR), salah satu jurnal akuntansi paling prestisius. Artikel ini menjadi jembatan kritis antara pendekatan univariat Beaver (1966, 1968) dan model MDA Altman (1968) — menggabungkan kekuatan keduanya dan menguji batas-batas MDA sebagai alat prediksi kebangkrutan.</p>
+</div>
+</div>
+
+<h3>A1. Pertanyaan Penelitian dan Motivasi / Research Question &amp; Motivation</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Pertanyaan Sentral / Central Research Question</div>
+<p><strong>Apakah model analisis diskriminan berganda (MDA), yang menggunakan 14 rasio keuangan dari studi Beaver, dapat memprediksi kegagalan bisnis dengan lebih akurat dan lebih jauh ke depan dibandingkan pendekatan univariat Beaver maupun model MDA 5-rasio Altman?</strong></p>
+<p><em>Can an MDA model using Beaver's 14 financial ratios predict business failure more accurately and further in advance than either Beaver's univariate approach or Altman's 5-ratio MDA?</em></p>
+</div>
+
+<p>Motivasi Deakin muncul dari dua keterbatasan studi sebelumnya:</p>
+<ul>
+<li><strong>Beaver (1967, 1968)</strong>: Menguji 14 rasio secara univariat dengan <em>dichotomous classification test</em> — akurasi hingga 78% pada 5 tahun sebelum kebangkrutan. Namun, pendekatan univariat tidak mampu mengkombinasikan informasi dari beberapa rasio secara simultan.</li>
+<li><strong>Altman (1968)</strong>: Menggunakan MDA dengan 5 rasio — akurasi 95% pada tahun-1, tetapi <strong>menurun drastis</strong> pada tahun 2–5 (72% → 48% → 29% → 36%). Penurunan ini menunjukkan bahwa 5 rasio tidak cukup untuk prediksi jarak jauh.</li>
+</ul>
+<p>Deakin menggabungkan kedua pendekatan: menerapkan MDA (metode Altman) pada <strong>seluruh 14 rasio Beaver</strong>, dengan hipotesis bahwa kombinasi ini akan menghasilkan prediksi yang superior pada seluruh horizon waktu.</p>
+
+<h3>A2. Metodologi / Methodology</h3>
+
+<div class="def nb">
+<div class="den">Tiga Tahap Penelitian Deakin / Deakin's Three-Stage Approach</div>
+<div class="did">
+<p><strong>Tahap 1 — Replikasi tes klasifikasi dikotomis Beaver</strong> pada sampel independen untuk memvalidasi daya prediksi individual 14 rasio. Korelasi Spearman antara ranking Deakin dan Beaver: r<sub>s</sub> = 0,56–0,88 (menunjukkan konsistensi substansial).</p>
+<p><strong>Tahap 2 — Multiple Discriminant Analysis (MDA)</strong> menggunakan seluruh 14 rasio sebagai input. Deakin mengembangkan <strong>fungsi diskriminan terpisah untuk setiap tahun</strong> (1–5 tahun sebelum kebangkrutan) — berbeda dari Altman yang menggunakan satu fungsi tunggal.</p>
+<p><strong>Tahap 3 — Klasifikasi probabilistik via chi-square</strong>: Alih-alih cutoff skor tunggal (seperti Altman), Deakin menghitung probabilitas keanggotaan kelompok menggunakan d′Σ⁻¹d ~ χ²(p), di mana d = vektor skor deviasi dari centroid kelompok.</p>
+</div>
+</div>
+
+<h4>14 Rasio Beaver yang Digunakan Deakin</h4>
+
+<table>
+<thead><tr><th style="width:30%">Kelompok</th><th style="width:70%">Rasio</th></tr></thead>
+<tbody>
+<tr><td><strong>Aset Non-Likuid</strong></td><td>Cash flow/total debt; Net income/total assets; Total debt/total assets</td></tr>
+<tr><td><strong>Aset Likuid / Total Aset</strong></td><td>Current assets/TA; Quick assets/TA; Working capital/TA; Cash/TA</td></tr>
+<tr><td><strong>Aset Likuid / Utang Lancar</strong></td><td>Current assets/CL; Quick assets/CL; Cash/CL</td></tr>
+<tr><td><strong>Turnover Aset Likuid</strong></td><td>Current assets/sales; Quick assets/sales; Working capital/sales; Cash/sales</td></tr>
+</tbody>
+</table>
+
+<h4>Sampel Penelitian / Sample</h4>
+
+<table>
+<thead><tr><th style="width:30%">Aspek</th><th style="width:70%">Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Perusahaan Gagal</strong></td><td>32 perusahaan yang mengalami kebangkrutan, insolvensi, atau likuidasi (1964–1970)</td></tr>
+<tr><td><strong>Matched Nonfailed (tes univariat)</strong></td><td>32 perusahaan dipasangkan berdasarkan industri, tahun data, dan ukuran aset</td></tr>
+<tr><td><strong>Random Nonfailed (MDA)</strong></td><td>32 perusahaan dipilih <em>secara acak</em> dari Moody's Industrial Manual — memenuhi asumsi sampling MDA (langkah yang TIDAK dilakukan Altman)</td></tr>
+<tr><td><strong>Sampel Cross-Validation</strong></td><td>11 perusahaan gagal + 23 perusahaan sehat, dipilih acak dari 1963–1964</td></tr>
+</tbody>
+</table>
+
+<h3>A3. Temuan Kunci / Key Findings</h3>
+
+<div class="exb nb">
+<div class="exn">Akurasi Klasifikasi MDA — Sampel Derivasi / Derivation Sample Accuracy</div>
+<table>
+<thead><tr><th style="width:35%">Tahun Sebelum Kebangkrutan</th><th style="width:25%">Tingkat Kesalahan</th><th style="width:40%">Perbandingan Altman</th></tr></thead>
+<tbody>
+<tr><td>1 tahun</td><td><strong>3%</strong></td><td>Altman: 5% → <em>Deakin lebih baik</em></td></tr>
+<tr><td>2 tahun</td><td><strong>4,5%</strong></td><td>Altman: 28% → <em>Deakin jauh lebih baik</em></td></tr>
+<tr><td>3 tahun</td><td><strong>4,5%</strong></td><td>Altman: 52% → <em>Deakin jauh lebih baik</em></td></tr>
+<tr><td>4 tahun</td><td>21%</td><td>Altman: 71% → <em>Deakin lebih baik</em></td></tr>
+<tr><td>5 tahun</td><td>17%</td><td>Altman: 64% → <em>Deakin lebih baik</em></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="exb nb">
+<div class="exn">Cross-Validation — Sampel Holdout / Holdout Sample Results</div>
+<table>
+<thead><tr><th style="width:35%">Tahun Sebelum Kebangkrutan</th><th style="width:30%">Tingkat Kesalahan</th><th style="width:35%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>1 tahun</td><td><strong>22%</strong></td><td>⚠️ Menurun tajam dari 3% — unexplained</td></tr>
+<tr><td>2 tahun</td><td>6%</td><td>Tetap kuat</td></tr>
+<tr><td>3 tahun</td><td>12%</td><td>Cukup baik</td></tr>
+<tr><td>4 tahun</td><td>23%</td><td>Stabil</td></tr>
+<tr><td>5 tahun</td><td>15%</td><td>Lebih baik dari derivasi</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📊 Temuan Paling Penting: Fungsi Tahun Kedua Paling Robust</div>
+<p>Ketika fungsi diskriminan dari tahun 1–3 diterapkan pada campuran perusahaan yang akan gagal dalam 1–5 tahun, <strong>fungsi tahun kedua mengklasifikasikan 90% perusahaan dengan benar</strong> (total error rate 10%). Ini menjadikannya fungsi tunggal paling praktis untuk aplikasi <em>ex ante</em>, karena dalam praktik kreditur tidak mengetahui <em>kapan</em> perusahaan akan gagal.</p>
+</div>
+
+<h3>A4. Kontribusi dan Keterbatasan / Contributions &amp; Limitations</h3>
+
+<div class="def nb">
+<div class="den">Kontribusi Deakin (1972)</div>
+<div class="did">
+<ol>
+<li><strong>Jembatan metodologis</strong>: Menggabungkan kekuatan Beaver (14 rasio komprehensif) dengan MDA (kombinasi multivariat), menghasilkan akurasi superior pada horizon panjang.</li>
+<li><strong>Fungsi per-tahun</strong>: Menunjukkan bahwa fungsi diskriminan terpisah untuk setiap horizon lebih baik dari fungsi tunggal.</li>
+<li><strong>Klasifikasi probabilistik</strong>: Menggunakan chi-square alih-alih cutoff sewenang-wenang — langkah menuju interpretasi probabilistik yang kemudian disempurnakan Ohlson.</li>
+<li><strong>Sampling yang lebih ketat</strong>: Menggunakan sampel acak terpisah untuk MDA (bukan <em>matched pairs</em>) — memenuhi asumsi statistik MDA.</li>
+</ol>
+</div>
+</div>
+
+<div class="def nb">
+<div class="den">Keterbatasan Deakin (1972)</div>
+<div class="did">
+<ul>
+<li><strong>Sampel kecil</strong> (32 perusahaan gagal) — membatasi generalisasi dan kekuatan statistik.</li>
+<li><strong>Deteriorasi cross-validation tahun-1</strong> — akurasi menurun dari 97% ke 78% pada holdout sample; penyebab tidak dijelaskan.</li>
+<li><strong>Asumsi normalitas multivariat</strong> — validasi appendix menunjukkan deviasi dari distribusi normal, terutama di ekor distribusi.</li>
+<li><strong>Masih bergantung pada MDA</strong> — mewarisi semua keterbatasan MDA yang kemudian dikritik Ohlson (1980).</li>
+<li><strong>Hanya perusahaan AS</strong> — berlaku untuk konteks manufaktur Amerika; transferabilitas ke negara berkembang tidak diuji.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- BAGIAN B — OHLSON (1980)                                      -->
+<!-- ============================================================ -->
+
+<div class="section pb">
+<div class="phdr"><span>Artikel · Ohlson (1980)</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>B. Ohlson (1980) — Financial Ratios and the Probabilistic Prediction of Bankruptcy</h2>
+
+<div class="def">
+<div class="den">📄 Sitasi Lengkap / Full Citation</div>
+<div class="did">
+<p>Ohlson, James A. (1980). "Financial Ratios and the Probabilistic Prediction of Bankruptcy." <em>Journal of Accounting Research</em>, Vol. 18, No. 1 (Spring 1980), pp. 109–131.</p>
+<p><strong>Konteks publikasi:</strong> Diterbitkan dalam JAR, artikel ini menjadi salah satu makalah paling banyak dikutip dalam akuntansi empiris (termasuk "Top 5"). Model O-score yang diperkenalkan menjadi standar bersama Z-score Altman, dan regresi logistik menggantikan MDA sebagai metodologi dominan dalam prediksi kebangkrutan selama beberapa dekade berikutnya.</p>
+</div>
+</div>
+
+<h3>B1. Pertanyaan Penelitian dan Motivasi / Research Question &amp; Motivation</h3>
+
+<div class="ibox nb">
+<div class="ibt">🎯 Pertanyaan Sentral / Central Research Question</div>
+<p><strong>Diberikan bahwa suatu perusahaan termasuk dalam populasi tertentu, berapa probabilitas bahwa perusahaan tersebut gagal dalam periode waktu yang telah ditentukan?</strong></p>
+<p><em>Given that a firm belongs to a specified population, what is the probability that it fails within a prespecified time period?</em></p>
+</div>
+
+<h4>Tiga Kritik Ohlson terhadap MDA / Ohlson's Three Criticisms of MDA</h4>
+
+<div class="def nb">
+<div class="den">Mengapa MDA Bermasalah / Why MDA Is Problematic</div>
+<div class="did">
+<ol>
+<li><strong>Persyaratan distribusi yang dilanggar</strong>: MDA mengasumsikan matriks varians-kovarians yang sama antar kelompok DAN distribusi normal. Analisis profil Ohlson (Tabel 3) menunjukkan standar deviasi prediktor <strong>berbeda secara signifikan</strong> (p &lt; 0,05) antara kelompok bangkrut dan non-bangkrut untuk hampir semua variabel. Selain itu, asumsi normalitas melarang penggunaan variabel dummy.</li>
+<li><strong>Output yang tidak dapat diinterpretasi</strong>: Skor diskriminan MDA hanyalah alat ranking ordinal tanpa makna intuitif. Konversi ke probabilitas posterior memerlukan revisi Bayesian dengan prior — tetapi revisi ini <strong>tidak valid</strong> jika asumsi normalitas dilanggar.</li>
+<li><strong>Prosedur matching yang sewenang-wenang</strong>: Studi MDA biasanya mencocokkan perusahaan gagal dengan non-gagal berdasarkan ukuran dan industri. Ohlson berargumen bahwa lebih produktif untuk <strong>memasukkan variabel ini sebagai prediktor</strong> daripada menggunakannya untuk matching.</li>
+</ol>
+</div>
+</div>
+
+<h3>B2. Model O-Score — 9 Variabel Prediktor / The O-Score Model — 9 Predictors</h3>
+
+<div class="fbox nb">
+<p><strong>Model Logistik Ohlson:</strong> P(kebangkrutan) = 1 / (1 + e<sup>−y</sup>), di mana y = β′X</p>
+</div>
+
+<table>
+<thead><tr><th style="width:5%">#</th><th style="width:12%">Variabel</th><th style="width:43%">Definisi</th><th style="width:20%">Tanda Ekspektasi</th><th style="width:20%">Koefisien Model 1</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>SIZE</td><td>log(total assets / GNP price-level index), basis 1968 = 100</td><td>Negatif (−)</td><td>−0,407</td></tr>
+<tr><td>2</td><td>TLTA</td><td>Total liabilities / Total assets (leverage)</td><td>Positif (+)</td><td>+6,03</td></tr>
+<tr><td>3</td><td>WCTA</td><td>Working capital / Total assets (likuiditas)</td><td>Negatif (−)</td><td>−1,43</td></tr>
+<tr><td>4</td><td>CLCA</td><td>Current liabilities / Current assets (tekanan likuiditas jangka pendek)</td><td>Positif (+)</td><td>+0,0757</td></tr>
+<tr><td>5</td><td>OENEG</td><td>Dummy = 1 jika total liabilities &gt; total assets (ekuitas buku negatif)</td><td>Tidak tentu</td><td>−1,72</td></tr>
+<tr><td>6</td><td>NITA</td><td>Net income / Total assets (profitabilitas)</td><td>Negatif (−)</td><td>−2,37</td></tr>
+<tr><td>7</td><td>FUTL</td><td>Funds from operations / Total liabilities (cakupan arus kas)</td><td>Negatif (−)</td><td>−1,83</td></tr>
+<tr><td>8</td><td>INTWO</td><td>Dummy = 1 jika laba bersih negatif selama 2 tahun berturut-turut</td><td>Positif (+)</td><td>+0,285</td></tr>
+<tr><td>9</td><td>CHIN</td><td>(NI<sub>t</sub> − NI<sub>t−1</sub>) / (|NI<sub>t</sub>| + |NI<sub>t−1</sub>|) — perubahan laba bersih</td><td>Negatif (−)</td><td>−0,521</td></tr>
+<tr><td>—</td><td>Konstanta</td><td>Intercept</td><td>—</td><td>−1,32</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb">
+<div class="ibt">📐 Interpretasi Variabel Kunci / Key Variable Interpretation</div>
+<p>Variabel terbagi dalam dua kategori yang <strong>tidak berkorelasi</strong> satu sama lain (dikonfirmasi matriks korelasi Tabel 5): (a) <strong>variabel kondisi keuangan</strong> — SIZE, TLTA, WCTA, CLCA, OENEG; (b) <strong>variabel kinerja</strong> — NITA, FUTL, INTWO, CHIN. Kedua kategori berkontribusi secara independen dan signifikan — menunjukkan bahwa baik posisi neraca maupun kinerja laba rugi penting untuk prediksi.</p>
+</div>
+
+<h3>B3. Tiga Model Probabilitas / Three Probability Models</h3>
+
+<table>
+<thead><tr><th style="width:15%">Model</th><th style="width:45%">Horizon Prediksi</th><th style="width:40%">Deskripsi</th></tr></thead>
+<tbody>
+<tr><td><strong>Model 1</strong></td><td>Kebangkrutan dalam <strong>1 tahun</strong></td><td>Menggunakan data laporan keuangan terakhir sebelum kebangkrutan</td></tr>
+<tr><td><strong>Model 2</strong></td><td>Kebangkrutan dalam <strong>2 tahun</strong>, kondisional tidak gagal tahun-1</td><td>Prediksi untuk perusahaan yang bertahan tahun pertama tetapi gagal tahun kedua</td></tr>
+<tr><td><strong>Model 3</strong></td><td>Kebangkrutan dalam <strong>1 atau 2 tahun</strong></td><td>Horizon gabungan — gagal kapan saja dalam 2 tahun</td></tr>
+</tbody>
+</table>
+
+<h3>B4. Sampel dan Inovasi Data / Sample &amp; Data Innovation</h3>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:75%">Detail</th></tr></thead>
+<tbody>
+<tr><td><strong>Perusahaan Bangkrut</strong></td><td>105 perusahaan yang mengajukan Chapter X, XI, atau kebangkrutan lain (1970–1976)</td></tr>
+<tr><td><strong>Perusahaan Non-Bangkrut</strong></td><td>2.058 perusahaan — TIDAK dipasangkan; setiap perusahaan menyumbang 1 tahun data acak</td></tr>
+<tr><td><strong>Sumber Data</strong></td><td>Laporan <strong>10-K</strong> (SEC filings) — BUKAN Moody's Manual — memungkinkan verifikasi tanggal rilis</td></tr>
+<tr><td><strong>Inovasi timing</strong></td><td>18 dari 105 perusahaan (17%) sudah bangkrut sebelum laporan keuangan dirilis → data ini dihapus dan diganti laporan tahun sebelumnya</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb">
+<div class="ibt">⚠️ Inovasi Data yang Penting / Critical Data Innovation</div>
+<p>Ohlson adalah peneliti pertama yang menggunakan <strong>laporan 10-K</strong> (bukan Moody's Manual) untuk prediksi kebangkrutan. Ini memungkinkan verifikasi apakah data keuangan benar-benar tersedia <em>sebelum</em> kebangkrutan terjadi. Penemuan bahwa 17% perusahaan bangkrut sebelum laporannya dirilis menunjukkan bahwa studi sebelumnya (yang menggunakan Moody's) mungkin mengembungkan akurasi prediksi dengan menggunakan informasi yang belum tersedia secara publik (<em>look-ahead bias</em>).</p>
+</div>
+
+<h3>B5. Temuan Kunci / Key Findings</h3>
+
+<div class="exb nb">
+<div class="exn">Akurasi Model 1 (Prediksi 1 Tahun) / Model 1 Accuracy</div>
+<table>
+<thead><tr><th style="width:40%">Metrik</th><th style="width:30%">Nilai</th><th style="width:30%">Catatan</th></tr></thead>
+<tbody>
+<tr><td>Prediksi benar (cutoff = 0,50)</td><td><strong>96,12%</strong></td><td>Terlihat tinggi, tetapi...</td></tr>
+<tr><td>Benchmark naif (klasifikasi semua non-bangkrut)</td><td>91,15%</td><td>Perbaikan marginal hanya ~5%</td></tr>
+<tr><td>Likelihood ratio index (pseudo-R²)</td><td>84%</td><td>Signifikan pada level sangat rendah</td></tr>
+<tr><td>Tingkat error minimum (cutoff optimal = 0,038)</td><td><strong>14,9%</strong></td><td>Realistis — jauh dari klaim 5% studi sebelumnya</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="exb nb">
+<div class="exn">Analisis Error Tipe I dan Tipe II / Type I &amp; Type II Error Analysis</div>
+<table>
+<thead><tr><th style="width:20%">Cutoff</th><th style="width:30%">Error Tipe I (prediksi non-bangkrut, aktual bangkrut)</th><th style="width:30%">Error Tipe II (prediksi bangkrut, aktual sehat)</th><th style="width:20%">Total Error</th></tr></thead>
+<tbody>
+<tr><td>0,50</td><td>67,6%</td><td>0,63%</td><td>Bias ke non-bangkrut</td></tr>
+<tr><td><strong>0,038</strong></td><td><strong>12,4%</strong></td><td><strong>17,4%</strong></td><td>Minimizes total</td></tr>
+<tr><td>0,0095</td><td>0%</td><td>47%</td><td>Bias ke bangkrut</td></tr>
+</tbody>
+</table>
+<p><em>Pilihan cutoff tergantung pada asimetri biaya kesalahan. Kreditur lebih mengkhawatirkan Error Tipe I; investor ekuitas lebih mengkhawatirkan Error Tipe II.</em></p>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📊 Perbandingan Langsung: Logit vs MDA pada Data yang Sama</div>
+<p>Ohlson menguji MDA pada dataset yang sama — hasilnya: tingkat error minimum <strong>16%</strong>, lebih buruk dari logit (14,9%). Ini memberikan bukti empiris langsung bahwa logit lebih unggul, setidaknya pada data Ohlson.</p>
+</div>
+
+<h3>B6. Kontribusi dan Signifikansi / Contributions &amp; Significance</h3>
+
+<div class="def nb">
+<div class="den">Kontribusi Landmark Ohlson (1980)</div>
+<div class="did">
+<ol>
+<li><strong>Pergeseran paradigma metodologis</strong>: Memperkenalkan regresi logistik ke prediksi kebangkrutan, menggantikan MDA sebagai metode dominan selama beberapa dekade.</li>
+<li><strong>O-score</strong>: Model 9-variabel menjadi salah satu model paling dikutip dan direplikasi — digunakan secara rutin sebagai variabel kontrol <em>financial distress</em> dalam penelitian akuntansi empiris.</li>
+<li><strong>Output probabilistik langsung</strong>: P(kebangkrutan) antara 0 dan 1 — jauh lebih berguna untuk pengambilan keputusan daripada skor diskriminan ordinal.</li>
+<li><strong>Verifikasi timing informasi</strong>: Pertama menggunakan 10-K untuk memastikan data benar-benar tersedia sebelum kebangkrutan — kontribusi metodologis fundamental.</li>
+<li><strong>Desain sampel besar tanpa matching</strong>: 105 bangkrut vs 2.058 non-bangkrut tanpa paired sampling — mendemonstrasikan bahwa matching tidak diperlukan.</li>
+<li><strong>Kejujuran intelektual</strong>: Menunjukkan bahwa error rate realistis ~15%, bukan ~5% yang diklaim studi MDA sebelumnya.</li>
+</ol>
+</div>
+</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- BAGIAN C — EVOLUSI METODOLOGIS                                -->
+<!-- ============================================================ -->
+
+<div class="section pb">
+<div class="phdr"><span>Evolusi Prediksi Kebangkrutan</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+
+<h2>C. Evolusi Metodologis Prediksi Kebangkrutan / Methodological Evolution Thread</h2>
+
+<div class="cg nb">
+<div class="cgt">🔗 Dari Univariat ke Regresi Logistik — Empat Generasi / Four Generations of Bankruptcy Prediction</div>
+
+<table>
+<thead><tr><th style="width:15%">Generasi</th><th style="width:15%">Peneliti</th><th style="width:20%">Metode</th><th style="width:25%">Inovasi Kunci</th><th style="width:25%">Keterbatasan yang Diatasi Generasi Berikutnya</th></tr></thead>
+<tbody>
+<tr><td><strong>1</strong></td><td>Beaver (1966)</td><td>Univariat — dichotomous classification</td><td>Pertama menunjukkan rasio keuangan memprediksi kegagalan</td><td>Tidak mengkombinasikan rasio; sinyal conflicting</td></tr>
+<tr><td><strong>2a</strong></td><td>Altman (1968)</td><td>MDA — 5 rasio, Z-score</td><td>Pertama menggabungkan rasio secara multivariat</td><td>Akurasi menurun drastis tahun 2–5; hanya 5 rasio</td></tr>
+<tr><td><strong>2b</strong></td><td>Deakin (1972)</td><td>MDA — 14 rasio, fungsi per-tahun, χ² probability</td><td>Akurasi jauh lebih baik pada horizon panjang; klasifikasi probabilistik</td><td>Sampel kecil; masih mewarisi asumsi MDA</td></tr>
+<tr><td><strong>3</strong></td><td>Ohlson (1980)</td><td>Logit — 9 variabel, O-score</td><td>Output probabilistik langsung; tidak perlu asumsi normalitas; sampel besar tanpa matching</td><td>Model linear; variabel masih sederhana</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📌 Ekstensi Modern — Sekilas / Modern Extensions — Brief Overview</div>
+<p>Setelah Ohlson, literatur terus berevolusi: <strong>Zmijewski (1984)</strong> menggunakan probit dan membahas bias sampling; <strong>Shumway (2001)</strong> mengembangkan <em>hazard model</em> yang memperhitungkan dinamika temporal; <strong>Hillegeist et al. (2004)</strong> menggunakan model opsi Merton berbasis pasar; dan sejak 2010-an, <strong>machine learning</strong> (random forest, gradient boosting, neural networks) menunjukkan akurasi prediksi yang lebih tinggi tetapi dengan trade-off interpretabilitas. Namun, Z-score dan O-score tetap menjadi benchmark standar dalam praktik dan penelitian karena transparansi dan kemudahan aplikasinya.</p>
+</div>
+
+<div class="cg nb">
+<div class="cgt">🔗 Koneksi ke Keseluruhan Kursus / Connection to Full Course</div>
+<p>Benang merah prediksi kebangkrutan menghubungkan beberapa minggu secara langsung:</p>
+<ul>
+<li><strong>Minggu 3 (Aktivitas Pendanaan)</strong>: Altman Z-score menggunakan rasio leverage dan struktur modal — konsep dari analisis pendanaan.</li>
+<li><strong>Minggu 5 (Kualitas Akuntansi)</strong>: Kualitas data akuntansi mempengaruhi input model prediksi — "garbage in, garbage out."</li>
+<li><strong>Minggu 8 (Analisis Arus Kas)</strong>: Variabel FUTL (funds from operations/total liabilities) dalam O-score berasal langsung dari analisis arus kas.</li>
+<li><strong>Minggu 9 (Profitabilitas)</strong>: NITA (return on assets) dan komponen profitabilitas adalah prediktor kunci dalam semua model.</li>
+<li><strong>Minggu 11 (Analisis Kredit)</strong>: Prediksi kebangkrutan adalah inti analisis kredit — model-model ini digunakan oleh bank dan lembaga pemeringkat.</li>
+<li><strong>Minggu 12 (Valuasi)</strong>: Risiko kebangkrutan mempengaruhi discount rate dan terminal value dalam model valuasi.</li>
+</ul>
+</div>
+
+<div class="fbox nb">
+<p><strong>Takeaway Utama / Key Takeaway:</strong> Evolusi dari Beaver → Altman → Deakin → Ohlson mengilustrasikan prinsip fundamental dalam riset empiris: setiap studi membangun di atas (dan mengatasi) keterbatasan studi sebelumnya. Kemampuan memahami dan mengevaluasi evolusi ini — bukan sekadar menghafal rumus — adalah kompetensi pascasarjana yang diuji pada UAS.</p>
+</div>
+</div>
