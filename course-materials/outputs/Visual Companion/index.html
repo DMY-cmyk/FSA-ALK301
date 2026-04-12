@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALK301 Visual Companion — Course Learning Map</title>
+<style>
+:root{--navy:#1B3A6B;--gold:#C9A84C;--gray:#F5F5F5;--lblue:#E8EEF7}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#222;background:#fff}
+.header{background:var(--navy);color:#fff;padding:20px 30px;text-align:center}
+.header h1{font-size:20pt;margin-bottom:4px}
+.header p{opacity:.8;font-size:11pt}
+.tabs{display:flex;border-bottom:3px solid var(--navy);background:var(--gray)}
+.tab{padding:10px 20px;cursor:pointer;font-weight:bold;color:var(--navy);border:none;background:none;font-size:10.5pt}
+.tab.active{background:var(--navy);color:#fff;border-radius:5px 5px 0 0}
+.tab:hover:not(.active){background:var(--lblue)}
+.view{display:none;padding:20px 30px;max-width:1100px;margin:0 auto}
+.view.active{display:block}
+
+/* Roadmap */
+.timeline{display:flex;flex-direction:column;gap:8px}
+.week-card{display:flex;align-items:flex-start;gap:12px;padding:10px 14px;border-radius:6px;border-left:5px solid;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.week-num{font-weight:bold;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:10pt;flex-shrink:0}
+.week-info{flex:1}
+.week-info h3{font-size:11pt;color:var(--navy);margin-bottom:2px}
+.week-info .details{font-size:9.5pt;color:#555}
+.week-info .details span{margin-right:10px}
+.midterm-bar,.final-bar{background:var(--gold);color:#fff;text-align:center;padding:8px;font-weight:bold;border-radius:4px;font-size:11pt}
+
+/* Chapter Map */
+.ch-grid{display:grid;grid-template-columns:80px 1fr 1fr;gap:2px;font-size:9.5pt}
+.ch-header{background:var(--navy);color:#fff;padding:6px 8px;font-weight:bold}
+.ch-cell{padding:5px 8px;border-bottom:1px solid #eee}
+.ch-week{background:var(--gray);font-weight:bold;color:var(--navy)}
+
+/* Article Network */
+.article-card{background:#fff;border:1px solid #ddd;border-left:4px solid var(--gold);padding:10px 14px;margin:8px 0;border-radius:0 6px 6px 0}
+.article-card h4{color:var(--navy);margin-bottom:3px;font-size:10.5pt}
+.article-card .meta{font-size:9pt;color:#777}
+.article-card .connection{font-size:9.5pt;color:#444;margin-top:4px}
+.degraded-badge{background:#FFF3CD;color:#795548;padding:2px 8px;border-radius:10px;font-size:8pt;font-weight:bold}
+
+/* Indonesian Examples */
+.id-card{background:#FFF5F0;border:1px solid #E8A0A0;border-left:4px solid #C41E3A;padding:10px 14px;margin:8px 0;border-radius:0 6px 6px 0}
+.id-card h4{color:#8B1A2B;margin-bottom:3px;font-size:10.5pt}
+.id-card .ticker{font-weight:bold;color:#C41E3A}
+
+/* Collapsible */
+.collapsible{cursor:pointer;user-select:none}
+.collapsible::after{content:" ▸";font-size:10pt}
+.collapsible.open::after{content:" ▾"}
+.collapse-content{display:none;padding-left:12px;margin-top:4px}
+.collapse-content.show{display:block}
+
+@media print{
+  .tabs{display:none}
+  .view{display:block!important;page-break-before:always}
+  .header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 ALK301 — Visual Companion</h1>
+  <p>Analisis Laporan Keuangan dan Valuasi Sekuritas · 1 &#x2F; 2025-2026</p>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="showView('roadmap', event)">Course Roadmap</button>
+  <button class="tab" onclick="showView('chapters', event)">Chapter Map</button>
+  <button class="tab" onclick="showView('articles', event)">Article Network</button>
+  <button class="tab" onclick="showView('indonesian', event)">Indonesian Examples</button>
+</div>
+
+<!-- VIEW 1: Course Roadmap -->
+<div id="roadmap" class="view active">
+  <h2 style="color:var(--navy);margin-bottom:12px">Course Roadmap — 14 Weeks</h2>
+  <div class="timeline">
+    
+    
+    <div class="week-card" style="border-left-color:#1B3A6B">
+      <div class="week-num" style="background:#1B3A6B">1</div>
+      <div class="week-info">
+        <h3>Syllabus and Introduction to FSA</h3>
+        <div class="details">
+          <span>📚 Silabus dan pengenalan ALK</span>
+          <span>📖 Sub. Ch. 1</span>
+          <span>📗 Palepu Ch. 1</span>
+          
+          <span>🏢 UNVR</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Framework for financial statement analysis; role of accounting information in capital markets</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#1B3A6B">
+      <div class="week-num" style="background:#1B3A6B">2</div>
+      <div class="week-info">
+        <h3>Financial Reporting and Analysis Environment</h3>
+        <div class="details">
+          <span>📚 Analisis dan pelaporan keuangan</span>
+          <span>📖 Sub. Ch. 1, 2</span>
+          <span>📗 Palepu Ch. 1, 2</span>
+          
+          <span>🏢 UNVR</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Financial reporting environment; accrual accounting; earnings quality; regulatory framework</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#2196F3">
+      <div class="week-num" style="background:#2196F3">3</div>
+      <div class="week-info">
+        <h3>Financing Activities Analysis</h3>
+        <div class="details">
+          <span>📚 Analisis pendanaan (financing)</span>
+          <span>📖 Sub. Ch. 3</span>
+          
+          <span>📄 1 article(s)</span>
+          <span>🏢 BBCA</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Debt vs equity financing; leases; off-balance-sheet items; capital structure analysis</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#4CAF50">
+      <div class="week-num" style="background:#4CAF50">4</div>
+      <div class="week-info">
+        <h3>Investing Activities Analysis</h3>
+        <div class="details">
+          <span>📚 Analisis investasi</span>
+          <span>📖 Sub. Ch. 4</span>
+          
+          
+          <span>🏢 ASII</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 PP&amp;E analysis; intangible assets; depreciation methods; asset impairment; capitalization vs expensing</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#4CAF50">
+      <div class="week-num" style="background:#4CAF50">5</div>
+      <div class="week-info">
+        <h3>Intercorporate Investments Analysis</h3>
+        <div class="details">
+          <span>📚 Analisis investasi: Intercorporate investment</span>
+          <span>📖 Sub. Ch. 5</span>
+          
+          <span>📄 1 article(s)</span>
+          <span>🏢 ASII</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Equity method; consolidation; minority interests; goodwill; intercorporate investment accounting</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#FF9800">
+      <div class="week-num" style="background:#FF9800">6</div>
+      <div class="week-info">
+        <h3>Operating Activities Analysis</h3>
+        <div class="details">
+          <span>📚 Analisis aktivitas operasi</span>
+          <span>📖 Sub. Ch. 6</span>
+          <span>📗 Palepu Ch. 4</span>
+          
+          <span>🏢 TLKM</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Revenue recognition; operating expenses; income measurement; non-recurring items; earnings persistence</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#607D8B">
+      <div class="week-num" style="background:#607D8B">7</div>
+      <div class="week-info">
+        <h3>Pre-Midterm Review: Synthesis and Article Discussion</h3>
+        <div class="details">
+          <span>📚 Review bahan</span>
+          
+          
+          <span>📄 2 article(s)</span>
+          <span>🏢 Various</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Synthesis of Weeks 1-6; earnings management detection; cross-industry ratio analysis; exam preparation</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="midterm-bar">📝 Ujian Tengah Semester (Midterm Exam)</div>
+    
+    <div class="week-card" style="border-left-color:#2196F3">
+      <div class="week-num" style="background:#2196F3">8</div>
+      <div class="week-info">
+        <h3>Cash Flow Analysis</h3>
+        <div class="details">
+          <span>📚 Analisis aliran kas</span>
+          <span>📖 Sub. Ch. 7</span>
+          
+          
+          <span>🏢 ICBP</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Statement of cash flows; direct vs indirect method; free cash flow; cash flow quality analysis</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#FF9800">
+      <div class="week-num" style="background:#FF9800">9</div>
+      <div class="week-info">
+        <h3>Profitability Analysis and ROIC</h3>
+        <div class="details">
+          <span>📚 Analisis profitabilitas dan return on invested capital</span>
+          <span>📖 Sub. Ch. 8</span>
+          <span>📗 Palepu Ch. 5, 6</span>
+          
+          <span>🏢 BBRI</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 DuPont decomposition; ROE; ROIC; profit margins; asset turnover; financial leverage analysis</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#FF9800">
+      <div class="week-num" style="background:#FF9800">10</div>
+      <div class="week-info">
+        <h3>Prospective Analysis and Forecasting</h3>
+        <div class="details">
+          <span>📚 Analisis prospektif</span>
+          <span>📖 Sub. Ch. 9</span>
+          <span>📗 Palepu Ch. 7</span>
+          <span>📄 1 article(s)</span>
+          <span>🏢 GOTO</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Earnings forecasting; pro forma analysis; scenario modeling; forecasting cash flows and growth</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#2196F3">
+      <div class="week-num" style="background:#2196F3">11</div>
+      <div class="week-info">
+        <h3>Credit Analysis</h3>
+        <div class="details">
+          <span>📚 Analisis kredit</span>
+          <span>📖 Sub. Ch. 10</span>
+          
+          
+          <span>🏢 BUMI</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Liquidity analysis; solvency ratios; credit scoring; bankruptcy prediction; bond ratings</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#9C27B0">
+      <div class="week-num" style="background:#9C27B0">12</div>
+      <div class="week-info">
+        <h3>Equity Analysis and Valuation</h3>
+        <div class="details">
+          <span>📚 Analisis ekuitas dan penilaian</span>
+          <span>📖 Sub. Ch. 11</span>
+          <span>📗 Palepu Ch. 8, 9</span>
+          <span>📄 1 article(s)</span>
+          <span>🏢 BBCA</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Residual income valuation; DDM; DCF; P&#x2F;E and P&#x2F;B multiples; equity risk premium; intrinsic value</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#9C27B0">
+      <div class="week-num" style="background:#9C27B0">13</div>
+      <div class="week-info">
+        <h3>Comprehensive Case Study</h3>
+        <div class="details">
+          <span>📚 Comprehensive case: Applying financial statement analysis</span>
+          
+          <span>📗 Palepu Ch. 10</span>
+          
+          <span>🏢 HMSP</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Integrating all FSA techniques into a comprehensive company analysis; case methodology</span></div>
+      </div>
+    </div>
+    
+    
+    <div class="week-card" style="border-left-color:#607D8B">
+      <div class="week-num" style="background:#607D8B">14</div>
+      <div class="week-info">
+        <h3>Pre-Final Review: Bankruptcy Prediction and Synthesis</h3>
+        <div class="details">
+          <span>📚 Review bahan</span>
+          
+          
+          <span>📄 2 article(s)</span>
+          <span>🏢 Various</span>
+        </div>
+        <div class="details" style="margin-top:2px"><span>🎯 Bankruptcy prediction models (Altman, Ohlson, Deakin); synthesis of full course; final exam preparation</span></div>
+      </div>
+    </div>
+    
+    <div class="final-bar">📝 Ujian Akhir Semester (Final Exam)</div>
+  </div>
+</div>
+
+<!-- VIEW 2: Chapter Map -->
+<div id="chapters" class="view">
+  <h2 style="color:var(--navy);margin-bottom:12px">Chapter-to-Week Mapping</h2>
+  <div class="ch-grid">
+    <div class="ch-header">Week</div>
+    <div class="ch-header">Subramanyam</div>
+    <div class="ch-header">Palepu-Healy-Peek</div>
+    
+    <div class="ch-cell ch-week">1</div>
+    <div class="ch-cell">Ch. 1</div>
+    <div class="ch-cell">Ch. 1</div>
+    
+    <div class="ch-cell ch-week">2</div>
+    <div class="ch-cell">Ch. 1, 2</div>
+    <div class="ch-cell">Ch. 1, 2</div>
+    
+    <div class="ch-cell ch-week">3</div>
+    <div class="ch-cell">Ch. 3</div>
+    <div class="ch-cell">—</div>
+    
+    <div class="ch-cell ch-week">4</div>
+    <div class="ch-cell">Ch. 4</div>
+    <div class="ch-cell">—</div>
+    
+    <div class="ch-cell ch-week">5</div>
+    <div class="ch-cell">Ch. 5</div>
+    <div class="ch-cell">—</div>
+    
+    <div class="ch-cell ch-week">6</div>
+    <div class="ch-cell">Ch. 6</div>
+    <div class="ch-cell">Ch. 4</div>
+    
+    <div class="ch-cell ch-week">7</div>
+    <div class="ch-cell">—</div>
+    <div class="ch-cell">—</div>
+    
+    <div class="ch-cell ch-week">8</div>
+    <div class="ch-cell">Ch. 7</div>
+    <div class="ch-cell">—</div>
+    
+    <div class="ch-cell ch-week">9</div>
+    <div class="ch-cell">Ch. 8</div>
+    <div class="ch-cell">Ch. 5, 6</div>
+    
+    <div class="ch-cell ch-week">10</div>
+    <div class="ch-cell">Ch. 9</div>
+    <div class="ch-cell">Ch. 7</div>
+    
+    <div class="ch-cell ch-week">11</div>
+    <div class="ch-cell">Ch. 10</div>
+    <div class="ch-cell">—</div>
+    
+    <div class="ch-cell ch-week">12</div>
+    <div class="ch-cell">Ch. 11</div>
+    <div class="ch-cell">Ch. 8, 9</div>
+    
+    <div class="ch-cell ch-week">13</div>
+    <div class="ch-cell">—</div>
+    <div class="ch-cell">Ch. 10</div>
+    
+    <div class="ch-cell ch-week">14</div>
+    <div class="ch-cell">—</div>
+    <div class="ch-cell">—</div>
+    
+  </div>
+</div>
+
+<!-- VIEW 3: Article Network -->
+<div id="articles" class="view">
+  <h2 style="color:var(--navy);margin-bottom:12px">Article Assignments</h2>
+  
+  
+  
+  
+  
+  
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week 3: Financing Activities Analysis</h3>
+  
+  <div class="article-card">
+    <h4>Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy </h4>
+    <div class="meta">Altman, E.I. (1968)</div>
+    <div class="connection">
+      🔗 Connected to: Financing Activities Analysis
+       · Subramanyam Ch. 3
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week 5: Intercorporate Investments Analysis</h3>
+  
+  <div class="article-card">
+    <h4>Sector-wise Analysis of Working Capital Management and Firm Performance in Manufacturing Sector of Pakistan <span class="degraded-badge">⚠ Limited Access</span></h4>
+    <div class="meta">Raheman, A.; Qayyum, A.; Afza, T. (2010)</div>
+    <div class="connection">
+      🔗 Connected to: Intercorporate Investments Analysis
+       · Subramanyam Ch. 5
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week 7: Pre-Midterm Review: Synthesis and Article Discussion</h3>
+  
+  <div class="article-card">
+    <h4>Earnings Management During Import Relief Investigations </h4>
+    <div class="meta">Jones, J.J. (1991)</div>
+    <div class="connection">
+      🔗 Connected to: Pre-Midterm Review: Synthesis and Article Discussion
+      
+    </div>
+  </div>
+  
+  <div class="article-card">
+    <h4>The Existence of Inter-industry Convergence in Financial Ratios: Evidence from Turkey </h4>
+    <div class="meta">Acaravci, S.K. (2007)</div>
+    <div class="connection">
+      🔗 Connected to: Pre-Midterm Review: Synthesis and Article Discussion
+      
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week 10: Prospective Analysis and Forecasting</h3>
+  
+  <div class="article-card">
+    <h4>Cash Flow Ratios as Indicators of Corporate Failure <span class="degraded-badge">⚠ Limited Access</span></h4>
+    <div class="meta">Murty, A.V.N.; Misra, D.P. (2004)</div>
+    <div class="connection">
+      🔗 Connected to: Prospective Analysis and Forecasting
+       · Subramanyam Ch. 9
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week 12: Equity Analysis and Valuation</h3>
+  
+  <div class="article-card">
+    <h4>The Effect of Financial Ratios on Returns from Initial Public Offerings: An Application of Principal Component Analysis <span class="degraded-badge">⚠ Limited Access</span></h4>
+    <div class="meta">Cheng, Min-Tsung (2006)</div>
+    <div class="connection">
+      🔗 Connected to: Equity Analysis and Valuation
+       · Subramanyam Ch. 11
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+  <h3 style="color:var(--navy);margin:12px 0 4px">Week 14: Pre-Final Review: Bankruptcy Prediction and Synthesis</h3>
+  
+  <div class="article-card">
+    <h4>A Discriminant Analysis of Predictors of Business Failure </h4>
+    <div class="meta">Deakin, E.B. (1972)</div>
+    <div class="connection">
+      🔗 Connected to: Pre-Final Review: Bankruptcy Prediction and Synthesis
+      
+    </div>
+  </div>
+  
+  <div class="article-card">
+    <h4>Financial Ratios and the Probabilistic Prediction of Bankruptcy </h4>
+    <div class="meta">Ohlson, J.A. (1980)</div>
+    <div class="connection">
+      🔗 Connected to: Pre-Final Review: Bankruptcy Prediction and Synthesis
+      
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+<!-- VIEW 4: Indonesian Examples -->
+<div id="indonesian" class="view">
+  <h2 style="color:var(--navy);margin-bottom:12px">Indonesian Company Examples</h2>
+  
+  <div class="id-card">
+    <h4>Week 1: Syllabus and Introduction to FSA</h4>
+    <div><span class="ticker">UNVR</span> — Unilever Indonesia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 2: Financial Reporting and Analysis Environment</h4>
+    <div><span class="ticker">UNVR</span> — Unilever Indonesia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 3: Financing Activities Analysis</h4>
+    <div><span class="ticker">BBCA</span> — Bank Central Asia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 4: Investing Activities Analysis</h4>
+    <div><span class="ticker">ASII</span> — Astra International Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 5: Intercorporate Investments Analysis</h4>
+    <div><span class="ticker">ASII</span> — Astra International Tbk + United Tractors (UNTR)</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 6: Operating Activities Analysis</h4>
+    <div><span class="ticker">TLKM</span> — Telkom Indonesia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 7: Pre-Midterm Review: Synthesis and Article Discussion</h4>
+    <div><span class="ticker">Various</span> — Various IDX Cases</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 8: Cash Flow Analysis</h4>
+    <div><span class="ticker">ICBP</span> — Indofood CBP Sukses Makmur Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 9: Profitability Analysis and ROIC</h4>
+    <div><span class="ticker">BBRI</span> — Bank Rakyat Indonesia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 10: Prospective Analysis and Forecasting</h4>
+    <div><span class="ticker">GOTO</span> — GoTo Gojek Tokopedia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 11: Credit Analysis</h4>
+    <div><span class="ticker">BUMI</span> — Bumi Resources Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 12: Equity Analysis and Valuation</h4>
+    <div><span class="ticker">BBCA</span> — Bank Central Asia Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 13: Comprehensive Case Study</h4>
+    <div><span class="ticker">HMSP</span> — HM Sampoerna Tbk</div>
+  </div>
+  
+  <div class="id-card">
+    <h4>Week 14: Pre-Final Review: Bankruptcy Prediction and Synthesis</h4>
+    <div><span class="ticker">Various</span> — IDX Delisted Companies</div>
+  </div>
+  
+</div>
+
+<script>
+function showView(id, e) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if (e && e.target) e.target.classList.add('active');
+}
+document.querySelectorAll('.collapsible').forEach(el => {
+  el.addEventListener('click', () => {
+    el.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('show');
+  });
+});
+</script>
+</body>
+</html>
