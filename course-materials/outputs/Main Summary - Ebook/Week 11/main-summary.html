@@ -1,0 +1,518 @@
+<!-- Week 11 Main Summary — Credit Analysis -->
+<!-- Subramanyam Chapter 10 | No article this week | BUMI (Indonesian Example) -->
+<!-- Analisis Laporan Keuangan dan Valuasi Sekuritas — S2 -->
+
+<div id="s1" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Pendahuluan — Mengapa Analisis Kredit Penting / Why Credit Analysis Matters</h2>
+
+<p>Chapter 10 Subramanyam membahas <em>credit analysis</em> — proses evaluasi kemampuan dan kemauan peminjam (<em>borrower</em>) untuk memenuhi kewajiban keuangannya secara penuh dan tepat waktu. Jika chapter-chapter sebelumnya (Ch.7–9) berfokus pada analisis dari perspektif investor ekuitas — mencari <em>upside potential</em> — Chapter 10 membalikkan perspektif ke sisi <strong>kreditur</strong>: yang menjadi perhatian utama bukan seberapa besar keuntungan potensial, melainkan <strong>seberapa besar risiko kerugian</strong>. Kreditur memiliki <em>asymmetric payoff structure</em>: potensi keuntungan terbatas (bunga dan pokok yang dijanjikan), tetapi potensi kerugian bisa mencapai seluruh nilai pinjaman jika peminjam gagal bayar (<em>default</em>).</p>
+
+<div class="ibox nb"><div class="ibt">📌 Posisi Chapter 10 dalam Kerangka Kursus</div>
+<p>Chapter 10 menempati posisi strategis sebagai <em>penghubung antara analisis prospektif dan valuasi ekuitas</em>. Setelah membangun proyeksi keuangan (Ch.9, Minggu 10), analisis kredit menilai <strong>risiko <em>downside</em></strong> dari proyeksi tersebut — apakah perusahaan cukup kuat untuk memenuhi kewajiban utangnya dalam berbagai skenario? Hasil analisis kredit kemudian mempengaruhi <em>cost of debt</em> dalam WACC, yang langsung berdampak pada valuasi ekuitas (Ch.11–12, Minggu 12–13).</p>
+<p><strong>Ch.7 (Cash Flow) → Ch.8 (Profitability) → Ch.9 (Prospective Analysis) → <u>Ch.10 (Credit Analysis — MINGGU INI)</u> → Ch.11–12 (Equity Valuation)</strong></p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<table>
+<thead><tr><th style="width:5%">No</th><th style="width:50%">Tujuan Pembelajaran</th><th style="width:45%">Relevansi</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Memahami perspektif kreditur dan <em>asymmetric payoff</em> dalam keputusan kredit</td><td>Fondasi untuk memahami mengapa analisis kredit berbeda dari analisis ekuitas</td></tr>
+<tr><td>2</td><td>Menguasai analisis likuiditas: <em>current ratio</em>, <em>quick ratio</em>, <em>cash ratio</em>, <em>cash conversion cycle</em></td><td>Menilai kemampuan memenuhi kewajiban jangka pendek</td></tr>
+<tr><td>3</td><td>Menganalisis struktur modal dan solvabilitas: <em>debt ratios</em>, <em>coverage ratios</em></td><td>Menilai keberlanjutan beban utang jangka panjang</td></tr>
+<tr><td>4</td><td>Menerapkan model prediksi kebangkrutan: Altman Z-score dan Ohlson O-score</td><td>Alat kuantitatif untuk mengidentifikasi risiko <em>financial distress</em></td></tr>
+<tr><td>5</td><td>Memahami determinan peringkat obligasi dan proses pemeringkatan</td><td>Menghubungkan analisis kuantitatif dengan penilaian pasar kredit</td></tr>
+<tr><td>6</td><td>Menerapkan kerangka keputusan kredit (5C of Credit) secara komprehensif</td><td>Mengintegrasikan faktor kuantitatif dan kualitatif dalam keputusan nyata</td></tr>
+<tr><td>7</td><td>Menganalisis kasus <em>financial distress</em> nyata (BUMI) menggunakan kerangka Chapter 10</td><td>Menerapkan teori pada kasus aktual di pasar Indonesia</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="def"><div class="den">Analisis Kredit / Credit Analysis</div><div class="did">Analisis kredit (<em>credit analysis</em>) adalah proses evaluasi kemampuan peminjam untuk memenuhi kewajiban keuangannya — baik pembayaran bunga maupun pelunasan pokok utang — secara penuh dan tepat waktu. Analisis ini dilakukan oleh berbagai pihak: bank (untuk keputusan pemberian pinjaman), investor obligasi (untuk keputusan investasi), lembaga pemeringkat (untuk penentuan peringkat kredit), dan manajemen perusahaan sendiri (untuk mengelola risiko keuangan). Menurut Subramanyam, analisis kredit mencakup tiga dimensi utama: (1) <strong>likuiditas</strong> — kemampuan memenuhi kewajiban jangka pendek; (2) <strong>solvabilitas</strong> — kemampuan memenuhi kewajiban jangka panjang; dan (3) <strong>prediksi kebangkrutan</strong> — probabilitas gagal bayar di masa depan.</div></div>
+
+<div class="def"><div class="den">Perspektif Kreditur vs Investor Ekuitas / Creditor vs Equity Investor Perspective</div><div class="did">Kreditur dan investor ekuitas memiliki perspektif fundamental yang berbeda terhadap perusahaan yang sama. <strong>Kreditur</strong> memiliki klaim prioritas atas aset dan arus kas perusahaan (<em>senior claim</em>), menerima imbalan tetap (bunga), dan fokus utamanya adalah <em>downside protection</em> — memastikan perusahaan mampu membayar kembali utangnya. <strong>Investor ekuitas</strong> memiliki klaim residual (<em>residual claim</em>), menerima imbalan variabel (dividen dan capital gain), dan fokusnya adalah <em>upside potential</em> — potensi pertumbuhan nilai. Implikasinya: kreditur lebih mementingkan <em>worst-case scenario</em> (apakah perusahaan bisa survive dalam kondisi buruk?), sementara investor ekuitas lebih mementingkan <em>expected case</em> (seberapa besar potensi keuntungan?). Ini menjelaskan mengapa analisis kredit menekankan rasio cakupan, likuiditas, dan solvabilitas — bukan rasio pertumbuhan atau valuasi.</div></div>
+
+<table class="nb">
+<thead><tr><th style="width:25%">Aspek</th><th style="width:35%">Perspektif Kreditur</th><th style="width:40%">Perspektif Investor Ekuitas</th></tr></thead>
+<tbody>
+<tr><td><strong>Jenis Klaim</strong></td><td><em>Senior claim</em> — prioritas atas aset dan arus kas</td><td><em>Residual claim</em> — setelah kreditur dipenuhi</td></tr>
+<tr><td><strong>Imbalan</strong></td><td>Tetap: bunga + pokok yang dijanjikan</td><td>Variabel: dividen + capital gain/loss</td></tr>
+<tr><td><strong>Payoff Structure</strong></td><td>Asimetris: upside terbatas, downside signifikan</td><td>Simetris/convex: unlimited upside, downside terbatas (limited liability)</td></tr>
+<tr><td><strong>Fokus Analisis</strong></td><td>Kemampuan membayar: likuiditas, solvabilitas, coverage</td><td>Potensi pertumbuhan: profitabilitas, growth, valuasi</td></tr>
+<tr><td><strong>Skenario Perhatian</strong></td><td>Worst-case: apakah utang terlunasi bahkan dalam kondisi buruk?</td><td>Expected case: berapa nilai wajar saham?</td></tr>
+<tr><td><strong>Horizon Waktu</strong></td><td>Sampai jatuh tempo utang (tenor pinjaman)</td><td>Tidak terbatas (going concern)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Analisis Likuiditas / Liquidity Analysis</h2>
+
+<p>Likuiditas (<em>liquidity</em>) mengacu pada kemampuan perusahaan untuk memenuhi kewajiban jangka pendeknya saat jatuh tempo, menggunakan aset yang dapat dikonversi menjadi kas dengan cepat tanpa kerugian nilai yang signifikan. Likuiditas adalah garis pertahanan pertama terhadap <em>financial distress</em> — bahkan perusahaan yang secara fundamental solven (aset &gt; kewajiban) dapat gagal jika tidak memiliki kas cukup untuk membayar kewajiban yang segera jatuh tempo (<em>liquidity crisis</em>). Subramanyam mengidentifikasi beberapa ukuran likuiditas utama:</p>
+
+<h3>2.1 Current Ratio (Rasio Lancar)</h3>
+
+<div class="def"><div class="den">Current Ratio / Rasio Lancar</div><div class="did"><em>Current ratio</em> mengukur kemampuan perusahaan memenuhi kewajiban jangka pendek menggunakan seluruh aset lancarnya. Ini adalah ukuran likuiditas yang paling luas dan paling umum digunakan. Aset lancar meliputi kas, surat berharga, piutang usaha, persediaan, dan aset lancar lainnya. Kewajiban lancar meliputi utang usaha, utang jangka pendek, bagian lancar dari utang jangka panjang, dan kewajiban akrual lainnya.</div></div>
+
+<div class="fbox">
+<strong>Current Ratio (Rasio Lancar)</strong><br>
+Current Ratio = Aset Lancar / Kewajiban Lancar<br>
+<em>Current Ratio = Current Assets / Current Liabilities</em><br><br>
+<strong>Interpretasi:</strong><br>
+• CR &gt; 2,0 → Likuiditas kuat (umumnya — bervariasi antar industri)<br>
+• CR 1,0 – 2,0 → Likuiditas moderat, perlu analisis lebih lanjut<br>
+• CR &lt; 1,0 → Potensi masalah likuiditas — kewajiban jangka pendek melebihi aset lancar<br><br>
+<strong>Keterbatasan:</strong> Tidak membedakan kualitas aset lancar (kas vs persediaan lambat bergerak); mudah dimanipulasi melalui <em>window dressing</em> di akhir periode; sangat bervariasi antar industri (ritel vs manufaktur vs jasa)
+</div>
+
+<div class="ibox nb"><div class="ibt">⚠️ Keterbatasan Current Ratio / Limitations of Current Ratio</div>
+<p>Meskipun populer, <em>current ratio</em> memiliki keterbatasan signifikan: (1) <strong>Kualitas aset lancar tidak seragam</strong> — persediaan mungkin obsolete atau lambat bergerak, piutang mungkin sulit tertagih; (2) <strong>Window dressing</strong> — manajemen dapat memanipulasi current ratio di akhir tahun dengan mempercepat penagihan piutang atau menunda pembelian; (3) <strong>Variasi industri</strong> — supermarket beroperasi dengan CR rendah karena penjualan tunai dan perputaran cepat, sementara manufaktur membutuhkan CR tinggi karena siklus konversi kas yang panjang; (4) <strong>Tidak mengukur <em>timing</em></strong> — CR tidak menunjukkan kapan aset lancar akan menjadi kas relatif terhadap kapan kewajiban jatuh tempo.</p>
+</div>
+
+<h3>2.2 Quick Ratio (Rasio Cepat / Acid-Test Ratio)</h3>
+
+<div class="def"><div class="den">Quick Ratio / Rasio Cepat (Acid-Test Ratio)</div><div class="did"><em>Quick ratio</em> adalah versi yang lebih konservatif dari <em>current ratio</em> yang hanya memasukkan aset lancar yang paling likuid — yang dapat dikonversi menjadi kas dengan cepat dan tanpa kerugian nilai signifikan. Rasio ini mengeluarkan persediaan (yang mungkin memerlukan waktu untuk dijual dan konversinya tidak pasti) dan <em>prepaid expenses</em> (yang tidak dapat dikonversi menjadi kas). Quick ratio memberikan gambaran yang lebih ketat tentang kemampuan perusahaan memenuhi kewajiban segera.</div></div>
+
+<div class="fbox">
+<strong>Quick Ratio (Rasio Cepat / Acid-Test Ratio)</strong><br>
+Quick Ratio = (Kas + Surat Berharga Jangka Pendek + Piutang Usaha) / Kewajiban Lancar<br>
+<em>Quick Ratio = (Cash + Marketable Securities + Accounts Receivable) / Current Liabilities</em><br><br>
+<strong>Interpretasi:</strong><br>
+• QR &gt; 1,0 → Likuiditas jangka pendek kuat tanpa mengandalkan penjualan persediaan<br>
+• QR 0,5 – 1,0 → Moderat; bergantung pada perputaran persediaan<br>
+• QR &lt; 0,5 → Sangat bergantung pada persediaan untuk likuiditas — risiko tinggi
+</div>
+
+<h3>2.3 Cash Ratio (Rasio Kas)</h3>
+
+<div class="def"><div class="den">Cash Ratio / Rasio Kas</div><div class="did"><em>Cash ratio</em> adalah ukuran likuiditas paling konservatif — hanya memasukkan kas dan setara kas serta surat berharga jangka pendek. Rasio ini menunjukkan kemampuan perusahaan membayar kewajiban jangka pendek <strong>hanya dengan kas yang tersedia saat ini</strong>, tanpa mengandalkan penagihan piutang atau penjualan persediaan. Berguna sebagai ukuran likuiditas "terburuk" (<em>worst-case liquidity</em>).</div></div>
+
+<div class="fbox">
+<strong>Cash Ratio (Rasio Kas)</strong><br>
+Cash Ratio = (Kas + Surat Berharga Jangka Pendek) / Kewajiban Lancar<br>
+<em>Cash Ratio = (Cash + Cash Equivalents + Marketable Securities) / Current Liabilities</em><br><br>
+<strong>Interpretasi:</strong><br>
+• CR Kas &gt; 0,5 → Posisi kas sangat kuat<br>
+• CR Kas 0,2 – 0,5 → Memadai untuk kebanyakan perusahaan<br>
+• CR Kas &lt; 0,2 → Sangat bergantung pada arus kas operasi dan penagihan piutang
+</div>
+
+<h3>2.4 Cash Conversion Cycle (Siklus Konversi Kas)</h3>
+
+<div class="def"><div class="den">Cash Conversion Cycle (CCC) / Siklus Konversi Kas</div><div class="did"><em>Cash conversion cycle</em> mengukur waktu (dalam hari) yang dibutuhkan perusahaan untuk mengkonversi investasi dalam persediaan dan sumber daya lainnya menjadi arus kas dari penjualan. CCC terdiri dari tiga komponen: <em>Days Sales Outstanding</em> (DSO) — rata-rata waktu penagihan piutang; <em>Days Inventory Outstanding</em> (DIO) — rata-rata waktu persediaan disimpan; dan <em>Days Payable Outstanding</em> (DPO) — rata-rata waktu pembayaran ke pemasok. CCC yang lebih pendek berarti perusahaan lebih efisien dalam mengelola modal kerjanya dan memiliki likuiditas operasional yang lebih baik.</div></div>
+
+<div class="fbox">
+<strong>Cash Conversion Cycle (Siklus Konversi Kas)</strong><br>
+CCC = DSO + DIO − DPO<br><br>
+Di mana:<br>
+• DSO (<em>Days Sales Outstanding</em>) = (Piutang Usaha / Pendapatan) × 365<br>
+• DIO (<em>Days Inventory Outstanding</em>) = (Persediaan / HPP) × 365<br>
+• DPO (<em>Days Payable Outstanding</em>) = (Utang Usaha / HPP) × 365<br><br>
+<strong>Interpretasi:</strong><br>
+• CCC positif → Perusahaan harus membiayai modal kerja selama [CCC] hari<br>
+• CCC negatif → Perusahaan dibiayai oleh pemasok (seperti supermarket: menerima kas dari pelanggan sebelum membayar pemasok)<br>
+• CCC yang memanjang → Sinyal peringatan: likuiditas operasional memburuk
+</div>
+
+<h3>2.5 Analisis Modal Kerja / Working Capital Analysis</h3>
+
+<div class="def"><div class="den">Modal Kerja Bersih / Net Working Capital</div><div class="did">Modal kerja bersih (<em>net working capital</em>) = aset lancar − kewajiban lancar. Ini adalah ukuran absolut dari "bantalan" likuiditas perusahaan. Tren modal kerja dari waktu ke waktu memberikan informasi penting: modal kerja yang menurun secara konsisten mungkin menandakan tekanan likuiditas yang meningkat, terutama jika pendapatan juga menurun. Namun, modal kerja yang rendah tidak selalu buruk — perusahaan dengan manajemen modal kerja yang efisien (seperti ritel) dapat beroperasi dengan modal kerja minimal. Kreditur umumnya menginginkan modal kerja positif yang stabil atau meningkat sebagai <em>margin of safety</em>.</div></div>
+
+<table>
+<thead><tr><th style="width:25%">Ukuran Likuiditas</th><th style="width:25%">Apa yang Diukur</th><th style="width:25%">Kelebihan</th><th style="width:25%">Kelemahan</th></tr></thead>
+<tbody>
+<tr><td><strong>Current Ratio</strong></td><td>Cakupan kewajiban lancar oleh seluruh aset lancar</td><td>Mudah dihitung; tersedia secara universal</td><td>Tidak membedakan kualitas aset; mudah di-<em>window dress</em></td></tr>
+<tr><td><strong>Quick Ratio</strong></td><td>Cakupan oleh aset paling likuid (tanpa persediaan)</td><td>Lebih konservatif; relevan untuk industri dengan persediaan lambat</td><td>Mengabaikan piutang yang mungkin sulit tertagih</td></tr>
+<tr><td><strong>Cash Ratio</strong></td><td>Cakupan oleh kas dan setara kas saja</td><td>Paling konservatif; menunjukkan kemampuan bayar segera</td><td>Terlalu ketat; kebanyakan perusahaan tidak perlu likuiditas setinggi ini</td></tr>
+<tr><td><strong>Cash Conversion Cycle</strong></td><td>Efisiensi pengelolaan modal kerja operasional</td><td>Mengukur likuiditas "operasional" yang dinamis</td><td>Memerlukan data HPP yang mungkin tidak selalu tersedia</td></tr>
+<tr><td><strong>Net Working Capital</strong></td><td>Bantalan likuiditas absolut</td><td>Menunjukkan <em>margin of safety</em> dalam angka rupiah</td><td>Tidak dinormalisasi; sulit dibandingkan antar perusahaan berbeda ukuran</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Struktur Modal dan Analisis Solvabilitas / Capital Structure and Solvency Analysis</h2>
+
+<p>Sementara analisis likuiditas berfokus pada kemampuan jangka pendek, analisis solvabilitas (<em>solvency analysis</em>) menilai kemampuan perusahaan untuk memenuhi <strong>kewajiban jangka panjang</strong> dan bertahan sebagai <em>going concern</em> dalam jangka panjang. Solvabilitas ditentukan oleh struktur modal perusahaan — komposisi antara utang (<em>debt</em>) dan ekuitas (<em>equity</em>) — serta kemampuannya menghasilkan arus kas yang cukup untuk melayani utang (<em>debt service</em>).</p>
+
+<h3>3.1 Rasio Utang / Debt Ratios</h3>
+
+<div class="def"><div class="den">Debt-to-Equity Ratio / Rasio Utang terhadap Ekuitas</div><div class="did"><em>Debt-to-equity ratio</em> (D/E) adalah ukuran leverage keuangan yang paling fundamental — menunjukkan proporsi pendanaan dari utang relatif terhadap ekuitas pemilik. D/E yang tinggi berarti perusahaan lebih banyak didanai oleh utang, yang meningkatkan risiko keuangan karena kewajiban pembayaran bunga dan pokok yang tetap. Dalam konteks analisis kredit, D/E yang sangat tinggi (terutama &gt;2,0) menandakan risiko signifikan bagi kreditur. Catatan penting: D/E bisa menjadi <strong>negatif</strong> jika ekuitas negatif — seperti yang terjadi pada BUMI selama periode krisis — yang menandakan <em>technical insolvency</em> (kewajiban melebihi aset).</div></div>
+
+<div class="fbox">
+<strong>Debt-to-Equity Ratio (Rasio Utang terhadap Ekuitas)</strong><br>
+D/E = Total Utang / Total Ekuitas<br>
+<em>Debt-to-Equity = Total Debt / Total Equity</em><br><br>
+<strong>Variasi:</strong><br>
+• <em>Total Debt</em> = Utang berbunga (interest-bearing debt) — lebih relevan untuk analisis kredit<br>
+• Beberapa analis menggunakan seluruh kewajiban (<em>total liabilities</em>) sebagai numerator<br><br>
+<strong>Interpretasi:</strong><br>
+• D/E &lt; 1,0 → Lebih banyak didanai ekuitas; risiko leverage moderat<br>
+• D/E 1,0 – 2,0 → Leverage moderat hingga tinggi; perlu evaluasi kemampuan membayar<br>
+• D/E &gt; 2,0 → Leverage tinggi; kreditur menanggung risiko signifikan<br>
+• D/E negatif → Ekuitas negatif; <em>technical insolvency</em> — kewajiban &gt; aset
+</div>
+
+<div class="def"><div class="den">Debt-to-Capital Ratio / Rasio Utang terhadap Modal</div><div class="did"><em>Debt-to-capital ratio</em> (D/C) mengukur proporsi utang dalam total struktur modal perusahaan (utang + ekuitas). Berbeda dari D/E, rasio ini selalu berada dalam rentang 0–1 (atau 0–100%) untuk perusahaan dengan ekuitas positif, sehingga lebih mudah diinterpretasikan dan dibandingkan. D/C = Utang / (Utang + Ekuitas). D/C di atas 50% menandakan perusahaan lebih banyak didanai utang daripada ekuitas.</div></div>
+
+<div class="def"><div class="den">Debt-to-Assets Ratio / Rasio Utang terhadap Aset</div><div class="did"><em>Debt-to-assets ratio</em> mengukur proporsi aset perusahaan yang didanai oleh utang: Total Kewajiban / Total Aset. Rasio ini menunjukkan seberapa besar "klaim kreditur" atas aset perusahaan. Rasio di atas 50% berarti kreditur membiayai lebih dari separuh aset — risiko bagi kreditur meningkat karena <em>margin of safety</em> dari ekuitas semakin tipis. Jika rasio mendekati atau melebihi 100%, perusahaan mendekati atau berada dalam kondisi <em>technical insolvency</em>.</div></div>
+
+<h3>3.2 Rasio Cakupan / Coverage Ratios</h3>
+
+<p>Rasio cakupan (<em>coverage ratios</em>) mengukur kemampuan perusahaan menghasilkan laba atau arus kas yang cukup untuk "menutupi" (<em>cover</em>) kewajiban pembayaran utangnya. Ini adalah ukuran solvabilitas yang lebih dinamis dibandingkan rasio utang statis, karena menghubungkan beban utang dengan kemampuan menghasilkan pendapatan.</p>
+
+<div class="def"><div class="den">Times Interest Earned (TIE) / Rasio Cakupan Bunga</div><div class="did"><em>Times interest earned</em> (TIE), juga dikenal sebagai <em>interest coverage ratio</em>, mengukur berapa kali laba sebelum bunga dan pajak (EBIT) dapat menutupi beban bunga. TIE yang tinggi menandakan <em>margin of safety</em> yang besar — perusahaan menghasilkan laba yang jauh melebihi kewajiban bunganya. TIE yang rendah (terutama &lt;1,5) menandakan perusahaan berada di ambang ketidakmampuan membayar bunga dari laba operasinya, dan harus mengandalkan sumber kas lain (aset, pinjaman tambahan) untuk memenuhi kewajiban bunga.</div></div>
+
+<div class="fbox">
+<strong>Times Interest Earned (TIE) / Rasio Cakupan Bunga</strong><br>
+TIE = EBIT / Beban Bunga<br>
+<em>TIE = Earnings Before Interest and Taxes / Interest Expense</em><br><br>
+<strong>Interpretasi:</strong><br>
+• TIE &gt; 5,0 → Cakupan bunga sangat kuat; risiko gagal bayar bunga rendah<br>
+• TIE 3,0 – 5,0 → Cakupan memadai; bantalan wajar<br>
+• TIE 1,5 – 3,0 → Cakupan marginal; peringatan dini<br>
+• TIE &lt; 1,5 → Cakupan lemah; risiko gagal bayar bunga tinggi<br>
+• TIE &lt; 1,0 → EBIT tidak cukup untuk membayar bunga; perusahaan mengkonsumsi modal<br><br>
+<strong>Keterbatasan:</strong> Menggunakan EBIT (accrual-based), bukan arus kas aktual; tidak memperhitungkan pelunasan pokok utang; mengabaikan variabilitas laba dari tahun ke tahun
+</div>
+
+<div class="def"><div class="den">Debt Service Coverage Ratio (DSCR)</div><div class="did"><em>Debt service coverage ratio</em> adalah ukuran yang lebih komprehensif dari TIE karena memperhitungkan <strong>seluruh</strong> kewajiban utang — bukan hanya bunga, tetapi juga pelunasan pokok. DSCR menggunakan arus kas (EBIT + depresiasi sebagai proksi arus kas) dibandingkan dengan total <em>debt service</em> (bunga + pelunasan pokok). Pelunasan pokok disesuaikan ke basis sebelum pajak karena, berbeda dari bunga yang <em>tax-deductible</em>, pelunasan pokok harus dibayar dari laba setelah pajak.</div></div>
+
+<div class="fbox">
+<strong>Debt Service Coverage Ratio (DSCR)</strong><br>
+DSCR = (EBIT + Depresiasi &amp; Amortisasi) / (Beban Bunga + Pelunasan Pokok Utang / (1 − Tarif Pajak))<br>
+<em>DSCR = (EBIT + D&amp;A) / (Interest + Principal Repayment / (1 − Tax Rate))</em><br><br>
+<strong>Versi sederhana (cash basis):</strong><br>
+DSCR = Arus Kas Operasi / Total Pembayaran Utang (Bunga + Pokok)<br><br>
+<strong>Interpretasi:</strong><br>
+• DSCR &gt; 2,0 → Mampu membayar seluruh kewajiban utang dengan nyaman<br>
+• DSCR 1,2 – 2,0 → Cakupan memadai tetapi tanpa banyak ruang<br>
+• DSCR &lt; 1,2 → Risiko gagal bayar tinggi; mungkin perlu refinancing atau injeksi modal<br>
+• DSCR &lt; 1,0 → Arus kas/laba tidak cukup untuk membayar kewajiban utang penuh
+</div>
+
+<div class="def"><div class="den">Fixed Charge Coverage Ratio</div><div class="did"><em>Fixed charge coverage ratio</em> memperluas cakupan TIE dengan memasukkan semua beban tetap (<em>fixed charges</em>) — termasuk pembayaran sewa operasi (<em>lease payments</em>), <em>preferred dividends</em>, dan kewajiban tetap lainnya. Formula: (EBIT + Beban Sewa) / (Beban Bunga + Beban Sewa + Pelunasan Pokok/(1−t)). Rasio ini memberikan gambaran paling menyeluruh tentang kemampuan perusahaan memenuhi seluruh komitmen keuangan tetapnya.</div></div>
+
+<h3>3.3 Earnings Coverage Analysis</h3>
+
+<div class="def"><div class="den">Earnings Coverage / Cakupan Laba</div><div class="did">Analisis <em>earnings coverage</em> mengevaluasi kemampuan laba perusahaan untuk mencakup berbagai tingkatan kewajiban keuangan — dari bunga saja (<em>interest coverage</em>) hingga seluruh beban tetap (<em>fixed charge coverage</em>). Subramanyam menekankan bahwa analisis cakupan harus mempertimbangkan: (1) <strong>Kualitas laba</strong> — laba yang berasal dari operasi inti lebih andal sebagai sumber pembayaran utang daripada laba dari item non-recurring; (2) <strong>Variabilitas laba</strong> — perusahaan dengan laba yang sangat fluktuatif (seperti perusahaan tambang yang bergantung pada harga komoditas) membutuhkan rasio cakupan yang lebih tinggi untuk memberikan bantalan yang sama; (3) <strong>Tren laba</strong> — rasio cakupan yang menurun dari tahun ke tahun adalah sinyal peringatan penting, bahkan jika level saat ini masih di atas ambang batas minimum.</div></div>
+
+<table>
+<thead><tr><th style="width:25%">Rasio Cakupan</th><th style="width:30%">Formula</th><th style="width:20%">Apa yang Dicakup</th><th style="width:25%">Kapan Digunakan</th></tr></thead>
+<tbody>
+<tr><td><strong>TIE</strong></td><td>EBIT / Bunga</td><td>Hanya beban bunga</td><td>Analisis cakupan dasar</td></tr>
+<tr><td><strong>Cash Interest Coverage</strong></td><td>CFO / Bunga yang Dibayar (kas)</td><td>Bunga (basis kas)</td><td>Menguji kemampuan bayar aktual</td></tr>
+<tr><td><strong>DSCR</strong></td><td>(EBIT + D&amp;A) / (Bunga + Pokok)</td><td>Bunga + pokok utang</td><td>Evaluasi kemampuan bayar total utang</td></tr>
+<tr><td><strong>Fixed Charge Coverage</strong></td><td>(EBIT + Sewa) / (Bunga + Sewa + Pokok)</td><td>Seluruh beban tetap</td><td>Evaluasi paling komprehensif</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Model Prediksi Kebangkrutan / Bankruptcy Prediction Models</h2>
+
+<p>Model prediksi kebangkrutan (<em>bankruptcy prediction models</em>) menggunakan kombinasi rasio keuangan untuk mengestimasi probabilitas perusahaan mengalami <em>financial distress</em> atau kebangkrutan. Model-model ini menerjemahkan sekumpulan indikator keuangan menjadi satu skor tunggal yang dapat dibandingkan dengan ambang batas (<em>cutoff points</em>). Dua model paling berpengaruh dalam literatur: <strong>Altman Z-score</strong> (1968) dan <strong>Ohlson O-score</strong> (1980).</p>
+
+<h3>4.1 Altman Z-Score</h3>
+
+<div class="def"><div class="den">Altman Z-Score (1968)</div><div class="did">Model Z-score dikembangkan oleh Edward Altman pada tahun 1968 menggunakan <em>multiple discriminant analysis</em> (MDA) — teknik statistik yang mengidentifikasi kombinasi linear dari variabel-variabel yang paling efektif membedakan antara dua kelompok (dalam hal ini: perusahaan yang bangkrut vs yang tidak). Altman menganalisis 66 perusahaan manufaktur (33 bangkrut, 33 tidak) dan mengidentifikasi lima rasio keuangan yang secara kolektif paling kuat memprediksi kebangkrutan. Model asli ini memiliki akurasi prediksi ~95% untuk satu tahun sebelum kebangkrutan dan ~72% untuk dua tahun sebelum. Z-score telah menjadi salah satu model prediksi kebangkrutan paling banyak digunakan di dunia.</div></div>
+
+<div class="fbox">
+<strong>Altman Z-Score — Model Asli (Perusahaan Manufaktur Publik)</strong><br><br>
+<strong>Z = 1,2X₁ + 1,4X₂ + 3,3X₃ + 0,6X₄ + 1,0X₅</strong><br><br>
+Di mana:<br>
+• <strong>X₁ = Working Capital / Total Assets</strong> — mengukur likuiditas relatif; perusahaan distress biasanya memiliki modal kerja bersih yang rendah atau negatif<br>
+• <strong>X₂ = Retained Earnings / Total Assets</strong> — mengukur leverage kumulatif dan "umur" perusahaan; perusahaan muda atau yang terus merugi memiliki retained earnings rendah/negatif<br>
+• <strong>X₃ = EBIT / Total Assets</strong> — mengukur produktivitas aset; ukuran profitabilitas sebelum pengaruh leverage dan pajak<br>
+• <strong>X₄ = Market Value of Equity / Book Value of Total Liabilities</strong> — mengukur solvabilitas pasar; seberapa jauh nilai pasar perusahaan bisa turun sebelum kewajiban melebihi aset<br>
+• <strong>X₅ = Sales / Total Assets</strong> — mengukur perputaran aset; efisiensi penggunaan aset untuk menghasilkan pendapatan<br><br>
+<strong>Zona Interpretasi:</strong><br>
+• <strong>Z &gt; 2,99</strong> → Zona Aman (<em>Safe Zone</em>) — risiko kebangkrutan rendah<br>
+• <strong>1,81 &lt; Z &lt; 2,99</strong> → Zona Abu-abu (<em>Grey Zone</em>) — perlu investigasi lebih lanjut<br>
+• <strong>Z &lt; 1,81</strong> → Zona Distress (<em>Distress Zone</em>) — risiko kebangkrutan tinggi
+</div>
+
+<div class="ibox nb"><div class="ibt">📐 Intuisi Ekonomi di Balik Kelima Variabel Z-Score</div>
+<table>
+<thead><tr><th style="width:10%">Variabel</th><th style="width:25%">Rasio</th><th style="width:10%">Bobot</th><th style="width:55%">Intuisi Ekonomi</th></tr></thead>
+<tbody>
+<tr><td><strong>X₁</strong></td><td>Working Capital / Total Assets</td><td>1,2</td><td>Perusahaan yang mendekati kebangkrutan mengalami erosi likuiditas — aset lancar berkurang lebih cepat dari kewajiban lancar. Modal kerja negatif adalah sinyal distress yang kuat.</td></tr>
+<tr><td><strong>X₂</strong></td><td>Retained Earnings / Total Assets</td><td>1,4</td><td>Laba ditahan kumulatif mencerminkan riwayat profitabilitas perusahaan. Perusahaan dengan <em>retained earnings</em> negatif (akumulasi rugi) memiliki "cadangan" yang sudah terkikis. Juga proksi usia — perusahaan muda secara alami memiliki X₂ rendah, dan memang lebih sering gagal.</td></tr>
+<tr><td><strong>X₃</strong></td><td>EBIT / Total Assets</td><td>3,3</td><td>Variabel dengan bobot tertinggi — menunjukkan pentingnya kemampuan menghasilkan laba dari aset. EBIT negatif berarti perusahaan tidak menghasilkan cukup laba operasi untuk menutupi beban operasinya, apalagi beban bunga.</td></tr>
+<tr><td><strong>X₄</strong></td><td>Market Value Equity / Book Value Liabilities</td><td>0,6</td><td>Menginkorporasikan penilaian pasar — jika nilai pasar ekuitas jauh di bawah total kewajiban, pasar "menilai" perusahaan mendekati insolvency. Menggunakan nilai pasar (bukan buku) membuat X₄ forward-looking.</td></tr>
+<tr><td><strong>X₅</strong></td><td>Sales / Total Assets</td><td>1,0</td><td>Mengukur efisiensi penggunaan aset. Perusahaan yang tidak mampu menghasilkan penjualan dari asetnya mungkin memiliki aset yang tidak produktif atau bisnis yang memburuk.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="def"><div class="den">Z'-Score dan Z''-Score: Modifikasi untuk Konteks Berbeda</div><div class="did">Altman mengembangkan variasi Z-score untuk konteks yang berbeda dari model asli: (1) <strong>Z'-Score (perusahaan non-publik)</strong> — mengganti X₄ dengan <em>Book Value of Equity / Book Value of Total Liabilities</em> karena perusahaan privat tidak memiliki nilai pasar ekuitas. Cutoff: Z' &gt; 2,9 (aman), Z' &lt; 1,23 (distress). (2) <strong>Z''-Score (perusahaan non-manufaktur/emerging market)</strong> — menghilangkan X₅ (Sales/Total Assets) yang sangat dipengaruhi industri: Z'' = 6,56X₁ + 3,26X₂ + 6,72X₃ + 1,05X₄. Model ini lebih tepat untuk perusahaan jasa, ritel, dan perusahaan di <em>emerging markets</em>. Cutoff: Z'' &gt; 2,6 (aman), Z'' &lt; 1,1 (distress).</div></div>
+
+<h3>4.2 Ohlson O-Score</h3>
+
+<div class="def"><div class="den">Ohlson O-Score (1980)</div><div class="did">Model O-score dikembangkan oleh James Ohlson pada tahun 1980 menggunakan <em>logistic regression</em> (logit model), yang mengatasi beberapa keterbatasan MDA yang digunakan Altman. O-score menghasilkan probabilitas kebangkrutan (0–1) yang lebih intuitif dibandingkan skor Z-score. Model ini menggunakan sembilan variabel: ukuran perusahaan (log total assets), leverage (total liabilities/total assets), likuiditas (working capital/total assets), rasio kewajiban lancar (current liabilities/current assets), indikator insolvency (dummy: 1 jika total liabilities > total assets), profitabilitas (net income/total assets), rasio arus kas operasi (CFO/total liabilities), indikator kerugian (dummy: 1 jika net income negatif dua tahun berturut-turut), dan perubahan laba bersih. O-score tidak sepopuler Z-score dalam praktik, tetapi secara teknis memiliki beberapa keunggulan statistik.</div></div>
+
+<table>
+<thead><tr><th style="width:25%">Aspek</th><th style="width:35%">Altman Z-Score (1968)</th><th style="width:40%">Ohlson O-Score (1980)</th></tr></thead>
+<tbody>
+<tr><td><strong>Metode Statistik</strong></td><td>Multiple Discriminant Analysis (MDA)</td><td>Logistic Regression (Logit)</td></tr>
+<tr><td><strong>Output</strong></td><td>Skor kontinu; dibandingkan dengan cutoff</td><td>Probabilitas kebangkrutan (0–1)</td></tr>
+<tr><td><strong>Jumlah Variabel</strong></td><td>5 rasio keuangan</td><td>9 variabel (termasuk dummy)</td></tr>
+<tr><td><strong>Asumsi Distribusi</strong></td><td>Mengasumsikan normalitas multivariat</td><td>Tidak mengasumsikan distribusi tertentu</td></tr>
+<tr><td><strong>Kemudahan Penggunaan</strong></td><td>Sangat mudah — formula sederhana, cutoff jelas</td><td>Lebih kompleks — memerlukan perhitungan logit</td></tr>
+<tr><td><strong>Popularitas Praktik</strong></td><td>Sangat populer; digunakan secara luas</td><td>Lebih akademis; kurang populer di praktik</td></tr>
+<tr><td><strong>Konteks Awal</strong></td><td>Perusahaan manufaktur AS publik</td><td>Perusahaan AS campuran industri</td></tr>
+</tbody>
+</table>
+
+<h3>4.3 Keterbatasan Model Prediksi Kebangkrutan</h3>
+
+<div class="ibox nb"><div class="ibt">⚠️ Keterbatasan dan Peringatan / Limitations and Caveats</div>
+<ul>
+<li><strong>Konteks historis dan geografis</strong> — Z-score dikembangkan dari data perusahaan manufaktur AS tahun 1960-an; akurasi mungkin berkurang untuk industri lain, era berbeda, atau negara berbeda (termasuk Indonesia).</li>
+<li><strong>Type I dan Type II errors</strong> — <em>Type I error</em>: mengklasifikasikan perusahaan sehat sebagai akan bangkrut (false positive); <em>Type II error</em>: mengklasifikasikan perusahaan yang akan bangkrut sebagai sehat (false negative — lebih berbahaya bagi kreditur).</li>
+<li><strong>Manipulasi akuntansi</strong> — model berbasis rasio akuntansi rentan terhadap manipulasi laporan keuangan; perusahaan yang memanipulasi laba dapat menghasilkan Z-score yang menyesatkan.</li>
+<li><strong>Faktor non-keuangan diabaikan</strong> — model tidak memperhitungkan kualitas manajemen, kondisi industri, dukungan pemerintah, atau faktor kualitatif lainnya yang mempengaruhi kelangsungan hidup perusahaan.</li>
+<li><strong>Perubahan struktural</strong> — transformasi bisnis, restrukturisasi, atau merger dapat membuat data historis yang mendasari skor menjadi kurang relevan.</li>
+<li><strong>Off-balance-sheet items</strong> — kewajiban yang tidak tercermin di neraca (sewa operasi sebelum PSAK 73/IFRS 16, guarantees, contingent liabilities) dapat menyebabkan under-estimation risiko.</li>
+</ul>
+</div>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Peringkat Obligasi / Bond Ratings</h2>
+
+<p>Peringkat obligasi (<em>bond ratings</em> atau <em>credit ratings</em>) adalah penilaian independen oleh lembaga pemeringkat tentang kemampuan dan kemauan penerbit untuk memenuhi kewajiban keuangan yang terkait dengan instrumen utang. Peringkat berfungsi sebagai "ringkasan" risiko kredit yang mengurangi asimetri informasi antara penerbit dan investor.</p>
+
+<div class="def"><div class="den">Lembaga Pemeringkat / Rating Agencies</div><div class="did">Tiga lembaga pemeringkat global mendominasi pasar: <strong>Standard &amp; Poor's (S&amp;P)</strong>, <strong>Moody's Investors Service</strong>, dan <strong>Fitch Ratings</strong>. Di Indonesia, <strong>Pefindo</strong> (Pemeringkat Efek Indonesia) adalah lembaga pemeringkat domestik utama yang ditetapkan oleh OJK (Otoritas Jasa Keuangan). Pefindo menggunakan skala peringkat dari idAAA (tertinggi) hingga idD (gagal bayar). Semua obligasi yang diterbitkan di pasar modal Indonesia wajib memiliki peringkat dari lembaga yang diakui OJK.</div></div>
+
+<h3>5.1 Skala Peringkat / Rating Scale</h3>
+
+<table>
+<thead><tr><th style="width:12%">S&amp;P</th><th style="width:12%">Moody's</th><th style="width:12%">Pefindo</th><th style="width:18%">Kategori</th><th style="width:46%">Deskripsi</th></tr></thead>
+<tbody>
+<tr><td>AAA</td><td>Aaa</td><td>idAAA</td><td><em>Investment Grade</em></td><td>Kapasitas sangat kuat untuk memenuhi kewajiban; kualitas tertinggi</td></tr>
+<tr><td>AA</td><td>Aa</td><td>idAA</td><td><em>Investment Grade</em></td><td>Kapasitas sangat kuat; sedikit lebih rentan dari AAA</td></tr>
+<tr><td>A</td><td>A</td><td>idA</td><td><em>Investment Grade</em></td><td>Kapasitas kuat; agak rentan terhadap perubahan kondisi ekonomi</td></tr>
+<tr><td>BBB</td><td>Baa</td><td>idBBB</td><td><em>Investment Grade</em> (terendah)</td><td>Kapasitas memadai; kondisi ekonomi buruk dapat melemahkan kemampuan bayar</td></tr>
+<tr><td>BB</td><td>Ba</td><td>idBB</td><td><em>Speculative Grade</em></td><td>Kurang rentan dalam jangka pendek; menghadapi ketidakpastian signifikan</td></tr>
+<tr><td>B</td><td>B</td><td>idB</td><td><em>Speculative Grade</em></td><td>Lebih rentan; kondisi bisnis/keuangan/ekonomi yang buruk dapat mengganggu kemampuan bayar</td></tr>
+<tr><td>CCC</td><td>Caa</td><td>idCCC</td><td><em>Highly Speculative</em></td><td>Saat ini rentan; bergantung pada kondisi bisnis/keuangan/ekonomi yang menguntungkan</td></tr>
+<tr><td>CC</td><td>Ca</td><td>idCC</td><td><em>Highly Speculative</em></td><td>Sangat rentan terhadap gagal bayar</td></tr>
+<tr><td>C</td><td>C</td><td>idC</td><td><em>Near Default</em></td><td>Peringatan gagal bayar yang segera terjadi</td></tr>
+<tr><td>D</td><td>—</td><td>idD</td><td><em>Default</em></td><td>Telah gagal bayar atas kewajiban keuangan</td></tr>
+</tbody>
+</table>
+
+<div class="ibox nb"><div class="ibt">📌 Investment Grade vs Speculative Grade</div>
+<p>Batas antara <em>investment grade</em> (BBB−/Baa3 ke atas) dan <em>speculative grade</em> (BB+/Ba1 ke bawah) adalah demarkasi paling penting dalam pasar kredit. Banyak investor institusional (dana pensiun, asuransi) hanya boleh berinvestasi pada obligasi <em>investment grade</em> berdasarkan regulasi atau kebijakan internal. Perusahaan yang turun peringkat dari BBB− ke BB+ (<em>fallen angel</em>) mengalami penjualan paksa (<em>forced selling</em>) oleh investor institusi, yang menyebabkan penurunan harga obligasi yang tajam dan kenaikan yield (biaya pinjaman). Ini menciptakan <em>cliff effect</em> di sekitar batas investment/speculative grade.</p>
+</div>
+
+<h3>5.2 Determinan Peringkat Kredit / Determinants of Credit Ratings</h3>
+
+<div class="def"><div class="den">Faktor-faktor yang Mempengaruhi Peringkat Kredit</div><div class="did">Lembaga pemeringkat mengevaluasi kombinasi faktor kuantitatif dan kualitatif: (1) <strong>Faktor kuantitatif (keuangan)</strong>: profitabilitas (margin operasi, ROA), leverage (D/E, D/A), cakupan (TIE, DSCR), likuiditas (current ratio, cash conversion cycle), ukuran perusahaan, stabilitas arus kas, dan variabilitas laba. (2) <strong>Faktor kualitatif (bisnis)</strong>: posisi kompetitif dan pangsa pasar, diversifikasi produk/pasar/geografi, kualitas dan rekam jejak manajemen, tata kelola perusahaan (<em>corporate governance</em>), eksposur regulasi, dan risiko industri. (3) <strong>Faktor makroekonomi</strong>: siklus ekonomi, kondisi pasar kredit, risiko negara (<em>sovereign risk</em>) — peringkat perusahaan umumnya tidak dapat melebihi peringkat negara dimana ia beroperasi (<em>sovereign ceiling</em>).</div></div>
+
+<table>
+<thead><tr><th style="width:25%">Kategori Faktor</th><th style="width:35%">Indikator Utama</th><th style="width:40%">Pengaruh terhadap Peringkat</th></tr></thead>
+<tbody>
+<tr><td><strong>Profitabilitas</strong></td><td>Operating margin, ROA, EBITDA margin</td><td>Profitabilitas tinggi dan stabil → peringkat lebih tinggi</td></tr>
+<tr><td><strong>Leverage</strong></td><td>D/E, D/A, Total Debt/EBITDA</td><td>Leverage rendah → peringkat lebih tinggi; Total Debt/EBITDA &lt;3x = investment grade</td></tr>
+<tr><td><strong>Cakupan</strong></td><td>TIE, DSCR, FFO/Debt</td><td>Cakupan tinggi → bantalan keamanan besar → peringkat lebih tinggi</td></tr>
+<tr><td><strong>Likuiditas</strong></td><td>Cash/Debt, Current ratio, Undrawn credit lines</td><td>Likuiditas kuat mengurangi risiko gagal bayar jangka pendek</td></tr>
+<tr><td><strong>Arus Kas</strong></td><td>CFO/Debt, FCF/Debt, CFO stability</td><td>Arus kas kuat dan stabil = sumber pembayaran utang yang andal</td></tr>
+<tr><td><strong>Risiko Bisnis</strong></td><td>Posisi pasar, diversifikasi, barier masuk</td><td>Posisi dominan dan terdiversifikasi → risiko bisnis lebih rendah</td></tr>
+<tr><td><strong>Tata Kelola</strong></td><td>Board independence, transparansi, audit quality</td><td>Tata kelola buruk → risiko <em>event risk</em> lebih tinggi (fraud, mismanagement)</td></tr>
+<tr><td><strong>Risiko Negara</strong></td><td>Sovereign rating, stabilitas makro, hukum</td><td><em>Sovereign ceiling</em>: peringkat perusahaan umumnya ≤ peringkat negara</td></tr>
+</tbody>
+</table>
+
+<h3>5.3 Hubungan Rasio Keuangan dengan Peringkat</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Median Rasio Keuangan per Kategori Peringkat (Benchmark S&amp;P)</div>
+<table>
+<thead><tr><th>Rasio</th><th>AAA</th><th>AA</th><th>A</th><th>BBB</th><th>BB</th><th>B</th></tr></thead>
+<tbody>
+<tr><td>EBIT Interest Coverage (TIE)</td><td>&gt;20x</td><td>12–15x</td><td>6–9x</td><td>3–5x</td><td>2–3x</td><td>&lt;1,5x</td></tr>
+<tr><td>Total Debt / EBITDA</td><td>&lt;1,0x</td><td>1,0–1,5x</td><td>1,5–2,5x</td><td>2,5–3,5x</td><td>3,5–5,0x</td><td>&gt;5,0x</td></tr>
+<tr><td>FFO / Total Debt</td><td>&gt;60%</td><td>40–60%</td><td>25–40%</td><td>15–25%</td><td>10–15%</td><td>&lt;10%</td></tr>
+<tr><td>Debt / Capital</td><td>&lt;20%</td><td>20–30%</td><td>30–40%</td><td>40–50%</td><td>50–65%</td><td>&gt;65%</td></tr>
+<tr><td>Operating Margin</td><td>&gt;30%</td><td>25–30%</td><td>18–25%</td><td>12–18%</td><td>8–12%</td><td>&lt;8%</td></tr>
+</tbody>
+</table>
+<p><em>Catatan: Angka-angka di atas adalah perkiraan median berdasarkan publikasi S&amp;P untuk perusahaan non-keuangan. Benchmark aktual bervariasi antar industri dan periode.</em></p>
+</div>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Prediksi Financial Distress / Financial Distress Prediction</h2>
+
+<p><em>Financial distress</em> adalah kondisi di mana perusahaan tidak mampu memenuhi kewajiban keuangannya saat jatuh tempo, atau memiliki probabilitas tinggi untuk gagal bayar di masa depan. <em>Financial distress</em> berbeda dari kebangkrutan: distress adalah <em>kondisi</em>, sedangkan kebangkrutan adalah <em>proses hukum</em>. Perusahaan dalam distress mungkin berhasil pulih (melalui restrukturisasi), sementara kebangkrutan bisa berakhir dengan reorganisasi atau likuidasi.</p>
+
+<h3>6.1 Tanda-tanda Financial Distress / Distress Warning Signs</h3>
+
+<div class="def"><div class="den">Indikator Kuantitatif Financial Distress</div><div class="did">Indikator kuantitatif yang menandakan perusahaan mendekati atau berada dalam <em>financial distress</em>: (1) <strong>Rugi operasi berulang</strong> — EBIT negatif selama beberapa periode berturut-turut menandakan ketidakmampuan struktural menghasilkan laba; (2) <strong>Arus kas operasi negatif</strong> — CFO negatif yang persisten berarti operasi bisnis mengkonsumsi kas alih-alih menghasilkannya; (3) <strong>Defisiensi modal kerja</strong> — kewajiban lancar melebihi aset lancar (current ratio &lt;1); (4) <strong>Ekuitas negatif</strong> — total kewajiban melebihi total aset (<em>technical insolvency</em>); (5) <strong>Rasio cakupan di bawah 1,0</strong> — TIE &lt;1 berarti EBIT tidak cukup menutupi beban bunga; (6) <strong>Pelanggaran covenant</strong> — melanggar syarat-syarat perjanjian utang (<em>debt covenants</em>); (7) <strong>Z-score di zona distress</strong> — Z &lt; 1,81.</div></div>
+
+<div class="def"><div class="den">Indikator Kualitatif Financial Distress</div><div class="did">Selain indikator keuangan, tanda-tanda kualitatif juga penting: (1) <strong>Pergantian manajemen puncak secara tiba-tiba</strong> — terutama CFO; (2) <strong>Keterlambatan pelaporan keuangan</strong> — melebihi batas waktu yang ditentukan regulator; (3) <strong>Perubahan auditor yang tidak biasa</strong> — terutama jika diikuti oleh opini audit <em>going concern</em>; (4) <strong>Penjualan aset inti secara mendadak</strong> — untuk memenuhi kewajiban jangka pendek; (5) <strong>Negosiasi ulang persyaratan utang</strong> — meminta <em>waiver</em> atau kelonggaran dari kreditur; (6) <strong>Penurunan peringkat kredit secara berturut-turut</strong>; (7) <strong>Pemberitaan negatif yang signifikan</strong> — terutama terkait likuiditas atau kemampuan bayar.</div></div>
+
+<h3>6.2 Proses Financial Distress / The Distress Process</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Tahapan Financial Distress — Dari Penurunan Kinerja hingga Resolusi</div>
+<ol>
+<li><strong>Tahap 1: Penurunan Kinerja Operasional</strong> — Laba menurun karena faktor internal (manajemen buruk, produk usang) atau eksternal (resesi, penurunan harga komoditas). Pada tahap ini, rasio profitabilitas memburuk tetapi perusahaan masih mampu memenuhi kewajiban utangnya.</li>
+<li><strong>Tahap 2: Tekanan Likuiditas</strong> — Penurunan laba berlanjut sehingga arus kas operasi tidak cukup memenuhi kewajiban jangka pendek. Perusahaan mulai mengandalkan aset likuid, memperpanjang pembayaran ke pemasok, atau mencari pinjaman baru.</li>
+<li><strong>Tahap 3: Insolvency</strong> — Dua bentuk: <em>cash flow insolvency</em> (tidak mampu membayar kewajiban saat jatuh tempo) dan <em>balance sheet insolvency</em> (total kewajiban melebihi total aset, ekuitas negatif). BUMI mengalami keduanya.</li>
+<li><strong>Tahap 4: Gagal Bayar (Default)</strong> — Perusahaan gagal membayar bunga atau pokok utang; pelanggaran <em>covenant</em> utang memicu <em>technical default</em> atau <em>cross-default</em> (satu gagal bayar memicu percepatan pelunasan seluruh utang).</li>
+<li><strong>Tahap 5: Resolusi</strong> — Dua jalur: <em>reorganisasi</em> (restrukturisasi utang, <em>debt-for-equity swap</em>, di Indonesia melalui PKPU) atau <em>likuidasi</em> (pembubaran perusahaan dan penjualan aset untuk membayar kreditur berdasarkan prioritas klaim).</li>
+</ol>
+</div>
+
+<h3>6.3 Restrukturisasi Utang / Debt Restructuring</h3>
+
+<div class="def"><div class="den">Opsi Restrukturisasi Utang / Debt Restructuring Options</div><div class="did">Ketika perusahaan dalam <em>financial distress</em>, beberapa opsi restrukturisasi tersedia: (1) <strong>Perpanjangan jatuh tempo (<em>maturity extension</em>)</strong> — memperpanjang tenor utang untuk mengurangi tekanan pelunasan jangka pendek; (2) <strong>Penurunan tingkat bunga (<em>interest rate reduction</em>)</strong> — mengurangi beban bunga agar arus kas dapat digunakan untuk operasi; (3) <strong>Konversi utang ke ekuitas (<em>debt-for-equity swap</em>)</strong> — kreditur menukar klaim utang dengan kepemilikan saham, mengurangi beban utang tetapi mendilusi pemegang saham existing; (4) <strong>Haircut (<em>principal reduction</em>)</strong> — kreditur setuju menerima pembayaran kurang dari nilai pokok utang; (5) <strong>Penjualan aset (<em>asset disposal</em>)</strong> — menjual aset non-inti untuk melunasi sebagian utang. Dalam konteks Indonesia, proses PKPU (UU No. 37/2004) memberikan kerangka hukum untuk negosiasi restrukturisasi yang diawasi pengadilan.</div></div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Kerangka Keputusan Kredit / Credit Decision Framework</h2>
+
+<p>Keputusan kredit yang baik mengintegrasikan analisis kuantitatif (rasio, model scoring) dengan penilaian kualitatif (kualitas manajemen, posisi kompetitif, kondisi industri). Subramanyam mengacu pada kerangka tradisional <strong>5C of Credit</strong> sebagai struktur untuk mengevaluasi risiko kredit secara menyeluruh.</p>
+
+<h3>7.1 Lima C Kredit / 5C of Credit</h3>
+
+<div class="def"><div class="den">5C of Credit — Kerangka Evaluasi Kredit Menyeluruh</div><div class="did">Kerangka <em>Five Cs of Credit</em> adalah pendekatan klasik yang digunakan institusi keuangan untuk mengevaluasi kelayakan kredit peminjam: <strong>Character</strong>, <strong>Capacity</strong>, <strong>Capital</strong>, <strong>Conditions</strong>, dan <strong>Collateral</strong>. Setiap elemen menangkap dimensi risiko yang berbeda, dan keputusan kredit yang baik mempertimbangkan kelimanya secara terintegrasi.</div></div>
+
+<div class="cgrid">
+<div class="cc">
+<h4>Character (Karakter)</h4>
+<p>Kemauan dan integritas peminjam untuk memenuhi kewajiban. Dinilai dari: rekam jejak pembayaran (<em>credit history</em>), reputasi manajemen, kualitas tata kelola, transparansi pelaporan, dan kepatuhan regulasi. Dalam konteks korporat: apakah manajemen memiliki rekam jejak mengelola utang secara bertanggung jawab?</p>
+</div>
+<div class="cc">
+<h4>Capacity (Kapasitas)</h4>
+<p>Kemampuan peminjam menghasilkan arus kas yang cukup untuk membayar kewajiban utang. Dinilai melalui rasio cakupan (TIE, DSCR), tren arus kas operasi, profitabilitas, dan proyeksi keuangan. Ini adalah elemen kuantitatif utama dan sering dianggap paling penting.</p>
+</div>
+<div class="cc">
+<h4>Capital (Modal)</h4>
+<p>Investasi pemilik dalam perusahaan dan "bantalan keamanan" bagi kreditur. Dinilai melalui rasio leverage (D/E, D/A), ekuitas bersih (<em>net worth</em>), dan <em>retained earnings</em>. Semakin besar ekuitas relatif terhadap utang, semakin besar perlindungan bagi kreditur.</p>
+</div>
+<div class="cc">
+<h4>Conditions (Kondisi)</h4>
+<p>Faktor eksternal yang mempengaruhi kemampuan pembayaran: kondisi makroekonomi, siklus industri, regulasi, dan lingkungan kompetitif. Untuk perusahaan tambang seperti BUMI: harga batubara, kebijakan energi, regulasi lingkungan, dan permintaan global.</p>
+</div>
+<div class="cc">
+<h4>Collateral (Jaminan)</h4>
+<p>Aset yang dijaminkan untuk mengamankan pinjaman — sumber pembayaran terakhir (<em>last resort</em>) jika peminjam gagal bayar. Dinilai dari: nilai likuidasi aset jaminan, rasio <em>loan-to-value</em> (LTV), kualitas dan marketability aset, dan prioritas klaim (<em>lien position</em>).</p>
+</div>
+</div>
+
+<h3>7.2 Proses Analisis Kredit Terstruktur</h3>
+
+<div class="ibox nb"><div class="ibt">📐 Langkah-langkah Analisis Kredit Terstruktur / Structured Credit Analysis Steps</div>
+<ol>
+<li><strong>Analisis Industri dan Lingkungan Bisnis</strong> — Pahami risiko industri: siklisitas, regulasi, kompetisi, dan <em>barriers to entry</em>. Industri dengan karakteristik yang lebih stabil (utilitas, consumer staples) umumnya memiliki risiko kredit yang lebih rendah.</li>
+<li><strong>Analisis Laporan Keuangan Historis</strong> — Evaluasi tren 3–5 tahun: profitabilitas, likuiditas, leverage, dan arus kas. Identifikasi pola: apakah membaik, stabil, atau memburuk?</li>
+<li><strong>Analisis Rasio Kredit Spesifik</strong> — Hitung dan evaluasi rasio-rasio kunci: TIE, DSCR, D/E, current ratio, cash conversion cycle. Bandingkan dengan benchmark industri dan peringkat kredit.</li>
+<li><strong>Scoring Model</strong> — Terapkan Z-score atau model serupa sebagai <em>screening tool</em>; gunakan sebagai satu input, bukan satu-satunya penentu.</li>
+<li><strong>Analisis Prospektif</strong> — Gunakan proyeksi dari Ch.9 untuk menilai kemampuan pembayaran masa depan; uji skenario <em>stress case</em>.</li>
+<li><strong>Evaluasi 5C</strong> — Integrasikan analisis kuantitatif dan kualitatif dalam kerangka 5C.</li>
+<li><strong>Keputusan dan Strukturisasi</strong> — Tentukan: (a) apakah kredit diberikan; (b) berapa batas maksimum; (c) persyaratan dan <em>covenants</em>; (d) jaminan yang dibutuhkan; (e) tingkat bunga yang sesuai dengan risiko (<em>risk-adjusted pricing</em>).</li>
+</ol>
+</div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Analisis Kredit Berbasis Arus Kas / Cash Flow-Based Credit Analysis</h2>
+
+<p>Analisis kredit modern semakin menekankan arus kas (<em>cash flow</em>) dibandingkan laba akuntansi (<em>accrual-based earnings</em>) sebagai ukuran kemampuan membayar utang. Alasannya sederhana: kreditur dibayar dengan <strong>kas</strong>, bukan laba akuntansi. Perusahaan dengan laba positif tetapi CFO negatif (karena manipulasi akrual atau investasi modal kerja berlebih) mungkin tidak mampu memenuhi kewajibannya.</p>
+
+<div class="def"><div class="den">Rasio Kredit Berbasis Arus Kas / Cash Flow-Based Credit Ratios</div><div class="did">Beberapa rasio arus kas penting dalam analisis kredit: (1) <strong>CFO / Total Debt</strong> — mengukur kemampuan arus kas operasi untuk melunasi total utang; rasio &gt;20% umumnya dianggap memadai; (2) <strong>Free Cash Flow / Total Debt</strong> — lebih konservatif karena memperhitungkan capital expenditure; (3) <strong>CFO / Interest Paid</strong> — versi kas dari TIE; menggunakan bunga yang benar-benar dibayar, bukan beban bunga akrual; (4) <strong>CFO / Current Liabilities</strong> — mengukur kemampuan arus kas operasi menutupi kewajiban jangka pendek. Rasio-rasio ini melengkapi (bukan menggantikan) rasio berbasis akrual karena memberikan perspektif yang berbeda — kemampuan bayar aktual vs profitabilitas akuntansi.</div></div>
+
+<table>
+<thead><tr><th style="width:30%">Rasio Arus Kas</th><th style="width:30%">Formula</th><th style="width:40%">Interpretasi</th></tr></thead>
+<tbody>
+<tr><td><strong>CFO / Total Debt</strong></td><td>Arus Kas Operasi / Total Utang</td><td>&gt;30% = kuat; 15–30% = moderat; &lt;15% = lemah</td></tr>
+<tr><td><strong>FCF / Total Debt</strong></td><td>(CFO − Capex) / Total Utang</td><td>Positif dan &gt;10% = kapasitas pelunasan utang baik</td></tr>
+<tr><td><strong>Cash Interest Coverage</strong></td><td>CFO / Bunga Dibayar (kas)</td><td>&gt;5x = sangat kuat; &lt;2x = perlu perhatian</td></tr>
+<tr><td><strong>CFO / Current Liabilities</strong></td><td>Arus Kas Operasi / Kewajiban Lancar</td><td>&gt;0,4 = kemampuan bayar jangka pendek baik</td></tr>
+<tr><td><strong>Cash Burn Rate</strong></td><td>Rata-rata penurunan kas per periode</td><td>Berapa lama kas bertahan pada tingkat pembakaran saat ini?</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s9" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>9. Debt Covenants dan Perlindungan Kreditur / Debt Covenants and Creditor Protection</h2>
+
+<p><em>Debt covenants</em> (perjanjian utang) adalah ketentuan kontraktual dalam perjanjian pinjaman yang membatasi tindakan peminjam dan/atau mewajibkan pemeliharaan rasio keuangan tertentu. Covenants adalah mekanisme perlindungan utama bagi kreditur untuk mengurangi risiko <em>moral hazard</em> dan <em>asset substitution</em>.</p>
+
+<div class="def"><div class="den">Jenis-jenis Debt Covenants</div><div class="did">Dua kategori utama: (1) <strong>Affirmative covenants</strong> — hal-hal yang harus dilakukan peminjam: memelihara asuransi, menyampaikan laporan keuangan tepat waktu, mematuhi hukum, mempertahankan aset; (2) <strong>Negative/restrictive covenants</strong> — hal-hal yang dilarang atau dibatasi: menambah utang baru di atas ambang tertentu, membayar dividen melebihi batas, menjual aset inti, melakukan merger/akuisisi tanpa persetujuan, mengubah lini bisnis. <strong>Financial covenants</strong> mewajibkan pemeliharaan rasio keuangan minimum: minimum current ratio (misal: &gt;1,2), maksimum D/E (misal: &lt;2,5), minimum TIE (misal: &gt;2,0), minimum net worth. Pelanggaran covenant (<em>covenant breach</em>) memberikan kreditur hak untuk mempercepat pelunasan (<em>acceleration</em>) — menuntut pembayaran seluruh sisa utang segera.</div></div>
+
+<div class="ibox nb"><div class="ibt">📌 Covenant Violation dan Konsekuensinya</div>
+<p>Pelanggaran covenant (<em>covenant violation</em> atau <em>technical default</em>) tidak selalu mengakibatkan percepatan pelunasan secara langsung. Dalam praktik, kreditur seringkali memberikan <em>waiver</em> (pengabaian) sementara atau menegosiasikan <em>covenant reset</em> — terutama jika pelanggaran bersifat teknis dan perusahaan menunjukkan rencana perbaikan yang kredibel. Namun, kreditur akan menggunakan posisi negosiasi yang kuat ini untuk memperketat persyaratan: menaikkan suku bunga, menambah jaminan, atau memperketat covenant. Pelanggaran covenant yang berulang atau signifikan meningkatkan probabilitas gagal bayar nyata (<em>actual default</em>).</p>
+</div>
+</div>
+
+<div id="s10" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>10. Pertimbangan Khusus dalam Analisis Kredit / Special Considerations in Credit Analysis</h2>
+
+<h3>10.1 Off-Balance-Sheet Financing</h3>
+
+<div class="def"><div class="den">Pembiayaan di Luar Neraca / Off-Balance-Sheet Financing</div><div class="did">Beberapa kewajiban mungkin tidak sepenuhnya tercermin di neraca, menyebabkan under-estimation risiko kredit: (1) <strong>Sewa operasi</strong> — sebelum PSAK 73 (IFRS 16), sewa operasi tidak dicatat sebagai kewajiban; analis harus melakukan <em>capitalization</em> sewa operasi untuk mendapatkan gambaran leverage yang sesungguhnya; (2) <strong>Special Purpose Entities (SPE)</strong> — entitas terpisah yang mungkin menyembunyikan utang; (3) <strong>Contingent liabilities</strong> — kewajiban bersyarat yang hanya diungkapkan di catatan atas laporan keuangan; (4) <strong>Guarantees</strong> — jaminan atas utang pihak lain; (5) <strong>Unfunded pension obligations</strong> — kewajiban pensiun yang belum didanai penuh. Analis kredit yang teliti harus menyesuaikan rasio leverage dan cakupan untuk memperhitungkan item-item ini.</div></div>
+
+<h3>10.2 Analisis Kredit untuk Industri Spesifik</h3>
+
+<div class="def"><div class="den">Pertimbangan Industri Pertambangan / Mining Industry Considerations</div><div class="did">Industri pertambangan (relevan untuk BUMI) memiliki karakteristik kredit yang unik: (1) <strong>Siklisitas harga komoditas</strong> — pendapatan dan laba sangat fluktuatif mengikuti harga batubara/mineral; analisis kredit harus mempertimbangkan profitabilitas <em>through-the-cycle</em>, bukan hanya pada satu titik waktu; (2) <strong>Capital intensity</strong> — investasi besar dalam aset tetap (tambang, infrastruktur); menciptakan <em>operating leverage</em> tinggi yang memperbesar dampak penurunan harga; (3) <strong>Cadangan sebagai aset</strong> — cadangan mineral yang belum ditambang adalah aset penting yang mungkin tidak sepenuhnya tercermin di neraca; (4) <strong>Regulasi lingkungan</strong> — kewajiban rehabilitasi tambang (<em>mine closure costs</em>) menciptakan liabilitas jangka panjang; (5) <strong>Risiko negara</strong> — banyak operasi tambang di yurisdiksi dengan risiko politik dan regulasi tinggi.</div></div>
+
+<h3>10.3 Hubungan Credit Analysis dengan Equity Valuation</h3>
+
+<div class="def"><div class="den">Dari Analisis Kredit ke Valuasi Ekuitas / Credit Analysis → Equity Valuation</div><div class="did">Analisis kredit bukan hanya relevan bagi kreditur — ia juga memberikan input kritis untuk valuasi ekuitas: (1) <strong>Cost of Debt (k<sub>d</sub>)</strong> — peringkat kredit dan spread kredit menentukan cost of debt setelah pajak, yang merupakan komponen WACC; (2) <strong>Financial Distress Costs</strong> — probabilitas kebangkrutan dan biaya distress (langsung: legal fees; tidak langsung: kehilangan pelanggan, karyawan, supplier) mengurangi nilai perusahaan; (3) <strong>Optimal Capital Structure</strong> — trade-off antara manfaat pajak utang (<em>tax shield</em>) dan biaya distress menentukan struktur modal optimal; (4) <strong>Equity Risk</strong> — leverage yang lebih tinggi meningkatkan volatilitas ekuitas (<em>equity beta</em>), yang meningkatkan cost of equity; (5) <strong>Residual Claim</strong> — dalam skenario distress, kreditur memiliki prioritas atas aset; pemegang saham mungkin tidak menerima apa-apa (<em>equity wipeout</em>), seperti yang nyaris terjadi pada BUMI.</div></div>
+</div>
+
+<div id="s11" class="section pb">
+<div class="phdr"><span>Chapter 10 · Credit Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>11. Ringkasan dan Integrasi / Summary and Integration</h2>
+
+<div class="ibox nb"><div class="ibt">📌 Rangkuman Keseluruhan Chapter 10</div>
+<p>Chapter 10 Subramanyam memberikan kerangka komprehensif untuk analisis kredit yang mengintegrasikan:</p>
+<ul>
+<li><strong>Analisis Likuiditas</strong> — menggunakan <em>current ratio</em>, <em>quick ratio</em>, <em>cash ratio</em>, dan <em>cash conversion cycle</em> untuk menilai kemampuan memenuhi kewajiban jangka pendek. Kunci: tidak ada satu rasio yang cukup — gunakan kombinasi.</li>
+<li><strong>Analisis Solvabilitas</strong> — menggunakan rasio utang (<em>D/E</em>, <em>D/A</em>, <em>D/C</em>) dan rasio cakupan (<em>TIE</em>, <em>DSCR</em>, <em>fixed charge coverage</em>) untuk menilai keberlanjutan struktur modal dan kemampuan memenuhi kewajiban jangka panjang.</li>
+<li><strong>Model Scoring</strong> — Altman Z-score (5 variabel, MDA) dan Ohlson O-score (9 variabel, logit) sebagai alat skrining kuantitatif; berguna tetapi memiliki keterbatasan signifikan.</li>
+<li><strong>Peringkat Obligasi</strong> — penilaian independen yang mengintegrasikan faktor kuantitatif dan kualitatif; demarkasi investment/speculative grade memiliki implikasi besar terhadap biaya pendanaan.</li>
+<li><strong>Kerangka 5C</strong> — Character, Capacity, Capital, Conditions, Collateral — struktur integratif untuk keputusan kredit yang menyeluruh.</li>
+<li><strong>Analisis Arus Kas</strong> — menekankan bahwa kreditur dibayar dengan kas, bukan laba akuntansi; rasio arus kas melengkapi rasio berbasis akrual.</li>
+</ul>
+<p><strong>Koneksi ke Minggu 12 (Equity Valuation):</strong> Analisis kredit menentukan (1) cost of debt untuk WACC, (2) probabilitas distress yang mengurangi nilai perusahaan, dan (3) kapasitas utang yang mempengaruhi keputusan struktur modal optimal. Investor ekuitas yang cerdas <strong>selalu</strong> melakukan analisis kredit sebelum valuasi — karena jika perusahaan berisiko bangkrut, ekuitas mungkin bernilai nol.</p>
+</div>
+
+<div class="ibox nb"><div class="ibt">📐 Peta Konsep: Alur Analisis Kredit Terintegrasi</div>
+<table>
+<thead><tr><th style="width:25%">Tahap Analisis</th><th style="width:30%">Alat Utama</th><th style="width:20%">Output</th><th style="width:25%">Terhubung ke</th></tr></thead>
+<tbody>
+<tr><td>1. Analisis Industri</td><td>Riset industri, 5 Forces, siklisitas</td><td>Risk profile industri</td><td>Conditions (5C)</td></tr>
+<tr><td>2. Analisis Likuiditas</td><td>CR, QR, Cash Ratio, CCC</td><td>Penilaian risiko jangka pendek</td><td>Capacity, Capital (5C)</td></tr>
+<tr><td>3. Analisis Solvabilitas</td><td>D/E, D/A, TIE, DSCR</td><td>Penilaian risiko jangka panjang</td><td>Capacity, Capital (5C)</td></tr>
+<tr><td>4. Credit Scoring</td><td>Z-score, O-score</td><td>Probabilitas distress</td><td>Screening awal</td></tr>
+<tr><td>5. Analisis Prospektif</td><td>Pro forma, stress testing</td><td>Projected coverage ratios</td><td>Ch.9 (Minggu 10)</td></tr>
+<tr><td>6. Evaluasi 5C</td><td>Kerangka integratif</td><td>Keputusan kredit</td><td>Seluruh analisis di atas</td></tr>
+<tr><td>7. Input ke Valuasi</td><td>Cost of debt, distress probability</td><td>WACC, equity value adjustment</td><td>Ch.11–12 (Minggu 12)</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="qb">
+<div class="qn">Pertanyaan Refleksi / Reflection Questions</div>
+<ol>
+<li>Mengapa kreditur lebih mementingkan <em>worst-case scenario</em> daripada <em>expected case</em>? Bagaimana ini mempengaruhi jenis rasio yang digunakan dalam analisis kredit vs analisis ekuitas?</li>
+<li>Terapkan Altman Z-score pada BUMI tahun 2015 (puncak krisis): variabel mana yang memberikan kontribusi negatif terbesar, dan mengapa?</li>
+<li>Bagaimana Anda menilai kredit perusahaan pertambangan yang profitabel saat harga komoditas tinggi tetapi memiliki leverage tinggi — apakah peringkat harus mencerminkan kondisi saat ini atau <em>through-the-cycle</em>?</li>
+<li>Jika Anda adalah analis kredit bank yang mengevaluasi permohonan pinjaman BUMI pada 2019, faktor apa yang menjadi perhatian utama Anda, dan data apa yang Anda butuhkan?</li>
+<li>Hubungkan analisis kredit minggu ini dengan valuasi ekuitas yang akan dibahas minggu depan: bagaimana Z-score BUMI yang rendah akan mempengaruhi perhitungan WACC dan valuasi DCF?</li>
+</ol>
+</div>
+</div>
