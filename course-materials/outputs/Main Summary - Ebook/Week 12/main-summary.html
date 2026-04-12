@@ -1,0 +1,698 @@
+<div id="s1" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>1. Pendahuluan — Kerangka Valuasi Ekuitas / Equity Valuation Framework</h2>
+
+<p>Chapter 11 Subramanyam merupakan <em>capstone chapter</em> yang mengintegrasikan seluruh analisis laporan keuangan ke dalam satu tujuan akhir: <strong>mengestimasi nilai intrinsik ekuitas perusahaan</strong> (<em>intrinsic equity value</em>). Seluruh analisis yang dibangun sejak chapter awal — pemahaman akuntansi, analisis arus kas, profitabilitas, dan analisis prospektif — kini menjadi input untuk model-model valuasi. Valuasi ekuitas adalah proses menghubungkan informasi fundamental perusahaan (laba, arus kas, dividen, nilai buku) dengan harga pasar saham, dengan tujuan mengidentifikasi apakah saham <em>overvalued</em>, <em>undervalued</em>, atau <em>fairly valued</em>. Palepu Ch.8 melengkapi dengan teknik valuasi praktis, sementara Palepu Ch.9 menjelaskan bagaimana kualitas analisis laporan keuangan menentukan kualitas valuasi.</p>
+
+<div class="ibox nb"><div class="ibt">📌 Posisi Chapter 11 dalam Kerangka Kursus</div>
+<p>Chapter 11 adalah <strong>destination chapter</strong> — tujuan akhir dari seluruh perjalanan analitis. Setiap chapter sebelumnya membangun blok yang diperlukan: pemahaman akuntansi (Ch.4–6) memastikan input yang bersih; analisis arus kas (Ch.7) mengidentifikasi FCF; profitabilitas (Ch.8) mengukur kemampuan menciptakan nilai; analisis prospektif (Ch.9) memproyeksikan masa depan; analisis kredit (Ch.10) menilai risiko. Chapter 11 mengkonversi semua output tersebut menjadi estimasi nilai moneter.</p>
+<p><strong>Ch.4–6 (Akuntansi) → Ch.7 (Cash Flow) → Ch.8 (Profitability) → Ch.9 (Prospective) → Ch.10 (Credit) → <u>Ch.11 (Equity Valuation — MINGGU INI)</u></strong></p>
+</div>
+
+<div class="ibox nb"><div class="ibt">🎯 Learning Objectives / Tujuan Pembelajaran</div>
+<table>
+<thead><tr><th style="width:5%">No</th><th style="width:50%">Tujuan Pembelajaran</th><th style="width:45%">Relevansi</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Memahami konsep nilai intrinsik dan hubungannya dengan harga pasar</td><td>Fondasi seluruh kegiatan valuasi ekuitas</td></tr>
+<tr><td>2</td><td>Menguasai Dividend Discount Model (DDM) — Gordon Growth dan multi-tahap</td><td>Model paling fundamental berbasis dividen</td></tr>
+<tr><td>3</td><td>Menerapkan model DCF: FCFE dan FCFF/WACC</td><td>Model berbasis arus kas bebas — lebih fleksibel dari DDM</td></tr>
+<tr><td>4</td><td>Memahami dan menerapkan Residual Income Model (RIM)</td><td>Model berbasis akuntansi — paling cocok untuk bank dan sektor keuangan</td></tr>
+<tr><td>5</td><td>Menggunakan price multiples (P/E, P/B, EV/EBITDA) untuk valuasi komparatif</td><td>Metode tercepat dan paling banyak digunakan dalam praktik</td></tr>
+<tr><td>6</td><td>Mengestimasi cost of equity menggunakan CAPM dan build-up method</td><td>Input kritis yang mempengaruhi seluruh model valuasi</td></tr>
+<tr><td>7</td><td>Menghitung dan menginterpretasikan terminal value</td><td>Komponen dominan dalam valuasi — sering &gt;50% total nilai</td></tr>
+<tr><td>8</td><td>Memahami implikasi efisiensi pasar terhadap analisis fundamental</td><td>Konteks akademik: apakah valuasi fundamental bernilai?</td></tr>
+<tr><td>9</td><td>Menghubungkan kualitas analisis laporan keuangan dengan kualitas valuasi (Palepu Ch.9)</td><td>Garbage in, garbage out — kualitas valuasi = kualitas input</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="def"><div class="den">Nilai Intrinsik / Intrinsic Value</div><div class="did">Nilai intrinsik (<em>intrinsic value</em>) adalah estimasi nilai fundamental suatu saham berdasarkan analisis menyeluruh terhadap informasi yang tersedia — termasuk prospek pertumbuhan, profitabilitas, risiko, dan posisi kompetitif perusahaan. Nilai intrinsik berbeda dari harga pasar (<em>market price</em>) yang ditentukan oleh penawaran dan permintaan di bursa. <strong>Jika nilai intrinsik &gt; harga pasar → saham undervalued (beli); jika nilai intrinsik &lt; harga pasar → saham overvalued (jual)</strong>. Seluruh tujuan analisis fundamental adalah mengidentifikasi gap antara kedua nilai ini. Konsep ini didasarkan pada gagasan bahwa harga pasar mungkin menyimpang dari nilai fundamental dalam jangka pendek, tetapi cenderung konvergen dalam jangka panjang (<em>price gravitates toward intrinsic value over time</em>).</div></div>
+
+<div class="def"><div class="den">Tiga Pilar Valuasi Ekuitas / Three Pillars of Equity Valuation</div><div class="did">Subramanyam mengidentifikasi tiga pilar utama dalam valuasi ekuitas: (1) <strong>Model Arus Kas Diskon (<em>Discounted Cash Flow Models</em>)</strong> — termasuk DDM dan DCF, yang mengestimasi nilai sebagai present value dari arus kas masa depan; (2) <strong>Model Laba Residual (<em>Residual Income Model</em>)</strong> — mengestimasi nilai sebagai nilai buku ditambah present value dari laba di atas biaya modal; (3) <strong>Valuasi Berbasis Multiples (<em>Relative Valuation</em>)</strong> — menggunakan rasio harga pasar terhadap metrik fundamental (P/E, P/B, EV/EBITDA) dengan benchmark perusahaan sejenis. Dalam kondisi ideal, ketiga pendekatan harus menghasilkan nilai yang konvergen.</div></div>
+</div>
+
+<div id="s2" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>2. Dividend Discount Model (DDM) — Model Dividen Diskon</h2>
+
+<p>Dividend Discount Model (DDM) adalah model valuasi paling fundamental: <strong>nilai saham sama dengan present value dari seluruh dividen masa depan yang diharapkan</strong>. Premis dasar DDM sederhana — investor membeli saham untuk menerima dividen (dan capital gain, yang pada akhirnya berasal dari dividen masa depan), sehingga nilai saham ditentukan oleh arus dividen yang diharapkan, didiskon pada tingkat pengembalian yang dipersyaratkan (<em>required rate of return</em>).</p>
+
+<div class="fbox nb">
+<p><strong>Formula Umum DDM:</strong></p>
+<p><code>V₀ = Σ[t=1→∞] D_t / (1+r)^t</code></p>
+<p>Di mana: V₀ = nilai intrinsik saat ini; D_t = dividen yang diharapkan pada periode t; r = cost of equity (tingkat diskonto)</p>
+</div>
+
+<div class="def"><div class="den">Gordon Growth Model (DDM Satu Tahap) / Single-Stage DDM</div><div class="did">Gordon Growth Model mengasumsikan dividen tumbuh pada tingkat konstan (g) selamanya. Dengan asumsi ini, formula umum DDM disederhanakan menjadi bentuk tertutup:
+<div class="fbox">
+<p><code>P₀ = D₁ / (r − g)</code></p>
+<p>Di mana: D₁ = D₀ × (1+g) = dividen tahun depan; r = cost of equity; g = tingkat pertumbuhan dividen konstan (r &gt; g wajib)</p>
+</div>
+<p><strong>Asumsi kunci:</strong> (1) Dividen tumbuh konstan selamanya — tidak realistis untuk perusahaan growth; (2) r &gt; g — jika dilanggar, model menghasilkan nilai negatif atau tak hingga; (3) Paling cocok untuk perusahaan mature dengan kebijakan dividen stabil dan pertumbuhan moderat — seperti utilitas, bank mapan, atau <em>blue-chip</em> yang telah melewati fase pertumbuhan tinggi.</p></div></div>
+
+<div class="def"><div class="den">DDM Multi-Tahap / Multi-Stage DDM</div><div class="did">DDM multi-tahap mengakomodasi perubahan tingkat pertumbuhan dari waktu ke waktu, lebih realistis untuk sebagian besar perusahaan:
+<div class="fbox">
+<p><strong>DDM Dua Tahap:</strong></p>
+<p><code>V₀ = Σ[t=1→n] D_t / (1+r)^t + [D_{n+1} / (r − g_stable)] / (1+r)^n</code></p>
+<p>Fase 1 (t=1 sampai n): pertumbuhan tinggi (g_high); Fase 2 (t=n+1 dan seterusnya): pertumbuhan stabil (g_stable)</p>
+</div>
+<p><strong>Tiga tahap (H-model variant):</strong> fase pertumbuhan tinggi → transisi → pertumbuhan stabil. Lebih sesuai untuk perusahaan yang tidak mengalami perlambatan pertumbuhan secara tiba-tiba. <strong>Kapan menggunakan DDM multi-tahap:</strong> perusahaan yang saat ini memiliki pertumbuhan di atas rata-rata tetapi diperkirakan akan melambat seiring maturity (misalnya bank yang masih dalam ekspansi kredit agresif).</p></div></div>
+
+<div class="exb nb">
+<div class="exn">Keterbatasan DDM / DDM Limitations</div>
+<ul>
+<li><strong>Tidak cocok untuk perusahaan tanpa dividen</strong> — Banyak perusahaan growth stage (misalnya GOTO) tidak membayar dividen; DDM tidak dapat diterapkan langsung</li>
+<li><strong>Sensitif terhadap asumsi g</strong> — Perubahan kecil pada g sangat mempengaruhi hasil; g mendekati r membuat valuasi tak terhingga</li>
+<li><strong>Mengabaikan laba ditahan</strong> — Perusahaan yang menahan laba untuk investasi (payout ratio rendah) akan terlihat undervalued karena DDM hanya menangkap dividen yang dibayarkan, bukan total value creation</li>
+<li><strong>Asumsi pertumbuhan konstan tidak realistis</strong> — Gordon Growth Model mengasumsikan satu g selamanya; multi-stage DDM lebih realistis tetapi lebih kompleks</li>
+</ul>
+</div>
+
+<h3>2.1 Hubungan DDM dengan Model Lain / Connecting DDM to Other Models</h3>
+
+<div class="ibox nb">
+<div class="ibt">🔗 DDM sebagai Kasus Khusus</div>
+<p>DDM secara konseptual adalah <em>special case</em> dari model FCFE: jika perusahaan membagikan seluruh FCFE sebagai dividen, maka DDM = FCFE model. Dalam praktik, perbedaan muncul karena perusahaan biasanya tidak membagikan seluruh FCFE — mereka menahan sebagian untuk investasi masa depan, membangun kas, atau membayar utang. Ini menjelaskan mengapa DDM sering menghasilkan valuasi yang lebih rendah dari FCFE atau RIM: DDM hanya menangkap arus kas yang <em>dibayarkan</em>, bukan arus kas yang <em>tersedia</em>.</p>
+<p><strong>Implikasi praktis:</strong> Untuk perusahaan dengan payout ratio tinggi (>70%) seperti REIT atau utilities, DDM dan FCFE model akan menghasilkan nilai yang mendekati. Untuk perusahaan dengan payout ratio rendah (<40%) seperti BBCA, DDM akan meremehkan nilai — lebih baik gunakan RIM atau FCFE.</p>
+</div>
+</div>
+
+<div id="s3" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>3. Discounted Cash Flow (DCF) — Model Arus Kas Diskon</h2>
+
+<p>Model DCF merupakan perluasan dari DDM yang mengganti dividen dengan arus kas bebas (<em>free cash flow</em>) sebagai ukuran arus kas yang didiskon. DCF lebih fleksibel daripada DDM karena tidak tergantung pada kebijakan dividen — ia mengukur nilai berdasarkan kas yang <em>tersedia</em> untuk pemegang klaim, bukan kas yang <em>dibayarkan</em>. Terdapat dua varian utama: FCFE model (untuk valuasi langsung ekuitas) dan FCFF/WACC model (untuk valuasi perusahaan secara keseluruhan).</p>
+
+<div class="def"><div class="den">FCFE Model — Free Cash Flow to Equity</div><div class="did">FCFE adalah arus kas yang tersedia bagi pemegang saham setelah memenuhi seluruh kewajiban operasional, investasi, dan pembayaran utang:
+<div class="fbox">
+<p><strong>Definisi FCFE:</strong></p>
+<p><code>FCFE = Net Income + Depreciation − ΔWorking Capital − Capital Expenditure + Net Borrowing</code></p>
+<p><strong>Model Valuasi FCFE:</strong></p>
+<p><code>V_equity = Σ[t=1→n] FCFE_t / (1+r_e)^t + TV_equity / (1+r_e)^n</code></p>
+<p>Di mana: r_e = cost of equity; TV_equity = terminal value ekuitas</p>
+</div>
+<p><strong>Kapan menggunakan FCFE:</strong> Ketika ingin menilai langsung nilai ekuitas tanpa menghitung nilai perusahaan terlebih dahulu. Cocok ketika struktur modal relatif stabil. FCFE mendiskonto pada cost of equity (bukan WACC).</p></div></div>
+
+<div class="def"><div class="den">FCFF/WACC Model — Free Cash Flow to Firm</div><div class="did">FCFF adalah arus kas yang tersedia bagi seluruh pemegang klaim (pemegang utang dan ekuitas), sebelum pembayaran utang:
+<div class="fbox">
+<p><strong>Definisi FCFF:</strong></p>
+<p><code>FCFF = NOPAT + Depreciation − ΔWorking Capital − Capital Expenditure</code></p>
+<p><code>NOPAT = EBIT × (1 − Tax Rate)</code></p>
+<p><strong>Model Valuasi FCFF:</strong></p>
+<p><code>V_firm = Σ[t=1→n] FCFF_t / (1+WACC)^t + TV_firm / (1+WACC)^n</code></p>
+<p><code>V_equity = V_firm − Market Value of Debt</code></p>
+<p><strong>WACC:</strong></p>
+<p><code>WACC = (E/V) × r_e + (D/V) × r_d × (1−T)</code></p>
+</div>
+<p><strong>Kapan menggunakan FCFF/WACC:</strong> Ketika struktur modal berubah dari waktu ke waktu, atau ketika ingin menilai perusahaan secara keseluruhan (enterprise value). WACC menggabungkan cost of equity dan cost of debt yang disesuaikan pajak (<em>tax-adjusted</em>), memungkinkan penilaian yang mencerminkan seluruh struktur pembiayaan. Catatan penting: jangan mendiskonto FCFE pada WACC atau FCFF pada cost of equity — <em>mismatch</em> antara arus kas dan discount rate adalah kesalahan fundamental.</p></div></div>
+
+<div class="def"><div class="den">Terminal Value dalam DCF / Terminal Value Calculation</div><div class="did">Terminal value (<em>TV</em>) menangkap nilai perusahaan setelah periode proyeksi eksplisit. Terdapat dua metode utama:
+<div class="fbox">
+<p><strong>Metode 1 — Gordon Growth (Perpetuity Growth):</strong></p>
+<p><code>TV = FCF_{n+1} / (discount rate − g_terminal)</code></p>
+<p>g_terminal harus ≤ pertumbuhan ekonomi jangka panjang (2–5% tergantung negara)</p>
+<p><strong>Metode 2 — Exit Multiple:</strong></p>
+<p><code>TV = Metric_n × Multiple</code></p>
+<p>Contoh: TV = EBITDA_n × EV/EBITDA multiple dari perusahaan sebanding</p>
+</div>
+<p><strong>Perhatian kritis:</strong> Terminal value sering menyumbang 50-80% dari total nilai perusahaan dalam model DCF. Ini berarti asumsi jangka panjang (yang paling tidak pasti) justru memiliki dampak terbesar pada hasil. Analis harus (1) melakukan <em>sensitivity analysis</em> terhadap g_terminal dan discount rate; (2) cross-check hasil Gordon Growth dengan Exit Multiple; (3) memastikan g_terminal tidak melebihi pertumbuhan ekonomi — jika ya, secara implisit mengasumsikan perusahaan akan melebihi seluruh ekonomi, yang tidak logis.</p></div></div>
+
+<table class="nb">
+<thead><tr><th style="width:20%">Aspek</th><th style="width:40%">FCFE Model</th><th style="width:40%">FCFF/WACC Model</th></tr></thead>
+<tbody>
+<tr><td><strong>Arus Kas</strong></td><td>Free Cash Flow to Equity</td><td>Free Cash Flow to Firm</td></tr>
+<tr><td><strong>Discount Rate</strong></td><td>Cost of Equity (r_e)</td><td>WACC</td></tr>
+<tr><td><strong>Hasil Langsung</strong></td><td>Nilai ekuitas</td><td>Nilai perusahaan (enterprise value)</td></tr>
+<tr><td><strong>Untuk Nilai Ekuitas</strong></td><td>Langsung</td><td>V_firm − Debt</td></tr>
+<tr><td><strong>Cocok Ketika</strong></td><td>Struktur modal stabil</td><td>Struktur modal berubah; leverage tinggi</td></tr>
+<tr><td><strong>Umum Digunakan</strong></td><td>Equity research</td><td>M&A, corporate finance, LBO analysis</td></tr>
+</tbody>
+</table>
+</div>
+
+<div id="s4" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>4. Residual Income Model (RIM) — Model Laba Residual</h2>
+
+<p>Residual Income Model (RIM) adalah model valuasi yang menghubungkan langsung informasi akuntansi (nilai buku dan laba) dengan nilai pasar. Berbeda dari DDM dan DCF yang menilai perusahaan berdasarkan arus kas yang didistribusikan, RIM memulai dari <strong>nilai buku akuntansi</strong> dan menambahkan present value dari <em>laba residual</em> — laba di atas biaya modal ekuitas. RIM sangat populer dalam riset akuntansi dan dianggap paling cocok untuk menilai perusahaan keuangan (bank, asuransi) di mana nilai buku memiliki makna ekonomi yang kuat.</p>
+
+<div class="def"><div class="den">Laba Residual / Residual Income</div><div class="did">Laba residual (<em>residual income</em>, RI) adalah laba bersih dikurangi biaya peluang (<em>opportunity cost</em>) dari modal ekuitas yang diinvestasikan:
+<div class="fbox">
+<p><strong>Residual Income:</strong></p>
+<p><code>RI_t = NI_t − r × BV_{t-1}</code></p>
+<p><strong>Atau ekuivalen:</strong></p>
+<p><code>RI_t = (ROE_t − r) × BV_{t-1}</code></p>
+</div>
+<p><strong>Interpretasi:</strong> Jika ROE &gt; r (cost of equity), perusahaan menghasilkan laba residual positif — ia <em>menciptakan nilai</em> bagi pemegang saham di atas biaya modal. Jika ROE &lt; r, perusahaan <em>menghancurkan nilai</em> — laba tidak cukup untuk mengkompensasi risiko yang ditanggung investor. Perusahaan dengan RI positif yang persisten akan diperdagangkan di atas nilai buku (P/B &gt; 1), dan sebaliknya.</p></div></div>
+
+<div class="def"><div class="den">Model Valuasi Residual Income / RIM Valuation Formula</div><div class="did">
+<div class="fbox">
+<p><strong>Residual Income Model:</strong></p>
+<p><code>V₀ = BV₀ + Σ[t=1→∞] RI_t / (1+r)^t</code></p>
+<p><code>V₀ = BV₀ + Σ[t=1→∞] (NI_t − r × BV_{t-1}) / (1+r)^t</code></p>
+<p><strong>Dengan proyeksi eksplisit + terminal value:</strong></p>
+<p><code>V₀ = BV₀ + Σ[t=1→n] RI_t / (1+r)^t + TV_RI / (1+r)^n</code></p>
+<p><code>TV_RI = RI_{n+1} / (r − g) atau TV_RI = 0 (jika RI mean-reverts ke nol)</code></p>
+</div>
+<p><strong>Keunggulan RIM:</strong> (1) Berbasis data akuntansi yang tersedia — tidak memerlukan estimasi arus kas bebas yang kompleks; (2) Nilai buku sebagai <em>anchor</em> — memberikan titik awal yang lebih stabil daripada proyeksi arus kas; (3) Cocok untuk perusahaan dengan nilai buku bermakna — terutama bank dan perusahaan keuangan; (4) Menangkap value creation dari laba ditahan yang diinvestasikan kembali.</p></div></div>
+
+<div class="def"><div class="den">Clean Surplus Relation / Hubungan Surplus Bersih</div><div class="did"><em>Clean surplus relation</em> adalah asumsi fundamental RIM yang menyatakan bahwa perubahan nilai buku hanya berasal dari laba bersih dikurangi dividen:
+<div class="fbox">
+<p><code>BV_t = BV_{t-1} + NI_t − D_t</code></p>
+</div>
+<p>Artinya, <strong>tidak ada item yang langsung menambah atau mengurangi ekuitas tanpa melewati laporan laba rugi</strong> (misalnya OCI — <em>Other Comprehensive Income</em> — melanggar clean surplus). Dalam PSAK/IFRS, clean surplus tidak sepenuhnya terpenuhi karena beberapa item diakui langsung di ekuitas (revaluasi, foreign currency translation, hedging reserves). Analis perlu menyadari violasi ini dan mempertimbangkan dampaknya terhadap akurasi RIM.</p></div></div>
+
+<div class="ibox nb">
+<div class="ibt">💡 Mengapa RIM Cocok untuk Bank? / Why RIM is Ideal for Banks</div>
+<ol>
+<li><strong>Nilai buku bank bermakna secara ekonomi</strong> — Aset bank (kredit, surat berharga) dan liabilitas (deposito, pinjaman) sebagian besar dicatat mendekati <em>fair value</em>, berbeda dari perusahaan manufaktur yang asetnya mungkin sangat berbeda dari nilai pasar.</li>
+<li><strong>FCF sulit dihitung untuk bank</strong> — Konsep <em>capital expenditure</em> dan <em>working capital</em> yang standar tidak berlaku untuk bank. Kredit baru bukan "capex" tetapi merupakan operasi inti. Ini membuat DCF tradisional sulit diterapkan.</li>
+<li><strong>ROE vs cost of equity langsung mengukur value creation</strong> — Untuk bank, selisih ROE dan cost of equity secara langsung menunjukkan apakah bank menciptakan atau menghancurkan nilai. BBCA dengan ROE 20,7% dan cost of equity 11,7% memiliki spread +9,0% — penciptaan nilai yang signifikan.</li>
+</ol>
+</div>
+
+<div class="exb nb">
+<div class="exn">Asumsi Terminal Value dalam RIM</div>
+<p>Terdapat tiga pendekatan untuk terminal value dalam RIM:</p>
+<ol>
+<li><strong>RI konvergen ke nol</strong> — Asumsi bahwa keunggulan kompetitif akan hilang seiring waktu (<em>mean reversion</em>) sehingga ROE mendekati r dalam jangka panjang. TV_RI = 0. Pendekatan paling konservatif.</li>
+<li><strong>RI persisten pada level tertentu</strong> — Perusahaan dengan <em>sustainable competitive advantage</em> (seperti BBCA) mungkin mempertahankan RI positif secara permanen. TV_RI = RI_{n+1} / (r − g). Pendekatan paling agresif.</li>
+<li><strong>RI menurun secara gradual (persistence factor)</strong> — RI_t = ω × RI_{t-1}, di mana ω (omega) antara 0 dan 1 mencerminkan kecepatan mean reversion. Pendekatan moderat yang mengakui keunggulan kompetitif memiliki masa hidup terbatas.</li>
+</ol>
+</div>
+
+<h3>4.1 Penerapan Praktis RIM: Langkah demi Langkah</h3>
+
+<div class="ibox nb">
+<div class="ibt">📐 Langkah-Langkah Menerapkan RIM</div>
+<ol>
+<li><strong>Langkah 1: Tentukan BV₀</strong> — Nilai buku per saham saat ini. Untuk bank, gunakan tangible book value jika ada goodwill signifikan. Sesuaikan jika ada distorsi akuntansi material.</li>
+<li><strong>Langkah 2: Proyeksikan NI dan BV</strong> — Gunakan ROE asumsi dan clean surplus relation (BV_t = BV_{t-1} + NI_t − D_t) untuk membangun proyeksi 5-10 tahun ke depan. ROE sebaiknya di-mean-revert kecuali ada justifikasi kuat untuk persistensi.</li>
+<li><strong>Langkah 3: Hitung RI setiap tahun</strong> — RI_t = NI_t − r × BV_{t-1}. Jika ROE > r, RI positif; jika ROE < r, RI negatif.</li>
+<li><strong>Langkah 4: Diskonto RI</strong> — PV(RI_t) = RI_t / (1+r)^t. Jumlahkan seluruh PV(RI) selama horizon eksplisit.</li>
+<li><strong>Langkah 5: Hitung terminal value RI</strong> — Pilih salah satu pendekatan (RI→0, RI persisten, atau persistence factor). Diskonto TV ke present value.</li>
+<li><strong>Langkah 6: V₀ = BV₀ + Σ PV(RI) + PV(TV_RI)</strong> — Jumlahkan ketiga komponen.</li>
+<li><strong>Langkah 7: Sensitivity analysis</strong> — Uji terhadap variasi cost of equity, terminal ROE, dan persistence factor.</li>
+</ol>
+</div>
+
+<div class="def"><div class="den">RIM vs DCF: Perbandingan Langsung / Direct Comparison</div><div class="did">
+<table>
+<thead><tr><th style="width:25%">Dimensi</th><th style="width:37%">RIM</th><th style="width:38%">DCF</th></tr></thead>
+<tbody>
+<tr><td><strong>Starting point</strong></td><td>Nilai buku (anchor akuntansi)</td><td>Proyeksi arus kas (no anchor)</td></tr>
+<tr><td><strong>Input utama</strong></td><td>NI, BV, ROE, cost of equity</td><td>FCF, WACC (atau r_e)</td></tr>
+<tr><td><strong>Terminal value weight</strong></td><td>Umumnya lebih rendah (~30-50%) karena BV₀ sudah menangkap sebagian nilai</td><td>Umumnya lebih tinggi (~50-80%) karena seluruh nilai berasal dari projected cash flows</td></tr>
+<tr><td><strong>Cocok untuk bank?</strong></td><td>Ya — BV bank bermakna; FCF sulit dihitung</td><td>Sulit — konsep capex dan working capital tidak standar untuk bank</td></tr>
+<tr><td><strong>Cocok untuk tech?</strong></td><td>Kurang cocok — BV rendah, intangible dominant</td><td>Lebih cocok jika FCF dapat diprediksi</td></tr>
+<tr><td><strong>Sensitivitas utama</strong></td><td>Terminal ROE, persistence of advantage</td><td>Terminal growth, WACC</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+
+<div id="s5" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>5. Price Multiples — Valuasi Berbasis Multiples</h2>
+
+<p>Valuasi berbasis multiples (<em>relative valuation</em>) mengestimasi nilai perusahaan berdasarkan rasio harga pasar terhadap metrik fundamental, menggunakan perusahaan sejenis (<em>comparable companies</em>) atau rata-rata industri sebagai benchmark. Multiples adalah metode valuasi yang paling banyak digunakan dalam praktik karena sederhana, intuitif, dan tidak memerlukan proyeksi eksplisit. Namun, kesederhanaannya juga merupakan kelemahannya — multiples mengasumsikan bahwa perusahaan sebanding benar-benar <em>sebanding</em> dalam hal pertumbuhan, risiko, dan profitabilitas.</p>
+
+<div class="def"><div class="den">Price-to-Earnings (P/E) Ratio</div><div class="did">
+<div class="fbox">
+<p><strong>P/E Ratio:</strong></p>
+<p><code>P/E = Harga Saham / Laba per Saham (EPS)</code></p>
+<p><strong>P/E dari Gordon Growth Model:</strong></p>
+<p><code>P/E = (1 − b) / (r − g) = Payout Ratio / (r − g)</code></p>
+</div>
+<p>P/E menunjukkan berapa kali laba yang bersedia dibayar pasar. <strong>Faktor yang menentukan P/E:</strong> (1) Pertumbuhan — g lebih tinggi → P/E lebih tinggi; (2) Risiko — r lebih tinggi → P/E lebih rendah; (3) Payout ratio — payout lebih tinggi → P/E lebih tinggi (dalam Gordon framework); (4) Kualitas laba — laba yang lebih persisten dan berkualitas membenarkan P/E lebih tinggi.</p>
+<p><strong>Trailing P/E</strong> menggunakan EPS aktual 12 bulan terakhir; <strong>Forward P/E</strong> menggunakan EPS estimasi 12 bulan ke depan. Forward P/E umumnya lebih berguna karena mencerminkan ekspektasi masa depan.</p>
+<p><strong>Keterbatasan P/E:</strong> (1) Tidak bermakna ketika laba negatif; (2) Laba yang sangat siklikal membuat P/E menyesatkan pada titik puncak atau lembah siklus; (3) Perbedaan kebijakan akuntansi mempengaruhi EPS dan membuat perbandingan lintas perusahaan sulit; (4) P/E tidak memperhitungkan perbedaan struktur modal (leverage).</p></div></div>
+
+<div class="def"><div class="den">Price-to-Book (P/B) Ratio</div><div class="did">
+<div class="fbox">
+<p><strong>P/B Ratio:</strong></p>
+<p><code>P/B = Harga Saham / Nilai Buku per Saham (BPS)</code></p>
+<p><strong>Hubungan P/B-ROE (dari Residual Income framework):</strong></p>
+<p><code>P/B = (ROE − g) / (r − g)</code></p>
+<p>Jika ROE &gt; r → P/B &gt; 1 (perusahaan menciptakan nilai)</p>
+<p>Jika ROE = r → P/B = 1 (perusahaan menghasilkan tepat biaya modal)</p>
+<p>Jika ROE &lt; r → P/B &lt; 1 (perusahaan menghancurkan nilai)</p>
+</div>
+<p>P/B sangat erat terhubung dengan ROE melalui kerangka Residual Income. Perusahaan dengan ROE di atas cost of equity <em>seharusnya</em> diperdagangkan di atas nilai buku — premium ini mencerminkan kemampuan perusahaan menghasilkan return di atas biaya modal. <strong>Keunggulan P/B:</strong> (1) Selalu positif (bahkan ketika laba negatif), sehingga dapat digunakan untuk perusahaan rugi; (2) Relatif stabil dibandingkan EPS; (3) Sangat informatif untuk sektor keuangan (bank, asuransi) di mana nilai buku bermakna secara ekonomi. <strong>Keterbatasan:</strong> (1) Untuk perusahaan dengan aset intangible besar (teknologi, farmasi), nilai buku sangat meremehkan nilai ekonomi; (2) Perbedaan kebijakan akuntansi mempengaruhi nilai buku.</p></div></div>
+
+<div class="def"><div class="den">EV/EBITDA — Enterprise Value to EBITDA</div><div class="did">
+<div class="fbox">
+<p><strong>EV/EBITDA:</strong></p>
+<p><code>EV = Market Cap + Net Debt (Total Debt − Cash)</code></p>
+<p><code>EV/EBITDA = Enterprise Value / EBITDA</code></p>
+</div>
+<p>EV/EBITDA mengukur valuasi enterprise relatif terhadap laba operasi sebelum depresiasi. <strong>Keunggulan:</strong> (1) Capital structure-neutral — tidak dipengaruhi leverage karena menggunakan enterprise value dan laba sebelum bunga; (2) Tidak dipengaruhi perbedaan depresiasi/amortisasi antar perusahaan; (3) Cocok untuk perbandingan lintas perusahaan dengan leverage berbeda, termasuk dalam konteks M&A. <strong>Keterbatasan:</strong> (1) Mengabaikan perbedaan kebutuhan capex — perusahaan capital-intensive mungkin memiliki EV/EBITDA rendah tetapi FCF rendah juga; (2) Tidak cocok untuk perusahaan keuangan (EBITDA tidak bermakna untuk bank).</p></div></div>
+
+<div class="ibox nb">
+<div class="ibt">⚖️ Memilih Multiple yang Tepat / Choosing the Right Multiple</div>
+<table>
+<thead><tr><th style="width:20%">Multiple</th><th style="width:25%">Paling Cocok Untuk</th><th style="width:25%">Tidak Cocok Untuk</th><th style="width:30%">Catatan Penting</th></tr></thead>
+<tbody>
+<tr><td>P/E</td><td>Perusahaan profitable stabil</td><td>Perusahaan rugi; laba sangat siklikal</td><td>Gunakan forward P/E jika tersedia; sesuaikan untuk non-recurring items</td></tr>
+<tr><td>P/B</td><td>Bank, asuransi, sektor keuangan</td><td>Perusahaan asset-light, teknologi</td><td>Selalu analisis bersama ROE — P/B tanpa konteks ROE tidak bermakna</td></tr>
+<tr><td>EV/EBITDA</td><td>Perbandingan lintas leverage; M&A</td><td>Bank (EBITDA tidak bermakna); perusahaan capex-heavy tanpa koreksi</td><td>Cross-check dengan EV/EBIT untuk mempertimbangkan depresiasi</td></tr>
+<tr><td>EV/Revenue</td><td>Perusahaan rugi, growth-stage</td><td>Perusahaan mature; perbandingan margin berbeda</td><td>Hanya bermakna jika mengasumsikan margin akan normalisasi; sangat subjektif</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cg nb">
+<div class="cgt">Palepu Ch.8: Teknik Valuasi Praktis</div>
+<p>Palepu Ch.8 menekankan beberapa aspek praktis valuasi yang melengkapi Subramanyam:</p>
+<ul>
+<li><strong>Pemilihan <em>comparable companies</em></strong> — Perusahaan sebanding harus serupa dalam hal industri, ukuran, profitabilitas, pertumbuhan, dan risiko. Semakin sedikit kesamaan, semakin tidak bermakna perbandingan multiples.</li>
+<li><strong>Penyesuaian multiples</strong> — Jika perusahaan target memiliki pertumbuhan atau risiko yang berbeda dari peer group, multiples harus disesuaikan. Misalnya: jika BBCA memiliki ROE lebih tinggi dari rata-rata bank, P/B yang lebih tinggi justified.</li>
+<li><strong>Cross-checking antar model</strong> — Palepu menekankan penggunaan minimal dua metode valuasi dan merekonsiliasi perbedaan. Jika DCF memberikan Rp 5.000 dan multiples memberikan Rp 9.000, analis harus menjelaskan diskrepansi.</li>
+</ul>
+</div>
+
+<h3>5.1 Multiples Lanjutan dan Aplikasi Sektoral / Advanced Multiples and Sector Applications</h3>
+
+<div class="def"><div class="den">PEG Ratio — Price/Earnings to Growth</div><div class="did">
+<div class="fbox">
+<p><code>PEG = P/E / Expected EPS Growth Rate (%)</code></p>
+<p>Contoh: P/E = 20x, expected growth = 15% → PEG = 20/15 = 1.33</p>
+</div>
+<p>PEG berusaha menormalisasi P/E terhadap pertumbuhan — P/E yang tinggi mungkin justified jika pertumbuhan juga tinggi. <strong>Rule of thumb:</strong> PEG &lt; 1 mengindikasikan saham mungkin undervalued relatif terhadap pertumbuhannya; PEG &gt; 2 menunjukkan valuasi yang sangat tinggi bahkan setelah memperhitungkan pertumbuhan. <strong>Keterbatasan PEG:</strong> (1) Mengasumsikan hubungan linear antara P/E dan growth, yang secara teoritis tidak benar; (2) Sangat sensitif terhadap estimasi pertumbuhan; (3) Tidak memperhitungkan risiko — perusahaan dengan pertumbuhan tinggi tetapi risiko tinggi seharusnya memiliki PEG yang lebih rendah.</p></div></div>
+
+<div class="def"><div class="den">Dividend Yield sebagai Inverse Valuation Signal</div><div class="did">
+<div class="fbox">
+<p><code>Dividend Yield = DPS / Harga Saham</code></p>
+<p>BBCA: 170 / 9.325 = 1,8% | BMRI: 410 / 6.375 = 6,4%</p>
+</div>
+<p>Dividend yield yang rendah (seperti BBCA: 1,8%) bukan sinyal negatif — ia mencerminkan bahwa investor membeli saham terutama untuk <em>capital appreciation</em>, bukan pendapatan dividen. Perusahaan dengan yield rendah biasanya diperdagangkan pada P/E tinggi karena pasar mengekspektasikan pertumbuhan laba yang signifikan. Sebaliknya, yield tinggi (BMRI: 6,4%) mungkin mencerminkan ekspektasi pertumbuhan yang lebih moderat atau valuasi yang lebih konservatif. <strong>Dalam konteks DDM:</strong> yield rendah + high growth expectation = harga tinggi; yield tinggi + low growth = harga lebih moderat relatif terhadap dividen.</p></div></div>
+
+<div class="exb nb">
+<div class="exn">Aplikasi Multiples per Sektor di Indonesia / Sector-Specific Multiples</div>
+<table>
+<thead><tr><th style="width:20%">Sektor</th><th style="width:25%">Multiple Utama</th><th style="width:25%">Multiple Pendukung</th><th style="width:30%">Catatan Indonesia</th></tr></thead>
+<tbody>
+<tr><td>Perbankan</td><td>P/B (dengan konteks ROE)</td><td>P/E</td><td>BBCA 4,2x P/B; bank BUMN 1,3-2,8x; Bank syariah 1,0-1,5x</td></tr>
+<tr><td>Consumer Staples</td><td>P/E</td><td>EV/EBITDA</td><td>UNVR, ICBP, INDF; P/E 20-35x untuk growth leaders</td></tr>
+<tr><td>Telekomunikasi</td><td>EV/EBITDA</td><td>P/E, EV/Subscriber</td><td>TLKM: EV/EBITDA ~6-8x; EXCL, ISAT: 4-6x</td></tr>
+<tr><td>Mining &amp; Resources</td><td>EV/EBITDA</td><td>P/E (normalized), EV/Reserves</td><td>Sangat siklikal; gunakan normalized earnings, bukan peak/trough</td></tr>
+<tr><td>Property</td><td>P/B (RNAV-adjusted)</td><td>P/E</td><td>Adjusted untuk RNAV (Revised NAV) dari land bank</td></tr>
+<tr><td>Technology/E-commerce</td><td>EV/Revenue</td><td>EV/GMV, Price/User</td><td>GOTO, BUKA: laba negatif → P/E tidak bermakna</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>5.2 Kesalahan Umum dalam Penggunaan Multiples / Common Pitfalls in Multiples Valuation</h3>
+
+<div class="ibox nb">
+<div class="ibt">⚠️ Kesalahan Kritis dalam Valuasi Berbasis Multiples</div>
+<ol>
+<li><strong>Membandingkan multiples lintas industri</strong> — P/E 20x untuk bank (BBCA) vs P/E 20x untuk properti (BSDE) memiliki implikasi yang berbeda karena profil pertumbuhan, risiko, dan capital intensity sangat berbeda. Multiples hanya bermakna dalam perbandingan intra-industri.</li>
+<li><strong>Mengabaikan perbedaan akuntansi</strong> — Perusahaan yang menggunakan metode depresiasi berbeda, pengakuan pendapatan berbeda, atau standar akuntansi berbeda akan memiliki EPS dan BPS yang tidak dapat langsung dibandingkan. Penyesuaian akuntansi harus dilakukan sebelum perbandingan multiples.</li>
+<li><strong>Menggunakan trailing P/E pada titik siklus ekstrem</strong> — Pada puncak siklus, laba sangat tinggi → P/E terlihat rendah (murah) padahal laba akan menurun. Pada lembah siklus, laba rendah → P/E terlihat tinggi (mahal) padahal laba akan pulih. Untuk perusahaan siklikal, gunakan <em>normalized earnings</em> atau <em>mid-cycle P/E</em>.</li>
+<li><strong>Membandingkan P/B tanpa konteks ROE</strong> — P/B 1,3x untuk BBNI dan P/B 4,2x untuk BBCA tidak bisa dibandingkan tanpa melihat ROE masing-masing. P/B hanya bermakna bersama ROE karena P/B = f(ROE, r, g).</li>
+<li><strong>Survivorship bias dalam peer selection</strong> — Hanya memilih peers yang masih <em>performing well</em> dan mengabaikan yang berkinerja buruk menghasilkan benchmark yang bias ke atas.</li>
+<li><strong>Circular reasoning</strong> — Menggunakan market multiples untuk memvalidasi market price pada dasarnya berargumen bahwa harga benar karena harga benar. Multiples harus digunakan bersama model fundamental (DCF/RIM) untuk memberikan perspektif independen.</li>
+</ol>
+</div>
+</div>
+
+<div id="s6" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6. Estimasi Biaya Ekuitas / Cost of Equity Estimation</h2>
+
+<p>Biaya ekuitas (<em>cost of equity</em>, r_e) adalah tingkat pengembalian minimum yang dipersyaratkan investor untuk berinvestasi dalam saham perusahaan, mengingat risiko yang ditanggung. Cost of equity adalah <strong>variabel tunggal paling kritis dalam seluruh proses valuasi</strong> — ia muncul di setiap model (DDM, DCF, RIM, P/E decomposition) dan perubahan kecil pada r_e memiliki dampak yang sangat besar pada estimasi nilai. Namun ironisnya, cost of equity juga merupakan variabel yang <strong>paling sulit diestimasi dengan presisi</strong>.</p>
+
+<div class="def"><div class="den">CAPM — Capital Asset Pricing Model</div><div class="did">CAPM adalah model paling banyak digunakan untuk mengestimasi cost of equity:
+<div class="fbox">
+<p><strong>CAPM:</strong></p>
+<p><code>r_e = R_f + β × (R_m − R_f)</code></p>
+<p>Di mana:</p>
+<ul>
+<li>R_f = <em>risk-free rate</em> — yield obligasi pemerintah jangka panjang (untuk Indonesia: yield SUN 10 tahun, ~6,5%)</li>
+<li>β (<em>beta</em>) = sensitivitas return saham terhadap return pasar; mengukur risiko sistematis</li>
+<li>(R_m − R_f) = <em>equity risk premium</em> (ERP) — return tambahan yang dipersyaratkan investor untuk menanggung risiko pasar saham dibandingkan aset bebas risiko</li>
+</ul>
+</div>
+<p><strong>Contoh BBCA:</strong> r_e = 6,5% + 0,95 × 5,5% = 6,5% + 5,225% = 11,725% ≈ 11,7%</p>
+<p><strong>Asumsi dan keterbatasan CAPM:</strong> (1) Mengasumsikan pasar efisien dan investor terdiversifikasi — hanya risiko sistematis yang dihargai; (2) Beta diestimasi dari data historis — mungkin tidak stabil dari waktu ke waktu; (3) ERP sangat sulit diestimasi — berbeda metodologi menghasilkan estimasi yang sangat berbeda (4-8% untuk pasar berkembang); (4) CAPM mungkin meremehkan cost of equity di <em>emerging markets</em> karena tidak menangkap risiko negara, likuiditas, dan institusional.</p></div></div>
+
+<div class="def"><div class="den">Equity Risk Premium (ERP) / Premi Risiko Ekuitas</div><div class="did">ERP adalah <strong>input paling kontroversial dan berpengaruh</strong> dalam estimasi cost of equity. ERP mencerminkan kompensasi tambahan yang dipersyaratkan investor untuk menanggung risiko investasi di pasar saham dibandingkan aset bebas risiko:
+<p><strong>Metode estimasi ERP:</strong></p>
+<ol>
+<li><strong>Historical ERP</strong> — rata-rata selisih return pasar saham vs obligasi pemerintah selama periode historis panjang (biasanya 50-100 tahun). Untuk pasar maju (AS): ~4-6%. Untuk Indonesia: lebih tinggi (~5-7%) karena risiko pasar berkembang.</li>
+<li><strong>Survey-based ERP</strong> — survei langsung kepada akademisi, CFO, dan analis tentang ekspektasi ERP ke depan.</li>
+<li><strong>Implied ERP</strong> — dihitung terbalik dari harga pasar saat ini, estimasi laba, dan pertumbuhan menggunakan model valuasi. Paling <em>forward-looking</em> tetapi sensitif terhadap asumsi model.</li>
+</ol>
+<p>Perbedaan 1% pada ERP mengubah cost of equity ~1%, yang dapat mengubah valuasi 15-25%. Untuk Indonesia, Damodaran (2023) mengestimasi total ERP ~10-12% (mature market ERP ~5% + country risk premium ~5-7%), menghasilkan total cost of equity ~13-15% untuk rata-rata saham Indonesia.</p></div></div>
+
+<div class="def"><div class="den">Build-Up Method / Metode Penyusunan</div><div class="did">Build-up method adalah alternatif CAPM yang menambahkan premi risiko secara berlapis:
+<div class="fbox">
+<p><code>r_e = R_f + ERP + Size Premium + Company-Specific Risk Premium + Country Risk Premium</code></p>
+</div>
+<p><strong>Kapan menggunakan build-up:</strong> (1) Perusahaan privat (beta tidak tersedia); (2) Perusahaan di emerging markets dengan tambahan country risk; (3) Perusahaan kecil yang membutuhkan size premium. Build-up method lebih fleksibel tetapi lebih subjektif karena setiap komponen premi harus diestimasi secara terpisah.</p></div></div>
+
+<div class="nb">
+<strong>Catatan penting untuk konteks Indonesia:</strong> Estimasi cost of equity untuk perusahaan Indonesia memerlukan pertimbangan khusus: (1) Risk-free rate menggunakan yield SUN (Surat Utang Negara) 10 tahun, bukan US Treasury; (2) Beta sebaiknya dihitung terhadap IHSG; (3) Country risk premium perlu dipertimbangkan, terutama jika menggunakan framework Damodaran; (4) Untuk perusahaan blue-chip seperti BBCA, cost of equity mungkin lebih rendah daripada rata-rata pasar karena beta &lt; 1 dan perceived quality premium.
+</div>
+
+<h3>6.1 Beta: Estimasi dan Interpretasi / Beta Estimation and Interpretation</h3>
+
+<div class="def"><div class="den">Beta (β) — Risiko Sistematis</div><div class="did">Beta mengukur sensitivitas return saham terhadap return pasar (<em>systematic risk</em>):
+<div class="fbox">
+<p><code>β = Cov(R_i, R_m) / Var(R_m)</code></p>
+<p>Atau: slope dari regresi R_i = α + β × R_m + ε</p>
+</div>
+<p><strong>Interpretasi:</strong> β = 1 → return saham bergerak searah dan seproporsional dengan pasar; β &gt; 1 → saham lebih volatile dari pasar (<em>aggressive stock</em>); β &lt; 1 → saham kurang volatile dari pasar (<em>defensive stock</em>). BBCA memiliki β ≈ 0,95 — sedikit di bawah pasar, mencerminkan sifatnya sebagai saham defensif berkualitas tinggi.</p>
+<p><strong>Masalah estimasi beta:</strong> (1) Periode estimasi mempengaruhi hasil — beta 2 tahun vs 5 tahun dapat berbeda signifikan; (2) Frekuensi data — harian vs mingguan vs bulanan menghasilkan beta berbeda; (3) Beta historis mungkin tidak stabil — beta bisa berubah seiring perubahan bisnis perusahaan; (4) <em>Thin trading</em> — saham yang jarang diperdagangkan memiliki beta yang bias ke bawah karena return yang tertunda. Untuk mengatasi keterbatasan ini, beberapa analis menggunakan <em>adjusted beta</em> (Bloomberg: adjusted β = 0,67 × raw β + 0,33 × 1,0) yang menarik beta menuju 1,0.</p></div></div>
+
+<h3>6.2 WACC — Weighted Average Cost of Capital</h3>
+
+<div class="def"><div class="den">WACC dan Komponennya / WACC Components</div><div class="did">WACC menggabungkan biaya seluruh sumber pendanaan berdasarkan proporsi masing-masing:
+<div class="fbox">
+<p><strong>WACC:</strong></p>
+<p><code>WACC = (E/V) × r_e + (D/V) × r_d × (1 − T)</code></p>
+<p>Di mana:</p>
+<ul>
+<li>E/V = proporsi ekuitas dalam struktur modal (market value-based)</li>
+<li>D/V = proporsi utang dalam struktur modal</li>
+<li>r_e = cost of equity (dari CAPM atau build-up)</li>
+<li>r_d = cost of debt (yield to maturity atau interest rate efektif)</li>
+<li>T = tarif pajak efektif</li>
+</ul>
+</div>
+<p><strong>Catatan penting:</strong> (1) Gunakan <em>market value</em> untuk bobot, bukan book value — book value tidak mencerminkan kondisi saat ini; (2) Cost of debt adalah after-tax karena bunga adalah tax-deductible; (3) WACC hanya tepat jika struktur modal diasumsikan konstan — jika leverage berubah signifikan dari tahun ke tahun, APV (<em>Adjusted Present Value</em>) lebih sesuai; (4) Untuk bank, konsep WACC tradisional kurang tepat karena deposito (kewajiban) adalah bagian integral dari operasi, bukan semata-mata pembiayaan.</p></div></div>
+
+<div class="exb nb">
+<div class="exn">Contoh Estimasi WACC untuk Perusahaan Indonesia Non-Keuangan</div>
+<table>
+<thead><tr><th style="width:35%">Komponen</th><th style="width:20%">Estimasi</th><th style="width:45%">Sumber/Basis</th></tr></thead>
+<tbody>
+<tr><td>Risk-Free Rate (R_f)</td><td>6,5%</td><td>Yield SUN 10 tahun, BI</td></tr>
+<tr><td>Beta (β)</td><td>1,10</td><td>Regresi 3 tahun vs IHSG (perusahaan consumer)</td></tr>
+<tr><td>ERP</td><td>5,5%</td><td>Damodaran Indonesia estimate</td></tr>
+<tr><td>Cost of Equity (r_e)</td><td>12,55%</td><td>6,5% + 1,10 × 5,5%</td></tr>
+<tr><td>Cost of Debt (pre-tax)</td><td>8,0%</td><td>YTM obligasi korporasi setara rating</td></tr>
+<tr><td>Tax Rate (T)</td><td>22%</td><td>Tarif PPh Badan Indonesia</td></tr>
+<tr><td>Cost of Debt (after-tax)</td><td>6,24%</td><td>8,0% × (1 − 0,22)</td></tr>
+<tr><td>Equity Weight (E/V)</td><td>70%</td><td>Market cap / (Market cap + Net debt)</td></tr>
+<tr><td>Debt Weight (D/V)</td><td>30%</td><td>Net debt / (Market cap + Net debt)</td></tr>
+<tr><td><strong>WACC</strong></td><td><strong>10,66%</strong></td><td>70% × 12,55% + 30% × 6,24%</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s6b" class="section pb">
+<div class="phdr"><span>Chapter 11 · Sensitivity Analysis</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6B. Analisis Sensitivitas dalam Valuasi / Sensitivity Analysis in Valuation</h2>
+
+<p>Analisis sensitivitas adalah alat kritis untuk memahami bagaimana variasi asumsi mempengaruhi estimasi nilai. Mengingat ketidakpastian inheren dalam setiap asumsi valuasi — cost of equity, terminal growth rate, profitabilitas masa depan — menyajikan satu angka tunggal sebagai "nilai intrinsik" adalah misleading. Analis profesional selalu menyajikan <em>valuation range</em> yang mencerminkan skenario berbeda.</p>
+
+<div class="def"><div class="den">Sensitivity Table / Tabel Sensitivitas</div><div class="did">Tabel sensitivitas dua dimensi menunjukkan bagaimana nilai berubah ketika dua variabel kunci bervariasi secara bersamaan:
+<div class="fbox">
+<p><strong>Contoh: Sensitivitas RIM terhadap Cost of Equity dan Terminal ROE</strong></p>
+<table>
+<thead><tr><th>ROE Terminal ↓ / CoE →</th><th>10,0%</th><th>11,0%</th><th>11,7%</th><th>12,5%</th><th>13,0%</th></tr></thead>
+<tbody>
+<tr><td>16,0%</td><td>Rp 6.400</td><td>Rp 5.200</td><td>Rp 4.500</td><td>Rp 3.900</td><td>Rp 3.600</td></tr>
+<tr><td>18,0%</td><td>Rp 8.800</td><td>Rp 6.500</td><td>Rp 5.400</td><td>Rp 4.500</td><td>Rp 4.100</td></tr>
+<tr><td>19,0%</td><td>Rp 10.200</td><td>Rp 7.200</td><td>Rp 5.900</td><td>Rp 4.800</td><td>Rp 4.400</td></tr>
+<tr><td>20,0%</td><td>Rp 11.800</td><td>Rp 8.000</td><td>Rp 6.400</td><td>Rp 5.200</td><td>Rp 4.700</td></tr>
+<tr><td>21,0%</td><td>Rp 13.500</td><td>Rp 8.900</td><td>Rp 7.000</td><td>Rp 5.600</td><td>Rp 5.000</td></tr>
+</tbody>
+</table>
+<p><em>Catatan: Nilai ilustratif untuk BBCA; g_terminal = 5,0%; BV₀ = Rp 2.219. Sel yang disorot (ROE=20%, CoE=11,7%) mendekati base case.</em></p>
+</div>
+<p><strong>Insight dari tabel sensitivitas:</strong> (1) Perubahan 1% pada cost of equity mengubah valuasi ~20-25% — ini adalah variabel paling sensitif; (2) Harga pasar BBCA (Rp 9.325) hanya tercapai dengan asumsi sangat optimistis: CoE rendah (~10%) dan ROE tinggi persisten (~19-20%); (3) Tabel membantu investor memahami "apa yang dijual pasar" — asumsi implisit yang terkandung dalam harga saat ini.</p></div></div>
+
+<div class="def"><div class="den">Scenario Analysis vs Sensitivity Analysis</div><div class="did">
+<p><strong>Sensitivity Analysis</strong> menguji dampak variasi <em>satu atau dua variabel</em> pada satu waktu, menjaga variabel lain konstan (<em>ceteris paribus</em>). Menghasilkan tabel atau grafik yang menunjukkan hubungan antara input dan output.</p>
+<p><strong>Scenario Analysis</strong> menguji <em>narasi bisnis yang koheren</em> di mana banyak variabel berubah bersamaan secara konsisten:</p>
+<ul>
+<li><strong>Bull case:</strong> Pertumbuhan ekonomi Indonesia akselerasi; BBCA mempertahankan market share; ROE stabil 20%+; regulasi favorable → CoE rendah, pertumbuhan tinggi → valuasi tinggi</li>
+<li><strong>Base case:</strong> Pertumbuhan moderat; kompetisi fintech meningkat; ROE gradual mean-revert ke 18% → valuasi moderat</li>
+<li><strong>Bear case:</strong> Resesi; kualitas kredit memburuk; disrupsi digital dari bank digital; ROE turun ke 15% → valuasi rendah</li>
+</ul>
+<p>Scenario analysis lebih bermakna dari sensitivity analysis karena mencerminkan realitas bahwa variabel-variabel ekonomi berkorelasi — ketika ekonomi memburuk, pertumbuhan, profitabilitas, <em>dan</em> risiko semuanya berubah bersamaan.</p></div></div>
+
+<div class="ibox nb">
+<div class="ibt">📊 Variabel Paling Sensitif dalam Setiap Model</div>
+<table>
+<thead><tr><th style="width:15%">Model</th><th style="width:30%">Variabel Paling Sensitif</th><th style="width:55%">Implikasi Praktis</th></tr></thead>
+<tbody>
+<tr><td>DDM</td><td>g (growth rate), r (cost of equity)</td><td>Ketika g mendekati r, valuasi naik secara eksponensial; perubahan kecil pada g atau r memiliki dampak dramatis</td></tr>
+<tr><td>DCF</td><td>Terminal growth, WACC, operating margin</td><td>Terminal value sering &gt;60% total; sensitivitas terhadap WACC dan g_terminal sangat tinggi</td></tr>
+<tr><td>RIM</td><td>Terminal ROE, cost of equity, persistence factor</td><td>Apakah ROE mean-revert atau persisten adalah pertanyaan paling kritis</td></tr>
+<tr><td>Multiples</td><td>Pilihan peer group, earnings normalization</td><td>Pemilihan peers yang berbeda dapat menghasilkan benchmark yang sangat berbeda</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="s6c" class="section pb">
+<div class="phdr"><span>Palepu Ch.9 · Linking Analysis to Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>6C. Menghubungkan Analisis Laporan Keuangan dengan Valuasi (Palepu Ch.9)</h2>
+
+<p>Palepu Chapter 9 membahas pertanyaan fundamental: <strong>bagaimana kualitas analisis laporan keuangan mempengaruhi kualitas valuasi?</strong> Bab ini menjembatani seluruh proses analitis (analisis bisnis, akuntansi, keuangan) dengan proses valuasi, menekankan bahwa valuasi yang bermakna tidak mungkin tanpa analisis fundamental yang berkualitas tinggi.</p>
+
+<div class="def"><div class="den">Distorsi Akuntansi dan Dampaknya terhadap Valuasi / Accounting Distortions and Valuation Impact</div><div class="did">
+<p>Palepu Ch.9 mengidentifikasi beberapa cara distorsi akuntansi dapat menyebabkan <em>mispricing</em>:</p>
+<ol>
+<li><strong>Earnings management yang agresif</strong> — Perusahaan yang menggelembungkan laba melalui pengakuan pendapatan prematur atau penundaan beban akan memiliki P/E yang terlihat rendah (karena E tinggi secara artifisial), menyembunyikan overvaluation sesungguhnya.</li>
+<li><strong>Perbedaan kebijakan akuntansi antar perusahaan</strong> — Dua perusahaan identik yang menggunakan metode akuntansi berbeda (FIFO vs weighted average, straight-line vs declining balance) akan melaporkan laba dan nilai buku yang berbeda, membuat perbandingan multiples menyesatkan jika tidak disesuaikan.</li>
+<li><strong>Off-balance sheet items</strong> — Aset dan kewajiban yang tidak tercermin di neraca (operating leases pra-IFRS 16, SPE, contingent liabilities) mempengaruhi baik RIM (BV tidak lengkap) maupun DCF (kas tidak mencerminkan seluruh kewajiban).</li>
+<li><strong>Non-recurring items</strong> — Laba yang mengandung keuntungan/kerugian satu kali (penjualan aset, restrukturisasi, impairment) mempengaruhi P/E jika tidak dinormalisasi. Analis harus menggunakan <em>core earnings</em> atau <em>normalized earnings</em>.</li>
+</ol>
+</div></div>
+
+<div class="def"><div class="den">Strategi Investasi Berbasis Analisis Fundamental / Fundamental Analysis-Based Investment Strategies</div><div class="did">
+<p>Palepu Ch.9 dan literatur keuangan mendokumentasikan beberapa strategi investasi berbasis analisis fundamental yang telah menunjukkan kemampuan menghasilkan abnormal returns:</p>
+<ol>
+<li><strong>Value investing</strong> — Membeli saham dengan valuasi rendah (P/B rendah, P/E rendah) yang memiliki fundamental solid. Fama &amp; French (1992) mendokumentasikan <em>value premium</em> — saham P/B rendah secara historis menghasilkan return lebih tinggi dari saham P/B tinggi.</li>
+<li><strong>Quality investing</strong> — Membeli saham perusahaan dengan kualitas fundamental tinggi: ROE konsisten, leverage rendah, pertumbuhan stabil, manajemen berkualitas. BBCA adalah contoh klasik <em>quality stock</em> di Indonesia.</li>
+<li><strong>Accrual anomaly</strong> — Sloan (1996) menemukan bahwa perusahaan dengan komponen akrual laba yang tinggi cenderung mengalami <em>earnings reversal</em> dan underperformance, sementara perusahaan dengan komponen kas yang tinggi cenderung outperform. Ini menunjukkan bahwa pasar tidak sepenuhnya memahami implikasi kualitas laba.</li>
+<li><strong>Post-earnings announcement drift (PEAD)</strong> — Saham yang melaporkan earnings surprise positif cenderung terus naik setelah pengumuman, dan sebaliknya. Ini menunjukkan bahwa informasi laba baru tidak langsung sepenuhnya tercermin dalam harga.</li>
+</ol>
+<p><strong>Implikasi:</strong> Anomali-anomali ini menunjukkan bahwa pasar tidak sepenuhnya efisien, dan analis yang melakukan analisis fundamental mendalam — termasuk penyesuaian akuntansi, analisis kualitas laba, dan estimasi nilai intrinsik — berpotensi mengidentifikasi peluang investasi yang menguntungkan.</p></div></div>
+
+<div class="cg nb">
+<div class="cgt">Palepu Ch.9: Framework Integrasi Analisis-Valuasi</div>
+<p>Palepu menyajikan framework yang menghubungkan empat langkah analisis dengan output valuasi:</p>
+<table>
+<thead><tr><th style="width:20%">Langkah Analisis</th><th style="width:35%">Apa yang Dihasilkan</th><th style="width:45%">Dampak pada Valuasi</th></tr></thead>
+<tbody>
+<tr><td><strong>Business Analysis</strong></td><td>Pemahaman industri, strategi, competitive positioning</td><td>Menginformasikan asumsi pertumbuhan, sustainability of competitive advantage, dan terminal value</td></tr>
+<tr><td><strong>Accounting Analysis</strong></td><td>Identifikasi distorsi, penyesuaian laba dan neraca</td><td>Memastikan input valuasi (EPS, BPS, FCF) bersih dari noise akuntansi; mengurangi risiko mispricing</td></tr>
+<tr><td><strong>Financial Analysis</strong></td><td>Profitabilitas, likuiditas, solvency, efisiensi</td><td>Mengukur kemampuan perusahaan menciptakan nilai (ROE vs r); mengidentifikasi mean reversion</td></tr>
+<tr><td><strong>Prospective Analysis</strong></td><td>Proyeksi laba, FCF, pro forma statements</td><td>Input numerik langsung untuk DDM, DCF, RIM; kualitas proyeksi = kualitas valuasi</td></tr>
+</tbody>
+</table>
+<p><strong>Pesan kunci Palepu Ch.9:</strong> Valuasi yang bermakna membutuhkan <em>all four steps</em>. Investor yang langsung melompat ke model valuasi tanpa melakukan analisis bisnis, akuntansi, dan keuangan yang memadai menghasilkan angka tanpa konteks — "precise but inaccurate."</p>
+</div>
+</div>
+
+<div id="s7" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>7. Konvergensi Model Valuasi / Model Convergence</h2>
+
+<p>Salah satu insight terpenting dari Subramanyam Ch.11 adalah bahwa <strong>dalam kondisi ideal, seluruh model valuasi (DDM, DCF, RIM) menghasilkan nilai yang sama</strong>. Kondisi ideal ini mencakup: clean surplus relation terpenuhi, terminal value diasumsikan konvergen, dan konsistensi asumsi antar model. Perbedaan hasil antar model dalam praktik bukan karena model-model tersebut secara inheren berbeda, tetapi karena perbedaan asumsi implementasi.</p>
+
+<div class="ibox nb">
+<div class="ibt">🔄 Equivalensi Teoritis Antar Model</div>
+<table>
+<thead><tr><th style="width:25%">Model</th><th style="width:35%">Mengukur Apa</th><th style="width:40%">Mengapa Harus Konvergen</th></tr></thead>
+<tbody>
+<tr><td>DDM</td><td>PV dari seluruh dividen masa depan</td><td rowspan="3">Semuanya mengukur <em>nilai yang sama</em> — present value dari total klaim pemegang ekuitas atas arus kas perusahaan. Jika asumsi konsisten, DDM = FCFE model = RIM karena semua berangkat dari aliran kas yang sama, hanya diekspresikan berbeda (dividen vs FCF vs residual income).</td></tr>
+<tr><td>FCFE/DCF</td><td>PV dari arus kas bebas ke ekuitas</td></tr>
+<tr><td>RIM</td><td>Nilai buku + PV dari laba residual</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="exb nb">
+<div class="exn">Mengapa Hasil Berbeda dalam Praktik?</div>
+<ol>
+<li><strong>Violasi clean surplus</strong> — OCI items mengikis hubungan antara nilai buku, laba, dan dividen; mempengaruhi akurasi RIM</li>
+<li><strong>Asumsi terminal value yang berbeda</strong> — Menggunakan perpetuity growth untuk DDM tetapi exit multiple untuk DCF menghasilkan hasil yang berbeda</li>
+<li><strong>Horizon proyeksi berbeda</strong> — DDM mungkin menggunakan horizon 5 tahun sementara DCF menggunakan 10 tahun; bagian eksplisit vs terminal value berbeda</li>
+<li><strong>Treatment arus kas non-recurring</strong> — FCF mungkin memasukkan item one-time yang tidak relevan untuk valuasi jangka panjang</li>
+<li><strong>Perbedaan cost of equity</strong> — Menggunakan CAPM dengan parameter berbeda untuk model yang berbeda</li>
+</ol>
+<p><strong>Best practice:</strong> Gunakan minimal dua model, pastikan asumsi konsisten, dan rekonsiliasi perbedaan. Jika hasil sangat berbeda, itu menandakan asumsi perlu diperiksa ulang.</p>
+</div>
+</div>
+
+<div id="s8" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>8. Efisiensi Pasar dan Implikasi untuk Analisis Fundamental</h2>
+
+<p>Efisiensi pasar (<em>market efficiency</em>) merupakan konteks akademik penting untuk memahami peran analisis fundamental dalam valuasi. Jika pasar benar-benar efisien, harga saham selalu mencerminkan seluruh informasi yang tersedia, dan analisis fundamental tidak dapat menghasilkan <em>abnormal returns</em>. Subramanyam Ch.11 dan Palepu Ch.9 mendiskusikan implikasi ini secara mendalam.</p>
+
+<div class="def"><div class="den">Tiga Bentuk Efisiensi Pasar / Three Forms of Market Efficiency</div><div class="did">
+<table>
+<thead><tr><th style="width:20%">Bentuk</th><th style="width:35%">Informasi yang Tercermin</th><th style="width:45%">Implikasi untuk Analisis Fundamental</th></tr></thead>
+<tbody>
+<tr><td><strong>Weak Form</strong></td><td>Harga historis dan volume perdagangan</td><td>Analisis teknikal tidak berguna; analisis fundamental masih berpotensi menghasilkan abnormal returns</td></tr>
+<tr><td><strong>Semi-Strong</strong></td><td>Seluruh informasi publik (laporan keuangan, berita, pengumuman)</td><td>Analisis fundamental berbasis informasi publik tidak menghasilkan abnormal returns secara konsisten</td></tr>
+<tr><td><strong>Strong Form</strong></td><td>Seluruh informasi, termasuk insider information</td><td>Tidak ada strategi investasi yang menghasilkan abnormal returns</td></tr>
+</tbody>
+</table>
+</div></div>
+
+<div class="cg nb">
+<div class="cgt">Palepu Ch.9: Peran Analisis Laporan Keuangan dalam Valuasi</div>
+<p>Palepu Ch.9 mengargumentasikan bahwa <strong>analisis fundamental tetap bernilai</strong> meskipun dalam pasar yang mendekati efisien semi-strong, karena:</p>
+<ol>
+<li><strong>Informasi akuntansi memerlukan interpretasi</strong> — Laporan keuangan adalah sumber informasi publik, tetapi <em>menginterpretasikan</em> informasi tersebut memerlukan keahlian. Analis yang lebih baik mengekstrak lebih banyak informasi dari data yang sama.</li>
+<li><strong>Kualitas akuntansi bervariasi</strong> — Perusahaan dengan kualitas akuntansi rendah (earnings management, aggressive recognition) mungkin <em>mispriced</em> karena informasi sesungguhnya tidak langsung terlihat dari angka akuntansi.</li>
+<li><strong>Anomali pasar terdokumentasi</strong> — Value premium (saham P/B rendah mengalahkan P/B tinggi), momentum, accrual anomaly — menunjukkan bahwa pasar tidak sepenuhnya efisien dan strategi berbasis fundamental dapat menghasilkan abnormal returns.</li>
+<li><strong>Analisis fundamental sebagai kontrol risiko</strong> — Bahkan jika pasar efisien, memahami fundamental perusahaan membantu investor mengelola risiko dan membuat keputusan investasi yang lebih informatif.</li>
+</ol>
+</div>
+
+<div class="nb">
+<strong>Perspektif seimbang:</strong> Dalam praktik, sebagian besar akademisi dan praktisi menganut posisi bahwa pasar "cukup efisien sebagian besar waktu, tetapi tidak sempurna." Ini berarti analisis fundamental memiliki nilai — terutama untuk investor yang lebih terampil, memiliki horizon panjang, dan bersedia melakukan analisis mendalam yang tidak dilakukan oleh sebagian besar pelaku pasar.
+</div>
+
+<h3>8.1 Behavioral Finance dan Implikasinya untuk Valuasi</h3>
+
+<div class="def"><div class="den">Bias Perilaku yang Mempengaruhi Valuasi / Behavioral Biases in Valuation</div><div class="did">
+<p>Literatur <em>behavioral finance</em> mendokumentasikan bias kognitif yang menyebabkan harga menyimpang dari nilai fundamental:</p>
+<ul>
+<li><strong>Anchoring</strong> — Investor terlalu berpegang pada informasi awal (anchor). Misalnya: jika harga IPO BBCA dulu Rp 1.400, investor lama mungkin masih menganggap Rp 9.000 "mahal" meskipun fundamental telah berubah drastis.</li>
+<li><strong>Overconfidence</strong> — Analis cenderung terlalu percaya diri pada estimasi mereka, menghasilkan confidence interval yang terlalu sempit. Valuasi yang disajikan sebagai satu angka (bukan range) mencerminkan overconfidence.</li>
+<li><strong>Herding</strong> — Investor mengikuti konsensus pasar alih-alih melakukan analisis independen. Ini dapat memperkuat mispricing — jika semua orang menilai BBCA layak P/E 20x, premis ini jarang dipertanyakan.</li>
+<li><strong>Loss aversion</strong> — Investor menghindari merealisasi kerugian, menyebabkan saham overvalued tetap overvalued lebih lama karena investor enggan menjual.</li>
+<li><strong>Recency bias</strong> — Terlalu menekankan data terbaru. Jika BBCA menghasilkan ROE 20% selama 5 tahun terakhir, investor mungkin mengasumsikan ini akan berlanjut selamanya tanpa mempertimbangkan mean reversion.</li>
+</ul>
+<p><strong>Implikasi untuk valuasi:</strong> Bias-bias ini menciptakan peluang bagi analis yang disiplin dan berbasis data — <em>systematic approach to valuation can exploit behavioral mispricing</em>.</p></div></div>
+
+<h3>8.2 Efisiensi Pasar di Emerging Markets: Konteks Indonesia</h3>
+
+<div class="ibox nb">
+<div class="ibt">🇮🇩 Efisiensi Pasar BEI (Bursa Efek Indonesia)</div>
+<p>Pasar saham Indonesia memiliki karakteristik yang mempengaruhi efisiensi:</p>
+<ol>
+<li><strong>Investor ritel dominan</strong> — Proporsi investor ritel di BEI sangat tinggi (~38% transaksi harian). Investor ritel umumnya kurang terampil dalam analisis fundamental, menciptakan potensi mispricing yang lebih besar.</li>
+<li><strong>Cakupan analis terbatas</strong> — Hanya saham-saham besar (LQ45) yang memiliki cakupan analis yang memadai. Saham mid-cap dan small-cap mungkin kurang efisien karena kurangnya informasi dan analisis.</li>
+<li><strong>Informasi asimetris</strong> — Kualitas pengungkapan bervariasi; beberapa perusahaan memiliki corporate governance yang lemah, menciptakan informasi asimetris yang lebih besar.</li>
+<li><strong>Likuiditas bervariasi</strong> — Saham LQ45 sangat likuid, tetapi banyak saham di luar indeks utama memiliki likuiditas rendah, yang dapat memperbesar mispricing.</li>
+</ol>
+<p><strong>Kesimpulan:</strong> Pasar Indonesia kemungkinan berada antara weak-form dan semi-strong efficient, dengan efisiensi yang lebih tinggi untuk saham blue-chip (BBCA, BBRI, TLKM) dan lebih rendah untuk saham mid/small-cap. Ini berarti analisis fundamental berpotensi lebih bernilai di Indonesia dibandingkan di pasar maju.</p>
+</div>
+</div>
+
+<div id="s9" class="section pb">
+<div class="phdr"><span>Chapter 11 · Equity Analysis and Valuation</span><span>Analisis Laporan Keuangan dan Valuasi Sekuritas · S2</span></div>
+<h2>9. Integrasi dan Ringkasan: Dari Analisis ke Valuasi</h2>
+
+<p>Bab penutup ini mengintegrasikan seluruh komponen valuasi yang telah dibahas dan menunjukkan bagaimana seluruh kerangka analisis laporan keuangan bermuara pada estimasi nilai intrinsik.</p>
+
+<div class="ibox nb">
+<div class="ibt">🔗 Peta Integrasi: Dari Data Akuntansi ke Estimasi Nilai</div>
+<ol>
+<li><strong>Analisis Akuntansi</strong> (Ch.4–6) → Laba berkualitas dan laporan keuangan yang bersih → <em>Input yang reliable</em></li>
+<li><strong>Analisis Arus Kas</strong> (Ch.7) → FCF historis dan pola kas → <em>Basis untuk proyeksi FCF dalam DCF</em></li>
+<li><strong>Analisis Profitabilitas</strong> (Ch.8) → ROE, DuPont, economic profit → <em>Input untuk RIM (ROE vs r) dan P/B</em></li>
+<li><strong>Analisis Prospektif</strong> (Ch.9) → Proyeksi laba, FCF, pro forma → <em>Input numerik langsung untuk semua model valuasi</em></li>
+<li><strong>Analisis Kredit</strong> (Ch.10) → Credit risk, cost of debt → <em>Input untuk WACC dan penilaian risiko</em></li>
+<li><strong>Valuasi Ekuitas</strong> (Ch.11) → Estimasi nilai intrinsik → <em>Keputusan investasi: beli, jual, tahan</em></li>
+</ol>
+</div>
+
+<div class="ibox nb">
+<div class="ibt">📐 Ringkasan Model Valuasi dan Penggunaannya</div>
+<table>
+<thead><tr><th style="width:15%">Model</th><th style="width:25%">Input Kunci</th><th style="width:25%">Paling Cocok Untuk</th><th style="width:35%">Keterbatasan Utama</th></tr></thead>
+<tbody>
+<tr><td><strong>DDM</strong></td><td>Dividen, g, r</td><td>Perusahaan pembayar dividen stabil (utilities, mature banks)</td><td>Tidak cocok untuk perusahaan tanpa dividen; sensitif terhadap g</td></tr>
+<tr><td><strong>FCFE</strong></td><td>FCF to equity, r_e</td><td>Perusahaan non-keuangan dengan FCF stabil</td><td>FCF bisa volatile; struktur modal harus stabil</td></tr>
+<tr><td><strong>FCFF/WACC</strong></td><td>FCF to firm, WACC</td><td>M&A; perusahaan dengan leverage berubah</td><td>WACC asumsi struktur modal stabil; sulit untuk bank</td></tr>
+<tr><td><strong>RIM</strong></td><td>BV, NI, r</td><td>Bank, perusahaan keuangan; perusahaan dengan BV bermakna</td><td>Clean surplus harus terpenuhi; sensitif terhadap persistence ROE</td></tr>
+<tr><td><strong>P/E</strong></td><td>EPS, P/E peer</td><td>Quick screening; perusahaan profitable stabil</td><td>Tidak bermakna untuk perusahaan rugi; sensitif terhadap akuntansi</td></tr>
+<tr><td><strong>P/B</strong></td><td>BPS, P/B peer, ROE</td><td>Bank, sektor keuangan</td><td>BV mungkin tidak bermakna untuk perusahaan asset-light</td></tr>
+<tr><td><strong>EV/EBITDA</strong></td><td>EV, EBITDA, peers</td><td>Perbandingan lintas leverage; M&A</td><td>Mengabaikan capex; tidak cocok untuk bank</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="cg nb">
+<div class="cgt">Proses Valuasi yang Direkomendasikan / Recommended Valuation Process</div>
+<ol>
+<li><strong>Pahami bisnisnya terlebih dahulu</strong> — Sebelum menghitung apapun, pahami model bisnis, industri, posisi kompetitif, dan <em>value drivers</em> perusahaan.</li>
+<li><strong>Bersihkan input akuntansi</strong> — Identifikasi dan sesuaikan distorsi akuntansi yang dapat mempengaruhi input valuasi (laba yang di-<em>manage</em>, OCI, item non-recurring).</li>
+<li><strong>Bangun proyeksi yang realistis</strong> — Gunakan output analisis prospektif (Ch.9) sebagai basis; pastikan konsistensi antar laporan.</li>
+<li><strong>Pilih model yang sesuai</strong> — Pilih 2-3 model yang paling cocok untuk karakteristik perusahaan (bank → RIM + P/B; non-keuangan → DCF + P/E; growth → DCF + EV/Revenue).</li>
+<li><strong>Estimasi cost of equity dengan hati-hati</strong> — Gunakan CAPM sebagai titik awal, pertimbangkan country risk untuk Indonesia, dan lakukan sensitivity analysis.</li>
+<li><strong>Lakukan sensitivity analysis</strong> — Uji dampak variasi asumsi kunci (r, g, terminal growth, margin) terhadap estimasi nilai.</li>
+<li><strong>Rekonsiliasi hasil antar model</strong> — Jika model-model memberikan hasil yang sangat berbeda, identifikasi penyebab dan tentukan mana yang lebih dapat diandalkan.</li>
+<li><strong>Sajikan dalam <em>range</em>, bukan titik tunggal</strong> — Estimasi nilai intrinsik sebaiknya disajikan sebagai rentang (konservatif → optimistis) yang mencerminkan ketidakpastian asumsi.</li>
+</ol>
+</div>
+
+<div class="fbox">
+<strong>Pesan Penutup:</strong> Valuasi ekuitas bukan sekadar latihan numerik — ia adalah <strong>integrasi seluruh pemahaman tentang bisnis, akuntansi, keuangan, dan ekonomi</strong> ke dalam satu estimasi yang koheren. Kualitas valuasi tidak ditentukan oleh kompleksitas model, tetapi oleh <strong>kualitas pemahaman fundamental yang mendasari asumsi-asumsi model</strong>. Analis terbaik bukan yang memiliki model paling canggih, tetapi yang memiliki pemahaman bisnis paling mendalam. Seperti yang ditekankan Palepu Ch.9: <em>analisis laporan keuangan yang berkualitas adalah fondasi dari valuasi yang bermakna</em>.
+</div>
+
+<h3>9.1 Contoh Integrasi: Valuasi Bank di Indonesia / Integration Example: Bank Valuation in Indonesia</h3>
+
+<div class="exb nb">
+<div class="exn">Studi Kasus Mini: Memilih Model Valuasi untuk BBCA</div>
+<p>Bagaimana kita menerapkan rekomendasi proses valuasi untuk BBCA?</p>
+<table>
+<thead><tr><th style="width:10%">Langkah</th><th style="width:25%">Aktivitas</th><th style="width:65%">Temuan untuk BBCA</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Pahami bisnis</td><td>Bank swasta terbesar Indonesia; CASA dominan (~80%); platform digital terdepan; NPL terendah; franchise value tinggi</td></tr>
+<tr><td>2</td><td>Bersihkan akuntansi</td><td>PSAK 71 (IFRS 9) ECL provisioning sudah diterapkan; laba berkualitas tinggi; non-recurring items minimal; clean surplus sebagian terpenuhi (OCI dari FVOCI securities)</td></tr>
+<tr><td>3</td><td>Analisis keuangan</td><td>ROE konsisten ~20-21%; NIM stabil; Cost-to-Income ratio membaik; capital adequacy kuat (CAR &gt;25%)</td></tr>
+<tr><td>4</td><td>Proyeksi</td><td>NI growth ~10-12%; ROE gradual mean-revert ke 18-19% dalam 5 tahun; dividen tumbuh ~8% p.a.</td></tr>
+<tr><td>5</td><td>Pilih model</td><td><strong>Primary: RIM</strong> (BV bermakna, ROE di atas r); <strong>Secondary: P/B dengan konteks ROE</strong>; DDM sebagai cross-check</td></tr>
+<tr><td>6</td><td>Cost of equity</td><td>CAPM: 11,7% (R_f=6,5%, β=0,95, ERP=5,5%); mungkin efektif ~10-11% karena quality premium</td></tr>
+<tr><td>7</td><td>Sensitivity</td><td>Nilai sangat sensitif terhadap terminal ROE (16-21%) dan cost of equity (10-13%); range: Rp 4.500 — Rp 11.000</td></tr>
+<tr><td>8</td><td>Rekonsiliasi</td><td>RIM konservatif: ~Rp 5.000; RIM optimistis: ~Rp 9.500; P/B peers: ~Rp 7.000-9.000; DDM: ~Rp 5.000. Harga pasar Rp 9.325 mencerminkan ekspektasi optimistis.</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>9.2 Kesalahan Umum dalam Valuasi: Ringkasan Komprehensif</h3>
+
+<div class="ibox nb">
+<div class="ibt">🚩 Checklist Kesalahan yang Harus Dihindari dalam Setiap Valuasi</div>
+<table>
+<thead><tr><th style="width:8%">No</th><th style="width:35%">Kesalahan</th><th style="width:57%">Mengapa Berbahaya</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Mismatch arus kas dan discount rate</td><td>Mendiskonto FCFE pada WACC atau FCFF pada cost of equity menghasilkan valuasi yang salah secara struktural</td></tr>
+<tr><td>2</td><td>Terminal growth &gt; GDP growth</td><td>Mengimplikasikan perusahaan akan melebihi seluruh ekonomi — secara logis tidak mungkin</td></tr>
+<tr><td>3</td><td>Mengabaikan dilusi</td><td>Stock options, convertible bonds, warrants mendilusi EPS; gunakan diluted EPS untuk P/E</td></tr>
+<tr><td>4</td><td>Menggunakan book value WACC weights</td><td>Book value tidak mencerminkan proporsi aktual pendanaan; gunakan market value</td></tr>
+<tr><td>5</td><td>Proyeksi hockey-stick tanpa justifikasi</td><td>Margin yang tiba-tiba membaik atau pertumbuhan yang tiba-tiba akselerasi tanpa alasan bisnis yang jelas</td></tr>
+<tr><td>6</td><td>Satu model tanpa cross-check</td><td>Setiap model memiliki blind spots; minimal dua model memberikan perspektif yang lebih lengkap</td></tr>
+<tr><td>7</td><td>Mengabaikan konteks industri</td><td>P/E 20x mungkin murah untuk teknologi tapi mahal untuk utilities; konteks menentukan</td></tr>
+<tr><td>8</td><td>Tidak menyesuaikan untuk non-recurring items</td><td>Keuntungan penjualan aset, restrukturisasi charges, impairment one-time mendistorsi EPS normalnya</td></tr>
+<tr><td>9</td><td>Overreliance pada terminal value</td><td>Jika TV &gt;80% total nilai, model sangat sensitif terhadap asumsi jangka panjang yang paling tidak pasti</td></tr>
+<tr><td>10</td><td>Tidak melakukan sensitivity analysis</td><td>Menyajikan satu angka tunggal menciptakan ilusi presisi padahal valuasi inherently uncertain</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>9.3 Valuasi dalam Konteks Indonesia: Pertimbangan Khusus</h3>
+
+<div class="id-box nb">
+<div class="idt">🇮🇩 Faktor Khusus Indonesia dalam Valuasi Ekuitas</div>
+<p>Valuasi ekuitas di Indonesia memerlukan pertimbangan yang berbeda dari pasar maju:</p>
+<ol>
+<li><strong>Suku bunga lebih tinggi</strong> — BI-rate dan yield SUN yang lebih tinggi dibandingkan AS/Eropa meningkatkan cost of equity, menurunkan valuasi relatif. Ini menjelaskan mengapa P/E rata-rata IHSG (~15x) lebih rendah dari S&P 500 (~20-22x).</li>
+<li><strong>Currency risk</strong> — Untuk investor asing, risiko depresiasi Rupiah adalah faktor tambahan yang meningkatkan required return dan menurunkan valuasi dalam USD.</li>
+<li><strong>Corporate governance premium/discount</strong> — Perusahaan dengan governance baik (BBCA, UNVR) diperdagangkan pada premium, sementara perusahaan dengan governance lemah atau struktur kepemilikan kompleks mendapat discount.</li>
+<li><strong>Struktur kepemilikan keluarga</strong> — Banyak perusahaan Indonesia dikendalikan oleh keluarga (<em>family-controlled</em>). Ini dapat menciptakan agency problems (tunneling, related party transactions) yang memerlukan governance discount.</li>
+<li><strong>Regulasi sektoral</strong> — Sektor tertentu (perbankan, telekomunikasi, pertambangan) memiliki regulasi spesifik yang mempengaruhi proyeksi dan valuasi. Misalnya: regulasi OJK tentang minimum CAR mempengaruhi kemampuan bank membagikan dividen.</li>
+<li><strong>Likuiditas premium</strong> — Saham LQ45 diperdagangkan pada premium likuiditas dibandingkan saham yang kurang likuid. Investor ritel mendominasi, dan saham yang populer di kalangan ritel mungkin memiliki premium spekulatif.</li>
+<li><strong>Inflasi dan pertumbuhan nominal</strong> — Indonesia memiliki inflasi yang lebih tinggi dari negara maju, sehingga pertumbuhan nominal (revenue growth, earnings growth) juga lebih tinggi. Jangan membandingkan g Indonesia (8-12% nominal) langsung dengan g AS (3-5% nominal) tanpa menyesuaikan untuk inflasi.</li>
+</ol>
+</div>
+
+<div class="fbox">
+<strong>Ringkasan Kritis Minggu 12:</strong> Valuasi ekuitas mengintegrasikan seluruh alat analisis laporan keuangan yang dipelajari sejak Minggu 01. <strong>DDM</strong> menilai berdasarkan dividen (cocok untuk perusahaan mature); <strong>DCF</strong> menilai berdasarkan arus kas bebas (fleksibel untuk sebagian besar perusahaan); <strong>RIM</strong> menilai berdasarkan nilai buku + laba residual (ideal untuk bank dan sektor keuangan); <strong>Multiples</strong> menilai secara relatif terhadap peers (cepat tetapi sensitif terhadap pemilihan benchmark). <em>Cost of equity</em> adalah variabel paling kritis dan paling sulit diestimasi. Valuasi yang bermakna membutuhkan: (1) pemahaman bisnis mendalam, (2) input akuntansi yang bersih, (3) proyeksi yang realistis, (4) multiple model dengan sensitivity analysis, dan (5) penyajian dalam rentang nilai yang mencerminkan ketidakpastian. Dalam konteks Indonesia, pertimbangkan suku bunga yang lebih tinggi, country risk premium, corporate governance variability, dan karakteristik pasar emerging.
+</div>
+</div>
