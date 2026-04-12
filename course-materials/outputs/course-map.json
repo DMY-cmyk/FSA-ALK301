@@ -1,0 +1,283 @@
+{
+  "course": {
+    "name": "Analisis Laporan Keuangan dan Valuasi Sekuritas",
+    "code": "ALK301",
+    "semester": "1 / 2025-2026",
+    "primary_text": "Subramanyam, K.R. Financial Statement Analysis, 11th ed. McGraw-Hill.",
+    "supplementary_text": "Palepu, Healy, Peek. Business Analysis and Valuation: IFRS Edition."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "topic": "Silabus dan pengenalan ALK",
+      "topic_en": "Syllabus and Introduction to FSA",
+      "subramanyam_chapters": [1],
+      "palepu_chapters": [1],
+      "articles": [],
+      "id_company": {
+        "primary": "UNVR",
+        "name": "Unilever Indonesia Tbk",
+        "rationale": "Clean financials, continues Ch.1 baseline"
+      },
+      "learning_focus": "Framework for financial statement analysis; role of accounting information in capital markets",
+      "connections": { "builds_on": [], "leads_to": [2] }
+    },
+    {
+      "week": 2,
+      "topic": "Analisis dan pelaporan keuangan",
+      "topic_en": "Financial Reporting and Analysis Environment",
+      "subramanyam_chapters": [1, 2],
+      "palepu_chapters": [1, 2],
+      "articles": [],
+      "id_company": {
+        "primary": "UNVR",
+        "name": "Unilever Indonesia Tbk",
+        "rationale": "Consistent with Week 1; shows reporting environment"
+      },
+      "learning_focus": "Financial reporting environment; accrual accounting; earnings quality; regulatory framework",
+      "connections": { "builds_on": [1], "leads_to": [3] }
+    },
+    {
+      "week": 3,
+      "topic": "Analisis pendanaan (financing)",
+      "topic_en": "Financing Activities Analysis",
+      "subramanyam_chapters": [3],
+      "palepu_chapters": [],
+      "articles": [
+        {
+          "title": "Financial Ratios, Discriminant Analysis and the Prediction of Corporate Bankruptcy",
+          "author": "Altman, E.I.",
+          "year": 1968,
+          "filename": "Altman_1968_Financial_Ratios_Discriminant_Analysis_Bankruptcy.pdf",
+          "degraded": false
+        }
+      ],
+      "id_company": {
+        "primary": "BBCA",
+        "name": "Bank Central Asia Tbk",
+        "rationale": "Rich debt/equity structure, bond issuance, complex financing"
+      },
+      "learning_focus": "Debt vs equity financing; leases; off-balance-sheet items; capital structure analysis",
+      "connections": { "builds_on": [2], "leads_to": [4] }
+    },
+    {
+      "week": 4,
+      "topic": "Analisis investasi",
+      "topic_en": "Investing Activities Analysis",
+      "subramanyam_chapters": [4],
+      "palepu_chapters": [],
+      "articles": [],
+      "id_company": {
+        "primary": "ASII",
+        "name": "Astra International Tbk",
+        "rationale": "Major capex, diverse asset acquisition patterns"
+      },
+      "learning_focus": "PP&E analysis; intangible assets; depreciation methods; asset impairment; capitalization vs expensing",
+      "connections": { "builds_on": [3], "leads_to": [5] }
+    },
+    {
+      "week": 5,
+      "topic": "Analisis investasi: Intercorporate investment",
+      "topic_en": "Intercorporate Investments Analysis",
+      "subramanyam_chapters": [5],
+      "palepu_chapters": [],
+      "articles": [
+        {
+          "title": "Sector-wise Analysis of Working Capital Management and Firm Performance in Manufacturing Sector of Pakistan",
+          "author": "Raheman, A.; Qayyum, A.; Afza, T.",
+          "year": 2010,
+          "filename": null,
+          "degraded": true
+        }
+      ],
+      "id_company": {
+        "primary": "ASII",
+        "name": "Astra International Tbk + United Tractors (UNTR)",
+        "rationale": "Holding/subsidiary consolidation structure"
+      },
+      "learning_focus": "Equity method; consolidation; minority interests; goodwill; intercorporate investment accounting",
+      "connections": { "builds_on": [4], "leads_to": [6] }
+    },
+    {
+      "week": 6,
+      "topic": "Analisis aktivitas operasi",
+      "topic_en": "Operating Activities Analysis",
+      "subramanyam_chapters": [6],
+      "palepu_chapters": [4],
+      "articles": [],
+      "id_company": {
+        "primary": "TLKM",
+        "name": "Telkom Indonesia Tbk",
+        "rationale": "Revenue recognition complexity, operating expense structure"
+      },
+      "learning_focus": "Revenue recognition; operating expenses; income measurement; non-recurring items; earnings persistence",
+      "connections": { "builds_on": [5], "leads_to": [7] }
+    },
+    {
+      "week": 7,
+      "topic": "Review bahan",
+      "topic_en": "Pre-Midterm Review: Synthesis and Article Discussion",
+      "subramanyam_chapters": [],
+      "palepu_chapters": [],
+      "articles": [
+        {
+          "title": "Earnings Management During Import Relief Investigations",
+          "author": "Jones, J.J.",
+          "year": 1991,
+          "filename": "Jones_1991_Earnings_Management_Import_Relief.pdf",
+          "degraded": false
+        },
+        {
+          "title": "The Existence of Inter-industry Convergence in Financial Ratios: Evidence from Turkey",
+          "author": "Acaravci, S.K.",
+          "year": 2007,
+          "filename": "Acaravci_2007_Interindustry_Convergence_Financial_Ratios_Turkey.pdf",
+          "degraded": false
+        }
+      ],
+      "id_company": {
+        "primary": "Various",
+        "name": "Various IDX Cases",
+        "rationale": "Earnings management examples in Indonesian context"
+      },
+      "learning_focus": "Synthesis of Weeks 1-6; earnings management detection; cross-industry ratio analysis; exam preparation",
+      "connections": { "builds_on": [1, 2, 3, 4, 5, 6], "leads_to": [8] }
+    },
+    {
+      "week": 8,
+      "topic": "Analisis aliran kas",
+      "topic_en": "Cash Flow Analysis",
+      "subramanyam_chapters": [7],
+      "palepu_chapters": [],
+      "articles": [],
+      "id_company": {
+        "primary": "ICBP",
+        "name": "Indofood CBP Sukses Makmur Tbk",
+        "rationale": "Complex cash flow from operations/investing patterns"
+      },
+      "learning_focus": "Statement of cash flows; direct vs indirect method; free cash flow; cash flow quality analysis",
+      "connections": { "builds_on": [7], "leads_to": [9] }
+    },
+    {
+      "week": 9,
+      "topic": "Analisis profitabilitas dan return on invested capital",
+      "topic_en": "Profitability Analysis and ROIC",
+      "subramanyam_chapters": [8],
+      "palepu_chapters": [5, 6],
+      "articles": [],
+      "id_company": {
+        "primary": "BBRI",
+        "name": "Bank Rakyat Indonesia Tbk",
+        "rationale": "ROE/ROIC decomposition, DuPont analysis application"
+      },
+      "learning_focus": "DuPont decomposition; ROE; ROIC; profit margins; asset turnover; financial leverage analysis",
+      "connections": { "builds_on": [8], "leads_to": [10] }
+    },
+    {
+      "week": 10,
+      "topic": "Analisis prospektif",
+      "topic_en": "Prospective Analysis and Forecasting",
+      "subramanyam_chapters": [9],
+      "palepu_chapters": [7],
+      "articles": [
+        {
+          "title": "Cash Flow Ratios as Indicators of Corporate Failure",
+          "author": "Murty, A.V.N.; Misra, D.P.",
+          "year": 2004,
+          "filename": null,
+          "degraded": true
+        }
+      ],
+      "id_company": {
+        "primary": "GOTO",
+        "name": "GoTo Gojek Tokopedia Tbk",
+        "rationale": "Growth projections, prospective valuation challenges"
+      },
+      "learning_focus": "Earnings forecasting; pro forma analysis; scenario modeling; forecasting cash flows and growth",
+      "connections": { "builds_on": [9], "leads_to": [11] }
+    },
+    {
+      "week": 11,
+      "topic": "Analisis kredit",
+      "topic_en": "Credit Analysis",
+      "subramanyam_chapters": [10],
+      "palepu_chapters": [],
+      "articles": [],
+      "id_company": {
+        "primary": "BUMI",
+        "name": "Bumi Resources Tbk",
+        "rationale": "Financial distress history, credit risk indicators"
+      },
+      "learning_focus": "Liquidity analysis; solvency ratios; credit scoring; bankruptcy prediction; bond ratings",
+      "connections": { "builds_on": [10], "leads_to": [12] }
+    },
+    {
+      "week": 12,
+      "topic": "Analisis ekuitas dan penilaian",
+      "topic_en": "Equity Analysis and Valuation",
+      "subramanyam_chapters": [11],
+      "palepu_chapters": [8, 9],
+      "articles": [
+        {
+          "title": "The Effect of Financial Ratios on Returns from Initial Public Offerings: An Application of Principal Component Analysis",
+          "author": "Cheng, Min-Tsung",
+          "year": 2006,
+          "filename": null,
+          "degraded": true
+        }
+      ],
+      "id_company": {
+        "primary": "BBCA",
+        "name": "Bank Central Asia Tbk",
+        "rationale": "P/E, P/B, residual income model application"
+      },
+      "learning_focus": "Residual income valuation; DDM; DCF; P/E and P/B multiples; equity risk premium; intrinsic value",
+      "connections": { "builds_on": [11], "leads_to": [13] }
+    },
+    {
+      "week": 13,
+      "topic": "Comprehensive case: Applying financial statement analysis",
+      "topic_en": "Comprehensive Case Study",
+      "subramanyam_chapters": [],
+      "palepu_chapters": [10],
+      "articles": [],
+      "id_company": {
+        "primary": "HMSP",
+        "name": "HM Sampoerna Tbk",
+        "rationale": "Full FSA case study — well-documented, diversified operations"
+      },
+      "learning_focus": "Integrating all FSA techniques into a comprehensive company analysis; case methodology",
+      "connections": { "builds_on": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], "leads_to": [14] }
+    },
+    {
+      "week": 14,
+      "topic": "Review bahan",
+      "topic_en": "Pre-Final Review: Bankruptcy Prediction and Synthesis",
+      "subramanyam_chapters": [],
+      "palepu_chapters": [],
+      "articles": [
+        {
+          "title": "A Discriminant Analysis of Predictors of Business Failure",
+          "author": "Deakin, E.B.",
+          "year": 1972,
+          "filename": "Deakin_1972_Discriminant_Analysis_Predictors_Business_Failure.pdf",
+          "degraded": false
+        },
+        {
+          "title": "Financial Ratios and the Probabilistic Prediction of Bankruptcy",
+          "author": "Ohlson, J.A.",
+          "year": 1980,
+          "filename": "Ohlson_1980_Financial_Ratios_Probabilistic_Prediction_Bankruptcy.pdf",
+          "degraded": false
+        }
+      ],
+      "id_company": {
+        "primary": "Various",
+        "name": "IDX Delisted Companies",
+        "rationale": "Bankruptcy prediction in Indonesian corporate context"
+      },
+      "learning_focus": "Bankruptcy prediction models (Altman, Ohlson, Deakin); synthesis of full course; final exam preparation",
+      "connections": { "builds_on": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], "leads_to": [] }
+    }
+  ]
+}
